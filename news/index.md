@@ -1,0 +1,67 @@
+---
+sidebar: auto
+sidebarDepth: 0
+---
+
+# News
+
+This should be converted once VuePress gets blogging support
+
+## December 18, 2017 - openHAB 2.2 Release
+
+Half a year has passed since openHAB 2.1 and I am very happy that we still made it before Christmas, so that you have something nice to play with during the holiday season: [openHAB 2.2 is out](https://github.com/openhab/openhab-distro/releases/tag/2.2.0)!
+
+The most obvious change that you will immediately notice is the rollout of our [new openHAB logo](https://community.openhab.org/t/new-logo-for-openhab/35140), which you will now find in all our apps, UIs and websites.
+
+But the functional evolution is of course of much more importance, and a lot has happened in the past months.
+
+While you can find all the details in the [official Release Notes](https://github.com/openhab/openhab-distro/releases/tag/2.2.0), let me highlight a few of those features.
+
+<!--more-->
+
+### New Features for Setup & Configuration
+
+Huge effort went into the user experience when setting up and configuring openHAB:
+
+#### Language Server Protocol (LSP) Support and VS Code Extension
+
+One major step forward is the introduction of [Language Server Protocol (LSP)](https://langserver.org/) support in the core runtime. This allows text editors to remotely connect and do syntax validation and content assist on our configuration files, which is specifically useful when writing rules. Since these were the main features of the former Eclipse RCP-based "openHAB Designer", this tool has been discontinued and the [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=openhab.openhab) becomes its official successor.
+
+<img class="img-responsive" src="http://www.openhabfoundation.org/images/posts/2017-12_vscodeext.gif" alt="">
+<small>Visual Studio Code Extension for openHAB</small>
+
+Besides the "usual" features like code highlighting, syntax validation and content assist, the openHAB VS Code Extension uses the connection to the openHAB server to provide many more great features like browsing through the available items & things, showing live previews of sitemaps and many more - you should definitely check it out!
+
+#### Home Builder
+
+Another new tool for getting started is the [Home Builder](http://docs.openhab.org/configuration/homebuilder.html), which let's you easily define the whole structure of your home (floors, rooms, objects) and then creates the according item and sitemap files by the click of a button. No tedious typing or copying&pasting necessary anymore - and the risk of typos is gone! The Home Builder is automatically installed when the "Standard" installation package is chosen, all others can install it as an optional add-on.
+
+<img class="img-responsive" src="http://www.openhabfoundation.org/images/posts/2017-12_homebuilder.png" alt="">
+<small>The new Home Builder generates configuration files to start from</small>
+
+#### openHABian
+
+Talking about an easy start with openHAB, I clearly have to mention [openHABian](http://docs.openhab.org/installation/openhabian.html), which has just been released in parallel: [openHABian 1.4](https://community.openhab.org/t/openhabian-v1-4-released/37398) is available for all Raspberry Pi models from 0W to 3 as well as for the [PINE A64](https://www.pine64.org/?page_id=1194). Its setup is smoother than ever  and it by now includes an abundance of options to install next to openHAB, like Node-RED, KNXd, Grafana and FIND, just to name a few. It now also includes those directly in the openHAB dashboard, so that all of them are easily accessible from a single place.
+
+<img class="img-responsive" src="http://www.openhabfoundation.org/images/posts/2017-12_openhabian.png" alt="">
+<small>Populated dashboard in openHABian</small>
+
+### New Device Integrations
+
+Of course there are again [news on the binding side](https://github.com/openhab/openhab-distro/releases/tag/2.2.0#addons) as well. Some bindings like [DMX](http://docs.openhab.org/addons/bindings/dmx/readme.html), [Nest](http://docs.openhab.org/addons/bindings/nest/readme.html) and [Plugwise](http://docs.openhab.org/addons/bindings/plugwise/readme.html) existed before, but they are now fully rewritten and support openHAB 2 features like discovery and UI-driven configuration.
+Other bindings are completely new like e.g. the (specifically in Austria) very popular [Loxone](http://docs.openhab.org/addons/bindings/loxone/readme.html) system or the [webOS-based LG TV](http://docs.openhab.org/addons/bindings/lgwebos/readme.html) support. All Apple users might find the new [iCloud binding](http://docs.openhab.org/addons/bindings/icloud/readme.html) very useful as it provides a very simple way to do location tracking of people (or rather their devices) and through which you can also trigger "find my iPhone" in case you forgot where you have put your mobile.
+
+<img class="img-responsive" src="http://www.openhabfoundation.org/images/posts/2017-12_icloud.png" alt="">
+<small>Location tracking through the iCloud Binding</small>
+
+The release notes furthermore contain a [detailed list of all noteworthy enhancements and fixes](https://github.com/openhab/openhab-distro/releases/tag/2.2.0#addons) that have been done on the existing add-ons.
+
+### ... and more
+
+Last but not least I should mention that we also have updates for the [iOS app](https://itunes.apple.com/us/app/openhab/id492054521?mt=8) and the [Android app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) available in the app stores - especially the Android app has evolved a lot and it is awesome to see many new contributors being involved in it - check out all the new features and fixes in [its release notes](https://github.com/openhab/openhab.android/releases/tag/2.0.0).
+
+For the 2.2 release, we plan to come up with 2.2.x updates, which can potentially fix critical issues that are found, but which will more importantly add further bindings that are going to be merged during the next weeks. Our aim is to make the time that it takes for a new binding to become available to our release users much shorter than it is today. So stay tuned for further news on this!
+
+I hope that you like all those updates and I really think that openHAB becomes much better with every release. This wouldn't be possible without its great community. So let me end my annoucement by thanking all contributors that drive the project forward - be it through code contributions, work on the documentation or simply by reporting bugs and involving themselves in discussions. Merry christmas to all of you!
+
+<img class="img-responsive" src="http://www.openhabfoundation.org/images/posts/2017-12_xmas.jpg" alt="">
