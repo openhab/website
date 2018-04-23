@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "openHAB Website",
   "dependencies": {
+    "headroom.js": "^0.9.4",
     "scrollreveal": "^3.4.0",
+    "vue-parallax": "^1.1.1",
+    "vue-parallaxy": "^1.1.1",
     "vuepress": "^0.7.0"
   },
   "devDependencies": {},

@@ -11,13 +11,13 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-{% include base.html %}
+<!-- {% include base.html %} -->
 
 ---
 layout: documentation
 ---
 
-{% include base.html %}
+<!-- {% include base.html %} -->
 
 # WeatherUnderground Binding
 
