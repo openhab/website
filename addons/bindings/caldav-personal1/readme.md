@@ -11,7 +11,7 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 <!-- 
-{% include base.html %}
+<!-- {% include base.html %} -->
 
 # CalDAV Personal Binding
 
@@ -187,7 +187,7 @@ To do this you have to
 # Example configuration
 
 There are three calendars defined. One of them is used just for executing commands in openhab (Command-kalender). The others are used to show the upcoming events (Müllkalender, Dienstlicher/privater Kalender).
-In every case, the binding org.openhab.io.caldav-<version>.jar is needed. For executing commands the additional binding org.openhab.binding.caldav-command-<version>.jar is needed. For upcoming events or presence simulation the binding org.openhab.binding.caldav-personal-<version>.jar needs to be included.
+In every case, the binding org.openhab.io.caldav-`<version>`.jar is needed. For executing commands the additional binding org.openhab.binding.caldav-command-`<version>`.jar is needed. For upcoming events or presence simulation the binding org.openhab.binding.caldav-personal-`<version>`.jar needs to be included.
 
 openhab.cfg
 

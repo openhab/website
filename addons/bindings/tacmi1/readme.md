@@ -11,7 +11,7 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-{% include base.html %}
+<!-- {% include base.html %} -->
 
 # TACmi Binding
 

@@ -6,47 +6,95 @@
       <div class="hero-content">
         <h1 class="hero">Empowering the smart home</h1>
         <h2 class="lead">openHAB - a vendor and technology agnostic open source automation software for your home</h2>
-        <router-link to="guide/" class="action-button">Get started →</router-link>
+        <router-link to="guides/overview/" class="action-button">Get started →</router-link>
         <a class="demo-button" target="_blank" href="http://demo.openhab.org:8080">Demo →</a>
       </div>
     </div>
-    <div style="margin-top: 90vh">
+    <div style="margin-top: 76vh">
       <div class="section2">
         <h2>Why openHAB?</h2>
         <div class="features">
           <div ref="feature1" class="feature">
             <h3>Integrate Everything</h3>
-            <p>With its pluggable architecture openHAB supports more than 200 different technologies and systems and thousands of devices!</p>
+            <p>With its pluggable architecture openHAB supports more than <router-link to="addons/">200 different technologies and systems</router-link> and thousands of devices!</p>
           </div>
           <div ref="feature2" class="feature">
             <h3>Automate with Ease</h3>
-            <p>Powerful and flexible rules, time and event-based triggers, scripts, notifications and voice control</p>
+            <p>Powerful and flexible <router-link to="guides/tutorial/rules.html">rules</router-link>, time and event-based triggers, scripts, notifications and voice control</p>
           </div>
           <div ref="feature3" class="feature">
             <h3>Runs Everywhere</h3>
-            <p>Linux, macOS, Windows, Raspberry Pi and PINE64... Various apps provide a single interface for all your systems on the web, iOS, Android and others.</p>
+            <p>
+              Run your server on
+              <router-link to="guides/installation/linux.html">Linux</router-link>,
+              <router-link to="guides/installation/macosx.html">macOS</router-link>,
+              <router-link to="guides/installation/windows.html">Windows</router-link>,
+              <router-link to="guides/installation/rasppi.html">Raspberry Pi</router-link>,
+              <router-link to="guides/installation/pine.html">PINE64</router-link>,
+              <router-link to="guides/installation/docker.html">Docker</router-link>,
+              <router-link to="guides/installation/synology.html">Synology</router-link>...
+              Access it with apps for the web, iOS, Android and others.</p>
           </div>
         </div>
       </div>
+      <ClientOnly>
+        <div style="height: 40vh; background: transparent">
+          <parallax fixed>
+            <img src="/vscode.png" alt="coding rules">
+          </parallax>
+        </div>
+      </ClientOnly>
+      <div class="section3">
+        <h2>More than 1000 supported things!</h2>
+        <div class="logos">
+          <router-link :to="addon.path" v-for="addon in featuredAddons" :key="addon.path" class="logo-container">
+            <img :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" class="featured-logo" />
+          </router-link>
+        </div>
+      </div>
     </div>
+    <footer class="footer">
+      <h2 class="slide">Footer links, social media etc.</h2>
+    </footer>
   </div>
 </template>
 
 <script>
+import parallax from 'vue-parallaxy'
+let hr = null
+
 export default {
   name: 'HomePage',
+  components: {
+    parallax
+  },
   data () {
     return {
+    }
+  },
+  computed: {
+    featuredAddons () {
+      return this.$site.pages.filter(p => p.frontmatter && p.frontmatter.logo && p.frontmatter.since === '2x')
     }
   },
   mounted () {
     const vm = this
     import('scrollreveal').then(ScrollReveal => {
       const sr = new ScrollReveal.default()
-      sr.reveal(vm.$refs.feature1, { delay: 250 })
-      sr.reveal(vm.$refs.feature2, { delay: 500 })
-      sr.reveal(vm.$refs.feature3, { delay: 750 })
+      sr.reveal('.feature', { scale: 1.0 }, 200)
+      sr.reveal('.featured-logo', { })
+      sr.reveal('.slide', { scale: 1.0 })
     })
+    import('headroom.js').then(Headroom => {
+      const header = document.getElementsByTagName("header")[0]
+      hr = new Headroom.default(header)
+      hr.init()
+    })
+  },
+  beforeDestroy () {
+    if (hr) {
+      hr.destroy()
+    }
   }
 }
 </script>
@@ -89,6 +137,40 @@ export default {
   100%
     // transform translateY(0)
     opacity 0.3
+@keyframes headerSlideDown
+  0%
+    transform translateY(-100%)
+  100%
+    transform translateY(0%)
+@keyframes headerSlideUp
+  0%
+    transform translateY(0%)
+  100%
+    transform translateY(-100%)
+
+header.headroom--pinned
+  animation 0.5s ease-out 0s 1 headerSlideDown
+  transform translateY(0%)
+header.headroom--unpinned
+  animation 0.5s ease-out 0s 1 headerSlideUp
+  transform translateY(-100%)
+header.headroom--top
+  transition all 0.5s
+  background transparent
+  color white
+  border-bottom none
+  .nav-dropdown
+    color black
+
+.vscode
+  position relative
+  min-height 21.875rem
+  scroll-behavior smooth
+  overflow: hidden
+  z-index: -1
+  height 40vh !important
+  width 100%
+
 
 .jumbotron
   background #ff6600
@@ -150,6 +232,7 @@ export default {
       font-size 1.2rem
       color #fff
       padding 0.8rem 1.6rem
+      border-radius 4px
       transition background-color .1s ease
       box-sizing border-box
       border 1px solid #fff
@@ -166,6 +249,8 @@ export default {
 
 .section2
   font-family 'Open Sans', sans-serif
+  background white
+  padding-top 5rem
   h2
     text-align center
     font-family 'Open Sans', sans-serif
@@ -198,8 +283,34 @@ export default {
     .feature
       max-width 100%
       padding 0 2.5rem
+.section3
+  background white
+  display flex
+  flex-direction column
+  h2
+    padding-top 4rem
+    text-align center
+    font-family 'Open Sans', sans-serif
+    font-weight normal
+    font-size 2.5em
+  .logos
+    padding 0 5rem
+    display flex
+    flex-wrap wrap
+    justify-content center
+    .logo-container
+      width 200px
+      height 220px
+      padding 10px
+      display flex
+      .featured-logo
+        margin auto
+        max-height 200px
+        max-width 200px
+
 
 .footer
+  background #eee
   padding 2.5rem
   border-top 1px solid $borderColor
   text-align center
