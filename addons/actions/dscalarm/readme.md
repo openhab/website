@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # DSC Alarm Actions
+
+<AddonLogo/>
 
 This bundle exposes openHAB rule extensions to be used with the DSC Alarm Binding (1.x binding).
 It allows the sending of DSC Alarm specific commands from within rules.
@@ -88,3 +89,6 @@ rule "BypassZone1"
         sendDSCAlarmCommand("071","*101#")
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

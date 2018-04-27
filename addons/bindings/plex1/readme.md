@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Plex Binding
+
+<AddonLogo/>
 
 This binding supports multiple clients connected to a [Plex Media Server](http://plex.tv). With this binding, it's possible to dim your lights when a video starts playing, for example. Here's a [short demo video](https://www.youtube.com/watch?v=igAUFCZ-zXc).
 
@@ -198,3 +199,6 @@ then
 	dimLiving.apply(30)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

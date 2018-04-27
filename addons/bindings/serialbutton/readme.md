@@ -6,11 +6,11 @@ type: binding
 description: "This is a binding for probably one of the simplest devices possible: A simple push button which short-cuts two pins on a serial port."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Serial Button Binding
 
@@ -57,3 +57,6 @@ sitemap demo label="Main Menu"
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

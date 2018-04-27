@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MySQL Persistence
 
@@ -36,3 +35,6 @@ This service can be configured in the file `services/mysql.cfg`.
 | localtime | `false` |  No      | use MySQL server time to store item values (if set to `false`) or use openHAB server time (if set to `true`). For new installations, setting this to `true` is recommended. |
 
 All item and event related configuration is done in the file `persistence/mysql.persist`.
+
+<DocPreviousVersions/>
+<EditPageLink/>

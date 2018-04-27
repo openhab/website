@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Yamaha Receiver Binding (1.x)
+
+<AddonLogo/>
 
 This binding connects openHAB with various Yamaha Receivers.
 
@@ -127,3 +128,6 @@ Selection item=Yamaha_Surround label="Surround Mode" mappings=["2ch Stereo"="2ch
 
 > Warning: The `"` around `NET RADIO` is mandatory. This key (left from the equal sign) is a value that must be send to the receiver **with** the space inside. If you omit the `"` the binding would only send the `NET` and the receiver won't react. Same are in surround definition!
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

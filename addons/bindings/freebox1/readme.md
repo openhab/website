@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Freebox Binding
+
+<AddonLogo/>
 
 This binding is intended for users of the French DSL operator Free, using Freebox Revolution (v6).
 
@@ -159,3 +160,6 @@ The following items are available for read/write actions:
 * switch to force lcd orientation
 * lcd orientation to use (0,90,180,270).
 * lcd brightness (0 to 100)
+
+<DocPreviousVersions/>
+<EditPageLink/>

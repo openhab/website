@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # UPB Binding
 
@@ -44,3 +43,6 @@ To activate a link set the link property to true:
 ```
 Dimmer Light_Lamps              "Living Room Lamps"     (Lights) {upb="id=4 link=true"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # eBUS Binding
+
+<AddonLogo/>
 
 The eBUS binding allows you to control your heating system. The eBUS protocol is used by heating system vendors like Wolf, Vaillant, Kromschröder etc. You can read temperatures, pump performance, gas consumption etc.
 
@@ -327,3 +328,6 @@ This is an automatic created list of all included configuration files.
 * [_wolf-35](https://github.com/openhab/openhab/blob/1.8/bundles/binding/org.openhab.binding.ebus/docs/json-files/_wolf-35.md)
 * [_wolf](https://github.com/openhab/openhab/blob/1.8/bundles/binding/org.openhab.binding.ebus/docs/json-files/_wolf.md)
 * [_wolf-test](https://github.com/openhab/openhab/blob/1.8/bundles/binding/org.openhab.binding.ebus/docs/json-files/_wolf-test.md)
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # DIYOnXBee Binding
+
+<AddonLogo/>
 
 The openHAB DIYOnXBee binding allows interaction with self built (DIY) hardware that communicate via XBee modules.
 
@@ -74,3 +75,6 @@ Currently, RGB LED stripes (openHAB type Color), switches and dimmers are suppor
 
 ### Sample Arduino Sketch
 There is an Arduino library with example [here](https://github.com/juri8/diyonxbee-library).
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # WR3223 ventilation controller Binding
 
@@ -147,3 +146,6 @@ Switch item=wr3223_ventilation_level label="Stufe" mappings=[0="Aus", 1="1", 2="
 Switch item=wr3223_operation_mode label="Betriebsart" mappings=[1="Sommer", 2="Abluft", 3="Winter"]
 Setpoint item=wr3223_temperature_supply_air_target minValue=16 maxValue=28 step=1
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

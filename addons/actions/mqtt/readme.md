@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # MQTT Actions
+
+<AddonLogo/>
 
 Publish a message to a topic on an MQTT broker.
 
@@ -25,3 +26,6 @@ In addition to the MQTT Action service, the MQTT binding (1.x) must be installed
 ## Action
 
 - `publish(String brokerName, String topic, String message)`: Publish the message to topic using the specified MQTT broker.
+
+<DocPreviousVersions/>
+<EditPageLink/>

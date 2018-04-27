@@ -7,13 +7,15 @@ description: "This binding integrates Miele@home appliances."
 since: 2x
 logo: images/addons/miele.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Miele@home Binding
+
+<AddonLogo/>
 
 This binding integrates Miele@home appliances.
 Miele@home is a Zigbee based network to interconnect and control Miele appliances that are equipped with special modules.
@@ -76,3 +78,6 @@ Number MieleFridgeTarget (gMiele,gMieleFridge) {channel="miele:fridge:dilbeek:fr
 Contact MieleFridgeDoor (gMiele,gMieleFridge) {channel="miele:fridge:dilbeek:fridge:door"}
 Switch MieleFridgeStart (gMiele,gMieleFridge) {channel="miele:fridge:dilbeek:fridge:start"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "This binding integrates the [Tesla Electrical Vehicle](http://www.
 since: 2x
 logo: images/addons/tesla.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Tesla Binding
+
+<AddonLogo/>
 
 This binding integrates the [Tesla Electrical Vehicle](http://www.teslamotors.com).
 The integration happens through the Tesla Owners Remote API.
@@ -142,3 +144,6 @@ sitemap demo label="Main Menu"
 			}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

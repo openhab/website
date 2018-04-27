@@ -7,13 +7,15 @@ description: "The addressable Universal RTS Interface II (URTSI II) can be used 
 since: 2x
 logo: images/addons/urtsi.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Somfy URTSI II Binding
+
+<AddonLogo/>
 
 The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third party systems and SOMFY’s RTS Motors and controls.
 It is capable of individual or group control, and can be operated via infrared remote, RS232 and RS485 serial communication.
@@ -46,3 +48,6 @@ Discovery is not supported.
 ## Channels
 
 *   Position: Change the position of a device. This is used in order to interact with the device (move it up, down or stop).
+
+<DocPreviousVersions/>
+<EditPageLink/>

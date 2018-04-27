@@ -7,13 +7,15 @@ description: "This binding integrates Orvibo devices that communicate using UDP.
 since: 2x
 logo: images/addons/orvibo.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Orvibo Binding
+
+<AddonLogo/>
 
 This binding integrates Orvibo devices that communicate using UDP.
 Primarily this was designed for S20 Wifi Sockets but other products using the same protocol may be implemented in future.
@@ -66,3 +68,6 @@ sitemap demo label="Main Menu" {
         }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

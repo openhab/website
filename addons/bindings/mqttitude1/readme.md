@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # OwnTracks (formerly MQTTitude) Binding
+
+<AddonLogo/>
 
 [OwnTracks](http://owntracks.org), formerly known as _MQTTitude_, was developed as a replacement for the old Google Latitude service. However it is slightly different (better) in that all your location data is private - i.e. there is no 3rd party server somewhere collecting and storing your data. Instead each time your device publishes its location, it is sent to an [MQTT](http://mqtt.org/) broker of your choice. 
 
@@ -129,3 +130,6 @@ All regions/waypoints configured in the OwnTracks apps must to be set as 'Shared
 #### iPhone considerations
 
 Due to power management policies, OwnTracks on iPhone running in the background is only updating the location roughly every 10 minutes and sometimes even longer. This is blocking for many use cases that need timing wise short response.
+
+<DocPreviousVersions/>
+<EditPageLink/>

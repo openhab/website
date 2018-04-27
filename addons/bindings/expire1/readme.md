@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Expire Binding
 
@@ -76,3 +75,6 @@ Switch EggCooker "Egg Cooker [%s]" { zwave="12", expire="7m,command=OFF" }
 ```
 
 > ⚠️ If another binding is repeatedly updating the state of the item to be the same state it already was, the expiration timer will continue to be reset into the future.  Dedicating an item to the expiration function (so it doesn't receive repeated updates from another binding) would avoid unwanted behavior, should it apply in your case.
+
+<DocPreviousVersions/>
+<EditPageLink/>

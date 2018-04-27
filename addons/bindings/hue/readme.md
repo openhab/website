@@ -7,13 +7,15 @@ description: "This binding integrates the [Philips Hue Lighting system](http://w
 since: 2x
 logo: images/addons/hue.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Philips Hue Binding
+
+<AddonLogo/>
 
 This binding integrates the [Philips Hue Lighting system](http://www.meethue.com).
 The integration happens through the Hue bridge, which acts as an IP gateway to the ZigBee devices.
@@ -152,3 +154,6 @@ sitemap demo label="Main Menu"
 	}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

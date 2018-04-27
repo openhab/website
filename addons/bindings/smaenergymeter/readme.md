@@ -7,13 +7,15 @@ description: "This Binding is used to display the measured values of a SMA Energ
 since: 2x
 logo: images/addons/smaenergymeter.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # SMA Energy Meter Binding
+
+<AddonLogo/>
 
 This Binding is used to display the measured values of a SMA Energy Meter device.
 It shows purchased and grid feed-in power and energy.
@@ -45,3 +47,6 @@ Optionally, a refresh interval (in seconds) can be defined.
 ## Full example
 
 N/A
+
+<DocPreviousVersions/>
+<EditPageLink/>

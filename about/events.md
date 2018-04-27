@@ -1,7 +1,7 @@
 ---
 sidebar: false
+layout: AboutPage
+title: Events
 ---
-
-# Events
 
 tbd

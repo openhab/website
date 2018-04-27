@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # BenQ Projector Binding
+
+<AddonLogo/>
 
 This binding is designed to interface with BenQ projectors that have an RS232 interface on them that accepts the commands documented by BenQ [here](ftp://ftp.benq-eu.com/projector/benq_rs232_commands.pdf).
 
@@ -97,3 +98,6 @@ Frame label="Projector" visibility=[gf_lounge_multimedia_projectorPower==ON] {
 	Setpoint item=gf_lounge_multimedia_projectorVol step=1 minValue=0 maxValue=10 visibility=[gf_lounge_multimedia_projectorPower==ON]				
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

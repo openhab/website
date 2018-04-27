@@ -6,11 +6,11 @@ type: binding
 description: "This binding integrates the possibility to execute arbitrary shell commands."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Exec Binding
 
@@ -168,3 +168,6 @@ end
 ## Source
 
 [OpenHAB community thread with a detailed example.](https://community.openhab.org/t/1-openhab-433mhz-radio-transmitter-tutorial/34977)
+
+<DocPreviousVersions/>
+<EditPageLink/>

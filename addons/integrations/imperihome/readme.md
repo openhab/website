@@ -6,11 +6,11 @@ type: io
 description: "This IO service exposes openHAB Items to the Evertygo [ImperiHome](http://www.evertygo.com/imperihome) dashboard app for Android and iOS."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # ImperiHome integration service
 
@@ -523,3 +523,6 @@ Number  ENT_Temperature      "Entrance temperature [%.1f °C]" (Temperature)  ["
 Number  ENT_Luminance        "Entrance light [%d lm]"         (Luminance)    ["iss:room:Entrance", "iss:type:DevLuminosity", "iss:unit:lux"]               { channel="zwave:device:1:node8:sensor_luminance" }
 Number  ENT_Humidity         "Entrance humidity [%d%%]"       (Humidity)     ["iss:room:Entrance", "iss:type:DevHygrometry"]                               { channel="zwave:device:1:node8:sensor_relhumidity" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

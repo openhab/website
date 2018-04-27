@@ -6,11 +6,11 @@ type: io
 description: "Hue Emulation exposes openHAB items as Hue devices to other Hue HTTP API compatible applications like an Amazon Echo."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # openHAB Hue Emulation Service
 
@@ -48,3 +48,6 @@ Switch  TestSwitch2     "Bathroom" [ "Lighting" ]
 Dimmer  TestDimmer3     "Hallway" [ "Lighting" ]
 Number  TestNumber4     "Temperature Set Point" [ "TargetTemperature" ]
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # XBMC binding (for KODI) (1.x)
+
+<AddonLogo/>
 
 This binding allows openHAB items to receive realtime updates about information like player state and running media from one or more instances of KODI (formerly known as XBMC).
 
@@ -22,7 +23,6 @@ This binding allows openHAB items to receive realtime updates about information 
 
 There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/kodi/readme.html).
 
-<!-- MarkdownTOC -->
 
 - [Prerequisites](#prerequisites)
 - [Binding Configuration](#binding-configuration)
@@ -39,7 +39,6 @@ There is also a binding specifically for openHAB 2 [here](http://docs.openhab.or
     - [Using Screensaver.State](#using-screensaverstate)
     - [Using PVR.OpenTV](#using-pvropentv)
 
-<!-- /MarkdownTOC -->
 
 
 ## Prerequisites
@@ -307,3 +306,6 @@ rule "Voice Command open tv channel"
     sendCommand(LG_OpenTVChannel,VoiceCommand.state.toString)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

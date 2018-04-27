@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # ekey Binding
+
+<AddonLogo/>
 
 [ekey](http://ekey.net/) is an Austrian company that provides biometric access-control solutions, more precisely fingerprint readers and corresponding controllers.  This binding extends the functionality of the products [ekey home](http://ekey.net/ekey-home-en) and [ekey multi](http://ekey.net/ekey-multi-en).
 
@@ -186,3 +187,6 @@ transform/ekey_action.map
 
 * eKey binding demo config (may be specific to openHAB 1.x)(http://pastebin.com/fjXkFbiq)
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

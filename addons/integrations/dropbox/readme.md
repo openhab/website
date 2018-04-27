@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Dropbox Synchronization Service
+
+<AddonLogo/>
 
 This service will synchronize files on the openHAB server, such as configuration and log files, to and/or from a Dropbox account.
 
@@ -136,3 +137,6 @@ Copy the token shown on the Dropbox web page and issue the following command:
 ```
 dropbox:finishAuthentication "replace with the token"
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

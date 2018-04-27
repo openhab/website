@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # xPL Action
 
@@ -29,3 +28,6 @@ Parameters shall follow xPL message elements syntax.
 | msgType   | being one of : command, trigger, status                                                                                    |
 | msgClass  | string spelled class.type                                                                                                  |
 | bodyLineX | string containing key and value in the form of "bodykey1=bodyvalue1".  There may be as many bodyLine parameters as needed. |
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # PLCBus Binding
 
@@ -42,3 +41,6 @@ Switch Switch1	          "Switch1"          <plcbus> { plcbus="D1 A1"}
 Dimmer Dimmer1	          "Dimmer1"          <plcbus> { plcbus="D1 A2 5"}
 Rollershutter Rollershutter1  "Rollershutter 1"  <plcbus> { plcbus="D1 A3"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

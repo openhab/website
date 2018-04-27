@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # HAI/Leviton Omni and Lumina Binding
 
@@ -226,3 +225,6 @@ String  Zones_FrontDoor_All "Status  [%s]"  (Zones_FrontDoor) {omnilink="zone_st
 ```
 String Buttons_MusicOn "Music On"  (Buttons) {omnilink="button:1",autoupdate="false"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

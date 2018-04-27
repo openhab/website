@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Squeezebox Binding
+
+<AddonLogo/>
 
 This binding integrates the [Logitech Media Server](http://www.mysqueezebox.com) and compatible Squeeze players.
 
@@ -28,7 +29,6 @@ There is also a binding specifically for openHAB 2 [here](http://docs.openhab.or
 
 ## Table of Contents
 
-<!-- MarkdownTOC -->
 
 - [Binding Configuration](#binding-configuration)
 	- [Example](#example)
@@ -43,7 +43,6 @@ There is also a binding specifically for openHAB 2 [here](http://docs.openhab.or
 	- [More Examples](#more-examples)
 - [Troubleshooting](#troubleshooting)
 
-<!-- /MarkdownTOC -->
 
 
 ## Binding Configuration
@@ -381,3 +380,6 @@ sitemap
 ## Troubleshooting
 
 If you have also some issues with the example feel free to check [this discussion](https://community.openhab.org/t/wiki-squeezeboxexample-errors-cannot-cast-cannot-retrieve-item/5488).
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "This binding integrates the Onkyo AV receivers."
 since: 2x
 logo: images/addons/onkyo.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Onkyo Binding
+
+<AddonLogo/>
 
 This binding integrates the Onkyo AV receivers.
 
@@ -263,3 +265,6 @@ sitemap demo label="Onkyo AVR"
 
 All supported Onkyo AVRs are registered as an audio sink in the framework.
 Audio streams are sent to the `playuri` channel.
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## ISY Binding
 
@@ -84,3 +83,6 @@ The following settings configure the ISY binding in the openhab.cfg file.
 * isy:port=80 # the port of the ISY router
 * isy:user=user # the user of the ISY router
 * isy:password=password # the password of the ISY router
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "Binding for the [Folding@home](https://folding.stanford.edu/) dist
 since: 2x
 logo: images/addons/folding.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Folding@home Binding
+
+<AddonLogo/>
 
 Binding for the [Folding@home](https://folding.stanford.edu/) distributed computing
 software.
@@ -46,3 +48,6 @@ Here is how to do it in the FAHControl application:
 
 You should now have access to the client, configure it using the password and
 IP address in the manual thing configuration interface.
+
+<DocPreviousVersions/>
+<EditPageLink/>

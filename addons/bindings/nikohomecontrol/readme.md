@@ -7,13 +7,15 @@ description: "The Niko Home Control binding integrates with a [Niko Home Control
 since: 2x
 logo: images/addons/nikohomecontrol.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Niko Home Control Binding
+
+<AddonLogo/>
 
 The Niko Home Control binding integrates with a [Niko Home Control](http://www.nikohomecontrol.be/) system through a Niko Home Control IP-interface.
 
@@ -189,3 +191,6 @@ then
     ...
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

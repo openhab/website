@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Zibase Binding
 
@@ -171,7 +170,7 @@ end
 
 Unlike receivers and emitters, scenarios are not representing a device but rules that are stored on the Zibase (using Zodianet cloud interface).
 
-Using this, you can ask the zibase to launch a scenario via a "sendCommand()" openhab instruction. So for Scenarios, the `<value>` parameter is not used.
+Using this, you can ask the zibase to launch a scenario via a "sendCommand()" openhab instruction. So for Scenarios, the &lt;value&gt; parameter is not used.
 
 #### Example
 
@@ -193,7 +192,7 @@ sendCommand(ZibaseScenario26,ON)
 
 Like scenario, a variable does not bind a device but one of the 31 internal "public" variables of the Zibase. You can use them to store and get values from. A variable can contain only a 16 bits signed integer. That is to say an integer from -32768 to 32768.
 
-Variables can be used both to get and to set a value. The `<value>` parameter is not used.
+Variables can be used both to get and to set a value. The &lt;value&gt; parameter is not used.
 
 #### Example
 
@@ -217,3 +216,6 @@ Set the value 50 to the variable in a rule:
 sendCommand(Variable14,50)
 ...
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

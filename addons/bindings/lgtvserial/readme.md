@@ -6,11 +6,11 @@ type: binding
 description: "This binding can send some commands typically used by LG LCD TVs (and some used by projectors)."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # LG TV control using serial protocol
 
@@ -58,3 +58,6 @@ On Windows it will be `COM1`, `COM2`, etc.
 [2] <https://sites.google.com/site/brendanrobert/projects/bits-and-pieces/lg-tv-hacks>
 
 [3] <https://code.google.com/archive/p/lg-tv-command/source/default/source>
+
+<DocPreviousVersions/>
+<EditPageLink/>

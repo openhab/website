@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Raspberry Pi RC Switch Binding
 
@@ -57,3 +56,6 @@ sitemaps/rpircswitch.sitemap.fragment
 Switch item=SleepingRoom label="Sleeping Room"
 Switch item=LivingRoom label="Living Room"
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

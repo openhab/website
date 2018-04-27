@@ -6,11 +6,11 @@ type: binding
 description: "This binding integrates the possibility to download and interpret Synop messages."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Synop Analyzer Binding
 
@@ -71,3 +71,6 @@ Number Synop_Wind_Speed "Wind Speed [%.2f m/s]" <wind> { channel = "synopanalyze
 Number Synop_Octa "Octa [%d]/8" { channel = "synopanalyzer:synopanalyzer:trappes:octa"}
 DateTime Synop_time  "Observation Time [%1$ta %1$tR]"        <clock>   { channel = "synopanalyzer:synopanalyzer:trappes:time-utc"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

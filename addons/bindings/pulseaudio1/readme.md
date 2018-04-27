@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Pulseaudio Binding
+
+<AddonLogo/>
 
 This binding allows openHAB to monitor and control pulseaudio servers.
 
@@ -105,3 +106,6 @@ then
 	}
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

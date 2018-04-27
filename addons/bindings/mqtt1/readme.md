@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MQTT Binding
+
+<AddonLogo/>
 
 This binding allows openHAB to act as an MQTT client, so that openHAB items
 can send and receive [MQTT](http://mqtt.org/) messages to/from an MQTT broker.
@@ -207,3 +208,6 @@ If the above service doesn't provide all the flexibility you need, you can
 also use the Eclipse Paho library directly in your binding.  To make the
 library available, it's sufficient to add a dependency to the org.openhab.io.transport.mqtt
 bundle and to add org.eclipse.paho.client.mqtttv3 to your list of imported packages.
+
+<DocPreviousVersions/>
+<EditPageLink/>

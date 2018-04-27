@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Visonic Powermax Binding
 
@@ -166,3 +165,6 @@ Text label="Security" icon="lock" {
 * The binding is not able to arm/disarm a particular partition.
 * The compatibility of the binding with the Powermaster alarm panel series is probably only partial.
 * The TCP connection is implemented but was not tested.
+
+<DocPreviousVersions/>
+<EditPageLink/>

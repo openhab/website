@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Fritz AHA Binding
 
@@ -133,3 +132,6 @@ Example:
 fritzaha="fritzpowerline,1000,voltage"
 fritzaha="fritzbox,16,power"
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

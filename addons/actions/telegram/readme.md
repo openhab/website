@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Telegram Actions
 
@@ -31,6 +30,17 @@ As described in the Telegram Bot API, this is the manual procedure needed in ord
 - Open a new chat with your new Bot and post a message on the chat
 - Open a browser and invoke `https://api.telegram.org/bot<token>/getUpdates` (where `<token>` is the authentication token previously obtained)
 - Look at the JSON result and write down the value of `result[0].message.chat.id`. That is the chatId. Note that Telegram group chat chatIds are prefixed with a dash "-" that must be included in the config file. (e.g. bot1.chatId: -22334455)
+
+## Actions
+
+Each of the actions returns `true` on success or `false` on failure.
+
+- `sendTelegram(String group, String message)`: Sends a Telegram via Telegram REST API - direct message
+- `sendTelegram(String group, String format, Object... args)`: Sends a Telegram via Telegram REST API - build message with format and args
+- `sendTelegramPhoto(String group, String photoURL, String caption)`: Sends a Picture via Telegram REST API
+- `sendTelegramPhoto(String group, String photoURL, String caption, Integer timeoutMillis)`: Sends a Picture via Telegram REST API, using custom HTTP timeout
+- `sendTelegramPhoto(String group, String photoURL, String caption, String username, String password)`: Sends a Picture, protected by username/password authentication, via Telegram REST API
+- `sendTelegramPhoto(String group, String photoURL, String caption, String username, String password, int timeoutMillis, int retries)`: Sends a Picture, protected by username/password authentication, using custom HTTP timeout and retries, via Telegram REST API
 
 ## Configuration
 
@@ -86,6 +96,12 @@ end
 
 ### Send an image to telegram chat
 
+When sending an image from a URL, do not place the username/password in the URL like this:
+`http://<username>:<password>@server/image.png`; pass the credentials to the `sendTelegramPhoto`
+method instead.
+
+`http` and `https` are the only protocols allowed.
+
 telegram.rules
 
 ```java
@@ -110,7 +126,7 @@ then
 end
 ```
 
-In case your image is behind an authenticated web server (locked by username and password) you can pass the credentials as additional parameters to the extended `sendTelegramPhoto` method.
+If an image is on a web server requiring authentication, credentials can be passed as additional parameters:
 
 telegram.rules
 
@@ -124,11 +140,7 @@ then
 end
 ```
 
-Do not use username/password in url like in this example `http://<username>:<password>@server/image.png`; pass the credentials to the `sendTelegramPhoto` method instead.
-
-`http` and `https` are the only protocols allowed.
-
-If you would like to send a base64 jpeg or png image.
+To send a base64 jpeg or png image:
 
 telegram.rules
 
@@ -141,3 +153,19 @@ then
     sendTelegramPhoto("bot1", base64Image, "sent from Openhab")
 end
 ```
+
+To send an image based on an Image Item:
+
+telegram.rules
+
+```java
+rule "Send telegram with Image Item image and caption"
+when
+    Item Webcam_Image changed
+then
+    sendTelegramPhoto("bot1", Webcam_Image.state.toFullString, "sent from Openhab")
+end
+```
+
+<DocPreviousVersions/>
+<EditPageLink/>

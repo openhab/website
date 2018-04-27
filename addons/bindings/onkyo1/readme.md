@@ -12,9 +12,10 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Onkyo AV Receiver Binding
+
+<AddonLogo/>
 
 This binding is compatible with Onkyo AV receivers which support ISCP (Integra Serial Control Protocol) over Ethernet (eISCP) and serial ports.
 
@@ -863,3 +864,6 @@ rule "Update List 9 Item"
     ]
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

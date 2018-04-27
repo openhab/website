@@ -6,11 +6,11 @@ type: binding
 description: "This binding is used to control LED strips connected by WiFi."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # WiFi LED Binding
 
@@ -100,3 +100,6 @@ wifiled.items:
     Switch MyWiFiLight_power "Power" (Light) {channel="wifiled:wifiled:F0FE6B19CB2A:power"}
     Dimmer MyWiFiLight_white "White" (Light) {channel="wifiled:wifiled:F0FE6B19CB2A:white"}
     Color  MyWiFiLight_color "Color" (Light) {channel="wifiled:wifiled:F0FE6B19CB2A:color"}
+
+<DocPreviousVersions/>
+<EditPageLink/>

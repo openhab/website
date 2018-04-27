@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## LightwaveRF Binding
 
@@ -116,3 +115,6 @@ Number RadiatorBatt "Radiator Battery [%.2f]"     { lightwaverf="room=4,serial=B
 String RadiatorMode "Radiator [%s]"     { lightwaverf="room=4,serial=BF3B01,type=HEATING_MODE" }
 DateTime RadiatorUpdated "Radiator Updated [%1$tT, %1$tF]"  { lightwaverf="room=4,serial=AF4A02,type=HEATING_UPDATETIME" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

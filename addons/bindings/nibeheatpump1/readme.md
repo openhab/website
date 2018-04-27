@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Nibe Heatpump Binding
 
@@ -574,3 +573,6 @@ Number	DegreeMinutes	{ nibeheatpump="43005" }
 Number	BT1_OutdoorTemp	{ nibeheatpump="40004" }
 Number	BT2_SupplyTemp	{ nibeheatpump="40008" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

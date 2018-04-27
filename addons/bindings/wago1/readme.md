@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # WAGO Binding
 
@@ -47,3 +46,6 @@ Example for a simple switch item bound to coil 3 of module 1 of "slave2":<
 Switch MySwitch "My WAGO Switch" (ALL) {wago="slave2:1:3"}
 ```
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

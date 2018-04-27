@@ -6,11 +6,11 @@ type: transform
 description: "Transforms the input by mapping it to another string. It expects the mappings to be read from a file which is stored under the `transform` folder."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Map Transformation Service
 
@@ -37,3 +37,6 @@ OFF=0
 | `1`   | `ON`    |
 | `OFF` | `0`     |
 | `key` | `value` |
+
+<DocPreviousVersions/>
+<EditPageLink/>

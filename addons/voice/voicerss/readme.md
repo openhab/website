@@ -7,13 +7,15 @@ description: "VoiceRSS is an Internet based TTS service hosted at <http://api.vo
 since: 2x
 logo: images/addons/voicerss.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # VoiceRSS Text-to-Speech
+
+<AddonLogo/>
 
 ## Overview
 
@@ -75,3 +77,6 @@ Sample: java org.openhab.voice.voicerss.tool.CreateTTSCache --api-key 1234567890
 *   add all media formats
 *   add all supported languages
 *   do not log API-Key in plain text
+
+<DocPreviousVersions/>
+<EditPageLink/>

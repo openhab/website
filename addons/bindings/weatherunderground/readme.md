@@ -7,19 +7,19 @@ description: "This binding uses the [Weather Underground service](https://www.wu
 since: 2x
 logo: images/addons/weatherunderground.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ---
-layout: documentation
 ---
 
-<!-- {% include base.html %} -->
 
 # WeatherUnderground Binding
+
+<AddonLogo/>
 
 This binding uses the [Weather Underground service](https://www.wunderground.com/weather/api/) for providing weather information for any location worldwide.
 
@@ -194,3 +194,6 @@ String ForecastAvgWindDirection "Avg wind direction [%s]" <wind>  {channel="weat
 Number:Angle ForecastAvgWindDirection2 "Avg wind direction [%.0f %unit%]" <wind>  {channel="weatherunderground:weather:CDG:forecastToday#averageWindDirectionDegrees"}
 Number:Speed ForecastAvgWindSpeed "Avg wind speed [%.1f %unit%]" <wind>  {channel="weatherunderground:weather:CDG:forecastToday#averageWindSpeed"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

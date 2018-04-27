@@ -6,11 +6,11 @@ type: voice
 description: "The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](http://mary.dfki.de/) project of DFKI."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Mary Text-to-Speech
 
@@ -39,3 +39,6 @@ marytts:bits1hsmm bits1-hsmm (de)
 
 The MaryTTS service produces audio streams using WAV containers and PCM (signed) codec with 16bit depth.
 The sample frequency depends on the chosen voice and ranges from 16kHz to 48kHz.
+
+<DocPreviousVersions/>
+<EditPageLink/>

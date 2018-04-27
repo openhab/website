@@ -6,11 +6,11 @@ type: binding
 description: "This extension supports Bluetooth access via BlueZ on Linux (ARMv6hf)."
 since: 2x
 install: manual
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## Bluetooth BlueZ Adapter
 
@@ -45,3 +45,6 @@ This is how an BlueZ adapter can be configured textually in a *.things file:
 ```
 Bridge bluetooth:bluez:hci0 [ address="12:34:56:78:90:AB", discovery=false ]
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

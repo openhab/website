@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MCP23017 Binding 
 
@@ -41,3 +40,6 @@ Switch Test2 "Test 2" (Tests) { mcp23017="{ address:21, pin:'B1', mode:'DIGITAL_
 ```
 
 configures pin 1 at bank B (GPB1 on datasheet) as output of the IC on adress 0x21
+
+<DocPreviousVersions/>
+<EditPageLink/>

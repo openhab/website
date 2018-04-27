@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Davis Binding
+
+<AddonLogo/>
 
 The openHAB Davis binding supports reading data from Davis weather stations.  Most Davis weather stations should be supported.
 
@@ -124,3 +125,6 @@ The following table defines the allowable values for `<value-key>`.
 	String rx_resync	"RX Resyncs: [%s]"					{ davis="rx_count_resync" }
 	String rx_consec	"RX Packets received in a row without error: [%s]"	{ davis="rx_count_consecutive" }
 	String rx_crc		"RX Packets CRC failes: [%s]"				{ davis="rx_count_crc" }
+
+<DocPreviousVersions/>
+<EditPageLink/>

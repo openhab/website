@@ -7,13 +7,15 @@ description: "This is the binding for [Gardena Smart Home](http://www.gardena.co
 since: 2x
 logo: images/addons/gardena.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Gardena Binding
+
+<AddonLogo/>
 
 This is the binding for [Gardena Smart Home](http://www.gardena.com/de/rasenpflege/smartsystem/).
 This binding allows you to integrate, view and control Gardena Smart Home devices in the openHAB environment.
@@ -136,3 +138,6 @@ This is not a binding issue, it must be fixed by Gardena.
 When the binding sends a command to a device, it communicates only with the Gardena online service.
 It has not control over, whether the command is sent from the online service via your gateway to the device.
 It's the same as if you send the command in the Gardena App.
+
+<DocPreviousVersions/>
+<EditPageLink/>

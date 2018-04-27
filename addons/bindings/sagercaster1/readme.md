@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Sager Weathercaster Binding
 
@@ -94,3 +93,6 @@ You'll have noticed that some inputs for the binding needs to be persisted. Sage
 
 [Sager Transform Files](https://www.dropbox.com/s/6n16x15t3fisbmq/sager.zip?dl=0) This files shall be placed in a `transform/sager` folder for human readable results of the SagerWeatherCaster algorithm.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

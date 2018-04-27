@@ -1,12 +1,20 @@
 ---
 sidebar: false
+layout: AboutPage
+title: Download openHAB
 ---
 
-# Download
+::: tip
+
+The download links below are for manual installations. For production instances, it is easier and recommended to use either Linux packages, openHABian for Raspberry Pi or PINE A64, or a Docker container.
+
+Check the [Installation Guide](/docs/installation/) for an overview of your options and complete instructions.
+
+:::
 
 ## Stable distribution 2.2
 
-These are package for download and self-installation on any platform that supports Java, i.e. it can be used on Linux, macOS and Windows likewise. Besides this package, there are other installation options available, so please make sure to check our installation overview in the documentation first.
+These packages are available for download and self-installation on any platform that supports Java, i.e. it can be used on Linux, macOS and Windows likewise.
 
 _(links)_
 

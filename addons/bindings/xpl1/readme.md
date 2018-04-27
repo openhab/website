@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # xPL Binding
 
@@ -57,3 +56,6 @@ xPL messages can be caught multiple times in multiple items (grabbing different 
 String LivingRoom_Player_Kind "Xmbc [%s]" (LivingRoom)   {xpl="*,status,media.mptrnspt,mp=xbmc,kind=#COMMAND"}
 String LivingRoom_Player_Status "Xmbc [%s]" (LivingRoom) {xpl="*,status,media.mptrnspt,mp=xbmc,command=#COMMAND"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

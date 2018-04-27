@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # FHT Binding
 
@@ -60,3 +59,6 @@ This binding enables you to send commands to a FHT80b. Currently this will be mo
 ```
 { fht="TW3D49" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

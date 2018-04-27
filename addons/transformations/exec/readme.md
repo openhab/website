@@ -6,11 +6,11 @@ type: transform
 description: "Transforms an input string with an external program."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Exec Transformation Service
 
@@ -27,10 +27,10 @@ The external program must either be in the executable search path of the server 
 
 **Item**
 
-This will replace the visible label in the UI with the transformation you apply with the command `<TransformProgram>`.
+This will replace the visible label in the UI with the transformation you apply with the command \<TransformProgram\>.
   
 ```java
-String yourItem "Some info  [EXEC(/absolute/path/to/your/<TransformProgram> %s):%s]"
+String yourItem "Some info  [EXEC(/absolute/path/to/your/\<TransformProgram\> %s):%s]"
 ```
 
 **Rule**
@@ -40,14 +40,14 @@ rule "Your Rule Name"
 when
     Item YourTriggeringItem changed
 then
-    var formatted = transform("EXEC","/absolute/path/to/your/<TransformProgram>", YourTriggeringItem.state.toString)
+    var formatted = transform("EXEC","/absolute/path/to/your/\<TransformProgram\>", YourTriggeringItem.state.toString)
     yourFormattedItem.sendCommand(formatted.toString) 
 end
 ```
 
 ### Example with a program
 
-Substitute the `/absolute/path/to/your/<TransformProgram>` with
+Substitute the `/absolute/path/to/your/\<TransformProgram\>` with
 
 ```shell
 /bin/date -v1d -v+1m -v-1d -v-%s
@@ -77,3 +77,6 @@ When the input argument for `%s` is 1234567 it will return the bytes formated in
 * [Manual](http://man7.org/linux/man-pages/man1/numfmt.1.html) and [tutorial](http://www.pixelbeat.org/docs/numfmt.html) for numfmt.
 
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

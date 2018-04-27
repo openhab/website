@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Koubachi Binding
+
+<AddonLogo/>
 
 The [Koubachi](http://www.koubachi.com) Services help everybody without a green thumb to be a perfect gardener. All plants can be registered on their really nice website (or through iPhone/iPad App) to tell you when and how to care for your plants. Furthermore they offer a dedicated hardware, the WIFI Plant Sensor. This wireless device measures vital parameters and determines the vitality of your plants.
 
@@ -231,3 +232,6 @@ then
     sendCommand(plantbswitch30, OFF)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

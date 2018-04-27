@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Wemo Binding
+
+<AddonLogo/>
 
 This binding integrates the [Belkin WeMo Family](http://www.belkin.com/us/Products/c/home-automation/).  The integration happens either through the WeMo-Link bridge (feature still to come) which acts as an IP gateway to the ZigBee devices, or through Wi-Fi connection to standalone devices.
 
@@ -64,3 +65,6 @@ Number Insight_onTotal       "On Total [%.0f]"       { wemo="Insight-1-0-8765432
 Number Insight_energyToday   "Energy Today [%.0fWh]" { wemo="Insight-1-0-87654321;energyToday" }
 Contact Motion1              { wemo="Sensor-1-0-56437891" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

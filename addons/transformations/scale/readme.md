@@ -6,11 +6,11 @@ type: transform
 description: "The Scale Transformation Service is a an easy to handle tool that can help you with the discretization of number inputs."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Scale Transformation Service
 
@@ -64,3 +64,6 @@ If **none** of the configured conditions matches the given value, the response w
 
 Please note that all ranges for values above **3** are opened with a `]`.
 So the border values (3, 6, 8 and 10) are always transformed to the lower range, since the `]` excludes the given critera.
+
+<DocPreviousVersions/>
+<EditPageLink/>

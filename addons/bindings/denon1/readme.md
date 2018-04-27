@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Denon Binding
+
+<AddonLogo/>
 
 The openHAB Denon Binding allows interaction with Denon AV receivers. It should be compatible with previous generation receivers such as AVR-X2000/X3000, as well as current ones such as X2100W/X3100W. 
 
@@ -187,8 +188,8 @@ Frame label="Zone 2" {
 
 ### Control protocol documentation
 
-- [AVR-X2000/E400](http://www2.aerne.com/Public/dok-sw.nsf/0c6187bc750a16fcc1256e3c005a9740/96a2ba120706d10dc1257bdd0033493f/$FILE/AVRX2000_E400_PROTOCOL(10.1.0)_V04.pdf)
 - [AVR-X4000](http://assets.denon.com/documentmaster/de/avrx4000_protocol%2810.3.0%29_v01.pdf)
-- [AVR-3311CI/AVR-3311/AVR-991](http://www.awe-europe.com/documents/Control%20Docs/Denon/Archive/AVR3311CI_AVR3311_991_PROTOCOL_V7.1.0.pdf)
-- [CEOL Piccolo DRA-N5/RCD-N8](http://www.audioproducts.com.au/downloadcenter/products/Denon/CEOLPICCOLOBK/Manuals/DRAN5_RCDN8_PROTOCOL_V.1.0.0.pdf)
 - [Marantz Control Protocol (2014+)](http://m.us.marantz.com/DocumentMaster/US/Marantz%202014%20NR%20Series%20-%20SR%20Series%20RS232%20IP%20Protocol.xls)
+
+<DocPreviousVersions/>
+<EditPageLink/>

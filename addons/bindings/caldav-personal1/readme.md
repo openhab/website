@@ -10,8 +10,7 @@ install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
-<!-- 
-<!-- {% include base.html %} -->
+
 
 # CalDAV Personal Binding
 
@@ -104,7 +103,7 @@ Binding file: org.openhab.binding.caldav-personal-version.jar
 
 ## filtering
 You've got the option to show just specific events.
-* `filter-name:'<regular expression>'`
+* `filter-name:'\<regular expression\>'`
 * `filter-category:'<categories, comma separated>'`  (your caldav event must contain at least ALL the categories you specify here)
 * `filter-category-any:'<categories, comma separated>'` (your caldav event must at least contain one of the categories you specify here)
 
@@ -187,7 +186,7 @@ To do this you have to
 # Example configuration
 
 There are three calendars defined. One of them is used just for executing commands in openhab (Command-kalender). The others are used to show the upcoming events (Müllkalender, Dienstlicher/privater Kalender).
-In every case, the binding org.openhab.io.caldav-`<version>`.jar is needed. For executing commands the additional binding org.openhab.binding.caldav-command-`<version>`.jar is needed. For upcoming events or presence simulation the binding org.openhab.binding.caldav-personal-`<version>`.jar needs to be included.
+In every case, the binding org.openhab.io.caldav-&lt;version&gt;.jar is needed. For executing commands the additional binding org.openhab.binding.caldav-command-&lt;version&gt;.jar is needed. For upcoming events or presence simulation the binding org.openhab.binding.caldav-personal-&lt;version&gt;.jar needs to be included.
 
 openhab.cfg
 
@@ -224,13 +223,13 @@ openhab.cfg
     caldavio:command:preloadTime=1440
     caldavio:timeZone=Europe/Berlin
 
-    # Additionally needed binding: org.openhab.binding.caldav-command-<version>.jar
+    # Additionally needed binding: org.openhab.binding.caldav-command-&lt;version&gt;.jar
     # used to execute commands by a triggered event
     # multiple calendars (calerdar-id) can be seperated by commas
     #caldavCommand:readCalendars=<calendar-id>
     caldavCommand:readCalendars=command
 
-    # Additionally needed binding: org.openhab.binding.caldav-personal-<version>.jar
+    # Additionally needed binding: org.openhab.binding.caldav-personal-&lt;version&gt;.jar
     # used to record and simulate presence and to show upcoming/active events
     # multiple calendars (calerdar-id) can be seperated by commas
     #caldavPersonal:usedCalendars=<calendar-id>
@@ -247,4 +246,7 @@ The items-File:
     String OfficeCalName1	"nächster Termin [%s]"	<calendar>	{ caldavPersonal="calendar:dienstlich type:UPCOMING eventNr:1 value:NAME" }
     DateTime OfficeCalTime1	"Beginn [%1$tT, %1$td.%1$tm.%1$tY]"			<calendar>	{ caldavPersonal="calendar:dienstlich type:UPCOMING eventNr:1 value:START" }
     String OfficeCalName2	"übernächster Termin [%s]" <calendar> { caldavPersonal="calendar:dienstlich type:UPCOMING eventNr:2 value:NAME" }
-    DateTime OfficeCalTime2	"Beginn [%1$tT, %1$td.%1$tm.%1$tY]" 			<calendar> { caldavPersonal="calendar:dienstlich type:UPCOMING eventNr:2 value:START" } -->
+    DateTime OfficeCalTime2	"Beginn [%1$tT, %1$td.%1$tm.%1$tY]" 			<calendar> { caldavPersonal="calendar:dienstlich type:UPCOMING eventNr:2 value:START" }
+
+<DocPreviousVersions/>
+<EditPageLink/>

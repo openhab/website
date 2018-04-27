@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Exec Binding
 
@@ -126,3 +125,6 @@ exec="OFF:some command, ON:'some other\, more \'complex\' \\command\\ to execute
 exec="1:open /path/to/my/mp3/gong.mp3, 2:open /path/to/my/mp3/greeting.mp3, *:open /path/to/my/mp3/generic.mp3"
 ```
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Asterisk Binding
+
+<AddonLogo/>
 
 The Asterisk binding is used to enable communication between openhab and the free and open source PBX solution [Asterisk](http://www.asterisk.org). This binding detects incoming phone calls or if someone makes a phone call. In combination with other bindings (e.g., the Samsung TV Binding) you can display caller IDs on your TV.
 
@@ -175,3 +176,6 @@ In AGI, call arguments are:
 * openHAB Item name
 * Asterisk variable to put state to
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

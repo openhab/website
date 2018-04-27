@@ -12,9 +12,10 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Homematic Binding
+
+<AddonLogo/>
 
 This is the binding for the [eQ-3 Homematic Solution](http://www.eq-3.de/).
 This binding allows you to integrate, view, control and configure all Homematic devices in the openHAB environment.
@@ -407,7 +408,7 @@ rpc=bin -> No BinX signature
 rpc=xml -> BadRequestException: Binsystem.multicall
 ```
 
-The binding registers itself with the CCU at startup with the specified communication mode. If you shutdown openHAB (or kill it) and the binding can not unregister successfully from the CCU, the CCU still sends messages. It does this for about three minutes, if there is no answer, it gives up. If you start openHAB in this period of time with another communication mode, these exceptions occur.
+The binding registers itself with the CCU at startup with the specified communication mode. If you shutdown openHAB (or kill it) and the binding cannot unregister successfully from the CCU, the CCU still sends messages. It does this for about three minutes, if there is no answer, it gives up. If you start openHAB in this period of time with another communication mode, these exceptions occur.
 
 Just wait untill the exceptions disappear and restart openHAB. This happens only after switching the communication mode.
 
@@ -858,3 +859,6 @@ We need as much as possible information about a device to support it. The best s
 If the device is an sensor we would like to have the log line where it prints out the new value received from it. E.g. if you have a button, please press it and copy the log line appearing. Or if it is a sensor, please wait until the sensor sends an update to the CCU, that will be written into the logfile as well.
 
 With this information, please add a new issue of type / template device request.
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -57,5 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
-# VuePress
+# VuePress dist
 vuepress
+
+# openhab-docs in .vuepress
+.vuepress/openhab-docs

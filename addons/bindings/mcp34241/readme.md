@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MCP3424 Binding
 
@@ -41,3 +40,6 @@ Dimmer Test2 "Test 2" (Tests) { mcp3424="{address:6C, pin:'CH1', gain:1, resolut
 ```
 
 returns the conversion result in percent on channel 1 (CH2 on datasheet) of the IC on address 0x6C
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Pushsafer Actions
 
@@ -29,3 +28,6 @@ pushsafer(String apiToken, String message, String title, String device, String i
 You must at least provide an API token (Private or Alias Key from Pushsafer.com) and a message in some manner before a message can be pushed.
 All other parameters are optional.
 If you use an alias key, the parameters (device, icon, sound, vibration) are overwritten by the alias setting on pushsafer.
+
+<DocPreviousVersions/>
+<EditPageLink/>

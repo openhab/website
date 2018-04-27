@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Network UPS Tools Binding
 
@@ -100,3 +99,6 @@ ups.status: OL
 ups.type: offline / line interactive
 ups.vendorid: 0665
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

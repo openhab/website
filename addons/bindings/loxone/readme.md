@@ -7,13 +7,15 @@ description: "This binding integrates [Loxone Miniserver](https://www.loxone.com
 since: 2x
 logo: images/addons/loxone.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Loxone Binding
+
+<AddonLogo/>
 
 This binding integrates [Loxone Miniserver](https://www.loxone.com/enen/products/miniserver-extensions/) with [openHAB](http://www.openhab.org/).
 Miniserver is represented as a [Thing](http://docs.openhab.org/configuration/things.html). Miniserver controls, that are visible in the Loxone [UI](https://www.loxone.com/enen/kb/user-interface-configuration/), are exposed as openHAB channels.
@@ -276,3 +278,6 @@ OFF=Closed
 ON=Open
 -=Unknown
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

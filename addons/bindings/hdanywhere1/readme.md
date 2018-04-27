@@ -12,7 +12,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## HDanywhere Binding
 
@@ -59,3 +58,6 @@ Here are a few examples of valid binding configuration strings, as defined in th
 Number OutputPort1 "Output port 1 is currently connected to Source port [%d]" { hdanywhere="[192.168.0.88:1:15]" } 
 Number OutputPorts1And2 "Output ports 1 and 2 are currently connected to Source port [%d]" { hdanywhere="[192.168.0.88:1:15],[192.168.0.88:2:15]" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

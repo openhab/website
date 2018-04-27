@@ -7,13 +7,15 @@ description: "The [Amazon Dash Button](https://www.amazon.com/Dash-Buttons/b?nod
 since: 2x
 logo: images/addons/amazondashbutton.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Amazon Dash Button Binding
+
+<AddonLogo/>
 
 The [Amazon Dash Button](https://www.amazon.com/Dash-Buttons/b?node=10667898011) is a cheap and small Wi-Fi connected device to order products from Amazon with the simple press of a button.
 This Binding allows you to integrate Dash Buttons into your home automation setup.
@@ -92,7 +94,6 @@ Setting up your Dash Button is as simple as following the instructions provided 
 Follow the instructions to set up the Dash Button in their mobile app.
 When you get to the step where it asks you to pick which product you want to map it to, just quit the setup process.
 
-{: #no-phonehome}
 ## Preventing Communication with Amazon Servers
 
 Every time a Dash Button is pressed a request will be sent to the Amazon servers.
@@ -164,3 +165,6 @@ then
     logInfo("amazondashbutton", "My Dash Button has been pressed")
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

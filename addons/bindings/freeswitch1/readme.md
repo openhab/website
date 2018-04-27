@@ -12,7 +12,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## FreeSWITCH Binding
 
@@ -104,3 +103,6 @@ There are three supported protocol types, "active", "message_waiting" and "api"
   * see [Freeswitch Commands](http://wiki.freeswitch.org/wiki/Mod_commands) for more info.
 
 `message_waiting` takes an extra argument which is the mailbox we want to check against.  This is usually the extention@domain 
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "This binding integrates the [Sonos Multi-Room Audio system](http:/
 since: 2x
 logo: images/addons/sonos.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Sonos Binding
+
+<AddonLogo/>
 
 This binding integrates the [Sonos Multi-Room Audio system](http://www.sonos.com).
 
@@ -148,3 +150,6 @@ sitemap demo label="Main Menu"
 		}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

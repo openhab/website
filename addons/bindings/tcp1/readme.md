@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # TCP & UDP Binding
 
@@ -84,3 +83,6 @@ Here are some examples of valid binding configuration strings:
 tcp=">[ON:192.168.0.1:3000:'MAP(my.device.map)')], >[OFF:192.168.0.1:3000:'MAP(my.device.map)']" // for a Switch Item where values are converted using the my.device.map
 tcp="<[192.168.0.2:3000:'REGEX((.*))']" // for a String Item that captures some state of a remote device that connects to openHAB
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

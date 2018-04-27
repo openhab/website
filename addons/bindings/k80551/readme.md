@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Velleman k8055 USB IO Board Binding
 
@@ -69,3 +68,6 @@ Number K8055_ANIN_2 "K8055 Analog Input 2" { k8055="ANALOG_IN:2" }
 ## Troubleshooting
 
 On some Linux distribution, the user openhab is running as may not have permissions to access the USB ports by default.  It is worth checking that the standalone command-line program (k8055) that comes with libk8055 works under the relevant Linux user before attempting to use the binding.  (Particularly as the driver outputs little useful debugging information to the logs).
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # panStamp Binding
 
@@ -107,3 +106,6 @@ The panStamp binding provides an optional feature to allow the user to configure
 * [panstamp-java library](https://github.com/GideonLeGrange/panstamp-java)
 * [panStamp commercial web site](http://panstamp.com)
 * [panStamp community forum](http://panstamp.org)
+
+<DocPreviousVersions/>
+<EditPageLink/>

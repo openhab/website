@@ -6,11 +6,11 @@ type: io
 description: "[Mycroft AI](https://mycroft.ai/) is the world’s first open source voice enabled assistant."
 since: 2x
 install: manual
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Mycroft AI Skill
 
@@ -160,3 +160,6 @@ With references to the above item definitions, here are an examples of working c
 ### Additional Comments
 
 * By default all temperatures are in Celsius, no test so far about the tag Fahrenheit to the thermostat group item (which should also be tagged with `Thermostat`).
+
+<DocPreviousVersions/>
+<EditPageLink/>

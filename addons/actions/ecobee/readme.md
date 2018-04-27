@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Ecobee Actions
+
+<AddonLogo/>
 
 The Ecobee Action bundle provides actions such as setting and clearing program holds, sending a text message to the thermostat's display, renaming a remote wireless sensor, and other functions that cannot be performed by setting object properties.  
 
@@ -40,3 +41,6 @@ Read the [Ecobee function API documentation](https://www.ecobee.com/home/develop
 Parameters in *italics* are optional, in which case each unused parameter must be replaced with `null`.  
 
 The `selection` parameter is a string that identifies the thermostat(s) against which the action is performed, identical in format to `<thermostat>` used in the Ecobee binding (1.x).
+
+<DocPreviousVersions/>
+<EditPageLink/>

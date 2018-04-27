@@ -12,16 +12,16 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Ecobee Binding
+
+<AddonLogo/>
 
 Ecobee Inc. of Toronto, Canada, sells a range of Wi-Fi enabled thermostats, principally in the Americas.  The EMS, EMS Si, Smart, Smart Si and ecobee3 models are supported by this binding, which communicates with the [Ecobee API](https://www.ecobee.com/home/developer/api/documentation/v1/index.shtml) over a secure, RESTful API to Ecobee's servers. Monitoring ambient temperature and humidity, changing HVAC mode, changing heat or cool setpoints, changing the backlight intensity, and even sending textual messages to one or a group of thermostats, can be accomplished through this binding.
 
 
 ## Table of Contents
 
-<!-- MarkdownTOC depth=2 -->
 
 - [Prerequisites](#prerequisites)
 - [Binding Configuration](#binding-configuration)
@@ -39,7 +39,6 @@ Ecobee Inc. of Toronto, Canada, sells a range of Wi-Fi enabled thermostats, prin
 	- [MAP Transformations](#map-transformations)
 - [Notes](#notes)
 
-<!-- /MarkdownTOC -->
 
 ## Prerequisites
 
@@ -727,3 +726,6 @@ The mapping of the [sky numbers](https://www.ecobee.com/home/developer/api/docum
 ## Notes
 
 1. Ecobee thermostats normally run based on a weekly schedule, but you can override the current program by setting a hold that controls the cool setpoint, the heat setpoint, and other options.  You can set a hold from a rule by calling the action `ecobeeSetHold`.  One of the parameters is a reference to a "climate" (also known as a comfort setting).  The default references for climates are `sleep`, `home`, and `away` (some models also have `wakeup`).
+
+<DocPreviousVersions/>
+<EditPageLink/>

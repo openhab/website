@@ -7,13 +7,15 @@ description: "The [GlobalCache](http://www.globalcache.com) binding is used to e
 since: 2x
 logo: images/addons/globalcache.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # GlobalCache Binding
+
+<AddonLogo/>
 
 The [GlobalCache](http://www.globalcache.com) binding is used to enable communication
 between openHAB and GlobalCache [GC-100](http://www.globalcache.com/products/gc-100/) and [iTach](http://www.globalcache.com/products/itach/) family of devices.
@@ -362,3 +364,6 @@ globalcache:gc100_06:000C1065AE17 [ ipAddress="192.168.12.68", mapFilename="ir-s
 globalcache:gc100_12:000C162D7902 [ ipAddress="192.168.12.69", mapFilename="ir-serial-codes.map" ]
 globalcache:zmote:CI00073306 [ ipAddress="192.168.12.142", mapFilename="ir-serial-codes.map" ]
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

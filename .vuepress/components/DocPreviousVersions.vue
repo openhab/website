@@ -1,0 +1,86 @@
+<template>
+  <div class="page-versions">
+    <div class="dropdown-wrapper" :class="{ open }">
+      <a class="dropdown-title" @click="toggle">
+        <span class="title">Previous versions</span>
+        <span class="arrow" :class="open ? 'down' : 'right'"></span></span>
+      </a>
+      <ul class="nav-dropdown" v-show="open">
+        <li v-for="version in versions" class="dropdown-item">
+          <a :href="version.url" target="_blank">{{version.number}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<style lang="stylus">
+.page-versions
+  position absolute
+  top 5rem
+  white-space nowrap
+  right 0
+  font-size 9pt
+  border 1px solid #eee
+  border-radius 2px
+  margin 5px
+  padding 3px
+  height 14px
+  .dropdown-wrapper
+    padding 2px
+    position absolute
+    right 5rem    
+  .dropdown-title
+    border 1px solid #eee
+    border-radius 2px
+    color black
+    cursor pointer
+    &:hover
+      text-decoration none !important
+  .nav-dropdown
+    box-sizing: border-box;
+    max-height: calc(100vh - 2.7rem);
+    overflow-y: auto;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-bottom-color: #ccc;
+    text-align: left;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    margin: 0;
+    position relative
+    top 0
+</style>
+
+<script>
+export default {
+  data () {
+    return {
+      versionNumbers: ['2.2', '2.1'],
+      open: false
+    }
+  },
+  methods: {
+    toggle () {
+      this.open = !this.open
+    }
+  },
+  computed: {
+    versions () {
+      return this.versionNumbers.map(version => {
+        let url = `${this.$page.path
+          .replace('/docs/', '').replace('/addons/', 'addons/').replace('addons/integrations/', 'addons/ios/')}`
+        if (url.indexOf('addons') === 0) url += 'readme.html'
+
+        return {
+          number: version,
+          url: `https://docs.openhab.org/v${version}/${url}`
+        }
+      })
+    }
+  }
+}
+</script>

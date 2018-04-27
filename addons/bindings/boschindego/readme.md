@@ -6,11 +6,11 @@ type: binding
 description: "This is the Binding for Bosch Indego Connect lawn mowers."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Bosch Indego Binding
 
@@ -81,3 +81,6 @@ You can use this as .map file
 775=Returning to dock - Lawn complete
 776=Returning to dock - Relocalising
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

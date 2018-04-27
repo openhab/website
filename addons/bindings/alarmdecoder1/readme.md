@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Alarm Decoder Binding
+
+<AddonLogo/>
 
 The [Alarm Decoder](http://www.alarmdecoder.com) is a hardware adapter that interfaces with Ademco/Honeywell alarm panels. It acts essentially like a keypad, reading and writing messages on a serial bus that connects keypads with the main panel.
 
@@ -278,3 +279,6 @@ CLOSED state. In other words: to get to a clean slate after an openHAB restart, 
 
 1. The sitemap provided above may not display properly when viewing from the Classic UI. It has been confirmed to work with GreenT, and the Habdroid and iOS mobile apps.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

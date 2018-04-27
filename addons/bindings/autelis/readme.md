@@ -7,13 +7,15 @@ description: "Autelis manufactures a network enabled pool interface for many pop
 since: 2x
 logo: images/addons/autelis.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Autelis Pool Control Binding
+
+<AddonLogo/>
 
 Autelis manufactures a network enabled pool interface for many popular pool systems.
 See [the Autelis website](http://www.autelis.com) and the  [Autelis Command Protocol](http://www.autelis.com/wiki/index.php?title=Pool_Control_&lparPI&rpar_HTTP_Command_Reference) for more information.
@@ -106,3 +108,6 @@ All devices support some of the following channels:
 | chlor-chlorerr      | Number    |
 | chlor-chlorname     | String    |
 | lightscmd           | String    |
+
+<DocPreviousVersions/>
+<EditPageLink/>

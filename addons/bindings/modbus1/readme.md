@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Modbus Binding
+
+<AddonLogo/>
 
 The binding supports both TCP and Serial slaves. RTU, ASCII and BIN variants of Serial Modbus are supported.
 
@@ -27,7 +28,6 @@ The Modbus binding polls the slaves with an configurable poll period. openHAB co
 
 ## Table of Contents
 
-<!-- You can generate TOC with https://github.com/ekalinin/github-markdown-toc and running the following command (and stripping out some of the too detailed ones)-->
 <!-- cat bundles/binding/org.openhab.binding.modbus/README.md | ./gh-md-toc -  -->
    * [Modbus Binding](#modbus-binding)
       * [Table of Contents](#table-of-contents)
@@ -722,3 +722,6 @@ To summarize, here are the recommended steps in case of errors
 1. Update to latest development version; especially if you are using modbus binding version before 1.9.0
 2. isolate the issue using minimal configuration, and enable verbose logging (see above)
 3. record logs and configuration to [pastebin.com](http://pastebin.com/).  
+
+<DocPreviousVersions/>
+<EditPageLink/>

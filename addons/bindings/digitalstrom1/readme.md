@@ -12,13 +12,13 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # digitalSTROM Binding
 
+<AddonLogo/>
+
 The openHAB digitalSTROM binding allows interaction with digitalSTROM devices.
 
-<!-- MarkdownTOC depth=1 -->
 
 - [Prerequisites](#prerequisites)
 - [Binding Configuration](#binding-configuration)
@@ -26,7 +26,6 @@ The openHAB digitalSTROM binding allows interaction with digitalSTROM devices.
 - [Examples](#examples)
 - [Notes](#notes)
 
-<!-- /MarkdownTOC -->
 
 There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/digitalstrom/readme.html).
 
@@ -214,3 +213,6 @@ Rule 9 	"Application processes that do automatic cyclic reads of measured
 ## Notes
 
 At first the system is slow while it learns how to react on specific scene calls (sensor reading). But after some time it will work fast!
+
+<DocPreviousVersions/>
+<EditPageLink/>

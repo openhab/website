@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Enphase Energy Binding
+
+<AddonLogo/>
 
 This binding is for people with [Enphase Energy](http://enphase.com) microinverters used in their solar installation, which means every solar panel has its own inverter and can be monitored individually. 
 
@@ -57,3 +58,6 @@ String Enphase_source "Solar Data Source [%s]" (Solar) { enphaseenergy="12345#so
 DateTime Enphase_summary_date "Solar Summary Date [%1$tD]" (Solar) { enphaseenergy="12345#summary_date"}
 DateTime Enphase_operational_at "Solar Operational at [%1$tD]" (Solar) { enphaseenergy="12345#operational_at"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

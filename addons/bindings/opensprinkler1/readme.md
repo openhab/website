@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # OpenSprinkler Binding
+
+<AddonLogo/>
 
 This binding is compatible with with both the [OpenSprinkler](http://opensprinkler.com) and [OpenSprinkler Pi](http://pi.opensprinkler.com) hardware. In other words, this binding supports communicating to the OpenSprinkler and OpenSprinkler Pi using HTTP (as long as you have the interval program installed), or directly via GPIO when using the OpenSprinkler Pi.
 
@@ -70,3 +71,6 @@ CLOSED=Not Detected
 OPEN=Detected
 -=Unknown
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

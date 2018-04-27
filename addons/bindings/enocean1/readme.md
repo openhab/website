@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # EnOcean Binding
+
+<AddonLogo/>
 
 [EnOcean](https://www.enocean.com/en/) provides reliable and self-powered wireless sensor solutions for the Internet of Things.  This binding allows openHAB to monitor and control EnOcean devices through the EnOcean USB 300 gateway.
 
@@ -155,3 +156,6 @@ sitemap enocean label="Enocean"
 
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

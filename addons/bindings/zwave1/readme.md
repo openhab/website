@@ -12,13 +12,13 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Z-Wave Binding
 
+<AddonLogo/>
+
 The openHAB Z-Wave binding allows you to connect to your Z-Wave wireless mesh network.  A Z-Wave network typically consists of one primary controller “stick”, zero or more additional controllers and zero or more Z-Wave enabled devices, e.g. dimmers, switches, sensors etc.
 
-<!-- MarkdownTOC depth=1 -->
 
 - [Prerequisites](#prerequisites)
 - [Binding Configuration](#binding-configuration)
@@ -29,7 +29,6 @@ The openHAB Z-Wave binding allows you to connect to your Z-Wave wireless mesh ne
 - [Examples](#examples)
 - [Z-Wave Security Testing](#z-wave-security-testing)
 
-<!-- /MarkdownTOC -->
 
 There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/zwave/readme.html).
 
@@ -97,7 +96,7 @@ If you're not sure about endpoint numbering, look in the logs to see if sensor d
 
 This indicates that the binding can’t find an item linked to this sensor - often this is because the endpoint numbering is incorrect. If the warning above says endpoint = 0, then the binding string shouldn't include an endpoint number.
 
-The `<command>` is optional, but recommended if you have multiple items bound to the same device, or the device reports multiple bits of information. Without the command class, the binding can not unambiguously differentiate different data, so it is recommended to provide a command class. Z-Wave nodes support functionality through command classes. A specific command class can be specified to use that specific functionality of the node. A node can contain multiple supported command classes. If the command is omitted, the best suitable command class for the item / node combination is automatically chosen.
+The `<command>` is optional, but recommended if you have multiple items bound to the same device, or the device reports multiple bits of information. Without the command class, the binding cannot unambiguously differentiate different data, so it is recommended to provide a command class. Z-Wave nodes support functionality through command classes. A specific command class can be specified to use that specific functionality of the node. A node can contain multiple supported command classes. If the command is omitted, the best suitable command class for the item / node combination is automatically chosen.
 
 Command classes may support parameters. A parameter is a name=value pair that configures some aspect of the command class on the node or in the binding.
 
@@ -900,3 +899,6 @@ The friendlyName value below is just a way for humans to track the codes.  The f
 
 1. You can add or change codes at any time, just edit the node xml and restart OH
 1. If you are removing an item from the list, set the code to 0 (zero) and recycle.  This will trigger OH to tell the door lock to remove the code in that position from the door lock.  Test it out to make sure the code no longer works, then you can remove that userCode block
+
+<DocPreviousVersions/>
+<EditPageLink/>

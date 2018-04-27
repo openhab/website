@@ -7,13 +7,15 @@ description: "This is the binding for the [eQ-3 Homematic Solution](http://www.e
 since: 2x
 logo: images/addons/homematic.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Homematic Binding
+
+<AddonLogo/>
 
 This is the binding for the [eQ-3 Homematic Solution](http://www.eq-3.de/).
 This binding allows you to integrate, view, control and configure all Homematic devices in the openHAB environment.
@@ -133,6 +135,9 @@ Think in hours when configuring (one hour = 3600)
 
 -   **timeout**  
 The timeout in seconds for connections to a Homematic gateway (default = 15)
+
+-   **discoveryTimeToLive**  
+The time to live in seconds for discovery results of a Homematic gateway (default = -1, which means infinite)
 
 -   **socketMaxAlive**  
 The maximum lifetime of a pooled socket connection to the Homematic gateway in seconds (default = 900)
@@ -505,3 +510,6 @@ stop org.openhab.binding.homematic
 log:set TRACE org.openhab.binding.homematic
 start org.openhab.binding.homematic
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

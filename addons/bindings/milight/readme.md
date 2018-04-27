@@ -6,9 +6,11 @@ type: binding
 description: "This binding is for using your Milight, Easybulb or LimitlessLed bulbs and the iBox."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
 
 # Milight/Easybulb/Limitless Binding
 
@@ -59,11 +61,11 @@ The ID is the MAC address of the bridge in hexadecimal digits.
 
 The Thing configuration for the bridge uses the following syntax
 
-*   Bridge milight:bridgeV3:&lt;mac address of bridge&gt; &lsqb ADDR="&lt;IP-Address of bridge&gt;", ID="&lt;mac&gt;" &rsqb
-* Bridge milight:bridgeV6:&lt;mac address of bridge&gt; &lsqb ADDR="&lt;IP-Address of bridge&gt;", ID="&lt;mac&gt;" &rsqb
+*   Bridge milight:bridgeV3:`<mac address of bridge>` &lsqb ADDR="`<IP-Address of bridge>`", ID="`<mac>`" &rsqb
+* Bridge milight:bridgeV6:`<mac address of bridge>` &lsqb ADDR="`<IP-Address of bridge>`", ID="`<mac>`" &rsqb
 
 The Thing configuration for the bulbs uses the following syntax:
-&lsqbThing&rsqb &lt;type of bulb&gt; &lt;zone&gt;
+&lsqbThing&rsqb `<type of bulb>` `<zone>`
 
 The following bulb types are valid for configuration:
 
@@ -160,7 +162,7 @@ Limitations:
     .items
 
     Number Light_scene		"Scenes"
-    Color  Light_scene_ColorSelect "Scene Selector"   &lt;colorwheel&gt; (MiLight)
+    Color  Light_scene_ColorSelect "Scene Selector"   <colorwheel> (MiLight)
     # Link this item in paperui now.
 
     .sitemap
@@ -199,3 +201,6 @@ Limitations:
 	    sendCommand(Light_scene_ColorSelect, new HSBType(new DecimalType(300),new PercentType(100),new PercentType(100)))
     }
     end
+
+<DocPreviousVersions/>
+<EditPageLink/>

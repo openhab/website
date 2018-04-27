@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Java Persistence API (JPA) Persistence
 
@@ -52,3 +51,6 @@ All databases that are supported by JPA can be added.
 
 Define `driver` and `url` according to the database definitions.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

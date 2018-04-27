@@ -7,13 +7,15 @@ description: "This binding integrates with [Lutron](http://www.lutron.com) light
 since: 2x
 logo: images/addons/lutron.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Lutron Binding
+
+<AddonLogo/>
 
 This binding integrates with [Lutron](http://www.lutron.com) light control systems.
 
@@ -323,3 +325,6 @@ Rollershutter Grx_ZoneShade6 "Zone 6 Shade" { channel="lutron:grafikeye:home:zon
 Rollershutter Grx_ZoneShade7 "Zone 7 Shade" { channel="lutron:grafikeye:home:zoneshade7" }
 Rollershutter Grx_ZoneShade8 "Zone 8 Shade" { channel="lutron:grafikeye:home:zoneshade8" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

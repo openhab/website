@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 ## Astro Binding
 
@@ -332,3 +331,6 @@ For astrological definitions, see [here](http://www.timeanddate.com/astronomy/di
 
 Type `noon` lasts for only one minute and is during type `daylight`. Type `night` starts together with `eveningNight` and ends together with `morningNight`.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

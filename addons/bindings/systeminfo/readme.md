@@ -6,11 +6,11 @@ type: binding
 description: "System information Binding provides operating system and hardware information including:"
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Systeminfo Binding
 
@@ -277,3 +277,6 @@ String Process_name                  { channel="systeminfo:computer:work:process
 Number Process_threads               { channel="systeminfo:computer:work:process#threads" }
 String Process_path                  { channel="systeminfo:computer:work:process#path" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

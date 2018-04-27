@@ -7,13 +7,15 @@ description: "The CoolMasterNet binding is used to control [CoolMasterNet HVAC b
 since: 2x
 logo: images/addons/coolmasternet.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # CoolMasterNet Binding
+
+<AddonLogo/>
 
 The CoolMasterNet binding is used to control [CoolMasterNet HVAC bridge devices](https://coolautomation.com/products/coolmasternet/), using the "ASCII I/F" plaintext TCP control protocol.
 
@@ -56,3 +58,6 @@ Number ACSet "Lounge AC Set" { channel="coolmasternet:hvac:main:a:set_temp" }
 String ACFan "Lounge AC Fan" { channel="coolmasternet:hvac:main:a:fan_speed" }
 String ACLouvre "Lounge AC Louvre" { channel="coolmasternet:hvac:main:a:louvre_angle" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

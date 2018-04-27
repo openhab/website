@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # HMS Binding
 
@@ -53,3 +52,6 @@ If you don't know the address of your HMS device, simply search for lines like t
 ```
 HMSBinding[:124]- device: A1DB, T:  14.5,    H: 77.5, Bat.: ok
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

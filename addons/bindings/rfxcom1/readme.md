@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # RFXCOM Binding
+
+<AddonLogo/>
 
 The binding should be compatible at least with RFXtrx433 USB 433.92MHz transceiver, which contains both receiver and transmitter functions. The RFXtrx433E is fully compatible with the RFXtrx433, and has in addition the possibility to transmit RFY (Somfy RTS) RF command at the frequency used by Somfy.
 
@@ -48,7 +49,6 @@ There is also a binding specifically for openHAB 2 [here](http://docs.openhab.or
 
 ## Table of Contents
 
-<!-- MarkdownTOC -->
 
 - [RFXCOM Devices](#rfxcom-devices)
 - [Binding Configuration](#binding-configuration)
@@ -69,7 +69,6 @@ There is also a binding specifically for openHAB 2 [here](http://docs.openhab.or
   - [OWL CM160 Energy Monitor](#owl-cm160-energy-monitor)
   - [OWL CM113 Energy Monitor](#owl-cm113-energy-monitor)
 
-<!-- /MarkdownTOC -->
 
 
 ## RFXCOM Devices
@@ -368,3 +367,6 @@ Number Owl_TotalAmpHours { rfxcom="<63689:TotalAmpHours"  }
 ```
 Number Owl_Amps { rfxcom="<35072:Channel2Amps" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

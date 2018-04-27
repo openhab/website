@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # KM200 Binding
 
@@ -164,15 +163,15 @@ Number nbrBudNbrCyclesHCT1Curr "Current HC1 [%d]" {km200="service:/heatingCircui
 
 Items:
 
-[Heizung.items](http://www.markinus.de/Heizung.items)
+[Heizung.items](http://www.markinus.de/Heizung.items)<BR/>
 
 Cometvisu:
 
-[visu_config.xml](http://www.markinus.de/visu_config.xml)
+[visu_config.xml](http://www.markinus.de/visu_config.xml)<BR/>
 
-![KM200 Binding with OpenHAB](http://www.markinus.de/Openhab_Buderus.PNG)
+![KM200 Binding with OpenHAB](http://www.markinus.de/Openhab_Buderus.PNG)<BR/>
 
-![KM200 Binding with CometVisu](http://www.markinus.de/Cometvisu_Buderus.PNG)
+![KM200 Binding with CometVisu](http://www.markinus.de/Cometvisu_Buderus.PNG)<BR/>
 
 
 ## Supported item types 
@@ -187,3 +186,6 @@ Cometvisu:
 
 This binding is automaticly blocking the values to the allowed and limiting them to the min and max capabilities.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

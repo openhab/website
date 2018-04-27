@@ -6,11 +6,11 @@ type: binding
 description: "This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # IPP Binding
 
@@ -40,3 +40,6 @@ usable by the binding.
 
 <!-- TOTO Create example
 ## Full Example -->
+
+<DocPreviousVersions/>
+<EditPageLink/>

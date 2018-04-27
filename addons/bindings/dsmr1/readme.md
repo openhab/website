@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # DSMR Binding
 
@@ -179,3 +178,6 @@ Landys + Gyr E350|3.0|OK|Not tested|Not tested|Not tested|Not tested|Not tested|
 ### CRC
 
 A meter that conforms to DSMR v4 or higher includes a CRC on the complete message. The binding does not check the CRC yet.
+
+<DocPreviousVersions/>
+<EditPageLink/>

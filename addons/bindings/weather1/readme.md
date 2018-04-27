@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Weather Binding
 
@@ -23,7 +22,6 @@ There is also a binding specifically openHAB 2 [here](http://docs.openhab.org/ad
 
 ## Table of Contents
 
-<!-- MarkdownTOC -->
 
 - [Binding Configuration](#binding-configuration)
 	- [API Keys for Weather Providers](#api-keys-for-weather-providers)
@@ -43,7 +41,6 @@ There is also a binding specifically openHAB 2 [here](http://docs.openhab.org/ad
 - [Troubleshooting](#troubleshooting)
 - [Downloads](#downloads)
 
-<!-- /MarkdownTOC -->
 
 
 ## Binding Configuration
@@ -448,3 +445,6 @@ If you don't see these entries, check your items file.
 
 * [weather-data](https://drive.google.com/file/d/0Bw7zjCgsXYnHQTlGcndMR19DSUk/view?usp=sharing) with icons and example layout file 
 * [map-files](https://drive.google.com/file/d/0Bw7zjCgsXYnHbnVIdkFGaVZIbHM/view?usp=sharing) with short condition text **for the commonId property** 
+
+<DocPreviousVersions/>
+<EditPageLink/>

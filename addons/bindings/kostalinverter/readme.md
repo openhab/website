@@ -7,13 +7,15 @@ description: "Scrapes the web interface of the inverter for the metrics of the s
 since: 2x
 logo: images/addons/kostalinverter.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Kostal Inverter Binding
+
+<AddonLogo/>
 
 Scrapes the web interface of the inverter for the metrics of the supported channels below.
 
@@ -55,3 +57,6 @@ Number SolarEnergyDay "Solar day energy[%.2f kwh]" <energy> (gGF)  { channel="ko
 Number SolarTotalEnergy "Solar total energy[%.2f kwh]" <energy> (gGF) { channel="kostalinverter:kostalinverter:inverter:totalEnergy" }
 String SolarStatus "Solar status [%s]" <energy> (gGF) { channel="kostalinverter:kostalinverter:inverter:status" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

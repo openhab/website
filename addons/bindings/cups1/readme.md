@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # CUPS Binding
+
+<AddonLogo/>
 
 The openHAB CUPS binding allows interaction with printers and their print queues via a CUPS server.
 
@@ -96,3 +97,6 @@ The CUPS Binding can be used to switch on a printer if there are print jobs in t
     		]
     	}
     end
+
+<DocPreviousVersions/>
+<EditPageLink/>

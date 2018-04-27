@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Garadget Binding
+
+<AddonLogo/>
 
 The [Garadget](http://garadget.com) is cloud-based device that "futurizes" your existing garage door opener, letting you open and close your garage door from anywhere, including via openHAB with this binding.  Remote access is made possible with the [particle.io](https://www.particle.io/) REST API.
 
@@ -103,3 +104,6 @@ String netConfig_ssid     "SSID [%s]"                                     (Garad
 String setConfig          "Workshop Garage Door Config [%s]"              (Garadget) { garadget=">[270041234567343432313031#setConfig],<[270040001747343432313031#doorConfig]" }
 ```
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

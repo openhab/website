@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Insteon Hub Binding
 
@@ -105,3 +104,6 @@ If you need to support multiple Insteon Hubs, you can optionally configure them 
 When configuring for multiple hubs, you will need to specify the hub ID in the item configurations.  Here is an example:
 
     Dimmer Dim1 "Kitchen Lights" { insteonhub = "device=12.AB.34, bindingType=dimmer, hubid=FIRST_HUB" }
+
+<DocPreviousVersions/>
+<EditPageLink/>

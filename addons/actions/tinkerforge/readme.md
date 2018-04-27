@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # TinkerForge Actions
+
+<AddonLogo/>
 
 The TinkerForge Action service provides direct interaction with some of the TinkerForge devices.
 
@@ -140,3 +141,6 @@ then
   tfLoadCellTare("v8V")
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

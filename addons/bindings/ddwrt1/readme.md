@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # DD-WRT Binding
+
+<AddonLogo/>
 
 The openHAB DD-WRT Binding allows interaction with a DD-WRT device.
 
@@ -71,3 +72,6 @@ Where `<key>` may take any of these values:
 There is a bug in the DD-WRT firmware. The activation of this interface needs a workaround so it takes some seconds longer than the native devices.
 
 Tested with Archer V2 and DD-WRT v3.0-r30880 std (11/14/16).
+
+<DocPreviousVersions/>
+<EditPageLink/>

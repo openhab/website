@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Exec Persistence
 
@@ -32,3 +31,6 @@ Aliases have special meaning because they contain the command line to execute e.
 ```
 
 To enhance the given command line with the current state or the current date, the service incorporates the [String.format()](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html) method. The first parameter is always the state of the particular item, the second parameter is the current date.
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Energenie Binding
+
+<AddonLogo/>
 
 The openHAB Energenie binding allows you to send commands to multiple Gembird energenie PMS-LAN power extenders.
 
@@ -53,3 +54,6 @@ Examples, how to configure your items in your items file:
 ```
 Switch Light_OfficeDesk     {energenie="pms1;1"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

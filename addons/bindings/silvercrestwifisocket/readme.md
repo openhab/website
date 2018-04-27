@@ -7,13 +7,15 @@ description: "This binding integrates the Silvercrest Wifi Socket SWS-A1 sold by
 since: 2x
 logo: images/addons/silvercrestwifisocket.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Silvercrest Wifi Plug Binding
+
+<AddonLogo/>
 
 This binding integrates the Silvercrest Wifi Socket SWS-A1 sold by Lidl and the EasyHome Wifi Socket DIS-124 sold by Aldi.
 
@@ -57,3 +59,6 @@ The Silvercrest Wifi Socket support the following channel:
 | Channel Type ID | Item Type | Description         |
 |-----------------|-----------|---------------------|
 | switch          | Switch    | Wifi Socket Switch. |
+
+<DocPreviousVersions/>
+<EditPageLink/>

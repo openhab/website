@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Harmony Hub Binding
 
@@ -138,3 +137,6 @@ The JSON configuration can also be obtained using the Harmony Android app by syn
 ## Shell
 
 The [harmony-java-client](https://github.com/tuck182/harmony-java-client) project on GitHub provides a simple shell for querying a Harmony Hub, and can be used to retrieve the full configuration of the hub to determine ids of available activities and devices as well as device commands (buttons).
+
+<DocPreviousVersions/>
+<EditPageLink/>

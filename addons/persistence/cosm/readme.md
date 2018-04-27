@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Xively (formerly Cosm) Persistence
 
@@ -33,3 +32,6 @@ This service can be configured in the file `services/cosm.cfg`.
 | apikey   |         |   Yes    | Your Xively API key |
 
 All item and event related configuration is done in the file `persistence/cosm.persist`. Aliases correspond to cosm datastream IDs for the cosm persistence service.
+
+<DocPreviousVersions/>
+<EditPageLink/>

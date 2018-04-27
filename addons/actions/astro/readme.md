@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Astro Actions
 
@@ -39,3 +38,6 @@ then
   logInfo("sunSetEnd: ", new DateTimeType(getAstroSunsetEnd(current, lat, lon)).toString)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

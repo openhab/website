@@ -6,11 +6,11 @@ type: transform
 description: "Transforms an [XML](https://www.w3.org/XML/) input using an [XPath](https://www.w3.org/TR/xpath/#section-Expressions) expression."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # XPath Transformation Service
 
@@ -116,3 +116,6 @@ Now the resulting Number can also be used in the label to [change the color](htt
 * An [introduction](https://www.w3schools.com/xml/xpath_intro.asp) to XPath at W3School
 * A informative explanation of [common mistakes](https://qxf2.com/blog/common-xpath-mistakes/).
 * Online validation tools like [this](https://www.freeformatter.com/xpath-tester.html) to check the syntax.
+
+<DocPreviousVersions/>
+<EditPageLink/>

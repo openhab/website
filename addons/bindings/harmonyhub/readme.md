@@ -6,11 +6,11 @@ type: binding
 description: "The Harmony Hub binding is used to enable communication between openHAB2 and multiple Logitech Harmony Hub devices."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Logitech Harmony Hub Binding
 
@@ -142,3 +142,6 @@ sitemap demo label="Main Menu" {
 
 Possible values for the "buttonPress" channel can be determined via the REST API for channel-types, <http://YourServer:8080/rest/channel-types>.
 Search the JSON for "harmonyhub:device".
+
+<DocPreviousVersions/>
+<EditPageLink/>

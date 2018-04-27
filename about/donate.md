@@ -1,7 +1,7 @@
 ---
 sidebar: false
+layout: AboutPage
+title: Donate
 ---
-
-# Donate
 
 How to donate to the project, join the foundation etc.

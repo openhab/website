@@ -6,11 +6,11 @@ type: binding
 description: "The Nibe Heatpump binding is used to get live data from from Nibe heat pumps without using expensive MODBUS40 adapter. This binding should be compatible with at least the F1145 and F1245 heat pump models."
 since: 1x
 install: legacy
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Nibe Heatpump Binding
 
@@ -119,6 +119,7 @@ Thing examples:
 ```
 nibeheatpump:f1x45-udp:myPump [hostName="192.168.1.50", port=9999]
 ```
+
 ```
 nibeheatpump:f1x45-udp:myPump [hostName="192.168.1.50", port=9999, readCommandsPort=10000, writeCommandsPort=10001, refreshInterval=30, enableReadCommands=true, enableWriteCommands=true, enableRegistersForWriteCommands="44266, 47004"]
 ```
@@ -899,3 +900,6 @@ This binding currently supports following channels for F1x45 pump models:
 | 48487 | Number | 1 | 100 | Setting | Speed circ.pump Cooling |  |
 
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

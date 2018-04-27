@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # DMX Binding
 
@@ -251,3 +250,6 @@ defined).
 If using a directly connected interface (e.g. RS485), stay with the default
 value of `always`. If using ArtNet, use the `reduced` option and minimize
 network load.
+
+<DocPreviousVersions/>
+<EditPageLink/>

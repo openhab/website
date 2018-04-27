@@ -7,13 +7,15 @@ description: "This binding integrates internet radios based on the [Frontier Sil
 since: 2x
 logo: images/addons/fsinternetradio.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # FS Internet Radio Binding
+
+<AddonLogo/>
 
 This binding integrates internet radios based on the [Frontier Silicon chipset](http://www.frontier-silicon.com/).
 
@@ -128,3 +130,6 @@ sitemap demo label="Main Menu"
 	}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

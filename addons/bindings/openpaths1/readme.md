@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # OpenPaths Binding
 
@@ -59,3 +58,6 @@ String  User1Phone_currentLoc "User1 current location: [%s]"     { openpaths="us
 Number  User1Phone_currentLat "User1 latitude: [%.4f °]"         { openpaths="user1:currentLatitude" }
 Number  User1Phone_currentLon "User1 longitude: [%.4f °]"        { openpaths="user1:currentLongitude" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

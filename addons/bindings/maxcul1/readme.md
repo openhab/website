@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MAX!CUL Binding
 
@@ -244,3 +243,6 @@ These are in no particular priority and are simply ideas. They may not get imple
 1. Add the ability to simulated a window contact. This would allow us to associate with a radiator thermostat and send window events to it.
 1. Explore how to avoid the queue getting too long due to lack of credits with many devices.
 1. Add ability to setup device groups which should help reduce lack of credit issue
+
+<DocPreviousVersions/>
+<EditPageLink/>

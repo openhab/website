@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Mystrom Eco Power Binding
 
@@ -58,3 +57,6 @@ Switch WallFanOffice_Switch 	{mystromecopower="lightBathroom"}
 Number WallFanOffice_Number 	{mystromecopower="lightBathroom"}
 String WallFanOffice_String 	{mystromecopower="lightBathroom"}					
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

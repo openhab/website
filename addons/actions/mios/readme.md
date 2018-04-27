@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # MiOS Actions
 
@@ -89,3 +88,6 @@ rule "Test action Disarm"
         sendMiosAction(EVL3VistaPartition1ArmMode, 'Alarm/RequestArmMode', newArrayList('State' -> 'Disarmed', PINCode' -> 1234)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

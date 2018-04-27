@@ -7,13 +7,15 @@ description: "This binding integrates Minecraft with openHAB through the [spigot
 since: 2x
 logo: images/addons/minecraft.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Minecraft Binding
+
+<AddonLogo/>
 
 This binding integrates Minecraft with openHAB through the [spigot plugin](https://github.com/ibaton/bukkit-openhab-plugin/releases/download/1.5/OHMinecraft.jar) ([sources](https://github.com/ibaton/bukkit-openhab-plugin/tree/master)).
 
@@ -74,3 +76,6 @@ Active switch (Controllable from openHAB)
 
 Passive sensor
 <a href="https://drive.google.com/uc?export=view&id=0B3UO0c11-Q6hUG1wd3h0MDUzUzQ"><img src="https://drive.google.com/uc?export=view&id=0B3UO0c11-Q6hUG1wd3h0MDUzUzQ" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+
+<DocPreviousVersions/>
+<EditPageLink/>

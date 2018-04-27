@@ -7,13 +7,15 @@ description: "This binding uses the [AQIcn.org service](http://aqicn.org) for pr
 since: 2x
 logo: images/addons/airquality.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Air Quality Binding
+
+<AddonLogo/>
 
 This binding uses the [AQIcn.org service](http://aqicn.org) for providing air quality information for any location worldwide.
 
@@ -206,3 +208,6 @@ then
     sendCommand(Lamp_Color, hsb)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

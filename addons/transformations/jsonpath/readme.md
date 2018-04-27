@@ -6,11 +6,11 @@ type: transform
 description: "Transforms a JSON structure on basis of the [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression to an JSON containing the requested data."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # JsonPath Transformation Service
 
@@ -76,3 +76,6 @@ A query which returns multiple elements as list is not supported.
 
 * An extended [introduction](https://www.w3schools.com/js/js_json_intro.asp) can be found at W3School.
 * As JsonPath transformation is based on [Jayway](https://github.com/json-path/JsonPath) using a [online validator](https://jsonpath.herokuapp.com/) which also uses Jaway will give most similar results. 
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -1,4 +1,4 @@
-# Crawl directories and find things in ESH-INF/thing directories - acceots 
+# Crawl repositories under a base directory and find things in ESH-INF/thing directories
 # TODO: doesn't handle translated labels and descriptions...
 
 require "nokogiri"

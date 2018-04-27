@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # GPIO Binding
 
@@ -154,3 +153,6 @@ return "$RETVAL"
 Naturally edit the number after the echo to the gpio pin you use and insert or remove lines matching the number of gpio's in use.
 
 Now you can stop and start openhab without your GPIO pins getting blocked!
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # LCN Binding
+
+<AddonLogo/>
 
 This binding connects to one or more LCN-PCHK instances via TCP/IP. **This means 1 unused LCN-PCHK license is required!**
 
@@ -707,3 +708,6 @@ Measurement units:
 [openHABcmd:myhome:DYNTEXT.0.5.1.text in row 1]
 [openHABcmd:myhome:DYNTEXT.0.5.4.text in row 4]
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>
