@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Cisco Spark Action
 
@@ -51,3 +50,6 @@ Send a message to the default room (from config)
 Send a direct message to a person
 
   `sparkPerson('message', 'personEmail')`
+
+<DocPreviousVersions/>
+<EditPageLink/>

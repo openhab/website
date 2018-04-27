@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Panasonic TV Binding
 
@@ -118,3 +117,6 @@ Switch BedroomVolumeUp          "Volume Up"             { panasonictv="bedroom_t
 Switch BedroomVolumeDown        "Volume Down"           { panasonictv="bedroom_tv:VOLDOWN" }
 Switch BedroomTVInput           "TV input"              { panasonictv="bedroom_tv:TV" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

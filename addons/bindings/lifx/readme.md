@@ -7,13 +7,15 @@ description: "This binding integrates the [LIFX LED Lights](http://www.lifx.com/
 since: 2x
 logo: images/addons/lifx.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # LIFX Binding
+
+<AddonLogo/>
 
 This binding integrates the [LIFX LED Lights](http://www.lifx.com/). All LIFX lights are directly connected to the WLAN and the binding communicates with them over a UDP protocol.
 
@@ -227,3 +229,6 @@ sitemap demo label="Main Menu"
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

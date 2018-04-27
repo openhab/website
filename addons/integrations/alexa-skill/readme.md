@@ -6,11 +6,11 @@ type: io
 description: "An intelligent voice guided personal assistant. Amazon Alexa became famous by the Amazon Echo speaker but is also available through independent solutions. The certified openHAB Alexa skill allows to naturally control the openHAB smart home by voiced commands."
 since: 2x
 install: manual
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Amazon Alexa Skill
 
@@ -113,3 +113,6 @@ Example:
   Rollershutter Shutter_GF_Kitchen "Rollershutter Kitchen" [ "Switchable" ]
   ```
 * With commands like `Alexa, set rollershutter kitchen to 100%` you control the rollershutter in the kitchen.
+
+<DocPreviousVersions/>
+<EditPageLink/>

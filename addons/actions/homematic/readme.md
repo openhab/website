@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Homematic Action
+
+<AddonLogo/>
 
 The Homematic action lets you send messages to a Homematic remote control with a display, currently the HM-RC-19-B (Radio remote control 19 button).
 
@@ -61,3 +62,6 @@ Show message ALARM, beep three times, let the backlight blink fast and shows a b
 Duplicate options (TONE3 is ignored, because TONE1 is specified previously):
 
 `sendHomematicDisplay("KEQ0012345", "TEXT", "TONE1, BLINK_FAST, TONE3");`
+
+<DocPreviousVersions/>
+<EditPageLink/>

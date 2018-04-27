@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Network Time Protocol (NTP) Binding
 
@@ -94,3 +93,6 @@ sitemap/example.sitemap
 ## Formatting
 
 [Here](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html) is an overview of how you can format the output of date and time.
+
+<DocPreviousVersions/>
+<EditPageLink/>

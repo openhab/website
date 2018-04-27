@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Mochad X10 Binding
 
@@ -54,3 +53,6 @@ Dimmer Light_Living_Dimmer "Living Dimmer [%d %%]" (GF_Living) {mochadx10="a2:pl
 Switch Mech_Vent "Mechanical ventilation" (GF_Kitchen) {mochadx10="b12"}
 Rollershutter "Bedroom" (FF_Bedroom) {mochadx10="m3:rf"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

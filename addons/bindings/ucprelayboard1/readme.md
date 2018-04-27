@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## UCProjects.eu Relay Board Binding
 
@@ -44,3 +43,6 @@ where:
 * `<name>` is a name you configured in the binding configuration
 * `<number>` is the index of the relay on the board you wish to switch
 * `[;inverted=true]` an optional section that inverts the meaning of ON and OFF
+
+<DocPreviousVersions/>
+<EditPageLink/>

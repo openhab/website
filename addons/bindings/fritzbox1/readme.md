@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Fritz!Box Binding
+
+<AddonLogo/>
 
 ## Binding Configuration
 
@@ -28,7 +29,7 @@ This binding can be configured in the `services/fritzbox.cfg` file.
 
 ## Prepare your Fritzbox
 
-* Enable Telnet ([Link](http://www.wehavemorefun.de/fritzbox/Starten_von_telnetd))&lt;BR&gt;
+* Enable Telnet ([Link](http://www.wehavemorefun.de/fritzbox/Starten_von_telnetd))<BR/>
 * Activate User Login: FRITZ!Box-Benutzer -> Anmeldung im Heimnetz -> Anmeldung mit dem FRITZ!Box-Kennwort
 
 ## Item Configuration
@@ -69,3 +70,6 @@ Switch WIFI {fritzbox="wlan"}
 Switch GWIFI {fritzbox="guestwlan"} (Version 1.7.0)
 Switch TAM0 {fritzbox="tam0"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

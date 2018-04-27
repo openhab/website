@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Open Energy Monitor Binding
 
@@ -102,3 +101,6 @@ Number PulsePower { openenergymonitor="pulsePower" }
 Number Phase123RealPower { openenergymonitor="phase1RealPower+phase2RealPower+phase3RealPower" }
 Number Phase123Current { openenergymonitor="phase1Current+phase2Current+phase3Current:JS(divideby100.js)" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

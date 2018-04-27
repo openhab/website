@@ -6,11 +6,11 @@ type: io
 description: "The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance, such as [myopenHAB.org](http://www.myopenHAB.org), which is an instance of the"
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # openHAB Cloud Connector
 
@@ -67,3 +67,6 @@ Alternatively, you can configure the settings in the file `conf/services/openhab
 ```
 
 Note: The exposed items will show up after they receive an update to their state.
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # IHC / ELKO Binding
 
@@ -123,3 +122,6 @@ Such as previous example, but resource value will additionally asked from contro
 ```
 Number Temperature_Kitchen "Temperature [%.1f °C]" <temperature> (Temperature, FF_Kitchen) { ihc="0x97E00A:60" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

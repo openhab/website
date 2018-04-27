@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Novelan/Luxtronic Heat Pump Binding
 
@@ -60,7 +59,8 @@ where `<eventType>` is one of the following values:
 | `temperature_supplay` | Number | the temperature sent to the floor heating |
 | `temperature_servicewater_reference` | Number | the reference temperature of the servicewater |
 | `temperature_servicewater` | Number | the temperature of the servicewater |
-| `state` | String | contains the time of the state and the state; Possible states are error, running, stoped, defrosting |
+| `state` | String | contains the time of the state and the state; Possible states are error, running, stopped, defrosting |
+| `simple_state` | String | contains only the short statename; Possible states are error, running, stopped, defrosting |
 | `extended_state` | String | contains the time of the state and the state; Possible states are error, heating, standby, switch-on delay, switching cycle | blocked, provider lock time, service water, screed heat up, defrosting, pump flow, desinfection, cooling, pool water, heating ext., service water ext., | flow monitoring, ZWE operation |
 | `temperature_solar_collector` | Number | the temperature of the sensor in the solar collector |
 | `temperature_hot_gas` | Number | 
@@ -162,3 +162,6 @@ Setpoint item=HeatPump_heating_temperature minValue=-10 maxValue=10 step=0.5
 Switch item=HeatPump_warmwater_operation_mode  mappings=[0="Auto", 1="Zuheizer", 2="Party", 3="Ferien", 4="Aus"]
 Setpoint item=HeatPump_warmwater_temperature minValue=10 maxValue=65 step=1
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

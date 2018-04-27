@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Amazon DynamoDB Persistence
 
@@ -29,8 +28,6 @@ This service is provided "AS IS", and the user takes full responsibility of any 
 
 ## Table of Contents
 
-<!-- Using MarkdownTOC plugin for Sublime Text to update the table of contents (TOC) -->
-<!-- MarkdownTOC depth=3 autolink=true bracket=round -->
 
 - [Prerequisites](#prerequisites)
 	- [Setting Up an Amazon Account](#setting-up-an-amazon-account)
@@ -44,7 +41,6 @@ This service is provided "AS IS", and the user takes full responsibility of any 
 - [Developer Notes](#developer-notes)
 	- [Updating Amazon SDK](#updating-amazon-sdk)
 
-<!-- /MarkdownTOC -->
 
 ## Prerequisites
 
@@ -142,3 +138,6 @@ When the tables are created, the read/write capacity is configured according to 
 `ls lib/*.jar | python -c "import sys; print('  ' + ',\\n  '.join(map(str.strip, sys.stdin.readlines())))"`
 7. Generate `.classpath` entries
 `ls lib/*.jar | python -c "import sys;pre='<classpathentry exported=\"true\" kind=\"lib\" path=\"';post='\"/>'; print('\\t' + pre + (post + '\\n\\t' + pre).join(map(str.strip, sys.stdin.readlines())) + post)"`
+
+<DocPreviousVersions/>
+<EditPageLink/>

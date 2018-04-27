@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Souliss Binding
 
@@ -21,7 +20,6 @@ Souliss is an open-source and community driven project, you can use the [wiki](h
 
 ## Table of Contents
 
-<!-- MarkdownTOC -->
 
 - [Prerequisites](#prerequisites)
     - [Sketches](#sketches)
@@ -32,7 +30,6 @@ Souliss is an open-source and community driven project, you can use the [wiki](h
     - [Items](#items)
     - [Sitemap](#sitemap)
 
-<!-- /MarkdownTOC -->
 
 ## Prerequisites
 
@@ -339,3 +336,6 @@ Frame label="Souliss - Hello World" {
     }       
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

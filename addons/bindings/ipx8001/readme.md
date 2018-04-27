@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # IPX800 Binding
 
@@ -114,7 +113,7 @@ Change item state after a double clic on the input.
 Switch InputDimmer { ipx800="ipx1:I02\:v\:\<step\>" }
 ```
 
-A long press will raise the value of this item each 500ms by &lt;step&gt;.
+A long press will raise the value of this item each 500ms by `<step>`.
 
 Once item value reaches 100, it will stick to this value. A new long press will restart the dimmer to 0.
 
@@ -194,3 +193,6 @@ In the current architecture, for each openhab item setup in conf file (Ex : Swit
 To be able to handle multiple items on the same ipx800 input port, i add the handler layer, so each item is linked to these handlers. This layer can for instance handle SimpleClic, DoubleClic and virtual dimmer connected on the same ipx800 input port (Ipx800HandlerMulti).
 
 These features (double item state change, virtual dimmer,...) could have been implemented as rules, but it's easier to only configure an item.
+
+<DocPreviousVersions/>
+<EditPageLink/>

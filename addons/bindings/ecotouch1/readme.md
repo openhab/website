@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # EcoTouch Binding
+
+<AddonLogo/>
 
 The openHAB EcoTouch binding allows interaction with a heat pump.
 
@@ -326,3 +327,6 @@ The following charts are created via the rrd4j chart and heatpump bundle.
 ![outside temperature](https://github.com/sibbi77/openhab/wiki/images/binding-ecotouch_chart1.png)
 
 ![power consumption](https://github.com/sibbi77/openhab/wiki/images/binding-ecotouch_chart2.png)
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "This binding allows your openHAB to communicate with the Xiaomi Sm
 since: 2x
 logo: images/addons/mihome.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Xiaomi Mi Smart Home Binding
+
+<AddonLogo/>
 
 This binding allows your openHAB to communicate with the Xiaomi Smart Home Suite.
 
@@ -356,3 +358,6 @@ sitemap xiaomi label="Xiaomi" {
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

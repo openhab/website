@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Epson Projector Binding
+
+<AddonLogo/>
 
 This binding should be compatible with Epson projectors which support ESC/VP21 protocol over serial port.
 
@@ -160,3 +161,6 @@ sitemap epson label="Epson Projector Demo"
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

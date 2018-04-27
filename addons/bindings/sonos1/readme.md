@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Sonos Binding
+
+<AddonLogo/>
 
 **Note:** The Sonos binding communicates with the Sonos devices through the UPnP (Universal Plug And Play) protocol. Users of this binding might wish to familiarise them with the protocol and slang. UPnP defines a subscription model whereby a UPnP client can subscribe to UPnP Events that are transmitted by a UPnP device. Sonos Players do emit quite a bit of Events and some are used to capture status variables (see below). 
 
@@ -171,3 +172,6 @@ items/sonosfavorites.sitemap.fragment
 ```
 Switch item=Sonos_Office_favorite mappings=["Ben Harper Radio"="Ben Harper","Today's Hits Radio"="Hits","Today's Alternative Radio"="Alt"]
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

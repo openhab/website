@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Nikobus Binding
 
@@ -176,3 +175,6 @@ Example configurations may look like:
 Switch Office_Top_Left_S "Office Light On/Off Short Press" {nikobus="#N003334:SHORT[C964-1]"}
 Switch Office_Top_Left "Office and Kitchen Light On/Off" {nikobus="#N006884[C964-1,C964-2]"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

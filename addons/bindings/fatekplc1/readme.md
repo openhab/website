@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Fatek PLC Binding
+
+<AddonLogo/>
 
 [Fatek PLC](http://fatek.com/en/prod.php?catId=1) is one kind of programmable logic controller.  This binding support native Fatek protocol to communicate with PLC.  For communication to PLC is used [JFatek library](http://www.simplify4u.org/jfatek/).
 
@@ -171,3 +172,6 @@ plcName:REG1:REG2:REG3[:factor=factorValue]
 * for STOP command REG2 and REG3 is set to false/0.
 
 We can also specific factor value, all read data will be multiplied by this value.
+
+<DocPreviousVersions/>
+<EditPageLink/>

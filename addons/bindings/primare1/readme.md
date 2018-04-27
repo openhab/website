@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Primare Binding
 
@@ -279,3 +278,6 @@ end
 * In some cases, such as Power on or input status change, the Primare device does not automatically send status messages for all affected system variables, but they need to be queried separately. Currently this is must be handled by rules (see example above).
 
 * The serial port might not be visible to the binding. A workaround is to add `-Dgnu.io.rxtx.SerialPorts=/dev/YOURPORTDEVICE` java option to openHAB startup script.
+
+<DocPreviousVersions/>
+<EditPageLink/>

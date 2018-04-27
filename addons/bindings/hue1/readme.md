@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Hue Binding
+
+<AddonLogo/>
 
 This binding connects openHAB to your Philips Hue lighting system.
 
@@ -284,3 +285,6 @@ then
   }
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

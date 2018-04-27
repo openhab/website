@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # TinkerForge Binding
+
+<AddonLogo/>
 
 [TinkerForge](http://www.tinkerforge.com) is a system of open source hardware building blocks that allows you to combine sensor and actuator blocks by plug and play. You can create your individual hardware system by choosing the necessary building blocks for your project and combine it with other home automation products. 
 
@@ -1542,7 +1543,7 @@ Technical description see [Tinkerforge Website](http://www.tinkerforge.com/en/do
 | property | description | values |
 |----------|--------------|--------|
 | uid | tinkerforge uid | same as bricklet |
-| subid | openHAB subid of the device | in0, in2, in3, in4 |
+| subid | openHAB subid of the device | in0, in1, in2, in3 |
 | type | openHAB type name |  |
 
 ##### tinkerforge.cfg:
@@ -1585,7 +1586,7 @@ Technical description see [Tinkerforge Website](http://www.tinkerforge.com/en/do
 | property | description | values |
 |----------|--------------|--------|
 | uid | tinkerforge uid | same as bricklet |
-| subid | openHAB subid of the device | out0, out2, out3, out4 |
+| subid | openHAB subid of the device | out0, out1, out2, out3 |
 | type | openHAB type name |  |
 
 ##### tinkerforge.cfg:
@@ -2076,7 +2077,7 @@ Technical description see [Tinkerforge Website](http://www.tinkerforge.com/en/do
 
 There are three sub devices: joystick_xposition, joystick_yposition and joystick_button.
 Callback period for xy position defaults to 10 milli seconds. CallbackPeriod must be configured
-on bricklet_joystick device, because x and y position can not have
+on bricklet_joystick device, because x and y position cannot have
 different callback periods.
 
 ##### Button
@@ -4001,3 +4002,6 @@ tfServoSetposition("6Crt5W", "servo0", "-9000", "65535", "65535")
 
 ---
 [Table of Contents](#table-of-contents)
+
+<DocPreviousVersions/>
+<EditPageLink/>

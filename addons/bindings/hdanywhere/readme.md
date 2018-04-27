@@ -7,13 +7,15 @@ description: "This binding integrates with [HDanywhere](http://www.hdanywhere.co
 since: 2x
 logo: images/addons/hdanywhere.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # HDanywhere Binding
+
+<AddonLogo/>
 
 This binding integrates with [HDanywhere](http://www.hdanywhere.co.uk) HDMI matrices.
 
@@ -78,3 +80,6 @@ Number OutputPort2 "Output port 2 is currently connected to Source port [%d]" { 
 Number OutputPort3 "Output port 3 is currently connected to Source port [%d]" { channel="hdanywhere:mhub4k431:m1:port3" }
 Number OutputPort4 "Output port 4 is currently connected to Source port [%d]" { channel="hdanywhere:mhub4k431:m1:port4" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

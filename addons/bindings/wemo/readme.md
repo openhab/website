@@ -7,13 +7,15 @@ description: "This binding integrates the [Belkin WeMo Family](http://www.belkin
 since: 2x
 logo: images/addons/wemo.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Belkin Wemo Binding
+
+<AddonLogo/>
 
 This binding integrates the [Belkin WeMo Family](http://www.belkin.com/us/Products/c/home-automation/).
 The integration happens either through the WeMo-Link bridge, which acts as an IP gateway to the ZigBee devices or through WiFi connection to standalone devices.
@@ -122,3 +124,6 @@ sitemap demo label="Main Menu"
 		}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

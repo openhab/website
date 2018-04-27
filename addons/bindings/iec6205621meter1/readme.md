@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # IEC 62056-21 Meter Binding
 
@@ -135,3 +134,6 @@ The binding has been successfully tested with below hardware configuration:
 * Landis & Gyr meter [ZMD120AR](http://www.landisgyr.ch/product/landisgyr-zmd120ar/)  connected with [IR-Reader RS232](http://wiki.volkszaehler.org/hardware/controllers/ir-schreib-lesekopf) from open hardware project in [volkszaehler](http://volkszaehler.org/)
 * Landis & Gyr meter [E350](http://www.landisgyr.ch/product/landisgyr-e350-electricity-meter-new-generation/)  connected with [IR-Reader RS232](http://wiki.volkszaehler.org/hardware/controllers/ir-schreib-lesekopf) from open hardware project in [volkszaehler](http://volkszaehler.org/)
 * Landis & Gyr meter connected the [IR-Reader USB](http://wiki.volkszaehler.org/hardware/controllers/ir-schreib-lesekopf-usb-ausgang) from open hardware project in [volkszaehler](http://volkszaehler.org/)
+
+<DocPreviousVersions/>
+<EditPageLink/>

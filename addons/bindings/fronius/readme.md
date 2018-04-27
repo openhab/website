@@ -6,11 +6,11 @@ type: binding
 description: "This binding uses the [Fronius Solar API V1](http://www.fronius.com/en/photovoltaics/products/all-products/system-monitoring/open-interfaces/fronius-solar-api-json-) to obtain data from a Fronius devices."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Fronius Binding
 
@@ -87,3 +87,6 @@ Number Battery_Power { channel="fronius:powerinverter:mybridge:myinverter:powerf
 ```
 
 Tested with a Fronius Symo 8.2-3-M
+
+<DocPreviousVersions/>
+<EditPageLink/>

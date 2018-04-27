@@ -4,9 +4,10 @@
       <img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt="">
       <div class="hero-image"></div>
       <div class="hero-content">
-        <h1 class="hero">Empowering the smart home</h1>
-        <h2 class="lead">openHAB - a vendor and technology agnostic open source automation software for your home</h2>
-        <router-link to="guides/overview/" class="action-button">Get started →</router-link>
+        <img src="/logo-white.png" class="white-logo" />
+        <h1 class="hero">empowering the smart home</h1>
+        <h2 class="lead">a vendor and technology agnostic open source automation software for your home</h2>
+        <router-link to="docs/" class="action-button">Get started →</router-link>
         <a class="demo-button" target="_blank" href="http://demo.openhab.org:8080">Demo →</a>
       </div>
     </div>
@@ -20,19 +21,19 @@
           </div>
           <div ref="feature2" class="feature">
             <h3>Automate with Ease</h3>
-            <p>Powerful and flexible <router-link to="guides/tutorial/rules.html">rules</router-link>, time and event-based triggers, scripts, notifications and voice control</p>
+            <p>Powerful and flexible <router-link to="docs/tutorial/rules.html">rules</router-link>, time and event-based triggers, scripts, notifications and voice control</p>
           </div>
           <div ref="feature3" class="feature">
             <h3>Runs Everywhere</h3>
             <p>
               Run your server on
-              <router-link to="guides/installation/linux.html">Linux</router-link>,
-              <router-link to="guides/installation/macosx.html">macOS</router-link>,
-              <router-link to="guides/installation/windows.html">Windows</router-link>,
-              <router-link to="guides/installation/rasppi.html">Raspberry Pi</router-link>,
-              <router-link to="guides/installation/pine.html">PINE64</router-link>,
-              <router-link to="guides/installation/docker.html">Docker</router-link>,
-              <router-link to="guides/installation/synology.html">Synology</router-link>...
+              <router-link to="docs/installation/linux.html">Linux</router-link>,
+              <router-link to="docs/installation/macosx.html">macOS</router-link>,
+              <router-link to="docs/installation/windows.html">Windows</router-link>,
+              <router-link to="docs/installation/rasppi.html">Raspberry Pi</router-link>,
+              <router-link to="docs/installation/pine.html">PINE64</router-link>,
+              <router-link to="docs/installation/docker.html">Docker</router-link>,
+              <router-link to="docs/installation/synology.html">Synology</router-link>...
               Access it with apps for the web, iOS, Android and others.</p>
           </div>
         </div>
@@ -53,20 +54,22 @@
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <h2 class="slide">Footer links, social media etc.</h2>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from './Footer.vue'
+import ScrollReveal from './scrollreveal'
+
 import parallax from 'vue-parallaxy'
 let hr = null
 
 export default {
   name: 'HomePage',
   components: {
-    parallax
+    parallax,
+    Footer
   },
   data () {
     return {
@@ -79,8 +82,7 @@ export default {
   },
   mounted () {
     const vm = this
-    import('scrollreveal').then(ScrollReveal => {
-      const sr = new ScrollReveal.default()
+    ScrollReveal.init().then(sr => {
       sr.reveal('.feature', { scale: 1.0 }, 200)
       sr.reveal('.featured-logo', { })
       sr.reveal('.slide', { scale: 1.0 })
@@ -159,6 +161,8 @@ header.headroom--top
   background transparent
   color white
   border-bottom none
+  .logo
+    opacity 0
   .nav-dropdown
     color black
 
@@ -194,14 +198,19 @@ header.headroom--top
     margin 90px 30px
     z-index 1
     max-width 960px
+    img.white-logo
+      filter drop-shadow(0 0 10px #666)
     h1.hero
       animation 1.5s ease-out 0s 1 slideIn1
       color white
       font-family 'Open Sans', sans-serif;
-      font-weight normal
+      font-weight 300
       font-size 60px
-      text-shadow 0px 0px 10px #aaa
+      text-shadow 0px 0px 10px #666
       // padding-top 10vh
+    @media (max-width: 419px)
+      h1.hero
+        font-size 40px
     h2.lead
       animation 1.5s ease-out 0s 1 slideIn2
       color white

@@ -7,13 +7,15 @@ description: "The Netatmo binding integrates the following Netatmo products:"
 since: 2x
 logo: images/addons/netatmo.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Netatmo Binding
+
+<AddonLogo/>
 
 The Netatmo binding integrates the following Netatmo products:
 
@@ -653,3 +655,6 @@ The following icons are used by original Netatmo web app:
 - http://my.netatmo.com/img/my/app/wifi_medium.png
 - http://my.netatmo.com/img/my/app/wifi_high.png
 - http://my.netatmo.com/img/my/app/wifi_full.png
+
+<DocPreviousVersions/>
+<EditPageLink/>

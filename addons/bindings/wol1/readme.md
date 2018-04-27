@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Wake-on-LAN Binding
 
@@ -62,3 +61,6 @@ The example below is for openHab running on a linux host.
 Switch networkPC "Computer" (network, gOGBuero) { wol="192.168.10.255#00-DE-AD-BE-EF-00", exec=">[OFF:net rpc shutdown -C MESSAGE -I 192.168.10.23 -U USER%%PASSWORD -f -t 120]" }
 ```
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

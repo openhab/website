@@ -6,11 +6,11 @@ type: binding
 description: "The NTP binding is used for displaying the local date and time based update from an NTP server."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # NTP Binding
  
@@ -65,3 +65,6 @@ Items:
 ```
 DateTime Date  "Date [%1$tA, %1$td.%1$tm.%1$tY %1$tH:%1$tM]"  { channel="ntp:ntp:demo:dateTime" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

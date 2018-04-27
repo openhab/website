@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ### FS20 Binding
 
@@ -60,3 +59,6 @@ define AmbiLight FS20 c04b 01
 ```
 
 Just write the last "words" together and you have the full address you need for your item (see above).
+
+<DocPreviousVersions/>
+<EditPageLink/>

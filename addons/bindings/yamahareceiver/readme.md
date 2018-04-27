@@ -7,13 +7,15 @@ description: "This binding connects openHAB with Yamaha Receivers of product lin
 since: 2x
 logo: images/addons/yamahareceiver.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Yamaha Receiver Binding
+
+<AddonLogo/>
 
 This binding connects openHAB with Yamaha Receivers of product line CX-A5000, RX-A30xx, RX-A20xx, RX-A10xx, RX-Vxxx, RX-Z7, DSP-Z7, RX-S600, RX-S601D, HTR-xxxx.
 
@@ -193,3 +195,6 @@ Selection   item=Yamaha_Preset              mappings=[1="FM-1",2="FM-2",3="FM-3"
 ```
 
 Notice how we have two preset mappings that each is meant for FM and DAB+ bands respectively. This enables to have different channel names per band.
+
+<DocPreviousVersions/>
+<EditPageLink/>

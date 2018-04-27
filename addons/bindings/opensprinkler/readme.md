@@ -7,13 +7,15 @@ description: "This binding allows allows basic control of the OpenSprinkler and 
 since: 2x
 logo: images/addons/opensprinkler.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # OpenSprinkler Binding
+
+<AddonLogo/>
 
 This binding allows allows basic control of the OpenSprinkler and OpenSprinkler PI (Plus) devices.
 Stations can be controlled to be turned on or off and rain sensor state can be read.
@@ -147,3 +149,6 @@ sitemap demo label="Main Menu"
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

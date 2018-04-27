@@ -6,11 +6,11 @@ type: binding
 description: "The cm11a is a serial computer interface that allows a computer to control attached X10 modules."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Cm11a (X10 controller) Binding
 
@@ -106,3 +106,6 @@ DimmerA2  "Porch lights"   <slider> (someGroup)  { channel="cm11a:dimmer:MyCm11a
 1. [CM11A (X10) Protocol Document](http://wanderingsamurai.net/electronics/cm11a-x10-protocol-document)
 2. [Heyu - control software for the cm11a](http://www.heyu.org/)
 3. cm11a Controllers are available for purchase from several sites on the internet
+
+<DocPreviousVersions/>
+<EditPageLink/>

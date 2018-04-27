@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # TiVo Binding
 
@@ -96,3 +95,6 @@ The following code in a rule will put the Tivo in standby:
 ```
 Tivo_Standby.sendCommand(ON)
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

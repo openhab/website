@@ -6,11 +6,11 @@ type: binding
 description: "The DMX binding integrates DMX devices. There are different output devices supported as well as Dimmers and Chasers."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # DMX Binding
 
@@ -245,3 +245,6 @@ sitemap demo label="Main Menu"
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

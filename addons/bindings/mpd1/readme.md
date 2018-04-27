@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MPD Binding
 
@@ -128,3 +127,6 @@ Number CurrentRadioStation "Radio" <none> (All) { mpd="NUMBER:p1:playsongid" }
 ```
 Selection item=CurrentRadioStation mappings=[1="ZET Chilli",2="Radio Kolor",3="Radio 7",4="Złote Przeboje",5="EskaROCK",6="RMF Classic",7="RMF Maxxx",11="ESKA",9="RMF",10="MUZO.FM",8="PR 3",12="TOK FM" ]
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

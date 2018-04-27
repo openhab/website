@@ -7,13 +7,15 @@ description: "This binding integrates with the SleepIQ system from Select Comfor
 since: 2x
 logo: images/addons/sleepiq.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # SleepIQ Binding
+
+<AddonLogo/>
 
 This binding integrates with the SleepIQ system from Select Comfort for Sleep Number beds.
 
@@ -113,3 +115,6 @@ String      MasterBedroom_SleepIQ_LastLink_Bob         "Last Update [%s]"   { ch
 Number      MasterBedroom_SleepIQ_AlertId_Bob          "Alert ID [%s]"      { channel="sleepiq:dualBed:1:master:right#alertId" }
 String      MasterBedroom_SleepIQ_AlertMessage_Bob     "Alert Message [%s]" { channel="sleepiq:dualBed:1:master:right#alertDetailedMessage" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

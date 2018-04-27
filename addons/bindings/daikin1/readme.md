@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Daikin Binding
+
+<AddonLogo/>
 
 The Daikin binding allows monitoring and control of a Daikin air conditioner or heat pump, through either the KKRP01A wired module or the BRP072A42 wireless module.
 
@@ -93,3 +94,6 @@ Item bindings can be either inbound or outbound.
     Setpoint item=DaikinTemp minValue="16" maxValue="30" step="1"
     Switch item=DaikinFan mappings=[0="Auto", 1="F1", 2="F2", 3="F3", 4="F4", 5="F5"]
     Switch item=DaikinSwing mappings=[0="Off", 1="Vertical", 2="Horizontal", 3="Hor/Vert"]
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -6,11 +6,11 @@ type: binding
 description: "This is an openHAB binding for a Pentair Pool System. It is based on combined efforts of many on the internet in reverse-engineering the proprietary Pentair protocol (see References section). The binding was developed and tested on a system with a Pentair EasyTouch controller, but should operate with other Pentair systems."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Pentair Pool 
 
@@ -187,3 +187,6 @@ ser2sock Github - https://github.com/nutechsoftware/ser2sock
 - Add in IntelliBrite light color selection (need to capture protocol on system that has this)
 - Add direct control of pump (non read-only channels)
 - Fix heat active - not working on my system.
+
+<DocPreviousVersions/>
+<EditPageLink/>

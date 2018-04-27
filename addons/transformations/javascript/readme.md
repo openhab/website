@@ -6,11 +6,11 @@ type: transform
 description: "Transform an input to an output using JavaScript."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # JavaScript Transformation Service
 
@@ -31,3 +31,6 @@ transform/getValue.js:
     return array[array.length - 1].length;
 })(input)
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

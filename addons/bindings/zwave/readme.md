@@ -7,13 +7,15 @@ description: "The ZWave binding supports an interface to a wireless Z-Wave home 
 since: 2x
 logo: images/addons/zwave.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # ZWave Binding
+
+<AddonLogo/>
 
 The ZWave binding supports an interface to a wireless Z-Wave home automation network. 
 
@@ -350,3 +352,6 @@ If the device is listed as *Unknown*, then the device has not been fully discove
 
 * **The device is not in the database.** If the device attributes show that this device has a valid manufacturer ID, device ID and type, then this is likely the case (eg. you see a label like "*Z-Wave node 1 (0082:6015:020D::2.0)*"). Even if the device appears to be in the database, some manufacturers use multiple sets of references for different regions or versions, and your device references may not be in the database. In either case, the database must be updated and you should raise an issue to get this addressed.
 * **The device initialisation is not complete.** Once the device is included into the network, the binding must interrogate it to find out what type of device it is. One part of this process is to get the manufacturer information required to identify the device, and until this is done, the device will remain unknown. For mains powered devices, this will normally occur quickly, however for battery devices the device must be woken up a number of  times to allow the discovery phase to complete. This must be performed with the device close to the controller and you should refer to the device manual for information on waking up the device.  
+
+<DocPreviousVersions/>
+<EditPageLink/>

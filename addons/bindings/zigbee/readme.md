@@ -7,13 +7,15 @@ description: "The ZigBee binding supports an interface to a wireless ZigBee home
 since: 2x
 logo: images/addons/zigbee.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # ZigBee Binding
+
+<AddonLogo/>
 
 The ZigBee binding supports an interface to a wireless ZigBee home automation network and allows ZigBee devices from numerous manufacturers to be used without a system specific gateway.
 
@@ -134,3 +136,6 @@ log:set debug com.zsmartsystems.zigbee
 This will log data into the standard openhab.log file.
 
 Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network.
+
+<DocPreviousVersions/>
+<EditPageLink/>

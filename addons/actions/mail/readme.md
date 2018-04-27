@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Mail Actions
 
@@ -51,3 +50,6 @@ val List<String> attachmentUrlList = newArrayList(
   "file:///tmp/201601011031.jpg")
 sendMail("you@email.net", "Test", "This is the message.", attachmentUrlList)
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

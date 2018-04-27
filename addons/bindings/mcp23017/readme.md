@@ -6,11 +6,11 @@ type: binding
 description: "This binding allows you to have native access for MCP23017 I/O expander on I2C bus."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MCP23017 Binding
 
@@ -86,3 +86,6 @@ then
 end
 
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # rrd4j Persistence
 
@@ -23,7 +22,6 @@ This service cannot be directly queried, because of the data compression. You co
 
 NOTE: rrd4j is for storing numerical data only. Attempting to use rrd4j to store complex datatypes (eg. for restore-on-startup) will not work.
 
-<!-- MarkdownTOC -->
 
 - [Configuration](#configuration)
     - [Datasource types](#datasource-types)
@@ -32,7 +30,6 @@ NOTE: rrd4j is for storing numerical data only. Attempting to use rrd4j to store
     - [Example](#example)
 - [Troubleshooting](#troubleshooting)
 
-<!-- /MarkdownTOC -->
 
 
 
@@ -105,3 +102,6 @@ All item- and event-related configuration is done in the file `persistence/rrd4j
 From time to time, you may find that if you change the item type of a persisted data, you may experience charting or other problems. To resolve this issue, remove the old `<item_name>`.rrd file in the `${openhab_home}/etc/rrd4j` folder or `/var/lib/openhab/persistence/rrd4j` folder for apt-get installed openHABs.
 
 Restore of items after startup is taking some time. Rules are already started in parallel. Especially in rules that are started via "System started" trigger, it may happen that the restore is not completed resulting in defined items. In these cases the use of restored items has to be delayed by a couple of seconds. This delay has to be determined experimentally.
+
+<DocPreviousVersions/>
+<EditPageLink/>

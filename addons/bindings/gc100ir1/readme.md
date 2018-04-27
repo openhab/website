@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Global Cache IR Binding
 
@@ -77,3 +76,6 @@ Switch 	item=GC100_IR_DENON_DVD_LIVING_PAUSE_STATE  label="Pause"  mappings=[PAU
 
 This binding works with the iTach devices. For configuration, use 1 for module and 1-3 for connectors, depending on which connector your IR emitter is connected.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

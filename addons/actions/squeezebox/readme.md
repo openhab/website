@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Squeezebox Actions
+
+<AddonLogo/>
 
 Interact directly with your Squeezebox devices from within rules and scripts.
 
@@ -90,3 +91,6 @@ squeezeboxSpeak("Kitchen_Player", "And I'm floating in a most peculiar way", 100
 ```java
 squeezeboxSpeak("Kitchen_Player"," temperature outside is " + Weather_Temperature.state.format("%d") + " degrees celsius",75,true)
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

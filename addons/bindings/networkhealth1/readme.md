@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Network Health Binding
 
@@ -63,3 +62,6 @@ Switch Network_OpenhabWebsite   "openHAB Web"   (Status, Network)   { nh="openha
 ## Quirks
 
 If the openHAB server user does not have permission to use ICMP for the ping, then Java will attempt to use the Echo server (port 7) on the remote device. If that service is not available, then the ping attempt fails.
+
+<DocPreviousVersions/>
+<EditPageLink/>

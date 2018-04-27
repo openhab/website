@@ -7,13 +7,15 @@ description: "A binding for D-Link Smart Home devices."
 since: 2x
 logo: images/addons/dlinksmarthome.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # D-Link Smart Home Binding
+
+<AddonLogo/>
 
 A binding for D-Link Smart Home devices.
 
@@ -67,3 +69,6 @@ In the Thing file, this looks like e.g.
       println("Motion has been detected")
   end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

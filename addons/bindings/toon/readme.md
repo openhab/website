@@ -6,11 +6,11 @@ type: binding
 description: "The Toon bindings shows among others current room temperature, setpoint, energy and gas usage information."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Toon Binding
 
@@ -93,3 +93,6 @@ demo.sitemaps
         Selection item=ToonSetpointMode label="Toon Program Selection" mappings=[0=Comfort, 1=Active, 2=Sleep, 3=Away]
     }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

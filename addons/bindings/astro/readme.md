@@ -6,11 +6,11 @@ type: binding
 description: "The Astro binding is used for calculating"
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Astro Binding
 
@@ -208,3 +208,6 @@ end
 ## Tips
 
 Do not worry if for example the "astro dawn" is undefined at your location. The reason might be that you live in a northern country and it is summer, such that the sun is not 18 degrees below the horizon in the morning. For details see [this Wikipedia article](https://en.wikipedia.org/wiki/Dawn). The "civil dawn" event might often be the better choice.
+
+<DocPreviousVersions/>
+<EditPageLink/>

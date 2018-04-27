@@ -6,11 +6,11 @@ type: binding
 description: "This is the binding for the [Meteostick](http://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Meteostick Binding
 
@@ -99,3 +99,6 @@ Things can be defined in the .thing file as follows
 meteostick:meteostick_bridge:receiver [ port="/dev/tty.usbserial-AI02XA60", mode=1 ]
 meteostick:meteostick_davis_iss:iss (meteostick:meteostick_bridge:receiver) [ channel=1 ]
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "This binding integrates the [digitalSTROM-System](http://www.digit
 since: 2x
 logo: images/addons/digitalstrom.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # digitalSTROM Binding
+
+<AddonLogo/>
 
   This binding integrates the [digitalSTROM-System](http://www.digitalstrom.de/).
 The integration happens through the digitalSTROM-Server, which acts as a gateway to connect the digitalSTROM-Devices.
@@ -560,3 +562,6 @@ If you want to create a rule, which uses things of the digitalSTROM-Binding, the
 
 1. If the rule contains several digitalSTROM-Devices, which can be summarized in a digitalSTROM-Scene, e.g. some lights in a zone, please use a equivalent supported scene. That will significantly reduce the communication to the digitalSTROM-Server, increases performance and does not bypass the digitalSTROM state-machine.
 2. If you implement your own temperature control algorithm for a zone/room, e.g. because you want to use other temperature sensors, and call more than one digitalSTROM-BL-KM200, please use the *zone_temperature_control* for valve value control. The *zone_temperature_control* for valve value control will call all digitalSTROM-BL-KM200 with one command and increases the performance. To get the needed channel at the *zone_temperature_control* you have to choose a control mode unequal to *pid-controlled* for the affected zone at the digitalSTROM-heating-control-app. 
+
+<DocPreviousVersions/>
+<EditPageLink/>

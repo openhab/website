@@ -6,11 +6,11 @@ type: binding
 description: "This binding integrates the Heliop door/videophone system (http://www.2n.cz)."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Helios Binding
 
@@ -94,3 +94,6 @@ then
     logInfo("org.openhab","Rule trigger " + actionName)                 
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

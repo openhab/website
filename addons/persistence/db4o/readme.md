@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # db4o Persistence
 
@@ -36,3 +35,6 @@ This service can be configured in the file `services/db4o.cfg`.
 | maxbackups | 7     |    No    | number of backup files allowed in the database folder.  The defaults provide for a week of daily backups. |
 
 All item and event related configuration is done in the file `persistence/db4o.persist`.  Aliases do not have any special meaning for the db4o persistence service.
+
+<DocPreviousVersions/>
+<EditPageLink/>

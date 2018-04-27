@@ -7,13 +7,15 @@ description: "This binding uses the [Yahoo Weather service](https://developer.ya
 since: 2x
 logo: images/addons/yahooweather.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # YahooWeather Binding
+
+<AddonLogo/>
 
 This binding uses the [Yahoo Weather service](https://developer.yahoo.com/weather/) for providing current weather information.
 
@@ -63,3 +65,6 @@ sitemap demo label="Main Menu"
 	}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Pushbullet Actions
+
+<AddonLogo/>
 
 The Pushbullet action allows you to notify iOS, Android & Windows 10 Phone & Desktop devices of a message using the Pushbullet API web service.
 
@@ -22,7 +23,10 @@ The Pushbullet action allows you to notify iOS, Android & Windows 10 Phone & Des
 
 The following is a valid action call that can be made when the plugin is loaded.
 For specific information on each item, see the [Pushbullet API](https://docs.pushbullet.com/).
+The recipient can either be an email address or a channel tag.
+If it is not specified or invalid, the note will be broadcast to all of the user account's devices.
 
+- `sendPushbulletNote(String title, String message)`
 - `sendPushbulletNote(String receiver, String title, String message)`
 - `sendPushbulletNote(String botname, String receiver, String title, String message)`
 
@@ -69,3 +73,6 @@ Both of those libraries use various libraries themselves which makes integrating
 
 - <https://docs.pushbullet.com/>
 - <https://docs.pushbullet.com/#push-limit>
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "[OneBusAway](https://onebusaway.org/) is an open source, real-time
 since: 2x
 logo: images/addons/onebusaway.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # OneBusAway Binding
+
+<AddonLogo/>
 
 [OneBusAway](https://onebusaway.org/) is an open source, real-time, transit-information service.  This binding allows you to get events based on transit arrival and departures, so you can create rules to do something based on that data.
 
@@ -99,3 +101,6 @@ DateTime Fremont_40_Departure "40 - Ballard" { channel="onebusaway:route:1_10257
 DateTime Fremont_62_Arrival "62 - Sand Point East Green Lake" { channel="onebusaway:route:1_100252:arrival" }
 DateTime Fremont_62_Departure "62 - Sand Point East Green Lake" { channel="onebusaway:route:1_100252:departure" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # jointSPACE Binding
 
@@ -137,3 +136,6 @@ Number SetSource "Set Source" {jointspace="1:source.tv, 2:source.hdmi1, 3:source
 * Reading ambilight color values only works for specific pixels, but not for layers
 * There is an ambilight bug in some models (including mine), that setting manual colors doesn't work for the right side
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

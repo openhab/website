@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # LG TV Binding
+
+<AddonLogo/>
 
 This binding supports LG TV models with Netcast 3.0 and Netcast 4.0 (Model years 2012 & 2013), and with LG TVs which support the UDAP 2.0 protocol over Ethernet.  See ["UDAP Specifications (For Second Screen TV and Companion Apps)"](http://developer.lgappstv.com/TV_HELP/topic/lge.tvsdk.references.book/html/UDAP/UDAP/UDAP%20Specifications%20For%20Second%20Screen%20TV%20and%20Companion%20Apps.htm).
 
@@ -290,3 +291,6 @@ then
         }
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

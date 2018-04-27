@@ -7,13 +7,15 @@ description: "This is the binding for the [eQ-3 MAX! Home Solution](http://www.e
 since: 2x
 logo: images/addons/max.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MAX! Binding
+
+<AddonLogo/>
 
 This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/).
 This binding allows you to integrate, view and control the MAX! Thermostats in the openHAB environment
@@ -158,3 +160,6 @@ On the MAX! devices you can trigger the following action
 
 Note: In Paper UI there are no action buttons.
 You can trigger these actions changing from 'No Action' in the dropdown to the action value.
+
+<DocPreviousVersions/>
+<EditPageLink/>

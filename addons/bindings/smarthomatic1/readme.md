@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Smarthomatic Binding
 
@@ -99,3 +98,6 @@ transform/getDiv10.js
 ### RGB Dimmer#
 
 * Color tested
+
+<DocPreviousVersions/>
+<EditPageLink/>

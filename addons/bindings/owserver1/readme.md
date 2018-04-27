@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # OWServer Binding
 
@@ -84,3 +83,6 @@ Number bath_humidity "Humidity [%.1f %%]" { owserver="<ow1:C200100000XXXXXX:Humi
 
 - It is only possible to read values.
 - The binding does only read values from the `details.xml`.  That means it is limited to 23 1-wire devices per OW-SERVER.
+
+<DocPreviousVersions/>
+<EditPageLink/>

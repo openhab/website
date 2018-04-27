@@ -6,11 +6,11 @@ type: transform
 description: "Transforms a source string on basis of the regular expression (regex) search pattern to a defined result string."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # RegEx Transformation Service
 
@@ -103,3 +103,6 @@ Using a backslash in a Regex as literal `\\` will have this form `"\\\\"`.
 * Online validator help to check the syntax of an regex and give information how to design it.
     * [Regex 101](https://regex101.com/)
     * [Regex R](https://regexr.com/)
+
+<DocPreviousVersions/>
+<EditPageLink/>

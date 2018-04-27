@@ -12,9 +12,10 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Netatmo Binding
+
+<AddonLogo/>
 
 The Netatmo binding integrates the Netatmo Personal Weather Station into openHAB. Its different modules allow you to measure temperature, humidity, air pressure, carbon dioxide concentration in the air, as well as the ambient noise level.
 
@@ -57,7 +58,7 @@ The variables to fill in are:
 * `<CLIENT_ID>` Your client ID taken from your App at https://dev.netatmo.com/dev/listapps
 * `<SCOPE>` A list of devices and capabilities. The full scope would be `read_station read_thermostat write_thermostat read_camera access_camera`, see the [Netatmo Scope Documentation](https://dev.netatmo.com/doc/authentication/scopes) for more info. Please ensure that the variable is [URL encoded](http://www.w3schools.com/tags/ref_urlencode.asp) if your browser doesn't do it automatically, e.g. the URL encoded complete list of scopes would be `read_station%20read_thermostat%20write_thermostat%20read_camera%20access_camera`
 
-When entering the URL to your browser it will take you to the Netatmo Webpage asking you to authorize your application to access your Netatmo data. The page should look something like [this](https://dev.netatmo.com/images/dev/auth_app.jpg). After this step your Application should appear as an authorized application in your Netatmo profile. Please make sure it is there, the setup can not continue if your app is not authorized.
+When entering the URL to your browser it will take you to the Netatmo Webpage asking you to authorize your application to access your Netatmo data. The page should look something like [this](https://dev.netatmo.com/images/dev/auth_app.jpg). After this step your Application should appear as an authorized application in your Netatmo profile. Please make sure it is there, the setup cannot continue if your app is not authorized.
 
 ### 3. Retrieve a refresh token
 [Retrieve a refresh token](https://dev.netatmo.com/doc/authentication/refreshtoken) from Netatmo API, using e.g. curl. 
@@ -719,3 +720,6 @@ The following icons are used by original Netatmo web app:
 | ![http://my.netatmo.com/img/my/app/module_rain.png](http://my.netatmo.com/img/my/app/module_rain.png) | ![http://my.netatmo.com/img/my/app/battery_medium.png](http://my.netatmo.com/img/my/app/battery_medium.png) | ![http://my.netatmo.com/img/my/app/signal_medium.png](http://my.netatmo.com/img/my/app/signal_medium.png) | ![http://my.netatmo.com/img/my/app/wifi_high.png](http://my.netatmo.com/img/my/app/wifi_high.png) |
 | | ![http://my.netatmo.com/img/my/app/battery_high.png](http://my.netatmo.com/img/my/app/battery_high.png) | ![http://my.netatmo.com/img/my/app/signal_high.png](http://my.netatmo.com/img/my/app/signal_high.png) | ![http://my.netatmo.com/img/my/app/wifi_full.png](http://my.netatmo.com/img/my/app/wifi_full.png) |
 | | ![http://my.netatmo.com/img/my/app/battery_full.png](http://my.netatmo.com/img/my/app/battery_full.png) | ![http://my.netatmo.com/img/my/app/signal_full.png](http://my.netatmo.com/img/my/app/signal_full.png) | |
+
+<DocPreviousVersions/>
+<EditPageLink/>

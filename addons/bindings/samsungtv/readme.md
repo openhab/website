@@ -7,13 +7,15 @@ description: "This binding integrates the [Samsung TV's](http://www.samsung.com)
 since: 2x
 logo: images/addons/samsungtv.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Samsung TV Binding
+
+<AddonLogo/>
 
 This binding integrates the [Samsung TV's](http://www.samsung.com).
 
@@ -80,3 +82,6 @@ Dimmer  TV_Volume   { channel="samsungtv:tv:livingroom:volume" }
 Switch  TV_Mute     { channel="samsungtv:tv:livingroom:mute" }
 String  TV_KeyCode  { channel="samsungtv:tv:livingroom:keyCode" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Tellstick Binding
+
+<AddonLogo/>
 
 This binding is tested against Tellstick DUO, it should also work with a basic Tellstick.  It supports RF 433 Mhz protocols like: Nexa, HomeEasy, X10, CoCo (KlikAanKlikUit), Oregon e.o.
 
@@ -199,3 +200,6 @@ try:
 except KeyboardInterrupt:
     pass
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

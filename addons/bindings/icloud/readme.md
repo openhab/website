@@ -6,11 +6,11 @@ type: binding
 description: "The Apple [iCloud](https://www.apple.com/icloud/) is used to retrieve data such as the battery level or current location of one or multiple Apple devices connected to an iCloud account."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # iCloud Binding
 
@@ -137,3 +137,6 @@ end
 ```
 
 Apple, iPhone, and iCloud are registered trademarks of Apple Inc., registered in the U.S. and other countries.
+
+<DocPreviousVersions/>
+<EditPageLink/>

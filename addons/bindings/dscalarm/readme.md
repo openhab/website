@@ -7,13 +7,15 @@ description: "The DSC PowerSeries Alarm System is a popular do-it-yourself home 
 since: 2x
 logo: images/addons/dscalarm.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # DSC Alarm Binding
+
+<AddonLogo/>
 
 The DSC PowerSeries Alarm System is a popular do-it-yourself home security system, which can be monitored and controlled remotely through a standard web-browser or mobile device.
 
@@ -636,3 +638,6 @@ end
 Notice the command variations in the examples.
 If a command has data, there needs to be a comma between the command and the data as seen above in the first example.
 If there is no data then it would only require the command itself as in the second example.
+
+<DocPreviousVersions/>
+<EditPageLink/>

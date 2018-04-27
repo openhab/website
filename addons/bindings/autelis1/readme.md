@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Autelis Binding
+
+<AddonLogo/>
 
 Autelis manufactures a network enabled pool interface for many popular pool systems.  See the [Autelis website](http://www.autelis.com) and the [Autelis Command Protocol](http://www.autelis.com/wiki/index.php?title=Pool_Control_(PI)_HTTP_Command_Reference) for more information.
 
@@ -161,3 +162,6 @@ Switch PoolSpaLight  "Spa Light [%s]" {autelis="equipment.circuit3"}
 Switch PoolLight  "Pool Light [%s]" {autelis="equipment.circuit4"}
 String PoolLightCmd	 {autelis="lightscmd"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "The binding integrates Google Chromecast streaming devices."
 since: 2x
 logo: images/addons/chromecast.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Chromecast Binding
+
+<AddonLogo/>
 
 The binding integrates Google Chromecast streaming devices.
 It not only acts as a typical binding, but also registers each Chromecast device as an audio sink that can be used for playback.
@@ -140,3 +142,6 @@ sitemap chromecast label="Chromecasts" {
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

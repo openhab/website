@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Stiebel Eltron LWZ Binding
 
@@ -76,3 +75,6 @@ Number CylinderTemperature "Boilertemperatur [%.1f °C]" { stiebelheatpump="Cyli
 ```
 
 The "CylinderTemperature" is defined in the 2.06.xml protocol parser configuration in the resources of the binding.
+
+<DocPreviousVersions/>
+<EditPageLink/>

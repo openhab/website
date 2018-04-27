@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # DSC PowerSeries Alarm System Binding
+
+<AddonLogo/>
 
 This binding mintors and controls the DSC PowerSeries Alarm System, utilizing the EyezOn Envisalink 3/2DS interface or the DSC IT-100 RS-232 interface.
 
@@ -417,3 +418,6 @@ Frame label="Alarm System" {
 * Added support for the DSC Alarm binding to communicate with an IT-100 through a TCP/IP serial server. Also, fixed a bug where the IT-100 serial interface requires a 6 digit usercode but was only receiving 4 digits.
 ([#3774](https://github.com/openhab/openhab/pull/3774))
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

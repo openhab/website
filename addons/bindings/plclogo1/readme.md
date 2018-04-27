@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # PLCLogo Binding
 
@@ -67,3 +66,6 @@ Number ReadWriteAnalogValue {plclogo="plc:VW5"}
 ```
 
 read/write analog input block mapped to `VW` address 5
+
+<DocPreviousVersions/>
+<EditPageLink/>

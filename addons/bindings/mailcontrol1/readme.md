@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MailControl Binding
 
@@ -85,3 +84,6 @@ string: {"messageType":"110","productVersion":"1.0","itemCommand":{"timeSent":"0
 
 up - down: {"messageType":"110","productVersion":"1.0","itemCommand":{"timeSent":"0","command":{"value":"UP","commandType":"UP_DOWN"},"item_id":"Item"},"senderEmail":"email.address@some.com"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

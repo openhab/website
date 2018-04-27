@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Withings Binding
 
@@ -136,3 +135,6 @@ Number FatRatio   "FatRatio [%.1f %%]"    { withings = "fat_ratio" }
 Number HeartPulse "HeartPulse [%d bpm]"   { withings = "heart_pulse" }
 Number PHeight    "Height  [%d in]"       { withings = "peter:height" }
 ````
+
+<DocPreviousVersions/>
+<EditPageLink/>

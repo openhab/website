@@ -7,13 +7,15 @@ description: "This is an openHAB binding for the [Hunter Douglas PowerView Motor
 since: 2x
 logo: images/addons/hdpowerview.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Hunter Douglas PowerView Binding
+
+<AddonLogo/>
 
 This is an openHAB binding for the [Hunter Douglas PowerView Motorized Shades](http://www.hunterdouglas.com/operating-systems/powerview-motorization/support) via the PowerView Hub.
 
@@ -82,3 +84,6 @@ Scenes channels are added to the Hub as they are discovered.
 | Channel  | Item Type | Description                                                                                                                                                                                                         |
 |----------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | activate | Switch    | Turning this to ON will activate the scene. Scenes are stateless in the PowerView hub - they have no on/off state. Include { autoupdate="false" } on your item configuration to avoid needing to toggle off and on. |
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -8,7 +8,7 @@ module.exports = {
   base,
   head: [
     ['link', { rel: 'icon', href: `/openhab-logo-square.png` }],
-    ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans` }]
+    ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }]
   ],
   serviceWorker: false,
   themeConfig: {
@@ -18,7 +18,7 @@ module.exports = {
     docsDir: 'docs',
     nav: [
       {
-        text: 'News',
+        text: 'Blog',
         link: '/news/'
       },
       {
@@ -26,8 +26,8 @@ module.exports = {
         link: '/download/',
       },
       {
-        text: 'Guides',
-        link: '/guides/overview/',
+        text: 'Docs',
+        link: '/docs/',
       },
       {
         text: 'Add-ons',
@@ -37,24 +37,63 @@ module.exports = {
         text: 'About',
         items: [
           {
-            text: 'Who We Are',
-            link: '/about/who-we-are'
-          },
-          {
             text: 'Community',
-            link: '/about/community'
+            items: [
+              {
+                text: 'Who We Are',
+                link: '/about/who-we-are',
+              },
+              {
+                text: 'Forum & FAQ',
+                link: '/about/community'
+              },
+              {
+                text: 'Contribute',
+                link: '/about/contributing'
+              },
+              {
+                text: 'Events',
+                link: '/about/events'
+              },
+            ]
           },
           {
-            text: 'Foundation',
-            link: 'https://openhabfoundation.org/'
+            text: 'Support openHAB',
+            items: [
+              {
+                text: 'Foundation',
+                link: 'https://openhabfoundation.org/'
+              },
+              {
+                text: 'Donate',
+                link: '/about/donate'
+              }
+            ]
           },
           {
-            text: 'Events',
-            link: '/about/events'
-          },
-          {
-            text: 'Donate',
-            link: '/about/donate'
+            text: 'Resources',
+            items: [
+              {
+                text: 'Press',
+                link: '/about/press'
+              },
+              {
+                text: 'Academia',
+                link: '/about/education'
+              },
+              {
+                text: 'Success Stories',
+                link: '/about/showcase'
+              },
+              {
+                text: 'Logos',
+                link: '/about/logos'
+              },
+              // {
+              //   text: 'Privacy',
+              //   link: '/privacy'
+              // }
+            ]
           }
         ]
       },
@@ -64,6 +103,103 @@ module.exports = {
       // }
     ],
     sidebar: {
+      '/docs/': [
+        {
+          title: 'Welcome to openHAB',
+          collapsable: false,
+          children: [
+            ''
+          ]
+        },
+        {
+          title: 'Concepts',
+          collapsable: false,
+          children: [
+            ['concepts/', 'Concepts Overview'],
+            'concepts/things',
+            'concepts/items',
+            'concepts/discovery',
+            'concepts/audio',
+          ]
+        },
+        {
+          title: 'Installation Guide',
+          collapsable: false,
+          children: [
+            'installation/',
+            ['installation/linux', 'Linux'],
+            ['installation/windows', 'Windows'],
+            ['installation/macosx', 'macOS'],
+            'installation/openhabian',
+            'installation/rasppi',
+            'installation/pine',
+            'installation/docker',
+            'installation/synology',
+            'installation/qnap',
+            ['installation/security', 'Security']
+          ]
+        },
+        {
+          title: 'New User Tutorial',
+          collapsable: false,
+          children: [
+            ['tutorial/', 'Tutorial Overview'],
+            'tutorial/1sttimesetup',
+            'tutorial/uis',
+            'tutorial/configuration',
+            'tutorial/sitemap',
+            'tutorial/rules',
+            'tutorial/logs',
+            'tutorial/persistence'
+          ]
+        },
+        {
+          title: 'Configuration Guide',
+          collapsable: false,
+          children: [
+            ['configuration/', 'Configuration Overview'],
+            'configuration/things',
+            'configuration/items',
+            'configuration/sitemaps',
+            'configuration/persistence',
+            'configuration/rules-dsl',
+            'configuration/transformations',
+            'configuration/actions',
+            'configuration/jsr223',
+            'configuration/services',
+            'configuration/multimedia',
+            ['configuration/migration/', 'Migration from 1.x']
+          ]
+        },
+        {
+          title: 'User Interfaces and Apps',
+          collapsable: false,
+          children: [
+            'configuration/packages',
+            'configuration/editors',
+            'configuration/homebuilder',
+            ['configuration/paperui', 'Paper UI'],
+            ['configuration/habmin', 'HABmin'],
+            'configuration/habpanel',
+            'configuration/rules-ng',
+            'apps/android',
+            'apps/ios',
+            'apps/windows',
+          ]
+        },
+        {
+          title: 'Administration Guide',
+          collapsable: false,
+          children: [
+            'administration/',
+            'administration/console',
+            'administration/runtime',
+            'administration/bundles',
+            'administration/logging',
+            'administration/jsondb',
+          ]
+        },
+      ],
       '/guides/': [
         {
           title: 'Welcome to openHAB',
@@ -111,13 +247,6 @@ module.exports = {
             'tutorial/persistence'
           ]
         },
-        // {
-        //   title: 'Migration from 1.x',
-        //   collapsable: false,
-        //   children: [
-        //     'migration/',
-        //   ]
-        // },
         {
           title: 'Configuration Guide',
           collapsable: false,

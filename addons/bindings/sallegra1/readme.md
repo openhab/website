@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Sallegra Binding
 
@@ -64,3 +63,6 @@ Switch Light_Livingroom   "Light_Livingroom"  { sallegra="livingroom:relay:1" }
 String Input1             "Input1 [%s]"       { sallegra="inputmodule:input:DI8" }
 Dimmer Light_Bedroom      "Dimmer 1 [%d %%]"  { sallegra="bedroom:dimmer:1" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

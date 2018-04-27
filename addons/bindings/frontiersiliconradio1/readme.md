@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Frontier Silicon Radio Binding
+
+<AddonLogo/>
 
 This binding is for internet radios based on the [Frontier Silicon chipset](http://www.frontier-silicon.com/digital-radio-solutions).
 
@@ -143,3 +144,6 @@ If you would like to extend this binding and contribute further functionality, h
 * netRemote.play.info.name
 
 If you like to add further actions, have a look at [FrontierSiliconRadio.java](https://github.com/openhab/openhab/blob/master/bundles/binding/org.openhab.binding.frontiersiliconradio/src/main/java/org/openhab/binding/frontiersiliconradio/internal/FrontierSiliconRadio.java).
+
+<DocPreviousVersions/>
+<EditPageLink/>

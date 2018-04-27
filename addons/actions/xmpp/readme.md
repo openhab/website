@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # XMPP Actions
+
+<AddonLogo/>
 
 This set of actions allows you to send a message to an XMPP user or multi-user chat, or send a message with an attachment to an XMPP user.
 
@@ -59,3 +60,6 @@ password=mysecret
 # check you openhab.log to found the address after you send something via Hangouts to your openHAB account
 consoleusers=**cryptic**@public.talk.google.com,myname@gmail.com
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

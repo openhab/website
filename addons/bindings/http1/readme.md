@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # HTTP Binding
+
+<AddonLogo/>
 
 If you want to have openHAB request a URL when commands are sent to items, or have it poll a given URL frequently and update items' states, install and configure this binding.
 
@@ -154,3 +155,6 @@ Number Weather_OutTemp "Value: [%.1f °C]" { http="<[http://weewx/now.json:60000
 ```
 
 [jsonpath.com](http://jsonpath.com/) is a handy tool to create the JSONPATH transformation.
+
+<DocPreviousVersions/>
+<EditPageLink/>

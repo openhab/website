@@ -7,13 +7,15 @@ description: "The binding uses the Tankerkönig API <https://www.tankerkoenig.de
 since: 2x
 logo: images/addons/tankerkoenig.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Tankerkönig Binding
+
+<AddonLogo/>
 
 The binding uses the Tankerkönig API <https://www.tankerkoenig.de> for collecting gas price data of german gas stations.
 Special thanks to the creators of Tankerkönig for providing an easy way to get data from  the &lsqb;MTS-K&rsqb; (Markttransparenzstelle für Kraftstoffe).
@@ -200,3 +202,6 @@ This switch can be set either manually (only suggested for testing!), by a rule 
 
 *   &lsqb;MTS-K&rsqb;: <https://www.bundeskartellamt.de/DE/Wirtschaftsbereiche/Mineral%C3%B6l/MTS-Kraftstoffe/Verbraucher/verbraucher_node.html>
 *   &lsqb;openhab1-addons rules&rsqb;: <https://github.com/openhab/openhab1-addons/wiki/Samples-Rules#how-to-calculate-public-holidays>
+
+<DocPreviousVersions/>
+<EditPageLink/>

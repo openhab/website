@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Intertechno Binding
 
@@ -91,3 +90,6 @@ If you have an unsupported intertechno device you can fallback to the raw mode
 ```
 
 This configuration allows you to manually specify the complete commands to send in either ON or OFF state. The given commands will be sent directly to the CUL (prefixed with "is").
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -7,13 +7,15 @@ description: "This binding integrates pulseaudio devices."
 since: 2x
 logo: images/addons/pulseaudio.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Pulseaudio Binding
+
+<AddonLogo/>
 
 This binding integrates pulseaudio devices.
 
@@ -52,3 +54,6 @@ All devices support some of the following channels:
 <!--ToDO - needs an example.  It was left with the "## Full Example header, but everything after that was blank..."
 ## Full Example
 -->
+
+<DocPreviousVersions/>
+<EditPageLink/>

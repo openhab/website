@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Twitter Actions
+
+<AddonLogo/>
 
 Twitter can be used to "tweet" notifications when certain events take place in openHAB.
 
@@ -89,3 +90,6 @@ The current limits are:
 - Tweets: 1,000 per day. The daily update limit is further broken down into smaller limits for semi-hourly intervals. Retweets are counted as Tweets.
 - Following (daily): The technical follow limit is 1,000 per day. Please note that this is a technical account limit only, and there are additional rules prohibiting aggressive following behavior. Details about following limits and prohibited behavior are on the Follow Limits and Best Practices page.
 - Following (account-based): Once an account is following 2,000 other users, additional follow attempts are limited by account-specific ratios. The Follow Limits and Best Practices page has more information.
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -6,11 +6,11 @@ type: binding
 description: "The binding integrates the [innogy SmartHome](http://innogy.com/smarthome) system into openHAB."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # innogy SmartHome Binding
 
@@ -205,3 +205,6 @@ Switch myWindowContactBattery "Battery low" <battery> {channel="innogysmarthome:
 
 
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

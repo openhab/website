@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # mapdb Persistence
 
@@ -46,3 +45,6 @@ in the file `services/runtime.cfg`.
 ## Troubleshooting
 
 Restore of items after startup is taking some time. Rules are already started in parallel. Especially in rules that are started via `System started` trigger, it may happen that the restore is not completed resulting in undefined items. In these cases the use of restored items has to be delayed by a couple of seconds. This delay has to be determined experimentally.
+
+<DocPreviousVersions/>
+<EditPageLink/>

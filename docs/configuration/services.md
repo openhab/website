@@ -1,0 +1,16 @@
+---
+title: Services
+source: https://github.com/openhab/openhab-docs/blob/gh-pages/configuration/services.md
+---
+
+
+# Services
+
+::: tip Contribution Wanted
+Please help us improve the documentation! 
+If you'd like to leave corrections, additions or comments for this article or any other part of this website, please drop a word at:
+[Documentation Issue Tracker](https://github.com/openhab/openhab-docs/issues)
+:::
+
+<DocPreviousVersions/>
+<EditPageLink/>

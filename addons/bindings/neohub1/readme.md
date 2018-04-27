@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # NeoHub Binding
 
@@ -51,3 +50,6 @@ The following properties, and their associated item types are shown below. The R
 | Heating     | Switch, String   | RO Returns ON or OFF if heating is currently enabled or not |
 | Away      | Switch, String | RW Returns ON or OFF if thermostat is in away mode or not |
 | Standby   | Switch, String | RW Returns ON or OFF if thermostat is in standby mode or not |
+
+<DocPreviousVersions/>
+<EditPageLink/>

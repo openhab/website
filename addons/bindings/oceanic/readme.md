@@ -7,13 +7,15 @@ description: "This binding integrates the Oceanic water softener and management 
 since: 2x
 logo: images/addons/oceanic.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Oceanic Binding
+
+<AddonLogo/>
 
 This binding integrates the Oceanic water softener and management system (www.oceanic.be, but also distributed by Syr in Germany (www.syr.de)).
 The binding supports the Limex IQ and Limex Pro water softeners and require the optional CAN-Serial gateway has to be installed
@@ -145,3 +147,6 @@ However, in order to fix permissions at the OS level, one has to issue following
 ```
           
 Alternatively, these commands can be executed through a script that is attached to the systemd system manager script.
+
+<DocPreviousVersions/>
+<EditPageLink/>

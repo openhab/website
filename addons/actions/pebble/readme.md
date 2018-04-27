@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Pebble Actions
 
@@ -49,3 +48,6 @@ pebblePin("88889999aaaabbbbccccddddeeeeffff", now.toDate, "Dave left", "Dave is 
 pebblePin("dave", new DateTime().withHourOfDay(23).withMinuteOfHour(30).toDate, "Bed time", "Shutdown", "http://192.168.1.15:8090/CMD?Lights_All=OFF")
 pebbleNotification("dave", "Dave left", "Dave left the house")
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

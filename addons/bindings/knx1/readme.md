@@ -12,9 +12,10 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # KNX Binding
+
+<AddonLogo/>
 
 The openHAB KNX binding allows one to connect to [KNX Home Automation](http://www.knx.org/) installations. Switching lights on and off, activating your roller shutters or changing room temperatures are only some examples.
 
@@ -331,3 +332,6 @@ Switch item=d18_001 mappings=[0="Scene 1", 1="Scene 2", 2="Scene 3", 128="learn 
 ```
 
 If you have a device requiring 17.001 DPT_SCENE_NUMBER for selecting or indicating scenes, then use one of the above mentioned examples and replace 18.001 with 17.001. Additionally, remove all "learn" mappings.
+
+<DocPreviousVersions/>
+<EditPageLink/>

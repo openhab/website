@@ -7,13 +7,15 @@ description: "The [BigAssFan](http://www.bigassfans.com/) binding is used to ena
 since: 2x
 logo: images/addons/bigassfan.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # BigAssFan Binding
+
+<AddonLogo/>
 
 The [BigAssFan](http://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans'  Haiku family of residential fans and lights that implement the SenseME technology.
 
@@ -182,3 +184,6 @@ bigassfan:fan:20F85EDAA56A [ label="Porch Fan", ipAddress="192.168.12.62", macAd
 #### Unsupported Features
 
 Standalone lights are not supported.
+
+<DocPreviousVersions/>
+<EditPageLink/>

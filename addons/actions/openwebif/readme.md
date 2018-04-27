@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # OpenWebIf Action
 
@@ -59,3 +58,6 @@ sendOpenWebIfNotification("main", "Hello World!\n\nThis is a message sent from o
 ```
 
 ![](https://farm4.staticflickr.com/3882/15284270826_8cf0e637d8_z.jpg)
+
+<DocPreviousVersions/>
+<EditPageLink/>

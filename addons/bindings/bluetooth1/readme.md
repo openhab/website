@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Bluetooth Binding
+
+<AddonLogo/>
 
 The Bluetooth binding is used to connect openHAB with a Bluetooth device. With it, you can make openHAB react to Bluetooth devices that come in range of your network.
 
@@ -179,3 +180,6 @@ This could be done using different ways, e.g. you could use the Eclipse IDE.
 * Clean and rebuild the binding.
 
 The binding will work now on the target system, the bluecove jar (and the native libraries) are generated. 
+
+<DocPreviousVersions/>
+<EditPageLink/>

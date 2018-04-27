@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MAX!Cube Binding
 
@@ -172,3 +171,6 @@ If you have a lot of devices the log is an alternative way to get the serial num
 
 To log even more information, set the level of `org.openhab.binding.maxcube` from DEBUG to TRACE.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

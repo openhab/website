@@ -6,11 +6,11 @@ type: binding
 description: "The LaMetric binding allows to connect openHab to LaMetric Time connected clock devices, providing following features:"
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # LaMetric Binding
 
@@ -94,7 +94,7 @@ Bridge lametrictime:device:demo [ host="somehost", apiKey="ksfjsdkfsksjfs" ]
 | brightnessMode | String (possible values are 'auto' and 'manual') | The mode for the display brightness. If set to 'auto' the brightness is set by the device automatically based on environment illumination. If set to 'manual' the brightness can be changed via 'brightness' channel. |
 | volume         | Dimmer                                           | The volume of the device speaker.                                                                                                                                                                                     |
 | bluetooth      | Switch                                           | The status of Bluetooth audio streaming on the device.                                                                                                                                                                |
-| app            | String                                           | The active application on the device. State options for UIs are determined at runtime automatically. The value must be formatted as '&lt:package name&gt;:&lt;widget ID&gt;'.                                                     |
+| app            | String                                           | The active application on the device. State options for UIs are determined at runtime automatically. The value must be formatted as `<package name>:<widget ID>`.                                                     |
 | info           | String                                           | Send informational notifications to the device.                                                                                                                                                                       |
 | warning        | String                                           | Send warning notifications to the device.                                                                                                                                                                             |
 | alert          | String                                           | Send alert notifications to the device.                                                                                                                                                                               |
@@ -295,3 +295,6 @@ rule "Set 2 Minute Timer"
          sendCommand(TimerDuration, 120)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

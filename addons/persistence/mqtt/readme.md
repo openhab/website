@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # MQTT Persistence
+
+<AddonLogo/>
 
 This service allows you to feed item states to an MQTT broker using the openHAB persistence strategies.  The destination broker, topic and messages are configurable.
 
@@ -92,3 +93,6 @@ Items {
 ```
 
 With this configuration, all items will persisted whenever their state changes and once per hour.
+
+<DocPreviousVersions/>
+<EditPageLink/>

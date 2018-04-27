@@ -7,13 +7,15 @@ description: "The senseBox binding integrates environment data from the [senseBo
 since: 2x
 logo: images/addons/sensebox.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # senseBox Binding
+
+<AddonLogo/>
 
 The senseBox binding integrates environment data from the [senseBox](https://sensebox.de/)
 Citizen Science Toolkit.
@@ -117,3 +119,6 @@ sitemap sensebox label="SenseBox Zugspitze" {
 
 *   <https://api.opensensemap.org/boxes/:boxId>
 *   <https://api.opensensemap.org/boxes/:senseBoxId/sensors>
+
+<DocPreviousVersions/>
+<EditPageLink/>

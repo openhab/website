@@ -12,9 +12,10 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Somfy URTSI II Binding
+
+<AddonLogo/>
 
 This binding communicates with Somfy URTSI II devices over a serial connection.
 
@@ -53,3 +54,6 @@ As a result, your lines in the items file might look like the following:
 Rollershutter RollershutterKitchen       "Kitchen"         { urtsi="device1:1" }
 Rollershutter RollershutterLivingRoom    "Living room"     { urtsi="device1:2" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

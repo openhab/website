@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # RWE SmartHome Binding
 
@@ -174,3 +173,6 @@ Works with the following devices:
 * RWE SmartHome Bewegungsmelder aussen (WMDO)
 
 The solution is mainly the same as for pushbuttons (see above). Simply set the auto-off-time in the RWE profile to a longer period, e.g. 1 minute. Now the variable is on, when a motion occurs until there is no motion any more for about a minute.
+
+<DocPreviousVersions/>
+<EditPageLink/>

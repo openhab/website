@@ -7,13 +7,15 @@ description: "This binding integrates infrared transceivers through [LIRC](http:
 since: 2x
 logo: images/addons/lirc.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # LIRC Binding
+
+<AddonLogo/>
 
 This binding integrates infrared transceivers through [LIRC](http://www.lirc.org) or [WinLIRC](http://winlirc.sourceforge.net).
 
@@ -100,3 +102,6 @@ This binding currently supports following channels:
 |-----------------|--------------|---------------------------------------|
 | event           | Trigger      | Triggers when a button is pressed.    |
 | transmit        | String       | Used to transmit IR commands to LIRC. |
+
+<DocPreviousVersions/>
+<EditPageLink/>

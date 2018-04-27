@@ -7,13 +7,15 @@ description: "This binding integrates the [Freebox Revolution](http://www.free.f
 since: 2x
 logo: images/addons/freebox.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Freebox Binding
+
+<AddonLogo/>
 
 This binding integrates the [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) to your openHab installation.
 
@@ -320,3 +322,6 @@ Switch TVBedroom "TV bedroom" <television> {channel="freebox:net_interface:fb:tv
 String freebox_player_playurl "URL [%s]" { channel="freebox:airplay:fb:player:playurl" }
 Switch freebox_player_stop "Stop playback" { channel="freebox:airplay:fb:player:stop" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

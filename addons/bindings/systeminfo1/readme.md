@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## System Information Binding
 
@@ -23,7 +22,6 @@ There is also a binding specifically for openHAB 2 [here](http://docs.openhab.or
 
 ## Table of Contents
 
-<!-- MarkdownTOC -->
 
 - [Binding Configuration](#binding-configuration)
 	- [Hyperic SIGAR Native libraries](#hyperic-sigar-native-libraries)
@@ -34,7 +32,6 @@ There is also a binding specifically for openHAB 2 [here](http://docs.openhab.or
 	- [Sitemaps](#sitemaps)
 	- [Raspberry Pi System Temperature](#raspberry-pi-system-temperature)
 
-<!-- /MarkdownTOC -->
 
 
 ## Binding Configuration
@@ -331,3 +328,6 @@ Text item=System_Temperature_CPU label="Temperature [%.1f °C]" {
 	}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

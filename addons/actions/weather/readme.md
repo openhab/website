@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Weather Actions
 
@@ -38,3 +37,6 @@ The Weather Action service provides meteorological information to your scripts a
 
 - `getSeaLevelPressure(double pressure, double temp, double altitude)`: Compute the [Sea Level Pressure](http://keisan.casio.com/exec/system/1224575267), given absolute pressure in hPa, temperature in Celsius, and altitude in meters.  Returns equivalent sea level pressure.
 - `getWindDirection(int degree)`: Transform an orientation angle (in degrees) to its cardinal string equivalent.  Returns string representing the direction.
+
+<DocPreviousVersions/>
+<EditPageLink/>

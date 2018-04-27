@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Anel NET-PwrCtrl Binding 
+
+<AddonLogo/>
 
 Monitor and control Anel NET-PwrCtrl devices.
 
@@ -192,3 +193,6 @@ when Item io3 changed to OFF then
     ]
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

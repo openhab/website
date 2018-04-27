@@ -6,11 +6,11 @@ type: binding
 description: "This binding integrates JeeLink USB RF receivers."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Jeelink Binding
 
@@ -171,3 +171,6 @@ Switch SocketSwitch {channel="jeelink:pca301:1-160-236:switchingState"}
 Number SocketWattage {channel="jeelink:pca301:1-160-236:currentWatt"}
 Number SocketConsumption {channel="jeelink:pca301:1-160-236:consumptionTotal"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

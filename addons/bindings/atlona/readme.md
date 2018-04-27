@@ -7,13 +7,15 @@ description: "This binding integrates Atlona AT-UHD-PRO3 HdBaseT matrix switches
 since: 2x
 logo: images/addons/atlona.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Atlona Binding
+
+<AddonLogo/>
 
 This binding integrates Atlona AT-UHD-PRO3 HdBaseT matrix switches [Atlona AT-UHD-PRO3 HdBaseT matrix switches](http://www.atlona.com) into your openHAB installation.
 
@@ -362,3 +364,6 @@ NULL=-
 -=-
 NULL=-
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

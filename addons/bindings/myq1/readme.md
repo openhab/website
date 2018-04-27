@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Chamberlain MyQ Binding
 
@@ -107,3 +106,6 @@ Text item=GarageDoorSerialNumber
 | WD832KEV  | Chamberlain 1/2 hps MyQ Garage Door Opener |
 | 825LM     | Liftmaster 825LM Remote Light Module |
 | 823LM     | Liftmaster 823LM Remote Light Switch |
+
+<DocPreviousVersions/>
+<EditPageLink/>

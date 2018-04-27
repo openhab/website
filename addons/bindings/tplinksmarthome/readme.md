@@ -6,11 +6,11 @@ type: binding
 description: "This binding adds support to control TP-Link Smart Home Devices from your local openHAB system."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # TPLinkSmartHome Binding
 
@@ -199,3 +199,6 @@ Dimmer   TP_LB_ColorT "Color Temperature [%d] K" <slider> { channel="tplinksmart
 Color    TP_LB_Color  "Color"                    <slider> { channel="tplinksmarthome:lb130:home:color" }
 Switch   TP_LB_ColorS "Switch"                            { channel="tplinksmarthome:lb130:home:color" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

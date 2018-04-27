@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # PowerDog Local API Binding 
 
@@ -119,3 +118,6 @@ For reading counters, the PowerDog Local API does not allow to read the value of
 ## Roadmap & Wishlist
 
 PowerAPI counters are not yet supported due to missing documentation.
+
+<DocPreviousVersions/>
+<EditPageLink/>

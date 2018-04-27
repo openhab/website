@@ -7,13 +7,15 @@ description: "This binding provides support for generic Bluetooth devices."
 since: 2x
 logo: images/addons/bluetooth.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Bluetooth Binding
+
+<AddonLogo/>
 
 This binding provides support for generic Bluetooth devices.
 
@@ -85,3 +87,6 @@ sitemap demo label="Main Menu"
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

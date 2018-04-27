@@ -6,11 +6,11 @@ type: voice
 description: "The MacOS Text-to-Speech (TTS) service uses the MacOS 'say' command for producing spoken text."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # MacOS Text-to-Speech
 
@@ -54,3 +54,6 @@ mactts:Yuna Yuna (ko_KR)
 ## Supported Audio Formats
 
 The MacTTS service produces audio streams using WAV containers and PCM (signed) codec with 16bit depth and 44.1kHz frequency.
+
+<DocPreviousVersions/>
+<EditPageLink/>

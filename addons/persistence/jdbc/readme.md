@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # JDBC Persistence
 
@@ -31,7 +30,6 @@ The generic design makes it relatively easy for developers to integrate other da
 
 ## Table of Contents
 
-<!-- MarkdownTOC -->
 
 - [Configuration](#configuration)
 	- [Minimal Configuration](#minimal-configuration)
@@ -43,7 +41,6 @@ The generic design makes it relatively easy for developers to integrate other da
 	- [For Developers](#for-developers)
 	- [Performance Tests](#performance-tests)
 
-<!-- /MarkdownTOC -->
 
 ## Configuration
 
@@ -175,3 +172,6 @@ end
 ```
 
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

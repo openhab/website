@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # TACmi Binding
 
@@ -126,3 +125,6 @@ There was a bug in the CMI that messed up the UDP messages sent for analog outpu
 When defining an item that is being used as a digital input in your TAPPS2 then the binding only supports to use Digital Input 1. This is due to the way the COE protocol works as all 16 digital ports are being send within one message. 
 
 For Analog Inputs it is only possible to use Analog Inputs 1, 5, 9, 13 in TAPPS2. This is also due to the way COE works as for analog messages it will send then in bundles of 4. You can however use multiple CAN nodes. According to TAPPS2 you can use CAN nodes from 1-64. So if you only have one UVR and the CMI then you should have 62 nodes available for use. I would not use the same item for sending and receiving even though that should be possible of you use one of the supported ports. Instead I would use separate items and then use rules to get the functionality that you want to achieve. That way it should be possible to have a switch item that is being updated by a CAN output and when you send a command to it, then it uses a different item with a different CAN node that maps to a CAN Input in TAPPS2. I have not tried this though yet.
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -6,11 +6,11 @@ type: binding
 description: "This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on Raspberry PI."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # OneWire GPIO Binding
 
@@ -68,3 +68,6 @@ sitemap demo label="Main Menu"
     Text item=LivingRoomTemperature
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

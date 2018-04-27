@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Satel Integra Alarm System Binding
 
@@ -538,3 +537,6 @@ Although this binding allows you to configure disarming a partition and clearing
 ## Future
 
 * OH2 version
+
+<DocPreviousVersions/>
+<EditPageLink/>

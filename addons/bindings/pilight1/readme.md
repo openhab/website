@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # pilight Binding
 
@@ -81,3 +80,6 @@ Text item=KakuDoorSensor
 For more information/questions:
 
 - [Dutch pilight support thread](http://gathering.tweakers.net/forum/list_messages/1581828/4)
+
+<DocPreviousVersions/>
+<EditPageLink/>

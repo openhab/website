@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # InfluxDB (0.9 and newer) Persistence
+
+<AddonLogo/>
 
 This service allows you to persist and query states using the [InfluxDB](http://influxdb.org) time series database. The persisted values can be queried from within openHAB. There also are nice tools on the web for visualizing InfluxDB time series, such as [Grafana](http://grafana.org/).
 
@@ -49,3 +50,6 @@ This service can be configured in the file `services/influxdb.cfg`.
 | retentionPolicy | autogen |  No | name of the retentionPolicy. Please note starting with InfluxDB >= 1.0, the default retention policy name is no longer `default` but `autogen`. |
 
 All item- and event-related configuration is defined in either the file `persistence/influxdb.persist`.
+
+<DocPreviousVersions/>
+<EditPageLink/>

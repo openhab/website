@@ -6,11 +6,11 @@ type: binding
 description: "This binding adds support for the Feican Wi-Fi version of the smart light led Bulb, the WiFi RGBW Bulb."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Feican Binding
 
@@ -110,3 +110,6 @@ Switch   FC_1_Switch  "Switch"                    { channel="feican:bulb:home:co
 Color    FC_1_Color   "Color"            <slider> { channel="feican:bulb:home:color" }
 Dimmer   FC_1_Dimmer  "Brightness [%d]"  <slider> { channel="feican:bulb:home:color" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

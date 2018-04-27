@@ -7,13 +7,15 @@ description: "Viessmann heating systems with Vitotronic has a optolink Interface
 since: 2x
 logo: images/addons/vitotronic.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Vitotronic Binding
+
+<AddonLogo/>
 
 Viessmann heating systems with Vitotronic has a optolink Interface for maintenance.
 This interface can use for get/set data in the heating system. [see on openv](http://openv.wikispaces.com)
@@ -123,3 +125,6 @@ The follow channels are implemented:
 ## Example
 
 t.b.d
+
+<DocPreviousVersions/>
+<EditPageLink/>

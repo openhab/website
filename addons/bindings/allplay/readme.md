@@ -7,13 +7,15 @@ description: "This binding integrates devices compatible with [Qualcomm AllPlay]
 since: 2x
 logo: images/addons/allplay.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # AllPlay Binding
+
+<AddonLogo/>
 
 This binding integrates devices compatible with [Qualcomm AllPlay](https://www.qualcomm.com/products/allplay).
 The binding uses native libraries for the AllJoyn framework.
@@ -139,3 +141,6 @@ when
 then
     All2Stream.sendCommand("http://chromaradio.com:8008/listen.pls")
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Pioneer AV Receiver Binding (1.x)
+
+<AddonLogo/>
 
 This binding allows openHAB to remotely control a Pioneer AV receiver equipped with an Ethernet interface. It enables openHAB to switch ON/OFF the receiver, adjust the volume, set the input source and configure most other parameters.
 
@@ -373,3 +374,6 @@ It has been observed that from time to time, the ip-interface of the receiver ha
 Currently there is no solution known to get rid of this other then to power cycle the receiver by temporary plugging out its power cord (going to standby is not sufficient). 
 
 Note: The Telnet-Connection must be exclusively usable by this binding. Means dont use telnet in terminal beforehand. This would block this binding (please confirm,20150128)
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -12,9 +12,10 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Samsung TV Binding
+
+<AddonLogo/>
 
 This binding should be compatible with Samsung TV models which support Apple and Android remote applications.
 
@@ -99,8 +100,6 @@ where:
 * KEY_AUTO_ARC_ANTENNA_SATELLITE
 * KEY_AUTO_ARC_ANYNET_AUTO_START
 * KEY_AUTO_ARC_ANYNET_MODE_OK
-* KEY_AUTO_ARC_AUTOCOLOR_FAIL
-* KEY_AUTO_ARC_AUTOCOLOR_SUCCESS
 * KEY_AUTO_ARC_CAPTION_ENG
 * KEY_AUTO_ARC_CAPTION_KOR
 * KEY_AUTO_ARC_CAPTION_OFF
@@ -325,3 +324,6 @@ Dimmer        channel        {samsungtv="INCREASE:Livingroom:KEY_CHUP, DECREASE:
 Switch        mute           {samsungtv="ON:Livingroom:KEY_MUTE, OFF:Livingroom:KEY_MUTE"}
 Rollershutter volume         {samsungtv="UP:Livingroom:KEY_VOLUP, DOWN:Livingroom:KEY_VOLDOWN"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

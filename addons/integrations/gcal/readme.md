@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 # Google Calendar Scheduler
+
+<AddonLogo/>
 
 The Google Calendar Scheduler allows you to control items in openHAB at scheduled times in the future.  It will send commands to items or update the state of items when defined on one of your Google Calendars.  
 
@@ -22,7 +23,6 @@ An additional persistence service, the Google Calendar Presence Simulator, write
 
 ## Table of Contents
 
-<!-- MarkdownTOC -->
 
 - [Obtaining Credentials](#obtaining-credentials)
 - [Service Configuration](#service-configuration)
@@ -30,7 +30,6 @@ An additional persistence service, the Google Calendar Presence Simulator, write
 - [Presence Simulation](#presence-simulation)
   - [Solving Google Calendar Presence Simulation errors](#solving-google-calendar-presence-simulation-errors)
 
-<!-- /MarkdownTOC -->
 
 ## Obtaining Credentials
 
@@ -171,3 +170,6 @@ You can later return them to `DEFAULT` or `INFO` level.
     * The calendar name is not correct.
 
     * If your not using your own calendar, make sure the sharing settings are correct and the user has sufficient rights to create calendar entries.
+
+<DocPreviousVersions/>
+<EditPageLink/>

@@ -6,11 +6,11 @@ type: binding
 description: "This binding allows you to integrate feeds in the openHAB environment."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Feed Binding
 
@@ -80,3 +80,6 @@ String author                 {channel="feed:feed:bbc:author"}
 DateTime published_date       {channel="feed:feed:bbc:last-update"}
 String title                  {channel="feed:feed:bbc:title"}
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

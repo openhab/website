@@ -11,7 +11,6 @@ install: legacy
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- <!-- {% include base.html %} --> -->
 
 ## Satel Actions
 
@@ -178,3 +177,6 @@ Text label="Enter user code" icon="settings" {
   Switch item=Keypad_Char mappings=[ "*"="*", "0"="0", "-"="#" ]
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

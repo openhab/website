@@ -11,7 +11,6 @@ install: manual
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # SiteWhere Persistence
 
@@ -43,3 +42,6 @@ No configuration is necessary for SiteWhere to listen for events on the MQTT tra
 | mqttPort | 1883    |    No    | port number for the MQTT broker that SiteWhere is listening to |
 
 All item- and event-related configuration is done in the file `persistence/sitewhere.persist`.
+
+<DocPreviousVersions/>
+<EditPageLink/>

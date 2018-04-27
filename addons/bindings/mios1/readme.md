@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 ## MiOS Bridge Binding
 
@@ -29,7 +28,6 @@ The binding uses the openHAB _Transformation Service_ extensively to "map" the D
 
 Original code was used from the XBMC Binding, and then heavily modified. Snippets included from the HTTP Binding for the various datatype mapping functions.
 
-<!-- MarkdownTOC -->
 
 - [Configuration](#configuration)
     - [MiOS Unit Configuration](#mios-unit-configuration)
@@ -44,7 +42,6 @@ Original code was used from the XBMC Binding, and then heavily modified. Snippet
     - [Examples for Co-existing](#examples-for-co-existing)
     - [Examples for Replacing](#examples-for-replacing)
 
-<!-- /MarkdownTOC -->
 
 
 ## Configuration
@@ -1003,3 +1000,6 @@ then
 	sendHttpPostRequest(SEG_URL, "application/x-www-form-urlencoded", segData)
 end
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

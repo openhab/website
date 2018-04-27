@@ -7,13 +7,15 @@ description: "This binding integrates the IKEA TRÅDFRI gateway and devices conn
 since: 2x
 logo: images/addons/tradfri.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # TRÅDFRI Binding
+
+<AddonLogo/>
 
 This binding integrates the IKEA TRÅDFRI gateway and devices connected to it (such as dimmable LED bulbs).
 
@@ -118,3 +120,6 @@ sitemap demo label="Main Menu"
     }
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

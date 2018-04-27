@@ -7,14 +7,16 @@ description: "The openHAB KNX binding allows to connect to [KNX Home Automation]
 since: 2x
 logo: images/addons/knx.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 
 # KNX Binding
+
+<AddonLogo/>
 
 The openHAB KNX binding allows to connect to [KNX Home Automation](http://www.knx.org/) installations. Switching lights on and off, activating your roller shutters or changing room temperatures are only some examples.
 
@@ -297,3 +299,6 @@ knx.items:
 Switch        demoSwitch         "Light [%s]"               <light>          { channel="hue:0210:bridge:1:color", channel="knx:device:bridge:generic:controlSwitch" }
 Dimmer        demoDimmer         "Dimmer [%d %%]"           <light>          { channel="hue:0210:bridge:1:color", channel="knx:device:bridge:generic:controlDimmer" }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

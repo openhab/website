@@ -7,13 +7,15 @@ description: "This binding integrates the [Keba KeContact EV Charging Stations](
 since: 2x
 logo: images/addons/keba.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Keba Binding
+
+<AddonLogo/>
 
 This binding integrates the [Keba KeContact EV Charging Stations](http://www.keba.com).
 
@@ -105,3 +107,6 @@ sitemap demo label="Main Menu"
 			}
 }
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

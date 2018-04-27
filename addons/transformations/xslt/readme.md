@@ -6,11 +6,11 @@ type: transform
 description: "Transform input using the XML Stylesheet Language for Transformations (XSLT)."
 since: 2x
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # XSLT Transformation Service
 
@@ -123,3 +123,6 @@ Fri, 18 Dec 2009 9:38 am PST
 * A good [introduction](https://www.w3schools.com/xml/xsl_intro.asp) and [tutorial](https://www.w3schools.com/xml/xsl_transformation.asp) at W3School.
 * An informative [tutorial](https://www.ibm.com/developerworks/library/x-xsltmistakes/) of common mistakes.
 
+
+<DocPreviousVersions/>
+<EditPageLink/>

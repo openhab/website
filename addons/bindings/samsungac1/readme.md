@@ -11,7 +11,6 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Samsung Air Conditioner Binding
 
@@ -165,7 +164,6 @@ The air conditioner returns XML in the following format:
                         <Attr ID="AC_FUN_SLEEP" Type="RW" Value="0"/>
                         <Attr ID="AC_FUN_WINDLEVEL" Type="RW" Value="Auto"/>
                         <Attr ID="AC_FUN_DIRECTION" Type="RW" Value="Fixed"/>
-                        <Attr ID="AC_ADD_AUTOCLEAN" Type="RW" Value="Off"/>
                         <Attr ID="AC_ADD_APMODE_END" Type="W" Value="0"/>
                         <Attr ID="AC_ADD_STARTWPS" Type="RW" Value="Direct"/>
                         <Attr ID="AC_ADD_SPI" Type="RW" Value="Off"/>
@@ -182,3 +180,6 @@ The air conditioner returns XML in the following format:
     </DeviceState>
 </Response> 
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>

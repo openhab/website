@@ -7,13 +7,15 @@ description: "This binding offers integration to a ZoneMinder Server. It current
 since: 2x
 logo: images/addons/zoneminder.png
 install: auto
+source: 
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Zoneminder Binding
+
+<AddonLogo/>
 
 This binding offers integration to a ZoneMinder Server. It currently only offers to integrate to monitors (eg. cameras in ZoneMinder).
 It also only offers access to a limited set of values, as well as a even more limited option to update values in ZoneMinder.
@@ -195,5 +197,8 @@ sitemap zoneminder label="Zoneminder"
 <tr><td></td><td>Check that it is possible to establish a Telnet connection from openHAB server to Zoneminder Server</td></tr>
 <tr><td>ZoneMinder Bridge is not comming ONLINE. It says: 'OFFLINE - COMMUNICATION_ERROR Cannot access ZoneMinder Server. Check provided usercredentials'</td><td>Check that the hostname is valid, if using a DNS name, make sure name is correct resolved. Also check that the given host can be accessed from a browser. Finally make sure to change the additional path from '/zm', if not using standard setup.</td></tr>
 <tr><td>Cannot connect to ZoneMinder Bridge via HTTPS, using Letsencrypt certificate</td><td>Verify your Java version, if Java is below build 101, letsencrypt certificate isn't known by Java. Either use HTTP or upgrade Java to newest build. Please be aware that https support is provided as an experimental feature.</td></tr>
-<!-- <tr><td>I have tried all of the above, it still doesn't work</td><td>Try to execute this from a commandline (on your openHAB server): curl -d "<username>=XXXX&<password>=YYYY&action=login&view=console" -c cookies.txt  http://<yourzmip>/zm/index.php. Change <yourzmip>, <username> and <password> to the actual values. This will check if your server is accessible from the openHAB server.</td></tr> -->
+<tr><td>I have tried all of the above, it still doesn't work</td><td>Try to execute this from a commandline (on your openHAB server): curl -d "&lt;username&gt;=XXXX&&lt;password&gt;=YYYY&action=login&view=console" -c cookies.txt  http://&lt;yourzmip&gt;/zm/index.php. Change &lt;yourzmip&gt;, &lt;username&gt; and &lt;password&gt; to the actual values. This will check if your server is accessible from the openHAB server.</td></tr>
 </table>
+
+<DocPreviousVersions/>
+<EditPageLink/>

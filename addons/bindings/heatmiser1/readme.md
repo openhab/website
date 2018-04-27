@@ -12,9 +12,10 @@ install: auto
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
-<!-- {% include base.html %} -->
 
 # Heatmiser Binding
+
+<AddonLogo/>
 
 The Heatmiser binding allows you to control Heatmiser RS-422 network thermostats (also sold under other names). The binding communicates via TCP/IP to an RS-422 adaptor that links to the thermostats. 
 
@@ -77,3 +78,6 @@ Frame label="Lounge Thermostat" {
 }
 
 ```
+
+<DocPreviousVersions/>
+<EditPageLink/>
