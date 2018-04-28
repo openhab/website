@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+
+publish_mode: editorial_workflow # optional, enables publishing workflow
+
+display_url: https://website.openhab.org
+media_folder: ".vuepress/public/uploads"
+public_folder: "/uploads"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Blog Posts" # Used in the UI
+    label_singular: "Blog Post" # Used in the UI, ie: "New Post"
+    description: >
+      The description is a great place for tone setting, high level information, and editing
+      guidelines that are specific to a collection.
+    folder: "blog"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: yaml-frontmatter
+    extension: md
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Body", name: "body", widget: "markdown"}
+    meta:
+      - {label: "SEO Description", name: "description", widget: "text"}
