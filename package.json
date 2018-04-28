@@ -4,6 +4,8 @@
   "description": "openHAB Website",
   "dependencies": {
     "headroom.js": "^0.9.4",
+    "netlify-cms": "^1.7.0",
+    "netlify-identity-widget": "^1.4.11",
     "scrollreveal": "^3.4.0",
     "vue-parallax": "^1.1.1",
     "vue-parallaxy": "^1.1.1",
