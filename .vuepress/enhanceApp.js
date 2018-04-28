@@ -1,10 +1,10 @@
-const Admin = () => import("./components/Admin")
+// const Admin = () => import("./components/Admin")
 
-export default ({ Vue, options, router }) => {
-  router.addRoutes([
-    {
-      path: "/admin",
-      component: Admin
-    }
-  ])
-}
+// export default ({ Vue, options, router }) => {
+//   router.addRoutes([
+//     {
+//       path: "/admin",
+//       component: Admin
+//     }
+//   ])
+// }
