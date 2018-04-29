@@ -15,42 +15,44 @@
 </template>
 
 <style lang="stylus">
+.content:not(.custom)>h1:first-child
+  margin-right 140px
 .page-versions
   position absolute
   top 5rem
   white-space nowrap
-  right 0
+  right 2rem
   font-size 9pt
-  border 1px solid #eee
-  border-radius 2px
   margin 5px
   padding 3px
   height 14px
   .dropdown-wrapper
     padding 2px
     position absolute
-    right 5rem    
+    right 0
   .dropdown-title
     border 1px solid #eee
     border-radius 2px
+    padding 5px
     color black
     cursor pointer
     &:hover
       text-decoration none !important
+      border 1px solid #ccc
   .nav-dropdown
-    box-sizing: border-box;
-    max-height: calc(100vh - 2.7rem);
-    overflow-y: auto;
-    top: 100%;
-    right: 0;
-    background-color: #fff;
-    padding: 10px 0;
-    border: 1px solid #ddd;
-    border-bottom-color: #ccc;
-    text-align: left;
-    border-radius: 0.25rem;
-    white-space: nowrap;
-    margin: 0;
+    box-sizing border-box
+    max-height calc(100vh - 2.7rem)
+    overflow-y auto
+    top 100%
+    right 0
+    background-color #fff
+    padding 10px 0
+    border 1px solid #ddd
+    border-bottom-color #ccc
+    text-align left
+    border-radius 0.25rem
+    white-space nowrap
+    margin 0;
     position relative
     top 0
 </style>
