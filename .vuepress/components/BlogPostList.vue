@@ -127,6 +127,7 @@
         margin-top -2rem
         margin-bottom 1rem
       .post-excerpt
+        font-weight normal
         // font-size 20px
         // line-height 40px
         // font-family 'Open Sans', sans-serif;
