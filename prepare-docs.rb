@@ -8,11 +8,11 @@ $docs_repo_root = $docs_repo + "/blob/gh-pages"
 $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 
-# puts ">>> Deleting .vuepress/openhab-docs if existing..."
-# FileUtils.rm_rf(".vuepress/openhab-docs")
+puts ">>> Deleting .vuepress/openhab-docs if existing..."
+FileUtils.rm_rf(".vuepress/openhab-docs")
 
-# puts ">>> Cloning openhab-docs"
-# `git clone --depth 1 https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
+puts ">>> Cloning openhab-docs"
+`git clone --depth 1 https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
 
 def process_file(indir, file, outdir, source)
     in_frontmatter = false
