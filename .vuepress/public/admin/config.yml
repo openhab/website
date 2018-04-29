@@ -1,6 +1,9 @@
 backend:
   name: git-gateway
   branch: initial
+  accept_roles: #optional - accepts all users if left out
+    - admin
+    - editors
 
 publish_mode: editorial_workflow # optional, enables publishing workflow
 
