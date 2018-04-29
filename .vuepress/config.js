@@ -19,7 +19,7 @@ module.exports = {
     nav: [
       {
         text: 'Blog',
-        link: '/news/'
+        link: '/blog/'
       },
       {
         text: 'Download',

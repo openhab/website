@@ -9,11 +9,11 @@ title: Introduction
   .intro-logo {
     margin-left: 3rem; float: right;
   }
-  h1.welcome {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: 36pt;
-  }
+}
+h1.welcome {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 36pt;
 }
 </style>
 
