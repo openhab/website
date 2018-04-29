@@ -9,6 +9,8 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: `/openhab-logo-square.png` }],
     ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }]
+    ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
+    ['script', { src: `https://cookieinfoscript.com/js/cookieinfo.min.js` }]
   ],
   serviceWorker: false,
   themeConfig: {
