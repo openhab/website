@@ -223,7 +223,7 @@ header.headroom--top
       animation 1.5s ease-out 0s 1 slideIn3
       margin-top 4rem
       display inline-block
-      font-size 1.2rem
+      font-size 1rem
       color #fff
       background-color #ff6600
       padding 0.8rem 1.6rem
@@ -238,7 +238,7 @@ header.headroom--top
       margin-top 4rem
       margin-left 0.5em
       display inline-block
-      font-size 1.2rem
+      font-size 1rem
       color #fff
       padding 0.8rem 1.6rem
       border-radius 4px
