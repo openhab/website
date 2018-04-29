@@ -179,7 +179,8 @@ export default {
   },
   methods: {
     removeMarkdown (markdown) {
-      return markdown.replace(/\[([\w /.-]+)\]\(([\w:/.-]+)\)/g, '$1').trim()
+      if (markdown)
+        return markdown.replace(/\[([\w /.-]+)\]\(([\w:/.-]+)\)/g, '$1').trim()
     }
   },
   computed: {
