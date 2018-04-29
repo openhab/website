@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="addon-search">
     <input type="text" class="filter" v-model="filter" placeholder="Search for an add-on or a thing" />
     <em v-if="results">
       {{resultsText}}
@@ -29,7 +29,7 @@
           No Add-on matching your query was found.
         </em>
 
-        <h2>Things</h2>
+        <h2 v-if="results.things.length > 0">Things</h2>
         <transition-group name="things" v-if="results.things.length > 0" class="things">
           <li v-for="thing of results.things" class="thing" :key="thing.id">
             <strong>{{thing.label}}</strong> handled by the <router-link :to="'bindings/' + thing.bindingId + '/'">{{thing.bindingId}}</router-link> binding
@@ -46,9 +46,16 @@
 <style lang="stylus">
 .filter
   width 100%
-  font-size 18pt
+  font-size 22px
   padding 6px
-
+  border 1px solid #ccc
+  &:focus, &:active
+    border-color #ff6600
+    outline-color #ff6600
+.addon-search
+  em
+    display block
+    padding-top 0.5rem
 .results-enter-active, .results-leave-active
   transition all 0.5s
 .results-enter, .results-leave-to

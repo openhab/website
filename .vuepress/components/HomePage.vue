@@ -317,12 +317,4 @@ header.headroom--top
         max-height 200px
         max-width 200px
 
-
-.footer
-  background #eee
-  padding 2.5rem
-  border-top 1px solid $borderColor
-  text-align center
-  color lighten(black, 25%)
-
 </style>

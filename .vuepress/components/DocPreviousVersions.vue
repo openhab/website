@@ -26,6 +26,7 @@
   margin 5px
   padding 3px
   height 14px
+  user-select none
   .dropdown-wrapper
     padding 2px
     position absolute
