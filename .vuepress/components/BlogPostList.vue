@@ -21,7 +21,7 @@
               <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on {{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</div>
               <div class="post-excerpt">
 
-                {{removeMarkdown(post.excerpt)}}
+                {{removeMarkdown(post.frontmatter.excerpt || post.excerpt)}}
 
               </div>
               <div class="read-more">
