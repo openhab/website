@@ -9,7 +9,7 @@
         {{$page.frontmatter.description}}
       </h2>
     </div>
-    <div class="page-content">
+    <div class="posts-list page-content">
       <div class="content">
         <!-- <Content></Content> -->
         <ul class="posts">
@@ -18,7 +18,7 @@
               <div class="post-cover" :style="{background: 'url(' + post.frontmatter.previewimage + ') no-repeat center'}">
               </div>
               <h3 class="post-title">{{post.frontmatter.title}}</h3>
-              <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on {{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</div>
+              <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
               <div class="post-excerpt">
 
                 {{removeMarkdown(post.frontmatter.excerpt || post.excerpt)}}
@@ -95,7 +95,7 @@
   min-height 80vh
 
 .posts
-  width 100%
+  width calc(100% - 1.5rem)
   padding 0
   .post
     list-style none
@@ -123,9 +123,9 @@
         font-size 14px
         font-family 'Open Sans', sans-serif;
         font-weight 300
-        line-height 42px
-        margin-top -2rem
-        margin-bottom 1rem
+        // line-height 42px
+        margin-top -1.2rem
+        margin-bottom 1.2rem
       .post-excerpt
         font-weight normal
         // font-size 20px
@@ -157,8 +157,8 @@
     .page-description
         font-size 18px
         margin 30px
-  .page-content
-    margin-top calc(3.6rem + 200px)
+  .posts-list
+    margin-top calc(3.6rem + 120px)
 
 </style>
 

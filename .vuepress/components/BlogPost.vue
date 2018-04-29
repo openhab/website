@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="blog-body-content">
-      <div class="page-author"><strong>{{$page.frontmatter.author}}</strong> posted on {{new Date($page.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</div>
+      <div class="page-author"><strong>{{$page.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date($page.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
       <div class="content">
         <Content></Content>
       </div>
