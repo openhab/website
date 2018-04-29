@@ -9,13 +9,13 @@ tags:
 - eclipse
 - pine64
 modified_time: '2016-05-23T00:00:00.001+02:00'
-excerpt_separator: <!--more-->
+excerpt_separator: <!-- more -->
 previewimage : /uploads/2016-05_building.jpg
 ---
 
 Some time has passed since the openHAB 2.0 beta2 release and a lot development efforts were done - so it was clearly time to [release openHAB 2.0 beta3](https://github.com/openhab/openhab-distro/releases/tag/2.0.0.b3). I see that many openHAB contributors and users are moving over from 1.x by looking at the activity in our forum and there has been very positive feedback regarding the stability.
 
-<!--more-->
+<!-- more -->
 
 This is also clearly indicated by the heavily increased number of [1.x add-ons that were successfully tested](http://docs.openhab.org/features/bindings.html#compatible-1x-add-ons) and thus included in the openHAB 2 distribution - we have reached 80 add-ons now, complementing about 40 add-ons that were built for openHAB 2 right from the start. We are therefore getting much closer to having the openHAB 2 runtime as a full replacement for the openHAB 1 runtime for all existing users. When using textual configuration, it is fairly similar to setup and use.
 

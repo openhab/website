@@ -10,7 +10,7 @@ tags:
 - smarthomeday
 modified_time: '2017-10-31T00:00:00.001+00:00'
 previewimage : /uploads/2017-10_smarthomeday.jpg
-excerpt_separator: <!--more-->
+excerpt_separator: <!-- more -->
 ---
 
 Similar to every year since 2006, [EclipseCon Europe 2017](https://www.eclipsecon.org/europe2017/) took place at the end of October in Ludwigsburg, Germany, and it was packed with great talks and content all around the Eclipse universe.
@@ -18,7 +18,7 @@ Similar to every year since 2006, [EclipseCon Europe 2017](https://www.eclipseco
 For the first time, there was also a [Smart Home Day](https://www.eclipsecon.org/europe2017/smarthome) colocated on the Sunday before EclipseCon started. 
 The Smart Home Day was hosted by the [openHAB Foundation](https://www.openhabfoundation.org/) with [QIVICON by Deutsche Telekom](https://www.qivicon.com/en/) as a sponsor.
 
-<!--more-->
+<!-- more -->
 
 The day was all about [Eclipse SmartHome](https://www.eclipse.org/smarthome/), its solutions and especially its community.
 There were twelve great presentations over the day and a huge number of core community members attended the day.
