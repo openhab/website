@@ -27,6 +27,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Publish Date", name: "date", widget: "datetime", required: true}
       - {label: "Cover Image", name: "previewimage", widget: "image", required: true, tagname: ""}
       - {label: "Tags", name: "tags", widget: "list", default: ["news"]}
+      - {label: "Excerpt", name: "excerpt", widget: "string", required: true}
       - {label: "Body", name: "body", widget: "markdown"}
     meta:
       - {label: "SEO Description", name: "description", widget: "text"}
