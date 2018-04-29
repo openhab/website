@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare-docs": "ruby prepare-docs.rb",
-    "build": "vuepress build ."
+    "build": "ruby prepare-docs.rb && vuepress build .",
+    "build-only": "vuepress build ."
   },
   "author": "openHAB",
   "license": "EPL-1.0"
