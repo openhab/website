@@ -7,7 +7,7 @@ author: Kai Kreuzer
 tags:
 - openhab
 modified_time: '2016-12-15T12:00:00.001+02:00'
-excerpt_separator: <!--more-->
+excerpt_separator: <!-- more -->
 previewimage : /uploads/2016-12_takeoff.jpg
 ---
 
@@ -15,7 +15,7 @@ Since the inception of the idea to start a nonprofit organization around openHAB
 
 Today, I am very proud to be able to announce that the openHAB Foundation e.V. is up and running and has successfully taken over all sorts of supportive operation for the community.
 
-<!--more-->
+<!-- more -->
 
 Here's a brief overview of what the foundation does for you:
 

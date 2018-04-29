@@ -8,14 +8,14 @@ tags:
 - smarthome
 modified_time: '2017-05-28T00:00:00.001+00:00'
 previewimage : /uploads/2017-05_smarthomeday.jpg
-excerpt_separator: <!--more-->
+excerpt_separator: <!-- more -->
 ---
 
 On May 20, 2017, the openHAB Foundation organised its first own event, the [Smart Home Day](https://www.eventbrite.com/e/smart-home-day-registrierung-33411227882) in Darmstadt at the local [University of Applied Sciences](https://www.h-da.com/), which was co-located with the first annual assembly of the openHAB Foundation members.
 
 The Smart Home Day was a great get-together of around 50 smart home enthusiasts. For many it was the first time to meet people in person after having known their Github identities for years already and to engage in interesting discussions around open source and smart homes.
 
-<!--more-->
+<!-- more -->
 
 A special thanks to [Christoph Engelbert](https://twitter.com/noctarius) who led through the program as a moderator.
 
