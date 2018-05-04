@@ -119,6 +119,7 @@
           margin auto
           max-width 192px
           max-height 150px
+          object-fit contain
       
       .type
         font-weight normal

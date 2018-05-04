@@ -15,7 +15,7 @@ module.exports = {
   serviceWorker: false,
   themeConfig: {
     logo: `/openhab-logo-top.png`,
-    repo: 'openhab',
+    // repo: 'openhab',
     editLinks: false,
     docsDir: 'docs',
     nav: [
@@ -39,15 +39,11 @@ module.exports = {
         text: 'About',
         items: [
           {
-            text: 'Community',
+            text: 'Get Involved',
             items: [
               {
                 text: 'Who We Are',
                 link: '/about/who-we-are',
-              },
-              {
-                text: 'Forum & FAQ',
-                link: '/about/community'
               },
               {
                 text: 'Contribute',
@@ -99,10 +95,14 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   text: 'myopenHAB',
-      //   link: '/myopenhab/'
-      // }
+      {
+        text: 'Community ↗',
+        link: 'https://community.openhab.org/',
+      },
+      {
+        text: 'GitHub ↗',
+        link: 'https://github.com/openhab',
+      }
     ],
     sidebar: {
       '/docs/': [
