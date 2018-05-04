@@ -57,7 +57,7 @@
 .page-header
   background #ff6600
   position absolute
-  top 0
+  top 3.6rem
   left 0
   right 0
   margin-bottom 4rem
@@ -66,9 +66,10 @@
   overflow hidden
   .header-pattern
     opacity 0.15
-    width calc(100vw - 20px)
+    width 100vw
     // height 100vh
     position absolute
+    top 0
     object-fit cover
     user-select none
   .page-title
@@ -144,6 +145,10 @@
           border 1px solid #ff6600
           border-radius 4px
           box-sizing border-box
+          &:hover, &:focus
+            color white
+            background-color #ff6600
+
 
       
 
@@ -158,7 +163,7 @@
         font-size 18px
         margin 30px
   .posts-list
-    margin-top calc(3.6rem + 120px)
+    margin-top calc(3.6rem + 200px)
 
 </style>
 

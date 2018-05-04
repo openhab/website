@@ -161,10 +161,15 @@ header.headroom--top
   background transparent
   color white
   border-bottom none
+  box-shadow none
   .logo
     opacity 0
   .nav-dropdown
     color black
+  .nav-links
+    .nav-item:last-child, .nav-item:nth-last-child(2)
+      &:after
+        filter: invert(100%) brightness(200%)
 
 .vscode
   position relative
@@ -316,5 +321,6 @@ header.headroom--top
         margin auto
         max-height 200px
         max-width 200px
+        object-fit contain
 
 </style>

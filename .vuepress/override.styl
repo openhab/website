@@ -1,7 +1,48 @@
 $accentColor = #ff6600
+$MQMobile = 859px
+$MQNarrow = 1023px
 
-.navbar .site-name
-    display none
+.navbar:not(.headroom--top)
+    box-shadow rgba(10%,10%,10%,25%) 0 0 10px
+    background-color rgba(98%, 98%, 99%, 0.9) !important // linear-gradient(180deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 95%,rgba(0,0,0,.05) 99%,rgba(0,0,0,.04))
+    //opacity 0.9
+
+.navbar
+    .nav-dropdown
+        // background-color white
+        background-color rgba(98%, 98%, 99%, 0.96) !important
+        box-shadow rgba(10%,10%,10%,25%) 0 0 10px
+    
+    .nav-item a
+        // font-family 'Open Sans', sans-serif
+        font-weight 400
+        font-size 1rem
+
+    .dropdown-subitem .nav-link a
+        font-weight normal
+
+    .site-name
+        display none
+
+.nav-links
+    .nav-item:last-child, .nav-item:nth-last-child(2)
+        a
+            font-weight bold
+        &:after
+            content: url("data:image/svg+xml; utf8, <svg class='icon outbound' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' x='0px' y='0px' viewBox='0 0 100 100' width='15' height='15'><path fill='#2c3e50' d='M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z'></path><polygon fill='currentColor' points='45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9'></polygon></svg>");
+            display:inline;
+            width 15px;
+            height 15px;
+            margin 2px 0 2px 5px;
+
+
+.sidebar
+    background-color #f7f7f7 !important
+    // background linear-gradient(90deg, #fff0e0, #fff) !important
+
+@media (min-width: 719px)
+    .nav-item > a:hover, .nav-item > a.router-link-active
+        border-bottom 3px solid $accentColor
 
 @media (max-width: 419px)
     .search-box input:focus
@@ -20,3 +61,9 @@ $accentColor = #ff6600
         display none
     .editLink
         display none
+
+.content pre, .content pre[class*='language-']
+    white-space pre !important
+
+.content:not(.custom)
+    max-width 1280px !important
