@@ -4,7 +4,7 @@ export default ({
     router, // the router instance for the app
     siteData // site metadata
   }) => {
-    if (window) {
+    if (typeof window !== 'undefined') {
       import('vue-tweet-embed/timeline').then(module => {
         Vue.component('twitter-timeline', module.default)
       })
