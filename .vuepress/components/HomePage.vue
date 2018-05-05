@@ -57,25 +57,30 @@
       </div>
 
       <div class="section4">
-        <ClientOnly>
-          <parallax :speed-factor="0.15">
-            <img src="./images/rpi.jpg" alt="raspberry pi">
-            <div class="openhabian-text">
-              <h2 class="slide-seq">Build an openHAB appliance in less than an hour</h2>
-              <p class="slide-seq">
-                Try openHABian, the official openHAB distribution: write the system image on a SD card, boot your Raspberry Pi or PINE64 on it,
-                and enjoy a pre-installed, production-ready openHAB server with added features like Grafana and InfluxDB!
-              </p>
-              <router-link to="docs/installation/openhabian.html" class="learn-how-button slide-seq">Learn How →</router-link>
-            </div>
-          </parallax>
-        </ClientOnly>
+        <div style="position: relative; height: 70vh; width: 100%; overflow: hidden;">
+          <ClientOnly>
+            <parallax :speed-factor="0.15">
+              <img src="./images/rpi.jpg" alt="raspberry pi">
+            </parallax>
+          </ClientOnly>
+          <div class="openhabian-text">
+            <h2 class="slide-seq">Build your openHAB appliance in less than an hour</h2>
+            <p class="slide-seq">
+              Try openHABian, the official openHAB distribution: write the system image on a SD card, boot your Raspberry Pi or PINE64 on it,
+              and enjoy a pre-installed, production-ready openHAB server with added features like Grafana and InfluxDB!
+            </p>
+            <router-link to="docs/installation/openhabian.html" class="learn-how-button slide-seq">Learn How →</router-link>
+          </div>
+        </div>
       </div>
+
+      <open-source-section />
+
       <div class="community">
         <h2 class="slide">Ready to join the community?</h2>
-        <p class="slide">The vibrant openHAB community is ready to help you and contribute examples, tutorials and more daily!</p>
-        <div class="community-stats slide-seq2">
-          <div class="community-stat">
+        <p class="slide">The vibrant openHAB community contributes examples and tutorials on a daily basis and is happy to help you!</p>
+        <div class="community-stats">
+          <div class="community-stat slide-seq2">
             <div class="count">{{communityTopics}}</div>
             <div class="subtext">discussions</div>
           </div>
@@ -107,10 +112,12 @@
 
 <script>
 import Footer from './Footer.vue'
-import ScrollReveal from './scrollreveal'
+// import ScrollReveal from './scrollreveal'
 
 import parallax from 'vue-parallaxy'
 // import TwitterTimeline from 'vue-tweet-embed/timeline'
+
+import OpenSourceSection from './home/OpenSourceSection.vue'
 
 let hr = null
 
@@ -119,6 +126,7 @@ export default {
   components: {
     parallax,
     Footer,
+    OpenSourceSection
     // TwitterTimeline
   },
   data () {
@@ -135,19 +143,22 @@ export default {
   },
   mounted () {
     const vm = this
-    ScrollReveal.init().then(sr => {
+    if (this.$sr) {
+      const sr = this.$sr
       sr.reveal('.feature', { scale: 1.0 }, 200)
       sr.reveal('.featured-logo', { })
       sr.reveal('.slide', { scale: 1.0 })
       sr.reveal('.slide-slow', { scale: 1.0, duration: 1000, delay: 500 })
       sr.reveal('.slide-seq', { scale: 1.0, duration: 1000 }, 300)
       sr.reveal('.slide-seq2', { scale: 1.0, duration: 1000 }, 300)
-    })
-    import('headroom.js').then(Headroom => {
-      const header = document.getElementsByTagName("header")[0]
-      hr = new Headroom.default(header)
+      sr.reveal('.slide-seq3', { scale: 1.0, duration: 1000 }, 800)
+    }
+    const header = document.getElementsByTagName("header")[0]
+    // const Headroom = require('headroom.js')
+    if (this.Headroom) {
+      hr = new this.Headroom(header)
       hr.init()
-    })
+    }
   },
   beforeDestroy () {
     if (hr) {
@@ -210,7 +221,7 @@ header.headroom--pinned
   animation 0.5s ease-out 0s 1 headerSlideDown
   transform translateY(0%)
 header.headroom--unpinned
-  animation 0.5s ease-out 0s 1 headerSlideUp
+  // animation 0.5s ease-out 0s 1 headerSlideUp
   transform translateY(-100%)
 header.headroom--top
   transition all 0.5s
