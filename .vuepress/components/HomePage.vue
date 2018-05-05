@@ -96,7 +96,7 @@
         <h2 class="slide">Follow us on Twitter</h2>
         <ClientOnly>
           <div class="timeline">
-            <!-- <twitter-timeline :id="'openhab'" :source-type="'profile'" :options="{ linkColor: '#FF6600', tweetLimit: '10' }" /> -->
+            <twitter-timeline :id="'openhab'" :source-type="'profile'" :options="{ linkColor: '#FF6600', tweetLimit: '10' }" />
           </div>
         </ClientOnly>
       </div>
@@ -110,8 +110,7 @@ import Footer from './Footer.vue'
 import ScrollReveal from './scrollreveal'
 
 import parallax from 'vue-parallaxy'
-//import TwitterTimeline from 'vue-tweet-embed/timeline'
-// import TwitterTimeline from './TwitterTimeline.vue'
+import TwitterTimeline from 'vue-tweet-embed/timeline'
 
 let hr = null
 
@@ -120,7 +119,7 @@ export default {
   components: {
     parallax,
     Footer,
-    // TwitterTimeline
+    TwitterTimeline
   },
   data () {
     return {
