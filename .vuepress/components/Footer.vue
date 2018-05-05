@@ -11,13 +11,22 @@
       <router-link to="/privacy.html">Privacy policy</router-link> |
       <router-link to="/imprint.html">Imprint</router-link>
     </div>
+    <img src="/openhab-logo-square.png" class="footer-logo" />
   </footer>
 </template>
 
 <style lang="stylus">
 footer
+  .footer-logo
+    width 70px
+    height 70px
+    margin-left -6px
+    margin-top 3rem
+    filter grayscale(100%)
+    opacity 0.2
   background #eee
-  padding 2.5rem
+  padding 3rem 2.5rem
+  // padding-bottom 6rem
   text-align center
   color lighten(black, 25%)
   .social-icons
@@ -52,6 +61,7 @@ export default {
       //const sr = new ScrollReveal.default()
       sr.reveal('.social-icons')
       sr.reveal('.legal', { scale: 1.0 })
+      sr.reveal('.footer-logo', { scale: 0.5, duration: 1000 })
     })
   }
 }

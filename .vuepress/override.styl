@@ -11,7 +11,7 @@ $MQNarrow = 1023px
     .nav-dropdown
         // background-color white
         background-color rgba(98%, 98%, 99%, 0.96) !important
-        box-shadow rgba(10%,10%,10%,25%) 0 0 10px
+        box-shadow rgba(10%,10%,10%,25%) 0 0 5px
     
     .nav-item a
         // font-family 'Open Sans', sans-serif
@@ -29,12 +29,19 @@ $MQNarrow = 1023px
         a
             font-weight bold
         &:after
-            content: url("data:image/svg+xml; utf8, <svg class='icon outbound' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' x='0px' y='0px' viewBox='0 0 100 100' width='15' height='15'><path fill='#2c3e50' d='M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z'></path><polygon fill='currentColor' points='45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9'></polygon></svg>");
+            content: url("/external-link.svg") // url("data:image/svg+xml; utf8, <svg class='icon outbound' xmlns='http://www.w3.org/2000/svg' aria-hidden='true' x='0px' y='0px' viewBox='0 0 100 100' width='15' height='15'><path fill='#2c3e50' d='M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z'></path><polygon fill='currentColor' points='45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9'></polygon></svg>");
             display:inline;
             width 15px;
             height 15px;
             margin 2px 0 2px 5px;
 
+.nav-dropdown .dropdown-item:nth-child(2) .dropdown-subitem:nth-child(1) a
+    &:after
+        content: url("/external-link.svg")
+        display inline
+        width 15px;
+        height 15px;
+        margin 2px 0 2px 5px;
 
 .sidebar
     background-color #f7f7f7 !important
