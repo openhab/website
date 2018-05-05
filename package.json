@@ -6,7 +6,8 @@
     "headroom.js": "^0.9.4",
     "scrollreveal": "^3.4.0",
     "vue-parallax": "^1.1.1",
-    "vue-parallaxy": "^1.1.1"
+    "vue-parallaxy": "^1.1.1",
+    "vue-tweet-embed": "^2.1.1"
   },
   "devDependencies": {
     "vuepress": "^0.8.4"

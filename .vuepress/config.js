@@ -9,7 +9,7 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: `/openhab-logo-square.png` }],
     ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }],
-    ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }],
+    ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
 //    ['script', { src: `//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js` }]
   ],
   serviceWorker: false,
@@ -96,11 +96,11 @@ module.exports = {
         ]
       },
       {
-        text: 'Community ↗',
+        text: 'Community',
         link: 'https://community.openhab.org/',
       },
       {
-        text: 'GitHub ↗',
+        text: 'GitHub',
         link: 'https://github.com/openhab',
       }
     ],
