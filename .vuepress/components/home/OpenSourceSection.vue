@@ -8,7 +8,7 @@
     </div>
     <div class="right">
       <h2><span class="slide-seq3">100% Open Source.</span><br />
-      <span class="slide-seq3">100% Reliable.</span></h2>
+      <span class="slide-seq3 reliable">100% Reliable.</span></h2>
       <p class="slide">openHAB is built upon Eclipse SmartHome™, an industry-grade IoT framework for the household backed by the Eclipse Foundation.<br />
         It is actively maintained, absolutely vendor-neutral and will never lock you in.</p>
     </div>
@@ -54,6 +54,8 @@
       margin-bottom 0
       span
         white-space nowrap
+        &.reliable
+          font-weight 400
     p
       padding 1rem
       padding-bottom 2rem
