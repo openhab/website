@@ -5,8 +5,7 @@
         <h2 class="slide">No Cloud Required...</h2>
         <p class="slide">
           openHAB runs on your hardware, doesn't require any cloud service to work, keeps your data privately at home and talks directly to your local devices whenever possible.
-          <br />
-          You are in control.
+          At the core of our <router-link to="/about/who-we-are.html">philosophy</router-link> is that you always remain in control.
         </p>
       </div>
       <div class="cloud-right">

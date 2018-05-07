@@ -4,23 +4,66 @@ layout: AboutPage
 title: Contribute
 ---
 
+<style>
+.big-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+}
+img.illustration {
+  width: 50%;
+  transform: translateX(50%);
+}
+@media (max-width: 719px) {
+  img.illustration {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+</style>
+
+
+<h2 class="big-title">Make openHAB Better!</h2>
+
+<!--
+image source: https://pixabay.com/en/teamwork-team-gear-gears-drive-2198961/
+license: CC0
+-->
+<img class="illustration" src="./images/teamwork-2198961_1920.png" />
+
+
 openHAB is a community effort and everyone can take part in that.
-Be it by being an active developer, a one time bug reporter or by commenting on issues by others.
-We however ask that you please follow the following guidelines.
+Be it by being an active developer, a bug reporter, a writer or translator, or making monetary contributions, here's an overview on how you can get involved!
 
-### Reporting Issues
 
-Before reporting an issue, please check the [openHAB community forum](https://community.openhab.org) for solutions and help.
+### Help Others
+
+openHAB can be intimidating to new users, and even experienced ones might encounter a problem you can solve. If you are knowledgeable in openHAB or one of its related technologies, you are very much encouraged to share your insights in the [community forum](https://community.openhab.org).
+
+
+
+### Contribute Code
+
+You might want to fix a bug, add a feature, or write a new add-on. That's awesome!
+
+The [Developer Guide](/docs/developers) has everything to get you started.
+
+
+
+### Report Issues
+
+Before reporting an issue, please check the [community forum](https://community.openhab.org) for solutions and help.
 More people will see your issue when it is posted in the forum and community members may be able to help you find known solutions/workarounds.
 
 When no solution was found, use the table below to determine where your issue should be reported:
 
 Issue | Where to report
 ------|----------------
-Problems and feature requests for openHAB 1 add-ons | [openHAB](https://github.com/openhab/openhab/issues)
-Problems and feature requests for openHAB 2 add-ons | [openHAB2](https://github.com/openhab/openhab2/issues)
-Issues related to the runtime environment, IDE and packaging | [openHAB-distro](https://github.com/openhab/openhab-distro/issues)
-Issues related to the core openHAB bundles that are not from Eclipse SmartHome | [openHAB-core](https://github.com/kaikreuzer/openhab-core/issues)
+Problems and feature requests for openHAB 2 add-ons | [openHAB2-Addons](https://github.com/openhab/openhab2-addons/issues)
+Problems and feature requests for openHAB 1 add-ons | [openHAB1-Addons](https://github.com/openhab/openhab1-addons/issues)
+Issues related to the runtime environment, IDE and packaging | [openHAB-Distro](https://github.com/openhab/openhab-distro/issues)
+Issues related to the core openHAB bundles that are not from Eclipse SmartHome | [openHAB-Core](https://github.com/openhab/openhab-core/issues)
 Issues related to Eclipse SmartHome add-ons and core runtime | [Eclipse SmartHome](https://github.com/eclipse/smarthome/issues)
 
 But do not worry - if you are not clear, which category your issue belongs to - we will redirect you, if necessary.
@@ -28,27 +71,39 @@ But do not worry - if you are not clear, which category your issue belongs to - 
 Please pay attention to the respective `CONTRIBUTING.md` file in all of these repositories.
 They include further details on how to report an issue or file a pull request.
 
-### Community Guidelines
 
-We want to keep the openHAB community awesome, growing and collaborative.
-We need your help to keep it that way.
-To help with this we've come up with some general guidelines for the community as a whole:
 
-* **Be nice:** Be courteous, respectful and polite to fellow community members: no
-  regional, racial, gender, or other abuse will be tolerated. We like nice people
-  way better than mean ones!
+### Translate
 
-* **Encourage diversity and participation:** Make everyone in our community
-  feel welcome, regardless of their background and the extent of their
-  contributions, and do everything possible to encourage participation in
-  our community.
+openHAB has several projects on [Crowdin](https://crowdin.com/profile/openhab-bot) - if you are native or fluent in another language, you can help!
 
-* **Keep it legal:** Basically, don't get us in trouble. Share only content that
-  you own, do not share private or sensitive information, and don't break the
-  law.
 
-* **Stay on topic:** Make sure that you are posting to the correct channel
-  and avoid off-topic discussions. Remember when you update an issue or
-  respond to an email you are potentially sending to a large number of
-  people.  Please consider this before you update.  Also remember that
-  nobody likes spam.
+
+### Write Documentation
+
+Our docs are always getting better, but we use all the help we can. Whether it's fixing a typo or writing new articles, our [documentation repository](https://github.com/openhab/openhab-docs) is ready to welcome your contributions!
+
+
+
+### Sponsor Development
+
+If you have money to spare and want a certain issue fixed or or feature added, openHAB has a team on [BountySource](https://www.bountysource.com/teams/openhab) where you can fund development by posting bounties.
+
+
+
+### Become a Member of the openHAB Foundation
+
+If you're involved in openHAB and recognize all the ways it helps you on a daily basis, the best way to show your continued support is to become a member of the **openHAB Foundation** which promotes the values of the community and funds the services you're enjoying for free. Visit [openhabfoundation.org](http://openhabfoundation.org) and become a member today!
+
+
+
+### Donate
+
+The openHAB Foundation also accepts one-time donations via PayPal. Thanks for your support!
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="KPVP4NJESFENY">
+<input type="image" style="border:none; background:transparent" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>

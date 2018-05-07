@@ -199,9 +199,9 @@ export default {
     }
   },
   mounted () {
-    ScrollReveal.init().then(sr => {
-      sr.reveal('.post', { scale: 1.0 })
-    })
+    if (this.$sr) {
+      this.$sr.reveal('.post', { scale: 1.0 })
+    }
   }  
 }
 </script>
