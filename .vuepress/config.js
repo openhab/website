@@ -28,7 +28,7 @@ module.exports = {
         link: '/download/',
       },
       {
-        text: 'Docs',
+        text: 'Documentation',
         link: '/docs/',
       },
       {

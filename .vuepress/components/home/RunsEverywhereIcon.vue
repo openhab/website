@@ -43,7 +43,7 @@ export default {
     window.setInterval(() => {
       this.current += 1
       if (this.current === 5) this.current = 0
-    }, 1600)
+    }, 8000)
   },
   beforeDestroy () {
     if (interval && typeof window !== 'undefined') {

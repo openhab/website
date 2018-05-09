@@ -7,13 +7,13 @@
 
       <why-section />
 
+      <openhabian-section />
+
       <cloud-section />
 
       <vs-code-section />
 
       <featured-addons />
-
-      <openhabian-section />
 
       <open-source-section />
 
