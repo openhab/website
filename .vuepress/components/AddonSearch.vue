@@ -7,9 +7,29 @@
     <em v-else-if="filter.length > 0 && filter.length < 3">
       Please type 3 characters or more...
     </em>
-    <em v-else>
-      Use the search box to look for one of openHAB's {{addons.length}} add-ons and {{things.length}} supported Things!
-    </em>
+    <div v-else>
+      <p><em>Use the search box to look for one of openHAB's {{addons.length}} add-ons and {{things.length}} supported Things!</em></p>
+      <div v-for="(addontype, typeid) of $page.frontmatter.initial_gallery">
+        <h3 class="addon-type">{{addontype.title}}</h3>
+        <p>{{addontype.description}}</p>
+        <ul class="display-mode-toggle" v-if="!addontype.all">
+          <li><button :disabled="showAllAddons.indexOf(typeid) < 0" @click="switchDisplayMode(typeid, false)">Featured</button></li>
+          <li><button :disabled="showAllAddons.indexOf(typeid) >= 0" @click="switchDisplayMode(typeid, true)">All</button></li>
+        </ul>
+        <transition-group name="addons" class="addons" tag="ul">
+          <li v-for="addon of galleryAddons[typeid]" class="addon" :key="addon.path">
+            <router-link :to="addon.path">
+              <div class="version"><span :class="'v' + addon.frontmatter.since.replace('x', '')">{{'v' + addon.frontmatter.since.replace('x', '')}}</span></div>
+              <div class="main">
+                <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
+                <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
+              </div>
+              <div class="type">{{addon.frontmatter.type}}</div>
+            </router-link>
+          </li>
+        </transition-group>
+      </div>
+    </div>
     <transition name="results">
       <div v-if="results">
         <!-- <h2>Add-ons</h2> -->
@@ -19,7 +39,7 @@
               <div class="version"><span :class="'v' + addon.frontmatter.since.replace('x', '')">{{'v' + addon.frontmatter.since.replace('x', '')}}</span></div>
               <div class="main">
                 <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
-                <strong v-else>{{addon.frontmatter.label}}</strong>
+                <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
               </div>
               <div class="type">{{addon.frontmatter.type}}</div>
             </router-link>
@@ -52,6 +72,31 @@
   &:focus, &:active
     border-color #ff6600
     outline-color #ff6600
+h3.addon-type
+  font-family 'Open Sans', sans-serif
+  font-weight normal
+  font-size 1.5rem
+.display-mode-toggle
+  list-style-type none
+  padding .5rem
+  display flex
+  flex-direction row
+  justify-content center
+  button
+    width 7rem
+    background #fff
+    border 1px solid #ff6600
+    color #ff6600
+    font-family 'Open Sans', sans-serif
+    font-weight 300
+    font-size 14px
+    padding 4px
+    cursor pointer
+    &[disabled]
+      background #ff6600
+      color #fff
+      cursor not-allowed
+
 .addon-search
   em
     display block
@@ -75,14 +120,18 @@
   list-style-type none
   display flex
   flex-wrap wrap
+  padding-left 0
   .addon
     width 200px
     height 200px
     margin 4px
     border 1px solid #eee
     display flex
+    box-shadow 2px 2px 5px rgba(0,0,0,.1)
     &:hover
+      transition all 0.6s
       border 1px solid #ff6600
+      box-shadow 2px 2px 5px rgba(0,0,0,.25)
     a
       width 200px
       height 200px
@@ -136,14 +185,48 @@ export default {
     return {
       filter: '',
       things: [],
-      addons: []
+      addons: [],
+      showAllAddons: []
     }
   },
   mounted () {
-    this.addons = this.$site.pages.filter(page => page.path.indexOf('/addons') === 0)
+    this.addons = this.$site.pages.filter(page => page.path.indexOf('/addons/') === 0 && page.path !== '/addons/')
     this.things = Things
   },
+  methods: {
+    getGalleryAddons (type) {
+      if (!this.addons.length) return []
+      if (this.showAllAddons[type]) {
+        return this.addons.filter(p => p.frontmatter && p.frontmatter.type === type)
+      } else {
+        return this.$page.frontmatter.initial_gallery[type].featured
+                  .map(id => this.addons.find(p => (p.frontmatter && p.frontmatter.id == id && p.frontmatter.type === type)))
+                  .filter(p => typeof p !== 'undefined')
+      }
+    },
+    switchDisplayMode (type, showAll) {
+      if (showAll) {
+        this.showAllAddons.push(type)
+      } else {
+        this.showAllAddons.splice(this.showAllAddons.indexOf(type), 1)
+      }
+    }
+  },
   computed: {
+    galleryAddons () {
+      let results = {}
+      for (let type in this.$page.frontmatter.initial_gallery) {
+        if (!this.addons.length) return []
+        if (this.showAllAddons.indexOf(type) >= 0) {
+          results[type] = this.addons.filter(p => p.frontmatter && p.frontmatter.type === type)
+        } else {
+          results[type] = this.$page.frontmatter.initial_gallery[type].featured
+                    .map(id => this.addons.find(p => (p.frontmatter && p.frontmatter.id == id && p.frontmatter.type === type)))
+                    .filter(p => typeof p !== 'undefined')
+        }
+      }
+      return results
+    },
     resultsText () {
       let found = []
       if (!this.results.addons.length && !this.results.things.length) return "Nothing found"
