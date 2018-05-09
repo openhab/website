@@ -106,13 +106,23 @@ h3.addon-type
 .results-enter, .results-leave-to
   opacity 0
   transform: translateY(30px);
-.addons-enter-active, .addons-leave-active
-  transition all 0.5s
-.addons-enter, .addons-leave-to
+// .addons-enter-active, .addons-leave-active
+//   transition all 0.5s
+.addons-leave-active
+  position absolute
+  opacity 0
+  transition all 0s !important
+.addons-enter
   opacity 0
   transform: translateY(30px);
-.things-enter-active, .things-leave-active
   transition all 0.5s
+.addons-move
+  transition all 1s
+.things-enter-active
+  transition all 0.5s
+.things-leave-to
+  transition all 0s
+  opacity 0
 .things-enter, .things-leave-to
   opacity 0
   transform: translateX(30px);
@@ -122,6 +132,7 @@ h3.addon-type
   flex-wrap wrap
   padding-left 0
   .addon
+    transition all 1s
     width 200px
     height 200px
     margin 4px
