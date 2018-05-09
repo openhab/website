@@ -136,10 +136,10 @@ usermod -a -G openhab myownuser
       <hr>
       <h3>Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>)</li>
+        <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>), see <router-link to="/docs/installation/#prerequisites">prerequisites</router-link></li>
         <li>Download and extract the platform independent archive:</li>
         <div class="download-button-container">
-          <a class="download-button" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${$page.frontmatter.currentVersion}%2Fopenhab-${$page.frontmatter.currentVersion}.zip`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Runtime</a>
+          <a class="download-button big" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${$page.frontmatter.currentVersion}%2Fopenhab-${$page.frontmatter.currentVersion}.zip`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Runtime</a>
         </div>
         <li>(Optional) Download the addons archive for offline use:</li>
         <div class="download-button-container">
@@ -149,6 +149,7 @@ usermod -a -G openhab myownuser
         <div class="download-button-container">
           <a class="download-button" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons-legacy%2F${$page.frontmatter.currentVersion}%2Fopenhab-addons-legacy-${$page.frontmatter.currentVersion}.kar`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Legacy Add-ons</a>
         </div>
+        &#128712; <small>	Note: you don't need the add-on archives if your server will have Internet access, it will download add-ons online as necessary.</small>
       </ol>
     </div>
 
@@ -226,6 +227,7 @@ usermod -a -G openhab myownuser
       background #f0f0f0
     &.selected
       border 2px solid #ff6600
+
 .version-tabs
   display flex
   flex-direction row
@@ -244,6 +246,7 @@ usermod -a -G openhab myownuser
       background #f0f0f0
     &.selected
       border 2px solid #ff6600
+
 .download-button-container
   display flex
   flex-direction row
@@ -254,7 +257,7 @@ usermod -a -G openhab myownuser
   margin 2rem
   display inline-block
   font-family 'Open Sans', sans-serif
-  font-size 1rem
+  font-size 0.9rem
   color #ff6600
   padding 0.8rem 1.6rem
   border-radius 4px
@@ -262,9 +265,13 @@ usermod -a -G openhab myownuser
   transition background-color .1s ease
   box-sizing border-box
   border 2px solid #ff6600
+  &.big
+    font-size 1.2rem
   &:hover
     background-color #ff6600
     color white
+    text-decoration none !important
+
 
 @media (max-width: 480px)
   .os-tabs
