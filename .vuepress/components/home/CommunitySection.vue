@@ -12,8 +12,8 @@
       <div class="subtext">posts</div>
     </div>
     <div class="community-stat slide-seq2">
-      <div class="count">{{communityUsers}}</div>
-      <div class="subtext">users</div>
+      <div class="count">{{communityMembers}}</div>
+      <div class="subtext">members</div>
     </div>
   </div>
   <div class="join">
@@ -72,7 +72,7 @@
 export default {
   data () {
     return {
-      communityUsers: '22000+',
+      communityMembers: '22000+',
       communityTopics: '23000+',
       communityPosts: '240000+'
     }
@@ -83,7 +83,7 @@ export default {
     fetch(url).then((resp) => {
       resp.json().then((json) => {
         if (json.about.stats) {
-          this.communityUsers = json.about.stats.user_count
+          this.communityMembers = json.about.stats.user_count
           this.communityTopics = json.about.stats.topic_count
           this.communityPosts = json.about.stats.post_count
         }

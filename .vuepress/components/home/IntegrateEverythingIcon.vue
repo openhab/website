@@ -51,7 +51,7 @@ export default {
     window.setInterval(() => {
       this.current += 1
       if (this.current === 11) this.current = 0
-    }, 1000)
+    }, 5000)
   },
   beforeDestroy () {
     if (interval && typeof window !== 'undefined') {
