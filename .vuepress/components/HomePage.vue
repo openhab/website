@@ -100,10 +100,6 @@ header.headroom--top
 
 <script>
 import Footer from './Footer.vue'
-// import ScrollReveal from './scrollreveal'
-
-import parallax from 'vue-parallaxy'
-// import TwitterTimeline from 'vue-tweet-embed/timeline'
 
 import Jumbotron from'./home/Jumbotron.vue'
 import WhySection from './home/WhySection.vue'
@@ -120,7 +116,6 @@ let hr = null
 export default {
   name: 'HomePage',
   components: {
-    parallax,
     Jumbotron,
     WhySection,
     CloudSection,
