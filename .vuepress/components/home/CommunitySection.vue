@@ -76,6 +76,21 @@ export default {
       communityTopics: '23000+',
       communityPosts: '240000+'
     }
+  },
+  mounted () {
+    // note: this won't work in dev mode (CORS only allowed on the production URL)
+    let url = 'https://community.openhab.org/about.json'
+    fetch(url).then((resp) => {
+      resp.json().then((json) => {
+        if (json.about.stats) {
+          this.communityUsers = json.about.stats.user_count
+          this.communityTopics = json.about.stats.topic_count
+          this.communityPosts = json.about.stats.post_count
+        }
+      });
+    }).catch ((err) => {
+      console.log('Failed fetching real-time stats from community.openhab.org - check above for CORS error messages')
+    })
   }
 }
 </script>
