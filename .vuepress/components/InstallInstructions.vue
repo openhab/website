@@ -40,40 +40,6 @@
         {{version[1]}}
       </div>
     </div>
-    <div v-if="selectedSystem === 'tux' && selectedDistro === 'deb'">
-      <hr>
-      <h3>Package Installation (Recommended)</h3>
-      <ol>
-        <li>Add the repository key</li>
-          <pre><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -</code></pre>
-        <li>Add the HTTPS transport for APT</li>
-          <pre><code>sudo apt-get install apt-transport-https</code></pre>
-        <li>Add the repository</li>
-          <pre><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code></pre>
-        <li>Update the package lists and install the openHAB distribution package</li>
-          <pre><code>sudo apt-get update && sudo apt-get install openhab2</code></pre>
-        <li>(Optional) Install the add-ons for offline use</li>
-          <pre><code>sudo apt-get install openhab2-addons</code></pre>
-      </ol>
-    </div>
-    <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
-      <hr>
-      <h3>Package Installation (Recommended)</h3>
-      <ol>
-        <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
-<pre><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
-name=openHAB 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
-baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://dl.bintray.com/openhab/rpm-repo2/testing' : 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable'}}
-gpgcheck=1
-gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
-enabled=1
-</code></pre>
-        <li>Install the openHAB distribution package</li>
-          <pre><code>sudo yum install openhab2</code></pre>
-        <li>(Optional) Install the add-ons for offline use</li>
-          <pre><code>sudo yum install openhab2-addons</code></pre>
-      </ol>
-    </div>
 
     <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
       <hr>
@@ -98,12 +64,59 @@ enabled=1
       <h3>Install openHABian (Recommended)</h3>
       <ol>
         <li>Download and install <a target="_blank" href="https://etcher.io/">Etcher</a></li>
-        <li>Download the latest openHABian image (<code>.img.xz</code> file) for your system at <a target="_blank" href="https://github.com/openhab/openhabian/releases/latest">https://github.com/openhab/openhabian/releases/latest</a></li>
+        <li>Download the openHABian image (<code>.img.xz</code> file) for your system from <a target="_blank" href="https://github.com/openhab/openhabian/releases/latest">https://github.com/openhab/openhabian/releases/latest</a>:</li>
+        <div class="download-button-container">
+          <a class="download-button big" target="_blank" href="https://github.com/openhab/openhabian/releases/latest">Latest openHABian System Image</a>
+        </div>
         <li>Write the image to your SD card using Etcher</li>
         <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/openhabian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
-        <li>openHABian will take between 15 and 45 minutes to perform the initial setup</li>
+        <li>Wait between 15 and 45 minutes for openHABian to perform its initial setup</li>
+        <li v-if="selectedVersion !== 'stable'">Use the <code>openhabian-config</code> tool (<router-link to="/docs/installation/openhabian.html#openhabian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
+        <li>Navigate with a web browser to <code>http://openhabianpi:8080</code></li>        
+        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>
+
+    <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
+      <hr>
+      <h3>Package Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
+      <ol>
+        <li>Add the repository key</li>
+          <pre><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -</code></pre>
+        <li>Add the HTTPS transport for APT</li>
+          <pre><code>sudo apt-get install apt-transport-https</code></pre>
+        <li>Add the repository</li>
+          <pre><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code></pre>
+        <li>Update the package lists and install the openHAB distribution package</li>
+          <pre><code>sudo apt-get update && sudo apt-get install openhab2</code></pre>
+        <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
+        &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
+          <pre><code>sudo apt-get install openhab2-addons</code></pre>
+        <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
+        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
+      </ol>
+    </div>
+    <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
+      <hr>
+      <h3>Package Installation (Recommended)</h3>
+      <ol>
+        <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
+<pre><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
+name=openHAB 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
+baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://dl.bintray.com/openhab/rpm-repo2/testing' : 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable'}}
+gpgcheck=1
+gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+enabled=1
+</code></pre>
+        <li>Install the openHAB distribution package</li>
+          <pre><code>sudo yum install openhab2</code></pre>
+        <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
+        &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
+          <pre><code>sudo yum install openhab2-addons</code></pre>
+        <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
+        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
+      </ol>
+    </div>    
 
     <div v-if="selectedSystem === 'docker'">
       <hr>
@@ -137,19 +150,32 @@ usermod -a -G openhab myownuser
       <h3>Manual Installation</h3>
       <ol>
         <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>), see <router-link to="/docs/installation/#prerequisites">prerequisites</router-link></li>
-        <li>Download and extract the platform independent archive:</li>
+        <li>Download and extract the openHAB runtime distribution from <a target="_blank" href="https://bintray.com/openhab/mvn/openhab-distro">https://bintray.com/openhab/mvn/openhab-distro</a>:</li>
         <div class="download-button-container">
           <a class="download-button big" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${$page.frontmatter.currentVersion}%2Fopenhab-${$page.frontmatter.currentVersion}.zip`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Runtime</a>
         </div>
-        <li>(Optional) Download the addons archive for offline use:</li>
+        <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
+        &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
         <div class="download-button-container">
-          <a class="download-button" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${$page.frontmatter.currentVersion}%2Fopenhab-addons-${$page.frontmatter.currentVersion}.kar`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Add-ons</a>
+          <a class="download-button" style="margin-bottom: 0" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${$page.frontmatter.currentVersion}%2Fopenhab-addons-${$page.frontmatter.currentVersion}.kar`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Add-ons</a>
         </div>
-        <li>(Optional) Download the legacy addons archive for offline use:</li>
         <div class="download-button-container">
           <a class="download-button" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons-legacy%2F${$page.frontmatter.currentVersion}%2Fopenhab-addons-legacy-${$page.frontmatter.currentVersion}.kar`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Legacy Add-ons</a>
         </div>
-        &#128712; <small>	Note: you don't need the add-on archives if your server will have Internet access, it will download add-ons online as necessary.</small>
+        <li v-if="selectedSystem === 'apple'">
+          Open <em>System Preferences &gt; Keyboard &gt; Shortcuts</em> and check the <em>New Terminal at Folder</em> option under <em>Services</em>:<br />
+          <img class="img-center" src="./images/macos-settings.png" />
+        </li>
+        <li v-if="selectedSystem === 'apple'">
+          Using the Finder, find the folder with the extracted runtime (look into the Downloads folder), then open its context menu and select <em>New Terminal at Folder</em>:<br /><br />
+          <img class="img-center" src="./images/macos-contextmenu.png" /><br />
+        </li>
+        <li>
+          <span v-if="selectedSystem !== 'windows'">Run <code>{{ selectedSystem === 'win10' ? 'start.bat' : './start.sh'}}</code></span>
+          <span v-if="selectedSystem === 'apple'"> in the Terminal</span>
+          and wait for openHAB to perform its initial startup (this can take a few minutes depending on your machine)</li>
+        <li>Navigate with a web browser to <code>http://{{selectedSystem === 'apple' || selectedSystem === 'win10' ? 'localhost' : '&lt;ip-address&gt;'}}:8080</code></li>
+        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>
 
@@ -158,9 +184,9 @@ usermod -a -G openhab myownuser
       <h3>Manual Installation</h3>
       <ol>
         <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>)</li>
-        <li>Download and extract the distribution from Cloudbees:</li>
+        <li>Download and extract the distribution from <a href="https://openhab.ci.cloudbees.com/">https://openhab.ci.cloudbees.com/</a>:</li>
         <div class="download-button-container">
-          <a target="_blank" class="download-button" :href="`https://openhab.ci.cloudbees.com/job/openHAB-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
+          <a target="_blank" class="download-button big" :href="`https://openhab.ci.cloudbees.com/job/openHAB-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
         </div>
       </ol>
     </div>
@@ -272,6 +298,11 @@ usermod -a -G openhab myownuser
     color white
     text-decoration none !important
 
+.img-center
+  display block
+  margin-left auto
+  margin-right auto
+  max-width 75%
 
 @media (max-width: 480px)
   .os-tabs

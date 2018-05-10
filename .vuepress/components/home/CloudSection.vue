@@ -64,17 +64,19 @@
 
     
   .cloud-bkg
-    height 320px
+    height 28vw
     width 100%
     overflow hidden
     .cloud-left-bkg
       position absolute
       left 0
       width 50%
-      height 320px
+      height 100%
       overflow hidden
       img
-        height 320px
+        // width 100%
+        max-height 28vw
+        // height 320px
     .cloud-right-bkg
       position absolute
       right 0
@@ -83,7 +85,9 @@
       overflow hidden
       img
         float right
-        height 320px
+        // width 100%
+        max-height 28vw
+        // height 320px
 @media (max-width: 719px)
   .cloud-section
     height auto

@@ -41,6 +41,7 @@
     z-index 12
     align-content center
     padding 5rem
+    min-width 30%
     background-color rgba(0, 0, 0, 0.3)
     h2
       font-size 2.5em

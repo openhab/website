@@ -11,9 +11,9 @@ initial_gallery:
   action:
     title: "Actions"
     description: "Actions are predefined methods for openHAB rules and scripts."
-    featured: ["mqtt", "pushbullet", "twitter", "xbmc", "xmpp"]
+    featured: ["mqtt", "pushbullet", "telegram", "twitter", "xbmc", "xmpp"]
   persistence:
-    title: "Persistence"
+    title: "Data Persistence"
     description: "Persistence services allow openHAB to store time series data for history-based actions or statistics."
     featured: ["rrd4j", "influxdb", "jdbc", "mysql", "mongodb"]
   transform:
