@@ -57,6 +57,7 @@
       color #fff
       padding 0.8rem 1.6rem
       border-radius 4px
+      background-color rgba(0, 0, 0, 0.3)
       transition background-color .1s ease
       box-sizing border-box
       border 1px solid #fff

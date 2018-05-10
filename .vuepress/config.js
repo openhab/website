@@ -184,6 +184,7 @@ module.exports = {
             ['configuration/habmin', 'HABmin'],
             'configuration/habpanel',
             'configuration/rules-ng',
+            ['configuration/restdocs', 'REST API'],
             'apps/android',
             'apps/ios',
             'apps/windows',

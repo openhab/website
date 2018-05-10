@@ -67,7 +67,8 @@
       box-sizing border-box
       border 1px solid #fff
       &:hover
-        background-color lighten(#ff6600, 20%)
+        background-color #fff
+        color #ff6600
     .demo-button
       animation 2s ease-out 0s 1 slideIn3
       margin-top 4rem
@@ -77,10 +78,12 @@
       color #fff
       padding 0.8rem 1.6rem
       border-radius 4px
+      // background-color rgba(0, 0, 0, 0.1)
       transition background-color .1s ease
       box-sizing border-box
       border 1px solid #fff
-      // border-bottom 1px solid darken(#ff6600, 10%)
+      // &:hover
+      //   background-color lighten(#ff6600, 20%)
     @media (max-width: 419px)
       h1.hero
         font-size 40px
