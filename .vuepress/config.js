@@ -72,16 +72,16 @@ module.exports = {
             text: 'Resources',
             items: [
               {
+                text: 'Showcase/How-tos',
+                link: '/about/showcase'
+              },
+              {
                 text: 'Press',
                 link: '/about/press'
               },
               {
                 text: 'Academia',
                 link: '/about/education'
-              },
-              {
-                text: 'Success Stories',
-                link: '/about/showcase'
               },
               {
                 text: 'Logos',
