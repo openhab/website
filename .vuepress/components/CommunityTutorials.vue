@@ -1,5 +1,5 @@
 <template>
-<div v-if="discourseData" class="topics">
+<div v-if="discourseData" class="topics" v-show="showTopics">
   <article v-for="topic in topics" class="topic">
     <a target="_blank" :href="'https://community.openhab.org/t/' + topic.id" class="topic-link">
       <h3 class="post-title">{{topic.title}}</h3>
@@ -120,17 +120,12 @@
 </style>
 
 <script>
+import Vue from 'vue'
 export default {
   data () {
     return {
-      discourseData: null
-    }
-  },
-  watch: {
-    discourseData () {
-      if (this.$sr) {
-        this.$sr.reveal('.topic', {})
-      }
+      discourseData: null,
+      showTopics: false
     }
   },
   computed: {
@@ -149,6 +144,12 @@ export default {
         if (json.topic_list) {
           this.discourseData = json
         }
+        window.setTimeout(() => {
+          if (this.$sr) {
+            this.$sr.reveal('.topic', {})
+          }
+          this.showTopics = true
+        }, 500)
       });
     }).catch ((err) => {
       console.log('Failed fetching topic list from community.openhab.org - check above for CORS error messages')
