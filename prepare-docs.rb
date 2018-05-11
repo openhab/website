@@ -23,11 +23,13 @@ def process_file(indir, file, outdir, source)
         File.open("#{indir}/#{file}").each { |line|
             next if line =~ /^layout: documentation$/
             next if line =~ /^layout: tutorial/
+            next if line =~ /^layout: developersguide$/
             next if line =~ /^layout: intro$/
             next if line =~ /^{% include base.html %}$/
             next if line =~ /\{: #/
             next if line =~ /\{::options/
             next if line =~ /TOC/
+            next if line =~ /no_toc/
             has_source = true if in_frontmatter && line =~ /^source:/
             has_logo = true if in_frontmatter && line =~ /^logo:/
             if line =~ /^---$/ then
@@ -63,8 +65,16 @@ def process_file(indir, file, outdir, source)
             break if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
             break if line =~ /^## Installable Actions/
 
+            # Remove collapsibles in Linux install document and replace them by regular headings
+            next if line =~ /include collapsible/ && file =~ /linux/
+            line = "##### " + line if line =~ /^Apt Based Systems/ && file =~ /linux/
+            line = "##### " + line if line =~ /^Yum or Dnf Based Systems/ && file =~ /linux/
+            line = "##### " + line if line =~ /^Systems based on/ && file =~ /linux/
+
             line = line.gsub("{{base}}/", "./docs/")
             line = line.gsub("(images/", "(./images/")
+            line = line.gsub("src=\"images/", "src=\"./images/")
+            line = line.gsub("]:images/", "]:./images/")
             line = line.gsub("(diagrams/", "(./diagrams/")
             line = line.gsub("./docs/tutorials/beginner/", "/docs/tutorial/")
             line = line.gsub("./docs/", "/docs/")
@@ -182,6 +192,7 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/images", "docs/apps")
 
 
+
 puts ">>> Migrating the Administration section"
 
 
@@ -191,6 +202,23 @@ Dir.glob(".vuepress/openhab-docs/administration/*.md") { |path|
     process_file(".vuepress/openhab-docs/administration", file, "docs/administration", "#{$docs_repo_root}/administration/#{file}")
 }
 
+
+
+puts ">>> Migrating the Developer section"
+
+
+process_file(".vuepress/openhab-docs/developers", "index.md", "docs/developer", "#{$docs_repo_root}/developer/index.md")
+["prerequisites", "development", "contributing"].each { |subsection|
+    Dir.glob(".vuepress/openhab-docs/developers/#{subsection}/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{subsection}/#{file}"
+        process_file(".vuepress/openhab-docs/developers/#{subsection}", file, "docs/developer/#{subsection}", "#{$docs_repo_root}/developer/#{subsection}/#{file}")
+    }
+    if subsection != "contributing" then
+        puts " -> #{subsection}/images"
+        FileUtils.cp_r(".vuepress/openhab-docs/developers/#{subsection}/images", "docs/developer/#{subsection}")
+    end
+}
 
 
 
@@ -268,4 +296,30 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", "")
+}
+
+
+
+# Write arrays of addons by type to include in VuePress config.js
+puts ">>> Writing add-ons arrays to files for sidebar navigation"
+["bindings", "persistence", "actions", "integrations", "transformations", "voice"].each { |type|
+    File.open(".vuepress/addons-#{type}.js", "w+") { |file|
+        file.puts "module.exports = ["
+
+        Dir.foreach('addons/' + type) { |dir|
+            if dir != "." && dir != ".." && dir != "list.txt" then
+                # puts dir
+
+                File.readlines('addons/' + type + '/' + dir + '/readme.md').each { |line|
+                    if line =~ /^label:/ then
+                        title = line.gsub("label: ", "").gsub("\n", "")
+                        title += ' (1.x)' if dir =~ /1$/ && !(title =~ /1\.x/)
+                        file.puts "\t['#{type}/#{dir}/', '#{title}'],"
+                    end
+                }
+            end
+        }
+
+        file.puts "]"
+    }
 }
