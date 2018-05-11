@@ -23,7 +23,7 @@ def process_file(indir, file, outdir, source)
         File.open("#{indir}/#{file}").each { |line|
             next if line =~ /^layout: documentation$/
             next if line =~ /^layout: tutorial/
-            next if line =~ /^layout: developersguide$/
+            next if line =~ /^layout: developers/
             next if line =~ /^layout: intro$/
             next if line =~ /^{% include base.html %}$/
             next if line =~ /\{: #/
