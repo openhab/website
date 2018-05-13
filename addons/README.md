@@ -1,4 +1,5 @@
 ---
+title: "Add-ons"
 initial_gallery:
   binding:
     title: "Bindings"

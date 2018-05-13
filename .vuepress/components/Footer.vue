@@ -17,6 +17,8 @@
 
 <style lang="stylus">
 footer
+  border-top 1px solid #eaecef
+  margin-bottom -2rem
   .footer-logo
     width 70px
     height 70px
@@ -24,7 +26,7 @@ footer
     margin-top 3rem
     filter grayscale(100%)
     opacity 0.2
-  background #eee
+  background rgb(250,250,252) !important
   padding 3rem 2.5rem
   // padding-bottom 6rem
   text-align center
@@ -43,6 +45,14 @@ footer
       color black
     .copyright
       color #777
+
+@media print
+  footer
+    background-color transparent
+    .social-icons
+      display none
+    .footer-logo
+      display none
 </style>
 
 <script>
