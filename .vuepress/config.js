@@ -43,6 +43,10 @@ module.exports = {
         link: '/addons/'
       },
       {
+        text: 'Community',
+        link: 'https://community.openhab.org/',
+      },
+      {
         text: 'About',
         items: [
           {
@@ -97,10 +101,6 @@ module.exports = {
             ]
           }
         ]
-      },
-      {
-        text: 'Community',
-        link: 'https://community.openhab.org/',
       },
       {
         text: 'GitHub',
@@ -233,32 +233,32 @@ module.exports = {
         {
           title: 'Bindings',
           collapsible: false,
-          children: AddonsBindings
+          children: AddonsBindings.sort((a,b) => a[1].localeCompare(b[1]))
         },
         {
           title: 'System Integrations',
           collapsible: false,
-          children: AddonsIntegrations
+          children: AddonsIntegrations.sort((a,b) => a[1].localeCompare(b[1]))
         },
         {
           title: 'Actions',
           collapsible: false,
-          children: AddonsActions
+          children: AddonsActions.sort((a,b) => a[1].localeCompare(b[1]))
         },
         {
           title: 'Data Persistence',
           collapsible: false,
-          children: AddonsPersistence
+          children: AddonsPersistence.sort((a,b) => a[1].localeCompare(b[1]))
         },
         {
           title: 'Data Transformation',
           collapsible: false,
-          children: AddonsTransformations
+          children: AddonsTransformations.sort((a,b) => a[1].localeCompare(b[1]))
         },
         {
           title: 'Voice',
           collapsible: false,
-          children: AddonsVoice
+          children: AddonsVoice.sort((a,b) => a[1].localeCompare(b[1]))
         }
       ]
     }

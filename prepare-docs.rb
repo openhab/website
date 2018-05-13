@@ -21,11 +21,11 @@ def process_file(indir, file, outdir, source)
     FileUtils.mkdir_p(outdir)
     File.open("#{outdir}/#{file}", "w+") { |out|
         File.open("#{indir}/#{file}").each { |line|
-            next if line =~ /^layout: documentation$/
+            next if line =~ /^layout: documentation/
             next if line =~ /^layout: tutorial/
             next if line =~ /^layout: developers/
-            next if line =~ /^layout: intro$/
-            next if line =~ /^{% include base.html %}$/
+            next if line =~ /^layout: intro/
+            next if line =~ /^{% include base.html %}/
             next if line =~ /\{: #/
             next if line =~ /\{::options/
             next if line =~ /TOC/
