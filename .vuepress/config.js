@@ -5,6 +5,10 @@ const AddonsPersistence = require('./addons-persistence.js')
 const AddonsTransformations = require('./addons-transformations.js')
 const AddonsVoice = require('./addons-voice.js')
 
+const fs = require ('fs-extra')
+const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 const base = process.env.GH ? '/vuepress/' : '/'
 
 module.exports = {
@@ -19,6 +23,14 @@ module.exports = {
     ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
 //    ['script', { src: `//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js` }]
   ],
+  configureWebpack: (config, isServer) => {
+    const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
+    const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
+    fs.copySync(source, temp)
+    config.plugins.push(new CopyWebpackPlugin([
+      { from: '.vuepress/_overrides', to: '.'}
+    ]))
+  },
   serviceWorker: false,
   themeConfig: {
     logo: `/openhab-logo-top.png`,
@@ -44,7 +56,7 @@ module.exports = {
       },
       {
         text: 'Community',
-        link: 'https://community.openhab.org/',
+        link: '/community/',
       },
       {
         text: 'About',
