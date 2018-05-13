@@ -10,4 +10,10 @@ If you are organizing an event around openHAB, please let us know in the [Events
 
 <!-- TODO: list component and event page layout -->
 
-_No upcoming events._
+<ul>
+  <li v-for="page in $site.pages.filter((p) => p.frontmatter.layout === 'Event')">
+    <div><strong>{{new Date(page.frontmatter.date).toLocaleDateString('en-gb', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}}</strong></div>
+    <router-link :to="page.path"><strong>{{page.frontmatter.title}}</strong></router-link><br />
+    <div>{{page.frontmatter.location}}</div>
+  </li>
+</ul>
