@@ -8,11 +8,15 @@ $docs_repo_root = $docs_repo + "/blob/gh-pages"
 $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 
-puts ">>> Deleting .vuepress/openhab-docs if existing..."
-FileUtils.rm_rf(".vuepress/openhab-docs")
+if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?(".vuepress/openhab-docs")) then
+    puts ">>> Re-using existing clone"
+else
+    puts ">>> Deleting .vuepress/openhab-docs if existing..."
+    FileUtils.rm_rf(".vuepress/openhab-docs")
 
-puts ">>> Cloning openhab-docs"
-`git clone --depth 1 https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
+    puts ">>> Cloning openhab-docs"
+    `git clone --depth 1 https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
+end
 
 def process_file(indir, file, outdir, source)
     in_frontmatter = false
@@ -71,10 +75,14 @@ def process_file(indir, file, outdir, source)
             line = "##### " + line if line =~ /^Yum or Dnf Based Systems/ && file =~ /linux/
             line = "##### " + line if line =~ /^Systems based on/ && file =~ /linux/
 
+            # Fix headers for the basic/classic UI pages
+            line = line.gsub(/^##/, "#") if outdir == "docs/configuration/ui" && (file =~ /basic/ || file =~ /classic/)
+
             line = line.gsub("{{base}}/", "./docs/")
             line = line.gsub("(images/", "(./images/")
             line = line.gsub("src=\"images/", "src=\"./images/")
             line = line.gsub("]:images/", "]:./images/")
+            line = line.gsub("](doc/", "](./doc/")
             line = line.gsub("(diagrams/", "(./diagrams/")
             line = line.gsub("./docs/tutorials/beginner/", "/docs/tutorial/")
             line = line.gsub("./docs/", "/docs/")
@@ -179,12 +187,26 @@ FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images", "docs/configuration/mi
 
 
 
+puts ">>> Migrating the UI section"
+
+
+Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
+    next if path =~ /habpanel/ || path =~ /paper/ # Those already have their own article, no need to include the readme...
+    addon = File.basename(path)
+    puts " -> #{addon}"
+    FileUtils.mkdir_p("docs/configuration/ui/" + addon)
+    process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "docs/configuration/ui", "")
+    puts " -> images (#{addon})"
+    FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "docs/configuration/ui/#{addon}")
+}
+
+
+
 puts ">>> Migrating the Apps section"
 
 
 Dir.glob(".vuepress/openhab-docs/addons/uis/apps/*.md") { |path|
     file = File.basename(path)
-    next if file == "transform.md" # Useless, copy the one from addons
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/addons/uis/apps", file, "docs/apps", "#{$docs_repo_root}/addons/uis/apps/#{file}")
 }
@@ -284,6 +306,10 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/integrations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", "")
+    if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
+        puts "  \\-> images"
+        FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/doc", "addons/integrations/#{addon}")
+    end
 }
 
 
@@ -296,6 +322,10 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", "")
+    if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
+        puts "  \\-> images"
+        FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc", "addons/bindings/#{addon}")
+    end
 }
 
 
