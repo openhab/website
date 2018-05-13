@@ -1,6 +1,6 @@
 <template>
   <div class="addon-search">
-    <input type="text" class="filter" v-model="filter" placeholder="Search for an add-on or a thing" />
+    <input type="text" class="filter" v-model="filter" :placeholder="`Search ${addons.length} add-ons & ${things.length} things`" />
     <em v-if="results">
       {{resultsText}}
     </em>
@@ -8,7 +8,7 @@
       Please type 3 characters or more...
     </em>
     <div v-else>
-      <p><em>Use the search box to look for one of openHAB's {{addons.length}} add-ons and {{things.length}} supported Things!</em></p>
+      <!-- <p><em>Use the search box to look for one of openHAB's {{addons.length}} add-ons and {{things.length}} supported Things!</em></p> -->
       <div v-for="(addontype, typeid) of $page.frontmatter.initial_gallery">
         <h3 class="addon-type">{{addontype.title}}</h3>
         <p>{{addontype.description}}</p>
@@ -65,10 +65,15 @@
 
 <style lang="stylus">
 .filter
-  width 100%
-  font-size 22px
-  padding 6px
+  width 90%
+  font-size 1.1rem
+  padding 0.8rem
+  padding-left 2rem
   border 1px solid #ccc
+  border-radius 2rem
+  background #fff url(./images/search.svg) .7rem 1rem no-repeat
+  outline none
+  
   &:focus, &:active
     border-color #ff6600
     outline-color #ff6600
@@ -133,8 +138,8 @@ h3.addon-type
   padding-left 0
   .addon
     transition all 1s
-    width 200px
-    height 200px
+    width 190px
+    height 190px
     margin 4px
     border 1px solid #eee
     display flex
@@ -144,8 +149,8 @@ h3.addon-type
       border 1px solid #ff6600
       box-shadow 2px 2px 5px rgba(0,0,0,.25)
     a
-      width 200px
-      height 200px
+      width 190px
+      height 190px
       padding 4px
       text-align center
       display flex
@@ -177,14 +182,30 @@ h3.addon-type
           font-size 14pt
         img
           margin auto
-          max-width 192px
-          max-height 150px
+          max-width 182px
+          max-height 140px
           object-fit contain
       
       .type
         font-weight normal
         font-size 10pt
         margin 4px
+
+@media (max-width 479px)
+  .addon
+    width 140px !important
+    height 140px !important
+    a
+      width 140px !important
+      height 140px !important
+      strong
+        font-size 10pt !important
+        line-height 1.4 !important
+      img
+        max-width 132px !important
+        max-height 100px !important
+      .type
+        font-size 9pt !important
 
 </style>
 
