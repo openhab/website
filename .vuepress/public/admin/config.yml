@@ -49,29 +49,11 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Category", name: "category", widget: "hidden", default: "event"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1", required: true}
       - {label: "Organizer", name: "organizer", widget: "string", required: true}
-      - {label: "Event Date", name: "date", widget: "datetime", required: true}
+      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Event Start Date", name: "date", widget: "datetime", required: true}
+      - {label: "Event End Date", name: "enddate", widget: "datetime", required: false}
       - {label: "Location", name: "location", widget: "string", required: true}
       - {label: "Cover Image", name: "previewimage", widget: "image", required: false, tagname: ""}
-      - {label: "Tags", name: "tags", widget: "list", default: ["news"]}
-      - {label: "Body", name: "body", widget: "markdown"}
-    meta:
-      - {label: "SEO Description", name: "description", widget: "text"}
-  - name: "testimonials" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Testimonials" # Used in the UI
-    label_singular: "Testimonial" # Used in the UI, ie: "New Post"
-    description: >
-      A testimonial or success story
-    folder: "about/events"
-    slug: "{{slug}}"
-    format: yaml-frontmatter
-    extension: md
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - {label: "Layout", name: "layout", widget: "hidden", default: "SuccessStory"}
-      - {label: "Category", name: "category", widget: "hidden", default: "testimonial"}
-      - {label: "Title", name: "title", widget: "string", tagname: "h1", required: true}
-      - {label: "Author", name: "author", widget: "string", required: true}
-      - {label: "Cover Image", name: "previewimage", widget: "image", required: true, tagname: ""}
       - {label: "Tags", name: "tags", widget: "list", default: ["news"]}
       - {label: "Body", name: "body", widget: "markdown"}
     meta:
