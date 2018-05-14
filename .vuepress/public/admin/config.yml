@@ -51,10 +51,11 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Organizer", name: "organizer", widget: "string", required: true}
       - {label: "Link", name: "link", widget: "string", required: false}
       - {label: "Event Start Date", name: "date", widget: "datetime", required: true}
-      - {label: "Event End Date", name: "enddate", widget: "datetime", required: false}
+      - {label: "Event End Date", name: "end_date", widget: "datetime", required: false}
       - {label: "Location", name: "location", widget: "string", required: true}
-      - {label: "Cover Image", name: "previewimage", widget: "image", required: false, tagname: ""}
-      - {label: "Tags", name: "tags", widget: "list", default: ["news"]}
+      - {label: "Cover Image", name: "event_image", widget: "image", required: false, tagname: ""}
+      - {label: "Abstract", name: "abstract", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
     meta:
       - {label: "SEO Description", name: "description", widget: "text"}
