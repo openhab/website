@@ -1,9 +1,11 @@
 ---
 layout: Event
 category: event
-title: building IoT
+title: building IoT 2018
 organizer: dpunkt.verlag GmbH
-date: '2018-06-05T23:49:15+02:00'
+link: 'https://www.buildingiot.de/'
+date: '2018-06-04T23:49:15+02:00'
+enddate: '2018-06-06T00:00:00+02:00'
 location: 'Köln, Germany'
 previewimage: /uploads/buildingiot2018.png
 tags:
