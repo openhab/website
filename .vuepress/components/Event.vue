@@ -8,11 +8,14 @@
     </div>
     <div class="event-content">
       <div class="content">
-        <div style="font-size: 1.2rem; margin-bottom: 3rem;"><router-link to="/about/events.html">« Events</router-link></div>
-        <img :src="$page.frontmatter.previewimage" />
+        <div style="font-size: 1.2rem; margin-bottom: 3rem;"><router-link to="/about/events.html">« All Events</router-link></div>
+        <a :href="$page.frontmatter.link" target="_blank"><img :src="$page.frontmatter.event_image" /></a>
         <dl class="event-details">
           <dt>Date</dt>
-          <dd>{{new Date($page.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</dd>
+          <dd>
+            <span>{{new Date($page.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span>
+            <span v-if="$page.frontmatter.end_date"> - {{new Date($page.frontmatter.end_date).toLocaleDateString('en-gb', dateOptions)}}</span>
+          </dd>
           <dt>Location</dt>
           <dd>{{$page.frontmatter.location}}</dd>
         </dl>
