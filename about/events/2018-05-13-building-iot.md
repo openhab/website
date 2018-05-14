@@ -1,7 +1,7 @@
 ---
 layout: Event
 category: event
-title: building IoT
+title: building IoT 2018
 organizer: dpunkt.verlag GmbH
 link: 'https://www.buildingiot.de/'
 date: '2018-06-04T23:49:15+02:00'
