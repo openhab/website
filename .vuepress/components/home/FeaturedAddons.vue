@@ -1,11 +1,13 @@
 <template>
   <div class="featured-addons-section">
     <h2>More than 1000 supported things!</h2>
-    <div class="logos">
-      <router-link :to="addon.path" v-for="addon in featuredAddons" :key="addon.path" class="logo-container">
-        <img :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" class="featured-logo" />
-      </router-link>
-    </div>
+    <ClientOnly>
+      <div class="logos" v-if="ready">
+        <router-link :to="addon.path" v-for="addon in featuredAddons" :key="addon.path" class="logo-container">
+          <img :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" class="featured-logo" />
+        </router-link>
+      </div>
+      </ClientOnly>
     <div class="addons-button-container">
       <router-link to="addons" class="all-addons-button slide">Browse All Add-ons →</router-link>
     </div>
@@ -70,10 +72,18 @@
 
 <script>
 export default {
+  data () {
+    return {
+      ready: false
+    }
+  },
   computed: {
     featuredAddons () {
       return this.$site.pages.filter(p => p.frontmatter && p.frontmatter.logo && p.frontmatter.since === '2x')
     }
+  },
+  mounted () {
+    this.ready = true
   }
 }
 </script>
