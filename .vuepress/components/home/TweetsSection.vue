@@ -32,4 +32,16 @@
 
 </style>
 
+<script>
+
+import Vue from 'vue'
+
+export default {
+  mounted () {
+    const TwitterTimeline = require('vue-tweet-embed/timeline').default
+    Vue.component('twitter-timeline', TwitterTimeline)
+  }
+}
+</script>
+
 

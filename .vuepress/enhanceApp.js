@@ -5,15 +5,11 @@ export default ({
     siteData // site metadata
   }) => {
     if (typeof window !== 'undefined') {
-      Vue.component('twitter-timeline', require('vue-tweet-embed/timeline').default)
-      
-      // import('vue-tweet-embed/timeline').then(module => {
-      //   Vue.component('twitter-timeline', module.default)
-      // })
+      const Headroom = require('headroom.js')
+      Vue.prototype.Headroom = Headroom
+
       const ScrollReveal = require('scrollreveal')
       Vue.prototype.$sr = new ScrollReveal()
 
-      const Headroom = require('headroom.js')
-      Vue.prototype.Headroom = Headroom
     }
   }
