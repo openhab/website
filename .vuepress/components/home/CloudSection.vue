@@ -16,14 +16,16 @@
         </p>
       </div>
     </div>
-    <div class="cloud-bkg">
-      <div class="cloud-left-bkg">
-        <img class="cloud-left-bkg-img" src="./images/lock-bkg.png" />
+    <ClientOnly>
+      <div class="cloud-bkg">
+        <div class="cloud-left-bkg">
+          <img class="cloud-left-bkg-img" src="./images/lock-bkg.png" />
+        </div>
+        <div class="cloud-right-bkg">
+          <img class="cloud-right-bkg-img" src="./images/cloud-bkg.png" />
+        </div>
       </div>
-      <div class="cloud-right-bkg">
-        <img class="cloud-right-bkg-img" src="./images/cloud-bkg.png" />
-      </div>
-    </div>
+    </ClientOnly>
   </div>
 </template>
 

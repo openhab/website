@@ -1,10 +1,12 @@
 <template>
   <div class="section-opensource">
     <div class="left">
-      <div class="eclipse-logos">
-        <a target="_blank" href="https://eclipse.org/smarthome"><img class="esh-logo" src="./images/esh-logo.png" /></a>
-        <a target="_blank" href="https://iot.eclipse.org"><img class="iot-logo" src="./images/iot-logo.png" /></a>
-      </div>
+      <ClientOnly>
+        <div class="eclipse-logos">
+          <a target="_blank" href="https://eclipse.org/smarthome"><img class="esh-logo" src="./images/esh-logo.png" /></a>
+          <a target="_blank" href="https://iot.eclipse.org"><img class="iot-logo" src="./images/iot-logo.png" /></a>
+        </div>
+      </ClientOnly>
     </div>
     <div class="right">
       <h2>
