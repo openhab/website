@@ -135,6 +135,8 @@
         // font-weight 300
       .read-more
         margin-top 2rem
+        font-family 'Open Sans', sans-serif
+        font-weight bold
         font-size 1.2rem
         color #ff6600
         width auto

@@ -3,7 +3,11 @@
 
     <jumbotron />
 
-    <div style="margin-top: 76vh">
+    <div class="after-jumbotron">
+
+      <div class="placeholder"></div>
+
+      <alert-banner-section v-if="$page.frontmatter.alert" />
 
       <why-section />
 
@@ -18,6 +22,8 @@
       <open-source-section />
 
       <community-section />
+
+      <events-section />
 
       <tweets-section />
 
@@ -63,7 +69,7 @@
     opacity 0
   100%
     // transform translateY(0)
-    opacity 0.3
+    opacity 0.5
 @keyframes headerSlideDown
   0%
     transform translateY(-100%)
@@ -96,12 +102,18 @@ header.headroom--top
       &:after
         filter: invert(100%) brightness(200%)
 
+.after-jumbotron
+  .placeholder
+    height calc(90vh - 3.6rem)
+    min-height calc(600px - 3.6rem)
+
 </style>
 
 <script>
 import Footer from './Footer.vue'
 
 import Jumbotron from'./home/Jumbotron.vue'
+import AlertBannerSection from './home/AlertBannerSection.vue'
 import WhySection from './home/WhySection.vue'
 import CloudSection from './home/CloudSection.vue'
 import VsCodeSection from './home/VsCodeSection.vue'
@@ -109,6 +121,7 @@ import FeaturedAddons from './home/FeaturedAddons.vue'
 import OpenhabianSection from './home/OpenhabianSection.vue'
 import OpenSourceSection from './home/OpenSourceSection.vue'
 import CommunitySection from './home/CommunitySection.vue'
+import EventsSection from './home/EventsSection.vue'
 import TweetsSection from './home/TweetsSection.vue'
 
 let hr = null
@@ -117,6 +130,7 @@ export default {
   name: 'HomePage',
   components: {
     Jumbotron,
+    AlertBannerSection,
     WhySection,
     CloudSection,
     VsCodeSection,
@@ -124,6 +138,7 @@ export default {
     OpenhabianSection,
     OpenSourceSection,
     CommunitySection,
+    EventsSection,
     TweetsSection,
     Footer,
     // TwitterTimeline
@@ -139,8 +154,10 @@ export default {
       sr.reveal('.slide-seq', { scale: 1.0, duration: 1000 }, 300)
       sr.reveal('.slide-seq2', { scale: 1.0, duration: 1000 }, 300)
       sr.reveal('.slide-seq3', { origin: 'left', distance: '10px', scale: 1.0, duration: 1000 }, 600)
+      sr.reveal('.slide-seq4', { scale: 1.0, duration: 1000 }, 300)
       sr.reveal('.cloud-left-bkg-img', { origin: 'left', scale: 1.0, distance: '120px', duration: 1000 })
       sr.reveal('.cloud-right-bkg-img', { origin: 'right', scale: 1.0, distance: '120px', duration: 1000 })
+      sr.reveal('.alert', { origin: 'left', distance: '40px', duration: 1200, scale: 1.0 })
     }
     const header = document.getElementsByTagName("header")[0]
     // const Headroom = require('headroom.js')

@@ -24,7 +24,7 @@
   max-height 720vh
   max-width 100%
   padding-right 2rem
-  overflow-x auto
+  // overflow-x auto
 
   // @media (max-width 768px and orientation landscape)
   //   &
@@ -125,7 +125,7 @@ export default {
   data () {
     return {
       discourseData: null,
-      showTopics: false
+      showTopics: true
     }
   },
   computed: {
@@ -144,12 +144,12 @@ export default {
         if (json.topic_list) {
           this.discourseData = json
         }
-        window.setTimeout(() => {
-          if (this.$sr) {
-            this.$sr.reveal('.topic', {})
-          }
-          this.showTopics = true
-        }, 500)
+        // window.setTimeout(() => {
+        //   if (this.$sr) {
+        //     this.$sr.reveal('.topic', {})
+        //   }
+        //   this.showTopics = true
+        // }, 500)
       });
     }).catch ((err) => {
       console.log('Failed fetching topic list from community.openhab.org - check above for CORS error messages')
