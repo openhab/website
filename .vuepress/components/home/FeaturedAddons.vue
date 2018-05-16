@@ -7,7 +7,7 @@
       </router-link>
     </div>
     <div class="addons-button-container">
-      <router-link to="addons" class="all-addons-button slide">See All Add-ons →</router-link>
+      <router-link to="addons" class="all-addons-button slide">Browse All Add-ons →</router-link>
     </div>
   </div>  
 </template>
@@ -53,13 +53,15 @@
     text-align center
   .all-addons-button
     display inline-block
+    font-family 'Open Sans', sans-serif
     font-size 1rem
+    font-weight bold
     color #ff6600
     padding 0.8rem 1.6rem
     border-radius 4px
     transition background-color .1s ease
     box-sizing border-box
-    border 1px solid #ff6600
+    border 2px solid #ff6600
     &:hover
       background-color #ff6600
       color white

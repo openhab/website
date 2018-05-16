@@ -54,7 +54,7 @@
 .section2
   font-family 'Open Sans', sans-serif
   background white
-  padding-top 5rem
+  padding-top 1rem
   text-align center
   h2
     text-align center

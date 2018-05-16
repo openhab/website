@@ -28,7 +28,8 @@
   .jumbotron-pattern
     opacity 0.15
     width calc(100vw - 20px)
-    // height 100vh
+    height 105vh
+    min-height 600px
     position absolute
     object-fit cover
     user-select none
@@ -58,6 +59,7 @@
       animation 1.5s ease-out 0s 1 slideIn3
       margin-top 4rem
       display inline-block
+      font-family 'Open Sans', sans-serif;
       font-size 1rem
       color #fff
       background-color #ff6600
@@ -74,16 +76,17 @@
       margin-top 4rem
       margin-left 0.5em
       display inline-block
+      font-family 'Open Sans', sans-serif;
       font-size 1rem
       color #fff
       padding 0.8rem 1.6rem
       border-radius 4px
-      // background-color rgba(0, 0, 0, 0.1)
+      background-color #ff660033
       transition background-color .1s ease
       box-sizing border-box
       border 1px solid #fff
-      // &:hover
-      //   background-color lighten(#ff6600, 20%)
+      &:hover
+        background-color rgba(255, 255, 255, 0.2)
     @media (max-width: 419px)
       h1.hero
         font-size 40px
@@ -101,6 +104,6 @@
     height 700px
     position absolute
     top calc(100% - 700px)
-    opacity 0.3
+    opacity 0.5
 
 </style>
