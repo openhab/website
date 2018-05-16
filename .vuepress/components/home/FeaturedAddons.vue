@@ -2,7 +2,7 @@
   <div class="featured-addons-section">
     <h2>More than 1000 supported things!</h2>
     <ClientOnly>
-      <div class="logos" v-if="ready">
+      <div class="logos">
         <router-link :to="addon.path" v-for="addon in featuredAddons" :key="addon.path" class="logo-container">
           <img :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" class="featured-logo" />
         </router-link>
