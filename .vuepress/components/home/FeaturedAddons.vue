@@ -7,7 +7,7 @@
           <img :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" class="featured-logo" />
         </router-link>
       </div>
-      </ClientOnly>
+    </ClientOnly>
     <div class="addons-button-container">
       <router-link to="addons" class="all-addons-button slide">Browse All Add-ons →</router-link>
     </div>

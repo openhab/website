@@ -3,7 +3,9 @@
     <h2>Why openHAB?</h2>
     <div class="features">
         <div ref="feature1" class="feature">
-          <integrate-everything-icon />
+          <ClientOnly>
+            <integrate-everything-icon />
+          </ClientOnly>
           <h3>Integrate Everything</h3>
           <p>
             With its <router-link to="docs/#architecture-overview">pluggable architecture</router-link>
@@ -11,7 +13,9 @@
           </p>
         </div>
         <div ref="feature2" class="feature">
-          <rotating-gears-icon />
+          <ClientOnly>
+            <rotating-gears-icon />
+          </ClientOnly>
           <div class="home-icon-container">
             <img src="./images/icons/empty.png" class="home-icon current" />
           </div>
@@ -29,7 +33,9 @@
           </p>
         </div>
         <div ref="feature3" class="feature">
-          <runs-everywhere-icon />
+          <ClientOnly>
+            <runs-everywhere-icon />
+          </ClientOnly>
           <h3>Runs Everywhere</h3>
           <p>
             Run your server on
