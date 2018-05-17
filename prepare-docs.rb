@@ -4,7 +4,8 @@
 require "fileutils"
 require "net/http"
 require "uri"
-require "nokogiri"
+require "rexml/document"
+# require "nokogiri"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/gh-pages"
@@ -23,9 +24,10 @@ end
 
 $esh_features = []
 puts ">>> Download ESH addons feature file"
-$features = Nokogiri::XML(Net::HTTP.get(URI.parse('https://raw.githubusercontent.com/openhab/openhab-distro/master/features/addons-esh/src/main/feature/feature.xml')))
-$features.remove_namespaces!
-$features.xpath("//feature/feature").each { |f|
+# $features = Nokogiri::XML(Net::HTTP.get(URI.parse('https://raw.githubusercontent.com/openhab/openhab-distro/master/features/addons-esh/src/main/feature/feature.xml')))
+# $features.remove_namespaces!
+$features = REXML::Document.new(Net::HTTP.get(URI.parse('https://raw.githubusercontent.com/openhab/openhab-distro/master/features/addons-esh/src/main/feature/feature.xml')))
+REXML::XPath.each($features, "//feature/feature") { |f|
     feature = f.text
     if (feature =~ /esh-/) then
         puts "Adding #{feature} to $esh_features"
