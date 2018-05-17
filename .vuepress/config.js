@@ -201,6 +201,7 @@ module.exports = {
             ['configuration/ui/basic/', 'Basic UI'],
             ['configuration/ui/classic/', 'Classic UI'],
             'configuration/rules-ng',
+            'configuration/eclipseiotmarket',
             ['configuration/restdocs', 'REST API'],
             'apps/android',
             'apps/ios',
