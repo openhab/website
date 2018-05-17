@@ -24,9 +24,9 @@ Dir.glob($rootDir + "**/*/").each { |dir|
                 bindingId = xml.xpath("//@bindingId").text
                 xml.xpath("//bridge-type|//thing-type").each { |t|
                     thing = {
-                        "id" => t["id"],
+                        "id" => "#{bindingId}:#{t["id"]}",
                         "label" => t.xpath("label").text,
-                        "description" => t.xpath("description").text,
+                        # "description" => t.xpath("description").text,
                         "bindingId" => bindingId
                     }
                     $things.push(thing) if thing["id"] != "sample"
