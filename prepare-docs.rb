@@ -2,6 +2,9 @@
 # and migrate content into the website with some changes
 
 require "fileutils"
+require "net/http"
+require "uri"
+require "nokogiri"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/gh-pages"
@@ -17,6 +20,19 @@ else
     puts ">>> Cloning openhab-docs"
     `git clone --depth 1 https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
 end
+
+$esh_features = []
+puts ">>> Download ESH addons feature file"
+$features = Nokogiri::XML(Net::HTTP.get(URI.parse('https://raw.githubusercontent.com/openhab/openhab-distro/master/features/addons-esh/src/main/feature/feature.xml')))
+$features.remove_namespaces!
+$features.xpath("//feature/feature").each { |f|
+    feature = f.text
+    if (feature =~ /esh-/) then
+        puts "Adding #{feature} to $esh_features"
+        $esh_features.push(feature)
+    end
+}
+puts $esh_features
 
 def process_file(indir, file, outdir, source)
     in_frontmatter = false
@@ -40,10 +56,43 @@ def process_file(indir, file, outdir, source)
                 if !in_frontmatter then
                     in_frontmatter = true
                 else
-                    if source then
-                        out.puts "source: #{source}" if !has_source
-                        has_source = true
+                    if !has_source && source then
+                        # Prefer already present source
+                        out.puts "source: #{source}"
+                    elsif !has_source
+                        # Try to determine the source
+                        outdir_parts = outdir.split('/')
+                        outdir_parts[1] = "binding" if outdir_parts[1] == "bindings"
+                        outdir_parts[1] = "transform" if outdir_parts[1] == "transformations"
+                        outdir_parts[1] = "io" if outdir_parts[1] == "integrations"
+                        if (outdir_parts[0] == "addons") then
+                            addon_type = outdir_parts[1]
+                            addon = file.split('/')[0]
+                            source = ""
+                            if addon == "habmin" then
+                                puts "    (addon is habmin)"
+                                source = "https://github.com/openhab/org.openhab.ui.habmin/blob/master/README.md"
+                            elsif addon == "habpanel" then
+                                puts "    (addon is habpanel)"
+                                source = "https://github.com/openhab/org.openhab.ui.habpanel/blob/master/README.md"
+                            elsif addon == "zigbee" then
+                                puts "    (addon is zigbee)"
+                                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/master/README.md"
+                            elsif addon == "zwave" then
+                                puts "    (addon is zwave)"
+                                source = "https://github.com/openhab/org.openhab.binding.zwave/blob/master/README.md"
+                            elsif $esh_features.include?("esh-#{addon_type}-#{addon}") then
+                                puts "    (addon is from ESH)"
+                                source = "https://github.com/eclipse/smarthome/blob/master/extensions/#{addon_type}/org.eclipse.smarthome.#{addon_type}.#{addon}/README.md"
+                            else
+                                puts "    (addon is from openhab2-addons)"
+                                source = "https://github.com/openhab/openhab2-addons/blob/master/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
+                            end
+
+                            out.puts "source: #{source}"
+                        end
                     end
+
                     in_frontmatter = false
                 end
             end
@@ -257,7 +306,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_actions/**") { |path|
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/actions/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", "")
+    process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", nil)
 }
 
 
@@ -269,7 +318,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_persistences/**") { |path|
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/persistence/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_persistences", addon + "/readme.md", "addons/persistence", "")
+    process_file(".vuepress/openhab-docs/_addons_persistences", addon + "/readme.md", "addons/persistence", nil)
 }
 
 
@@ -281,7 +330,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_transformations/**") { |path|
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/transformations/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_transformations", addon + "/readme.md", "addons/transformations", "")
+    process_file(".vuepress/openhab-docs/_addons_transformations", addon + "/readme.md", "addons/transformations", nil)
 }
 
 
@@ -293,7 +342,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_voices/**") { |path|
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/voice/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_voices", addon + "/readme.md", "addons/voice", "")
+    process_file(".vuepress/openhab-docs/_addons_voices", addon + "/readme.md", "addons/voice", nil)
 }
 
 
@@ -305,7 +354,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/integrations/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", "")
+    process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
         puts "  \\-> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/doc", "addons/integrations/#{addon}")
@@ -321,7 +370,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/bindings/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", "")
+    process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
         puts "  \\-> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc", "addons/bindings/#{addon}")
