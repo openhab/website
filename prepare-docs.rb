@@ -30,11 +30,10 @@ $features = REXML::Document.new(Net::HTTP.get(URI.parse('https://raw.githubuserc
 REXML::XPath.each($features, "//feature/feature") { |f|
     feature = f.text
     if (feature =~ /esh-/) then
-        puts "Adding #{feature} to $esh_features"
+        puts " -> Adding #{feature} as ESH feature"
         $esh_features.push(feature)
     end
 }
-puts $esh_features
 
 def process_file(indir, file, outdir, source)
     in_frontmatter = false
@@ -72,22 +71,22 @@ def process_file(indir, file, outdir, source)
                             addon = file.split('/')[0]
                             source = ""
                             if addon == "habmin" then
-                                puts "    (addon is habmin)"
+                                puts "    (add-on is habmin)"
                                 source = "https://github.com/openhab/org.openhab.ui.habmin/blob/master/README.md"
                             elsif addon == "habpanel" then
-                                puts "    (addon is habpanel)"
+                                puts "    (add-on is habpanel)"
                                 source = "https://github.com/openhab/org.openhab.ui.habpanel/blob/master/README.md"
                             elsif addon == "zigbee" then
-                                puts "    (addon is zigbee)"
+                                puts "    (add-on is zigbee)"
                                 source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/master/org.openhab.binding.zigbee/README.md"
                             elsif addon == "zwave" then
-                                puts "    (addon is zwave)"
+                                puts "    (add-on is zwave)"
                                 source = "https://github.com/openhab/org.openhab.binding.zwave/blob/master/README.md"
                             elsif $esh_features.include?("esh-#{addon_type}-#{addon.gsub('.', '-')}") then
-                                puts "    (addon is from ESH)"
+                                puts "    (add-on is from ESH)"
                                 source = "https://github.com/eclipse/smarthome/blob/master/extensions/#{addon_type}/org.eclipse.smarthome.#{addon_type}.#{addon}/README.md"
                             else
-                                puts "    (addon is from openhab2-addons)"
+                                puts "    (add-on is from openhab2-addons)"
                                 source = "https://github.com/openhab/openhab2-addons/blob/master/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
                             end
 
