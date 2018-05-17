@@ -189,7 +189,7 @@ module.exports = {
           ]
         },
         {
-          title: 'User Interfaces and Apps',
+          title: 'Interfaces and Ecosystem',
           collapsable: false,
           children: [
             'configuration/packages',
