@@ -79,11 +79,11 @@ def process_file(indir, file, outdir, source)
                                 source = "https://github.com/openhab/org.openhab.ui.habpanel/blob/master/README.md"
                             elsif addon == "zigbee" then
                                 puts "    (addon is zigbee)"
-                                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/master/README.md"
+                                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/master/org.openhab.binding.zigbee/README.md"
                             elsif addon == "zwave" then
                                 puts "    (addon is zwave)"
                                 source = "https://github.com/openhab/org.openhab.binding.zwave/blob/master/README.md"
-                            elsif $esh_features.include?("esh-#{addon_type}-#{addon}") then
+                            elsif $esh_features.include?("esh-#{addon_type}-#{addon.gsub('.', '-')}") then
                                 puts "    (addon is from ESH)"
                                 source = "https://github.com/eclipse/smarthome/blob/master/extensions/#{addon_type}/org.eclipse.smarthome.#{addon_type}.#{addon}/README.md"
                             else
