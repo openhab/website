@@ -18,7 +18,9 @@ module.exports = {
   host: 'localhost',
   base,
   head: [
-    ['link', { rel: 'icon', href: `/openhab-logo-square.png` }],
+    ['link', { rel: 'icon', href: `/favicon.ico` }],
+    ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
+    ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
     ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }],
     ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
 //    ['script', { src: `//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js` }]
@@ -167,7 +169,7 @@ module.exports = {
             'tutorial/sitemap',
             'tutorial/rules',
             'tutorial/logs',
-            'tutorial/persistence'
+            ['tutorial/persistence', 'Persistence']
           ]
         },
         {
@@ -206,6 +208,10 @@ module.exports = {
             'apps/android',
             'apps/ios',
             'apps/windows',
+            ['ifttt', 'IFTTT'],
+            ['google-assistant', 'Google Assistant'],
+            ['../addons/integrations/alexa-skill/', 'Amazon Alexa'],
+            ['../addons/integrations/mycroft-skill/', 'Mycroft AI'],
           ]
         },
         {
