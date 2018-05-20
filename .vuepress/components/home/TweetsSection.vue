@@ -3,7 +3,7 @@
     <h2 class="slide">Follow us on Twitter</h2>
     <ClientOnly>
       <div class="timeline">
-        <twitter-timeline :id="'openhab'" :source-type="'profile'" :options="{ linkColor: '#FF6600', tweetLimit: '10' }" />
+        <twitter-timeline :id="'openhab'" :source-type="'profile'" :options="{ linkColor: '#FF6600', tweetLimit: '10', dnt: true }" />
       </div>
     </ClientOnly>
   </div>
