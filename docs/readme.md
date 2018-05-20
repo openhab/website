@@ -19,9 +19,16 @@ h1.welcome {
 
 <img src="/openhab-logo-square.png" width="200" height="200" class="intro-logo" />
 
-  <p>The <strong>open H</strong>ome <strong>A</strong>utomation <strong>B</strong>us (openHAB, <em>pronounced ˈəʊpənˈhæb</em>) is an open source, technology agnostic home automation platform which runs as the center of your smart home!</p>
-  <p>This documentation contains three different categories. If you are new to openHAB 2, you might want to start with one of the <a href="tutorials/index.html">Tutorials</a>. Otherwise, for specific information on how to use or install openHAB, see the <a href="introduction.html">User Manual</a>. If you would like to contribute to the development of openHAB, please refer to our <a href="developers/index.html">Developer Guide</a>.</p>
-  <p><strong>Note:</strong> This documentation is currently heavily worked on, so expect regular changes. If you feel that something important is missing, please <a href="https://github.com/openhab/openhab-docs/blob/gh-pages/README.md#contributing-to-the-documentation">help us improve the documentation</a>!</p>
+The <strong>open H</strong>ome <strong>A</strong>utomation <strong>B</strong>us (openHAB, <em>pronounced ˈəʊpənˈhæb</em>) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
+
+You've reached the openHAB documentation, which contains extensive resources for all users:
+
+- If you are new to openHAB, we recommend to learn a bit about openHAB first before jumping in - please proceed directly to the [Getting Started](#getting-started) chapter below!
+- If you're an experienced user, the [Download](/download) page contains links and simplified installation instructions. The [Configuration Guide](./configuration/) and the _Interfaces and Ecosystem_ section below also contain useful information. If you're looking for the documentation of a specific add-on, go to the [Add-on Reference](/addons/). You can also use the search box above to find any page on this site.
+- If you're using openHAB 1.x and want to migrate your installation to openHAB 2, have a look at our [Migration Guide](./configuration/migration/).
+- If you would like to contribute to the development of openHAB, please refer to our [Developer Guide](./developer/).
+
+This documentation is always worked on, so expect regular changes. If you feel that something important is missing, please [help us improve the documentation](https://github.com/openhab/openhab-docs/blob/gh-pages/README.md#contributing-to-the-documentation)!</p>
 
 openHAB **software** integrates different home automation systems, devices and technologies into a single solution.
 It provides uniform user interfaces, and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved.
@@ -32,12 +39,12 @@ We highly recommend that you read the next chapter titled [Concepts](./concepts/
 It introduces a number of important ideas that will help you as you install and begin to configure openHAB for the first time.
 
 openHAB runs on many popular platforms including Linux, Windows and Mac OSx.
-You can find specific installation instructions for these and other platforms in the [Installation Overview](./installation/index.html) article.
-Many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi](https://raspberrypi.org) and install [openHABian](./installation/openhabian.html); a "hastle-free openHAB setup".
+You can find specific installation instructions for these and other platforms in the [Installation Guide](./installation/).
+Many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi](https://raspberrypi.org) and install [openHABian](./installation/openhabian.html) - the "hassle-free openHAB setup".
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system capable of automating your entire home.
 
-Once you have openHAB up and running, the [Configuration](./configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home.
-You can use [Sitemaps](./configuration/sitemaps.html) to control how the status of these devices are displayed on different openHAB User Interfaces, and you can begin to experiment with [Rules](./configuration/rules-dsl.html) in order to get the most out of your installation.
+Once you have openHAB up and running, the [Configuration Guide](./configuration/) contains everything you need to know to get your openHAB installation talking to different devices around your home.
+For instance, you can use [Sitemaps](./configuration/sitemaps.html) to control how the status of these devices are displayed on different openHAB User Interfaces, and you can begin to experiment with [Rules](./configuration/rules-dsl.html) in order to get the most out of your installation. There are many other ways of interacting with your openHAB smart home: the most popular are presented in the _Interfaces and Ecosystem_ section below.
 
 Along the way, you may have some questions; the openHAB community is here to help.
 
@@ -64,4 +71,4 @@ The overall architecture of openHAB is shown in the figure below:
 
 ![distribution overview](./images/distro.png "Overall openHAB Architectural View")
 
-If you are new to openHAB, we suggest you continue to the [Concepts](./concepts/index.html) chapter where we introduce many fundamental ideas that are used throughout openHAB.
+Let's continue with the [Concepts](./concepts/index.html) section where we introduce many fundamental ideas that are used throughout openHAB.
