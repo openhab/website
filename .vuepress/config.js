@@ -35,7 +35,7 @@ module.exports = {
       const highlight = md.options.highlight
       md.options.highlight = (str, lang) => {
         /* Simple heuristics to detect rules & other openHAB DSL code snippets and override the language */
-        if (str.match(/\b(?:Color|Contact|DateTime|Dimmer|Group|Number|Player|Rollershutter|String|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap|Strategies {|Items {)\b/)) {
+        if (str.match(/\b(?:Color|Contact|DateTime|Dimmer|Group|Number|Player|Rollershutter|String|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap)\b/)) {
           lang = 'dsl'
         }
         if (str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/) ||
