@@ -37,6 +37,7 @@ REXML::XPath.each($features, "//feature/feature") { |f|
 
 def process_file(indir, file, outdir, source)
     in_frontmatter = false
+    frontmatter_processed = false
     has_source = false
     has_logo = false
     FileUtils.mkdir_p(outdir)
@@ -53,10 +54,11 @@ def process_file(indir, file, outdir, source)
             next if line =~ /no_toc/
             has_source = true if in_frontmatter && line =~ /^source:/
             has_logo = true if in_frontmatter && line =~ /^logo:/
+
             if line =~ /^---$/ then
                 if !in_frontmatter then
                     in_frontmatter = true
-                else
+                elsif !frontmatter_processed
                     if !has_source && source then
                         # Prefer already present source
                         out.puts "source: #{source}"
@@ -95,8 +97,11 @@ def process_file(indir, file, outdir, source)
                     end
 
                     in_frontmatter = false
+                    frontmatter_processed = true
                 end
             end
+
+            # Replace the Jekyll "contribution wanted" include file by custom VuePress markup
             line = "[[toc]]" if line =~ /\{:toc/
             if line =~ /\{% include contribution-wanted.html %\}/
                 out.puts "::: tip Contribution Wanted"
@@ -106,7 +111,8 @@ def process_file(indir, file, outdir, source)
                 out.puts ":::"
                 next
             end
-            # Insert the logo component below the first title for add-ons
+
+            # Insert the logo component below the first title for add-ons which have a logo reference in their front matter
             if !in_frontmatter && line =~ /^# / && has_logo then
                 out.puts line
                 out.puts
@@ -128,7 +134,23 @@ def process_file(indir, file, outdir, source)
             # Fix headers for the basic/classic UI pages
             line = line.gsub(/^##/, "#") if outdir == "docs/configuration/ui" && (file =~ /basic/ || file =~ /classic/)
 
-            line = line.gsub("https://docs.openhab.org/", "/docs/")
+            # Fix broken links in the package selection article
+            if outdir == 'docs/configuration' && file =~ /packages/ then
+                line = line.gsub('(../addons/uis/paper/readme.html)', '(paperui.html)')
+                line = line.gsub('(../addons/uis/basic/readme.html)', '(ui/basic/)')
+                line = line.gsub('(../addons/uis/classic/readme.html)', '(ui/classic/)')
+                line = line.gsub('(../addons/uis/habmin/readme.html)', '(ui/habmin/)')
+                line = line.gsub('(../addons/uis/habpanel/readme.html)', '(habpanel.html)')
+            end
+
+            # Misc replaces (relative links, remove placeholder interpreted as custom tags)
+            line = line.gsub('http://docs.openhab.org/addons/uis/paperui/readme.html', '/docs/configuration/paperui.html')
+            line = line.gsub('http://docs.openhab.org/addons/uis/habpanel/readme.html', '/docs/configuration/habpanel.html')
+            line = line.gsub('http://docs.openhab.org/addons/uis/habmin/readme.html', '/docs/configuration/habmin.html')
+            line = line.gsub('http://docs.openhab.org/addons/uis/basicui/readme.html', '/docs/configuration/ui/basic/')
+            line = line.gsub(/http:\/\/docs\.openhab\.org\/addons\/(.*)\/(.*)\/readme\.html/, '/addons/\1/\2/')
+            line = line.gsub('http://docs.openhab.org/', '/docs/')
+            line = line.gsub('/addons/io/', '/addons/integrations/')
             line = line.gsub("{{base}}/", "./docs/")
             line = line.gsub("(images/", "(./images/")
             line = line.gsub("src=\"images/", "src=\"./images/")
@@ -157,8 +179,10 @@ def process_file(indir, file, outdir, source)
             line = line.gsub("<password>", '&lt;password&gt;') if file =~ /zoneminder/
             line = line.gsub("<yourzmip>", '&lt;yourzmip&gt;') if file =~ /zoneminder/
             line = line.gsub("<regular expression>", '\<regular expression\>')
-            line = line.gsub(/\{:(style|target).*\}/, '')
             line = line.gsub('src="images/', 'src="./images/') if outdir =~ /apps/
+
+            line = line.gsub(/\{:(style|target).*\}/, '') # Jekyll inline attributes syntax not supported
+
             out.puts line
         }
 
