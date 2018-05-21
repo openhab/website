@@ -21,7 +21,7 @@ module.exports = {
 			punctuation: /[.:\\]/
 		}
 	},
-	'constant': /\b(?:label|icon|item|mappings|item|minValue|maxValue|step|switchSupport|height|url|refresh|encoding|channel)\b/,
+	'entity': /\b(?:label|icon|item|mappings|item|minValue|maxValue|step|switchSupport|height|url|refresh|encoding|visibility)\b/,
 	'keyword': /\b(?:Color|Contact|DateTime|Dimmer|Group|Number|Player|Rollershutter|String|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap|Strategies|Items)\b/,
 	'boolean': /\b(?:true|false)\b/,
 	'function': /<[a-z0-9_]+>/i,
