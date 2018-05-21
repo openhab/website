@@ -2,12 +2,13 @@
   <div class="page-versions">
     <div class="dropdown-wrapper" :class="{ open }">
       <a class="dropdown-title" @click="toggle">
-        <span class="title">Previous versions</span>
+        <span class="title">Other versions</span>
         <span class="arrow" :class="open ? 'down' : 'right'"></span></span>
       </a>
       <ul class="nav-dropdown" v-show="open">
         <li v-for="version in versions" class="dropdown-item">
-          <a :href="version.url" target="_blank">{{version.number}}</a>
+          <a class="current" v-if="version.number === stableVersion">{{version.number}}</a>
+          <a v-else :href="version.url" target="_blank">{{version.number}}</a>
         </li>
       </ul>
     </div>
@@ -56,13 +57,20 @@
     margin 0;
     position relative
     top 0
+    .current
+      color black
+      font-weight bold !important
+      &:hover
+        text-decoration none
+        color black !important
 </style>
 
 <script>
 export default {
   data () {
     return {
-      versionNumbers: ['2.2', '2.1'],
+      versionNumbers: ['snapshot', '2.3', '2.2', '2.1'],
+      stableVersion: '2.3',
       open: false
     }
   },
@@ -80,7 +88,7 @@ export default {
 
         return {
           number: version,
-          url: `https://docs.openhab.org/v${version}/${url}`
+          url: `https://docs.openhab.org${version === 'snapshot' ? '' : '/v' + version}/${url}`
         }
       })
     }
