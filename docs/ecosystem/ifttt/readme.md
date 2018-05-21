@@ -1,9 +1,9 @@
 ---
-id: alexa-skill
-label: Amazon Alexa Skill
 title: IFTTT Integration
 type: io
+source: https://github.com/openhab/website/blob/master/docs/ecosystem/ifttt/readme.md
 ---
+
 # IFTTT Integration for openHAB
 
 <div class="img-wrapper"><img src='./images/ifttt-meets-openhab.jpg' alt='IFTTT meets openHAB'/></div>
@@ -71,3 +71,6 @@ We have also integrated with IFTTT’s [Do Button](https://ifttt.com/products/do
 ## Let's Go!
 
 IFTTT is available to all our users through the [myopenHAB service](http://www.myopenhab.org/). Once you have your myopenHAB account set up, all you have to do is to decide, which items you want to share with IFTTT and to activate the openHAB channel.
+
+
+<EditPageLink/>

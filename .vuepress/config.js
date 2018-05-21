@@ -208,10 +208,11 @@ module.exports = {
             'apps/android',
             'apps/ios',
             'apps/windows',
-            ['ifttt', 'IFTTT'],
-            ['google-assistant', 'Google Assistant'],
-            ['../addons/integrations/alexa-skill/', 'Amazon Alexa'],
-            ['../addons/integrations/mycroft-skill/', 'Mycroft AI'],
+            ['ecosystem/alexa/', 'Amazon Alexa'],
+            ['ecosystem/google-assistant/', 'Google Assistant'],
+            ['../addons/integrations/homekit/', 'Apple HomeKit'],
+            ['ecosystem/ifttt/', 'IFTTT'],
+            ['ecosystem/mycroft/', 'Mycroft.AI'],
           ]
         },
         {
