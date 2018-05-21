@@ -9,6 +9,9 @@ const fs = require ('fs-extra')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+const HighlightDsl = require('./highlight-dsl')
+const HighlightRules = require('./highlight-rules')
+
 const base = process.env.GH ? '/vuepress/' : '/'
 
 module.exports = {
@@ -26,6 +29,30 @@ module.exports = {
     ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
 //    ['script', { src: `//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js` }]
   ],
+  markdown: {
+    config: (md) => {
+      md.options.linkify = true
+      const highlight = md.options.highlight
+      md.options.highlight = (str, lang) => {
+        /* Simple heuristics to detect rules & other openHAB DSL code snippets and override the language */
+        if (str.match(/\b(?:Color|Contact|DateTime|Dimmer|Group|Number|Player|Rollershutter|String|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap|Strategies {|Items {)\b/)) {
+          lang = 'dsl'
+        }
+        if (str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/) ||
+          str.match(/received update/) || str.match(/changed.*(?:from|to)/) || str.match(/Channel.*triggered/) ||
+          str.match(/val/) || str.match(/var/) /* <-- dangerous! */) {
+          lang = 'rules'
+        }
+
+        if (!Prism.languages.dsl || Prism.languages.rules) {
+          Prism.languages.dsl = HighlightDsl
+          Prism.languages.rules = HighlightRules
+        }
+
+        return highlight(str, lang)
+      }
+    }
+  },
   configureWebpack: (config, isServer) => {
     const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
     const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
