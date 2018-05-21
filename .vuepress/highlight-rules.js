@@ -15,13 +15,13 @@ module.exports = {
 		greedy: true
 	},
 	'class-name': {
-		pattern: /((?:\b(?:Item|instanceof|as|new|val|var)\s+)|(?:catch\s+\())[\w.\\]+/i,
+		pattern: /((?:\b(?:instanceof|as|new|val|var)\s+)|(?:catch\s+\())[A-Z][\w.\\]+/,
 		lookbehind: true,
 		inside: {
 			punctuation: /[.\\]/
 		}
 	},
-	'constant': /\b(?:INCREASE|DECREASE|NEXT|PREVIOUS|ON|OFF|OPEN|CLOSED|PLAY|PAUSE|REWIND|FASTFORWARD|STOP|MOVE|UP|DOWN)\b/,
+	'constant': /\b(?:INCREASE|DECREASE|NEXT|PREVIOUS|ON|OFF|OPEN|CLOSED|PLAY|PAUSE|REWIND|FASTFORWARD|STOP|MOVE|UP|DOWN|string|int|boolean|long|float|short|char|byte)\b/,
 	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|import|function|new|try|throw|catch|finally|null|break|continue|switch|case|default|synchronized|rule|when|Item|Thing|Channel|changed|updated|Time cron|Time is midnight|Time is noon|System started|System shuts down|received update|received command|triggered|from|to|or|as|then|end|var|val)\b/,
 	'boolean': /\b(?:true|false)\b/,
 	'function': /[a-z0-9_]+(?=\()/i,
