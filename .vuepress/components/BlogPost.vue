@@ -77,6 +77,14 @@
     margin-top -2rem
     margin-bottom -3rem
     text-align center
+
+  /* For migrated posts (images and captions) */
+  .img-responsive
+    display block
+    margin auto
+  small
+    display block
+    text-align center
 </style>
 
 <script>
