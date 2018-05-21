@@ -128,6 +128,7 @@ def process_file(indir, file, outdir, source)
             # Fix headers for the basic/classic UI pages
             line = line.gsub(/^##/, "#") if outdir == "docs/configuration/ui" && (file =~ /basic/ || file =~ /classic/)
 
+            line = line.gsub("https://docs.openhab.org/", "/docs/")
             line = line.gsub("{{base}}/", "./docs/")
             line = line.gsub("(images/", "(./images/")
             line = line.gsub("src=\"images/", "src=\"./images/")
@@ -352,6 +353,9 @@ puts ">>> Migrating add-ons: IO"
 
 
 Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
+    # See below for the Alexa & Mycroft special cases
+    next if path =~ /alexa-skill/
+    next if path =~ /mycroft-skill/
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/integrations/" + addon)
@@ -361,6 +365,12 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/doc", "addons/integrations/#{addon}")
     end
 }
+
+# Handle those two separately - copy them in the "ecosystem" section
+FileUtils.mkdir_p("docs/ecosystem/alexa")
+FileUtils.mkdir_p("docs/ecosystem/mycroft")
+process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
+process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
 
 
 
