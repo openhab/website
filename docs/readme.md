@@ -21,6 +21,9 @@ h1.welcome {
 
 The <strong>open H</strong>ome <strong>A</strong>utomation <strong>B</strong>us (openHAB, <em>pronounced ˈəʊpənˈhæb</em>) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
 
+openHAB **software** integrates different home automation systems, devices and technologies into a single solution.
+It provides uniform user interfaces, and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved.
+
 You've reached the openHAB documentation, which contains extensive resources for all users:
 
 - If you are new to openHAB, we recommend to learn a bit about openHAB first before jumping in - please proceed directly to the [Getting Started](#getting-started) chapter below!
@@ -30,8 +33,11 @@ You've reached the openHAB documentation, which contains extensive resources for
 
 This documentation is always worked on, so expect regular changes. If you feel that something important is missing, please [help us improve the documentation](https://github.com/openhab/openhab-docs/blob/gh-pages/README.md#contributing-to-the-documentation)!</p>
 
-openHAB **software** integrates different home automation systems, devices and technologies into a single solution.
-It provides uniform user interfaces, and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved.
+::: warning The openHAB Documentation is evolving
+
+This new documentation site is currently targeting only the current stable openHAB 2.3 release, and its structure has been altered in certain places to improve your reading experience. The documentation for the latest snapshot and the previous releases can still be viewed at [docs.openhab.org](https://docs.openhab.org/) or with the "Other versions" dropdowns on most pages. During a transition period, you might encounter broken or invalid links - please bear with us and accept our apologies for the inconvenience.
+
+:::
 
 ## Getting Started
 
