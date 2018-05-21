@@ -17,6 +17,7 @@ module.exports = {
   dest: 'vuepress',
   host: 'localhost',
   base,
+  ga: 'UA-47717934-1',
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
