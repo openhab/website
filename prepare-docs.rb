@@ -437,3 +437,8 @@ puts ">>> Writing add-ons arrays to files for sidebar navigation"
         file.puts "]"
     }
 }
+
+
+# Regenerate the classic iconset docs
+puts ">>> Generating iconset"
+system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets classic .vuepress/openhab-docs/_data docs/configuration/iconsets")

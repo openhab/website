@@ -45,6 +45,13 @@ module.exports = {
           str.match(/\bval\b/) || str.match(/\bvar\b/) /* <-- dangerous! */) {
           lang = 'rules'
         }
+        if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
+        if (lang === 'conf') lang = 'dsl'
+        if (lang === 'JSON') lang = 'json'
+        // if (lang === 'xtend' || lang === 'text' || !lang) {
+        //   console.log('Cannot determine language of code: ' + lang)
+        //   console.log(str)
+        // }
 
         if (!Prism.languages.dsl || !Prism.languages.rules) {
           Prism.languages.dsl = HighlightDsl
@@ -215,6 +222,7 @@ module.exports = {
             'configuration/rules-dsl',
             'configuration/transformations',
             'configuration/actions',
+            'configuration/iconsets/classic/',
             'configuration/jsr223',
             'configuration/services',
             'configuration/multimedia',
