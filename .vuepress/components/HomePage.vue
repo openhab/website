@@ -144,19 +144,15 @@ export default {
     // TwitterTimeline
   },
   mounted () {
-    const vm = this
     if (this.$sr) {
       const sr = this.$sr
       sr.reveal('.feature', { scale: 1.0 }, 200)
-      sr.reveal('.featured-logo', { })
       sr.reveal('.slide', { scale: 1.0 })
       sr.reveal('.slide-slow', { scale: 1.0, duration: 1000, delay: 500 })
       sr.reveal('.slide-seq', { scale: 1.0, duration: 1000 }, 300)
       sr.reveal('.slide-seq2', { scale: 1.0, duration: 1000 }, 300)
       sr.reveal('.slide-seq3', { origin: 'left', distance: '10px', scale: 1.0, duration: 1000 }, 600)
-      sr.reveal('.slide-seq4', { scale: 1.0, duration: 1000 }, 300)
-      sr.reveal('.cloud-left-bkg-img', { origin: 'left', scale: 1.0, distance: '120px', duration: 1000 })
-      sr.reveal('.cloud-right-bkg-img', { origin: 'right', scale: 1.0, distance: '120px', duration: 1000 })
+      sr.reveal('.slide-seq4', { scale: 1.0, viewFactor: 0.0 }, 200)
       sr.reveal('.alert', { origin: 'left', distance: '40px', duration: 1200, scale: 1.0 })
     }
     const header = document.getElementsByTagName("header")[0]
