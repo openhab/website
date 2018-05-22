@@ -144,10 +144,10 @@ def process_file(indir, file, outdir, source)
             end
 
             # Misc replaces (relative links, remove placeholder interpreted as custom tags)
-            line = line.gsub('http://docs.openhab.org/addons/uis/paperui/readme.html', '/docs/configuration/paperui.html')
+            line = line.gsub('http://docs.openhab.org/addons/uis/paper/readme.html', '/docs/configuration/paperui.html')
             line = line.gsub('http://docs.openhab.org/addons/uis/habpanel/readme.html', '/docs/configuration/habpanel.html')
             line = line.gsub('http://docs.openhab.org/addons/uis/habmin/readme.html', '/docs/configuration/habmin.html')
-            line = line.gsub('http://docs.openhab.org/addons/uis/basicui/readme.html', '/docs/configuration/ui/basic/')
+            line = line.gsub('http://docs.openhab.org/addons/uis/basic/readme.html', '/docs/configuration/ui/basic/')
             line = line.gsub(/http:\/\/docs\.openhab\.org\/addons\/(.*)\/(.*)\/readme\.html/, '/addons/\1/\2/')
             line = line.gsub('http://docs.openhab.org/', '/docs/')
             line = line.gsub('/addons/io/', '/addons/integrations/')
