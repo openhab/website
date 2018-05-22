@@ -47,7 +47,7 @@ openHAB can be intimidating to new users, and even experienced ones might encoun
 
 You might want to fix a bug, add a feature, or write a new add-on. That's awesome!
 
-The [Developer Guide](/docs/developers) has everything to get you started.
+The [Developer Guide](/docs/developer) has everything to get you started.
 
 
 
