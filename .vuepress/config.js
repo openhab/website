@@ -27,7 +27,6 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
     ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }],
     ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
-//    ['script', { src: `//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js` }]
   ],
   markdown: {
     config: (md) => {
@@ -35,7 +34,10 @@ module.exports = {
       const highlight = md.options.highlight
       md.options.highlight = (str, lang) => {
         /* Simple heuristics to detect rules & other openHAB DSL code snippets and override the language */
-        if (str.match(/\b(?:Color|Contact|DateTime|Dimmer|Group|Number|Player|Rollershutter|String|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap)\b/)) {
+        if (str.match(/\b(?:Color|Contact|Dimmer|Group|Number|Player|Rollershutter|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap)\b/)) {
+          lang = 'dsl'
+        }
+        if (str.match(/\b(?:String|DateTime)\b/) && lang !== 'java' && lang !== 'xml') {
           lang = 'dsl'
         }
         if (str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/) ||
@@ -44,7 +46,7 @@ module.exports = {
           lang = 'rules'
         }
 
-        if (!Prism.languages.dsl || Prism.languages.rules) {
+        if (!Prism.languages.dsl || !Prism.languages.rules) {
           Prism.languages.dsl = HighlightDsl
           Prism.languages.rules = HighlightRules
         }
@@ -54,6 +56,7 @@ module.exports = {
     }
   },
   configureWebpack: (config, isServer) => {
+    // Remove once VuePress 0.9 is out (includes https://github.com/vuejs/vuepress/pull/405)
     const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
     const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
     fs.copySync(source, temp)
@@ -63,7 +66,7 @@ module.exports = {
   },
   serviceWorker: false,
   themeConfig: {
-    logo: `/openhab-logo-top.png`,
+    logo: `/openhab-logo.png`,
     // repo: 'openhab',
     editLinks: false,
     docsDir: 'docs',
