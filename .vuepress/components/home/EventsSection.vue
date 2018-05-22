@@ -7,7 +7,7 @@
         </parallax>
       </ClientOnly>
       <div class="events-text">
-        <h2 class="slide-seq4">Let's Meet!</h2>
+        <h2 class="slide-seq4">Let's Meet Up!</h2>
         <!-- <p class="slide-seq">
           Regular events are organized around the year, and openHAB enthusiasts gathered at EclipseCon Europe in October 2017 for a successful Smart Home Day, with more to come!
         </p> -->
@@ -148,7 +148,12 @@
       padding 0
       h3
         font-size 1.4em
-      
+
+@media (min-width: 1024px)
+  .events-section
+    height 85vh
+    .Masthead__image
+      height 85vh !important
 </style>
 
 

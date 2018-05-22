@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="cloud-right">
-        <h2 class="slide">...but Cloud-Aware</h2>
+        <h2 class="slide">...but Cloud-Friendly</h2>
         <p class="slide">
           Integrations are available for the most popular cloud-based smart home platforms, including Google Assistant, Amazon Alexa, Apple HomeKit and IFTTT.
           Use the openHAB Cloud connector with the free <a target="_blank" href="https://www.myopenhab.org/">myopenhab.org</a> service or host your own.
@@ -44,6 +44,7 @@
     width 100%
     display flex
     text-align center
+    z-index 10
     .cloud-left
       width 50%
       // height 160px
@@ -69,6 +70,7 @@
     height 28vw
     width 100%
     overflow hidden
+    margin-top -60px
     .cloud-left-bkg
       position absolute
       left 0
@@ -104,6 +106,7 @@
         width 100%
     .cloud-bkg
       height 100px
+      margin-top 0
       .cloud-left-bkg
         height 100px !important
         img
@@ -116,3 +119,17 @@
           height 100px !important
 
 </style>
+
+<script>
+import Vue from 'vue'
+export default {
+  mounted () {
+    if (this.$sr) {
+      Vue.nextTick(() => {
+        this.$sr.reveal('.cloud-left-bkg-img', { origin: 'left', scale: 1.0, distance: '120px', duration: 1000 })
+        this.$sr.reveal('.cloud-right-bkg-img', { origin: 'right', scale: 1.0, distance: '120px', duration: 1000 })
+      })
+    }
+  }
+}
+</script>

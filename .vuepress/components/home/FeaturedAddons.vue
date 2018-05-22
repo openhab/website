@@ -71,6 +71,8 @@
 </style>
 
 <script>
+import Vue from 'vue'
+
 export default {
   data () {
     return {
@@ -84,6 +86,11 @@ export default {
   },
   mounted () {
     this.ready = true
+    if (this.$sr) {
+      Vue.nextTick(() => {
+        this.$sr.reveal('.featured-logo', { })
+      })
+    }
   }
 }
 </script>

@@ -50,15 +50,19 @@ $MQNarrow = 1023px
 
 @media (min-width: 720px) and (max-width: 1023px)
     .search-box input:focus
-        width: 9.3rem
+        width: 10.7rem // to cover the openHAB text (leaving the logo)
 
 @media (min-width: 1024px) and (max-width: 1280px)
     .search-box input
         width: 5.7rem
 
+@media (max-width: 360px)
+    .search-box input:focus
+        width: 9.4rem // to cover the openHAB text (leaving the logo)
+
 @media (max-width: 419px)
     .search-box input:focus
-        width: 6rem
+        width: 4.5rem
 
 .content:not(.custom)>h1:first-child
     font-family 'Open Sans', sans-serif
@@ -79,3 +83,6 @@ $MQNarrow = 1023px
 
 .content:not(.custom)
     max-width 1280px !important
+
+.page .content:not(.custom):not(.page-nav)
+    min-height 85vh !important
