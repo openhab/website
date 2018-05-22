@@ -22,7 +22,7 @@ collections: # A list of collections the CMS should be able to edit
     format: yaml-frontmatter
     extension: md
     create: true # Allow users to create new documents in this collection
-    filter: {field: "Layout", value: "BlogPost"}
+    filter: {field: "layout", value: "BlogPost"}
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "BlogPost"}
       - {label: "Category", name: "category", widget: "hidden", default: "blog"}
@@ -69,7 +69,7 @@ collections: # A list of collections the CMS should be able to edit
     format: yaml-frontmatter
     extension: md
     create: false # Allow users to create new documents in this collection
-    filter: {field: "Layout", value: "AboutPage"}
+    filter: {field: "layout", value: "AboutPage"}
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "AboutPage"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1", required: true}
