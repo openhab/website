@@ -33,12 +33,17 @@ $MQNarrow = 1023px
             height 15px;
             margin 2px 0 2px 5px;
 
-.nav-dropdown .dropdown-item:nth-child(2) .dropdown-subitem:nth-child(1) a:after
+.nav-dropdown .dropdown-item:nth-child(2) .dropdown-subitem:nth-child(1) a:after,
+.nav-dropdown .dropdown-item:nth-child(3) .dropdown-subitem:nth-child(3) a:after
     content url("/external-link.svg")
     display inline-block
     width 10px
     height 15px
-    margin 2px 0 2px 5px
+    margin-left 5px
+    // margin 2px 0 2px 5px
+
+.dropdown-wrapper .nav-dropdown .dropdown-item h4
+    margin-bottom .2rem
 
 .sidebar
     background-color #f7f7f7 !important
