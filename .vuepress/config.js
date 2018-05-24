@@ -139,7 +139,7 @@ module.exports = {
                 link: '/about/showcase'
               },
               {
-                text: 'Privacy',
+                text: 'Privacy Policy',
                 link: '/privacy'
               },
               {
