@@ -15,6 +15,36 @@
     "bindingId": "amazondashbutton"
   },
   {
+    "id": "amazonechocontrol:account",
+    "label": "Amazon Account",
+    "bindingId": "amazonechocontrol"
+  },
+  {
+    "id": "amazonechocontrol:echo",
+    "label": "Amazon Echo",
+    "bindingId": "amazonechocontrol"
+  },
+  {
+    "id": "amazonechocontrol:echospot",
+    "label": "Amazon Echo Spot",
+    "bindingId": "amazonechocontrol"
+  },
+  {
+    "id": "amazonechocontrol:echoshow",
+    "label": "Amazon Echo Show",
+    "bindingId": "amazonechocontrol"
+  },
+  {
+    "id": "amazonechocontrol:wha",
+    "label": "Amazon Echo Whole House Audio Control",
+    "bindingId": "amazonechocontrol"
+  },
+  {
+    "id": "amazonechocontrol:flashbriefingprofile",
+    "label": "Flash Briefing Profile",
+    "bindingId": "amazonechocontrol"
+  },
+  {
     "id": "atlona:pro3-44m",
     "label": "Atlona Pro3 4x4 HDBaseT Matrix",
     "bindingId": "atlona"
@@ -373,6 +403,16 @@
     "id": "homematic:bridge",
     "label": "Homematic Bridge",
     "bindingId": "homematic"
+  },
+  {
+    "id": "hyperion:serverV1",
+    "label": "Hyperion Server",
+    "bindingId": "hyperion"
+  },
+  {
+    "id": "hyperion:serverNG",
+    "label": "Hyperion.ng Server",
+    "bindingId": "hyperion"
   },
   {
     "id": "icloud:account",
@@ -1663,6 +1703,21 @@
     "id": "systeminfo:computer",
     "label": "Systeminfo",
     "bindingId": "systeminfo"
+  },
+  {
+    "id": "tado:home",
+    "label": "Tado Home",
+    "bindingId": "tado"
+  },
+  {
+    "id": "tado:zone",
+    "label": "Zone",
+    "bindingId": "tado"
+  },
+  {
+    "id": "tado:mobiledevice",
+    "label": "Mobile Device",
+    "bindingId": "tado"
   },
   {
     "id": "tankerkoenig:station",
@@ -3065,6 +3120,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:fakro_arf_00_000",
+    "label": "ARF Roller blind module",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:fakro_arz_00_000",
     "label": "ARZ Roller Shutter Module",
     "bindingId": "zwave"
@@ -3152,6 +3212,11 @@
   {
     "id": "zwave:fibaro_fgk101_00_000",
     "label": "FGK101 Door Opening Sensor",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:fibaro_fgk101_02_005",
+    "label": "FGK101 Door/Window Sensor",
     "bindingId": "zwave"
   },
   {
@@ -3920,11 +3985,6 @@
     "bindingId": "zwave"
   },
   {
-    "id": "zwave:kaipule_es61_01_036",
-    "label": "ES-61 Smoke Sensor",
-    "bindingId": "zwave"
-  },
-  {
     "id": "zwave:kaipule_im20_00_000",
     "label": "IM-20 Door Sensor",
     "bindingId": "zwave"
@@ -4210,11 +4270,6 @@
     "bindingId": "zwave"
   },
   {
-    "id": "zwave:mcohome_mhs311h_00_000",
-    "label": "MH-S311H Touch Panel Switch (Single) High inrush current",
-    "bindingId": "zwave"
-  },
-  {
     "id": "zwave:mcohome_mhs311_00_000",
     "label": "MH-S311H Touch Panel Switch (Single) High inrush current",
     "bindingId": "zwave"
@@ -4336,7 +4391,7 @@
   },
   {
     "id": "zwave:nodon_crc3100_00_000",
-    "label": "CRC-3100 Octon Remote Control",
+    "label": "CRC-3100 Octan Remote Control",
     "bindingId": "zwave"
   },
   {
@@ -4397,11 +4452,6 @@
   {
     "id": "zwave:permundo_psc234zw_00_000",
     "label": "PSC234ZW Metering Plug switching 16A",
-    "bindingId": "zwave"
-  },
-  {
-    "id": "zwave:permundo_psc234zw_01_055",
-    "label": "PSC234-ZW Metering Plug switching 16A",
     "bindingId": "zwave"
   },
   {
@@ -5190,6 +5240,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:trane_le130_00_000",
+    "label": "Schlage LE130",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:trane_tzemt400bb32maa_00_000",
     "label": "TZEMT400BB32MAA Trane Z-Wave Programmable Thermostat",
     "bindingId": "zwave"
@@ -5252,11 +5307,6 @@
   {
     "id": "zwave:vda_satellitevi_00_000",
     "label": "Vitrum Satellite VI Vitrum touch switch satellite 6 buttons",
-    "bindingId": "zwave"
-  },
-  {
-    "id": "zwave:vda_vitrumieuboiler_00_000",
-    "label": "Vitrum I EU Boiler Vitrum touch timer switch Dual Relay",
     "bindingId": "zwave"
   },
   {
@@ -5660,8 +5710,8 @@
     "bindingId": "zwave"
   },
   {
-    "id": "zwave:zooz_zoozzse08_00_000",
-    "label": "ZSE08 Zooz Z-Wave Plus Contact Sensor",
+    "id": "zwave:zooz_zse08_00_000",
+    "label": "ZSE08 Z-Wave Plus Contact Sensor",
     "bindingId": "zwave"
   },
   {
