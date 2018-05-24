@@ -35,6 +35,23 @@ REXML::XPath.each($features, "//feature/feature") { |f|
     end
 }
 
+# Get a list of sub-addons to transform them into links
+def get_subs_links(parent_addon_id, search_dir)
+    sub_addons = []
+    Dir.glob("#{search_dir}/#{parent_addon_id}.*/**/readme.md").each { |sub_readme|
+        sub_addon_id = File.dirname(sub_readme).split('/').last
+        puts "    -> expanding list of sub-addons: #{sub_addon_id}"
+        File.open(sub_readme).each { |line|
+            if line =~ /^# / then
+                sub_addons.push([sub_addon_id, line.gsub('# ', '').strip])
+                break
+            end
+        }
+    }
+
+    return sub_addons
+end
+
 def process_file(indir, file, outdir, source)
     in_frontmatter = false
     frontmatter_processed = false
@@ -143,6 +160,17 @@ def process_file(indir, file, outdir, source)
                 line = line.gsub('(../addons/uis/habpanel/readme.html)', '(habpanel.html)')
             end
 
+            # Expand <!--list-subs--> comments with a list of links
+            # (https://github.com/eclipse/smarthome/issues/5571)
+            if line =~ /<!--\s*list-subs\s*-->/ then
+                sub_addons = get_subs_links(file.split('/')[0], indir)
+                out.puts
+                sub_addons.each { |sub|
+                    out.puts "- [#{sub[1]}](../#{sub[0]}/)"
+                }
+                out.puts
+            end
+
             # Misc replaces (relative links, remove placeholder interpreted as custom tags)
             line = line.gsub('http://docs.openhab.org/addons/uis/paper/readme.html', '/docs/configuration/paperui.html')
             line = line.gsub('http://docs.openhab.org/addons/uis/habpanel/readme.html', '/docs/configuration/habpanel.html')
@@ -173,6 +201,7 @@ def process_file(indir, file, outdir, source)
             line = line.gsub("<IP-Address of bridge>", '`<IP-Address of bridge>`') if file =~ /milight/
             line = line.gsub("<bulb>", '`<bulb>`') if file =~ /milight/
             line = line.gsub("<zone>", '`<zone>`') if file =~ /milight/
+            line = line.gsub("[](", '[here](') if file =~ /powermax1/
             line = line.gsub("<n>", '&lt;n&gt;') if file =~ /rfxcom/
             line = line.gsub(" <value> ", ' &lt;value&gt; ') if file =~ /zibase/
             line = line.gsub("<username>", '&lt;username&gt;') if file =~ /zoneminder/
@@ -429,7 +458,7 @@ puts ">>> Writing add-ons arrays to files for sidebar navigation"
         file.puts "module.exports = ["
 
         Dir.foreach('addons/' + type) { |dir|
-            if dir != "." && dir != ".." && dir != "list.txt" then
+            if !dir.include?('.') then
                 # puts dir
 
                 File.readlines('addons/' + type + '/' + dir + '/readme.md').each { |line|
