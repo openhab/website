@@ -53,7 +53,7 @@ you think they are worth.
 You can make a donation via PayPal by clicking the link below:
 
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align: center">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="text-align: center; margin-bottom: 100px;">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="KPVP4NJESFENY">
 <input type="image" style="border:none; background:transparent; margin:auto;" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
@@ -77,5 +77,3 @@ Membership fees start as low as 2 &euro; per month. Visit the [membership page](
 As an _“anerkannter gemeinnütziger Verein”_, all membership fees and donations to the openHAB Foundation e.V. are tax-deductible for German residents.
 
 :::
-
-<img class="illustration" src="./images/volunteer-2055015_1920.png" />
