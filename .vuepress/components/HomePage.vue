@@ -97,10 +97,11 @@ header.headroom--top
     opacity 0
   .nav-dropdown
     color black
-  .nav-links
-    .nav-item:last-child, .nav-item:nth-last-child(2)
-      &:after
-        filter: invert(100%) brightness(200%)
+  .nav-links > .nav-item:last-child
+    svg
+        color white
+  .dropdown-title .arrow
+      border-top 6px solid #fff
 
 .after-jumbotron
   .placeholder

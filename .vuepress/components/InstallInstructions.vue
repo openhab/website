@@ -49,13 +49,13 @@
         <li>Install the <a target="_blank" href="https://chocolatey.org/install">Chocolatey</a> package manager by running one of these commands:
           <ul>
             <li>If you opened a command prompt (cmd.exe)
-            <pre><code>@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"</code></pre></li>
+            <div class="language-shell"><pre><code>@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"</code></pre></div></li>
             <li>If you opened PowerShell
-            <pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></pre></li>
+            <div class="language-shell"><pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></pre></div></li>
           </ul>
         </li>
         <li>Install the <a target="_blank" href="https://chocolatey.org/packages/openhab">openHAB Chocolatey package</a>:</li>
-        <pre><code>choco install openhab</code></pre>
+        <div class="language-shell"><pre><code>choco install openhab</code></pre></div>
       </ol>
     </div>
 
@@ -82,16 +82,16 @@
       <h3>Package Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
       <ol>
         <li>Add the repository key</li>
-          <pre><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -</code></pre>
+          <div class="language-shell"><pre><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -</code></pre></div>
         <li>Add the HTTPS transport for APT</li>
-          <pre><code>sudo apt-get install apt-transport-https</code></pre>
+          <div class="language-shell"><pre><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <pre><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code></pre>
+          <div class="language-shell"><pre><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code></pre></div>
         <li>Update the package lists and install the openHAB distribution package</li>
-          <pre><code>sudo apt-get update && sudo apt-get install openhab2</code></pre>
+          <div class="language-shell"><pre><code>sudo apt-get update && sudo apt-get install openhab2</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
         &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
-          <pre><code>sudo apt-get install openhab2-addons</code></pre>
+          <div class="language-shell"><pre><code>sudo apt-get install openhab2-addons</code></pre></div>
         <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
@@ -101,6 +101,7 @@
       <h3>Package Installation (Recommended)</h3>
       <ol>
         <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
+        <div class="language-ini">
 <pre><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
 name=openHAB 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
 baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://dl.bintray.com/openhab/rpm-repo2/testing' : 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable'}}
@@ -108,11 +109,12 @@ gpgcheck=1
 gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 enabled=1
 </code></pre>
+        </div>
         <li>Install the openHAB distribution package</li>
-          <pre><code>sudo yum install openhab2</code></pre>
+          <div class="language-shell"><pre><code>sudo yum install openhab2</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
         &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
-          <pre><code>sudo yum install openhab2-addons</code></pre>
+          <div class="language-shell"><pre><code>sudo yum install openhab2-addons</code></pre></div>
         <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
@@ -124,11 +126,14 @@ enabled=1
       <p>These are very simplified instructions, check the <router-link to="/docs/installation/docker.html">documentation article</router-link> or <a target="_blank" href="https://hub.docker.com/r/openhab/openhab/">https://hub.docker.com/r/openhab/openhab/</a> for more information.</p>
       <ol>
         <li>Create the <code>openhab</code> user:</li>
+        <div class="language-shell">
 <pre><code>groupadd -g 9001 openhab
 groupadd -g 9001 openhab
 usermod -a -G openhab myownuser
 </code></pre>
+        </div>
         <li>Pull and run the container (command line version):</li>
+        <div class="language-shell">
 <pre><code>docker run \
         --name openhab \
         --net=host \
@@ -142,6 +147,7 @@ usermod -a -G openhab myownuser
         --restart=always \
         openhab/openhab:{{selectedVersion === 'stable' ? $page.frontmatter.currentVersion : $page.frontmatter.currentSnapshotVersion.toLowerCase()}}-amd64-debian
 </code></pre>
+        </div>
       </ol>
     </div>
 
