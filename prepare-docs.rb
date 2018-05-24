@@ -112,7 +112,7 @@ def process_file(indir, file, outdir, source)
                             out.puts "source: #{source}"
 
                             # For sub-bundles, set the "prev" link to the main add-on
-                            out.puts "prev: ../#{addon.split('.')[0]}" if addon.include?('.')
+                            out.puts "prev: ../#{addon.split('.')[0]}/" if addon.include?('.')
                         end
                     end
 
