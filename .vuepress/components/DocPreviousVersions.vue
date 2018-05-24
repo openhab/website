@@ -7,7 +7,7 @@
       </a>
       <ul class="nav-dropdown" v-show="open">
         <li v-for="version in versions" class="dropdown-item">
-          <a class="current" v-if="version.number === stableVersion">{{version.number}}</a>
+          <a class="current" v-if="version.number === currentVersion">{{version.number}}</a>
           <a v-else :href="version.url" target="_blank">{{version.number}}</a>
         </li>
       </ul>
@@ -69,8 +69,8 @@
 export default {
   data () {
     return {
-      versionNumbers: ['snapshot', '2.3', '2.2', '2.1'],
-      stableVersion: '2.3',
+      versionNumbers: ['latest', '2.2', '2.1'],
+      currentVersion: 'latest',
       open: false
     }
   },

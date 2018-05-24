@@ -35,7 +35,7 @@ This documentation is always worked on, so expect regular changes. If you feel t
 
 ::: warning The openHAB Documentation is evolving
 
-This new documentation site is currently targeting only the current stable openHAB 2.3 release, and its structure has been altered in certain places to improve your reading experience. The documentation for the latest snapshot and the previous releases can still be viewed at [docs.openhab.org](https://docs.openhab.org/) or with the "Other versions" dropdowns on most pages. During a transition period, you might encounter broken or invalid links - please bear with us and accept our apologies for the inconvenience.
+The structure of the new documentation site has been altered in certain places to improve your reading experience. The documentation for the previous releases can still be viewed at [docs.openhab.org](https://docs.openhab.org/) or with the "Other versions" dropdowns on most pages. During a transition period, you might encounter broken or invalid links - please bear with us and accept our apologies for the inconvenience.
 
 :::
 
