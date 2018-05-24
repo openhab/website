@@ -139,17 +139,25 @@ module.exports = {
                 link: '/about/showcase'
               },
               {
-                text: 'Press',
-                link: '/about/press'
+                text: 'Privacy',
+                link: '/privacy'
               },
               {
-                text: 'Academia',
-                link: '/about/education'
+                text: 'myopenHAB',
+                link: 'https://www.myopenhab.org/'
               },
-              {
-                text: 'Logos',
-                link: '/about/logos'
-              }
+              // {
+              //   text: 'Press',
+              //   link: '/about/press'
+              // },
+              // {
+              //   text: 'Academia',
+              //   link: '/about/education'
+              // },
+              // {
+              //   text: 'Logos',
+              //   link: '/about/logos'
+              // }
             ]
           }
         ]

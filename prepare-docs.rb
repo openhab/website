@@ -412,6 +412,14 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     end
 }
 
+# puts ">>> Migrating Z-Wave docs"
+# Dir.glob(".vuepress/openhab-docs/_addons_bindings/zwave/doc/*.md") { |path|
+#     next if path =~ /device\.md/
+#     file = File.basename(path)
+#     puts "   -> #{file}"
+#     FileUtils.mkdir_p("addons/bindings/zwave/doc")
+#     process_file(".vuepress/openhab-docs/_addons_bindings/zwave/doc", file, "addons/bindings/zwave/doc", nil)
+# }
 
 
 # Write arrays of addons by type to include in VuePress config.js

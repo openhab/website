@@ -49,12 +49,11 @@
     align-items center
     align-content center
     flex-direction column
+    font-size 10pt
     img
       height 64px
       width 64px
       object-fit contain
-    caption
-      font-size 10pt
 </style>
 
 <script>
