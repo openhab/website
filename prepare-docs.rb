@@ -231,6 +231,9 @@ FileUtils.cp_r(".vuepress/openhab-docs/images/distro.png", "docs/images")
 FileUtils.cp_r(".vuepress/openhab-docs/images/dashboard.png", "docs/images")
 
 
+puts ">>> Migrating logos"
+FileUtils.cp_r(".vuepress/openhab-docs/images/addons", ".vuepress/public/logos")
+
 puts ">>> Migrating the Concepts section"
 
 
