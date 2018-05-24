@@ -64,9 +64,9 @@ module.exports = {
   },
   configureWebpack: (config, isServer) => {
     // Remove once VuePress 0.9 is out (includes https://github.com/vuejs/vuepress/pull/405)
-    const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
-    const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
-    fs.copySync(source, temp)
+    // const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
+    // const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
+    // fs.copySync(source, temp)
     config.plugins.push(new CopyWebpackPlugin([
       { from: '.vuepress/_redirects', to: '.'}
     ]))
