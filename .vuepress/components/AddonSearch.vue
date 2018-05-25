@@ -52,7 +52,11 @@
         <h2 v-if="results.things.length > 0">Things</h2>
         <transition-group name="things" v-if="results.things.length > 0" class="things">
           <li v-for="thing of results.things" class="thing" :key="thing.id">
-            <strong>{{thing.label}}</strong> handled by the <router-link :to="'bindings/' + thing.bindingId + '/'">{{thing.bindingId}}</router-link> binding
+            <strong>
+              <router-link v-if="thing.bindingId === 'zwave'" :to="'./bindings/zwave/thing.html?thingTypeUID=' + thing.id.replace('zwave:', '')">{{thing.label}}</router-link>
+              <span v-else>{{thing.label}}</span>
+            </strong>
+            handled by the <router-link :to="'bindings/' + thing.bindingId + '/'">{{thing.bindingId}}</router-link> binding
           </li>
         </transition-group>
         <em v-else>
@@ -222,7 +226,7 @@ export default {
     }
   },
   mounted () {
-    this.addons = this.$site.pages.filter(page => page.path.indexOf('/addons/') === 0 && page.path !== '/addons/')
+    this.addons = this.$site.pages.filter(page => page.path.indexOf('/addons/') === 0 && page.frontmatter.id)
     this.things = Things
   },
   methods: {
