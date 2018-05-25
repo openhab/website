@@ -19,11 +19,18 @@ export default {
     let MarkdownIt = require('markdown-it')
     let md = new MarkdownIt()
 
-    let thingUIDParts = this.$route.query.thingTypeUID.split('_')
-    let manufacturer = thingUIDParts.shift()
-    let model = thingUIDParts.map((part, idx) => idx > 0 ? parseInt(part) : part).join('_')
+    let url
+    if (this.$route.query.thingTypeUID) {
+      let thingUIDParts = this.$route.query.thingTypeUID.split('_')
+      let manufacturer = thingUIDParts.shift()
+      let model = thingUIDParts.map((part, idx) => idx > 0 ? parseInt(part) : part).join('_')
 
-    let url = `https://raw.githubusercontent.com/openhab/openhab-docs/gh-pages/_addons_bindings/zwave/doc/${manufacturer}/${model}.md`
+      url = `https://raw.githubusercontent.com/openhab/openhab-docs/gh-pages/_addons_bindings/zwave/doc/${manufacturer}/${model}.md`
+    } else {
+      let manufacturer = this.$route.query.manufacturer
+      let file = this.$route.query.file.replace('.html', '.md')
+      url = `https://raw.githubusercontent.com/openhab/openhab-docs/gh-pages/_addons_bindings/zwave/doc/${manufacturer}/${file}`
+    }
 
     fetch(url).then((resp) => {
       if (resp.status >= 300) {

@@ -98,21 +98,24 @@ def process_file(indir, file, outdir, source)
                             elsif addon == "zigbee" then
                                 puts "    (add-on is zigbee)"
                                 source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/master/org.openhab.binding.zigbee/README.md"
-                            elsif addon == "zwave" then
+                            elsif addon == "zwave" && !(file =~ /things/) then
                                 puts "    (add-on is zwave)"
                                 source = "https://github.com/openhab/org.openhab.binding.zwave/blob/master/README.md"
                             elsif $esh_features.include?("esh-#{addon_type}-#{addon.gsub('.', '-')}") then
                                 puts "    (add-on is from ESH)"
                                 source = "https://github.com/eclipse/smarthome/blob/master/extensions/#{addon_type}/org.eclipse.smarthome.#{addon_type}.#{addon}/README.md"
-                            else
+                            elsif !(file =~ /things/) then
                                 puts "    (add-on is from openhab2-addons)"
                                 source = "https://github.com/openhab/openhab2-addons/blob/master/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
                             end
 
-                            out.puts "source: #{source}"
+                            out.puts "source: #{source}" if source != ""
 
                             # For sub-bundles, set the "prev" link to the main add-on
                             out.puts "prev: ../#{addon.split('.')[0]}/" if addon.include?('.')
+
+                            # Prev link to the main binding doc for zwave/doc/things.md
+                            out.puts "prev: ../" if file == 'zwave/doc/things.md'
                         end
                     end
 
@@ -174,6 +177,9 @@ def process_file(indir, file, outdir, source)
                 out.puts
             end
 
+            # Replace links to generated docs in ZWave's things.md by links to the internal viewer
+            line = line.gsub(/]\((.*)\/(.*)\)/, '](../thing.html?manufacturer=\1&file=\2)') if file == 'zwave/doc/things.md'
+
             # Misc replaces (relative links, remove placeholder interpreted as custom tags)
             line = line.gsub('http://docs.openhab.org/addons/uis/paper/readme.html', '/docs/configuration/paperui.html')
             line = line.gsub('http://docs.openhab.org/addons/uis/habpanel/readme.html', '/docs/configuration/habpanel.html')
@@ -194,6 +200,7 @@ def process_file(indir, file, outdir, source)
             line = line.gsub("<passiveState>", '\<passiveState\>')
             line = line.gsub("<dimension>", '\<dimension\>')
             line = line.gsub("<TransformProgram>", '\<TransformProgram\>')
+            line = line.gsub("<FlahshbriefingDeviceID>", '`<FlahshbriefingDeviceID>`') if file =~ /amazonechocontrol/
             line = line.gsub("<version>", '&lt;version&gt;') if file =~ /caldav/
             line = line.gsub("by <step>", 'by `<step>`') if file =~ /ipx8001/
             line = line.gsub("<BR>", '<BR/>')
@@ -444,6 +451,10 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
         puts "  \\-> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc", "addons/bindings/#{addon}")
+    elsif addon == "zwave" then
+        puts "  \\-> things.md"
+        FileUtils.mkdir_p("addons/bindings/zwave/doc")
+        process_file(".vuepress/openhab-docs/_addons_bindings", "zwave/doc/things.md", "addons/bindings", nil)
     end
 }
 
