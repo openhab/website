@@ -1,7 +1,7 @@
 ---
 layout: Event
 category: event
-title: Eclipse DemoCamp
+title: Eclipse DemoCamp 2018
 organizer: Deutsche Telekom AG
 link: 'https://wiki.eclipse.org/Eclipse_DemoCamps_2018/Darmstadt'
 date: '2018-06-20T17:08:30+02:00'
