@@ -447,6 +447,20 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     end
 }
 
+
+
+puts ">>> Creating ZWave thing viewer"
+File.open('addons/bindings/zwave/thing.md', 'w+') { |out|
+    out.puts '---'
+    out.puts 'title: ZWave Thing'
+    out.puts 'prev: ./'
+    out.puts '---'
+    out.puts
+    out.puts '<ThingDocRenderer />'
+}
+
+
+
 # puts ">>> Migrating Z-Wave docs"
 # Dir.glob(".vuepress/openhab-docs/_addons_bindings/zwave/doc/*.md") { |path|
 #     next if path =~ /device\.md/
