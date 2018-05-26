@@ -9,8 +9,8 @@
       <div class="openhabian-text">
         <h2 class="slide-seq">Build your openHAB appliance in less than an hour</h2>
         <p class="slide-seq">
-          Try openHABian, the official openHAB operating system for Raspberry Pi or PINE A64: write the image on a SD card, boot,
-          and enjoy an up-to-date, production-ready openHAB server with conveniently pre-configured software such as Samba, Mosquitto, Grafana and InfluxDB.
+          Try openHABian, the official openHAB operating system for Raspberry Pi or PINE A64: write the image on an SD card, boot,
+          and enjoy an up-to-date, production-ready openHAB setup with conveniently pre-configured software such as Samba, Grafana and Eclipse Mosquitto.
         </p>
         <router-link to="docs/installation/openhabian.html" class="learn-how-button slide-seq">Learn How →</router-link>
       </div>
