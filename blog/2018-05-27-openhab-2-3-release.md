@@ -29,6 +29,9 @@ A lot of effort went into translation work during the past months: Not only the 
 
 Another great feature that makes it much easier to use openHAB all over the world is the new support for units on numbers. This make it now possible to e.g. use imperial units even if your sensors deliver values in the metric system. You can thus have all your temperatures shown as `°F`, completely independently from the hardware you are using - the conversion is automatically done by the framework. This not only works for simple conversions like `°C` to `°F`, but also for `hPa` to `mmHg` or similar things. Likewise, you can even decide to have different representations within your own measurement system. So while your sensor might deliver data in `m/s`, you can simply define that this is shown as `km/h` in your user interface.
 
+<!--{:.center}-->
+<img class="img-responsive" src="/uploads/uom.png" alt="">
+
 The real power of the unit support can be seen when being used within rules: Calculations can now be done unit-safe, thus [unit desasters](http://mentalfloss.com/article/25845/quick-6-six-unit-conversion-disasters) can be avoided. Even if you add `23|°F + 82|°F + 302|K` or `5|m + 30|cm + 0.01|mi` within a rule (note that the `|` is used as a delimiter between the value and its unit in rules), the result is always correctly calculated. You can find more technical background information about this feature in the [Eclipse SmartHome blog](https://www.eclipse.org/smarthome/blog/2018/02/22/units-of-measurement.html).
 
 ## New Integrations
