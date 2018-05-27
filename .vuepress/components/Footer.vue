@@ -56,8 +56,6 @@ footer
 </style>
 
 <script>
-import ScrollReveal from './scrollreveal'
-
 export default {
   name: 'Footer',
   data () {
