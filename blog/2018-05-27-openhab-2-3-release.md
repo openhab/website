@@ -42,7 +42,7 @@ Worth to mention are the integrations with two quite widely used systems (at lea
 
 A more geeky device that is great for notifications is [LaMetric Time](/addons/bindings/lametrictime/): With its huge dot matrix display, it is perfect as a feedback channel to the users.
 
-Another cool addition is the [Amazon Echo Control binding](/addons/bindings/amazonechocontrol/), which gives full control over Amazon echo devices.
+Another cool addition is the [Amazon Echo Control binding](/addons/bindings/amazonechocontrol/), which gives full control over Amazon Echo devices, so that you can control the media playback, use it as a text-to-speech service or trigger reports like the daily briefing or the weather forecast.
  
 ## Ecosystem News
 
