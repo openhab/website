@@ -186,7 +186,6 @@ export default {
       sr.reveal('.alert', { origin: 'left', distance: '40px', duration: 1200, scale: 1.0 })
     }
     const header = document.getElementsByTagName("header")[0]
-    const Headroom = require('headroom.js')
     if (this.Headroom) {
       hr = new this.Headroom(header)
       hr.init()
