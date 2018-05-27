@@ -2,9 +2,9 @@ $accentColor = #ff6600
 $MQMobile = 859px
 $MQNarrow = 1023px
 
-.navbar:not(.headroom--top)
+.navbar:not(.headroom--top):not(.transparent)
     box-shadow rgba(10%,10%,10%,25%) 0 0 10px
-    background-color rgba(98%, 98%, 99%, 0.9) !important // linear-gradient(180deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 95%,rgba(0,0,0,.05) 99%,rgba(0,0,0,.04))
+    background-color rgba(98%, 98%, 99%, 0.9) // linear-gradient(180deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 95%,rgba(0,0,0,.05) 99%,rgba(0,0,0,.04))
     //opacity 0.9
 
 .navbar
@@ -92,3 +92,7 @@ $MQNarrow = 1023px
 
 .page .content:not(.custom):not(.page-nav)
     min-height 85vh !important
+
+.logo
+    width 160px
+    height 35px

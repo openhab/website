@@ -171,18 +171,15 @@
 
 <script>
 import Footer from './Footer.vue'
-import BlogPostExcerpt from './BlogPostExcerpt.vue'
-import ScrollReveal from './scrollreveal'
 
 export default {
   name: 'AboutPage',
   components: {
-    Footer,
-    BlogPostExcerpt
+    Footer
   },
   data () {
     return {
-      dateOptions: {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+      dateOptions: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
     }
   },
   methods: {
