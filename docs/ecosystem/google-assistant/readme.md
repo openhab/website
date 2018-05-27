@@ -14,7 +14,7 @@ With the Action you can voice control your openHAB items and it supports lights,
 
 ## Requirements
 
-* [openHAB Cloud Connector](/addons/integrations/openhabcloud/readme.html) configured using myopenHAB.org
+* [openHAB Cloud Connector](/addons/integrations/openhabcloud/) configured using myopenHAB.org
 * Google account
 * Google Home or Google Home mini 
 
