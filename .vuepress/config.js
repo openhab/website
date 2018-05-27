@@ -185,6 +185,7 @@ module.exports = {
             'concepts/items',
             'concepts/discovery',
             'concepts/audio',
+            'concepts/units-of-measurement',
           ]
         },
         {
