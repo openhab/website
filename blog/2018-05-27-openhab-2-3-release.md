@@ -4,7 +4,7 @@ category: blog
 title: openHAB 2.3 Release
 author: Kai Kreuzer
 date: '2018-05-28T13:24:00+02:00'
-previewimage: /uploads/2017-01_openhab2.jpg
+previewimage: /uploads/homepage.jpg
 tags:
   - news
   - release
@@ -42,9 +42,12 @@ Worth to mention are the integrations with two quite widely used systems (at lea
 
 A more geeky device that is great for notifications is [LaMetric Time](/addons/bindings/lametrictime/): With its huge dot matrix display, it is perfect as a feedback channel to the users.
 
+<!--{:.center}-->
+<img class="img-responsive" src="/uploads/lametric.jpg" alt="">
+
 Another cool addition is the [Amazon Echo Control binding](/addons/bindings/amazonechocontrol/), which gives full control over Amazon Echo devices, so that you can control the media playback, use it as a text-to-speech service or trigger reports like the daily briefing or the weather forecast.
 
-Last but not least: The very first binding that was written in 2010 for openHAB has finally been migrated to a [fully 2.x compatible implementation: KNX](/addons/bindings/knx)! This new implementation not only makes it possible to configure the KNX integration through the Paper UI, but it also supports pinging physical KNX addresses in order to determine whether they are available on the bus.
+Last but not least: The very first binding that was written in 2010 for openHAB has finally been migrated to a [fully 2.x compatible implementation: KNX](/addons/bindings/knx)! This new implementation not only makes it possible to also configure the KNX integration through the Paper UI, it furthermore supports reading information from physical KNX addresses, such as manufacturer and firmware ids and it can also ping those addresses in order to determine whether the devices are still available on the bus.
 
 ## Ecosystem News
 
@@ -62,3 +65,16 @@ Besides [Alexa](/docs/ecosystem/alexa/) and [MyCroft](/docs/ecosystem/mycroft/),
 
 <img class="img-responsive" src="/uploads/k8sopenshift.png" alt="">
 
+### openHAB Android App
+
+The [openHAB Android app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) is very actively maintained and there were many bigger and smaller improvements over the last months, like the improved voice integration, the support for locations and maps, refresh on swipe, etc. Besides the version in the Play Store, there is also a Google-free, pure open-source version of the [app available on F-Droid](https://f-droid.org/packages/org.openhab.habdroid/).
+
+### Project Website
+
+We have launched our completely re-designed website this weekend - besides being more modern and faster, it now seamlessly includes this blog, has a great [showcase section](/about/showcase.html) and an excellent [search for supported devices](/addons/) (including a [complete list of all Z-Wave devices](/addons/bindings/zwave/doc/things.html)).
+
+For those who are interested in "offline information", don't miss to check out the new list of [upcoming events](/about/events.html)!
+
+### Community
+
+As always, I would very much like to thank all our community members that contributed to all those efforts - such a progress is only possible through the immense dedication of many different people and it is a great honor to serve this community as a project lead - keep up the awesome work!
