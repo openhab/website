@@ -36,14 +36,16 @@ The real power of the unit support can be seen when being used within rules: Cal
 
 ## New Integrations
 
-We have a new record for the number of new add-ons for a release: openHAB 2.3 brings 25 new add-ons to the existing pool! This roughly makes one new add-on per week - despite this success, there are still plenty further add-ons in the review queue, so future releases are likely not to slow down much from this rate.
+We have a new record for the number of new add-ons for a release: openHAB 2.3 brings 25 new add-ons to the existing pool! This roughly makes one new add-on per week - despite this success, there are still plenty further add-ons in the review queue, so future releases are not likely to slow down much.
 
 Worth to mention are the integrations with two quite widely used systems (at least in Germany): [innogy](/addons/bindings/innogysmarthome/) with a broad portfolio and [tado°](/addons/bindings/tado/) with climate and heating devices. Unfortunately, both of them do not offer any local integration, so that offline situations can not be covered.
 
 A more geeky device that is great for notifications is [LaMetric Time](/addons/bindings/lametrictime/): With its huge dot matrix display, it is perfect as a feedback channel to the users.
 
 Another cool addition is the [Amazon Echo Control binding](/addons/bindings/amazonechocontrol/), which gives full control over Amazon Echo devices, so that you can control the media playback, use it as a text-to-speech service or trigger reports like the daily briefing or the weather forecast.
- 
+
+Last but not least: The very first binding that was written in 2010 for openHAB has finally been migrated to a [fully 2.x compatible implementation: KNX](/addons/bindings/knx)! This new implementation not only makes it possible to configure the KNX integration through the Paper UI, but it also supports pinging physical KNX addresses in order to determine whether they are available on the bus.
+
 ## Ecosystem News
 
 Besides the distribution of the runtime, you should also be aware of some news from other components within the openHAB ecosystem:
