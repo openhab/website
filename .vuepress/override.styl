@@ -90,7 +90,7 @@ $MQNarrow = 1023px
 .content:not(.custom)
     max-width 1280px !important
 
-.page .content:not(.custom):not(.page-nav):not(.edit-links)
+.page .content:not(.custom):not(.page-nav):not(.edit-link)
     min-height 85vh !important
 
 .logo
@@ -105,3 +105,6 @@ div:not([class*='language-'])
 
 a[href*='community.openhab.org'] .outbound
         display none
+
+.nav-item > a.external:hover
+    border-bottom 2px solid #ff7214
