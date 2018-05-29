@@ -9,11 +9,10 @@
       <div class="openhabian-text">
         <h2 class="slide-seq">Set up your own openHAB system in just a few steps</h2>
         <p class="slide-seq">
-          Try the provided hassle-free openHABian image for the well known Raspberry Pi, a widely used and recommended hardware choice.
+          Try the provided hassle-free openHABian image for the Raspberry Pi, a widely used and recommended hardware choice.
           Flash an SD card, boot, and enjoy your up-to-date openHAB setup with conveniently pre-configured system settings and software such as Samba, Grafana and Eclipse Mosquitto.
-          openHAB can be executed almost everywhere, like on a Windows system or as a Docker container.  
         </p>
-        <router-link to="docs/installation/index.html" class="learn-how-button slide-seq">Learn How &rarr;</router-link>
+        <router-link to="docs/installation/index.html" class="learn-how-button slide-seq">Learn How ➜</router-link>
       </div>
     </div>
   </div>
