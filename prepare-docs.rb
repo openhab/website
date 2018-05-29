@@ -57,6 +57,8 @@ def process_file(indir, file, outdir, source)
     frontmatter_processed = false
     has_source = false
     has_logo = false
+    obsolete_binding = false
+
     FileUtils.mkdir_p(outdir)
     File.open("#{outdir}/#{file}", "w+") { |out|
         File.open("#{indir}/#{file}").each { |line|
@@ -135,15 +137,6 @@ def process_file(indir, file, outdir, source)
                 next
             end
 
-            # Insert the logo component below the first title for add-ons which have a logo reference in their front matter
-            if !in_frontmatter && line =~ /^# / && has_logo then
-                out.puts line
-                out.puts
-                out.puts '<AddonLogo/>'
-                has_logo = false
-                next
-            end
-
             # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
             break if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
             break if line =~ /^## Installable Actions/
@@ -154,8 +147,8 @@ def process_file(indir, file, outdir, source)
             line = "##### " + line if line =~ /^Yum or Dnf Based Systems/ && file =~ /linux/
             line = "##### " + line if line =~ /^Systems based on/ && file =~ /linux/
 
-            # Fix headers for the basic/classic UI pages
-            line = line.gsub(/^##/, "#") if outdir == "docs/configuration/ui" && (file =~ /basic/ || file =~ /classic/)
+            # Fix headers for some pages
+            line = line.gsub(/^##/, "#") if (outdir == "docs/configuration/ui" && (file =~ /basic/ || file =~ /classic/)) || file == 'astro1/readme.md'
 
             # Fix broken links in the package selection article
             if outdir == 'docs/configuration' && file =~ /packages/ then
@@ -164,6 +157,41 @@ def process_file(indir, file, outdir, source)
                 line = line.gsub('(../addons/uis/classic/readme.html)', '(ui/classic/)')
                 line = line.gsub('(../addons/uis/habmin/readme.html)', '(ui/habmin/)')
                 line = line.gsub('(../addons/uis/habpanel/readme.html)', '(habpanel.html)')
+            end
+
+
+            # Handle obsolete bindings
+            if in_frontmatter && (line =~ /label: / || line =~ /title: /) && outdir == 'addons/bindings' && file =~ /1\// then
+                addon = file.split('/')[0]
+                if Dir.exists?("#{indir}/#{addon.gsub('1', '')}") then
+                    line = line.gsub("\n", "") + ' (1.x)' if !(line =~ /1\.x/)
+                    if !obsolete_binding then
+                        obsolete_binding = true
+                        out.puts "obsolete: true"
+                        puts "     obsolete!"
+                    end
+                end
+            end
+
+            if !in_frontmatter && line =~ /^# / then
+                # Put a warning banner for obsolete bindings
+                out.puts line
+                if obsolete_binding then
+                    out.puts
+                    out.puts "::: danger OBSOLETE BINDING"
+                    new_addon = file.split('/')[0].gsub('1', '')
+                    out.puts "This 1.x binding is obsolete; it has been replaced by the 2.x [#{new_addon}](../#{new_addon}/) binding which you should use instead."
+                    out.puts ":::"
+                    out.puts
+                    obsolete_binding = false
+                end
+                # Add the logo if specified
+                if has_logo then
+                    out.puts
+                    out.puts '<AddonLogo/>'
+                    has_logo = false
+                end
+                next
             end
 
             # Expand <!--list-subs--> comments with a list of links
@@ -494,7 +522,6 @@ puts ">>> Writing add-ons arrays to files for sidebar navigation"
                 File.readlines('addons/' + type + '/' + dir + '/readme.md').each { |line|
                     if line =~ /^label:/ then
                         title = line.gsub("label: ", "").gsub("\n", "")
-                        title += ' (1.x)' if dir =~ /1$/ && !(title =~ /1\.x/)
                         file.puts "\t['#{type}/#{dir}/', '#{title}'],"
                     end
                 }
