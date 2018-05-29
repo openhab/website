@@ -1,6 +1,6 @@
 <template>
   <div class="editLink" v-if="editUrl">
-    <em>Caught a mistake or want to contribute to the documentation? <a target="_blank" :href="editUrl">Edit this page on GitHub!</a></em>
+    <em>Caught a mistake or want to contribute to the documentation? <a target="_blank" :href="editUrl">Edit this page on GitHub<OutboundLink /></a></em>
     <div v-if="isEsh" class="esh-note"><br />
       &#128712; This page comes from the Eclipse SmartHome project, which has specific
       <a target="_blank" href="https://github.com/eclipse/smarthome/blob/master/CONTRIBUTING.md">legal and technical</a>
