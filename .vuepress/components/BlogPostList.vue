@@ -25,7 +25,7 @@
 
               </div>
               <div class="read-more">
-                <div class="read-more-button">Read more →</div>
+                <div class="read-more-button">Read more ➜</div>
               </div>
             </router-link>
           </li>
