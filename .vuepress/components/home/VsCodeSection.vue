@@ -8,7 +8,7 @@
       </ClientOnly>
       <div class="vscode-text">
         <h2 class="slide">Easy &amp;<br />comfortable<br />configuration<br />editing.</h2>
-        <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=openhab.openhab" class="get-extension-button slide">Get the VS Code Extension →</a>
+        <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=openhab.openhab" class="get-extension-button slide">Get the VS Code Extension ➜</a>
       </div>
     </div>
   </div>

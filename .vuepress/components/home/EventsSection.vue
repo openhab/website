@@ -29,7 +29,7 @@
           <!-- </ClientOnly> -->
         </div>
         
-        <router-link to="about/events.html" class="see-all-events-button slide-seq4">See All Events →</router-link>
+        <router-link to="about/events.html" class="see-all-events-button slide-seq4">See All Events ➜</router-link>
       </div>
     </div>
   </div>

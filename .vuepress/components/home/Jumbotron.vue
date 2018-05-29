@@ -6,8 +6,8 @@
       <ClientOnly><img src="/logo-white.png" class="white-logo" /></ClientOnly>
       <h1 class="hero">empowering the smart home</h1>
       <h2 class="lead">a vendor and technology agnostic open source automation software for your home</h2>
-      <router-link to="docs/" class="action-button">Get Started →</router-link>
-      <a class="demo-button" target="_blank" href="http://demo.openhab.org:8080">Demo →</a>
+      <router-link to="docs/" class="action-button">Get Started ➜</router-link>
+      <a class="demo-button" target="_blank" href="http://demo.openhab.org:8080">Demo ➜</a>
     </div>
   </div>
 </template>
