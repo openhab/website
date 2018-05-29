@@ -18,7 +18,7 @@ If you are organizing an event around openHAB, please let us know in the [Events
       <div class="event-info">
         <a :href="page.frontmatter.link" target="_blank"><h3 class="event-title">{{page.frontmatter.title}}</h3></a>
         <div class="event-location">{{page.frontmatter.location}}</div>
-        <p>{{page.frontmatter.abstract}}</p>
+        <p v-html="page.excerpt || page.frontmatter.abstract"></p>
       </div>
     </li>
   </ul>
@@ -39,7 +39,7 @@ If you are organizing an event around openHAB, please let us know in the [Events
         <div class="event-info">
           <a :href="page.frontmatter.link" target="_blank"><h3 class="event-title">{{page.frontmatter.title}}</h3></a>
           <div class="event-location">{{page.frontmatter.location}}</div>
-          <p>{{page.frontmatter.abstract}}</p>
+          <p v-html="page.excerpt || page.frontmatter.abstract"></p>
         </div>
       </li>
     </ul>

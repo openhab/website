@@ -8,12 +8,10 @@ previewimage: /uploads/homepage.jpg
 tags:
   - news
   - release
-excerpt: >-
-  Time flies! The last openHAB release is already more than 5 months old and
-  much has happened since then. It is therefore clearly time to pack and ship
-  all the nice new updates as a stable release: Here comes openHAB 2.3!
 ---
 Time flies! The last openHAB release is already more than 5 months old and much has happened since then. It is therefore clearly time to pack and ship all the nice new updates as a stable release: Here comes [openHAB 2.3](/download/)!
+
+<!-- more -->
 
 All details about the included features and fixes are listed in the [official Release Notes](https://github.com/openhab/openhab-distro/releases/tag/2.3.0), but please allow me to point you to some of my personal highlights:
 
@@ -47,7 +45,7 @@ A more geeky device that is great for notifications is [LaMetric Time](/addons/b
 
 Another cool addition is the [Amazon Echo Control binding](/addons/bindings/amazonechocontrol/), which gives full control over Amazon Echo devices, so that you can control the media playback, use it as a text-to-speech service or trigger reports like the daily briefing or the weather forecast.
 
-Last but not least: The very first binding that was written in 2010 for openHAB has finally been migrated to a [fully 2.x compatible implementation: KNX](/addons/bindings/knx)! This new implementation not only makes it possible to also configure the KNX integration through the Paper UI, it furthermore supports reading information from physical KNX addresses, such as manufacturer and firmware ids and it can also ping those addresses in order to determine whether the devices are still available on the bus.
+Last but not least: The very first binding that was written in 2010 for openHAB has finally been migrated to a [fully 2.x compatible implementation: KNX](/addons/bindings/knx/)! This new implementation not only makes it possible to also configure the KNX integration through the Paper UI, it furthermore supports reading information from physical KNX addresses, such as manufacturer and firmware ids and it can also ping those addresses in order to determine whether the devices are still available on the bus.
 
 ## Ecosystem News
 

@@ -21,7 +21,7 @@
               <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
               <div class="post-excerpt">
 
-                {{removeMarkdown(post.frontmatter.excerpt || post.excerpt)}}
+                <div v-html="post.frontmatter.excerpt || post.excerpt"></div>
 
               </div>
               <div class="read-more">
@@ -180,12 +180,6 @@ export default {
   data () {
     return {
       dateOptions: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-    }
-  },
-  methods: {
-    removeMarkdown (markdown) {
-      if (markdown)
-        return markdown.replace(/\[([\w /.-]+)\]\(([\w:/.-]+)\)/g, '$1').trim()
     }
   },
   computed: {

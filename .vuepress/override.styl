@@ -90,9 +90,18 @@ $MQNarrow = 1023px
 .content:not(.custom)
     max-width 1280px !important
 
-.page .content:not(.custom):not(.page-nav)
+.page .content:not(.custom):not(.page-nav):not(.edit-links)
     min-height 85vh !important
 
 .logo
     width 160px
     height 35px
+
+div:not([class*='language-'])
+    pre
+        color black
+        code
+            color black
+
+a[href*='community.openhab.org'] .outbound
+        display none
