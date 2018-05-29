@@ -14,7 +14,7 @@
         <!-- <Content></Content> -->
         <ul class="posts">
           <li v-for="post in posts" class="post">
-            <router-link :to="post.path" class="post-link">
+            <div class="post-frame">
               <div class="post-cover" :style="{background: 'url(' + post.frontmatter.previewimage + ') no-repeat center'}">
               </div>
               <h3 class="post-title">{{post.frontmatter.title}}</h3>
@@ -25,9 +25,9 @@
 
               </div>
               <div class="read-more">
-                <div class="read-more-button">Read more ➜</div>
+                <router-link :to="post.path" class="read-more-button">Read more ➜</router-link>
               </div>
-            </router-link>
+            </div>
           </li>
         </ul>
       </div>
@@ -101,7 +101,7 @@
   .post
     list-style none
     width 100%
-    .post-link
+    .post-frame
       border 1px solid #ccc
       border-radius 8px
       width 100%
@@ -147,9 +147,11 @@
           border 1px solid #ff6600
           border-radius 4px
           box-sizing border-box
+          font-weight bold
           &:hover, &:focus
             color white
             background-color #ff6600
+            text-decoration none
 
 
       
