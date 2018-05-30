@@ -1,6 +1,11 @@
 ---
 layout: AboutPage
 title: Imprint
+meta:
+  - name: og:title
+    content: openHAB - Imprint
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 ## This Site is operated by

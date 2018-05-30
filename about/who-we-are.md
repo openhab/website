@@ -2,6 +2,11 @@
 sidebar: false
 layout: AboutPage
 title: Who We Are
+meta:
+  - name: og:title
+    content: openHAB - Who We Are
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 <style>
