@@ -27,6 +27,8 @@
 
       <tweets-section />
 
+      <alternative-to-section />
+
     </div>
     <Footer />
   </div>
@@ -152,6 +154,7 @@ import OpenhabianSection from './home/OpenhabianSection.vue'
 import OpenSourceSection from './home/OpenSourceSection.vue'
 import CommunitySection from './home/CommunitySection.vue'
 import EventsSection from './home/EventsSection.vue'
+import AlternativeToSection from './home/AlternativeToSection.vue'
 import TweetsSection from './home/TweetsSection.vue'
 
 let hr = null
@@ -170,6 +173,7 @@ export default {
     CommunitySection,
     EventsSection,
     TweetsSection,
+    AlternativeToSection,
     Footer,
     // TwitterTimeline
   },
