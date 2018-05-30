@@ -1,5 +1,10 @@
 ---
 title: Introduction
+meta:
+  - name: og:title
+    content: Welcome to openHAB!
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 <h1 class="welcome">Welcome to openHAB!</h1>
