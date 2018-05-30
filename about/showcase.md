@@ -2,6 +2,11 @@
 sidebar: false
 layout: AboutPage
 title: Showcase & How-tos
+meta:
+  - name: og:title
+    content: openHAB Showcase & How-tos
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 <style>

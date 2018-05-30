@@ -9,7 +9,7 @@
       </div>
     </ClientOnly>
     <div class="addons-button-container">
-      <router-link to="addons" class="all-addons-button slide">Browse All Add-ons →</router-link>
+      <router-link to="addons" class="all-addons-button slide">Browse All Add-ons ➜</router-link>
     </div>
   </div>  
 </template>

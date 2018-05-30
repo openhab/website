@@ -26,6 +26,10 @@ module.exports = {
     ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
     ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
     ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    // ['meta', { property: 'og:title', content: 'openHAB' }],
+    // ['meta', { property: 'og:description', content: 'a vendor and technology agnostic open source automation software for your home' }],
+    ['meta', { property: 'og:image', content: 'https://www.openhab.org/openhab-logo-square.png' }],
     ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
   ],
   markdown: {
@@ -40,10 +44,11 @@ module.exports = {
         if (str.match(/\b(?:String|DateTime)\b/) && lang !== 'java' && lang !== 'xml') {
           lang = 'dsl'
         }
-        if (str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/) ||
+        if ((str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/)) ||
           str.match(/received update/) || str.match(/changed.*(?:from|to)/) || str.match(/Channel.*triggered/) ||
           str.match(/\bval\b/) || str.match(/\bvar\b/) /* <-- dangerous! */) {
-          lang = 'rules'
+          
+          if (lang !== 'nginx' && lang !== 'shell') lang = 'rules'
         }
         if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
         if (lang === 'conf') lang = 'dsl'
@@ -64,9 +69,9 @@ module.exports = {
   },
   configureWebpack: (config, isServer) => {
     // Remove once VuePress 0.9 is out (includes https://github.com/vuejs/vuepress/pull/405)
-    const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
-    const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
-    fs.copySync(source, temp)
+    // const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
+    // const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
+    // fs.copySync(source, temp)
     config.plugins.push(new CopyWebpackPlugin([
       { from: '.vuepress/_redirects', to: '.'}
     ]))
@@ -185,6 +190,7 @@ module.exports = {
             'concepts/items',
             'concepts/discovery',
             'concepts/audio',
+            'concepts/units-of-measurement',
           ]
         },
         {

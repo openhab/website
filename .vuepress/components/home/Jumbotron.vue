@@ -3,11 +3,11 @@
     <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-image"></div>
     <div class="hero-content">
-      <ClientOnly><img src="/logo-white.png" class="white-logo" /></ClientOnly>
+      <div class="white-logo"><ClientOnly><img src="/logo-white.png" class="white-logo" /></ClientOnly></div>
       <h1 class="hero">empowering the smart home</h1>
       <h2 class="lead">a vendor and technology agnostic open source automation software for your home</h2>
-      <router-link to="docs/" class="action-button">Get Started →</router-link>
-      <a class="demo-button" target="_blank" href="http://demo.openhab.org:8080">Demo →</a>
+      <router-link to="docs/" class="action-button">Get Started ➜</router-link>
+      <a class="demo-button" target="_blank" href="http://demo.openhab.org:8080">Demo ➜</a>
     </div>
   </div>
 </template>
@@ -37,8 +37,11 @@
     margin 90px 30px
     z-index 1
     max-width 960px
-    img.white-logo
-      filter drop-shadow(0 0 10px #666)
+    .white-logo
+      width 240px
+      height 80px
+      img
+        filter drop-shadow(0 0 10px #666)
     h1.hero
       animation 1.5s ease-out 0s 1 slideIn1
       color white
@@ -62,7 +65,7 @@
       font-family 'Open Sans', sans-serif;
       font-size 1rem
       color #fff
-      background-color #ff6600
+      background-color #ff6600bb
       padding 0.8rem 1.6rem
       border-radius 4px
       transition background-color .1s ease

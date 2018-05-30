@@ -18,6 +18,7 @@ export default {
   mounted () {
     let MarkdownIt = require('markdown-it')
     let md = new MarkdownIt()
+    let baseUrl = 'https://raw.githubusercontent.com/openhab/openhab-docs/gh-pages/_addons_bindings/zwave'
 
     let url
     if (this.$route.query.thingTypeUID) {
@@ -25,11 +26,11 @@ export default {
       let manufacturer = thingUIDParts.shift()
       let model = thingUIDParts.map((part, idx) => idx > 0 ? parseInt(part) : part).join('_')
 
-      url = `https://raw.githubusercontent.com/openhab/openhab-docs/gh-pages/_addons_bindings/zwave/doc/${manufacturer}/${model}.md`
+      url = `${baseUrl}/doc/${manufacturer}/${model}.md`
     } else {
       let manufacturer = this.$route.query.manufacturer
       let file = this.$route.query.file.replace('.html', '.md')
-      url = `https://raw.githubusercontent.com/openhab/openhab-docs/gh-pages/_addons_bindings/zwave/doc/${manufacturer}/${file}`
+      url = `${baseUrl}/doc/${manufacturer}/${file}`
     }
 
     fetch(url).then((resp) => {

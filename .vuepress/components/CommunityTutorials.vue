@@ -9,7 +9,7 @@
         <li v-for="tag in topic.tags" class="tag"><a target="_blank" :href="'https://community.openhab.org/tags/' + tag">{{tag}}</a></li>
       </ul>
       <div class="read-more">
-        <div class="read-more-button">Read more →</div>
+        <div class="read-more-button">Read more ➜</div>
       </div>
     </a>
   </article>

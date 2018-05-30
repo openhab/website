@@ -26,6 +26,11 @@ initial_gallery:
     description: "These add-ons provide voice enabling features, such as text-to-speech, speech-to-text etc."
     featured: ["mactts", "marytts", "voicerss"]
     all: true
+meta:
+  - name: og:title
+    content: openHAB Add-ons
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 <h1 class="welcome">Add-on Reference</h1>

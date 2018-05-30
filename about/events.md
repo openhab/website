@@ -2,6 +2,11 @@
 sidebar: false
 layout: AboutPage
 title: Events
+meta:
+  - name: og:title
+    content: openHAB Events
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 If you are organizing an event around openHAB, please let us know in the [Events category](https://community.openhab.org/c/organisation/events) of the community forum. We will work with you to add it on this page.
@@ -14,11 +19,11 @@ If you are organizing an event around openHAB, please let us know in the [Events
     <li v-for="page in $site.pages.filter((p) => new Date(p.frontmatter.date) > new Date() && p.frontmatter.layout === 'Event')
             .sort((e1,e2) => new Date(e1.frontmatter.date) > new Date(e2.frontmatter.date))" class="event">
       <div class="calendar"><calendar-icon :date="page.frontmatter.date" :end-date="page.frontmatter.end_date"></calendar-icon></div>
-      <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image" /></a>
+      <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.png'" /></a>
       <div class="event-info">
         <a :href="page.frontmatter.link" target="_blank"><h3 class="event-title">{{page.frontmatter.title}}</h3></a>
         <div class="event-location">{{page.frontmatter.location}}</div>
-        <p>{{page.frontmatter.abstract}}</p>
+        <p v-html="page.excerpt || page.frontmatter.abstract"></p>
       </div>
     </li>
   </ul>
@@ -35,11 +40,11 @@ If you are organizing an event around openHAB, please let us know in the [Events
                 && p.frontmatter.layout === 'Event' && new Date(p.frontmatter.date).getFullYear() === year)
               .sort((e1,e2) => new Date(e1.frontmatter.date) < new Date(e2.frontmatter.date))" class="event">
         <div class="calendar"><calendar-icon :date="page.frontmatter.date" :end-date="page.frontmatter.end_date"></calendar-icon></div>
-        <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image" /></a>
+        <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.png'" /></a>
         <div class="event-info">
           <a :href="page.frontmatter.link" target="_blank"><h3 class="event-title">{{page.frontmatter.title}}</h3></a>
           <div class="event-location">{{page.frontmatter.location}}</div>
-          <p>{{page.frontmatter.abstract}}</p>
+          <p v-html="page.excerpt || page.frontmatter.abstract"></p>
         </div>
       </li>
     </ul>

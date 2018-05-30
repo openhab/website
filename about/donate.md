@@ -2,6 +2,11 @@
 sidebar: false
 layout: AboutPage
 title: Donate
+meta:
+  - name: og:title
+    content: Donate to openHAB
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 <style>

@@ -14,20 +14,20 @@
         <!-- <Content></Content> -->
         <ul class="posts">
           <li v-for="post in posts" class="post">
-            <router-link :to="post.path" class="post-link">
+            <div class="post-frame">
               <div class="post-cover" :style="{background: 'url(' + post.frontmatter.previewimage + ') no-repeat center'}">
               </div>
               <h3 class="post-title">{{post.frontmatter.title}}</h3>
               <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
               <div class="post-excerpt">
 
-                {{removeMarkdown(post.frontmatter.excerpt || post.excerpt)}}
+                <div v-html="post.frontmatter.excerpt || post.excerpt"></div>
 
               </div>
               <div class="read-more">
-                <div class="read-more-button">Read more →</div>
+                <router-link :to="post.path" class="read-more-button">Read more ➜</router-link>
               </div>
-            </router-link>
+            </div>
           </li>
         </ul>
       </div>
@@ -101,7 +101,7 @@
   .post
     list-style none
     width 100%
-    .post-link
+    .post-frame
       border 1px solid #ccc
       border-radius 8px
       width 100%
@@ -147,9 +147,11 @@
           border 1px solid #ff6600
           border-radius 4px
           box-sizing border-box
+          font-weight bold
           &:hover, &:focus
             color white
             background-color #ff6600
+            text-decoration none
 
 
       
@@ -171,24 +173,15 @@
 
 <script>
 import Footer from './Footer.vue'
-import BlogPostExcerpt from './BlogPostExcerpt.vue'
-import ScrollReveal from './scrollreveal'
 
 export default {
   name: 'AboutPage',
   components: {
-    Footer,
-    BlogPostExcerpt
+    Footer
   },
   data () {
     return {
-      dateOptions: {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-    }
-  },
-  methods: {
-    removeMarkdown (markdown) {
-      if (markdown)
-        return markdown.replace(/\[([\w /.-]+)\]\(([\w:/.-]+)\)/g, '$1').trim()
+      dateOptions: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
     }
   },
   computed: {

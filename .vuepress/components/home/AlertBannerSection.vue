@@ -4,7 +4,7 @@
     {{$page.frontmatter.alert}}
     </div>
     <div class="alert-button-container">
-      <router-link to="blog" class="alert-button slide">Read the Blog →</router-link>
+      <router-link :to="$page.frontmatter.alert_link || '/blog/'" class="alert-button slide">Read the Blog ➜</router-link>
     </div>
   </section>
 </template>
