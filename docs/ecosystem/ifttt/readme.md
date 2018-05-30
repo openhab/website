@@ -2,6 +2,11 @@
 title: IFTTT Integration
 type: io
 source: https://github.com/openhab/website/blob/master/docs/ecosystem/ifttt/readme.md
+meta:
+  - name: og:title
+    content: IFTTT Integration
+  - name: og:description
+    content: "openHAB users can take advantage of IFTTT to realize even more use cases in their smart home!"
 ---
 
 # IFTTT Integration for openHAB

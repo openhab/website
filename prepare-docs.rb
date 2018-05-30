@@ -58,6 +58,8 @@ def process_file(indir, file, outdir, source)
     has_source = false
     has_logo = false
     obsolete_binding = false
+    og_title = 'openHAB'
+    og_description = 'a vendor and technology agnostic open source automation software for your home'
 
     FileUtils.mkdir_p(outdir)
     File.open("#{outdir}/#{file}", "w+") { |out|
@@ -73,6 +75,12 @@ def process_file(indir, file, outdir, source)
             next if line =~ /no_toc/
             has_source = true if in_frontmatter && line =~ /^source:/
             has_logo = true if in_frontmatter && line =~ /^logo:/
+            if in_frontmatter && line =~ /^title:/ then
+                og_title = line.gsub('title: ', '').gsub("\n", "")
+            end
+            if in_frontmatter && line =~ /^description:/ then
+                og_description = line.gsub('description: ', '').gsub("\n", "").gsub('[', '').gsub(']', '').gsub(/\(http[:\/\-0-9A-Za-z\.]+\)/, '')
+            end
 
             if line =~ /^---$/ then
                 if !in_frontmatter then
@@ -120,6 +128,13 @@ def process_file(indir, file, outdir, source)
                             out.puts "prev: ../" if file == 'zwave/doc/things.md'
                         end
                     end
+
+                    # Add OpenGraph tags
+                    out.puts "meta:"
+                    out.puts "  - property: og:title"
+                    out.puts "    content: \"#{og_title.gsub('"', '\"')}\""
+                    out.puts "  - property: og:description"
+                    out.puts "    content: #{og_description}"
 
                     in_frontmatter = false
                     frontmatter_processed = true
@@ -522,7 +537,7 @@ puts ">>> Writing add-ons arrays to files for sidebar navigation"
                 File.readlines('addons/' + type + '/' + dir + '/readme.md').each { |line|
                     if line =~ /^label:/ then
                         title = line.gsub("label: ", "").gsub("\n", "")
-                        file.puts "\t['#{type}/#{dir}/', '#{title}'],"
+                        file.puts "\t['#{type}/#{dir}/', '#{title}']," if !(title =~ /1\.x/)
                     end
                 }
             end

@@ -4,6 +4,11 @@ layout: AboutPage
 title: Download openHAB
 currentVersion: 2.3.0
 currentSnapshotVersion: 2.4.0-SNAPSHOT
+meta:
+  - name: og:title
+    content: Download openHAB
+  - name: og:description
+    content: a vendor and technology agnostic open source automation software for your home
 ---
 
 <style>

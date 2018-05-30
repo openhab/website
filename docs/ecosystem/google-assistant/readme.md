@@ -1,5 +1,11 @@
 ---
+title: Google Assistant Action
 source: https://github.com/openhab/openhab-google-assistant/blob/master/USAGE.md
+meta:
+  - name: og:title
+    content: Google Assistant Action
+  - name: og:description
+    content: "Google Assistant is Google's virtual personal assistant and uses Actions on Google as the platform for \"Actions\" (software applications) to extend the functionality of the Google Assistant."
 ---
 
 # Google Assistant Action
