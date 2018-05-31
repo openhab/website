@@ -5,7 +5,7 @@
       <a target="_blank" href="https://alternativeto.net/tag/home-automation/?sort=likes">Best home automation app</a>
       according to crowdsourced software recommendations on
     </div>
-    <a class="alternativeto-button" target="_blank" href="https://alternativeto.net/software/openhab/">
+    <a class="alternativeto-button" target="_blank" href="https://alternativeto.net/software/openhab/about/">
       <img src="./images/alternativeTo.png" />
     </a>
   </section>
