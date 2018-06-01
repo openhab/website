@@ -46,7 +46,7 @@ Information provided according to Sec. 5 German Telemedia Act (TMG)
 Kollwitzweg 10<br />
 64372 Ober-Ramstadt</p>
 
-Information provided according to Sec. 55, para. 2 German Federal Broadcasting Agreement (RstV)
+Information provided according to Sec. 55, para. 2 German Federal Broadcasting Agreement (RStV)
 
 ## Privacy Statement
 
