@@ -113,7 +113,7 @@
       &:hover
         text-decoration none !important
       .post-cover
-        height 250px
+        height 450px
         background-size cover !important
       .post-title
         font-size 32px
@@ -168,6 +168,9 @@
         margin 30px
   .posts-list
     margin-top calc(3.6rem + 200px)
+    .post
+      .post-cover
+        height 200px !important
 
 </style>
 

@@ -29,7 +29,7 @@ module.exports = {
     ['meta', { property: 'og:type', content: 'website' }],
     // ['meta', { property: 'og:title', content: 'openHAB' }],
     // ['meta', { property: 'og:description', content: 'a vendor and technology agnostic open source automation software for your home' }],
-    ['meta', { property: 'og:image', content: 'https://www.openhab.org/openhab-logo-square.png' }],
+    ['meta', { property: 'og:image', content: 'https://www.openhab.org/og-image.png' }],
     ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
   ],
   markdown: {
