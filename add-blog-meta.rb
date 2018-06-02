@@ -7,6 +7,7 @@ Dir.glob("blog/*.md").each { |file|
     next if file =~ /index\.md/
     in_frontmatter = false
     frontmatter_processed = false
+    parsing_multiline_excerpt = false
     og_title = 'openHAB'
     og_description = 'a vendor and technology agnostic open source automation software for your home'
     og_image = nil
@@ -17,12 +18,26 @@ Dir.glob("blog/*.md").each { |file|
     puts " -> #{file}"
     File.open(file, 'w+') { |out|
         File.open(".vuepress/tmp/#{File.basename(file)}").each { |line|
-
+            # FIXME: require "yaml" and parse properly one day...
+            if parsing_multiline_excerpt then
+                if line =~ /^  / then
+                    og_description += ' ' + line.gsub(/^  /, '').gsub("\n", "")
+                    next
+                else
+                    og_description.strip!
+                    parsing_multiline_excerpt = false
+                end
+            end
             if in_frontmatter && line =~ /^title:/ then
                 og_title = line.gsub('title: ', '').gsub("\n", "")
             end
             if in_frontmatter && line =~ /^excerpt:/ then
                 og_description = line.gsub('excerpt: ', '').gsub("\n", "").gsub('[', '').gsub(']', '').gsub(/\(http[:\/\-0-9A-Za-z\.]+\)/, '')
+                if og_description == ">-" then
+                    og_description = ''
+                    parsing_multiline_excerpt = true
+                    next
+                end
             end
             if in_frontmatter && line =~ /^previewimage:/ then
                 og_image = line.gsub('previewimage: ', '').gsub("\n", "")
