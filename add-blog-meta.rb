@@ -21,8 +21,8 @@ Dir.glob("blog/*.md").each { |file|
             if in_frontmatter && line =~ /^title:/ then
                 og_title = line.gsub('title: ', '').gsub("\n", "")
             end
-            if in_frontmatter && line =~ /^abstract:/ then
-                og_description = line.gsub('abstract: ', '').gsub("\n", "").gsub('[', '').gsub(']', '').gsub(/\(http[:\/\-0-9A-Za-z\.]+\)/, '')
+            if in_frontmatter && line =~ /^excerpt:/ then
+                og_description = line.gsub('excerpt: ', '').gsub("\n", "").gsub('[', '').gsub(']', '').gsub(/\(http[:\/\-0-9A-Za-z\.]+\)/, '')
             end
             if in_frontmatter && line =~ /^previewimage:/ then
                 og_image = line.gsub('previewimage: ', '').gsub("\n", "")

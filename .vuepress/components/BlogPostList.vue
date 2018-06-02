@@ -21,7 +21,7 @@
               <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
               <div class="post-excerpt">
 
-                <div v-html="post.frontmatter.excerpt || post.excerpt"></div>
+                <div v-html="post.excerpt || post.frontmatter.excerpt"></div>
 
               </div>
               <div class="read-more">
