@@ -4,7 +4,7 @@ category: blog
 title: openHAB 2.3 Release
 author: Kai Kreuzer
 date: '2018-05-28T13:24:00+02:00'
-abstract: "Time flies! The last openHAB release is already more than 5 months old and much has happened since then. It is therefore clearly time to pack and ship all the nice new updates as a stable release: Here comes openHAB 2.3!"
+excerpt: "Time flies! The last openHAB release is already more than 5 months old and much has happened since then. It is therefore clearly time to pack and ship all the nice new updates as a stable release: Here comes openHAB 2.3!"
 previewimage: /uploads/homepage.jpg
 tags:
   - news
