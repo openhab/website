@@ -1,7 +1,7 @@
 <template>
   <div class="jumbotron">
-    <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-image"></div>
+    <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-content">
       <div class="white-logo"><ClientOnly><img src="/logo-white.png" class="white-logo" /></ClientOnly></div>
       <h1 class="hero">empowering the smart home</h1>
@@ -26,7 +26,7 @@
   justify-content center
   align-items center
   .jumbotron-pattern
-    opacity 0.15
+    opacity 0.1
     width calc(100vw - 20px)
     height 105vh
     min-height 600px
@@ -101,7 +101,7 @@
       
   .hero-image
     animation 2.5s ease-out 0s 1 fadeIn4
-    background url(/hero.png) bottom 0 left 50%/contain no-repeat
+    background url(/hero.jpg) bottom 0 left 50%/contain no-repeat
     background-repeat none 
     width 95%
     height 700px

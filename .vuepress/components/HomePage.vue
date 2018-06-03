@@ -197,11 +197,15 @@ export default {
         header.classList.remove('homepage')
       }, 1500)
     }
+
+    if (this.$route.hash && this.$route.hash.indexOf('token') > 0) {
+      window.location = 'https://www.openhab.org/admin/' + this.$route.hash
+    }
   },
   beforeDestroy () {
     if (hr) {
       hr.destroy()
     }
-  }
+  },
 }
 </script>

@@ -27,10 +27,10 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
     ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }],
     ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:image', content: 'https://www.openhab.org/og-image.png' }],
     // ['meta', { property: 'og:title', content: 'openHAB' }],
     // ['meta', { property: 'og:description', content: 'a vendor and technology agnostic open source automation software for your home' }],
-    ['meta', { property: 'og:image', content: 'https://www.openhab.org/og-image.png' }],
-    ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
+    // ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
   ],
   markdown: {
     config: (md) => {

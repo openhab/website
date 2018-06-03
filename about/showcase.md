@@ -30,6 +30,6 @@ img.illustration {
 
 <!-- <h2 class="big-title">Live from the Forum</h2> -->
 
-This is a selection of top topics in the [Examples & Tutorials](https://community.openhab.org/c/tutorials-examples) category of the community forum, join us there and share your story!
+This is a selection of top topics in the [Tutorials & Examples](https://community.openhab.org/c/tutorials-examples) category of the community forum, join us there and share your story!
 
 <CommunityTutorials />

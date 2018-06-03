@@ -286,6 +286,7 @@ export default {
       return {
         addons: this.addons.filter(p => (p.frontmatter &&
                                           (p.frontmatter.label && p.frontmatter.label.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0) ||
+                                          (p.frontmatter.description && p.frontmatter.description.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0) ||
                                           (p.frontmatter.id && p.frontmatter.id.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0))),
         things: this.things.filter(t => t.label.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0 ||
                                         // t.description.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0 ||
