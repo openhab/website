@@ -170,7 +170,8 @@ export default {
     }
   },
   mounted () {
-    this.events = this.$site.pages.filter((p) => new Date(p.frontmatter.date) > new Date() && p.frontmatter.layout === 'Event')
+    this.events = this.$site.pages.filter((p) => p.frontmatter.layout === 'Event' &&
+        p.frontmatter.end_date ? new Date(p.frontmatter.end_date) >= new Date() : new Date(p.frontmatter.date) >= new Date())
       .sort((e1,e2) => new Date(e1.frontmatter.date) > new Date(e2.frontmatter.date))
       .slice(0, 2)
   }

@@ -5,7 +5,6 @@ title: Eclipse DemoCamp 2018
 organizer: Deutsche Telekom AG
 link: 'https://wiki.eclipse.org/Eclipse_DemoCamps_2018/Darmstadt'
 date: '2018-06-20T17:38:29+02:00'
-end_date: '2018-06-20T17:38:29+02:00'
 location: 'Darmstadt, Germany'
 event_image: /uploads/democamp.png
 abstract: >-
