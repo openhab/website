@@ -6,7 +6,7 @@ organizer: ' Bundesministeriums für Wirtschaft und Energie'
 link: >-
   https://www.sinteg.de/termine/aktuelle-termine/detailseite/sinteg-jahreskonferenz-2018/
 date: '2018-06-05T12:49:11+02:00'
-end_date: '2018-06-06T12:49:11+02:00'
+end_date: '2018-06-06T18:00:11+02:00'
 location: 'Berlin, Germany'
 event_image: /uploads/sinteg.jpg
 abstract: >-

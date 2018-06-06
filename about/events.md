@@ -16,7 +16,8 @@ If you are organizing an event around openHAB, please let us know in the [Events
   <h2>Upcoming events</h2>
 
   <ul class="event-list">
-    <li v-for="page in $site.pages.filter((p) => new Date(p.frontmatter.date) > new Date() && p.frontmatter.layout === 'Event')
+    <li v-for="page in $site.pages.filter((p) => p.frontmatter.layout === 'Event' &&
+                (p.frontmatter.end_date) ? new Date(p.frontmatter.end_date) >= new Date() : new Date(p.frontmatter.date) >= new Date())
             .sort((e1,e2) => new Date(e1.frontmatter.date) > new Date(e2.frontmatter.date))" class="event">
       <div class="calendar"><calendar-icon :date="page.frontmatter.date" :end-date="page.frontmatter.end_date"></calendar-icon></div>
       <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.png'" /></a>
@@ -36,8 +37,8 @@ If you are organizing an event around openHAB, please let us know in the [Events
   <div v-for="year in [2018]"> <!-- don't forget to add previous years :) -->
     <h3>{{year}}</h3>
     <ul class="event-list">
-      <li v-for="page in $site.pages.filter((p) => new Date(p.frontmatter.date) <= new Date()
-                && p.frontmatter.layout === 'Event' && new Date(p.frontmatter.date).getFullYear() === year)
+      <li v-for="page in $site.pages.filter((p) => p.frontmatter.layout === 'Event' && new Date(p.frontmatter.date).getFullYear() === year &&
+                  ((p.frontmatter.end_date) ? new Date(p.frontmatter.end_date) < new Date() : new Date(p.frontmatter.date) < new Date()))
               .sort((e1,e2) => new Date(e1.frontmatter.date) < new Date(e2.frontmatter.date))" class="event">
         <div class="calendar"><calendar-icon :date="page.frontmatter.date" :end-date="page.frontmatter.end_date"></calendar-icon></div>
         <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.png'" /></a>

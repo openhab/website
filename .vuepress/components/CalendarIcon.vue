@@ -83,7 +83,7 @@ export default {
   data () {
     const date = new Date(this.date)
     const endDate = new Date(this.endDate)
-    const multiple_days = !endDate || (date.getDate() !== endDate.getDate())
+    const multiple_days = !isNaN(endDate) && (date.getDate() !== endDate.getDate())
     return {
       month: months[date.getMonth()],
       weekday: (multiple_days) ? shortDays[date.getDay()] + '	- ' + shortDays[endDate.getDay()] : days[date.getDay()],
