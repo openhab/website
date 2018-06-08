@@ -69,7 +69,7 @@
 export default {
   data () {
     return {
-      versionNumbers: ['latest', '2.3', '2.2', '2.1'],
+      versionNumbers: ['latest', '2.3', '2.2'], //, '2.1'],
       currentVersion: 'latest',
       open: false
     }
@@ -89,14 +89,14 @@ export default {
     versions () {
       return this.versionNumbers.map(version => {
         let url = this.$page.path
-        if (version === '2.2' || version === '2.1') {
+        if (version === '2.1') {
           url = url.replace('addons/integrations/', 'addons/ios/')
           if (url.indexOf('/addons') === 0) url += 'readme.html'
         }
         if (version === 'latest') {
           url = 'https://www.openhab.org' + url
         } else {
-          url = `https://${(version === '2.2' || version === '2.1') ? 'docs.' : 'www.'}openhab.org${version === 'snapshot' ? '' : '/v' + version}${url}`
+          url = `https://${(version === '2.1') ? 'docs.' : 'www.'}openhab.org${version === 'snapshot' ? '' : '/v' + version}${url}`
         }
 
         return {
