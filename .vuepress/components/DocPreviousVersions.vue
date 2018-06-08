@@ -2,13 +2,13 @@
   <div class="page-versions">
     <div class="dropdown-wrapper" :class="{ open }">
       <a class="dropdown-title" @click="toggle">
-        <span class="title">Other versions</span>
+        <span class="title">Version: {{currentVersion}}</span>
         <span class="arrow" :class="open ? 'down' : 'right'"></span></span>
       </a>
       <ul class="nav-dropdown" v-show="open">
         <li v-for="version in versions" class="dropdown-item">
           <a class="current" v-if="version.number === currentVersion">{{version.number}}</a>
-          <a v-else :href="version.url" target="_blank">{{version.number}}</a>
+          <a v-else :href="version.url">{{version.number}}</a>
         </li>
       </ul>
     </div>
@@ -69,7 +69,7 @@
 export default {
   data () {
     return {
-      versionNumbers: ['latest', '2.2', '2.1'],
+      versionNumbers: ['latest', '2.3', '2.2', '2.1'],
       currentVersion: 'latest',
       open: false
     }
@@ -79,16 +79,29 @@ export default {
       this.open = !this.open
     }
   },
+  created () {
+    if (this.$site.base && this.$site.base.indexOf('v') > 0) {
+      this.currentVersion = this.$site.base.replace('v', '').replace(/\//g, '')
+      this.versionNumbers = ['latest', this.currentVersion] // to avoid having to regenerate previous sites
+    }
+  },
   computed: {
     versions () {
       return this.versionNumbers.map(version => {
-        let url = `${this.$page.path
-          .replace('/docs/', '').replace('/addons/', 'addons/').replace('addons/integrations/', 'addons/ios/')}`
-        if (url.indexOf('addons') === 0) url += 'readme.html'
+        let url = this.$page.path
+        if (version === '2.2' || version === '2.1') {
+          url = url.replace('addons/integrations/', 'addons/ios/')
+          if (url.indexOf('/addons') === 0) url += 'readme.html'
+        }
+        if (version === 'latest') {
+          url = 'https://www.openhab.org' + url
+        } else {
+          url = `https://${version === '2.3' ? 'docs.' : ''}openhab.org${version === 'snapshot' ? '' : '/v' + version}${url}`
+        }
 
         return {
           number: version,
-          url: `https://docs.openhab.org${version === 'snapshot' ? '' : '/v' + version}/${url}`
+          url: url
         }
       })
     }
