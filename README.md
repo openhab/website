@@ -1,15 +1,9 @@
 ---
-layout: HomePage
-# Comment or remove the alert below when it's not needed anymore
-alert: "openHAB 2.4 Released!"
-pageClass: homepage
-meta:
-  - name: og:title
-    content: openHAB
-  - name: og:description
-    content: a vendor and technology agnostic open source automation software for your home
+layout: RedirectLayout
+redirect_to: https://www.openhab.org/
 ---
 
-This is the openHAB website.
+You're on a archived version of the website.
+Taking you back to the main site.
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) to learn how to contribute to the site.
+Please Wait...

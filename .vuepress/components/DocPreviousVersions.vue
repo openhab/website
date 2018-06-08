@@ -69,7 +69,7 @@
 export default {
   data () {
     return {
-      versionNumbers: ['latest', '2.3', '2.2'], //, '2.1'],
+      versionNumbers: ['latest', '2.4', '2.3', '2.2'], //, '2.1'],
       currentVersion: 'latest',
       open: false
     }
