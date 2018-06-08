@@ -1,0 +1,4 @@
+# These are the overrides for Netlify
+
+# Trick to fool VuePress' NavLink to think the community forum is an internal link
+/community  https://community.openhab.org/
