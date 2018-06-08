@@ -1,5 +1,5 @@
 <template>
-  <img :src="$page.frontmatter.logo.replace('images/addons/', '/logos/')" class="addon-logo" />
+  <img :src="$page.frontmatter.logo.replace('images/addons/', $site.base + 'logos/')" class="addon-logo" />
 </template>
 
 <style lang="stylus">

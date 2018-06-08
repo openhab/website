@@ -18,6 +18,9 @@
 .esh-note
   color #999
   font-size 8pt
+  svg
+    height: 10px !important
+    width: 10px !important
 </style>
 
 <script>

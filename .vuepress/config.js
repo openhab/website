@@ -12,7 +12,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HighlightDsl = require('./highlight-dsl')
 const HighlightRules = require('./highlight-rules')
 
-const base = process.env.GH ? '/vuepress/' : '/'
+const base = process.env.OH_DOCS_VERSION ? `/v${process.env.OH_DOCS_VERSION}/` : '/'
 
 module.exports = {
   title: 'openHAB',
@@ -22,11 +22,11 @@ module.exports = {
   base,
   ga: 'UA-47717934-1',
   head: [
-    ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
+    // ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
     ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
-    // ['link', { rel: 'stylesheet', href: `//fonts.googleapis.com/css?family=Open+Sans:300,400` }],
+    ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/css?family=Open+Sans:300,400` }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:image', content: 'https://www.openhab.org/og-image.png' }],
     // ['meta', { property: 'og:title', content: 'openHAB' }],
@@ -191,7 +191,7 @@ module.exports = {
             'concepts/items',
             'concepts/discovery',
             'concepts/audio',
-            'concepts/units-of-measurement',
+            'concepts/units-of-measurement',  // from v2.3 onwards
           ]
         },
         {
@@ -263,7 +263,7 @@ module.exports = {
             'apps/ios',
             'apps/windows',
             ['ecosystem/alexa/', 'Amazon Alexa'],
-            ['ecosystem/google-assistant/', 'Google Assistant'],
+            ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
             ['../addons/integrations/homekit/', 'Apple HomeKit'],
             ['ecosystem/ifttt/', 'IFTTT'],
             ['ecosystem/mycroft/', 'Mycroft.AI'],
@@ -297,7 +297,7 @@ module.exports = {
             'developer/prerequisites/targetplatform',
             'developer/development/ide',
             'developer/development/guidelines',
-            'developer/development/conventions',
+            'developer/development/conventions', // from v2.3 onwards
             'developer/development/bindings',
             'developer/development/logging',
             'developer/development/evolution',

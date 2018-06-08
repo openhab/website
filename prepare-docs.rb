@@ -11,6 +11,13 @@ $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/gh-pages"
 $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
+$version = nil
+
+if ENV["OH_DOCS_VERSION"] then
+    puts ">>> Generating docs for version #{ENV["OH_DOCS_VERSION"]}"
+    $version = ENV["OH_DOCS_VERSION"]
+    $version += ".0" if $version.split(".").length == 2
+end
 
 if (ARGV[0] && ARGV[0] == "--no-clone" && Dir.exists?(".vuepress/openhab-docs")) then
     puts ">>> Re-using existing clone"
@@ -19,7 +26,7 @@ else
     FileUtils.rm_rf(".vuepress/openhab-docs")
 
     puts ">>> Cloning openhab-docs"
-    `git clone --depth 1 https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
+    `git clone --depth 1 #{$version ? "--branch #{$version}" : ""} https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
 end
 
 $esh_features = []
@@ -60,6 +67,11 @@ def process_file(indir, file, outdir, source)
     obsolete_binding = false
     og_title = 'openHAB'
     og_description = 'a vendor and technology agnostic open source automation software for your home'
+
+    if !File.exists?("#{indir}/#{file}") then
+        puts "process_file: IGNORING (NON-EXISTING): #{indir}/#{file}"
+        return
+    end
 
     FileUtils.mkdir_p(outdir)
     File.open("#{outdir}/#{file}", "w+") { |out|
@@ -503,15 +515,16 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
 
 
 puts ">>> Creating ZWave thing viewer"
-File.open('addons/bindings/zwave/thing.md', 'w+') { |out|
-    out.puts '---'
-    out.puts 'title: ZWave Thing'
-    out.puts 'prev: ./'
-    out.puts '---'
-    out.puts
-    out.puts '<ThingDocRenderer />'
-}
-
+if (File.exists?('.vuepress/openhab-docs/_addons_bindings/zwave/doc/things.md')) then
+    File.open('addons/bindings/zwave/thing.md', 'w+') { |out|
+        out.puts '---'
+        out.puts 'title: ZWave Thing'
+        out.puts 'prev: ./'
+        out.puts '---'
+        out.puts
+        out.puts '<ThingDocRenderer />'
+    }
+end
 
 
 # puts ">>> Migrating Z-Wave docs"
