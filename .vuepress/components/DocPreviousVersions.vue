@@ -96,7 +96,7 @@ export default {
         if (version === 'latest') {
           url = 'https://www.openhab.org' + url
         } else {
-          url = `https://${(version === '2.2' || version === '2.1') ? 'docs.' : ''}openhab.org${version === 'snapshot' ? '' : '/v' + version}${url}`
+          url = `https://${(version === '2.2' || version === '2.1') ? 'docs.' : 'www.'}openhab.org${version === 'snapshot' ? '' : '/v' + version}${url}`
         }
 
         return {
