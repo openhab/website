@@ -227,6 +227,7 @@ module.exports = {
           collapsable: false,
           children: [
             ['configuration/', 'Configuration Overview'],
+            'configuration/addons',
             'configuration/things',
             'configuration/items',
             'configuration/sitemaps',
