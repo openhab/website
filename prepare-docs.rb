@@ -394,6 +394,8 @@ Dir.glob(".vuepress/openhab-docs/administration/*.md") { |path|
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/administration", file, "docs/administration", "#{$docs_repo_root}/administration/#{file}")
 }
+puts " -> images"
+FileUtils.cp_r(".vuepress/openhab-docs/administration/images", "docs/administration/images")
 
 
 
