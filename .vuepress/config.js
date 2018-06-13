@@ -22,11 +22,11 @@ module.exports = {
   base,
   ga: 'UA-47717934-1',
   head: [
-    // ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
+    ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
     ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
-    ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/css?family=Open+Sans:300,400` }],
+    // ['link', { rel: 'stylesheet', href: `https://fonts.googleapis.com/css?family=Open+Sans:300,400` }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:image', content: 'https://www.openhab.org/og-image.png' }],
     // ['meta', { property: 'og:title', content: 'openHAB' }],
@@ -69,12 +69,9 @@ module.exports = {
     }
   },
   configureWebpack: (config, isServer) => {
-    // Remove once VuePress 0.9 is out (includes https://github.com/vuejs/vuepress/pull/405)
-    // const temp = path.join(config.resolve.alias['@temp'], 'override.styl')
-    // const source = path.join(config.resolve.alias['@source'], '.vuepress', 'override.styl')
-    // fs.copySync(source, temp)
     config.plugins.push(new CopyWebpackPlugin([
-      { from: '.vuepress/_redirects', to: '.'}
+      { from: '.vuepress/_redirects', to: '.'},
+      { from: '.vuepress/_headers', to: '.'},
     ]))
   },
   serviceWorker: false,
