@@ -14,6 +14,9 @@ $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 $version = nil
 
+$ignore_bindings = ["mqtt"]
+
+
 if ENV["OH_DOCS_VERSION"] then
     puts ">>> Generating docs for version #{ENV["OH_DOCS_VERSION"]}"
     $version = ENV["OH_DOCS_VERSION"]
@@ -191,7 +194,7 @@ def process_file(indir, file, outdir, source)
             # Handle obsolete bindings
             if in_frontmatter && (line =~ /label: / || line =~ /title: /) && outdir == 'addons/bindings' && file =~ /1\// then
                 addon = file.split('/')[0]
-                if Dir.exists?("#{indir}/#{addon.gsub('1', '')}") then
+                if !$ignore_bindings.include?(addon.gsub('1', '')) && Dir.exists?("#{indir}/#{addon.gsub('1', '')}") then
                     line = line.gsub("\n", "") + ' (1.x)' if !(line =~ /1\.x/)
                     if !obsolete_binding then
                         obsolete_binding = true
@@ -502,6 +505,7 @@ puts ">>> Migrating add-ons: Bindings"
 
 Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     addon = File.basename(path)
+    next if $ignore_bindings.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
