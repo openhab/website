@@ -8,7 +8,7 @@ require "rexml/document"
 # require "nokogiri"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
-$docs_repo_root = $docs_repo + "/blob/gh-pages"
+$docs_repo_root = $docs_repo + "/blob/master"
 $docs_repo_branch = "final"
 $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
