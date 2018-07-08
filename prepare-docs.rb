@@ -14,6 +14,9 @@ $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 $version = nil
 
+$ignore_bindings = ["mqtt"]
+
+
 if ENV["OH_DOCS_VERSION"] then
     puts ">>> Generating docs for version #{ENV["OH_DOCS_VERSION"]}"
     $version = ENV["OH_DOCS_VERSION"]
@@ -502,6 +505,7 @@ puts ">>> Migrating add-ons: Bindings"
 
 Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     addon = File.basename(path)
+    break if $ignore_bindings.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
