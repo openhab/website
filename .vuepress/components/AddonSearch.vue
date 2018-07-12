@@ -12,7 +12,10 @@
     <div v-else>
       <!-- <p><em>Use the search box to look for one of openHAB's {{addons.length}} add-ons and {{things.length}} supported Things!</em></p> -->
       <div v-for="(addontype, typeid) of $page.frontmatter.initial_gallery">
-        <h3 class="addon-type">{{addontype.title}}</h3>
+        <h3 class="addon-type" :id="typeid">
+          <a :href="'#' + typeid" aria-hidden="true" class="header-anchor">#</a>
+          {{addontype.title}}
+        </h3>
         <p>{{addontype.description}}</p>
         <ul class="display-mode-toggle" v-if="!addontype.all">
           <li><button :disabled="showAllAddons.indexOf(typeid) < 0" @click="switchDisplayMode(typeid, false)">Featured</button></li>
@@ -87,6 +90,9 @@ h3.addon-type
   font-family 'Open Sans', sans-serif
   font-weight normal
   font-size 1.5rem
+  margin-top -3.1rem
+  padding-top 4.6rem
+  margin-bottom 0
 .display-mode-toggle
   list-style-type none
   padding .5rem
