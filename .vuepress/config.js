@@ -80,6 +80,10 @@ module.exports = {
     // repo: 'openhab',
     editLinks: false,
     docsDir: 'docs',
+    algolia: {
+      apiKey: 'af17a113c6a11af8057592a3120ffd3b',
+      indexName: 'openhab'
+    },
     nav: [
       {
         text: 'Blog',
