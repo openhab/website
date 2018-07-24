@@ -33,3 +33,5 @@ Auch andere Beiträge aus dem Bereich Smart Home / Smart Public Building sind ge
 Die Events werden gemeinsam durch das Projekt Smart Public Building der HFT Stuttgart (Teilprojekt von i_City) sowie der openHAB Foundation e.V. veranstaltet.
 
 Weitere Informationen finden Sie im [Call for Papers](https://innovative-trends.de/wp-content/uploads/2018/07/Call_for_Paper_SPB2018-1.pdf).
+
+<!-- more -->

@@ -62,7 +62,8 @@ If you are organizing an event around openHAB, please let us know in the [Events
     .event-link
       display flex
       height 8rem
-      width 10rem
+      width 128px
+      margin-right 2rem
     .event-image
       max-height 8em
       max-width 8em
