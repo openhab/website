@@ -258,7 +258,7 @@ Analytics.
 The search function on our website uses the Algolia search technology services. It is operated by Algolia SAS, 
 55 Rue d'Amsterdam, 75008 Paris, France.
 
-If you use the search function, it is necessary to transmit you IP address to an Algolia server in Europe or
+If you use the search function, it is necessary to transmit your IP address to an Algolia server in Europe or
 the USA. For more information about how Algolia handles user data, see Algolia's privacy policy:
 [https://www.algolia.com/policies/privacy](https://www.algolia.com/policies/privacy).
 
