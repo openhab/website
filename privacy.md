@@ -253,6 +253,15 @@ Analytics.
 
 ## Plugins and tools
 
+### Algolia 
+
+The search function on our website uses the Algolia search technology services. It is operated by Algolia SAS, 
+55 Rue d'Amsterdam, 75008 Paris, France.
+
+If you use the search function, it is necessary to transmit your IP address to an Algolia server in Europe or
+the USA. For more information about how Algolia handles user data, see Algolia's privacy policy:
+[https://www.algolia.com/policies/privacy](https://www.algolia.com/policies/privacy).
+
 ### YouTube
 
 Our website uses plugins from YouTube, which is operated by Google. The operator of the pages is
@@ -270,23 +279,6 @@ to Art. 6 (1) (f) GDPR.
 
 Further information about handling user data, can be found in the data protection declaration of 
 YouTube under [https://www.google.de/intl/de/policies/privacy](https://www.google.de/intl/de/policies/privacy).
-
-### Google Web Fonts
-
-For uniform representation of fonts, this page uses web fonts provided by Google. When you open a
-page, your browser loads the required web fonts into your browser cache to display texts and fonts
-correctly.
-
-For this purpose your browser has to establish a direct connection to Google servers. Google thus
-becomes aware that our web page was accessed via your IP address. The use of Google Web fonts is
-done in the interest of a uniform and attractive presentation of our website. This constitutes a
-justified interest pursuant to Art. 6 (1) (f) GDPR.
-
-If your browser does not support web fonts, a standard font is used by your computer. Further
-information about handling user data, can be found at
-[https://developers.google.com/fonts/faq](https://developers.google.com/fonts/faq) and
-in Google's privacy policy at
-[https://www.google.com/policies/privacy/](https://www.google.com/policies/privacy/).
 
 ### Google Maps
 
