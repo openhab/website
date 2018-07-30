@@ -24,7 +24,7 @@ initial_gallery:
   voice:
     title: "Voice"
     description: "These add-ons provide voice enabling features, such as text-to-speech, speech-to-text etc."
-    featured: ["mactts", "marytts", "voicerss"]
+    featured: ["mactts", "marytts", "picotts", "voicerss"]
     all: true
 meta:
   - name: og:title
