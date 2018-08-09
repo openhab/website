@@ -8,7 +8,7 @@ initial_gallery:
   io:
     title: "System Integrations"
     description: "System integrations expose openHAB to external systems."
-    featured: ["dropbox", "gcal", "homekit", "openhabcloud"]
+    featured: ["azureiothub", "gcal", "homekit", "openhabcloud"]
   action:
     title: "Actions"
     description: "Actions are predefined methods for openHAB rules and scripts."
