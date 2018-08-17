@@ -114,7 +114,7 @@ header.headroom--top
   .dropdown-title .arrow
       border-top 6px solid #fff
 
-.homepage header.headroom
+.homepage header.headroom:not(.headroom--not-top)
   animation 1s ease-out 0s 1 headerAppear
   opacity 1
 
