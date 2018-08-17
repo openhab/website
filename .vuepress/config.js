@@ -83,7 +83,10 @@ module.exports = {
     docsDir: 'docs',
     algolia: {
       apiKey: 'af17a113c6a11af8057592a3120ffd3b',
-      indexName: 'openhab'
+      indexName: 'openhab',
+      algoliaOptions: {
+        facetFilters: null
+      }
     },
     nav: [
       {
