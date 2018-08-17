@@ -3,6 +3,23 @@
     background-color rgba(98%, 98%, 99%, 0.9) // linear-gradient(180deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 95%,rgba(0,0,0,.05) 99%,rgba(0,0,0,.04))
     //opacity 0.9
 
+.homepage
+  header.homepage:not(.headroom)
+    opacity 0
+    background transparent
+    color white
+    border-bottom none
+    box-shadow none
+    .logo
+      opacity 0
+    .nav-dropdown
+      color black
+    .nav-links > .nav-item:last-child
+      svg
+          color white
+    .dropdown-title .arrow
+        border-top 6px solid #fff
+
 .navbar
     .links
         background-color transparent !important

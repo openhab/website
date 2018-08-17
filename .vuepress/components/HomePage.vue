@@ -114,23 +114,7 @@ header.headroom--top
   .dropdown-title .arrow
       border-top 6px solid #fff
 
-header.homepage:not(.headroom)
-  opacity 0
-  background transparent
-  color white
-  border-bottom none
-  box-shadow none
-  .logo
-    opacity 0
-  .nav-dropdown
-    color black
-  .nav-links > .nav-item:last-child
-    svg
-        color white
-  .dropdown-title .arrow
-      border-top 6px solid #fff
-
-header.homepage.headroom
+.homepage header.headroom
   animation 1s ease-out 0s 1 headerAppear
   opacity 1
 

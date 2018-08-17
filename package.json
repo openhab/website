@@ -19,7 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare-docs": "ruby prepare-docs.rb",
     "add-blog-meta": "ruby add-blog-meta.rb",
-    "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build . && ruby postbuild.rb",
+    "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
     "build-only": "vuepress build ."
   },
   "author": "openHAB",
