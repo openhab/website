@@ -21,6 +21,7 @@ module.exports = {
   host: 'localhost',
   base,
   ga: 'UA-47717934-1',
+  shouldPrefetch: () => false,
   head: [
     ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
@@ -82,7 +83,10 @@ module.exports = {
     docsDir: 'docs',
     algolia: {
       apiKey: 'af17a113c6a11af8057592a3120ffd3b',
-      indexName: 'openhab'
+      indexName: 'openhab',
+      algoliaOptions: {
+        facetFilters: null
+      }
     },
     nav: [
       {

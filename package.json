@@ -13,13 +13,13 @@
   "devDependencies": {
     "copy-webpack-plugin": "^4.5.1",
     "fs-extra": "^6.0.1",
-    "vuepress": "^0.10.0"
+    "vuepress": "^0.14.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare-docs": "ruby prepare-docs.rb",
     "add-blog-meta": "ruby add-blog-meta.rb",
-    "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build . && ruby postbuild.rb",
+    "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
     "build-only": "vuepress build ."
   },
   "author": "openHAB",
