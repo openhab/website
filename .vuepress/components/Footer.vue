@@ -1,5 +1,45 @@
 <template>
   <footer>
+    <div class="footer-nav">
+      <div class="footer-nav-blocks">
+
+        <div class="footer-nav-block">
+          <h4>About openHAB</h4>
+          <ul>
+            <li><router-link to="/about/who-we-are.html">Who We Are</router-link></li>
+            <li><router-link to="/blog/">Blog</router-link></li>
+            <li><router-link to="/docs/concepts/">Concepts</router-link></li>
+            <li><a target="_blank" href="https://demo.openhab.org:8443">Demo</a></li>
+            <li><a target="_blank" href="https://www.openhabfoundation.org/">Foundation <OutboundLink /></a></li>
+            <li><a target="_blank" href="https://myopenhab.org/">myopenhab.org <OutboundLink /></a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-block">
+          <h4>Resources</h4>
+          <ul>
+            <li><router-link to="/download/">Downloads</router-link></li>
+            <li><router-link to="/docs/">Documentation</router-link></li>
+            <li><router-link to="/addons/">Add-on Reference</router-link></li>
+            <li><router-link to="/docs/installation/">Installation Guide</router-link></li>
+            <li><router-link to="/docs/configuration/">Configuration Guide</router-link></li>
+            <li><router-link to="/docs/tutorial/">Tutorial</router-link></li>
+            <li><router-link to="/docs/developer/">Developers</router-link></li>
+          </ul>
+        </div>
+        <div class="footer-nav-block">
+          <h4>Community</h4>
+          <ul>
+            <li><router-link to="/community/">Forums</router-link></li>
+            <li><router-link to="/about/events.html">Events</router-link></li>
+            <li><router-link to="/about/showcase.html">Showcase</router-link></li>
+            <li><router-link to="/about/contributing.html">Contribute</router-link></li>
+            <li><router-link to="/about/donate.html">Donate</router-link></li>
+            <li><router-link to="/about/who-we-are.html#community-guidelines">Guidelines</router-link></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="social-icons">
       <a href="https://twitter.com/openhab" target="_blank"><svg class="social-icon twitter"><path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path></svg></a>
       <a href="https://github.com/openhab" target="_blank"><svg class="social-icon github"><path d="M10.369 24.837c0 0.125-0.144 0.225-0.325 0.225-0.206 0.019-0.35-0.081-0.35-0.225 0-0.125 0.144-0.225 0.325-0.225 0.188-0.019 0.35 0.081 0.35 0.225zM8.425 24.556c-0.044 0.125 0.081 0.269 0.269 0.306 0.162 0.063 0.35 0 0.387-0.125s-0.081-0.269-0.269-0.325c-0.162-0.044-0.344 0.019-0.387 0.144zM11.188 24.45c-0.181 0.044-0.306 0.163-0.287 0.306 0.019 0.125 0.181 0.206 0.369 0.163 0.181-0.044 0.306-0.163 0.287-0.288-0.019-0.119-0.188-0.2-0.369-0.181zM15.3 0.5c-8.669 0-15.3 6.581-15.3 15.25 0 6.931 4.362 12.863 10.594 14.95 0.8 0.144 1.081-0.35 1.081-0.756 0-0.387-0.019-2.525-0.019-3.837 0 0-4.375 0.938-5.294-1.863 0 0-0.713-1.819-1.737-2.288 0 0-1.431-0.981 0.1-0.962 0 0 1.556 0.125 2.412 1.613 1.369 2.413 3.662 1.719 4.556 1.306 0.144-1 0.55-1.694 1-2.106-3.494-0.387-7.019-0.894-7.019-6.906 0-1.719 0.475-2.581 1.475-3.681-0.162-0.406-0.694-2.081 0.162-4.244 1.306-0.406 4.313 1.688 4.313 1.688 1.25-0.35 2.594-0.531 3.925-0.531s2.675 0.181 3.925 0.531c0 0 3.006-2.1 4.313-1.688 0.856 2.169 0.325 3.838 0.163 4.244 1 1.106 1.613 1.969 1.613 3.681 0 6.031-3.681 6.512-7.175 6.906 0.575 0.494 1.063 1.431 1.063 2.9 0 2.106-0.019 4.712-0.019 5.225 0 0.406 0.288 0.9 1.081 0.756 6.25-2.075 10.488-8.006 10.488-14.938 0-8.669-7.031-15.25-15.7-15.25zM6.075 22.056c-0.081 0.063-0.063 0.206 0.044 0.325 0.1 0.1 0.244 0.144 0.325 0.063 0.081-0.063 0.063-0.206-0.044-0.325-0.1-0.1-0.244-0.144-0.325-0.063zM5.4 21.55c-0.044 0.081 0.019 0.181 0.144 0.244 0.1 0.063 0.225 0.044 0.269-0.044 0.044-0.081-0.019-0.181-0.144-0.244-0.125-0.038-0.225-0.019-0.269 0.044zM7.425 23.775c-0.1 0.081-0.063 0.269 0.081 0.387 0.144 0.144 0.325 0.163 0.406 0.063 0.081-0.081 0.044-0.269-0.081-0.387-0.138-0.144-0.325-0.163-0.406-0.063zM6.713 22.856c-0.1 0.063-0.1 0.225 0 0.369s0.269 0.206 0.35 0.144c0.1-0.081 0.1-0.244 0-0.387-0.088-0.144-0.25-0.206-0.35-0.125z"></path></svg></a>
@@ -8,8 +48,8 @@
     <div class="legal">
       <span class="copyright">Copyright © {{year}} by the openHAB Community and the openHAB Foundation e.V.</span>
       <br />
-      <router-link to="/privacy.html">Privacy policy</router-link> |
-      <router-link to="/imprint.html">Imprint</router-link>
+      <span class="legal-links"><router-link to="/privacy.html">Privacy policy</router-link> |
+      <router-link to="/imprint.html">Imprint</router-link></span>
     </div>
     <img src="/openhab-logo-square.png" class="footer-logo" />
   </footer>
@@ -19,6 +59,32 @@
 footer
   border-top 1px solid #eaecef
   margin-bottom -2rem
+  .footer-nav
+    align-self center
+    width 100%
+    flex-direction row
+    display flex
+    align-items center
+    justify-content center
+    .footer-nav-blocks
+      display flex
+      align-self center
+      .footer-nav-block
+        width 10rem
+      h4
+        width 100%
+        font-size 11pt
+      ul
+        padding-left 0
+        list-style none
+        font-size 11pt
+        a
+          font-weight normal
+          color #404040
+          &:hover
+            font-weight 400
+            color #ff6600
+
   .footer-logo
     width 70px
     height 70px
@@ -46,10 +112,18 @@ footer
     .copyright
       color #777
 
+@media (max-width 480px)
+  .footer-nav-blocks
+    flex-direction column
+
 @media print
   footer
     background-color transparent
+    .footer-nav
+      display none
     .social-icons
+      display none
+    .legal-links
       display none
     .footer-logo
       display none
@@ -68,6 +142,7 @@ export default {
       const sr = this.$sr
     //import('scrollreveal').then(ScrollReveal => {
       //const sr = new ScrollReveal.default()
+      sr.reveal('.footer-nav', { scale: 0.9 })
       sr.reveal('.social-icons')
       sr.reveal('.legal', { scale: 1.0 })
       sr.reveal('.footer-logo', { scale: 0.5, duration: 1000 })

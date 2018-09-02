@@ -69,9 +69,7 @@ A very important aspect of openHAB's architecture is its modular design. It is v
 Please see our [documentation](/docs/concepts/index.html) for further details about the concepts of openHAB, its features and possibilities.
 
 
-<br /><br /><br />
-
-<h2 class="big-title">Community Guidelines</h2>
+<h2 id="community-guidelines" style="padding-top: 6rem" class="big-title">Community Guidelines</h2>
 
 
 <!--
