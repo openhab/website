@@ -38,12 +38,6 @@ You've reached the openHAB documentation, which contains extensive resources for
 
 This documentation is always worked on, so expect regular changes. If you feel that something important is missing, please [help us improve the documentation](https://github.com/openhab/openhab-docs/blob/gh-pages/README.md#contributing-to-the-documentation)!</p>
 
-::: warning The openHAB Documentation is evolving
-
-The structure of the new documentation site has been altered in certain places to improve your reading experience. The documentation for the previous releases can still be viewed at [docs.openhab.org](https://docs.openhab.org/) or with the "Other versions" dropdowns on most pages. During a transition period, you might encounter broken or invalid links - please bear with us and accept our apologies for the inconvenience.
-
-:::
-
 ## Getting Started
 
 We highly recommend that you read the next chapter titled [Concepts](./concepts/index.html).
