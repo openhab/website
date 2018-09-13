@@ -18,7 +18,7 @@ export default {
   mounted () {
     let MarkdownIt = require('markdown-it')
     let md = new MarkdownIt()
-    let baseUrl = 'https://raw.githubusercontent.com/openhab/openhab-docs/gh-pages/_addons_bindings/zwave'
+    let baseUrl = 'https://raw.githubusercontent.com/openhab/openhab-docs/final/_addons_bindings/zwave'
 
     let url
     if (this.$route.query.thingTypeUID) {
