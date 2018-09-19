@@ -206,7 +206,7 @@ module.exports = {
             'installation/',
             ['installation/linux', 'Linux'],
             ['installation/windows', 'Windows'],
-            ['installation/macosx', 'macOS'],
+            ['installation/macos', 'macOS'],
             'installation/openhabian',
             'installation/rasppi',
             'installation/pine',
