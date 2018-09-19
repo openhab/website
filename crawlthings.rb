@@ -15,23 +15,18 @@ $things = []
 puts "Crawling #{$rootDir}"
 
 $i = 0
-Dir.glob($rootDir + "**/*/").each { |dir|
-    if dir =~ /ESH-INF\/thing\// && !(dir =~ /test/) then
-        Dir.foreach(dir) { |file|
-            if file != "." && file != ".." && file != "channels" && !(file =~ /^_/) then
-                # puts dir + file
-                xml = Nokogiri::XML(open(dir + file))
-                bindingId = xml.xpath("//@bindingId").text
-                xml.xpath("//bridge-type|//thing-type").each { |t|
-                    thing = {
-                        "id" => "#{bindingId}:#{t["id"]}",
-                        "label" => t.xpath("label").text,
-                        # "description" => t.xpath("description").text,
-                        "bindingId" => bindingId
-                    }
-                    $things.push(thing) if thing["id"] != "sample"
-                }
-            end
+Dir.glob($rootDir + "/**/ESH-INF/thing/**/*.xml").each { |file|
+    if !(file =~ /test/) then
+        xml = Nokogiri::XML(open(file))
+        bindingId = xml.xpath("//@bindingId").text
+        xml.xpath("//bridge-type|//thing-type").each { |t|
+            thing = {
+                "id" => "#{bindingId}:#{t["id"]}",
+                "label" => t.xpath("label").text,
+                # "description" => t.xpath("description").text,
+                "bindingId" => bindingId
+            }
+            $things.push(thing) if thing["id"] != "sample"
         }
     end
 }
