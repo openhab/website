@@ -14,7 +14,7 @@ $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 $version = nil
 
-$ignore_bindings = ["mqtt"]
+$ignore_bindings = ["mqtt", "mqtt.generic"]
 
 
 if ENV["OH_DOCS_VERSION"] then
