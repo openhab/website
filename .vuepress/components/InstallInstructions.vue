@@ -190,9 +190,9 @@ usermod -a -G openhab myownuser
       <h3>Manual Installation</h3>
       <ol>
         <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>)</li>
-        <li>Download and extract the distribution from <a href="https://openhab.ci.cloudbees.com/">https://openhab.ci.cloudbees.com/</a>:</li>
+        <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
         <div class="download-button-container">
-          <a target="_blank" class="download-button big" :href="`https://openhab.ci.cloudbees.com/job/openHAB-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
+          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
         </div>
       </ol>
     </div>
