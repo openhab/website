@@ -17,7 +17,7 @@ Another year has passed and [EclipseCon Europe 2018](https://www.eclipsecon.org/
 The Smart Home Day was hosted by the [openHAB Foundation](https://www.openhabfoundation.org/) with [Bosch SI](https://www.bosch-si.com), [codecentric](https://www.codecentric.de) and [Deutsche Telekom](https://www.qivicon.com/en/) as sponsors.
 <!-- more -->
 Just like last year, the day was all about [Eclipse SmartHome](https://www.eclipse.org/smarthome/), its solutions and especially its community.
-Not only were there again very interesting talks about the internals of Eclipse SmartHome and some of its new features. The audience also learned about cool projects that have been realised with it. The program concluded with a panel discussion about the pros and cons of different build and IDE approaches for the project.
+Not only were there again very interesting talks about the internals of Eclipse SmartHome and some of its new features. The audience also learned about cool projects that have been realised with it. The program concluded with a panel discussion about the pros and cons of different build and IDE approaches for the project - giving good insights into Maven, Tycho and Bnd.
 
 As the community is spread over the whole world and not everyone had the chance to come to Ludwigsburg, the Smart Home Day presentations were professionally recorded this year by the [CCC Video Operations Center](https://c3voc.de/). They did an awesome job and not only provided us high-quality recordings, but also had all of them uploaded and shared [a few minutes after the event was over](https://twitter.com/kaikreuzer/status/1053999503471243264).
 
@@ -26,7 +26,7 @@ As the community is spread over the whole world and not everyone had the chance 
 
 #### The Agenda
 
-All videos are available on a [YouTube playlist](https://www.youtube.com/playlist?list=PLEGbpQEn6rvyikXIhZXmuztwgUz7V8Ufs) as well as on [media.ccc.de](https://media.ccc.de/c/ece-shd18).
+The day was packed with content from 10am in the morning until 5pm in the afternoon. All videos are available on a [YouTube playlist](https://www.youtube.com/playlist?list=PLEGbpQEn6rvyikXIhZXmuztwgUz7V8Ufs) as well as on [media.ccc.de](https://media.ccc.de/c/ece-shd18).
 
 | Presentation | Video |
 |-|-|
@@ -43,7 +43,7 @@ All videos are available on a [YouTube playlist](https://www.youtube.com/playlis
 | Eclipse SmartHome & Plain Old Maven<br/>_Lukasz Dywicki, Founder Code-House_ | [![Eclipse SmartHome & Plain Old Maven](https://img.youtube.com/vi/WBxCHxi1pM8/2.jpg)](https://www.youtube.com/watch?v=WBxCHxi1pM8&list=PLEGbpQEn6rvyikXIhZXmuztwgUz7V8Ufs&index=11&t=0s) |
 | Panel Discussion - Build Tooling for Eclipse SmartHome<br/>_Candidate 1: Maven - Advocated by Lukasz Dywicki<br/>Candidate 2: Tycho - Advocated by Kai Kreuzer<br/>Candidate 3: Bnd - Advocated by BJ Hargrave<br/>Moderation: Henning Treu_ | [![Panel Discussion - Build Tooling for Eclipse SmartHome](https://img.youtube.com/vi/92szjGgt0SY/3.jpg)](https://www.youtube.com/watch?v=92szjGgt0SY&list=PLEGbpQEn6rvyikXIhZXmuztwgUz7V8Ufs&index=13&t=0s) |
 
-A big thanks to everyone who has attended the event as well as to all the speakers that helped making the day a great success!
+A big thanks to everyone who has attended the event as well as to all the speakers that helped making the day a great success! There was a lot of very positive feedback on the talks and it always makes a very special atmosphere to have so many passionate community members together at one place. While we will try to repeat doing such events in future, everybody should feel encouraged to organise local meet-ups or other types of events around their favorite project - it is absolutely worth the efforts!
 
 You can find pictures of the Smart Home Day on Google Photos:
 <!--{:.center}-->
