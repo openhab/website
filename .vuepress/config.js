@@ -80,6 +80,8 @@ module.exports = {
     logo: `/openhab-logo.png`,
     // repo: 'openhab',
     editLinks: false,
+    activeHeaderLinks: false,
+    sidebarDepth: 0,
     docsDir: 'docs',
     algolia: {
       apiKey: 'af17a113c6a11af8057592a3120ffd3b',
