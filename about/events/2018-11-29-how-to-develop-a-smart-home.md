@@ -7,7 +7,7 @@ link: 'http://www.mug-it.org.ar/Event.aspx?Event=466'
 date: '2018-12-04T10:00:00-03:00'
 end_date: '2018-12-04T13:00:00-03:00'
 location: Talcahuano 469 1er Piso Buenos Aires Argentina
-event_image: /uploads/2016-12_appstore.jpg
+event_image: /uploads/mug-logo.png
 abstract: Learn step by step to build a smart home in an easy way with openHAB
 tags:
   - openHAB
