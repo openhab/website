@@ -3,7 +3,8 @@ layout: Event
 category: event
 title: How to Develop a Smart Home
 organizer: Guillermo Sanchez
-link: 'http://www.mug-it.org.ar/Event.aspx?Event=466'
+link: >-
+  https://www.itsanchez.com.ar/index.php/44-openhab/358-openhab-crear-casa-inteligente
 date: '2018-12-04T10:00:00-03:00'
 end_date: '2018-12-04T13:00:00-03:00'
 location: Talcahuano 469 1er Piso Buenos Aires Argentina
