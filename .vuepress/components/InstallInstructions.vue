@@ -133,7 +133,7 @@ usermod -a -G openhab myownuser
         -v openhab_userdata:/openhab/userdata \
         -d \
         --restart=always \
-        openhab/openhab:{{selectedVersion === 'stable' ? $page.frontmatter.currentVersion : selectedVersion === 'testing' ? $page.frontmatter.currentMilestoneVersion : $page.frontmatter.currentSnapshotVersion.toLowerCase()}}-amd64-debian
+        openhab/openhab:{{selectedVersion === 'stable' ? $page.frontmatter.currentVersion : selectedVersion === 'testing' ? $page.frontmatter.currentMilestoneVersion : $page.frontmatter.currentSnapshotVersion.toLowerCase()}}
 </code></pre>
         </div>
       </ol>
