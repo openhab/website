@@ -41,22 +41,10 @@
       </div>
     </div>
 
-    <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
-      <hr>
-      <h3>Install with Chocolatey</h3>
-      <ol>
-        <li>Right-click on the Start menu and select <em>Command Prompt (admin)</em> or <em>Windows PowerShell (admin)</em></li>
-        <li>Install the <a target="_blank" href="https://chocolatey.org/install">Chocolatey</a> package manager by running one of these commands:
-          <ul>
-            <li>If you opened a command prompt (cmd.exe)
-            <div class="language-shell"><pre class="language-shell"><code>@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"</code></pre></div></li>
-            <li>If you opened PowerShell
-            <div class="language-shell"><pre class="language-shell"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></pre></div></li>
-          </ul>
-        </li>
-        <li>Install the <a target="_blank" href="https://chocolatey.org/packages/openhab">openHAB Chocolatey package</a>:</li>
-        <div class="language-shell"><pre class="language-shell"><code>choco install openhab</code></pre></div>
-      </ol>
+    <div v-if="selectedVersion" class="tip custom-block">
+      <p v-if="selectedVersion === 'stable'"><strong>Stable</strong> versions are thoroughly tested semi-annual official releases of openHAB. Use the stable version for your production environment if you don't need the latest enhancements and prefer a robust system.</p>
+      <p v-if="selectedVersion === 'testing'"><strong>Milestone</strong> versions are intermediary releases of the next openHAB version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable snapshot version.</p>
+      <p v-if="selectedVersion === 'snapshot'"><strong>Snapshot</strong> versions are at most 1 or 2 days old and include the latest code. Use a snapshot for testing out very recent changes, but be aware some snapshots might be unstable. Use in production at your own risk!</p>
     </div>
 
     <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
@@ -145,28 +133,28 @@ usermod -a -G openhab myownuser
         -v openhab_userdata:/openhab/userdata \
         -d \
         --restart=always \
-        openhab/openhab:{{selectedVersion === 'stable' ? $page.frontmatter.currentVersion : $page.frontmatter.currentSnapshotVersion.toLowerCase()}}-amd64-debian
+        openhab/openhab:{{selectedVersion === 'stable' ? $page.frontmatter.currentVersion : selectedVersion === 'testing' ? $page.frontmatter.currentMilestoneVersion : $page.frontmatter.currentSnapshotVersion.toLowerCase()}}-amd64-debian
 </code></pre>
         </div>
       </ol>
     </div>
 
-    <div v-if="selectedSystem !== 'docker' && selectedVersion === 'stable'">
+    <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'testing')">
       <hr>
       <h3>Manual Installation</h3>
       <ol>
         <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>), see <router-link to="/docs/installation/#prerequisites">prerequisites</router-link></li>
         <li>Download and extract the openHAB runtime distribution from <a target="_blank" href="https://bintray.com/openhab/mvn/openhab-distro">https://bintray.com/openhab/mvn/openhab-distro</a>:</li>
         <div class="download-button-container">
-          <a class="download-button big" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${$page.frontmatter.currentVersion}%2Fopenhab-${$page.frontmatter.currentVersion}.zip`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Runtime</a>
+          <a class="download-button big" :href="runtimeDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
         </div>
         <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
         &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
         <div class="download-button-container">
-          <a class="download-button" style="margin-bottom: 0" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${$page.frontmatter.currentVersion}%2Fopenhab-addons-${$page.frontmatter.currentVersion}.kar`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Add-ons</a>
+          <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
         </div>
         <div class="download-button-container">
-          <a class="download-button" :href="`https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons-legacy%2F${$page.frontmatter.currentVersion}%2Fopenhab-addons-legacy-${$page.frontmatter.currentVersion}.kar`">Download openHAB {{$page.frontmatter.currentVersion}} Stable Legacy Add-ons</a>
+          <a class="download-button" :href="legacyAddonsDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Legacy Add-ons</a>
         </div>
         <li v-if="selectedSystem === 'apple'">
           Open <em>System Preferences &gt; Keyboard &gt; Shortcuts</em> and check the <em>New Terminal at Folder</em> option under <em>Services</em>:<br />
@@ -194,6 +182,28 @@ usermod -a -G openhab myownuser
         <div class="download-button-container">
           <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
         </div>
+      </ol>
+    </div>
+
+    <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
+      <hr>
+      <h3>Install with Chocolatey</h3>
+      <div class="danger custom-block">
+        <p class="custom-block-title">Unofficial installation method</p>
+        <p>Please note, the Chocolatey package is a community-provided installation option presented here as a convenience, and is not officially supported by the openHAB project.</p>
+      </div>
+      <ol>
+        <li>Right-click on the Start menu and select <em>Command Prompt (admin)</em> or <em>Windows PowerShell (admin)</em></li>
+        <li>Install the <a target="_blank" href="https://chocolatey.org/install">Chocolatey</a> package manager by running one of these commands:
+          <ul>
+            <li>If you opened a command prompt (cmd.exe)
+            <div class="language-shell"><pre class="language-shell"><code>@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"</code></pre></div></li>
+            <li>If you opened PowerShell
+            <div class="language-shell"><pre class="language-shell"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></pre></div></li>
+          </ul>
+        </li>
+        <li>Install the <a target="_blank" href="https://chocolatey.org/packages/openhab">openHAB Chocolatey package</a>:</li>
+        <div class="language-shell"><pre class="language-shell"><code>choco install openhab</code></pre></div>
       </ol>
     </div>
 
@@ -339,22 +349,6 @@ export default {
       selectedVersion: 'stable'
     }
   },
-  computed: {
-    versions () {
-      if (this.selectedSystem === 'tux') {
-        return [
-          ['stable', 'Stable'],
-          ['testing', 'Testing'],
-          ['snapshot', 'Snapshot']
-        ]
-      } else {
-        return [
-          ['stable', 'Stable'],
-          ['snapshot', 'Snapshot']
-        ]
-      }
-    }
-  },
   methods: {
     selectSystem (system) {
       this.selectedSystem = system
@@ -367,6 +361,50 @@ export default {
     },
     selectDistro (distro) {
       this.selectedDistro = distro
+    }
+  },
+  computed: {
+    versions () {
+      return [
+        ['stable', 'Stable'],
+        ['testing', 'Milestone'],
+        ['snapshot', 'Snapshot']
+      ]
+    },
+    runtimeDownloadLink () {
+      if (this.selectedVersion === 'stable') {
+        return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-${this.$page.frontmatter.currentVersion}.zip`
+      } else if (this.selectedVersion === 'testing') {
+        return `https://openhab.jfrog.io/openhab/libs-milestone-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
+      }
+    },
+    addonsDownloadLink () {
+      if (this.selectedVersion === 'stable') {
+        return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-addons-${this.$page.frontmatter.currentVersion}.kar`
+      } else if (this.selectedVersion === 'testing') {
+        return `https://openhab.jfrog.io/openhab/libs-milestone-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
+      }
+    },
+    legacyAddonsDownloadLink () {
+      if (this.selectedVersion === 'stable') {
+        return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons-legacy%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-addons-legacy-${this.$page.frontmatter.currentVersion}.kar`
+      } else if (this.selectedVersion === 'testing') {
+        return `https://openhab.jfrog.io/openhab/libs-milestone-local/org/openhab/distro/openhab-addons-legacy/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-legacy-${this.$page.frontmatter.currentMilestoneVersion}.kar`
+      }
+    },
+    currentDownloadVersion () {
+      if (this.selectedVersion === 'stable') {
+        return this.$page.frontmatter.currentVersion
+      } else if (this.selectedVersion === 'testing') {
+        return this.$page.frontmatter.currentMilestoneVersion
+      } else {
+        return this.$page.frontmatter.currentSnapshotVersion
+      }
+    },
+    currentVersionLabel () {
+      if (this.selectedVersion) {
+        return this.versions.find(v => v[0] === this.selectedVersion)[1]
+      }
     }
   }
 }

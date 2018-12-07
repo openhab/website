@@ -3,6 +3,7 @@ sidebar: false
 layout: AboutPage
 title: Download openHAB
 currentVersion: 2.3.0
+currentMilestoneVersion: 2.4.0.M7
 currentSnapshotVersion: 2.4.0-SNAPSHOT
 meta:
   - name: og:title
@@ -65,7 +66,7 @@ If you're new to openHAB, it is strongly recommended to read the [Installation G
 <h2 class="big-title">Acknowledgements</h2>
 
 <ul>
-<li><a href="https://www.jfrog.com">JFrog</a> is providing an <a href="https://openhab.jfrog.io">Artifactory instance for our snapshots</a> as well as distributing our <a href="https://bintray.com/openhab">releases through Bintray</a>.</li>
+<li><a href="https://www.jfrog.com">JFrog</a> is providing an <a href="https://openhab.jfrog.io">Artifactory instance for our snapshots and milestone builds</a> as well as distributing our <a href="https://bintray.com/openhab">releases through Bintray</a>.</li>
 <li><a href="https://www.digitalocean.com">DigitalOcean</a> sponsors our <a href="https://community.openhab.org/">community forum</a> hosting.</li>
 <li><a href="https://www.ej-technologies.com/">EJ Technologies</a> is providing us open source licenses for <a href="https://www.ej-technologies.com/products/jprofiler/overview.html">JProfiler</a> to make openHAB even more awesome.</li>
 <li><a href="https://www.netlify.com/">Netlify</a> provides continuous deployment and hosting for this website.</li>
