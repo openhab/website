@@ -37,7 +37,10 @@
       <div class="version-tab"
         v-for="version in versions"
         :class="{ 'selected': selectedVersion === version[0] }" @click="selectVersion(version[0])">
-        {{version[1]}}
+        <strong>{{version[1]}}</strong><br />
+        <small v-if="version[0] === 'stable'">{{$page.frontmatter.currentVersion}}</small>
+        <small v-if="version[0] === 'testing'">{{$page.frontmatter.currentMilestoneVersion}}</small>
+        <small v-if="version[0] === 'snapshot'">{{$page.frontmatter.currentSnapshotVersion}}</small>
       </div>
     </div>
 
@@ -329,6 +332,9 @@ usermod -a -G openhab myownuser
   .distro-tabs
     .distro-tab
       width 50%
+  .version-tabs
+    .version-tab
+      width 40%
 
 </style>
 
