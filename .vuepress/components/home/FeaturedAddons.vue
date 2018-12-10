@@ -1,6 +1,6 @@
 <template>
   <div class="featured-addons-section">
-    <h2>More than 1000 supported things!</h2>
+    <h2>More than 1500 supported things!</h2>
     <ClientOnly>
       <div class="logos">
         <router-link :to="addon.path" v-for="addon in featuredAddons" :key="addon.path" class="logo-container">
