@@ -3,7 +3,7 @@ sidebar: false
 layout: AboutPage
 title: Download openHAB
 currentVersion: 2.3.0
-currentMilestoneVersion: 2.4.0.M7
+currentMilestoneVersion: 2.4.0.M8
 currentSnapshotVersion: 2.4.0-SNAPSHOT
 meta:
   - name: og:title
