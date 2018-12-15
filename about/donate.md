@@ -39,7 +39,7 @@ promotes the project and the use of open, vendor-agnostic solutions to empower y
 
 - Organizing events such as the [Smart Home Day](/blog/2017-10-22-smarthomeday-ece.html);
 - Running this website on behalf of the project and dealing with marketing and media;
-- Maintaining the [build server](https://ci.openhab.com/) and the repositories of [release binaries](https://bintray.com/openhab);
+- Maintaining the [build server](https://ci.openhab.org/) and the repositories of [release binaries](https://bintray.com/openhab);
 - Hosting a [demo server](http://demo.openhab.org:8080/start/index) for new users to try openHAB;
 - Keeping the [community forum](https://community.openhab.org/) server up and running;
 - Running the free-of-charge [myopenHAB](https://community.openhab.org/) service, an openHAB Cloud instance
