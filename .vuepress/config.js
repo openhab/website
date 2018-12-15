@@ -261,6 +261,7 @@ module.exports = {
             'configuration/homebuilder',
             ['configuration/paperui', 'Paper UI'],
             ['configuration/ui/habmin/', 'HABmin'],
+            ['configuration/ui/habot/', 'HABot'],
             'configuration/habpanel',
             ['configuration/ui/basic/', 'Basic UI'],
             ['configuration/ui/classic/', 'Classic UI'],
