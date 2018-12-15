@@ -366,13 +366,13 @@ puts ">>> Migrating the UI section"
 
 
 Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
-    next if path =~ /habpanel/ || path =~ /habot/ || path =~ /paper/ # Those already have their own article, no need to include the readme...
+    next if path =~ /habpanel/ || path =~ /paper/ # Those already have their own article, no need to include the readme...
     addon = File.basename(path)
     puts " -> #{addon}"
     FileUtils.mkdir_p("docs/configuration/ui/" + addon)
     process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "docs/configuration/ui", "")
     puts " -> images (#{addon})"
-    FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "docs/configuration/ui/#{addon}")
+    FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "docs/configuration/ui/#{addon}") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/#{addon}/doc")
 }
 
 
