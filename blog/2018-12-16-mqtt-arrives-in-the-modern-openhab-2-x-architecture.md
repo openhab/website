@@ -47,9 +47,9 @@ A command topic is defined for the switch item, used when the switch is turned.
 What happens on the MQTT level for the command topic is:
 
 <ol>
-<li>The target device **subscribes** to the command topic `home/office/lamp/set`:
+  <li>The target device <b>subscribes</b> to the command topic <code>home/office/lamp/set</code>:
 <p align="center"> <img src="/uploads/2018-12_esh_mqtt-mqttpublishsubscribe1.png" alt="MQTT Command Topic Subscribe"> </p>
-<li>openHAB **publishes** via the MQTT connection to the command topic `home/office/lamp/set`:
+  <li>openHAB <b>publishes</b> via the MQTT connection to the command topic <code>home/office/lamp/set</code>:
 <p align="center"> <img src="/uploads/2018-12_esh_mqtt-mqttpublishsubscribe2.png" alt="MQTT Command Topic Publish"> </p>
 </ol>
 
@@ -84,7 +84,7 @@ Up until now, where some fundamental changes found their way into the codebase.
 ## MQTT in openHAB 2.4
 
 The new MQTT architecture has been realized in an easy extensible, modular way.
-They different bundles are fully test covered to live up to the high coding standards of openHAB.
+The different bundles are fully test covered to live up to the high coding standards of openHAB.
 
 I will now take you on a journey of exploring all the new features, arriving soon on your openHAB installation.
 
