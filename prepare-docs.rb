@@ -14,7 +14,7 @@ $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 $version = nil
 
-$ignore_bindings = ["mqtt", "mqtt.generic"]
+$ignore_bindings = []
 
 
 if ENV["OH_DOCS_VERSION"] then
@@ -260,6 +260,7 @@ def process_file(indir, file, outdir, source)
             line = line.gsub("<dimension>", '\<dimension\>')
             line = line.gsub("<TransformProgram>", '\<TransformProgram\>')
             line = line.gsub("<FlahshbriefingDeviceID>", '`<FlahshbriefingDeviceID>`') if file =~ /amazonechocontrol/
+            line = line.gsub("<SerialNumber>", '&lt;SerialNumber&gt;') if file =~ /airvisualnode/
             line = line.gsub("<version>", '&lt;version&gt;') if file =~ /caldav/
             line = line.gsub("by <step>", 'by `<step>`') if file =~ /ipx8001/
             line = line.gsub("<BR>", '<BR/>')
@@ -276,6 +277,8 @@ def process_file(indir, file, outdir, source)
             line = line.gsub("<username>", '&lt;username&gt;') if file =~ /zoneminder/
             line = line.gsub("<password>", '&lt;password&gt;') if file =~ /zoneminder/
             line = line.gsub("<yourzmip>", '&lt;yourzmip&gt;') if file =~ /zoneminder/
+            line = line.gsub("<chatId>", '&lt;chatId&gt;') if file =~ /telegram/
+            line = line.gsub("<token>", '&lt;token&gt;') if file =~ /telegram/
             line = line.gsub("<regular expression>", '\<regular expression\>')
             line = line.gsub('src="images/', 'src="./images/') if outdir =~ /apps/
 
