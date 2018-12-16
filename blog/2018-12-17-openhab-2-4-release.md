@@ -15,6 +15,8 @@ excerpt: >-
 ---
 As for the past few years, the openHAB maintainers have decided to do a new release just in time for the holiday season, which is the busiest time of the year in our community. So what could be more welcome than a brand new stable release?
 
+<!-- more -->
+
 The community has been again pretty active in the past six months since the last release. The clearest sign of this is the huge number of 34 new add-ons, but also the core runtime as well as existing add-ons have further evolved. All details can be found in the [openHAB 2.4 Release Notes](), but I'd like to mention a few specifically:
 
 ## Profiles
