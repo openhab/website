@@ -71,7 +71,7 @@ If your water meter for example sends JSon encoded data:
 ```
 Have a look at this corresponding `Number` item, where a JSONPATH is used to extract the value of interest:
 
-`` Number waterConsumption "consum [%d]" {mqtt="<[mybroker:myHome/watermeter:state:$.device.meters[0].value]"}`
+`Number waterConsumption "consum [%d]" {mqtt="<[mybroker:myHome/watermeter:state:$.device.meters[0].value]"}`
 
 Unfortunately the MQTT support did not evolve much while openHAB migrated to a new architecture for 2.x.
 
