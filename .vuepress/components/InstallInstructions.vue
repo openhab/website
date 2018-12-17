@@ -358,9 +358,6 @@ export default {
   methods: {
     selectSystem (system) {
       this.selectedSystem = system
-      if (system !== 'tux' && this.selectedVersion === 'testing') {
-        this.selectedVersion = null
-      }
     },
     selectVersion (version) {
       this.selectedVersion = version
@@ -373,7 +370,7 @@ export default {
     versions () {
       return [
         ['stable', 'Stable'],
-        ['testing', 'Milestone'],
+        // ['testing', 'Milestone'],
         ['snapshot', 'Snapshot']
       ]
     },

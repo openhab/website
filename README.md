@@ -1,7 +1,7 @@
 ---
 layout: HomePage
 # Comment or remove the alert below when it's not needed anymore
-# alert: "openHAB 2.3 Released!"
+alert: "openHAB 2.4 Released!"
 pageClass: homepage
 meta:
   - name: og:title
