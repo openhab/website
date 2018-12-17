@@ -3,7 +3,7 @@ layout: BlogPost
 category: blog
 title: openHAB 2.4 Release
 author: Kai Kreuzer
-date: '2018-12-16T23:57:45+01:00'
+date: '2018-12-17T00:57:45+01:00'
 previewimage: /uploads/2018-12_xmas.jpg
 tags:
   - news
