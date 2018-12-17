@@ -17,7 +17,7 @@ As for the past few years, the openHAB maintainers have decided to do a new rele
 
 <!-- more -->
 
-The community has been again pretty active in the past six months since the last release. The clearest sign of this is the huge number of 34 new add-ons, but also the core runtime as well as existing add-ons have further evolved. All details can be found in the [openHAB 2.4 Release Notes](), but I'd like to mention a few specifically:
+The community has been again pretty active in the past six months since the last release. The clearest sign of this is the huge number of 34 new add-ons, but also the core runtime as well as existing add-ons have further evolved. All details can be found in the [openHAB 2.4 Release Notes](https://github.com/openhab/openhab-distro/wiki/openHAB-2.4-Release-Notes), but I'd like to mention a few specifically:
 
 ## Profiles
 
@@ -38,7 +38,7 @@ There are two new options available for text-to-speech: The first is the [Google
 #### HABot
 
 HABot is related to voice, but it actually brings the best of two worlds together: It combines voice interaction with the benefits of graphical user interfaces and thus defines a completely new UI approach for openHAB - a chat bot!
-You can ask HABot questions about your home and it is able to present the desired information on the screen; it can be the suitable widgets to control some devices, it can be a chart with historic values or an image of a webcam - anything you wish. It is also highly customisable, i.e. it is possible to fine-tune its feedback and the next time, the customised screen will be shown right away. It is also context sensitive, so depending on the situation - e.g. whether you are at home or not or whether it is night or day - it can present  different responses.
+You can ask HABot questions about your home and it is able to present the desired information on the screen; this can be suitable widgets to control some devices, it can be a chart with historic values or an image of a webcam - anything you wish. It is furthermore highly customisable, i.e. it is possible to fine-tune its feedback and the next time, the customised screen will be shown right away. It is also context sensitive, so depending on the situation - e.g. whether you are at home or not or whether it is night or day - it can present different responses.
 
 Under the hood HABot uses natural language processing (NLP) and machine learning (using Apache OpenNLP) and it can be easily extended by capabilities, the so-called "intents". It is important to note that HABot only got started, so while already useful, its feature scope is still limited. Nonetheless, it guides the way towards a modern interaction scheme with the smart home and we will see it further evolving over the next releases.
 
@@ -54,7 +54,7 @@ On the bindings side, a great step forward for everyone who wants to realise ene
 
 ##### GPS Tracker / OwnTracks
 
-One of my favorite additions is the [GPSTracker binding](https://www.openhab.org/addons/bindings/gpstracker), which nicely integrates [OwnTracks](https://owntracks.org/booklet/) with openHAB. In the past, you had to run an exposed MQTT broker to which OwnTracks published its data, which wasn't easy to do for users and also meant a security risk if not done properly. The new integration now supports the HTTPS mode of OwnTracks and can be used in conjunction with [myopenHAB.org](https://www.myopenhab.org/) to securely pass the data to the local openHAB instance. It has never been so easy to use geofences for your automation logic!
+One of my favorite additions is the [GPSTracker binding](https://www.openhab.org/addons/bindings/gpstracker), which nicely integrates [OwnTracks](https://owntracks.org/booklet/) with openHAB. In the past, you had to run an exposed MQTT broker to which OwnTracks published its data, which wasn't easy to do for users and which also meant a security risk, if not done properly. The new integration now supports the private HTTPS mode of OwnTracks and can be used in conjunction with [myopenHAB.org](https://www.myopenhab.org/) to securely pass the data to the local openHAB instance. It has never been so easy to use geofences for your automation logic!
 
 <p align="center"><img src="/uploads/2018-12_owntracks.jpg"/></p>
 
@@ -65,11 +65,12 @@ All users of EnOcean devices will be delighted to hear that there is finally sup
 ##### MQTT
 
 Last but not least, the binding that is one of the most commonly used one has finally been ported to openHAB 2: the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt)! "MQTT" regularly being the top search keyword on the openHAB website is a clear indication that MQTT has managed to become the de-facto standard protocol for any DIY hardware integration. It is the first choice for many tinkerers that e.g. use Arduinos or ESP8266 as hardware.
-The new MQTT binding not only makes it much easier to setup an integration as this can now optionally be done fully through a graphical user interface (Paper UI), but it also knows about the [Homie convention](https://github.com/homieiot/convention) and even detects Home Assistant installations in the local network and brings their devices into the openHAB Inbox. You can find out more about all the new MQTT features in a dedicated blog post.
+The new MQTT binding not only makes it much easier to setup an integration as this can now optionally be done fully through a graphical user interface (Paper UI), but it also knows about the [Homie convention](https://github.com/homieiot/convention) and even detects Home Assistant installations in the local network and brings their devices into the openHAB Inbox. You can find out more about all the new MQTT features in a [dedicated blog post](https://www.openhab.org/blog/2018-12-16-mqtt-arrives-in-the-modern-openhab-2-x-architecture.html).
 
 ## Community
 
 It is awesome to see how the community keeps growing and how many new people are getting actively involved in the project. I feel that I am less and less a bottleneck for openHAB and I plan to further push into this direction, i.e. share more responsibilities and have more people steering the project. One part of this job will be to simplify the overall project setup and automate even more. With [monthly milestone builds](https://community.openhab.org/t/openhab-2-4-milestone-builds/50359) since summer, we are on a good path already.
-I can only re-iterate that all this is only possible by the many volunteers in the community - and anybody who wants to help on this joint effort is very welcome to become a part of it! So don't be shy and remember that open source is not about being free (as in beer), but about sharing with others. Merry Christmas to all of you!
+
+I can only re-iterate that all this is only possible by the many volunteers in the community - and anybody who wants to help on this joint effort is very welcome to become a part of it! So don't be shy and always remember that open source is not about being free (as in beer), but about sharing with others. Merry Christmas to all of you!
 
 <p align="center"><img src="/uploads/2018-12_xmas.jpg"/></p>
