@@ -13,6 +13,10 @@ excerpt: >-
   MQTT convention, it got even simpler with full auto-discovery of all device
   capabilities.
 ---
+openHAB 2.4 brings a few noticeable features, one of them is a new way of integrating your MQTT devices. What is MQTT actually? And how does the new implementation differ from what was already available?
+
+<!-- more -->
+
 If you haven't heard about MQTT yet, it is probably time to have a [look](https://en.wikipedia.org/wiki/MQTT). Quoting Wikipedia:
 
 > "MQTT (Message Queuing Telemetry Transport) is an ISO standard (ISO/IEC PRF 20922)[2] publish-subscribe-based messaging protocol. [&hellip;] It is designed for connections with remote locations where a "small code footprint" is required or the network bandwidth is limited.  [&hellip;]
