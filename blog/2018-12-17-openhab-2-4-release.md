@@ -21,8 +21,6 @@ The community has been again pretty active in the past six months since the last
 
 ## Profiles
 
-Profiles are a new feature, which is very powerful as it can replace the tedious writing of many simple rules. 
-
 [Profiles](https://www.openhab.org/docs/configuration/items.html#profiles) are a newly introduced, very powerful feature, which helps reducing the complexity of configurations for the Smart Home. In many homes there are some recurring patterns of how devices interact which each other: Buttons or rockers are for example often used to turn some other device on or off. Another common use case is that multiple devices (e.g. multiple bulbs within the same lamp) should always act together as if they were a single device. While it was already possible to fully cover these use cases with rules so far, it often resulted in numerous rules that do similar logic, but for different devices. Especially in large-scale setups, this could make it hard to keep the overview and maintain these rules. 
 
 A Profile describes the behavior of a link between a Channel and its associated Item (i.e. the raw function of a device and its logical representation within openHAB) and can thus completely replace simple rules. Through selecting an appropriate Profile, a wall switch can easily be assigned to toggle a light or to pause/resume a speaker. Likewise it is possible to offset a sensor value by a certain amount or to do any kind of more complex transformation on incoming values - all without writing a rule.
