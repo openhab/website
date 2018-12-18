@@ -75,7 +75,7 @@ Membership perks include:
 - access to special forums and other communication channels reserved for members;
 - for full members, the ability to attend general assemblies and vote to shape the future of the Foundation.
 
-Membership fees start as low as 2 &euro; per month. Visit the [membership page](http://www.openhabfoundation.org/members/membership) on openhabfoundation.org to learn more.
+Membership fees start as low as 2 &euro; per month. Visit the [membership page](https://www.openhabfoundation.org/join/) on openhabfoundation.org to learn more.
 
 ::: tip
 
