@@ -45,7 +45,7 @@ In a next step some lines like the following would have been added to your *.ite
 Switch mySwitch {mqtt="<[mybroker:home/office/lamp:state:default],>[mybroker:home/office/lamp/set:command:*]"}
 ```
 
-What you see above is an item, bound to a MQTT topic as the source for the item state.
+What you see above is an item, bound to an MQTT topic as the source for the item state.
 
 A command topic is defined for the switch item, used when the switch is turned.
 What happens on the MQTT level for the command topic is:
@@ -173,7 +173,7 @@ If you setup your next DIY Home-Automation gadget, consider flashing it with a *
 
 ### MQTT Generic Things
 
-It cannot be stressed enough, to consider changing existing MQTT client devices to a MQTT convention like the mentioned *Homie 3.x* convention.
+It cannot be stressed enough, to consider changing existing MQTT client devices to an MQTT convention like the mentioned *Homie 3.x* convention.
 That might not be possible in some cases though. 
 
 Use one or multiple *Generic MQTT Things* to group an arbitrary number of channels each:
@@ -330,5 +330,5 @@ that MQTT feels like a first class citizen now.
 If you have any comments on how we as a community can improve the support or covering even more use-cases,
 head over to the [discussion forum](https://community.openhab.org/).
 
-Cheers,
+Cheers,<br/>
 David Graeff
