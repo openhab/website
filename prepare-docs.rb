@@ -277,8 +277,8 @@ def process_file(indir, file, outdir, source)
             line = line.gsub("<username>", '&lt;username&gt;') if file =~ /zoneminder/
             line = line.gsub("<password>", '&lt;password&gt;') if file =~ /zoneminder/
             line = line.gsub("<yourzmip>", '&lt;yourzmip&gt;') if file =~ /zoneminder/
-            line = line.gsub("<chatId>", '&lt;chatId&gt;') if file =~ /telegram/
-            line = line.gsub("<token>", '&lt;token&gt;') if file =~ /telegram/
+            line = line.gsub(" <chatId> ", ' &lt;chatId&gt; ') if file =~ /telegram/
+            line = line.gsub(" <token> ", ' &lt;token&gt; ') if file =~ /telegram/
             line = line.gsub("<regular expression>", '\<regular expression\>')
             line = line.gsub('src="images/', 'src="./images/') if outdir =~ /apps/
 
