@@ -17,8 +17,6 @@ openHAB users can take advantage of IFTTT to realize even more use cases in thei
 
 Besides the new kinds of integration possibilities, IFTTT is also a good start for new openHAB users as it makes the creation of rules dead simple - no need to do any scripting, no complex setup routines, it all works through a few mouse clicks!
 
-insert here openHAB service logo from IFTTT.com
-
 # Getting Started
 
 ## Requirements
@@ -47,13 +45,14 @@ when
 then
 	createTimer(now.plusSeconds(160)) [|
 		logInfo("RULE", "Set initial values IFTTT items")
-		postUpdate(YourItem, 5)
+		postUpdate(YourItem, 0)
 	]
 end
 ```
-# Some Examples
 
-insert images of openHAB applets.
+**Sending notifications from openHAB to your mobile device via IFTTT**
+
+If you are using iOS or Android, you can use IFTTT to send notifications from your openHAB runtime to your device running iOS or Android. Read more about this [here](https://community.openhab.org/t/openhab-send-sensor-notification-to-ios-android-using-ifttt/24725).
 
 
 <EditPageLink/>
