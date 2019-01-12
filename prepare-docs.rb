@@ -290,10 +290,15 @@ def process_file(indir, file, outdir, source)
 
         # Add the components for the versions dropdown and the edit link
         out.puts
-        out.puts '<DocPreviousVersions/>'
+        out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
         out.puts '<EditPageLink/>'
     }
 end
+
+puts ">>> Migrating the introduction article"
+process_file(".vuepress/openhab-docs", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/master/introduction.md")
+FileUtils.mv("docs/introduction.md", "docs/readme.md")
+
 
 puts ">>> Migrating common images"
 FileUtils.mkdir_p("docs/images")
