@@ -295,6 +295,11 @@ def process_file(indir, file, outdir, source)
     }
 end
 
+puts ">>> Migrating the introduction article"
+process_file(".vuepress/openhab-docs", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/master/introduction.md")
+FileUtils.mv("docs/introduction.md", "docs/readme.md")
+
+
 puts ">>> Migrating common images"
 FileUtils.mkdir_p("docs/images")
 FileUtils.cp_r(".vuepress/openhab-docs/images/distro.png", "docs/images")
