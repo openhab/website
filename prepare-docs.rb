@@ -290,7 +290,7 @@ def process_file(indir, file, outdir, source)
 
         # Add the components for the versions dropdown and the edit link
         out.puts
-        out.puts '<DocPreviousVersions/>'
+        out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
         out.puts '<EditPageLink/>'
     }
 end
