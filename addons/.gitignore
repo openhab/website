@@ -1,5 +1,6 @@
 actions
-bindings
+bindings/*
+!bindings/yahooweather/
 integrations
 persistence
 transformations
