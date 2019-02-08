@@ -34,7 +34,7 @@ If you are organizing an event around openHAB, please let us know in the [Events
 <div class="events-block">
   <h2>Past events</h2>
 
-  <div v-for="year in [2018]"> <!-- don't forget to add previous years :) -->
+  <div v-for="year in Array(new Date().getFullYear()+1-2018).fill(0).map((e,i)=>i+2018).reverse()">
     <h3>{{year}}</h3>
     <ul class="event-list">
       <li v-for="page in $site.pages.filter((p) => p.frontmatter.layout === 'Event' && new Date(p.frontmatter.date).getFullYear() === year &&
