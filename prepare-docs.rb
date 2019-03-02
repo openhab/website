@@ -441,6 +441,7 @@ puts ">>> Migrating add-ons: Actions"
 
 Dir.glob(".vuepress/openhab-docs/_addons_actions/**") { |path|
     addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/actions/" + addon)
     process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", nil)
@@ -492,11 +493,11 @@ puts ">>> Migrating add-ons: IO"
 
 Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     # See below for the Alexa & Mycroft special cases
-    next if $ignore_addons.include?(addon)
     next if path =~ /alexa-skill/
     next if path =~ /mycroft-skill/
     next if path =~ /google-assistant/
     addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/integrations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
