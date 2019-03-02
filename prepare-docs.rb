@@ -14,7 +14,7 @@ $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 $version = nil
 
-$ignore_bindings = []
+$ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'jinja']
 
 
 if ENV["OH_DOCS_VERSION"] then
@@ -194,7 +194,7 @@ def process_file(indir, file, outdir, source)
             # Handle obsolete bindings
             if in_frontmatter && (line =~ /label: / || line =~ /title: /) && outdir == 'addons/bindings' && file =~ /1\// then
                 addon = file.split('/')[0]
-                if !$ignore_bindings.include?(addon.gsub('1', '')) && Dir.exists?("#{indir}/#{addon.gsub('1', '')}") then
+                if !$ignore_addons.include?(addon.gsub('1', '')) && Dir.exists?("#{indir}/#{addon.gsub('1', '')}") then
                     line = line.gsub("\n", "") + ' (1.x)' if !(line =~ /1\.x/)
                     if !obsolete_binding then
                         obsolete_binding = true
@@ -441,6 +441,7 @@ puts ">>> Migrating add-ons: Actions"
 
 Dir.glob(".vuepress/openhab-docs/_addons_actions/**") { |path|
     addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/actions/" + addon)
     process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", nil)
@@ -453,6 +454,7 @@ puts ">>> Migrating add-ons: Persistence"
 
 Dir.glob(".vuepress/openhab-docs/_addons_persistences/**") { |path|
     addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/persistence/" + addon)
     process_file(".vuepress/openhab-docs/_addons_persistences", addon + "/readme.md", "addons/persistence", nil)
@@ -465,6 +467,7 @@ puts ">>> Migrating add-ons: Transformations"
 
 Dir.glob(".vuepress/openhab-docs/_addons_transformations/**") { |path|
     addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/transformations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_transformations", addon + "/readme.md", "addons/transformations", nil)
@@ -477,6 +480,7 @@ puts ">>> Migrating add-ons: Voice"
 
 Dir.glob(".vuepress/openhab-docs/_addons_voices/**") { |path|
     addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/voice/" + addon)
     process_file(".vuepress/openhab-docs/_addons_voices", addon + "/readme.md", "addons/voice", nil)
@@ -493,6 +497,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     next if path =~ /mycroft-skill/
     next if path =~ /google-assistant/
     addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/integrations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
@@ -518,7 +523,7 @@ puts ">>> Migrating add-ons: Bindings"
 
 Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     addon = File.basename(path)
-    next if $ignore_bindings.include?(addon)
+    next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
