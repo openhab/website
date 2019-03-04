@@ -19,7 +19,7 @@ $categories_channels = {}
 $categories_places = []
 $categories_thing = []
 
-Dir.glob("#{$original_iconsets_location}/#{$iconset_name}/icons/*.png").each { |path|
+Dir.glob("#{$original_iconsets_location}/#{$iconset_name}/src/main/resources/icons/*.png").each { |path|
     $icons_list.push(File.basename(path))
 }
 
@@ -72,6 +72,6 @@ File.open("#{$out_dir}/#{$iconset_name}/readme.md", "w+") { |f|
 puts " -> File written in #{$out_dir}/#{$iconset_name}/readme.md"
 
 # FileUtils.mkdir_p(".vuepress/public/iconsets")
-FileUtils.cp_r("#{$original_iconsets_location}/#{$iconset_name}/icons", ".vuepress/public/iconsets/#{$iconset_name}")
+FileUtils.cp_r("#{$original_iconsets_location}/#{$iconset_name}/src/main/resources/icons", ".vuepress/public/iconsets/#{$iconset_name}")
 
 puts " -> Icons copied to .vuepress/public/iconsets/#{$iconset_name}"
