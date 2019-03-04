@@ -14,7 +14,7 @@ $esh_repo = "https://github.com/eclipse/smarthome"
 $esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 $version = nil
 
-$ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'jinja']
+$ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio']
 
 
 if ENV["OH_DOCS_VERSION"] then
