@@ -10,8 +10,6 @@ require "rexml/document"
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/master"
 $docs_repo_branch = "final"
-$esh_repo = "https://github.com/eclipse/smarthome"
-$esh_repo_root = $esh_repo + "/blob/master/docs/documentation"
 $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio']
@@ -32,19 +30,6 @@ else
     puts ">>> Cloning openhab-docs"
     `git clone --depth 1 --branch #{$version ? $version : $docs_repo_branch} https://github.com/openhab/openhab-docs .vuepress/openhab-docs`
 end
-
-$esh_features = []
-puts ">>> Download ESH addons feature file"
-# $features = Nokogiri::XML(Net::HTTP.get(URI.parse('https://raw.githubusercontent.com/openhab/openhab-distro/master/features/addons-esh/src/main/feature/feature.xml')))
-# $features.remove_namespaces!
-$features = REXML::Document.new(Net::HTTP.get(URI.parse('https://raw.githubusercontent.com/openhab/openhab-distro/master/features/addons-esh/src/main/feature/feature.xml')))
-REXML::XPath.each($features, "//feature/feature") { |f|
-    feature = f.text
-    if (feature =~ /esh-/) then
-        puts " -> Adding #{feature} as ESH feature"
-        $esh_features.push(feature)
-    end
-}
 
 # Get a list of sub-addons to transform them into links
 def get_subs_links(parent_addon_id, search_dir)
@@ -127,11 +112,7 @@ def process_file(indir, file, outdir, source)
                             elsif addon == "zwave" && !(file =~ /things/) then
                                 puts "    (add-on is zwave)"
                                 source = "https://github.com/openhab/org.openhab.binding.zwave/blob/master/README.md"
-                            elsif $esh_features.include?("esh-#{addon_type}-#{addon.gsub('.', '-')}") then
-                                puts "    (add-on is from ESH)"
-                                source = "https://github.com/eclipse/smarthome/blob/master/extensions/#{addon_type}/org.eclipse.smarthome.#{addon_type}.#{addon}/README.md"
                             elsif !(file =~ /things/) then
-                                puts "    (add-on is from openhab2-addons)"
                                 source = "https://github.com/openhab/openhab2-addons/blob/master/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
                             end
 
@@ -316,7 +297,7 @@ Dir.glob(".vuepress/openhab-docs/concepts/*.md").each { |path|
     file = File.basename(path)
     next if file == "categories.md"
     puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/concepts", file, "docs/concepts", "#{$esh_repo_root}/concepts/#{file}")
+    process_file(".vuepress/openhab-docs/concepts", file, "docs/concepts", "#{$docs_repo_root}/concepts/#{file}")
 }
 puts " -> images and diagrams"
 FileUtils.cp_r(".vuepress/openhab-docs/concepts/images", "docs/concepts/images")
