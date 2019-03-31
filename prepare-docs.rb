@@ -12,7 +12,7 @@ $docs_repo_root = $docs_repo + "/blob/master"
 $docs_repo_branch = "final"
 $version = nil
 
-$ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio']
+$ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
 
 
 if ENV["OH_DOCS_VERSION"] then
