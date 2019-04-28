@@ -486,6 +486,10 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
         puts "  \\-> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/doc", "addons/integrations/#{addon}")
     end
+    if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib")) then
+        puts "  \\-> images"
+        FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib", "addons/integrations/#{addon}")
+    end
 }
 
 # Handle those three separately - copy them in the "ecosystem" section
@@ -511,6 +515,9 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
         puts "  \\-> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc", "addons/bindings/#{addon}")
+    elsif (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib") && addon != "zwave") then
+        puts "  \\-> images"
+        FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib", "addons/bindings/#{addon}")
     elsif addon == "zwave" then
         puts "  \\-> things.md"
         FileUtils.mkdir_p("addons/bindings/zwave/doc")
