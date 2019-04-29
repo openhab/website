@@ -13,4 +13,4 @@ abstract: >-
 tags:
   - smarthomeday
 ---
-The openHAB Foundation organises another Smart Home Day at the Hochschule Darmstadt.
+The openHAB Foundation organises another Smart Home Day at the Hochschule Darmstadt. It is an half-day event from 11am-2:30pm and it is free for anybody to attend, but you need to register. The event is co-located with the foundation's General Assembly for the members, which starts at 3pm at the same venue.
