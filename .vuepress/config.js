@@ -291,17 +291,32 @@ module.exports = {
           ]
         },
         {
-          title: 'Developer Guide',
+          title: 'Addon Development',
           collapsable: false,
           children: [
-            ['developer/', 'Development Overview'],
-            'developer/contributing/contributing',
-            'developer/contributing/governance',
-            'developer/development/ide',
-            'developer/development/guidelines',
-            'developer/development/bindings',
-            'developer/development/logging',
-            'developer/development/compatibilitylayer',
+            ['developer/', 'Overview & Introduction'],
+            'developer/guidelines',
+            'developer/bindings/',
+            'developer/module-types/',
+            'developer/transformations/',
+            'developer/ioservices/',
+            'developer/persistence/',
+            'developer/audio/',
+          ]
+        },
+        {
+          title: 'Additional Developer Information',
+          collapsable: false,
+          children: [
+            'developer/buildsystem',
+            'developer/osgi/osgi',
+            'developer/utils/tools',
+            'developer/utils/i18n',
+            'developer/utils/events',
+            'developer/tests',
+            'developer/contributing',
+            'developer/governance',
+            'developer/legacy/compatibilitylayer',
           ]
         },
       ],
