@@ -294,7 +294,7 @@ module.exports = {
           title: 'Addon Development',
           collapsable: false,
           children: [
-            ['developer/', 'Overview & Introduction'],
+            ['developer/', 'Overview & Introduction '],
             'developer/guidelines',
             'developer/bindings/',
             'developer/module-types/',
