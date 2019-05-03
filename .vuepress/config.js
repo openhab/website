@@ -41,7 +41,9 @@ module.exports = {
       md.options.highlight = (str, lang) => {
         /* Simple heuristics to detect rules & other openHAB DSL code snippets and override the language */
         if (str.match(/\b(?:Color|Contact|Dimmer|Group|Number|Player|Rollershutter|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap)\b/)) {
-          lang = 'dsl'
+          if (!str.match(/\b(?:private|public|protected|class|implements|extends|thing-type|thing-description|channel-type)\b/)) {
+            lang = 'dsl'
+          }
         }
         if (str.match(/\b(?:String|DateTime)\b/) && lang !== 'java' && lang !== 'xml') {
           lang = 'dsl'
