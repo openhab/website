@@ -413,6 +413,7 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/developers/bindings/images", "docs/developer/bindings/images")
 FileUtils.cp_r(".vuepress/openhab-docs/developers/legacy/images", "docs/developer/legacy/images")
 FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/osgi/images")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/images", "docs/developer/images")
 
 
 ### ADDONS
