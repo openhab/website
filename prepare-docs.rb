@@ -401,7 +401,7 @@ Dir.glob(".vuepress/openhab-docs/developers/*.md") { |path|
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/developers", file, "docs/developer", "#{$docs_repo_root}/developer/#{file}")
 }
-["audio", "bindings", "ioservices", "legacy", "module-types", "osgi", "persistence", "transformations", "utils"].each { |subsection|
+["audio", "bindings", "ioservices", "legacy", "module-types", "osgi", "persistence", "transformations", "utils", "ide"].each { |subsection|
     Dir.glob(".vuepress/openhab-docs/developers/#{subsection}/*.md") { |path|
         file = File.basename(path)
         puts " -> #{subsection}/#{file}"
@@ -413,7 +413,7 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/developers/bindings/images", "docs/developer/bindings/images")
 FileUtils.cp_r(".vuepress/openhab-docs/developers/legacy/images", "docs/developer/legacy/images")
 FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/osgi/images")
-FileUtils.cp_r(".vuepress/openhab-docs/developers/images", "docs/developer/images")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/ide/images")
 
 
 ### ADDONS
