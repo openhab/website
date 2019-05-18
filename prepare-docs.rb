@@ -420,7 +420,6 @@ FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/i
 
 
 
-
 puts ">>> Migrating add-ons: Actions"
 
 
