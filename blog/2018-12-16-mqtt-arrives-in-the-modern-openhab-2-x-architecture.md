@@ -244,7 +244,7 @@ You find all examples in this blog post performed via Paper UI.
 You can of course still setup every aspect via text files,
 like in the following examples.
 
-*broker.thing* file:
+*broker.things* file:
 ```
 mqtt:broker:mySecureBroker [ host="192.168.0.41", secure=true, certificatepin=true, publickeypin=true ]
 mqtt:broker:myUnsecureBroker [ host="192.168.0.42", secure=false ]
@@ -259,7 +259,7 @@ mqtt:broker:pinToPublicKey [ host="192.168.0.44", secure=true , publickeypin=tru
 * A third connection uses a username and password for authentication. The credentials are plain values on the wire, therefore you should only use this on a secure connection.
 * In a forth connection, the public key pinning is enabled again. This time, a public key hash is provided to pin the connection to a specific server. It follows the form "hashname:hashvalue". Valid hashnames are SHA-1, SHA-224, SHA-256, SHA-384, SHA-512 and all others listed in Java MessageDigest Algorithms.
 
-*mqtt.thing* file:
+*mqtt.things* file:
 
 ```
 Bridge mqtt:broker:myUnsecureBroker [ host="192.168.0.42", secure=false ]
