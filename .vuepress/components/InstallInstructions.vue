@@ -119,7 +119,7 @@ enabled=1
         <li>Create the <code>openhab</code> user:</li>
         <div class="language-shell">
 <pre class="language-shell"><code>groupadd -g 9001 openhab
-groupadd -g 9001 openhab
+useradd -g 9001 openhab
 usermod -a -G openhab myownuser
 </code></pre>
         </div>
