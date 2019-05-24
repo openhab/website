@@ -293,7 +293,7 @@ module.exports = {
           ]
         },
         {
-          title: 'Addon Development',
+          title: 'Developer Guide',
           collapsable: false,
           children: [
             ['developer/', 'Overview & Introduction '],
@@ -307,7 +307,7 @@ module.exports = {
           ]
         },
         {
-          title: 'Additional Developer Information',
+          title: 'Developer Appendix',
           collapsable: false,
           children: [
             'developer/buildsystem',
