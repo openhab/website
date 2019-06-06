@@ -65,7 +65,7 @@ I‘ve never heard from him. He told me that he has no time to be part of our co
 Another vibrant event immediately followed the really cool Bosch Hackathon - I attended the 
 
 ## Maker Faire Berlin. 
-Attendees: the do-it-yourself (DYI) community. Starting on Friday with a day exclusively for school children. That is one of our target groups. The young talents. We need them [target group 1] because many of us are "really old" and as a sustainable open source software community we have to hand the project over to the younger ones. You can imagine the fun with young people if you show them the smart home. They spontaneously understand the dependencies.
+Attendees: The do-it-yourself (DYI) community. Starting on Friday with a day exclusively for school children. That is one of our target groups. The young talents. We need them [target group 1] because many of us are "really old" and as a sustainable open source software community we have to hand the project over to the younger ones. You can imagine the fun with young people if you show them the smart home. They spontaneously understand the dependencies.
 
 Saturday and Sunday were open for general public. I’ve never met so many happy people, **giving a warm applause and a big thank you** to me (as the representative of the openHAB community) **for our software project**. Most of them were never active in our forum. I invited them to switch their habits and be part of our wonderful community. „Say 'we' instead of 'you' please!“ [target group 2]
 
@@ -77,10 +77,10 @@ One week later I attend the Smart Home Day in Darmstadt ... But that is another 
 My call to action for our community: Keep in mind (at every occasion) that we have marketing goals. Let's turn interested people into amateurs and turn amateurs into community members. Let's grow the community! 
 
 I want to thank the people who helped making these events happen. Take a look at their faces on twitter. 
-https://twitter.com/luckow/status/1129754848474423298<br />
-https://twitter.com/luckow/status/1129697333581688833<br /> 
-https://twitter.com/luckow/status/1127952085570543619<br />
-https://twitter.com/luckow/status/1129684514123505664<br />
-https://twitter.com/luckow/status/1127952723532570624<br />
-https://twitter.com/luckow/status/1130024976952778753<br />
-https://twitter.com/luckow/status/1128348798705598469<br />
+* https://twitter.com/luckow/status/1129754848474423298
+* https://twitter.com/luckow/status/1129697333581688833
+* https://twitter.com/luckow/status/1127952085570543619
+* https://twitter.com/luckow/status/1129684514123505664
+* https://twitter.com/luckow/status/1127952723532570624
+* https://twitter.com/luckow/status/1130024976952778753
+* https://twitter.com/luckow/status/1128348798705598469
