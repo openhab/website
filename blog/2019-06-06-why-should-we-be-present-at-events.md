@@ -7,8 +7,8 @@ date: '2019-06-06'
 previewimage: /uploads/190606_why_be_present.jpg
 tags:
   - news
-excerpt: >-
-  My call to action for our community: Keep in mind (at every occasion) that we have marketing goals. Let's turn interested people into amateurs and turn amateurs into community members. Let's grow the community!
+excerpt: >- 
+  "My call to action for our community: Keep in mind (at every occasion) that we have marketing goals. Let's turn interested people into amateurs and turn amateurs into community members. Let's grow the community!"
 ---
 My call to action for our community: Keep in mind (at every occasion) that we have marketing goals. Let's turn interested people into amateurs and turn amateurs into community members. Let's grow the community!
 
