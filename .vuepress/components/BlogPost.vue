@@ -107,3 +107,14 @@ export default {
   }
 }
 </script>
+
+<script>
+import Vue from 'vue'
+
+export default {
+  mounted () {
+    const Tweet = require('vue-tweet-embed/tweet').default
+    Vue.component('tweet', Tweet)
+  }
+}
+</script>
