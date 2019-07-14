@@ -4,7 +4,7 @@ category: blog
 title: Smart Home Day @ Hochschule Darmstadt 2019
 author: Jerome Luckenbach
 date: '2019-07-18T11:14:45+01:00'
-previewimage: 
+previewimage: /uploads/2019-0525-smart-home-day-2019.jpg
 tags:
   - openhab
   - smarthome
@@ -25,7 +25,7 @@ Some readers may already know *openHAB Foundations* mission to "educate the publ
 Related to this we are happy in having the chance to share some knowledge and enthusiasm for this mission in this academic environment and context.
 
 <!--{:.center}-->
-<img class="img-responsive" src="/uploads/2018-10_shd.jpg" alt="">
+<img class="img-responsive" src="/uploads/2019-0525-smart-home-day-2019_2.jpg" alt="">
 
 #### The Agenda
 
