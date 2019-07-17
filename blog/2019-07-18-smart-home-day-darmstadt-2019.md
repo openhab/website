@@ -41,7 +41,7 @@ See also our [community forum](https://community.openhab.org/t/smart-home-day-in
 | Optimisation of in-house consumption of solar energy with openHAB                          | Kai Kreuzer, openHAB Foundation e.V.           | [Slides](https://www.openhabfoundation.org/documents/2019-07_SHD2019_Solar_Energy_Optimisation.pdf) |
 | SmaC: openHAB in a smart caravan                                                           | Marius Falk, Hahn-Schickard-Gesellschaft e.V.  | [Slides](https://www.openhabfoundation.org/documents/2019-07_SHD2019_Smart_Caravan.pdf) |
 | A new frontend for openHAB                                                                 | Yannick Schaus, openHAB Foundation e.V.        | [Slides](https://www.openhabfoundation.org/documents/2019-07_SHD2019_A_new_frontend_for_openHAB.pdf) |
-| openHAB Alexa: Past, Present and Future  | Dan Cunningham, openHAB Foundation e.V.          |                                                |                                                               |
+| openHAB Alexa: Past, Present and Future                                                     | Dan Cunningham, openHAB Foundation e.V.       | [Slides](https://www.openhabfoundation.org/documents/2019-07_SHD2019_Alexa.pdf)                 |
 
 A big thanks to everyone who has attended the event as well as to all the speakers that helped making the day a great success! There was a lot of very positive feedback on the talks. Also we would like to thank *Hochschule Darmstadt* for the possibility to host this event at their location.
 
