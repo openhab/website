@@ -9,7 +9,7 @@
     "vue-parallax": "^1.1.1",
     "vue-parallaxy": "^1.1.1",
     "vue-tabs-component": "^1.5.0",
-    "vue-tweet-embed": "^2.3.0",
+    "vue-tweet-embed": "^2.1.2",
     "vuepress-tabs": "^0.1.6"
   },
   "devDependencies": {
