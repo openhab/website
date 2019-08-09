@@ -95,7 +95,7 @@
         <div class="language-ini">
 <pre class="language-ini"><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
 name=openHAB 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
-baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://dl.bintray.com/openhab/rpm-repo2/testing' : 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable'}}
+baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/testing' : 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable'}}
 gpgcheck=1
 gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 enabled=1
