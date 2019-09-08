@@ -53,6 +53,7 @@ def process_file(indir, file, outdir, source)
     frontmatter_processed = false
     has_source = false
     has_logo = false
+    since_1x = false
     obsolete_binding = false
     og_title = 'openHAB'
     og_description = 'a vendor and technology agnostic open source automation software for your home'
@@ -188,7 +189,7 @@ def process_file(indir, file, outdir, source)
             end
 
             if !in_frontmatter && line =~ /^# / then
-                line = line + ' <Badge type="warn" text="v1"/>' if since_1x
+                line = line.gsub("\n", "") + ' <Badge type="warn" text="v1"/>' if since_1x
 
                 # Put a warning banner for obsolete bindings
                 out.puts line
