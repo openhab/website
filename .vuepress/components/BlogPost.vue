@@ -89,6 +89,7 @@
 
 <script>
 import Footer from './Footer.vue'
+import Vue from 'vue'
 
 export default {
   name: 'AboutPage',
@@ -104,6 +105,10 @@ export default {
     previewimage () {
       return this.$page.frontmatter.previewimage
     }
+  },
+  mounted () {
+    const Tweet = require('vue-tweet-embed/tweet').default
+    Vue.component('tweet', Tweet)
   }
 }
 </script>

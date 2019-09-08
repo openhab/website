@@ -14,8 +14,6 @@ My call to action for our community: Keep in mind (at every occasion) that we ha
 
 <!-- more -->
 
-# Why should we – as the openHAB community – be present at events?
-
 Marketing says: 
 * Know your target group. 
 * Define your calls to action. 
@@ -52,7 +50,7 @@ Patrick was the lead of the openHAB booth at Bosch Hackathon. He did a terrific 
 Spoiler: The winning team doesn‘t use openHAB. But: hey. that‘s life :)
 
 My personal highlight was a conversation with some nice guys from the influxDB community.
-Personally I use [openHABian](https://www.openhab.org/docs/installation/openhabian.html) for the convenient roll-out of fresh installs,  clicking „InfluxDB & Grafana“ in the openhabian-config. That's how I came to ask the guys from InfluxDB if they know that our community uses their software. They had no idea. Hah.
+Personally I use [openHABian](/docs/installation/openhabian.html) for the convenient roll-out of fresh installs,  clicking „InfluxDB & Grafana“ in the openhabian-config. That's how I came to ask the guys from InfluxDB if they know that our community uses their software. They had no idea. Hah.
 
 I handed a console to David (a developer from the InfluxDB community) and asked him nicely if he would review our implementation and configuration of InfluxDB. 
 5 minutes later there was a warm applause because we – the openHAB-Community – did everything right. In short: InfluxDB inspected our implementation and gave us the confidence of using InfluxDB the right way. Check. **Thanks David for investing your time**!
@@ -69,12 +67,23 @@ Attendees: The do-it-yourself (DYI) community. Starting on Friday with a day exc
 
 Saturday and Sunday were open for general public. I’ve never met so many happy people, **giving a warm applause and a big thank you** to me (as the representative of the openHAB community) **for our software project**. Most of them were never active in our forum. I invited them to switch their habits and be part of our wonderful community. „Say 'we' instead of 'you' please!“ [target group 2]
 
-On Sunday I gave a session in the venue cinema with the topic “What is the 'smart' in smart home?”. [all target groups]
+On Sunday I gave a session in the venue's cinema with the topic “What is the 'smart' in smart home?”. [all target groups]
 
 After 7 days in a row of supporting our fantastic project openHAB, I felt a bit like never ever talking about home automation again :) 
-One week later I attend the Smart Home Day in Darmstadt ... But that is another story.
+One week later I attended the Smart Home Day in Darmstadt ... But that is a story for another time.
 
 My call to action for our community: Keep in mind (at every occasion) that we have marketing goals. Let's turn interested people into amateurs and turn amateurs into community members. Let's grow the community! 
 
-I want to thank the people who helped making these events happen. Take a look at their faces on <a href="https://twitter.com/i/moments/1137377647732936704">twitter</a>. 
+I want to thank the people who helped make these events happen. Take a look at their faces on twitter.
 
+<ClientOnly>
+  <div style="display:flex;flex-direction:column;align-items:center;">
+    <tweet id="1129754848474423298" />
+    <tweet id="1129697333581688833" />
+    <tweet id="1127952085570543619" />
+    <tweet id="1129684514123505664" />
+    <tweet id="1127952723532570624" />
+    <tweet id="1130024976952778753" />
+    <tweet id="1128348798705598469" />
+  </div>
+</ClientOnly>
