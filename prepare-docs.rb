@@ -76,6 +76,8 @@ def process_file(indir, file, outdir, source)
             next if line =~ /no_toc/
             has_source = true if in_frontmatter && line =~ /^source:/
             has_logo = true if in_frontmatter && line =~ /^logo:/
+            since_1x = true if in_frontmatter && line =~ /^since: 1x/
+
             if in_frontmatter && line =~ /^title:/ then
                 og_title = line.gsub('title: ', '').gsub("\n", "")
             end
@@ -186,6 +188,8 @@ def process_file(indir, file, outdir, source)
             end
 
             if !in_frontmatter && line =~ /^# / then
+                line = line + ' <Badge type="warn" text="v1">' if since_1x
+
                 # Put a warning banner for obsolete bindings
                 out.puts line
                 if obsolete_binding then

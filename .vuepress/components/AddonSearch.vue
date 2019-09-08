@@ -24,7 +24,7 @@
         <transition-group name="addons" class="addons" tag="ul">
           <li v-for="addon of galleryAddons[typeid]" class="addon" :key="addon.path">
             <router-link :to="addon.path">
-              <div class="version"><span :class="'v' + addon.frontmatter.since.replace('x', '')">{{'v' + addon.frontmatter.since.replace('x', '')}}</span></div>
+              <div class="version" v-if="addon.frontmatter.since === '1x'"><span class="v1">v1</span></div>
               <div class="main">
                 <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
                 <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
@@ -41,7 +41,7 @@
         <transition-group name="addons" v-if="results.addons.length > 0" class="addons" tag="ul">
           <li v-for="addon of results.addons" class="addon" :key="addon.path">
             <router-link :to="addon.path">
-              <div class="version"><span :class="'v' + addon.frontmatter.since.replace('x', '')">{{'v' + addon.frontmatter.since.replace('x', '')}}</span></div>
+              <div class="version" v-if="addon.frontmatter.since === '1x'"><span class="v1">v1</span></div>
               <div class="main">
                 <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
                 <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
@@ -178,10 +178,6 @@ h3.addon-type
         text-align right
         color white
         .v1
-          padding 3px
-          border-radius 3px
-          background-color #777
-        .v2
           padding 3px
           border-radius 3px
           background-color #f2c037
