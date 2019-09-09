@@ -53,6 +53,7 @@ def process_file(indir, file, outdir, source)
     frontmatter_processed = false
     has_source = false
     has_logo = false
+    since_1x = false
     obsolete_binding = false
     og_title = 'openHAB'
     og_description = 'a vendor and technology agnostic open source automation software for your home'
@@ -76,6 +77,8 @@ def process_file(indir, file, outdir, source)
             next if line =~ /no_toc/
             has_source = true if in_frontmatter && line =~ /^source:/
             has_logo = true if in_frontmatter && line =~ /^logo:/
+            since_1x = true if in_frontmatter && line =~ /^since: 1x/
+
             if in_frontmatter && line =~ /^title:/ then
                 og_title = line.gsub('title: ', '').gsub("\n", "")
             end
@@ -186,6 +189,8 @@ def process_file(indir, file, outdir, source)
             end
 
             if !in_frontmatter && line =~ /^# / then
+                line = line.gsub("\n", "").gsub("\r", "") + ' <Badge type="warn" text="v1"/>' if since_1x
+
                 # Put a warning banner for obsolete bindings
                 out.puts line
                 if obsolete_binding then
