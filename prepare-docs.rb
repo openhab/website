@@ -189,7 +189,7 @@ def process_file(indir, file, outdir, source)
             end
 
             if !in_frontmatter && line =~ /^# / then
-                line = line.gsub("\n", "") + ' <Badge type="warn" text="v1"/>' if since_1x
+                line = line.gsub("\n", "").gsub("\r", "") + ' <Badge type="warn" text="v1"/>' if since_1x
 
                 # Put a warning banner for obsolete bindings
                 out.puts line
