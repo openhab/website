@@ -4,7 +4,7 @@
     {{$page.frontmatter.alert}}
     </div>
     <div class="alert-button-container">
-      <a v-if="$page.frontmatter.alert_link && $page.frontmatter.link.indexOf('http') === 0" :href="$page.frontmatter.alert_link :to="$page.frontmatter.alert_link || '/blog/'" class="alert-button slide">{{$page.frontmatter.alert_label || 'Read the Blog'}} ➜</a>
+      <a v-if="$page.frontmatter.alert_link && $page.frontmatter.link.indexOf('http') === 0" :href="$page.frontmatter.alert_link" class="alert-button slide">{{$page.frontmatter.alert_label || 'Read More'}} ➜</a>
       <router-link v-else :to="$page.frontmatter.alert_link || '/blog/'" class="alert-button slide">{{$page.frontmatter.alert_label || 'Read the Blog'}} ➜</router-link>
     </div>
   </section>
