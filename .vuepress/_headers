@@ -8,7 +8,9 @@
   Cache-Control: public, s-max-age=604800
 /os/*
   Cache-Control: public, s-max-age=604800
-*.png
+/:image.png
+  Cache-Control: public, s-max-age=604800
+/:image.jpg
   Cache-Control: public, s-max-age=604800
 /v2*
   Cache-Control: public, s-max-age=604800
