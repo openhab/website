@@ -1,8 +1,8 @@
 ---
 layout: HomePage
 # Comment or remove the alert below when it's not needed anymore
-alert: "openHAB 2.5 Milestone 5 Released!"
-alert_link: https://community.openhab.org/t/openhab-milestone-builds/50359/520
+alert: "openHAB 2.5 Milestone 6 Released!"
+alert_link: https://community.openhab.org/t/openhab-milestone-builds/50359/531?u=kai
 alert_label: Read More
 pageClass: homepage
 meta:
