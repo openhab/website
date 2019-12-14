@@ -36,32 +36,36 @@ Besides the work on the openHAB distribution, there was a lot of activity in oth
 
 ### openHAB Alexa Skill
 
-Jeremy Setton, maintainer of the openHAB Alexa skill:
+_Jeremy Setton, maintainer of the openHAB Alexa skill:_
 
-> "The new Alexa skill supports Amazon’s latest Smart Home Skill API V3 which provides a much richer set of features to model devices for voice control. While the V2 version of the API allowed basic lighting, thermostat and lock control, the new API can model nearly anything, with native support for AV devices, security systems, scenes, as well as enhanced support for thermostats, locks and lighting/power devices. Most importantly, the skill also supports the flexible building block APIs extending voice control to any devices, from fans to complex appliances, such as washers, to blinds and doors, when associated with the latest semantic extensions feature. Finally, the new API introduces state reporting giving the ability to poll the current state of modeled devices in the Alexa mobile app.
->
-> The skill takes advantage of using openHAB metadata instead of tags. This allows a higher level of item customization exposed to Alexa. Existing tags will continue to work with the new skill, so users will not need to migrate their current configuration unless they wish to use the enhanced features that the new version of the skill provides. Additionally, it automatically streamlines the item configuration leveraging some of its properties, such type, state presentation and unit of measurement, along with the server regional settings.
->
-> It is available in all the currently supported Alexa skill’s languages and countries:
->
-> English (AU), English (CA), English (GB), English (IN), English (US), French (CA), French (FR), German (DE), Hindi (IN), Italian (IT), Japanese (JP), Portuguese (BR), Spanish (ES), Spanish (MX), Spanish (US)
->
-> The latest guide provides all the necessary information and examples to take advantage of these new features."
+The new Alexa skill supports Amazon’s latest Smart Home Skill API V3 which provides a much richer set of features to model devices for voice control. While the V2 version of the API allowed basic lighting, thermostat and lock control, the new API can model nearly anything, with native support for AV devices, security systems, scenes, as well as enhanced support for thermostats, locks and lighting/power devices. Most importantly, the skill also supports the flexible building block APIs extending voice control to any devices, from fans to complex appliances, such as washers, to blinds and doors, when associated with the latest semantic extensions feature. Finally, the new API introduces state reporting giving the ability to poll the current state of modeled devices in the Alexa mobile app.
+
+The skill takes advantage of using openHAB metadata instead of tags. This allows a higher level of item customization exposed to Alexa. Existing tags will continue to work with the new skill, so users will not need to migrate their current configuration unless they wish to use the enhanced features that the new version of the skill provides. Additionally, it automatically streamlines the item configuration leveraging some of its properties, such type, state presentation and unit of measurement, along with the server regional settings.
+
+It is available in all the currently supported Alexa skill’s languages and countries:
+
+English (AU), English (CA), English (GB), English (IN), English (US), French (CA), French (FR), German (DE), Hindi (IN), Italian (IT), Japanese (JP), Portuguese (BR), Spanish (ES), Spanish (MX), Spanish (US)
+
+The latest guide provides all the necessary information and examples to take advantage of these new features.
 
 ### openHAB iOS App
 
-Tim Müller-Seydlitz, maintainer of the openHAB iOS app:
+_Tim Müller-Seydlitz, maintainer of the openHAB iOS app:_
 
-> "After a long period of inactivity, the IOS client has received a flurry of new activities bringing the application into the modern world.
->
-> While there are numerous changes and updates, by far the largest one is not something that will be immediately visible to end users, but is critically important for future development: the Objective-C based code was completely ported to Swift. The amount of code rework and rewrite for this task was enormous. With our codebase now in Apple’s preferred language, we have come up to par with the development on other platforms. We also laid the foundation for more enhancements of our iOS application and have recruited an active community of contributors.
->
-> The most visible change resulting out of this port to Swift was made possible immediately after the release of iOS 13. The iOS app now supports the beautiful Dark Mode.
->
-> Also, video support is enhanced by adding support for mjpeg. The accessibility is improved by handling changes in font size. We implemented haptic feedback and have added a search bar for items in the sitemap. The authentication process was enhanced and is now supporting mTLS client certificates."
+After a long period of inactivity, the IOS client has received a flurry of new activities bringing the application into the modern world.
+
+While there are numerous changes and updates, by far the largest one is not something that will be immediately visible to end users, but is critically important for future development: the Objective-C based code was completely ported to Swift. The amount of code rework and rewrite for this task was enormous. With our codebase now in Apple’s preferred language, we have come up to par with the development on other platforms. We also laid the foundation for more enhancements of our iOS application and have recruited an active community of contributors.
+
+The most visible change resulting out of this port to Swift was made possible immediately after the release of iOS 13. The iOS app now supports the beautiful Dark Mode.
+
+Also, video support is enhanced by adding support for mjpeg. The accessibility is improved by handling changes in font size. We implemented haptic feedback and have added a search bar for items in the sitemap. The authentication process was enhanced and is now supporting mTLS client certificates.
 
 ### openHAB Android App
 
-Matthias Müller, maintainer of the openHAB Android app:
+_Matthias Müller, maintainer of the openHAB Android app:_
 
 t.b.d.
+
+<p align="center"><img src="/uploads/android.png"/></p>
+
+![Android app](/uploads/android.png)
