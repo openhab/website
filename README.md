@@ -1,9 +1,9 @@
 ---
 layout: HomePage
 # Comment or remove the alert below when it's not needed anymore
-alert: "openHAB 2.5 RC1 Released!"
-alert_link: https://community.openhab.org/t/openhab-milestone-builds/50359/540
-alert_label: Read More
+alert: "openHAB 2.5 Released!"
+# alert_link: https://community.openhab.org/t/openhab-2-5-has-been-released/87716
+# alert_label: Read More
 pageClass: homepage
 meta:
   - name: og:title
