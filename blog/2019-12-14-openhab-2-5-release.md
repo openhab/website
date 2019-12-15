@@ -26,11 +26,25 @@ As usual I won't go into all the details as I would recommend having a look at t
 
 ### Ephemeris
 
+The new [ephemeris feature](https://www.openhab.org/docs/configuration/actions.html#ephemeris) allows the creation of much more fine-grained automation rules: It provides information about the days: Is it a weekday or weekend? Is it a bank holiday? Is it anybody's birthday or maybe time to carry the trash outside? Using the ephemeris information within rules, it is much easier to adjust times for the automatic shutters, the alarm clock, the appropriate info messages in the morning etc.
+
+The features comes pre-configured with the official bank holidays for many countries and regions, but it is also fully customizable for other situations and requirements.
+
 ### Tesla Binding
+
+With photovoltaic systems becoming more wide-spread and electric vehicles revolutionizing the car industry, the discipline of energy management within smart homes receives an increasing attention. Especially since Tesla's Model 3 has hit the market and has become the [most attractive electric vehicle in 2019](https://cleantechnica.com/2019/12/05/tesla-model-3-13-percent-world-ev-sales-2019/), it was important to add support in openHAB for it.
+
+As a result, the [openHAB Tesla binding](https://www.openhab.org/addons/bindings/tesla/#tesla-binding) has been enhanced to support all current models (S, 3, X) and even the upcoming Model Y. The binding provides a [huge list of channels](https://www.openhab.org/addons/bindings/tesla/#channels), which gives access to all aspects of the car and especially to all details around the battery state, available range, charging settings and auto-conditioning.
+
+Besides accessing the vehicle from openHAB, it is obviously also possible to access openHAB from the vehicle as it provides a perfect screen for such purposes.
 
 ### Shelly Binding
 
-## Apps and Integrations
+Another very popular technology that had a strongly growing community throughout 2019 are the Shelly devices. Those devices are based on ESP chips, providing Wifi connectivity and embrace makers by not relying on a vendor cloud service, but by offering local connectivity through MQTT and CoAP protocols. It is great to see that this strategy proved to be very successful and the offered product range growing rapidly.
+
+While it was possible to use those devices with the MQTT binding already, the new [openHAB Shelly binding](https://www.openhab.org/addons/bindings/shelly/) makes it much easier to integrate those devices for people that are not experienced with MQTT. The binding supports auto-discovery and internally uses the modern CoAP protocol for communication.
+
+## Apps and Skills
 
 Besides the work on the openHAB distribution, there was a lot of activity in other parts of the overall openHAB solution, which are worth to mention. I'd like to give the word to the maintainers of the according components:
 
@@ -67,3 +81,12 @@ _Matthias Müller, maintainer of the _[_openHAB Android app_](https://play.googl
 t.b.d.
 
 <p align="center"><img src="/uploads/android.png"/></p>
+
+## Outlook
+
+With the release build, our development master branch has now become 3.0.0. This means that there will most likely be no openHAB 2.6 runtime in future, while there will still be 2.x updates on the add-ons, though.
+The focus of the core maintainers will clearly be on openHAB 3 from now on, which will bring bigger changes that have been discussed since a while: The existing UIs will be replaced by a single one, completely implemented from scratch. The "next-generation" rule engine will become the default one, bringing powerful Python-scripting to all users. Many more changes are discussed that will bring you a fully new experience, while offering an upgrade path for all existing users - so stay tuned!
+
+I would like to thank all our maintainers, contributors and users being such a fantastic community. It is awesome that we have reached another big milestone by shipping openHAB 2.5 and it has been a great journey so far - openHAB will celebrate its 10th anniversary next year! Please continue spreading the word and help growing the community.
+
+Enjoy the upcoming festive season, play with the new openHAB release and share your experiences with your family and friends!
