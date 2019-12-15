@@ -36,9 +36,9 @@ With photovoltaic systems becoming more wide-spread and electric vehicles revolu
 
 As a result, the [openHAB Tesla binding](https://www.openhab.org/addons/bindings/tesla/#tesla-binding) has been enhanced to support all current models (S, 3, X) and even the upcoming Model Y. The binding provides a [huge list of channels](https://www.openhab.org/addons/bindings/tesla/#channels), which gives access to all aspects of the car and especially to all details around the battery state, available range, charging settings and auto-conditioning.
 
-<p align="center"><img src="/uploads/tesla.jpg"/></p>
-
 Besides accessing the vehicle from openHAB, it is obviously also possible to access openHAB from the vehicle as it provides a perfect screen for such purposes.
+
+<p align="center"><img src="/uploads/tesla.jpg"/></p>
 
 ### Shelly Binding
 
