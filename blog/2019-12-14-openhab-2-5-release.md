@@ -84,6 +84,8 @@ While there are numerous changes and updates, by far the largest one is not some
 
 The most visible change resulting out of this port to Swift was made possible immediately after the release of iOS 13. The iOS app now supports the beautiful Dark Mode.
 
+<p align="center"><img src="/uploads/ioslightdark.jpg"/></p>
+
 Also, video support is enhanced by adding support for mjpeg. The accessibility is improved by handling changes in font size. We implemented haptic feedback and have added a search bar for items in the sitemap. The authentication process was enhanced and is now supporting mTLS client certificates.
 
 ### openHAB Android App
