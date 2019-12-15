@@ -88,8 +88,6 @@ Also, video support is enhanced by adding support for mjpeg. The accessibility i
 
 ### openHAB Android App
 
-_Matthias Müller, maintainer of the _[_openHAB Android app_](https://play.google.com/store/apps/details?id=org.openhab.habdroid)_:_
-
 t.b.d.
 
 <p align="center"><img src="/uploads/android.png"/></p>
