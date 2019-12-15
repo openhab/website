@@ -32,25 +32,25 @@ As usual I won't go into all the details as I would recommend having a look at t
 
 ## Apps and Integrations
 
-Besides the work on the openHAB distribution, there was a lot of activity in other parts of the overall openHAB solution, which are worth to mention. I'd like to give the word to the according maintainers of the components:
+Besides the work on the openHAB distribution, there was a lot of activity in other parts of the overall openHAB solution, which are worth to mention. I'd like to give the word to the maintainers of the according components:
 
 ### openHAB Alexa Skill
 
-_Jeremy Setton, maintainer of the openHAB Alexa skill:_
+_Jeremy Setton, maintainer of the _[_openHAB Alexa skill_](https://www.openhab.org/docs/ecosystem/alexa/)_:_
 
 The new Alexa skill supports Amazon’s latest Smart Home Skill API V3 which provides a much richer set of features to model devices for voice control. While the V2 version of the API allowed basic lighting, thermostat and lock control, the new API can model nearly anything, with native support for AV devices, security systems, scenes, as well as enhanced support for thermostats, locks and lighting/power devices. Most importantly, the skill also supports the flexible building block APIs extending voice control to any devices, from fans to complex appliances, such as washers, to blinds and doors, when associated with the latest semantic extensions feature. Finally, the new API introduces state reporting giving the ability to poll the current state of modeled devices in the Alexa mobile app.
 
 The skill takes advantage of using openHAB metadata instead of tags. This allows a higher level of item customization exposed to Alexa. Existing tags will continue to work with the new skill, so users will not need to migrate their current configuration unless they wish to use the enhanced features that the new version of the skill provides. Additionally, it automatically streamlines the item configuration leveraging some of its properties, such type, state presentation and unit of measurement, along with the server regional settings.
 
-It is available in all the currently supported Alexa skill’s languages and countries:
+It is [available](https://www.amazon.com/openHAB-Foundation/dp/B01MTY7Z5L) in all the currently supported Alexa skill’s languages and countries:
 
 English (AU), English (CA), English (GB), English (IN), English (US), French (CA), French (FR), German (DE), Hindi (IN), Italian (IT), Japanese (JP), Portuguese (BR), Spanish (ES), Spanish (MX), Spanish (US)
 
-The latest guide provides all the necessary information and examples to take advantage of these new features.
+The [latest guide](https://www.openhab.org/docs/ecosystem/alexa/) provides all the necessary information and examples to take advantage of these new features.
 
 ### openHAB iOS App
 
-_Tim Müller-Seydlitz, maintainer of the openHAB iOS app:_
+_Tim Müller-Seydlitz, maintainer of the _[_openHAB iOS app_](https://itunes.apple.com/us/app/openhab/id492054521?mt=8)_:_
 
 After a long period of inactivity, the IOS client has received a flurry of new activities bringing the application into the modern world.
 
@@ -62,10 +62,8 @@ Also, video support is enhanced by adding support for mjpeg. The accessibility i
 
 ### openHAB Android App
 
-_Matthias Müller, maintainer of the openHAB Android app:_
+_Matthias Müller, maintainer of the _[_openHAB Android app_](https://play.google.com/store/apps/details?id=org.openhab.habdroid)_:_
 
 t.b.d.
 
 <p align="center"><img src="/uploads/android.png"/></p>
-
-![Android app](/uploads/android.png)
