@@ -38,7 +38,7 @@ As a result, the [openHAB Tesla binding](https://www.openhab.org/addons/bindings
 
 Besides accessing the vehicle from openHAB, it is obviously also possible to access openHAB from the vehicle as it provides a perfect screen for such purposes.
 
-<p align="center"><img src="/uploads/tesla.jpg"/></p>
+<p align="center"><img src="/uploads/tesla.jpg/"/></p>
 
 ### Shelly Binding
 
@@ -96,7 +96,7 @@ The home screen widgets can be used to set an Item to a specific state or toggle
 
 The Tasker action plugin supports setting an Item to a fixed state or to the value of a Tasker variable. It supports both Item commands and updates and reports errors back to Tasker.
 
-<p align="center"><img src="/uploads/android.png"/></p>
+<p align="center"><img src="/uploads/android.png/"/></p>
 
 ## Outlook
 
