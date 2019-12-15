@@ -38,6 +38,8 @@ As a result, the [openHAB Tesla binding](https://www.openhab.org/addons/bindings
 
 Besides accessing the vehicle from openHAB, it is obviously also possible to access openHAB from the vehicle as it provides a perfect screen for such purposes.
 
+<p align="center"><img src="/uploads/tesla.jpg"/></p>
+
 ### Shelly Binding
 
 Another very popular technology that had a strongly growing community throughout 2019 are the Shelly devices. Those devices are based on ESP chips, providing Wifi connectivity and embrace makers by not relying on a vendor cloud service, but by offering local connectivity through MQTT and CoAP protocols. It is great to see that this strategy proved to be very successful and the offered product range growing rapidly.
@@ -61,6 +63,16 @@ It is [available](https://www.amazon.com/openHAB-Foundation/dp/B01MTY7Z5L) in al
 English (AU), English (CA), English (GB), English (IN), English (US), French (CA), French (FR), German (DE), Hindi (IN), Italian (IT), Japanese (JP), Portuguese (BR), Spanish (ES), Spanish (MX), Spanish (US)
 
 The [latest guide](https://www.openhab.org/docs/ecosystem/alexa/) provides all the necessary information and examples to take advantage of these new features.
+
+### openHAB Google Assistant
+
+_Mehmet Arziman, maintainer of the openHAB Google Assistant:_
+
+The Google Assistant Integration for openHAB, as one of the first included open source projects, received big improvements and refactorings. The overall integration got much more robust, flexible and extensible to be future-proof. The main architecture uses a stable serverless architecture with high security standards. 
+
+The integration works in all the languages that are supported by Google Assistant and it supports the latest Actions of the [Google Smarthome API](https://developers.google.com/assistant/smarthome/overview).
+
+Since being the first open source integration system within Google Assistant, Google added better documentation, examples and more support for device types. The openHAB Google Assistant Integration now supports  almost all possible devices, e.g rollershutters, doors & windows, vacuum cleaners, curtains, (door-)locks and many more. 
 
 ### openHAB iOS App
 
