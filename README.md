@@ -2,7 +2,7 @@
 layout: HomePage
 # Comment or remove the alert below when it's not needed anymore
 alert: "openHAB 2.5 Released!"
-# alert_link: https://community.openhab.org/t/openhab-2-5-has-been-released/87716
+alert_link: /blog/2019-12-14-openhab-2-5-release.html
 # alert_label: Read More
 pageClass: homepage
 meta:
