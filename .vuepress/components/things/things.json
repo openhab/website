@@ -51,7 +51,12 @@
   },
   {
     "id": "ambientweather:bridge",
-    "label": "Ambient Weather Bridge",
+    "label": "Ambient Weather Account",
+    "bindingId": "ambientweather"
+  },
+  {
+    "id": "ambientweather:ws0265",
+    "label": "WS-0265",
     "bindingId": "ambientweather"
   },
   {
@@ -76,12 +81,12 @@
   },
   {
     "id": "astro:moon",
-    "label": "Astro moon data",
+    "label": "Astro Moon Data",
     "bindingId": "astro"
   },
   {
     "id": "astro:sun",
-    "label": "Astro sun data",
+    "label": "Astro Sun Data",
     "bindingId": "astro"
   },
   {
@@ -161,12 +166,12 @@
   },
   {
     "id": "avmfritz:HAN_FUN_CONTACT",
-    "label": "HAN-FUN contact",
+    "label": "HAN-FUN Contact",
     "bindingId": "avmfritz"
   },
   {
     "id": "avmfritz:HAN_FUN_SWITCH",
-    "label": "HAN-FUN switch",
+    "label": "HAN-FUN Switch",
     "bindingId": "avmfritz"
   },
   {
@@ -271,7 +276,7 @@
   },
   {
     "id": "buienradar:rain_forecast",
-    "label": "Rain forecast",
+    "label": "Rain Forecast",
     "bindingId": "buienradar"
   },
   {
@@ -291,7 +296,7 @@
   },
   {
     "id": "cm11a:cm11a",
-    "label": "CM11a controller for X10 devices",
+    "label": "CM11a Controller for X10 Devices",
     "bindingId": "cm11a"
   },
   {
@@ -331,7 +336,7 @@
   },
   {
     "id": "darksky:weather-and-forecast",
-    "label": "Weather And Forecast",
+    "label": "Weather and Forecast",
     "bindingId": "darksky"
   },
   {
@@ -416,7 +421,7 @@
   },
   {
     "id": "digiplex:bridge",
-    "label": "Digiplex PRT3 module",
+    "label": "Digiplex PRT3 Module",
     "bindingId": "digiplex"
   },
   {
@@ -493,6 +498,16 @@
     "id": "dmx:tunablewhite",
     "label": "DMX Tunable White Dimmer",
     "bindingId": "dmx"
+  },
+  {
+    "id": "doorbird:d101",
+    "label": "Doorbird D101",
+    "bindingId": "doorbird"
+  },
+  {
+    "id": "doorbird:d210x",
+    "label": "Doorbird D210x",
+    "bindingId": "doorbird"
   },
   {
     "id": "dscalarm:envisalink",
@@ -745,6 +760,11 @@
     "bindingId": "enocean"
   },
   {
+    "id": "enocean:environmentalSensor",
+    "label": "Environmental Sensor",
+    "bindingId": "enocean"
+  },
+  {
     "id": "enocean:genericThing",
     "label": "Generic Thing",
     "bindingId": "enocean"
@@ -891,7 +911,7 @@
   },
   {
     "id": "fronius:bridge",
-    "label": "Fronius bridge",
+    "label": "Fronius Bridge",
     "bindingId": "fronius"
   },
   {
@@ -916,7 +936,7 @@
   },
   {
     "id": "gardena:mower",
-    "label": "Gardena Smart Sileno mower",
+    "label": "Gardena Smart Sileno Mower",
     "bindingId": "gardena"
   },
   {
@@ -1140,6 +1160,16 @@
     "bindingId": "hue"
   },
   {
+    "id": "hydrawise:cloud",
+    "label": "Hydrawise Cloud Thing",
+    "bindingId": "hydrawise"
+  },
+  {
+    "id": "hydrawise:local",
+    "label": "Hydrawise Local Thing",
+    "bindingId": "hydrawise"
+  },
+  {
     "id": "hyperion:serverV1",
     "label": "Hyperion Server",
     "bindingId": "hyperion"
@@ -1185,28 +1215,33 @@
     "bindingId": "innogysmarthome"
   },
   {
+    "id": "innogysmarthome:BT-PSS",
+    "label": "Bluetooth Pluggable Smart Switch (BT-PSS)",
+    "bindingId": "innogysmarthome"
+  },
+  {
     "id": "innogysmarthome:GenerationMeter",
     "label": "Generation Meter",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:ISC2",
-    "label": "In wall Smart Controller (ISC2)",
+    "label": "In Wall Smart Controller (ISC2)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:ISD2",
-    "label": "In wall Smart Dimmer (ISD2)",
+    "label": "In Wall Smart Dimmer (ISD2)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:ISR2",
-    "label": "In wall Smart Roller Shutter (ISR2)",
+    "label": "In Wall Smart Roller Shutter (ISR2)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:ISS2",
-    "label": "In wall Smart Switch (ISS2)",
+    "label": "In Wall Smart Switch (ISS2)",
     "bindingId": "innogysmarthome"
   },
   {
@@ -1226,12 +1261,12 @@
   },
   {
     "id": "innogysmarthome:RST",
-    "label": "Radiator mounted Smart Thermostat (RST)",
+    "label": "Radiator Mounted Smart Thermostat (RST)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:RST2",
-    "label": "Radiator mounted Smart Thermostat (RST2)",
+    "label": "Radiator Mounted Smart Thermostat (RST2)",
     "bindingId": "innogysmarthome"
   },
   {
@@ -1251,37 +1286,37 @@
   },
   {
     "id": "innogysmarthome:WDS",
-    "label": "Wall mounted Door/Window Sensor (WDS)",
+    "label": "Wall Mounted Door/Window Sensor (WDS)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:WMD",
-    "label": "Wall mounted Motion Detector Indoor (WMD)",
+    "label": "Wall Mounted Motion Detector Indoor (WMD)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:WMDO",
-    "label": "Wall mounted Motion Detector Outdoor (WMDO)",
+    "label": "Wall Mounted Motion Detector Outdoor (WMDO)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:WRT",
-    "label": "Wall mounted Room Thermostat (WRT)",
+    "label": "Wall Mounted Room Thermostat (WRT)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:WSC2",
-    "label": "Wall mounted Smart Controller (WSC2)",
+    "label": "Wall Mounted Smart Controller (WSC2)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:WSD",
-    "label": "Wall mounted Smoke Detector (WSD)",
+    "label": "Wall Mounted Smoke Detector (WSD)",
     "bindingId": "innogysmarthome"
   },
   {
     "id": "innogysmarthome:WSD2",
-    "label": "Wall mounted Smoke Detector (WSD2)",
+    "label": "Wall Mounted Smoke Detector (WSD2)",
     "bindingId": "innogysmarthome"
   },
   {
@@ -1356,7 +1391,7 @@
   },
   {
     "id": "km200:dhwCircuit",
-    "label": "Hot water circuit",
+    "label": "Hot Water Circuit",
     "bindingId": "km200"
   },
   {
@@ -1366,17 +1401,17 @@
   },
   {
     "id": "km200:heatingCircuit",
-    "label": "Heating circuit",
+    "label": "Heating Circuit",
     "bindingId": "km200"
   },
   {
     "id": "km200:heatSource",
-    "label": "Heat source",
+    "label": "Heat Source",
     "bindingId": "km200"
   },
   {
     "id": "km200:holidayMode",
-    "label": "Holiday mode",
+    "label": "Holiday Mode",
     "bindingId": "km200"
   },
   {
@@ -1391,12 +1426,12 @@
   },
   {
     "id": "km200:solarCircuit",
-    "label": "Solar circuit",
+    "label": "Solar Circuit",
     "bindingId": "km200"
   },
   {
     "id": "km200:switchProgram",
-    "label": "Switch program",
+    "label": "Switch Program",
     "bindingId": "km200"
   },
   {
@@ -1406,7 +1441,7 @@
   },
   {
     "id": "km200:systemStates",
-    "label": "System states",
+    "label": "System States",
     "bindingId": "km200"
   },
   {
@@ -1461,52 +1496,52 @@
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS100WITHBATTERY",
-    "label": "KOSTAL PLENTICORE plus 10.0 (with Battery)",
+    "label": "KOSTAL PLENTICORE Plus 10.0 (with Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS100WITHOUTBATTERY",
-    "label": "KOSTAL PLENTICORE plus 10.0 (no battery)",
+    "label": "KOSTAL PLENTICORE Plus 10.0 (no Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS42WITHBATTERY",
-    "label": "KOSTAL PLENTICORE plus 4.2 (with Battery)",
+    "label": "KOSTAL PLENTICORE Plus 4.2 (with Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS42WITHOUTBATTERY",
-    "label": "KOSTAL PLENTICORE plus 4.2 (no battery)",
+    "label": "KOSTAL PLENTICORE Plus 4.2 (no Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS55WITHBATTERY",
-    "label": "KOSTAL PLENTICORE plus 5.5 (with Battery)",
+    "label": "KOSTAL PLENTICORE Plus 5.5 (with Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS55WITHOUTBATTERY",
-    "label": "KOSTAL PLENTICORE plus 5.5 (no battery)",
+    "label": "KOSTAL PLENTICORE Plus 5.5 (no Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS70WITHBATTERY",
-    "label": "KOSTAL PLENTICORE plus 7.0 (with Battery)",
+    "label": "KOSTAL PLENTICORE Plus 7.0 (with Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS70WITHOUTBATTERY",
-    "label": "KOSTAL PLENTICORE plus 7.0 (no battery)",
+    "label": "KOSTAL PLENTICORE Plus 7.0 (no Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS85WITHBATTERY",
-    "label": "KOSTAL PLENTICORE plus 8.5 (with Battery)",
+    "label": "KOSTAL PLENTICORE Plus 8.5 (with Battery)",
     "bindingId": "kostalinverter"
   },
   {
     "id": "kostalinverter:PLENTICOREPLUS85WITHOUTBATTERY",
-    "label": "KOSTAL PLENTICORE plus 8.5 (no battery)",
+    "label": "KOSTAL PLENTICORE Plus 8.5 (no Battery)",
     "bindingId": "kostalinverter"
   },
   {
@@ -1550,28 +1585,33 @@
     "bindingId": "leapmotion"
   },
   {
+    "id": "lghombot:LGHomBot",
+    "label": "LG HomBot",
+    "bindingId": "lghombot"
+  },
+  {
     "id": "lgtvserial:lgtv-M6503C",
-    "label": "M6503C model",
+    "label": "M6503C Model",
     "bindingId": "lgtvserial"
   },
   {
     "id": "lgtvserial:lgtv-LV-series",
-    "label": "LV/LW series",
+    "label": "LV/LW Series",
     "bindingId": "lgtvserial"
   },
   {
     "id": "lgtvserial:lgtv-LVx55-series",
-    "label": "LV/LW series",
+    "label": "LV/LW Series",
     "bindingId": "lgtvserial"
   },
   {
     "id": "lgtvserial:lgtv-LK-series",
-    "label": "LK series",
+    "label": "LK Series",
     "bindingId": "lgtvserial"
   },
   {
     "id": "lgtvserial:lgtv-PW-series",
-    "label": "PW series",
+    "label": "PW Series",
     "bindingId": "lgtvserial"
   },
   {
@@ -1597,6 +1637,11 @@
   {
     "id": "lifx:colormzlight",
     "label": "LIFX Color MultiZone Light",
+    "bindingId": "lifx"
+  },
+  {
+    "id": "lifx:tilelight",
+    "label": "LIFX Tile Light",
     "bindingId": "lifx"
   },
   {
@@ -1645,6 +1690,11 @@
     "bindingId": "lutron"
   },
   {
+    "id": "lutron:blind",
+    "label": "Lutron Blind",
+    "bindingId": "lutron"
+  },
+  {
     "id": "lutron:switch",
     "label": "Maestro Switch",
     "bindingId": "lutron"
@@ -1685,6 +1735,11 @@
     "bindingId": "lutron"
   },
   {
+    "id": "lutron:palladiomkeypad",
+    "label": "Palladiom Keypad",
+    "bindingId": "lutron"
+  },
+  {
     "id": "lutron:pico",
     "label": "Pico Keypad",
     "bindingId": "lutron"
@@ -1697,6 +1752,11 @@
   {
     "id": "lutron:vcrx",
     "label": "VCRX",
+    "bindingId": "lutron"
+  },
+  {
+    "id": "lutron:wci",
+    "label": "WCI",
     "bindingId": "lutron"
   },
   {
@@ -1761,17 +1821,17 @@
   },
   {
     "id": "mail:smtp",
-    "label": "SMTP server",
+    "label": "SMTP Server",
     "bindingId": "mail"
   },
   {
     "id": "mail:imap",
-    "label": "IMAP server",
+    "label": "IMAP Server",
     "bindingId": "mail"
   },
   {
     "id": "mail:pop3",
-    "label": "POP3 server",
+    "label": "POP3 Server",
     "bindingId": "mail"
   },
   {
@@ -1806,8 +1866,23 @@
   },
   {
     "id": "mcp23017:mcp23017",
-    "label": "mcp23017",
+    "label": "MCP23017",
     "bindingId": "mcp23017"
+  },
+  {
+    "id": "melcloud:acdevice",
+    "label": "A.C. Device",
+    "bindingId": "melcloud"
+  },
+  {
+    "id": "melcloud:heatpumpdevice",
+    "label": "Heatpump Device",
+    "bindingId": "melcloud"
+  },
+  {
+    "id": "melcloud:melcloudaccount",
+    "label": "MELCloud Account",
+    "bindingId": "melcloud"
   },
   {
     "id": "meteoblue:bridge",
@@ -1816,7 +1891,7 @@
   },
   {
     "id": "meteoblue:weather",
-    "label": "Weather information",
+    "label": "Weather Information",
     "bindingId": "meteoblue"
   },
   {
@@ -2026,22 +2101,22 @@
   },
   {
     "id": "milight:rgbv2Led",
-    "label": "Color bulb (old)",
+    "label": "Color Bulb (old)",
     "bindingId": "milight"
   },
   {
     "id": "milight:bridgeV3",
-    "label": "Milight Bridge (first edition)",
+    "label": "Milight Bridge (first Edition)",
     "bindingId": "milight"
   },
   {
     "id": "milight:rgbLed",
-    "label": "Color bulb (first edition)",
+    "label": "Color Bulb (first Edition)",
     "bindingId": "milight"
   },
   {
     "id": "milight:whiteLed",
-    "label": "Cold/warm white bulb (first edition)",
+    "label": "Cold/warm White Bulb (first Edition)",
     "bindingId": "milight"
   },
   {
@@ -2051,18 +2126,38 @@
   },
   {
     "id": "milight:rgbiboxLed",
-    "label": "Integrated bulb (iBox)",
+    "label": "Integrated Bulb (iBox)",
     "bindingId": "milight"
   },
   {
     "id": "milight:rgbwLed",
-    "label": "Color bulb with cold white (iBox)",
+    "label": "Color Bulb with Cold White (iBox)",
     "bindingId": "milight"
   },
   {
     "id": "milight:rgbwwLed",
-    "label": "Color bulb with cold/warm white (iBox)",
+    "label": "Color Bulb with Cold/warm White (iBox)",
     "bindingId": "milight"
+  },
+  {
+    "id": "millheat:account",
+    "label": "Mill Heating API",
+    "bindingId": "millheat"
+  },
+  {
+    "id": "millheat:heater",
+    "label": "Wi-Fi Enabled Heater",
+    "bindingId": "millheat"
+  },
+  {
+    "id": "millheat:home",
+    "label": "Home",
+    "bindingId": "millheat"
+  },
+  {
+    "id": "millheat:room",
+    "label": "Room with one or more Wi-Fi enabled heaters",
+    "bindingId": "millheat"
   },
   {
     "id": "minecraft:server",
@@ -2081,22 +2176,22 @@
   },
   {
     "id": "modbus:poller",
-    "label": "Regular poll",
+    "label": "Regular Poll",
     "bindingId": "modbus"
   },
   {
     "id": "modbus:serial",
-    "label": "Modbus serial slave",
+    "label": "Modbus Serial Slave",
     "bindingId": "modbus"
   },
   {
     "id": "modbus:tcp",
-    "label": "Modbus TCP slave",
+    "label": "Modbus TCP Slave",
     "bindingId": "modbus"
   },
   {
     "id": "modbus:data",
-    "label": "Modbus data",
+    "label": "Modbus Data",
     "bindingId": "modbus"
   },
   {
@@ -2121,7 +2216,7 @@
   },
   {
     "id": "mqtt:homie300",
-    "label": "Homie MQTT device",
+    "label": "Homie MQTT Device",
     "bindingId": "mqtt"
   },
   {
@@ -2211,17 +2306,17 @@
   },
   {
     "id": "netatmo:NAMain",
-    "label": "Main indoor station",
+    "label": "Main Indoor Station",
     "bindingId": "netatmo"
   },
   {
     "id": "netatmo:NAModule1",
-    "label": "Outdoor module",
+    "label": "Outdoor Module",
     "bindingId": "netatmo"
   },
   {
     "id": "netatmo:NAModule2",
-    "label": "Wind gauge module",
+    "label": "Wind Gauge Module",
     "bindingId": "netatmo"
   },
   {
@@ -2231,17 +2326,17 @@
   },
   {
     "id": "netatmo:NAModule4",
-    "label": "Additional module",
+    "label": "Additional Module",
     "bindingId": "netatmo"
   },
   {
     "id": "netatmo:NAPlug",
-    "label": "Thermostat relay/plug",
+    "label": "Thermostat Relay/Plug",
     "bindingId": "netatmo"
   },
   {
     "id": "netatmo:NATherm1",
-    "label": "Thermostat module",
+    "label": "Thermostat Module",
     "bindingId": "netatmo"
   },
   {
@@ -2261,12 +2356,12 @@
   },
   {
     "id": "network:pingdevice",
-    "label": "Pingable network device",
+    "label": "Pingable Network Device",
     "bindingId": "network"
   },
   {
     "id": "network:servicedevice",
-    "label": "Network device with running service",
+    "label": "Network Device with Running Service",
     "bindingId": "network"
   },
   {
@@ -2281,12 +2376,12 @@
   },
   {
     "id": "nibeheatpump:f1x45-udp",
-    "label": "UDP connected Nibe F1145 and F1245 Heat Pumps",
+    "label": "UDP Connected Nibe F1145 and F1245 Heat Pumps",
     "bindingId": "nibeheatpump"
   },
   {
     "id": "nibeheatpump:f1x45-serial",
-    "label": "Serial port connected F1145 and F1245 Heat Pumps",
+    "label": "Serial Port Connected F1145 and F1245 Heat Pumps",
     "bindingId": "nibeheatpump"
   },
   {
@@ -2296,12 +2391,12 @@
   },
   {
     "id": "nibeheatpump:f1x55-udp",
-    "label": "UDP connected Nibe F1155 and F1255 Heat Pumps",
+    "label": "UDP Connected Nibe F1155 and F1255 Heat Pumps",
     "bindingId": "nibeheatpump"
   },
   {
     "id": "nibeheatpump:f1x55-serial",
-    "label": "Serial port connected F1155 and F1255 Heat Pumps",
+    "label": "Serial Port Connected F1155 and F1255 Heat Pumps",
     "bindingId": "nibeheatpump"
   },
   {
@@ -2311,12 +2406,12 @@
   },
   {
     "id": "nibeheatpump:f470-udp",
-    "label": "UDP connected Nibe F470 Heat Pumps",
+    "label": "UDP Connected Nibe F470 Heat Pumps",
     "bindingId": "nibeheatpump"
   },
   {
     "id": "nibeheatpump:f470-serial",
-    "label": "Serial port connected F470 Heat Pumps",
+    "label": "Serial Port Connected F470 Heat Pumps",
     "bindingId": "nibeheatpump"
   },
   {
@@ -2326,12 +2421,12 @@
   },
   {
     "id": "nibeheatpump:f750-udp",
-    "label": "UDP connected Nibe F750 Heat Pump",
+    "label": "UDP Connected Nibe F750 Heat Pump",
     "bindingId": "nibeheatpump"
   },
   {
     "id": "nibeheatpump:f750-serial",
-    "label": "Serial port connected F750 Heat Pump",
+    "label": "Serial Port Connected F750 Heat Pump",
     "bindingId": "nibeheatpump"
   },
   {
@@ -2481,7 +2576,7 @@
   },
   {
     "id": "onewire:basic",
-    "label": "Basic 1 wire sensor",
+    "label": "Basic 1 Wire Sensor",
     "bindingId": "onewire"
   },
   {
@@ -2491,7 +2586,7 @@
   },
   {
     "id": "onewire:counter2",
-    "label": "Counter sensor",
+    "label": "Counter Sensor",
     "bindingId": "onewire"
   },
   {
@@ -2501,7 +2596,7 @@
   },
   {
     "id": "onewire:temperature",
-    "label": "Temperature sensor",
+    "label": "Temperature Sensor",
     "bindingId": "onewire"
   },
   {
@@ -2531,7 +2626,7 @@
   },
   {
     "id": "onewire:ms-tx",
-    "label": "Multisensor (T, TC, TH, TL, TV, generic)",
+    "label": "Multisensor (T, TC, TH, TL, TV, Generic)",
     "bindingId": "onewire"
   },
   {
@@ -2710,11 +2805,6 @@
     "bindingId": "opensprinkler"
   },
   {
-    "id": "opensprinkler:pi",
-    "label": "OpenSprinkler Pi Interface",
-    "bindingId": "opensprinkler"
-  },
-  {
     "id": "opensprinkler:station",
     "label": "OpenSprinkler Station",
     "bindingId": "opensprinkler"
@@ -2741,7 +2831,7 @@
   },
   {
     "id": "openweathermap:weather-and-forecast",
-    "label": "Weather And Forecast",
+    "label": "Weather and Forecast",
     "bindingId": "openweathermap"
   },
   {
@@ -2771,7 +2861,7 @@
   },
   {
     "id": "paradoxalarm:zone",
-    "label": "Paradox zone",
+    "label": "Paradox Zone",
     "bindingId": "paradoxalarm"
   },
   {
@@ -2848,6 +2938,26 @@
     "id": "pioneeravr:serialAvr",
     "label": "Pioneer AVR over Serial",
     "bindingId": "pioneeravr"
+  },
+  {
+    "id": "pixometer:account",
+    "label": "Pixometer Account",
+    "bindingId": "pixometer"
+  },
+  {
+    "id": "pixometer:energymeter",
+    "label": "Energymeter",
+    "bindingId": "pixometer"
+  },
+  {
+    "id": "pixometer:gasmeter",
+    "label": "Gasmeter",
+    "bindingId": "pixometer"
+  },
+  {
+    "id": "pixometer:watermeter",
+    "label": "Watermeter",
+    "bindingId": "pixometer"
   },
   {
     "id": "pjLinkDevice:pjLinkDevice",
@@ -2941,7 +3051,7 @@
   },
   {
     "id": "pulseaudio:bridge",
-    "label": "Pulseaudio server",
+    "label": "Pulseaudio Server",
     "bindingId": "pulseaudio"
   },
   {
@@ -2951,22 +3061,22 @@
   },
   {
     "id": "pulseaudio:sinkInput",
-    "label": "A Pulseaudio sink-input",
+    "label": "A Pulseaudio Sink-input",
     "bindingId": "pulseaudio"
   },
   {
     "id": "pulseaudio:sink",
-    "label": "A Pulseaudio sink",
+    "label": "A Pulseaudio Sink",
     "bindingId": "pulseaudio"
   },
   {
     "id": "pulseaudio:sourceOutput",
-    "label": "A Pulseaudio source output",
+    "label": "A Pulseaudio Source Output",
     "bindingId": "pulseaudio"
   },
   {
     "id": "pulseaudio:source",
-    "label": "A Pulseaudio source",
+    "label": "A Pulseaudio Source",
     "bindingId": "pulseaudio"
   },
   {
@@ -2986,12 +3096,12 @@
   },
   {
     "id": "regoheatpump:ipHusdata",
-    "label": "Husdata interface",
+    "label": "Husdata Interface",
     "bindingId": "regoheatpump"
   },
   {
     "id": "regoheatpump:serialHusdata",
-    "label": "Husdata interface",
+    "label": "Husdata Interface",
     "bindingId": "regoheatpump"
   },
   {
@@ -3031,7 +3141,7 @@
   },
   {
     "id": "rfxcom:datetime",
-    "label": "RFXCOM Date/time sensor",
+    "label": "RFXCOM Date/time Sensor",
     "bindingId": "rfxcom"
   },
   {
@@ -3047,6 +3157,16 @@
   {
     "id": "rfxcom:fan_falmec",
     "label": "RFXCOM Fan Device - Falmec",
+    "bindingId": "rfxcom"
+  },
+  {
+    "id": "rfxcom:fan_lucci_dc",
+    "label": "RFXCOM Fan Device - Lucci Air DC",
+    "bindingId": "rfxcom"
+  },
+  {
+    "id": "rfxcom:fan_lucci_dc_ii",
+    "label": "RFXCOM Fan Device - Lucci Air DC II",
     "bindingId": "rfxcom"
   },
   {
@@ -3092,6 +3212,11 @@
   {
     "id": "rfxcom:RFXrec433",
     "label": "RFXrec433 USB 433.92MHz Receiver",
+    "bindingId": "rfxcom"
+  },
+  {
+    "id": "rfxcom:rfxsensor",
+    "label": "RFXCOM RFXSensor",
     "bindingId": "rfxcom"
   },
   {
@@ -3426,7 +3551,7 @@
   },
   {
     "id": "satel:event-log",
-    "label": "Event log",
+    "label": "Event Log",
     "bindingId": "satel"
   },
   {
@@ -3446,12 +3571,12 @@
   },
   {
     "id": "satel:shutter",
-    "label": "Roller shutter",
+    "label": "Roller Shutter",
     "bindingId": "satel"
   },
   {
     "id": "satel:system",
-    "label": "Alarm system",
+    "label": "Alarm System",
     "bindingId": "satel"
   },
   {
@@ -3473,6 +3598,101 @@
     "id": "serialbutton:button",
     "label": "Push Button",
     "bindingId": "serialbutton"
+  },
+  {
+    "id": "shelly:shellybulb",
+    "label": "Shelly Bulb (SHBULB)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellyrgbw2-color",
+    "label": "Shelly RGBW2 Color Mode (SHRGBW2)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellyrgbw2-white",
+    "label": "Shelly RGBW2 White Mode (SHRGBW2)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shelly1",
+    "label": "Shelly1 (SHSW-1)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shelly1pm",
+    "label": "Shelly1PM (SHSW-PM)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellyem",
+    "label": "ShellyEM (SHEM)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shelly2-relay",
+    "label": "Shelly2 Relay (SHSW-21)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shelly2-roller",
+    "label": "Shelly2 Roller (SHSW-21)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shelly25-relay",
+    "label": "Shelly2.5 Relay (SHSW-25)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shelly25-roller",
+    "label": "Shelly2.5 Roller (SHSW-25)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shelly4pro",
+    "label": "Shelly4 Pro Relay (SHSW-44)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellyplug",
+    "label": "Shelly Plug",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellyplugs",
+    "label": "Shelly Plug-S (SHPLG-S)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellydimmer",
+    "label": "Shelly Dimmer (SHDM-1)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellyht",
+    "label": "Shelly HT (SHHT-1)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellysmoke",
+    "label": "Shelly Smoke",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellyflood",
+    "label": "Shelly Flood (SHWT-1)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellysense",
+    "label": "Shelly Sense (SHSEN-1)",
+    "bindingId": "shelly"
+  },
+  {
+    "id": "shelly:shellydevice",
+    "label": "Shelly Device",
+    "bindingId": "shelly"
   },
   {
     "id": "siemensrds:climatixic",
@@ -3537,6 +3757,11 @@
   {
     "id": "somfytahoma:actiongroup",
     "label": "Somfy Action Group",
+    "bindingId": "somfytahoma"
+  },
+  {
+    "id": "somfytahoma:adjustableslatsrollershutter",
+    "label": "Somfy AS Roller Shutter",
     "bindingId": "somfytahoma"
   },
   {
@@ -3636,7 +3861,7 @@
   },
   {
     "id": "somfytahoma:onoffheatingsystem",
-    "label": "Somfy Heating System With On/Off",
+    "label": "Somfy Heating System with On/Off",
     "bindingId": "somfytahoma"
   },
   {
@@ -3776,12 +4001,12 @@
   },
   {
     "id": "sonyaudio:SRS-ZR5",
-    "label": "SONY wirelesspeaker SRS-ZR5",
+    "label": "SONY Wireless Speaker SRS-ZR5",
     "bindingId": "sonyaudio"
   },
   {
     "id": "sonyaudio:STR-DN1080",
-    "label": "SONY receiver STR-DN1080",
+    "label": "SONY Receiver STR-DN1080",
     "bindingId": "sonyaudio"
   },
   {
@@ -3855,13 +4080,18 @@
     "bindingId": "tankerkoenig"
   },
   {
+    "id": "telegram:telegramBot",
+    "label": "Telegram Bot",
+    "bindingId": "telegram"
+  },
+  {
     "id": "tellstick:telldus-core",
-    "label": "Telldus Core gateway",
+    "label": "Telldus Core Gateway",
     "bindingId": "tellstick"
   },
   {
     "id": "tellstick:telldus-live",
-    "label": "Telldus Live gateway",
+    "label": "Telldus Live Gateway",
     "bindingId": "tellstick"
   },
   {
@@ -3871,7 +4101,7 @@
   },
   {
     "id": "tellstick:switch",
-    "label": "On/Off device",
+    "label": "On/Off Device",
     "bindingId": "tellstick"
   },
   {
@@ -3895,8 +4125,28 @@
     "bindingId": "tellstick"
   },
   {
+    "id": "tesla:account",
+    "label": "Tesla Account",
+    "bindingId": "tesla"
+  },
+  {
+    "id": "tesla:model3",
+    "label": "Tesla Model 3",
+    "bindingId": "tesla"
+  },
+  {
     "id": "tesla:models",
     "label": "Tesla Model S",
+    "bindingId": "tesla"
+  },
+  {
+    "id": "tesla:models",
+    "label": "Tesla Model X",
+    "bindingId": "tesla"
+  },
+  {
+    "id": "tesla:modely",
+    "label": "Tesla Model Y",
     "bindingId": "tesla"
   },
   {
@@ -3906,12 +4156,12 @@
   },
   {
     "id": "toon:main",
-    "label": "Toon display unit",
+    "label": "Toon Display Unit",
     "bindingId": "toon"
   },
   {
     "id": "toon:plug",
-    "label": "Toon plug",
+    "label": "Toon Plug",
     "bindingId": "toon"
   },
   {
@@ -4266,7 +4516,7 @@
   },
   {
     "id": "vitotronic:bridge",
-    "label": "Bridge Vitotronic Optolink adapter",
+    "label": "Bridge Vitotronic Optolink Adapter",
     "bindingId": "vitotronic"
   },
   {
@@ -4330,6 +4580,21 @@
     "bindingId": "volvooncall"
   },
   {
+    "id": "weathercompany:account",
+    "label": "Weather Company Account",
+    "bindingId": "weathercompany"
+  },
+  {
+    "id": "weathercompany:weather-observations",
+    "label": "Weather Company Observations",
+    "bindingId": "weathercompany"
+  },
+  {
+    "id": "weathercompany:weather-forecast",
+    "label": "Weather Company Forecast",
+    "bindingId": "weathercompany"
+  },
+  {
     "id": "weatherunderground:bridge",
     "label": "Weatherunderground Bridge",
     "bindingId": "weatherunderground"
@@ -4380,13 +4645,18 @@
     "bindingId": "wemo"
   },
   {
+    "id": "wemo:dimmer",
+    "label": "WeMo DimmerSwitch",
+    "bindingId": "wemo"
+  },
+  {
     "id": "wifiled:wifiled",
     "label": "WiFi LED",
     "bindingId": "wifiled"
   },
   {
     "id": "windcentrale:mill",
-    "label": "Windcentrale windmill",
+    "label": "Windcentrale Windmill",
     "bindingId": "windcentrale"
   },
   {
@@ -4567,6 +4837,11 @@
   {
     "id": "zwave:abus_shlm10010_00_000",
     "label": "SHLM10010 ABUS Security Center Bulb",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:abus_shmk10000_00_000",
+    "label": "SHMK10000 Magnetic Contact",
     "bindingId": "zwave"
   },
   {
@@ -4936,12 +5211,27 @@
   },
   {
     "id": "zwave:aeon_zw141_00_000",
-    "label": "Nano Shutter Controller ZW141",
+    "label": "ZW141 Nano Shutter Controller",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:aeotec_spirit_00_000",
+    "label": "Spirit Thermostatic Valve",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:aeotec_zw141_00_000",
+    "label": "ZW141 Nano Shutter Controller",
     "bindingId": "zwave"
   },
   {
     "id": "zwave:aeotec_zw164_00_000",
     "label": "ZW164 Indoor Siren 6 and Doorbell 6",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:aeotec_zw175_00_000",
+    "label": "ZW175 Smart Switch 7",
     "bindingId": "zwave"
   },
   {
@@ -4956,7 +5246,7 @@
   },
   {
     "id": "zwave:aeotec_zwa003_00_000",
-    "label": "Aeotec NanoMote Quad NanoMote Quad",
+    "label": "ZWA003 NanoMote Quad",
     "bindingId": "zwave"
   },
   {
@@ -5170,6 +5460,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:cooper_rf9575_00_000",
+    "label": "RF9575 Anyplace Switch",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:cooper_rf9601_00_000",
     "label": "RF9601 Z-Wave Plus wireless switch",
     "bindingId": "zwave"
@@ -5187,6 +5482,11 @@
   {
     "id": "zwave:cooper_rf9642_00_000",
     "label": "RF9642 Z-Wave Plus smart accessory dimmer",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:cooper_rfldmdimmer_00_000",
+    "label": "RFLDM ASPIRE RF Plug-In Z-Wave Lamp Dimmer",
     "bindingId": "zwave"
   },
   {
@@ -5650,6 +5950,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:everspring_eh403_00_000",
+    "label": "EH403-3 Outdoor Flood Light Z-Wave Plus",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:everspring_hac01_00_000",
     "label": "HAC01 In-Wall Remote Insert",
     "bindingId": "zwave"
@@ -5960,6 +6265,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:fibaro_fgrgbw442_00_000",
+    "label": "FGRGBW-442 RGBW CONTROLLER 2",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:fibaro_fgrgbw_00_000",
     "label": "FGRGBW RGBW Controller",
     "bindingId": "zwave"
@@ -6071,7 +6381,7 @@
   },
   {
     "id": "zwave:fibaro_fgwpb111_00_000",
-    "label": "FGWPB-111 FIBARO Wall Plug is a remotely controlled plug-in switch with the ability to measure power and energy consumption. It uses a LED frame to visualize th",
+    "label": "FGWPB-111 FIBARO Wall Plug",
     "bindingId": "zwave"
   },
   {
@@ -6202,6 +6512,11 @@
   {
     "id": "zwave:ge_14295_00_000",
     "label": "GE 14295 In-Wall Dimmer Switch",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:ge_14298_00_000",
+    "label": "GE 14298/ZW4202 Outdoor Plug-In On/Off Module",
     "bindingId": "zwave"
   },
   {
@@ -6350,6 +6665,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:ge_zw4008_00_000",
+    "label": "43072/ZW4008DV In-Wall Smart Switch with QuickFit and SimpleWire enhancements.",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:ge_zw4101_00_000",
     "label": "ZW4101 Fluorescent Light & Appliance Module",
     "bindingId": "zwave"
@@ -6387,6 +6707,11 @@
   {
     "id": "zwave:graber_rsz1_00_000",
     "label": "RSZ1 Somfy Motorized Shade",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:graber_vcz1_00_000",
+    "label": "VCZ1 Two Button Remote",
     "bindingId": "zwave"
   },
   {
@@ -6615,6 +6940,16 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:homeseer_hsws200_05_012",
+    "label": "HS-WS200+ Scene Capable Wall Switch",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:homeseer_hsws200_05_007",
+    "label": "HS-WS200+ Scene Capable Wall Switch",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:honeywell_39339_00_000",
     "label": "39339 (ZW3107) Z-Wave Plug-in Smart Dimmer",
     "bindingId": "zwave"
@@ -6622,6 +6957,11 @@
   {
     "id": "zwave:honeywell_39342_00_000",
     "label": "39342 / Jasco ZW4106 Plug-In Smart Switch (Dual Linked Outlets, Grounded)",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:honeywell_39348_00_000",
+    "label": "39348 In-Wall Smart Switch",
     "bindingId": "zwave"
   },
   {
@@ -6790,6 +7130,16 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:inovelli_lzw31sn_00_000",
+    "label": "LZW31-SN Red Series Dimmer",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:inovelli_lzw42_00_000",
+    "label": "LZW42 Ilumin RGBW Bulb",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:intermatic_ca3000_00_000",
     "label": "CA3000 Wall Switch",
     "bindingId": "zwave"
@@ -6895,6 +7245,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:johnson_konozw_00_000",
+    "label": "KONOzw LUX KONOzw Smart Hub Thermostat",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:kaipule_es61_00_000",
     "label": "ES-61 Smoke Sensor",
     "bindingId": "zwave"
@@ -6917,6 +7272,11 @@
   {
     "id": "zwave:kichler_15dc200_00_000",
     "label": "15DC200 200W Design Pro LED Controller",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:kichler_15dc300_00_000",
+    "label": "15DC300 300W Design Pro LED Controller",
     "bindingId": "zwave"
   },
   {
@@ -6947,6 +7307,11 @@
   {
     "id": "zwave:kwikset_914trl_00_000",
     "label": "914TRL Touchpad Electronic Deadbolt",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:kwikset_ged1800_00_000",
+    "label": "GED1800 SmartCode 10 Touchpad Electronic Deadbolt",
     "bindingId": "zwave"
   },
   {
@@ -7305,6 +7670,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:mcohome_mhs220_00_000",
+    "label": "MH-S220 Micro Switch",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:mcohome_mhs311_00_000",
     "label": "MH-S311H Touch Panel Switch (Single) High inrush current",
     "bindingId": "zwave"
@@ -7325,8 +7695,13 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:mcohome_mhs41255_00_000",
+    "label": "MH-S412 MCO Touch Panel Switch",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:mcohome_mhs412_00_000",
-    "label": "MH-S412 Touch Panel Switch (Dual)",
+    "label": "MH-S412 MCO Touch Panel Switch",
     "bindingId": "zwave"
   },
   {
@@ -7355,6 +7730,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:mcohome_mhs613_00_000",
+    "label": "MH-S613 Touch Panel Switch 3-Way (Horizontal)",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:mcohome_tps411_00_000",
     "label": "TPS411 Touch Panel Switch 1 Button",
     "bindingId": "zwave"
@@ -7362,6 +7742,11 @@
   {
     "id": "zwave:mcohome_tps412_00_000",
     "label": "TPS412 Touch Panel Switch 2 Channel",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:mcohome__00_000",
+    "label": "MH-S412 2-Way Touch Panel Switch",
     "bindingId": "zwave"
   },
   {
@@ -7460,6 +7845,16 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:nietech_evalogikzw39_00_000",
+    "label": "ZW39 Dimmable Smart Plug",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:nietech_mp20z_00_000",
+    "label": "MP20Z Zwave Plug 2 channel plugin outlet",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:nietech_nzw30s_00_000",
     "label": "NZW30S In-Wall Switch (On/Off) Scene Enabled",
     "bindingId": "zwave"
@@ -7495,8 +7890,18 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:nietech_zw31_00_000",
+    "label": "ZW31 In-Wall Smart Dimmer Switch 3-Way",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:nietech_zw37_00_000",
     "label": "ZW37 Show Home, 2 channel smart plug, ZWave Plus",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:nietech_zw681vde_02_001",
+    "label": "ZW681 Smart Plug with Energy Meter",
     "bindingId": "zwave"
   },
   {
@@ -7632,6 +8037,11 @@
   {
     "id": "zwave:philio_pan05_00_000",
     "label": "PAN05-1B Single relay in-wall switch module",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:philio_pan06-1b_00_000",
+    "label": "PAN06-1B TBD",
     "bindingId": "zwave"
   },
   {
@@ -7855,8 +8265,23 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:popp_pope701202v11_01_001",
+    "label": "POPE701202 Popp Mold detector",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:popp_pope701202_00_000",
+    "label": "POPE701202 Popp Mold detector",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:popp_pope701202_01_000",
     "label": "POPE701202 Popp Mold detector",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:powerley_pwly7828_00_000",
+    "label": "PWLY-7828-A1 Thermostat - HVAC",
     "bindingId": "zwave"
   },
   {
@@ -7982,6 +8407,11 @@
   {
     "id": "zwave:qubino_zmnhod_00_000",
     "label": "ZMNHOD Flush Shutter DC",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:qubino_zmnhqd_00_000",
+    "label": "ZMNHQD Qubino LUXY Smart Light",
     "bindingId": "zwave"
   },
   {
@@ -8210,6 +8640,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:saykey_sk300705_00_000",
+    "label": "SK-3007-05 Curtain Motor Control external module",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:schlage_be369_00_000",
     "label": "BE369 Keypad Deadbolt",
     "bindingId": "zwave"
@@ -8272,6 +8707,11 @@
   {
     "id": "zwave:shenzhen_eu2_00_000",
     "label": "EU-2 Light Switch 2 Channel",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:shenzhen_eu3_00_000",
+    "label": "EU-3 Light Switch 3 Channel",
     "bindingId": "zwave"
   },
   {
@@ -8376,7 +8816,7 @@
   },
   {
     "id": "zwave:simontech_1000204113x_00_000",
-    "label": "10002041-13X iO Cover for the Simon 100 schuko plug socket",
+    "label": "10002041-13X iO Cover for the Simon 100 Schuko Plug Socket",
     "bindingId": "zwave"
   },
   {
@@ -8432,6 +8872,16 @@
   {
     "id": "zwave:sunricher_heatit_00_000",
     "label": "Heatit Z-Push Button 8 Wall Mounted Switch",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:sunricher_rgbgeniezw4001_00_000",
+    "label": "ZW4001 In-Wall Dimmer",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:sunricher_veggplug_00_000",
+    "label": "VEGGPLUG NAMRON Smart Plug",
     "bindingId": "zwave"
   },
   {
@@ -8522,6 +8972,11 @@
   {
     "id": "zwave:thermofloor_heatitzrelay_00_000",
     "label": "HEATIT Z-RELAY Multipurpose relay",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:thermofloor_pushbutton4_00_000",
+    "label": "Z-Push Button 4 Wall Mounted Switch",
     "bindingId": "zwave"
   },
   {
@@ -9021,7 +9476,7 @@
   },
   {
     "id": "zwave:willis_zen24_00_000",
-    "label": "Zen24 Toggle Dimmer",
+    "label": "ZEN24 Toggle Dimmer",
     "bindingId": "zwave"
   },
   {
@@ -9107,6 +9562,11 @@
   {
     "id": "zwave:yale_keylesslock_00_000",
     "label": "Keyless Connected Smart Door Lock Smart door lock with z-wave module.",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:yale_sdm1100_00_000",
+    "label": "SD-M1100 Yale Smart Door Lock Z-Wave Module 2",
     "bindingId": "zwave"
   },
   {
@@ -9295,6 +9755,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:zooz_zen15_01_004",
+    "label": "ZEN15 Power Switch",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:zooz_zen20_00_000",
     "label": "ZEN20 Z-Wave Plus Power Strip, VER. 2.0",
     "bindingId": "zwave"
@@ -9305,6 +9770,11 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:zooz_zen21_03_000",
+    "label": "ZEN21 Paddle Switch",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:zooz_zen22_01_000",
     "label": "ZEN22 Z-Wave Plus Dimmer Light Switch",
     "bindingId": "zwave"
@@ -9312,6 +9782,11 @@
   {
     "id": "zwave:zooz_zen22_20_015",
     "label": "ZEN22 Z-Wave Plus Dimmer Light Switch",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:zooz_zen22_03_000",
+    "label": "ZEN22 Dimmer Paddle Switch",
     "bindingId": "zwave"
   },
   {
@@ -9335,8 +9810,18 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:zooz_zen24_03_000",
+    "label": "ZEN24 Z-Wave Plus Toggle Dimmer Light Switch Ver 3.0",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:zooz_zen25_00_000",
     "label": "ZEN25 Double Plug",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:zooz_zen25_02_000",
+    "label": "ZEN25 Double Plug V2",
     "bindingId": "zwave"
   },
   {
@@ -9345,8 +9830,18 @@
     "bindingId": "zwave"
   },
   {
+    "id": "zwave:zooz_zen27v2_02_000",
+    "label": "ZEN27 Z-Wave Plus S2 Dimmer Light Switch V2",
+    "bindingId": "zwave"
+  },
+  {
     "id": "zwave:zooz_zen27_00_000",
     "label": "ZEN27 Z-Wave Plus S2 Dimmer Light Switch",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:zooz_zen31_00_000",
+    "label": "ZEN31 RGBW Dimmer for LED Strips",
     "bindingId": "zwave"
   },
   {
@@ -9392,6 +9887,11 @@
   {
     "id": "zwave:zooz_zse40_00_000",
     "label": "ZSE40 4-in-1 Sensor",
+    "bindingId": "zwave"
+  },
+  {
+    "id": "zwave:zooz_zst10_00_000",
+    "label": "ZST10 S2 USB Stick Controller",
     "bindingId": "zwave"
   },
   {
@@ -9490,28 +9990,8 @@
     "bindingId": "zwave"
   },
   {
-    "id": "zwave:zwaveme_zunoswitch_02_011",
-    "label": "z_uno switch",
-    "bindingId": "zwave"
-  },
-  {
-    "id": "zwave:zwaveme_zunoweather_02_015",
-    "label": "Z-Uno Weather 2.1.5.1 Weather Station with Temperature, Pressure, Light-Level and Humidity",
-    "bindingId": "zwave"
-  },
-  {
-    "id": "zwave:zwaveme_zuno_01_000",
-    "label": "ZUNO1S1D1AI1DI ZUNO1S1D1AI1DI",
-    "bindingId": "zwave"
-  },
-  {
     "id": "zwave:zwaveme_zweather_00_000",
     "label": "Z-Weather Z-Wave weather interface",
-    "bindingId": "zwave"
-  },
-  {
-    "id": "zwave:zwaveme__04_038",
-    "label": "WeatherStation Based on Z-Wave.me Z-Uno",
     "bindingId": "zwave"
   },
   {
