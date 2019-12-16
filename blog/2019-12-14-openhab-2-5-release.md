@@ -12,7 +12,7 @@ excerpt: >-
   new release is overdue and we are happy to announce the new 2.5 release to all
   of you today!
 ---
-A full year has passed since openHAB 2.4 and a lot has happened meanwhile. A new release is overdue and we are happy to announce the new 2.5 release to all of you today!
+A full year has passed since openHAB 2.4 and a lot has happened meanwhile. A new release is overdue and we are happy to announce the [new 2.5 release](https://github.com/openhab/openhab-distro/releases/tag/2.5.0) to all of you today!
 
 <!-- more -->
 
@@ -22,7 +22,7 @@ Another major refactoring that has happened under the hood is the [re-integratio
 
 Despite all those internal efforts, I am amazed by the long list of functional changes that the official release notes mention: There are 46 new add-ons included in the distro, which is almost one add-on per week since the last release - another huge step forward in terms of device support, making openHAB a greatly versatile integration platform.
 
-As usual, I won't go into all the details as I would recommend having a look at the release notes in detail. Instead, let me just mention a couple of additions:
+As usual, I won't go into all the details as I would recommend having a look at [the release notes](https://github.com/openhab/openhab-distro/releases/tag/2.5.0) in detail. Instead, let me just mention a couple of additions:
 
 ### Ephemeris
 
