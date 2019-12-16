@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Shelly Binding (org.openhab.binding.shelly) | openHAB</title>
+    <meta name="description" content="openHAB - a vendor and technology agnostic open source automation software for your home">
+    <link rel="stylesheet" href="/v2.5/fonts/fonts.css">
+  <link rel="icon" href="/v2.5/favicon.ico">
+  <link rel="shortcut icon" href="/v2.5/favicon.ico">
+  <link rel="apple-touch-icon" href="/v2.5/apple-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.openhab.org/og-image.png">
+    
+    <link rel="preload" href="/v2.5/assets/css/0.styles.17119d73.css" as="style"><link rel="preload" href="/v2.5/assets/js/app.6e1f6232.js" as="script"><link rel="preload" href="/v2.5/assets/js/374.9ab6a561.js" as="script">
+    <link rel="stylesheet" href="/v2.5/assets/css/0.styles.17119d73.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/v2.5/" class="home-link router-link-active"><img src="/v2.5/openhab-logo.png" alt="openHAB" class="logo"> <span class="site-name can-hide">openHAB</span></a> <div class="links" style="max-width:nullpx;"><form id="search-form" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/v2.5/blog/" class="nav-link">Blog</a></div><div class="nav-item"><a href="/v2.5/download/" class="nav-link">Download</a></div><div class="nav-item"><a href="/v2.5/docs/" class="nav-link">Documentation</a></div><div class="nav-item"><a href="/v2.5/addons/" class="nav-link router-link-active">Add-ons</a></div><div class="nav-item"><a href="/v2.5/community/" class="nav-link">Community</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">About</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Get Involved</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/v2.5/about/who-we-are.html" class="nav-link">Who We Are</a></li><li class="dropdown-subitem"><a href="/v2.5/about/contributing.html" class="nav-link">Contribute</a></li><li class="dropdown-subitem"><a href="/v2.5/about/events.html" class="nav-link">Events</a></li></ul></li><li class="dropdown-item"><h4>Support openHAB</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://openhabfoundation.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Foundation
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="/v2.5/about/donate.html" class="nav-link">Donate</a></li></ul></li><li class="dropdown-item"><h4>Resources</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/v2.5/about/showcase.html" class="nav-link">Showcase/How-tos</a></li><li class="dropdown-subitem"><a href="/v2.5/privacy.html" class="nav-link">Privacy Policy</a></li><li class="dropdown-subitem"><a href="https://www.myopenhab.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  myopenHAB
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/openhab" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/v2.5/blog/" class="nav-link">Blog</a></div><div class="nav-item"><a href="/v2.5/download/" class="nav-link">Download</a></div><div class="nav-item"><a href="/v2.5/docs/" class="nav-link">Documentation</a></div><div class="nav-item"><a href="/v2.5/addons/" class="nav-link router-link-active">Add-ons</a></div><div class="nav-item"><a href="/v2.5/community/" class="nav-link">Community</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">About</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Get Involved</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/v2.5/about/who-we-are.html" class="nav-link">Who We Are</a></li><li class="dropdown-subitem"><a href="/v2.5/about/contributing.html" class="nav-link">Contribute</a></li><li class="dropdown-subitem"><a href="/v2.5/about/events.html" class="nav-link">Events</a></li></ul></li><li class="dropdown-item"><h4>Support openHAB</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://openhabfoundation.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Foundation
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="/v2.5/about/donate.html" class="nav-link">Donate</a></li></ul></li><li class="dropdown-item"><h4>Resources</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/v2.5/about/showcase.html" class="nav-link">Showcase/How-tos</a></li><li class="dropdown-subitem"><a href="/v2.5/privacy.html" class="nav-link">Privacy Policy</a></li><li class="dropdown-subitem"><a href="https://www.myopenhab.org/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  myopenHAB
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/openhab" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Bindings</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/v2.5/addons/bindings/airquality/" class="sidebar-link">Air Quality</a></li><li><a href="/v2.5/addons/bindings/airvisualnode/" class="sidebar-link">AirVisual Node</a></li><li><a href="/v2.5/addons/bindings/akm8681/" class="sidebar-link">AKM868</a></li><li><a href="/v2.5/addons/bindings/alarmdecoder1/" class="sidebar-link">Alarm Decoder</a></li><li><a href="/v2.5/addons/bindings/allplay/" class="sidebar-link">AllPlay</a></li><li><a href="/v2.5/addons/bindings/amazondashbutton/" class="sidebar-link">Amazon Dash Button</a></li><li><a href="/v2.5/addons/bindings/amazonechocontrol/" class="sidebar-link">Amazon Echo Control</a></li><li><a href="/v2.5/addons/bindings/ambientweather/" class="sidebar-link">Ambient Weather</a></li><li><a href="/v2.5/addons/bindings/anel1/" class="sidebar-link">Anel NET-PwrCtrl</a></li><li><a href="/v2.5/addons/bindings/asterisk1/" class="sidebar-link">Asterisk</a></li><li><a href="/v2.5/addons/bindings/astro/" class="sidebar-link">Astro</a></li><li><a href="/v2.5/addons/bindings/atlona/" class="sidebar-link">Atlona</a></li><li><a href="/v2.5/addons/bindings/autelis/" class="sidebar-link">Autelis Pool Control</a></li><li><a href="/v2.5/addons/bindings/avmfritz/" class="sidebar-link">AVM FRITZ!</a></li><li><a href="/v2.5/addons/bindings/wemo/" class="sidebar-link">Belkin Wemo</a></li><li><a href="/v2.5/addons/bindings/benqprojector1/" class="sidebar-link">BenQ Projector</a></li><li><a href="/v2.5/addons/bindings/bigassfan/" class="sidebar-link">BigAssFan</a></li><li><a href="/v2.5/addons/bindings/bluetooth/" class="sidebar-link">Bluetooth</a></li><li><a href="/v2.5/addons/bindings/boschindego/" class="sidebar-link">Bosch Indego</a></li><li><a href="/v2.5/addons/bindings/bosesoundtouch/" class="sidebar-link">Bose SoundTouch</a></li><li><a href="/v2.5/addons/bindings/bticino1/" class="sidebar-link">Bticino</a></li><li><a href="/v2.5/addons/bindings/buienradar/" class="sidebar-link">Buienradar</a></li><li><a href="/v2.5/addons/bindings/caldav-command1/" class="sidebar-link">CalDAV Command</a></li><li><a href="/v2.5/addons/bindings/caldav-personal1/" class="sidebar-link">CalDAV Personal</a></li><li><a href="/v2.5/addons/bindings/cardio2e1/" class="sidebar-link">Cardio2e</a></li><li><a href="/v2.5/addons/bindings/myq1/" class="sidebar-link">Chamberlain MyQ</a></li><li><a href="/v2.5/addons/bindings/chromecast/" class="sidebar-link">Chromecast</a></li><li><a href="/v2.5/addons/bindings/cm11a/" class="sidebar-link">Cm11a (X10 controller)</a></li><li><a href="/v2.5/addons/bindings/comfoair1/" class="sidebar-link">ComfoAir</a></li><li><a href="/v2.5/addons/bindings/configadmin1/" class="sidebar-link">ConfigAdmin</a></li><li><a href="/v2.5/addons/bindings/coolmasternet/" class="sidebar-link">CoolMasterNet</a></li><li><a href="/v2.5/addons/bindings/cups1/" class="sidebar-link">CUPS</a></li><li><a href="/v2.5/addons/bindings/dlinksmarthome/" class="sidebar-link">D-Link Smart Home</a></li><li><a href="/v2.5/addons/bindings/daikin/" class="sidebar-link">Daikin</a></li><li><a href="/v2.5/addons/bindings/darksky/" class="sidebar-link">Dark Sky</a></li><li><a href="/v2.5/addons/bindings/davis1/" class="sidebar-link">Davis</a></li><li><a href="/v2.5/addons/bindings/ddwrt1/" class="sidebar-link">DD-WRT</a></li><li><a href="/v2.5/addons/bindings/denon1/" class="sidebar-link">Denon</a></li><li><a href="/v2.5/addons/bindings/denonmarantz/" class="sidebar-link">Denon / Marantz</a></li><li><a href="/v2.5/addons/bindings/heos/" class="sidebar-link">Denon HEOS</a></li><li><a href="/v2.5/addons/bindings/digiplex/" class="sidebar-link">Digiplex/EVO</a></li><li><a href="/v2.5/addons/bindings/digitalstrom/" class="sidebar-link">digitalSTROM</a></li><li><a href="/v2.5/addons/bindings/diyonxbee1/" class="sidebar-link">DIYOnXBee</a></li><li><a href="/v2.5/addons/bindings/dmx/" class="sidebar-link">DMX</a></li><li><a href="/v2.5/addons/bindings/doorbird/" class="sidebar-link">Doorbird</a></li><li><a href="/v2.5/addons/bindings/deconz/" class="sidebar-link">Dresden Elektronik deCONZ</a></li><li><a href="/v2.5/addons/bindings/dscalarm/" class="sidebar-link">DSC Alarm</a></li><li><a href="/v2.5/addons/bindings/dsmr/" class="sidebar-link">DSMR</a></li><li><a href="/v2.5/addons/bindings/dwdunwetter/" class="sidebar-link">DwdUnwetter</a></li><li><a href="/v2.5/addons/bindings/ebus1/" class="sidebar-link">eBUS</a></li><li><a href="/v2.5/addons/bindings/ecobee1/" class="sidebar-link">Ecobee</a></li><li><a href="/v2.5/addons/bindings/ecotouch1/" class="sidebar-link">EcoTouch</a></li><li><a href="/v2.5/addons/bindings/ekey1/" class="sidebar-link">ekey</a></li><li><a href="/v2.5/addons/bindings/elerotransmitterstick/" class="sidebar-link">Elero Transmitter Stick</a></li><li><a href="/v2.5/addons/bindings/energenie1/" class="sidebar-link">Energenie</a></li><li><a href="/v2.5/addons/bindings/enocean/" class="sidebar-link">EnOcean</a></li><li><a href="/v2.5/addons/bindings/enphaseenergy1/" class="sidebar-link">Enphase Energy</a></li><li><a href="/v2.5/addons/bindings/enturno/" class="sidebar-link">EnturNo</a></li><li><a href="/v2.5/addons/bindings/epsonprojector1/" class="sidebar-link">Epson Projector</a></li><li><a href="/v2.5/addons/bindings/evohome/" class="sidebar-link">evohome</a></li><li><a href="/v2.5/addons/bindings/exec/" class="sidebar-link">Exec</a></li><li><a href="/v2.5/addons/bindings/expire1/" class="sidebar-link">Expire</a></li><li><a href="/v2.5/addons/bindings/fatekplc1/" class="sidebar-link">Fatek PLC</a></li><li><a href="/v2.5/addons/bindings/feed/" class="sidebar-link">Feed</a></li><li><a href="/v2.5/addons/bindings/feican/" class="sidebar-link">Feican</a></li><li><a href="/v2.5/addons/bindings/fht1/" class="sidebar-link">FHT</a></li><li><a href="/v2.5/addons/bindings/folding/" class="sidebar-link">Folding@home</a></li><li><a href="/v2.5/addons/bindings/foobot/" class="sidebar-link">Foobot</a></li><li><a href="/v2.5/addons/bindings/freebox/" class="sidebar-link">Freebox</a></li><li><a href="/v2.5/addons/bindings/freeswitch1/" class="sidebar-link">FreeSWITCH</a></li><li><a href="/v2.5/addons/bindings/fritzaha1/" class="sidebar-link">Fritz AHA</a></li><li><a href="/v2.5/addons/bindings/fritzbox1/" class="sidebar-link">Fritz!Box</a></li><li><a href="/v2.5/addons/bindings/fritzboxtr0641/" class="sidebar-link">Fritzbox (using TR064 protocol)</a></li><li><a href="/v2.5/addons/bindings/fronius/" class="sidebar-link">Fronius</a></li><li><a href="/v2.5/addons/bindings/frontiersiliconradio1/" class="sidebar-link">Frontier Silicon Radio</a></li><li><a href="/v2.5/addons/bindings/fsinternetradio/" class="sidebar-link">FS Internet Radio</a></li><li><a href="/v2.5/addons/bindings/fs201/" class="sidebar-link">FS20</a></li><li><a href="/v2.5/addons/bindings/ftpupload/" class="sidebar-link">FTP Upload</a></li><li><a href="/v2.5/addons/bindings/garadget1/" class="sidebar-link">Garadget</a></li><li><a href="/v2.5/addons/bindings/gardena/" class="sidebar-link">Gardena</a></li><li><a href="/v2.5/addons/bindings/gc100ir1/" class="sidebar-link">Global Cache IR</a></li><li><a href="/v2.5/addons/bindings/globalcache/" class="sidebar-link">GlobalCache</a></li><li><a href="/v2.5/addons/bindings/gpio1/" class="sidebar-link">GPIO</a></li><li><a href="/v2.5/addons/bindings/gpstracker/" class="sidebar-link">GPSTracker</a></li><li><a href="/v2.5/addons/bindings/groheondus/" class="sidebar-link">GROHE ONDUS</a></li><li><a href="/v2.5/addons/bindings/omnilink1/" class="sidebar-link">HAI/Leviton Omni and Lumina</a></li><li><a href="/v2.5/addons/bindings/hdanywhere/" class="sidebar-link">HDanywhere</a></li><li><a href="/v2.5/addons/bindings/heatmiser1/" class="sidebar-link">Heatmiser</a></li><li><a href="/v2.5/addons/bindings/helios/" class="sidebar-link">Helios</a></li><li><a href="/v2.5/addons/bindings/hms1/" class="sidebar-link">HMS</a></li><li><a href="/v2.5/addons/bindings/homematic/" class="sidebar-link">Homematic</a></li><li><a href="/v2.5/addons/bindings/horizon1/" class="sidebar-link">Horizon mediabox</a></li><li><a href="/v2.5/addons/bindings/hpprinter/" class="sidebar-link">HPPrinter</a></li><li><a href="/v2.5/addons/bindings/http1/" class="sidebar-link">HTTP</a></li><li><a href="/v2.5/addons/bindings/hdpowerview/" class="sidebar-link">Hunter Douglas PowerView</a></li><li><a href="/v2.5/addons/bindings/hydrawise/" class="sidebar-link">Hydrawise</a></li><li><a href="/v2.5/addons/bindings/hyperion/" class="sidebar-link">Hyperion</a></li><li><a href="/v2.5/addons/bindings/iaqualink/" class="sidebar-link">iAquaLink</a></li><li><a href="/v2.5/addons/bindings/icloud/" class="sidebar-link">iCloud</a></li><li><a href="/v2.5/addons/bindings/iec6205621meter1/" class="sidebar-link">IEC 62056-21 Meter</a></li><li><a href="/v2.5/addons/bindings/ihc/" class="sidebar-link">IHC / ELKO</a></li><li><a href="/v2.5/addons/bindings/innogysmarthome/" class="sidebar-link">innogy SmartHome</a></li><li><a href="/v2.5/addons/bindings/insteonhub1/" class="sidebar-link">Insteon Hub</a></li><li><a href="/v2.5/addons/bindings/insteonplm1/" class="sidebar-link">Insteon PLM</a></li><li><a href="/v2.5/addons/bindings/intertechno1/" class="sidebar-link">Intertechno</a></li><li><a href="/v2.5/addons/bindings/ipp/" class="sidebar-link">IPP</a></li><li><a href="/v2.5/addons/bindings/ipx8001/" class="sidebar-link">IPX800</a></li><li><a href="/v2.5/addons/bindings/irtrans/" class="sidebar-link">IRtrans</a></li><li><a href="/v2.5/addons/bindings/isy1/" class="sidebar-link">ISY</a></li><li><a href="/v2.5/addons/bindings/jeelink/" class="sidebar-link">Jeelink</a></li><li><a href="/v2.5/addons/bindings/jointspace1/" class="sidebar-link">jointSPACE</a></li><li><a href="/v2.5/addons/bindings/keba/" class="sidebar-link">Keba</a></li><li><a href="/v2.5/addons/bindings/km200/" class="sidebar-link">KM200</a></li><li><a href="/v2.5/addons/bindings/knx/" class="sidebar-link">KNX</a></li><li><a href="/v2.5/addons/bindings/kodi/" class="sidebar-link">Kodi</a></li><li><a href="/v2.5/addons/bindings/konnected/" class="sidebar-link">Konnected</a></li><li><a href="/v2.5/addons/bindings/kostalinverter/" class="sidebar-link">Kostal Inverter</a></li><li><a href="/v2.5/addons/bindings/koubachi1/" class="sidebar-link">Koubachi</a></li><li><a href="/v2.5/addons/bindings/lametrictime/" class="sidebar-link">LaMetric</a></li><li><a href="/v2.5/addons/bindings/lcn1/" class="sidebar-link">LCN</a></li><li><a href="/v2.5/addons/bindings/leapmotion/" class="sidebar-link">Leap Motion</a></li><li><a href="/v2.5/addons/bindings/lghombot/" class="sidebar-link">LG HomBot</a></li><li><a href="/v2.5/addons/bindings/lgtv1/" class="sidebar-link">LG TV</a></li><li><a href="/v2.5/addons/bindings/lgtvserial/" class="sidebar-link">LG TV control using serial protocol</a></li><li><a href="/v2.5/addons/bindings/lgwebos/" class="sidebar-link">LG webOS</a></li><li><a href="/v2.5/addons/bindings/lifx/" class="sidebar-link">LIFX</a></li><li><a href="/v2.5/addons/bindings/lightwaverf1/" class="sidebar-link">LightwaveRF</a></li><li><a href="/v2.5/addons/bindings/linuxinput/" class="sidebar-link">Linux Input</a></li><li><a href="/v2.5/addons/bindings/lirc/" class="sidebar-link">LIRC</a></li><li><a href="/v2.5/addons/bindings/logreader/" class="sidebar-link">Log Reader</a></li><li><a href="/v2.5/addons/bindings/harmonyhub/" class="sidebar-link">Logitech Harmony Hub</a></li><li><a href="/v2.5/addons/bindings/squeezebox/" class="sidebar-link">Logitech Squeezebox</a></li><li><a href="/v2.5/addons/bindings/loxone/" class="sidebar-link">Loxone</a></li><li><a href="/v2.5/addons/bindings/lutron/" class="sidebar-link">Lutron</a></li><li><a href="/v2.5/addons/bindings/mail/" class="sidebar-link">Mail</a></li><li><a href="/v2.5/addons/bindings/mailcontrol1/" class="sidebar-link">MailControl</a></li><li><a href="/v2.5/addons/bindings/max/" class="sidebar-link">MAX!</a></li><li><a href="/v2.5/addons/bindings/maxcube1/" class="sidebar-link">MAX!Cube</a></li><li><a href="/v2.5/addons/bindings/maxcul1/" class="sidebar-link">MAX!CUL</a></li><li><a href="/v2.5/addons/bindings/mcp230171/" class="sidebar-link">MCP23017</a></li><li><a href="/v2.5/addons/bindings/mcp23017/" class="sidebar-link">MCP23017</a></li><li><a href="/v2.5/addons/bindings/mcp34241/" class="sidebar-link">MCP3424</a></li><li><a href="/v2.5/addons/bindings/melcloud/" class="sidebar-link">MELCloud</a></li><li><a href="/v2.5/addons/bindings/meteoblue/" class="sidebar-link">meteoblue</a></li><li><a href="/v2.5/addons/bindings/meteostick/" class="sidebar-link">Meteostick</a></li><li><a href="/v2.5/addons/bindings/miele/" class="sidebar-link">Miele@home</a></li><li><a href="/v2.5/addons/bindings/milight/" class="sidebar-link">Milight/Easybulb/Limitless</a></li><li><a href="/v2.5/addons/bindings/millheat/" class="sidebar-link">Millheat</a></li><li><a href="/v2.5/addons/bindings/minecraft/" class="sidebar-link">Minecraft</a></li><li><a href="/v2.5/addons/bindings/mios1/" class="sidebar-link">MiOS Bridge</a></li><li><a href="/v2.5/addons/bindings/mochadx101/" class="sidebar-link">Mochad X10</a></li><li><a href="/v2.5/addons/bindings/modbus/" class="sidebar-link">Modbus</a></li><li><a href="/v2.5/addons/bindings/mpd1/" class="sidebar-link">MPD</a></li><li><a href="/v2.5/addons/bindings/mqtt/" class="sidebar-link">MQTT</a></li><li><a href="/v2.5/addons/bindings/mystromecopower1/" class="sidebar-link">Mystrom Eco Power</a></li><li><a href="/v2.5/addons/bindings/nanoleaf/" class="sidebar-link">Nanoleaf</a></li><li><a href="/v2.5/addons/bindings/neato/" class="sidebar-link">Neato</a></li><li><a href="/v2.5/addons/bindings/neeo/" class="sidebar-link">NEEO</a></li><li><a href="/v2.5/addons/bindings/neohub/" class="sidebar-link">NeoHub</a></li><li><a href="/v2.5/addons/bindings/nest/" class="sidebar-link">Nest</a></li><li><a href="/v2.5/addons/bindings/netatmo/" class="sidebar-link">Netatmo</a></li><li><a href="/v2.5/addons/bindings/network/" class="sidebar-link">Network</a></li><li><a href="/v2.5/addons/bindings/networkhealth1/" class="sidebar-link">Network Health</a></li><li><a href="/v2.5/addons/bindings/networkupstools/" class="sidebar-link">Network UPS Tools</a></li><li><a href="/v2.5/addons/bindings/nibeheatpump/" class="sidebar-link">Nibe Heatpump</a></li><li><a href="/v2.5/addons/bindings/nibeuplink/" class="sidebar-link">NibeUplink</a></li><li><a href="/v2.5/addons/bindings/nikohomecontrol/" class="sidebar-link">Niko Home Control</a></li><li><a href="/v2.5/addons/bindings/nikobus/" class="sidebar-link">Nikobus</a></li><li><a href="/v2.5/addons/bindings/novelanheatpump1/" class="sidebar-link">Novelan/Luxtronic Heat Pump</a></li><li><a href="/v2.5/addons/bindings/ntp/" class="sidebar-link">NTP</a></li><li><a href="/v2.5/addons/bindings/nuki/" class="sidebar-link">Nuki</a></li><li><a href="/v2.5/addons/bindings/oceanic/" class="sidebar-link">Oceanic</a></li><li><a href="/v2.5/addons/bindings/omnikinverter/" class="sidebar-link">Omnik Inverter</a></li><li><a href="/v2.5/addons/bindings/onebusaway/" class="sidebar-link">OneBusAway</a></li><li><a href="/v2.5/addons/bindings/onewire/" class="sidebar-link">OneWire</a></li><li><a href="/v2.5/addons/bindings/onewiregpio/" class="sidebar-link">OneWire GPIO</a></li><li><a href="/v2.5/addons/bindings/onkyo/" class="sidebar-link">Onkyo</a></li><li><a href="/v2.5/addons/bindings/openenergymonitor1/" class="sidebar-link">Open Energy Monitor</a></li><li><a href="/v2.5/addons/bindings/opengarage/" class="sidebar-link">OpenGarage</a></li><li><a href="/v2.5/addons/bindings/openpaths1/" class="sidebar-link">OpenPaths</a></li><li><a href="/v2.5/addons/bindings/opensprinkler/" class="sidebar-link">OpenSprinkler</a></li><li><a href="/v2.5/addons/bindings/openuv/" class="sidebar-link">OpenUV</a></li><li><a href="/v2.5/addons/bindings/openweathermap/" class="sidebar-link">OpenWeatherMap</a></li><li><a href="/v2.5/addons/bindings/orvibo/" class="sidebar-link">Orvibo</a></li><li><a href="/v2.5/addons/bindings/mqttitude1/" class="sidebar-link">OwnTracks (formerly MQTTitude)</a></li><li><a href="/v2.5/addons/bindings/owserver1/" class="sidebar-link">OWServer</a></li><li><a href="/v2.5/addons/bindings/panasonictv1/" class="sidebar-link">Panasonic TV</a></li><li><a href="/v2.5/addons/bindings/panstamp1/" class="sidebar-link">panStamp</a></li><li><a href="/v2.5/addons/bindings/paradoxalarm/" class="sidebar-link">Paradox Alarm System binding</a></li><li><a href="/v2.5/addons/bindings/pentair/" class="sidebar-link">Pentair Pool</a></li><li><a href="/v2.5/addons/bindings/phc/" class="sidebar-link">PHC</a></li><li><a href="/v2.5/addons/bindings/hue/" class="sidebar-link">Philips Hue</a></li><li><a href="/v2.5/addons/bindings/sapp1/" class="sidebar-link">Picnet Sapp</a></li><li><a href="/v2.5/addons/bindings/piface1/" class="sidebar-link">Piface</a></li><li><a href="/v2.5/addons/bindings/pilight1/" class="sidebar-link">pilight</a></li><li><a href="/v2.5/addons/bindings/pioneeravr/" class="sidebar-link">Pioneer AVR</a></li><li><a href="/v2.5/addons/bindings/pixometer/" class="sidebar-link">Pixometer</a></li><li><a href="/v2.5/addons/bindings/pjlinkdevice/" class="sidebar-link">PJLink</a></li><li><a href="/v2.5/addons/bindings/plcbus1/" class="sidebar-link">PLCBus</a></li><li><a href="/v2.5/addons/bindings/plclogo/" class="sidebar-link">PLCLogo</a></li><li><a href="/v2.5/addons/bindings/plex1/" class="sidebar-link">Plex</a></li><li><a href="/v2.5/addons/bindings/plugwise/" class="sidebar-link">Plugwise</a></li><li><a href="/v2.5/addons/bindings/powerdoglocalapi1/" class="sidebar-link">PowerDog Local API</a></li><li><a href="/v2.5/addons/bindings/powermax/" class="sidebar-link">Powermax</a></li><li><a href="/v2.5/addons/bindings/primare1/" class="sidebar-link">Primare</a></li><li><a href="/v2.5/addons/bindings/pulseaudio/" class="sidebar-link">Pulseaudio</a></li><li><a href="/v2.5/addons/bindings/pushbullet/" class="sidebar-link">Pushbullet</a></li><li><a href="/v2.5/addons/bindings/rpircswitch1/" class="sidebar-link">Raspberry Pi RC Switch</a></li><li><a href="/v2.5/addons/bindings/regoheatpump/" class="sidebar-link">RegoHeatPump</a></li><li><a href="/v2.5/addons/bindings/rfxcom/" class="sidebar-link">RFXCOM</a></li><li><a href="/v2.5/addons/bindings/rme/" class="sidebar-link">RME</a></li><li><a href="/v2.5/addons/bindings/robonect/" class="sidebar-link">Robonect</a></li><li><a href="/v2.5/addons/bindings/rotel/" class="sidebar-link">Rotel</a></li><li><a href="/v2.5/addons/bindings/rotelra1x/" class="sidebar-link">Rotel Amplifier</a></li><li><a href="/v2.5/addons/bindings/russound/" class="sidebar-link">Russound</a></li><li><a href="/v2.5/addons/bindings/rwesmarthome1/" class="sidebar-link">RWE SmartHome</a></li><li><a href="/v2.5/addons/bindings/sagercaster1/" class="sidebar-link">Sager Weathercaster</a></li><li><a href="/v2.5/addons/bindings/sallegra1/" class="sidebar-link">Sallegra</a></li><li><a href="/v2.5/addons/bindings/samsungac1/" class="sidebar-link">Samsung Air Conditioner</a></li><li><a href="/v2.5/addons/bindings/samsungtv/" class="sidebar-link">Samsung TV</a></li><li><a href="/v2.5/addons/bindings/satel/" class="sidebar-link">Satel Integra Alarm System</a></li><li><a href="/v2.5/addons/bindings/seneye/" class="sidebar-link">Seneye</a></li><li><a href="/v2.5/addons/bindings/sensebox/" class="sidebar-link">senseBox</a></li><li><a href="/v2.5/addons/bindings/serial1/" class="sidebar-link">Serial</a></li><li><a href="/v2.5/addons/bindings/serialbutton/" class="sidebar-link">Serial Button</a></li><li><a href="/v2.5/addons/bindings/shelly/" class="sidebar-link">Shelly</a></li><li><a href="/v2.5/addons/bindings/siemensrds/" class="sidebar-link">Siemens RDS</a></li><li><a href="/v2.5/addons/bindings/silvercrestwifisocket/" class="sidebar-link">Silvercrest Wifi Plug</a></li><li><a href="/v2.5/addons/bindings/sinope/" class="sidebar-link">Sinopé</a></li><li><a href="/v2.5/addons/bindings/sleepiq/" class="sidebar-link">SleepIQ</a></li><li><a href="/v2.5/addons/bindings/smaenergymeter/" class="sidebar-link">SMA Energy Meter</a></li><li><a href="/v2.5/addons/bindings/smarthomatic1/" class="sidebar-link">Smarthomatic</a></li><li><a href="/v2.5/addons/bindings/smartmeter/" class="sidebar-link">SmartMeter</a></li><li><a href="/v2.5/addons/bindings/snmp/" class="sidebar-link">SNMP</a></li><li><a href="/v2.5/addons/bindings/solarlog/" class="sidebar-link">Solar-Log</a></li><li><a href="/v2.5/addons/bindings/solaredge/" class="sidebar-link">SolarEdge</a></li><li><a href="/v2.5/addons/bindings/somfytahoma/" class="sidebar-link">Somfy Tahoma</a></li><li><a href="/v2.5/addons/bindings/urtsi/" class="sidebar-link">Somfy URTSI II</a></li><li><a href="/v2.5/addons/bindings/sonance1/" class="sidebar-link">Sonance</a></li><li><a href="/v2.5/addons/bindings/sonos/" class="sidebar-link">Sonos</a></li><li><a href="/v2.5/addons/bindings/sonyaudio/" class="sidebar-link">SonyAudio</a></li><li><a href="/v2.5/addons/bindings/sonyprojector/" class="sidebar-link">SonyProjector</a></li><li><a href="/v2.5/addons/bindings/souliss1/" class="sidebar-link">Souliss</a></li><li><a href="/v2.5/addons/bindings/spotify/" class="sidebar-link">Spotify</a></li><li><a href="/v2.5/addons/bindings/stiebelheatpump1/" class="sidebar-link">Stiebel Eltron LWZ</a></li><li><a href="/v2.5/addons/bindings/swegonventilation1/" class="sidebar-link">Swegon Ventilation</a></li><li><a href="/v2.5/addons/bindings/synopanalyzer/" class="sidebar-link">Synop Analyzer</a></li><li><a href="/v2.5/addons/bindings/systeminfo/" class="sidebar-link">Systeminfo</a></li><li><a href="/v2.5/addons/bindings/tacmi1/" class="sidebar-link">TACmi</a></li><li><a href="/v2.5/addons/bindings/tado/" class="sidebar-link">tado°</a></li><li><a href="/v2.5/addons/bindings/tankerkoenig/" class="sidebar-link">Tankerkönig</a></li><li><a href="/v2.5/addons/bindings/tcp1/" class="sidebar-link">TCP &amp; UDP</a></li><li><a href="/v2.5/addons/bindings/telegram/" class="sidebar-link">Telegram</a></li><li><a href="/v2.5/addons/bindings/tellstick/" class="sidebar-link">Tellstick</a></li><li><a href="/v2.5/addons/bindings/tesla/" class="sidebar-link">Tesla</a></li><li><a href="/v2.5/addons/bindings/weathercompany/" class="sidebar-link">The Weather Company</a></li><li><a href="/v2.5/addons/bindings/tinkerforge1/" class="sidebar-link">TinkerForge</a></li><li><a href="/v2.5/addons/bindings/tivo1/" class="sidebar-link">TiVo</a></li><li><a href="/v2.5/addons/bindings/toon/" class="sidebar-link">Toon</a></li><li><a href="/v2.5/addons/bindings/tplinksmarthome/" class="sidebar-link">TP-Link Smart Home</a></li><li><a href="/v2.5/addons/bindings/tradfri/" class="sidebar-link">TRÅDFRI</a></li><li><a href="/v2.5/addons/bindings/ucprelayboard1/" class="sidebar-link">UCProjects.eu Relay Board</a></li><li><a href="/v2.5/addons/bindings/unifi/" class="sidebar-link">UniFi</a></li><li><a href="/v2.5/addons/bindings/upb1/" class="sidebar-link">UPB</a></li><li><a href="/v2.5/addons/bindings/valloxmv/" class="sidebar-link">ValloxMV</a></li><li><a href="/v2.5/addons/bindings/vektiva/" class="sidebar-link">Vektiva</a></li><li><a href="/v2.5/addons/bindings/velbus/" class="sidebar-link">Velbus</a></li><li><a href="/v2.5/addons/bindings/k80551/" class="sidebar-link">Velleman k8055 USB IO Board</a></li><li><a href="/v2.5/addons/bindings/velux1/" class="sidebar-link">Velux</a></li><li><a href="/v2.5/addons/bindings/vdr1/" class="sidebar-link">Video Disk Recorder (VDR)</a></li><li><a href="/v2.5/addons/bindings/vitotronic/" class="sidebar-link">Vitotronic</a></li><li><a href="/v2.5/addons/bindings/volvooncall/" class="sidebar-link">VolvoOnCall</a></li><li><a href="/v2.5/addons/bindings/wago1/" class="sidebar-link">WAGO</a></li><li><a href="/v2.5/addons/bindings/wol1/" class="sidebar-link">Wake-on-LAN</a></li><li><a href="/v2.5/addons/bindings/weather1/" class="sidebar-link">Weather</a></li><li><a href="/v2.5/addons/bindings/weatherunderground/" class="sidebar-link">WeatherUnderground</a></li><li><a href="/v2.5/addons/bindings/wifiled/" class="sidebar-link">WiFi LED</a></li><li><a href="/v2.5/addons/bindings/windcentrale/" class="sidebar-link">Windcentrale</a></li><li><a href="/v2.5/addons/bindings/withings1/" class="sidebar-link">Withings</a></li><li><a href="/v2.5/addons/bindings/wr32231/" class="sidebar-link">WR3223 ventilation controller</a></li><li><a href="/v2.5/addons/bindings/miio/" class="sidebar-link">Xiaomi Mi IO</a></li><li><a href="/v2.5/addons/bindings/mihome/" class="sidebar-link">Xiaomi Mi Smart Home</a></li><li><a href="/v2.5/addons/bindings/xmltv/" class="sidebar-link">XmlTV</a></li><li><a href="/v2.5/addons/bindings/xmppclient/" class="sidebar-link">XMPPClient</a></li><li><a href="/v2.5/addons/bindings/xpl1/" class="sidebar-link">xPL</a></li><li><a href="/v2.5/addons/bindings/yahooweather/" class="sidebar-link">YahooWeather</a></li><li><a href="/v2.5/addons/bindings/yamahareceiver/" class="sidebar-link">Yamaha Receiver</a></li><li><a href="/v2.5/addons/bindings/yeelight/" class="sidebar-link">Yeelight</a></li><li><a href="/v2.5/addons/bindings/zway/" class="sidebar-link">Z-Way</a></li><li><a href="/v2.5/addons/bindings/zibase1/" class="sidebar-link">Zibase</a></li><li><a href="/v2.5/addons/bindings/zigbee/" class="sidebar-link">ZigBee</a></li><li><a href="/v2.5/addons/bindings/zoneminder/" class="sidebar-link">Zoneminder</a></li><li><a href="/v2.5/addons/bindings/zwave/" class="sidebar-link">ZWave</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>System Integrations</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Actions</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Data Persistence</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Data Transformation</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Voice</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="shelly-binding-org-openhab-binding-shelly"><a href="#shelly-binding-org-openhab-binding-shelly" aria-hidden="true" class="header-anchor">#</a> Shelly Binding (org.openhab.binding.shelly)</h1> <p>This openHAB 2 Binding implements control for the Shelly series of devices.
+This includes sending commands to the devices as well as reading the device status and sensor data.</p> <p>Author: Markus Michels (markus7017)
+Check  <a href="https://community.openhab.org/t/shelly-binding/" target="_blank" rel="noopener noreferrer">https://community.openhab.org/t/shelly-binding/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> for more information, questions and contributing ideas. Any comments are welcome!</p> <p>Also check section <strong>Additional Information</strong> at the end of the document.
+This includes some general comments, information how to debug and request new features.</p> <hr> <h3 id="alpha-beta-versions"><a href="#alpha-beta-versions" aria-hidden="true" class="header-anchor">#</a> Alpha/Beta versions</h3> <p>The binding is work in progress. You have to expect bugs etc. and each version might be incompatible to the existing thing definition, which means no backware compatibility.</p> <p>Channel definitions are subject to change with any alpha or beta release. Please make sure to <strong>delete all Shelly things before updating</strong>* the binding and clean out the JSON DB:</p> <ul><li><strong>remove all shelly entries from paperui</strong></li> <li>stop oh2 service</li> <li>openhab-cli clear-cache</li> <li>copy jar into addons (set correct permission)</li> <li>start oh2 service</li> <li><strong>re-discover things</strong></li> <li>the channel/item linkage should be restored automatically</li></ul> <p>If you hit a problem make sure to post a TRACE log (or send PM) so I could look into the details.</p> <h3 id="instalation"><a href="#instalation" aria-hidden="true" class="header-anchor">#</a> Instalation</h3> <p>As described above the binding will be installed by copying the jar into the addons folder of your OH installation.
+Once a stable state is reached the binding may become part of the openHAB 2.5 distribution, but this will take some time.
+The binding was developed an tested on OH version 2.4 and 2.5.
+Please post an info if you also verified compatibility to version 2.3.
+However, this release is not officially supported.</p> <h1 id="additional-notes"><a href="#additional-notes" aria-hidden="true" class="header-anchor">#</a> Additional Notes</h1> <h2 id="general"><a href="#general" aria-hidden="true" class="header-anchor">#</a> General</h2> <ul><li><p>You should use firmware version 1.5.2 or never.
+It might be that the binding is working with older versions, but this was never tested.
+List of Firmware Versions for the different devices could be found here: <a href="https://api.shelly.cloud/files/firmware" target="_blank" rel="noopener noreferrer">https://api.shelly.cloud/files/firmware<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></li> <li><p>If you gave multiple network interfaces you should check openHAB's default setting.</p></li></ul> <p>Open PaperUI and go to Configuration:System-:Network Settings and verify the selected interface.
+If the Shelly devices are not on the same network you could try to add them manually.
+However, devices in different networks have not been tested yet (please post a comment in the community thread if you are successful).</p> <h2 id="reporting-a-problem-bug"><a href="#reporting-a-problem-bug" aria-hidden="true" class="header-anchor">#</a> Reporting a problem/bug</h2> <p>If you encounter a problem you could put the device into DEBUG or TRACE mode</p> <ul><li>open OH console (execute &quot;openhab-cli console&quot;)</li> <li>set the debug level (&quot;log:set DEBUG org.openhab.binding.shelly&quot;)</li> <li>issue command or wait until problem occurs</li> <li>post an extract of openhab.log to the community thread (or send the author a PM - make sure the log extract has enough information, some more lines are fine)</li></ul> <h2 id="feature-request"><a href="#feature-request" aria-hidden="true" class="header-anchor">#</a> Feature Request</h2> <p>Any comment or feature request is welcome. Post the idea to the community thread, all of us will benefit.</p> <h2 id="other-devices"><a href="#other-devices" aria-hidden="true" class="header-anchor">#</a> Other devices</h2> <p>The thing definition of the following devices is primarily.
+If you have one of those devices send a PM to marks7017 and we could work on the implementation/testing.</p> <ul><li>thing-type: shellysmoke</li> <li>thing-type: shellysense</li> <li>thing-type: shellyplug</li></ul> <h2 id="supporting-new-devices"><a href="#supporting-new-devices" aria-hidden="true" class="header-anchor">#</a> Supporting new devices</h2> <p>You could help to integrate and support new devices. In general the following information is a good start</p> <ul><li>open a browser and issue the following urls</li> <li>http://&lt;device ip&gt;/settings</li> <li>http://&lt;device ip&gt;/status</li></ul> <p>once basic discovery is implemented the Coap Discription could be discovered</p> <ul><li>enable CoIoT events within the thing configuration</li> <li>open the thing properties ([Show Properties])</li> <li>and copy&amp;paste the coapDescr property</li></ul> <p>post this information in the community thread or send a PM to the author.
+Depending on the device type and complexity of the integration you should be prepared to run test cycles with snapshort binds of the binding incl. back and forth communication with the author.</p> <h1 id="rest-api-json-sample-data"><a href="#rest-api-json-sample-data" aria-hidden="true" class="header-anchor">#</a> REST API JSON Sample Data</h1> <h2 id="shelly1"><a href="#shelly1" aria-hidden="true" class="header-anchor">#</a> Shelly1</h2> <h3 id="shelly1-status-relay-0"><a href="#shelly1-status-relay-0" aria-hidden="true" class="header-anchor">#</a> Shelly1: /status/relay/0</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ip&quot;:&quot;10.0.0.1&quot;,&quot;rssi&quot;:-70},
+	&quot;cloud&quot;:{&quot;enabled&quot;:false, &quot;connected&quot;:false},
+	&quot;mqtt&quot;:{&quot;connected&quot;:true},
+	&quot;time&quot;:&quot;15:36&quot;,&quot;serial&quot;:1,&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+	&quot;relays&quot; :[
+		{&quot;ison&quot;:false,&quot;has_timer&quot;:false}
+	],
+	&quot;meters&quot;:[
+		{&quot;power&quot;:0.00,&quot;is_valid&quot;:&quot;true&quot;}
+	],
+	&quot;update&quot;:{&quot;status&quot;:&quot;idle&quot;,&quot;has_update&quot;:false,&quot;new_version&quot;:&quot;20190711-084053/v1.5.0-hotfix4@3b4f7414&quot;,&quot;old_version&quot;:&quot;20190711-084053/v1.5.0-hotfix4@3b4f7414&quot;},
+	&quot;ram_total&quot;:51104,&quot;ram_free&quot;:40356,&quot;fs_size&quot;:233681,&quot;fs_free&quot;:175951,&quot;uptime&quot;:3455
+}
+</code></pre></div><h3 id="coap-device-description-shelly1"><a href="#coap-device-description-shelly1" aria-hidden="true" class="header-anchor">#</a> COAP Device Description Shelly1</h3> <div class="language- extra-class"><pre class="language-dsl"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;blk&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Relay0&quot;</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;sen&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">112</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;Switch&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;act&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">211</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Switch&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;P&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">2011</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;ToState&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="shelly-1pm"><a href="#shelly-1pm" aria-hidden="true" class="header-anchor">#</a> Shelly 1PM</h2> <h3 id="shelly-1pm-settings"><a href="#shelly-1pm-settings" aria-hidden="true" class="header-anchor">#</a> Shelly 1PM - /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;device&quot;: {
+        &quot;type&quot;: &quot;SHSW-PM&quot;,
+        &quot;mac&quot;: &quot;XXXXXXXX&quot;,
+        &quot;hostname&quot;: &quot;shelly1pm-XXXXXX&quot;,
+        &quot;num_outputs&quot;: 1,
+        &quot;num_meters&quot;: 1
+    },
+    &quot;wifi_ap&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;ssid&quot;: &quot;shelly1pm-XXXXXX&quot;,
+        &quot;key&quot;: &quot;&quot;
+    },
+    &quot;wifi_sta&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;ssid&quot;: &quot;iot-wlan&quot;,
+        &quot;ipv4_method&quot;: &quot;dhcp&quot;,
+        &quot;ip&quot;: null,
+        &quot;gw&quot;: null,
+        &quot;mask&quot;: null,
+        &quot;dns&quot;: null
+    },
+    &quot;wifi_sta1&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;ssid&quot;: null,
+        &quot;ipv4_method&quot;: &quot;dhcp&quot;,
+        &quot;ip&quot;: null,
+        &quot;gw&quot;: null,
+        &quot;mask&quot;: null,
+        &quot;dns&quot;: null
+    },
+    &quot;mqtt&quot;: {
+        &quot;enable&quot;: false,
+        &quot;server&quot;: &quot;10.0.0.2:1883&quot;,
+        &quot;user&quot;: &quot;&quot;,
+        &quot;id&quot;: &quot;shelly1pm-XXXXXX&quot;,
+        &quot;reconnect_timeout_max&quot;: 60.0,
+        &quot;reconnect_timeout_min&quot;: 2.0,
+        &quot;clean_session&quot;: true,
+        &quot;keep_alive&quot;: 60,
+        &quot;max_qos&quot;: 0,
+        &quot;retain&quot;: false,
+        &quot;update_period&quot;: 30
+    },
+    &quot;sntp&quot;: {
+        &quot;server&quot;: &quot;time.google.com&quot;
+    },
+    &quot;login&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;unprotected&quot;: false,
+        &quot;username&quot;: &quot;admin&quot;,
+        &quot;password&quot;: &quot;admin&quot;
+    },
+    &quot;pin_code&quot;: &quot;RPSR$p&quot;,
+    &quot;name&quot;: &quot;&quot;,
+    &quot;fw&quot;: &quot;20191127-095910/v1.5.6@0d769d69&quot;,
+    &quot;build_info&quot;: {
+        &quot;build_id&quot;: &quot;20191127-095910/v1.5.6@0d769d69&quot;,
+        &quot;build_timestamp&quot;: &quot;2019-11-27T09:59:10Z&quot;,
+        &quot;build_version&quot;: &quot;1.0&quot;
+    },
+    &quot;cloud&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;connected&quot;: true
+    },
+    &quot;timezone&quot;: &quot;Europe/Berlin&quot;,
+    &quot;lat&quot;: 50.252491,
+    &quot;lng&quot;: 5.779092,
+    &quot;tzautodetect&quot;: false,
+    &quot;time&quot;: &quot;12:41&quot;,
+    &quot;hwinfo&quot;: {
+        &quot;hw_revision&quot;: &quot;prod-190329&quot;,
+        &quot;batch_id&quot;: 1
+    },
+    &quot;max_power&quot;: 3500,
+    &quot;mode&quot;: &quot;relay&quot;,
+    &quot;relays&quot;: [
+        {
+            &quot;name&quot;: null,
+            &quot;ison&quot;: false,
+            &quot;has_timer&quot;: false,
+            &quot;default_state&quot;: &quot;off&quot;,
+            &quot;btn_type&quot;: &quot;edge&quot;,
+            &quot;btn_reverse&quot;: 0,
+            &quot;auto_on&quot;: 0.0,
+            &quot;auto_off&quot;: 0.0,
+            &quot;btn_on_url&quot;: null,
+            &quot;btn_off_url&quot;: null,
+            &quot;out_on_url&quot;: &quot;http://10.0.0.20:8080/shelly/event/shelly1pm-e5bed0/relay/0?type=out_on&quot;,
+            &quot;out_off_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shelly1pm-e5bed0/relay/0?type=out_off&quot;,
+            &quot;longpush_url&quot;: null,
+            &quot;shortpush_url&quot;: null,
+            &quot;schedule&quot;: false,
+            &quot;schedule_rules&quot;: [],
+            &quot;max_power&quot;: 3500
+        }
+    ],
+    &quot;meters&quot;: [
+        {
+            &quot;power&quot;: 0.0,
+            &quot;is_valid&quot;: true,
+            &quot;timestamp&quot;: 1575117676,
+            &quot;counters&quot;: [
+                0.0,
+                0.0,
+                0.0
+            ],
+            &quot;total&quot;: 2262
+        }
+    ]
+}
+</code></pre></div><h3 id="shelly-1pm-status"><a href="#shelly-1pm-status" aria-hidden="true" class="header-anchor">#</a> Shelly 1PM /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;wifi_sta&quot;: {
+        &quot;connected&quot;: true,
+        &quot;ssid&quot;: &quot;iot-wlan&quot;,
+        &quot;ip&quot;: &quot;10.0.0.2&quot;,
+        &quot;rssi&quot;: -49
+    },
+    &quot;cloud&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;connected&quot;: true
+    },
+    &quot;mqtt&quot;: {
+        &quot;connected&quot;: false
+    },
+    &quot;time&quot;: &quot;12:41&quot;,
+    &quot;serial&quot;: 23,
+    &quot;has_update&quot;: false,
+    &quot;mac&quot;: &quot;XXXXXXXXXXXX&quot;,
+    &quot;relays&quot;: [
+        {
+            &quot;ison&quot;: false,
+            &quot;has_timer&quot;: false,
+            &quot;overpower&quot;: false
+        }
+    ],
+    &quot;meters&quot;: [
+        {
+            &quot;power&quot;: 0.0,
+            &quot;is_valid&quot;: true,
+            &quot;timestamp&quot;: 1575117691,
+            &quot;counters&quot;: [
+                0.0,
+                0.0,
+                0.0
+            ],
+            &quot;total&quot;: 2262
+        }
+    ],
+    &quot;inputs&quot;: [
+        {
+            &quot;input&quot;: 0
+        }
+    ],
+    &quot;ext_temperature&quot;: {},
+    &quot;temperature&quot;: 45.51,
+    &quot;overtemperature&quot;: false,
+    &quot;tmp&quot;: {
+        &quot;tC&quot;: 45.51,
+        &quot;tF&quot;: 113.93,
+        &quot;is_valid&quot;: &quot;true&quot;
+    },
+    &quot;update&quot;: {
+        &quot;status&quot;: &quot;idle&quot;,
+        &quot;has_update&quot;: false,
+        &quot;new_version&quot;: &quot;20191127-095910/v1.5.6@0d769d69&quot;,
+        &quot;old_version&quot;: &quot;20191127-095910/v1.5.6@0d769d69&quot;
+    },
+    &quot;ram_total&quot;: 50704,
+    &quot;ram_free&quot;: 35428,
+    &quot;fs_size&quot;: 233681,
+    &quot;fs_free&quot;: 172437,
+    &quot;uptime&quot;: 237010
+}
+</code></pre></div><h2 id="shelly2"><a href="#shelly2" aria-hidden="true" class="header-anchor">#</a> Shelly2</h2> <h3 id="settings"><a href="#settings" aria-hidden="true" class="header-anchor">#</a> /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot; : {
+	   &quot;type&quot;:&quot;SHSW-21&quot;,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;hostname&quot;:&quot;shellyswitch-XXXXXX&quot;,
+	   &quot;num_outputs&quot;:2,&quot;num_meters&quot;:1,&quot;num_rollers&quot;:1
+	 },
+	&quot;wifi_ap&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:&quot;shellyswitch-XXXXXX&quot;,&quot;key&quot;:&quot;},
+	&quot;wifi_sta&quot;:{&quot;enabled&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ipv4_method&quot;:&quot;static&quot;,&quot;ip&quot;:&quot;10.0.0.10&quot;,&quot;gw&quot;:&quot;10.0.0.1&quot;,&quot;mask&quot;:&quot;255.0.0.0&quot;,&quot;dns&quot;:&quot;10.0.0.1&quot;},
+	&quot;wifi_sta1&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:null,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	&quot;mqtt&quot;: {&quot;enable&quot;:true,&quot;server&quot;:&quot;10.0.0.7:1883&quot;,&quot;user&quot;:&quot;admin&quot;,&quot;reconnect_timeout_max&quot;:60.000000,&quot;reconnect_timeout_min&quot;:2.000000,
+		   &quot;clean_session&quot;:true,&quot;keep_alive&quot;:60,&quot;will_topic&quot;:&quot;shellies/shellyswitch-XXXXXX/online&quot;,&quot;will_message&quot;:&quot;false&quot;, max_qos&quot;:0,&quot;retain&quot;:true,&quot;update_period&quot;:30},
+	&quot;sntp&quot;: {&quot;server&quot;:&quot;time.google.com&quot;},
+	&quot;login&quot;:{&quot;enabled&quot;:true,&quot;unprotected&quot;:false,&quot;username&quot;:&quot;xxx&quot;,&quot;password&quot;:&quot;xxx&quot;},&quot;pin_code&quot;:&quot;&quot;,
+	&quot;coiot_execute_enable&quot;:true,&quot;name&quot;:&quot;&quot;,
+	&quot;fw&quot;:&quot;20190531-075812/v1.5.0-hotfix2@022ec015&quot;,&quot;build_info&quot;:{&quot;build_id&quot;:&quot;20190531-075812/v1.5.0-hotfix2@022ec015&quot;,&quot;build_timestamp&quot;:&quot;2019-05-31T07:58:12Z&quot;,&quot;build_version&quot;:&quot;1.0&quot;},
+	&quot;cloud&quot;:{&quot;enabled&quot;:false,&quot;connected&quot;:false},
+	&quot;timezone&quot;:&quot;Europe/Berlin&quot;,&quot;lat&quot;:45.864700,&quot;lng&quot;:7.625460,&quot;tzautodetect&quot;:true,&quot;time&quot;:&quot;23:02&quot;,
+	&quot;hwinfo&quot;:{&quot;hw_revision&quot;:&quot;prod-2018-10c&quot;, &quot;batch_id&quot;:5},
+	&quot;mode&quot;:&quot;relay&quot;,&quot;max_power&quot;:1840,
+	&quot;relays&quot;:[
+		{
+			&quot;name&quot;:null,&quot;ison&quot;:false,&quot;has_timer&quot;:false,&quot;overpower&quot;:falsem &quot;default_state&quot;:&quot;last&quot;,&quot;btn_type&quot;:&quot;edge&quot;, &quot;btn_reverse&quot;:0,
+			&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,&quot;btn_on_url&quot;:null,&quot;btn_off_url&quot;:null,&quot;out_on_url&quot;:null,&quot;out_off_url&quot;:null,&quot;schedule&quot;:false,
+			&quot;schedule_rules&quot;:[]
+		},
+		{
+			&quot;name&quot;:null,&quot;ison&quot;:false,&quot;has_timer&quot;:false,&quot;overpower&quot;:false,&quot;default_state&quot;:&quot;off&quot;,&quot;btn_type&quot;:&quot;edge&quot;,&quot;btn_reverse&quot;:0,
+			&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,
+			&quot;btn_on_url&quot;:null,&quot;btn_off_url&quot;:null,&quot;out_on_url&quot;:null,&quot;out_off_url&quot;:null,
+			&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[]}
+		],
+		&quot;rollers&quot;:[
+			{
+				&quot;maxtime&quot;:20.00,&quot;maxtime_open&quot;:20.00,&quot;maxtime_close&quot;:20.00,&quot;default_state&quot;:&quot;stop&quot;,&quot;swap&quot;:false,&quot;swap_inputs&quot;:false,&quot;input_mode&quot;:&quot;openclose&quot;,
+				&quot;button_type&quot;:&quot;toggle&quot;,&quot;btn_reverse&quot;:0,
+				&quot;state&quot;:&quot;stop&quot;,
+				&quot;power&quot;:0.00,
+				&quot;is_valid&quot;:true,&quot;safety_switch&quot;:false,
+				&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[],
+				&quot;obstacle_mode&quot;:&quot;disabled&quot;,&quot;obstacle_action&quot;:&quot;stop&quot;,&quot;obstacle_power&quot;:200,&quot;obstacle_delay&quot;:1,&quot;safety_mode&quot;:&quot;while_opening&quot;,&quot;safety_action&quot;:&quot;stop&quot;,
+				&quot;safety_allowed_on_trigger&quot;:&quot;none&quot;,&quot;off_power&quot;:2,
+				&quot;positioning&quot;:true
+			}
+		],
+		&quot;meters&quot;:[
+			{&quot;power&quot;:0.00,&quot;is_valid&quot;:true,&quot;timestamp&quot;:1562713329,&quot;counters&quot;:[0.000, 0.000, 0.000],&quot;total&quot;:19111}
+		]
+	}
+</code></pre></div><h3 id="shelly-2-settings-relay-0"><a href="#shelly-2-settings-relay-0" aria-hidden="true" class="header-anchor">#</a> Shelly 2 /settings/relay/0</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;name&quot;:null, &quot;ison&quot;:false,&quot;has_timer&quot;:false,
+	&quot;overpower&quot;:false,&quot;default_state&quot;:&quot;last&quot;,
+	&quot;btn_type&quot;:&quot;edge&quot;,&quot;btn_reverse&quot;:0,
+	&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,
+	&quot;btn_on_url&quot;:null,
+	&quot;btn_off_url&quot;:null,
+	&quot;out_on_url&quot;:null,
+	&quot;out_off_url&quot;:null,
+	&quot;schedule&quot;:false,
+	&quot;schedule_rules&quot;:[]
+}
+</code></pre></div><h3 id="shelly-2-status-relay-0"><a href="#shelly-2-status-relay-0" aria-hidden="true" class="header-anchor">#</a> Shelly 2: /status/relay/0</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ip&quot;:&quot;10.0.0.1&quot;,&quot;rssi&quot;:-70},
+	&quot;cloud&quot;:{&quot;enabled&quot;:false, &quot;connected&quot;:false},
+	&quot;mqtt&quot;:{&quot;connected&quot;:true},
+	&quot;time&quot;:&quot;15:36&quot;,&quot;serial&quot;:1,&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;serial&quot;:1,
+	&quot;has_update&quot;:true,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+	&quot;relays&quot;:[
+		{&quot;ison&quot;:false,&quot;has_timer&quot;:false,&quot;overpower&quot;:false,&quot;is_valid&quot;:true},
+		{&quot;ison&quot;:false,&quot;has_timer&quot;:false,&quot;overpower&quot;:false,&quot;is_valid&quot;:true}
+	],
+	&quot;rollers&quot;:[
+		{&quot;state&quot;:&quot;stop&quot;,&quot;power&quot;:0.00,&quot;is_valid&quot;:true,&quot;safety_switch&quot;:false,&quot;stop_reason&quot;:&quot;normal&quot;,&quot;last_direction&quot;:&quot;open&quot;,&quot;current_pos&quot;:101,&quot;calibrating&quot;:false,&quot;positioning&quot;:true}
+	],
+	&quot;meters&quot;:[
+		{&quot;power&quot;:0.00,&quot;is_valid&quot;:true,&quot;timestamp&quot;:1563292829,&quot;counters&quot;:[0.000, 0.000, 0.000],&quot;total&quot;:35473}
+	],
+	&quot;update&quot;:{&quot;status&quot;:&quot;pending&quot;,&quot;has_update&quot;:true,&quot;new_version&quot;:&quot;20190711-084105/v1.5.0-hotfix4@3b4f7414&quot;,&quot;old_version&quot;:&quot;20190531-075812/v1.5.0-hotfix2@022ec015&quot;},
+	&quot;ram_total&quot;:50264,&quot;ram_free&quot;:37548,
+	&quot;fs_size&quot;:233681,
+	&quot;fs_free&quot;:155620,
+	&quot;uptime&quot;:1352018
+}
+</code></pre></div><h3 id="shelly2-status-device"><a href="#shelly2-status-device" aria-hidden="true" class="header-anchor">#</a> Shelly2: /status/device</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;enabled&quot;:true, &quot;ssid&quot;:&quot;iot-wlan&quot;, &quot;ipv4_method&quot;:&quot;static&quot;,&quot;ip&quot;:&quot;10.0.0.10&quot;,&quot;gw&quot;:&quot;10.0.0.1&quot;,&quot;mask&quot;:&quot;255.0.0.0&quot;,&quot;dns&quot;:&quot;10.0.0.1&quot;
+
+{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ip&quot;:&quot;10.0.0.1&quot;,&quot;rssi&quot;:-69},
+	&quot;cloud&quot;:{&quot;enabled&quot;:false,&quot;connected&quot;:false},
+	&quot;mqtt&quot;:{&quot;connected&quot;:true},
+	&quot;time&quot;:&quot;00:17&quot;,&quot;serial&quot;:1,&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+	&quot;relays&quot;:[
+		{
+			&quot;ison&quot;:false,
+			&quot;has_timer&quot;:false,
+			&quot;overpower&quot;:false,
+			&quot;is_valid&quot;:true
+		},
+			{
+			&quot;ison&quot;:false,
+			&quot;has_timer&quot;:false,
+			&quot;overpower&quot;:false,
+			&quot;is_valid&quot;:true
+		}
+	],
+	&quot;rollers&quot;:[
+		{
+			&quot;state&quot;:&quot;stop&quot;,
+			&quot;power&quot;:0.00,
+			&quot;is_valid&quot;:true,
+			&quot;safety_switch&quot;:false,
+			&quot;stop_reason&quot;:&quot;normal&quot;,
+			&quot;last_direction&quot;:&quot;stop&quot;,
+			&quot;current_pos&quot;:101,
+			&quot;calibrating&quot;:false,
+			&quot;positioning&quot;:true
+		}
+	],
+	&quot;meters&quot;:[
+			{
+				&quot;power&quot;:0.00,
+				&quot;is_valid&quot;:true,
+				&quot;timestamp&quot;:1562717876,
+				&quot;counters&quot;:[0.000, 0.000, 0.000],
+				&quot;total&quot;:19111
+			}
+	],
+	&quot;update&quot;:{
+		&quot;status&quot;:&quot;idle&quot;,
+		&quot;has_update&quot;:false,
+		&quot;new_version&quot;:&quot;20190531-075812/v1.5.0-hotfix2@022ec015&quot;,
+		&quot;old_version&quot;:&quot;20190531-075812/v1.5.0-hotfix2@022ec015&quot;
+	},
+	&quot;ram_total&quot;:50264,&quot;ram_free&quot;:37884,&quot;fs_size&quot;:233681,&quot;fs_free&quot;:156373,&quot;uptime&quot;:777069
+}
+</code></pre></div><h2 id="shelly-2-5"><a href="#shelly-2-5" aria-hidden="true" class="header-anchor">#</a> Shelly 2.5</h2> <h3 id="shelly-2-5-relay-settings"><a href="#shelly-2-5-relay-settings" aria-hidden="true" class="header-anchor">#</a> Shelly 2.5-Relay: /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;: {
+		&quot;type&quot;: &quot;SHSW-25&quot;,
+		&quot;mac&quot;: &quot;XXXXXXXXXXXX&quot;,
+		&quot;hostname&quot;: &quot;shellyswitch25-XXXXXX&quot;,
+		&quot;num_outputs&quot;: 2,
+		&quot;num_meters&quot;: 2,
+		&quot;num_rollers&quot;: 1
+	},
+	&quot;wifi_ap&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;ssid&quot;: &quot;shellyswitch25-XXXXXX&quot;,
+		&quot;key&quot;: &quot;&quot;
+	},
+	&quot;wifi_sta&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;ssid&quot;: &quot;iot-wlan&quot;,
+		&quot;ipv4_method&quot;: &quot;dhcp&quot;,
+		&quot;ip&quot;: null,
+		&quot;gw&quot;: null,
+		&quot;mask&quot;: null,
+		&quot;dns&quot;: null
+	},
+	&quot;wifi_sta1&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;ssid&quot;: null,
+		&quot;ipv4_method&quot;: &quot;dhcp&quot;,
+		&quot;ip&quot;: null,
+		&quot;gw&quot;: null,
+		&quot;mask&quot;: null,
+		&quot;dns&quot;: null
+	},
+	&quot;mqtt&quot;: {
+		&quot;enable&quot;: false,
+		&quot;server&quot;: &quot;10.0.0.2:1883&quot;,
+		&quot;user&quot;: &quot;&quot;,
+		&quot;id&quot;: &quot;shellyswitch25-XXXXXX&quot;,
+		&quot;reconnect_timeout_max&quot;: 60.0,
+		&quot;reconnect_timeout_min&quot;: 2.0,
+		&quot;clean_session&quot;: true,
+		&quot;keep_alive&quot;: 60,
+		&quot;max_qos&quot;: 0,
+		&quot;retain&quot;: false,
+		&quot;update_period&quot;: 30
+	},
+	&quot;sntp&quot;: {
+		&quot;server&quot;: &quot;time.google.com&quot;
+	},
+	&quot;login&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;unprotected&quot;: false,
+		&quot;username&quot;: &quot;admin&quot;,
+		&quot;password&quot;: &quot;admin&quot;
+	},
+	&quot;pin_code&quot;: &quot;Y}e!BK&quot;,
+	&quot;name&quot;: &quot;&quot;,
+	&quot;fw&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;,
+	&quot;build_info&quot;: {
+		&quot;build_id&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;,
+		&quot;build_timestamp&quot;: &quot;2019-11-27T09:54:44Z&quot;,
+		&quot;build_version&quot;: &quot;1.0&quot;
+	},
+	&quot;cloud&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;connected&quot;: true
+	},
+	&quot;timezone&quot;: &quot;Europe/Berlin&quot;,
+	&quot;lat&quot;: 50.252491,
+	&quot;lng&quot;: 5.779092,
+	&quot;tzautodetect&quot;: false,
+	&quot;time&quot;: &quot;12:42&quot;,
+	&quot;hwinfo&quot;: {
+		&quot;hw_revision&quot;: &quot;prod-2019-03&quot;,
+		&quot;batch_id&quot;: 1
+	},
+	&quot;mode&quot;: &quot;relay&quot;,
+	&quot;max_power&quot;: 1840,
+	&quot;relays&quot;: [
+		{
+			&quot;name&quot;: null,
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;default_state&quot;: &quot;off&quot;,
+			&quot;btn_type&quot;: &quot;edge&quot;,
+			&quot;btn_reverse&quot;: 0,
+			&quot;auto_on&quot;: 0.0,
+			&quot;auto_off&quot;: 0.0,
+			&quot;max_power&quot;: 0,
+			&quot;btn_on_url&quot;: null,
+			&quot;btn_off_url&quot;: null,
+			&quot;out_on_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shellyswitch25-0043e0/relay/0?type=out_on&quot;,
+			&quot;out_off_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shellyswitch25-0043e0/relay/0?type=out_off&quot;,
+			&quot;longpush_url&quot;: null,
+			&quot;shortpush_url&quot;: null,
+			&quot;schedule&quot;: false,
+			&quot;schedule_rules&quot;: []
+		},
+		{
+			&quot;name&quot;: null,
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;default_state&quot;: &quot;off&quot;,
+			&quot;btn_type&quot;: &quot;edge&quot;,
+			&quot;btn_reverse&quot;: 0,
+			&quot;auto_on&quot;: 0.0,
+			&quot;auto_off&quot;: 0.0,
+			&quot;max_power&quot;: 0,
+			&quot;btn_on_url&quot;: null,
+			&quot;btn_off_url&quot;: null,
+			&quot;out_on_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shellyswitch25-0043e0/relay/1?type=out_on&quot;,
+			&quot;out_off_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shellyswitch25-0043e0/relay/1?type=out_off&quot;,
+			&quot;longpush_url&quot;: null,
+			&quot;shortpush_url&quot;: null,
+			&quot;schedule&quot;: false,
+			&quot;schedule_rules&quot;: []
+		}
+	],
+	&quot;rollers&quot;: [
+		{
+			&quot;maxtime&quot;: 20.0,
+			&quot;maxtime_open&quot;: 20.0,
+			&quot;maxtime_close&quot;: 20.0,
+			&quot;default_state&quot;: &quot;stop&quot;,
+			&quot;swap&quot;: false,
+			&quot;swap_inputs&quot;: false,
+			&quot;input_mode&quot;: &quot;openclose&quot;,
+			&quot;button_type&quot;: &quot;toggle&quot;,
+			&quot;btn_reverse&quot;: 0,
+			&quot;state&quot;: &quot;stop&quot;,
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;safety_switch&quot;: false,
+			&quot;roller_open_url&quot;: null,
+			&quot;roller_close_url&quot;: null,
+			&quot;roller_stop_url&quot;: null,
+			&quot;schedule&quot;: false,
+			&quot;schedule_rules&quot;: [],
+			&quot;obstacle_mode&quot;: &quot;disabled&quot;,
+			&quot;obstacle_action&quot;: &quot;stop&quot;,
+			&quot;obstacle_power&quot;: 200,
+			&quot;obstacle_delay&quot;: 1,
+			&quot;safety_mode&quot;: &quot;while_opening&quot;,
+			&quot;safety_action&quot;: &quot;stop&quot;,
+			&quot;safety_allowed_on_trigger&quot;: &quot;none&quot;,
+			&quot;off_power&quot;: 2,
+			&quot;positioning&quot;: true
+		}
+	],
+	&quot;meters&quot;: [
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117725,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 47
+		},
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117725,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 10215
+		}
+	]
+}
+</code></pre></div><h3 id="shelly-2-5-relay-mode-status"><a href="#shelly-2-5-relay-mode-status" aria-hidden="true" class="header-anchor">#</a> Shelly 2.5 Relay Mode: /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;: {
+		&quot;connected&quot;: true,
+		&quot;ssid&quot;: &quot;iot_wlan&quot;,
+		&quot;ip&quot;: &quot;10.0.0.2&quot;,
+		&quot;rssi&quot;: -48
+	},
+	&quot;cloud&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;connected&quot;: true
+	},
+	&quot;mqtt&quot;: {
+		&quot;connected&quot;: false
+	},
+	&quot;time&quot;: &quot;12:42&quot;,
+	&quot;serial&quot;: 83,
+	&quot;has_update&quot;: false,
+	&quot;mac&quot;: &quot;XXXXXXXXXXXX&quot;,
+	&quot;relays&quot;: [
+		{
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;overtemperature&quot;: false,
+			&quot;is_valid&quot;: true
+		},
+		{
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;overtemperature&quot;: false,
+			&quot;is_valid&quot;: true
+		}
+	],
+	&quot;rollers&quot;: [
+		{
+			&quot;state&quot;: &quot;stop&quot;,
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;safety_switch&quot;: false,
+			&quot;overtemperature&quot;: false,
+			&quot;stop_reason&quot;: &quot;normal&quot;,
+			&quot;last_direction&quot;: &quot;stop&quot;,
+			&quot;current_pos&quot;: 101,
+			&quot;calibrating&quot;: false,
+			&quot;positioning&quot;: true
+		}
+	],
+	&quot;meters&quot;: [
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117739,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 47
+		},
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117739,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 10215
+		}
+	],
+	&quot;inputs&quot;: [
+		{
+			&quot;input&quot;: 0
+		},
+		{
+			&quot;input&quot;: 0
+		}
+	],
+	&quot;temperature&quot;: 61.76,
+	&quot;overtemperature&quot;: false,
+	&quot;tmp&quot;: {
+		&quot;tC&quot;: 61.76,
+		&quot;tF&quot;: 143.16,
+		&quot;is_valid&quot;: &quot;true&quot;
+	},
+	&quot;update&quot;: {
+		&quot;status&quot;: &quot;idle&quot;,
+		&quot;has_update&quot;: false,
+		&quot;new_version&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;,
+		&quot;old_version&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;
+	},
+	&quot;ram_total&quot;: 49568,
+	&quot;ram_free&quot;: 34720,
+	&quot;fs_size&quot;: 233681,
+	&quot;fs_free&quot;: 156624,
+	&quot;voltage&quot;: 237.72,
+	&quot;uptime&quot;: 237037
+}
+</code></pre></div><h3 id="shelly-2-5-generic-coap-status"><a href="#shelly-2-5-generic-coap-status" aria-hidden="true" class="header-anchor">#</a> Shelly 2.5 Generic Coap Status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;G&quot;:[
+        [0,112,0],
+        [0,122,0],
+        [0,111,0.000000]
+        ]
+}
+</code></pre></div><h3 id="shelly-2-5-coap-description"><a href="#shelly-2-5-coap-description" aria-hidden="true" class="header-anchor">#</a> Shelly 2.5 Coap Description</h3> <div class="language- extra-class"><pre class="language-dsl"><code><span class="token punctuation">{</span><span class="token string">&quot;blk&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Relay0&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Relay1&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Device&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token string">&quot;sen&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">112</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;S&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;State&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">122</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;S&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;State&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">111</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;W&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Power&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/2300&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">121</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;W&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Power&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/2300&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">113</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;S&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Position&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/100&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;act&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">211</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Switch&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;P&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">2011</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;ToState&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">221</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Switch&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">&quot;P&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">2021</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;ToState&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-dsl"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;blk&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Relay0&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Relay1&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Device&quot;</span><span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;sen&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">112</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;S&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;State&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">122</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;S&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;State&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">111</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;W&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Power&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/3680&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">113</span><span class="token punctuation">,</span><span class="token string">&quot;T&quot;</span><span class="token operator">:</span><span class="token string">&quot;S&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Position&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/100&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;act&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">211</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Switch&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token string">&quot;P&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">2011</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;ToState&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">221</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;Switch&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;L&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">&quot;P&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span><span class="token string">&quot;I&quot;</span><span class="token operator">:</span><span class="token number">2021</span><span class="token punctuation">,</span><span class="token string">&quot;D&quot;</span><span class="token operator">:</span><span class="token string">&quot;ToState&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;R&quot;</span><span class="token operator">:</span><span class="token string">&quot;0/1&quot;</span><span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="shelly-2-5-roller-mode-settings"><a href="#shelly-2-5-roller-mode-settings" aria-hidden="true" class="header-anchor">#</a> SHelly 2.5  Roller Mode: /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;: {
+		&quot;type&quot;: &quot;SHSW-25&quot;,
+		&quot;mac&quot;: &quot;XXXXXXXXXXXX&quot;,
+		&quot;hostname&quot;: &quot;shellyswitch25-XXXXXX&quot;,
+		&quot;num_outputs&quot;: 2,
+		&quot;num_meters&quot;: 2,
+		&quot;num_rollers&quot;: 1
+	},
+	&quot;wifi_ap&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;ssid&quot;: &quot;shellyswitch25-XXXXXX&quot;,
+		&quot;key&quot;: &quot;&quot;
+	},
+	&quot;wifi_sta&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;ssid&quot;: &quot;iot-wlan&quot;,
+		&quot;ipv4_method&quot;: &quot;dhcp&quot;,
+		&quot;ip&quot;: null,
+		&quot;gw&quot;: null,
+		&quot;mask&quot;: null,
+		&quot;dns&quot;: null
+	},
+	&quot;wifi_sta1&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;ssid&quot;: null,
+		&quot;ipv4_method&quot;: &quot;dhcp&quot;,
+		&quot;ip&quot;: null,
+		&quot;gw&quot;: null,
+		&quot;mask&quot;: null,
+		&quot;dns&quot;: null
+	},
+	&quot;mqtt&quot;: {
+		&quot;enable&quot;: false,
+		&quot;server&quot;: &quot;10.0.0.2:1883&quot;,
+		&quot;user&quot;: &quot;&quot;,
+		&quot;id&quot;: &quot;shellyswitch25-XXXXXX&quot;,
+		&quot;reconnect_timeout_max&quot;: 60.0,
+		&quot;reconnect_timeout_min&quot;: 2.0,
+		&quot;clean_session&quot;: true,
+		&quot;keep_alive&quot;: 60,
+		&quot;max_qos&quot;: 0,
+		&quot;retain&quot;: false,
+		&quot;update_period&quot;: 30
+	},
+	&quot;sntp&quot;: {
+		&quot;server&quot;: &quot;time.google.com&quot;
+	},
+	&quot;login&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;unprotected&quot;: false,
+		&quot;username&quot;: &quot;admin&quot;,
+		&quot;password&quot;: &quot;admin&quot;
+	},
+	&quot;pin_code&quot;: &quot;!pw5e5&quot;,
+	&quot;name&quot;: &quot;&quot;,
+	&quot;fw&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;,
+	&quot;build_info&quot;: {
+		&quot;build_id&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;,
+		&quot;build_timestamp&quot;: &quot;2019-11-27T09:54:44Z&quot;,
+		&quot;build_version&quot;: &quot;1.0&quot;
+	},
+	&quot;cloud&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;connected&quot;: true
+	},
+	&quot;timezone&quot;: &quot;Europe/Berlin&quot;,
+	&quot;lat&quot;: 50.252491,
+	&quot;lng&quot;: 5.779092,
+	&quot;tzautodetect&quot;: false,
+	&quot;time&quot;: &quot;12:42&quot;,
+	&quot;hwinfo&quot;: {
+		&quot;hw_revision&quot;: &quot;prod-2019-03&quot;,
+		&quot;batch_id&quot;: 1
+	},
+	&quot;mode&quot;: &quot;roller&quot;,
+	&quot;max_power&quot;: 1840,
+	&quot;relays&quot;: [
+		{
+			&quot;name&quot;: null,
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;default_state&quot;: &quot;off&quot;,
+			&quot;btn_type&quot;: &quot;toggle&quot;,
+			&quot;btn_reverse&quot;: 0,
+			&quot;auto_on&quot;: 0.0,
+			&quot;auto_off&quot;: 0.0,
+			&quot;max_power&quot;: 0,
+			&quot;btn_on_url&quot;: null,
+			&quot;btn_off_url&quot;: null,
+			&quot;out_on_url&quot;: null,
+			&quot;out_off_url&quot;: null,
+			&quot;longpush_url&quot;: null,
+			&quot;shortpush_url&quot;: null,
+			&quot;schedule&quot;: false,
+			&quot;schedule_rules&quot;: []
+		},
+		{
+			&quot;name&quot;: null,
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;default_state&quot;: &quot;off&quot;,
+			&quot;btn_type&quot;: &quot;toggle&quot;,
+			&quot;btn_reverse&quot;: 0,
+			&quot;auto_on&quot;: 0.0,
+			&quot;auto_off&quot;: 0.0,
+			&quot;max_power&quot;: 0,
+			&quot;btn_on_url&quot;: null,
+			&quot;btn_off_url&quot;: null,
+			&quot;out_on_url&quot;: null,
+			&quot;out_off_url&quot;: null,
+			&quot;longpush_url&quot;: null,
+			&quot;shortpush_url&quot;: null,
+			&quot;schedule&quot;: false,
+			&quot;schedule_rules&quot;: []
+		}
+	],
+	&quot;rollers&quot;: [
+		{
+			&quot;maxtime&quot;: 20.0,
+			&quot;maxtime_open&quot;: 23.0,
+			&quot;maxtime_close&quot;: 22.0,
+			&quot;default_state&quot;: &quot;stop&quot;,
+			&quot;swap&quot;: false,
+			&quot;swap_inputs&quot;: false,
+			&quot;input_mode&quot;: &quot;openclose&quot;,
+			&quot;button_type&quot;: &quot;momentary&quot;,
+			&quot;btn_reverse&quot;: 0,
+			&quot;state&quot;: &quot;stop&quot;,
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;safety_switch&quot;: false,
+			&quot;roller_open_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shellyswitch25-XXXXXX/roller/0?type=roller_open&quot;,
+			&quot;roller_close_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shellyswitch25-XXXXXX/roller/0?type=roller_close&quot;,
+			&quot;roller_stop_url&quot;: &quot;http://10.0.0.2:8080/shelly/event/shellyswitch25-XXXXXX/roller/0?type=roller_stop&quot;,
+			&quot;schedule&quot;: false,
+			&quot;schedule_rules&quot;: [
+				&quot;0700-0123456-10%&quot;,
+				&quot;0000bss-0123456-open&quot;
+			],
+			&quot;obstacle_mode&quot;: &quot;disabled&quot;,
+			&quot;obstacle_action&quot;: &quot;stop&quot;,
+			&quot;obstacle_power&quot;: 200,
+			&quot;obstacle_delay&quot;: 1,
+			&quot;safety_mode&quot;: &quot;while_opening&quot;,
+			&quot;safety_action&quot;: &quot;stop&quot;,
+			&quot;safety_allowed_on_trigger&quot;: &quot;none&quot;,
+			&quot;off_power&quot;: 2,
+			&quot;positioning&quot;: true
+		}
+	],
+	&quot;meters&quot;: [
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117752,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 44
+		},
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117752,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 44
+		}
+	]
+}
+</code></pre></div><h3 id="shelly-2-5-roller-mode-status"><a href="#shelly-2-5-roller-mode-status" aria-hidden="true" class="header-anchor">#</a> Shelly 2.5 Roller Mode: /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;: {
+		&quot;connected&quot;: true,
+		&quot;ssid&quot;: &quot;iot_wlan&quot;,
+		&quot;ip&quot;: &quot;10.0.0.1&quot;,
+		&quot;rssi&quot;: -54
+	},
+	&quot;cloud&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;connected&quot;: true
+	},
+	&quot;mqtt&quot;: {
+		&quot;connected&quot;: false
+	},
+	&quot;time&quot;: &quot;12:42&quot;,
+	&quot;serial&quot;: 16,
+	&quot;has_update&quot;: false,
+	&quot;mac&quot;: &quot;XXXXXXXXXXXX&quot;,
+	&quot;relays&quot;: [
+		{
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;overtemperature&quot;: false,
+			&quot;is_valid&quot;: true
+		},
+		{
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;overtemperature&quot;: false,
+			&quot;is_valid&quot;: true
+		}
+	],
+	&quot;rollers&quot;: [
+		{
+			&quot;state&quot;: &quot;stop&quot;,
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;safety_switch&quot;: false,
+			&quot;overtemperature&quot;: false,
+			&quot;stop_reason&quot;: &quot;normal&quot;,
+			&quot;last_direction&quot;: &quot;open&quot;,
+			&quot;current_pos&quot;: 100,
+			&quot;calibrating&quot;: false,
+			&quot;positioning&quot;: true
+		}
+	],
+	&quot;meters&quot;: [
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117766,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 44
+		},
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117766,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 44
+		}
+	],
+	&quot;inputs&quot;: [
+		{
+			&quot;input&quot;: 0
+		},
+		{
+			&quot;input&quot;: 0
+		}
+	],
+	&quot;temperature&quot;: 63.62,
+	&quot;overtemperature&quot;: false,
+	&quot;tmp&quot;: {
+		&quot;tC&quot;: 63.62,
+		&quot;tF&quot;: 146.52,
+		&quot;is_valid&quot;: &quot;true&quot;
+	},
+	&quot;update&quot;: {
+		&quot;status&quot;: &quot;idle&quot;,
+		&quot;has_update&quot;: false,
+		&quot;new_version&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;,
+		&quot;old_version&quot;: &quot;20191127-095444/v1.5.6@0d769d69&quot;
+	},
+	&quot;ram_total&quot;: 49568,
+	&quot;ram_free&quot;: 34712,
+	&quot;fs_size&quot;: 233681,
+	&quot;fs_free&quot;: 156122,
+	&quot;voltage&quot;: 231.83,
+	&quot;uptime&quot;: 237263
+}
+</code></pre></div><h2 id="shelly-plug-s"><a href="#shelly-plug-s" aria-hidden="true" class="header-anchor">#</a> Shelly Plug-S</h2> <p>###Shelly Plug-S: /settings</p> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;: {
+		&quot;type&quot;: &quot;SHPLG-S&quot;,
+		&quot;mac&quot;: &quot;XXXXXXXXXXXX&quot;,
+		&quot;hostname&quot;: &quot;shellyplug-s-XXXX&quot;,
+		&quot;num_outputs&quot;: 1,
+		&quot;num_meters&quot;: 1
+	},
+	&quot;wifi_ap&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;ssid&quot;: &quot;shellyplug-s-XXXX&quot;,
+		&quot;key&quot;: &quot;&quot;
+	},
+	&quot;wifi_sta&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;ssid&quot;: &quot;iot-wlan&quot;,
+		&quot;ipv4_method&quot;: &quot;dhcp&quot;,
+		&quot;ip&quot;: null,
+		&quot;gw&quot;: null,
+		&quot;mask&quot;: null,
+		&quot;dns&quot;: null
+	},
+	&quot;wifi_sta1&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;ssid&quot;: null,
+		&quot;ipv4_method&quot;: &quot;dhcp&quot;,
+		&quot;ip&quot;: null,
+		&quot;gw&quot;: null,
+		&quot;mask&quot;: null,
+		&quot;dns&quot;: null
+	},
+	&quot;mqtt&quot;: {
+		&quot;enable&quot;: false,
+		&quot;server&quot;: &quot;10.0.0.2:1883&quot;,
+		&quot;user&quot;: &quot;&quot;,
+		&quot;id&quot;: &quot;shellyplug-s-XXXXXX&quot;,
+		&quot;reconnect_timeout_max&quot;: 60.0,
+		&quot;reconnect_timeout_min&quot;: 2.0,
+		&quot;clean_session&quot;: true,
+		&quot;keep_alive&quot;: 60,
+		&quot;max_qos&quot;: 0,
+		&quot;retain&quot;: false,
+		&quot;update_period&quot;: 30
+	},
+	&quot;sntp&quot;: {
+		&quot;server&quot;: &quot;time.google.com&quot;
+	},
+	&quot;login&quot;: {
+		&quot;enabled&quot;: false,
+		&quot;unprotected&quot;: false,
+		&quot;username&quot;: &quot;admin&quot;,
+		&quot;password&quot;: &quot;admin&quot;
+	},
+	&quot;pin_code&quot;: &quot;adIL-{&quot;,
+	&quot;name&quot;: &quot;&quot;,
+	&quot;fw&quot;: &quot;20191127-095857/v1.5.6@0d769d69&quot;,
+	&quot;build_info&quot;: {
+		&quot;build_id&quot;: &quot;20191127-095857/v1.5.6@0d769d69&quot;,
+		&quot;build_timestamp&quot;: &quot;2019-11-27T09:58:57Z&quot;,
+		&quot;build_version&quot;: &quot;1.0&quot;
+	},
+	&quot;cloud&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;connected&quot;: true
+	},
+	&quot;timezone&quot;: &quot;Europe/Berlin&quot;,
+	&quot;lat&quot;: 50.252491,
+	&quot;lng&quot;: 5.779092,
+	&quot;tzautodetect&quot;: false,
+	&quot;time&quot;: &quot;12:43&quot;,
+	&quot;hwinfo&quot;: {
+		&quot;hw_revision&quot;: &quot;prod-190516&quot;,
+		&quot;batch_id&quot;: 1
+	},
+	&quot;max_power&quot;: 2500,
+	&quot;led_status_disable&quot;: true,
+	&quot;led_power_disable&quot;: false,
+	&quot;relays&quot;: [
+		{
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false,
+			&quot;default_state&quot;: &quot;off&quot;,
+			&quot;auto_on&quot;: 0.0,
+			&quot;auto_off&quot;: 0.0,
+			&quot;btn_on_url&quot;: null,
+			&quot;out_on_url&quot;: &quot;http://10.0.0.1:8080/shelly/event/shellyplug-s-041b29/relay/0?type=out_on&quot;,
+			&quot;out_off_url&quot;: &quot;http://10.0.0.1:8080/shelly/event/shellyplug-s-041b29/relay/0?type=out_off&quot;,
+			&quot;schedule&quot;: true,
+			&quot;schedule_rules&quot;: [
+				&quot;0700-0123456-off&quot;
+			],
+			&quot;max_power&quot;: 2500
+		}
+	],
+	&quot;meters&quot;: [
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117787,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 0
+		}
+	]
+}```
+
+### Shelly Plug-S: /status
+
+{
+	&quot;wifi_sta&quot;: {
+		&quot;connected&quot;: true,
+		&quot;ssid&quot;: &quot;iot_wlan&quot;,
+		&quot;ip&quot;: &quot;10.0.0.2&quot;,
+		&quot;rssi&quot;: -52
+	},
+	&quot;cloud&quot;: {
+		&quot;enabled&quot;: true,
+		&quot;connected&quot;: true
+	},
+	&quot;mqtt&quot;: {
+		&quot;connected&quot;: false
+	},
+	&quot;time&quot;: &quot;12:43&quot;,
+	&quot;serial&quot;: 1,
+	&quot;has_update&quot;: false,
+	&quot;mac&quot;: &quot;XXXXXXXXXXXX&quot;,
+	&quot;relays&quot;: [
+		{
+			&quot;ison&quot;: false,
+			&quot;has_timer&quot;: false,
+			&quot;overpower&quot;: false
+		}
+	],
+	&quot;meters&quot;: [
+		{
+			&quot;power&quot;: 0.0,
+			&quot;is_valid&quot;: true,
+			&quot;timestamp&quot;: 1575117798,
+			&quot;counters&quot;: [
+				0.0,
+				0.0,
+				0.0
+			],
+			&quot;total&quot;: 0
+		}
+	],
+	&quot;temperature&quot;: 30.71,
+	&quot;overtemperature&quot;: false,
+	&quot;tmp&quot;: {
+		&quot;tC&quot;: 30.71,
+		&quot;tF&quot;: 87.28,
+		&quot;is_valid&quot;: &quot;true&quot;
+	},
+	&quot;update&quot;: {
+		&quot;status&quot;: &quot;idle&quot;,
+		&quot;has_update&quot;: false,
+		&quot;new_version&quot;: &quot;20191127-095857/v1.5.6@0d769d69&quot;,
+		&quot;old_version&quot;: &quot;20191127-095857/v1.5.6@0d769d69&quot;
+	},
+	&quot;ram_total&quot;: 50784,
+	&quot;ram_free&quot;: 37312,
+	&quot;fs_size&quot;: 233681,
+	&quot;fs_free&quot;: 173441,
+	&quot;uptime&quot;: 237171
+}
+</code></pre></div><h3 id="shelly-plug-s-coap-description"><a href="#shelly-plug-s-coap-description" aria-hidden="true" class="header-anchor">#</a> ### Shelly Plug-S Coap Description</h3> <div class="language- extra-class"><pre class="language-dsl"><code><span class="token punctuation">{</span>
+    “blk”<span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>“D”<span class="token operator">:</span>“Relay0”<span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    “sen”<span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">111</span><span class="token punctuation">,</span>“T”<span class="token operator">:</span>“W”<span class="token punctuation">,</span>“R”<span class="token operator">:</span>“<span class="token number">0</span><span class="token operator">/</span><span class="token number">2500</span>”<span class="token punctuation">,</span>“L”<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">112</span><span class="token punctuation">,</span>“T”<span class="token operator">:</span>“<span class="token keyword">Switch</span>”<span class="token punctuation">,</span>“R”<span class="token operator">:</span>“<span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>”<span class="token punctuation">,</span>“L”<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">113</span><span class="token punctuation">,</span>“T”<span class="token operator">:</span>“tC”<span class="token punctuation">,</span>“R”<span class="token operator">:</span><span class="token string">&quot;-40/300&quot;</span><span class="token punctuation">,</span>“L”<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">114</span><span class="token punctuation">,</span>“T”<span class="token operator">:</span>“tF”<span class="token punctuation">,</span>“R”<span class="token operator">:</span><span class="token string">&quot;-40/300&quot;</span><span class="token punctuation">,</span>“L”<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">115</span><span class="token punctuation">,</span>“T”<span class="token operator">:</span>“Overtemp”<span class="token punctuation">,</span>“R”<span class="token operator">:</span>“<span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>”<span class="token punctuation">,</span>“L”<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span>
+     <span class="token punctuation">]</span><span class="token punctuation">,</span>
+     “act”<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">211</span><span class="token punctuation">,</span>“D”<span class="token operator">:</span>“<span class="token keyword">Switch</span>”<span class="token punctuation">,</span>“L”<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">,</span>“P”<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>“I”<span class="token operator">:</span><span class="token number">2011</span><span class="token punctuation">,</span>“D”<span class="token operator">:</span>“ToState”<span class="token punctuation">,</span>“R”<span class="token operator">:</span>“<span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>”<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+ <span class="token punctuation">}</span>
+ 
+</code></pre></div><h2 id="shelly-em"><a href="#shelly-em" aria-hidden="true" class="header-anchor">#</a> Shelly EM</h2> <h3 id="shelly-em-settings"><a href="#shelly-em-settings" aria-hidden="true" class="header-anchor">#</a> Shelly EM /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;:{
+		&quot;type&quot;:&quot;SHEM&quot;,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;hostname&quot;:&quot;shellyem-XXXXXX&quot;,
+		&quot;num_outputs&quot;:1, &quot;num_meters&quot;: 0, &quot;num_emeters&quot;:2
+	 },
+	 &quot;wifi_ap&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:&quot;shellyem-XXXXXX&quot;,&quot;key&quot;:&quot;&quot;},&quot;wifi_sta&quot;:{&quot;enabled&quot;:true,&quot;ssid&quot;:&quot;iot_wlan&quot;,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},&quot;wifi_sta1&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:null,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	 &quot;mqtt&quot;: {&quot;enable&quot;:false,&quot;server&quot;:&quot;10.0.0.1:1883&quot;,&quot;user&quot;:&quot;&quot;,&quot;reconnect_timeout_max&quot;:60.000000,&quot;reconnect_timeout_min&quot;:2.000000,&quot;clean_session&quot;:true,&quot;keep_alive&quot;:60,&quot;will_topic&quot;:&quot;shellies/shellyem-XXXXXX/online&quot;,&quot;will_message&quot;:&quot;false&quot;,&quot;max_qos&quot;:0,&quot;retain&quot;:false,&quot;update_period&quot;:30},
+	 &quot;sntp&quot;: {&quot;server&quot;:&quot;time.google.com&quot;},&quot;login&quot;:{&quot;enabled&quot;:false,&quot;unprotected&quot;:false,&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;admin&quot;},&quot;pin_code&quot;:&quot;BZ1Xg+&quot;,
+	 &quot;coiot_execute_enable&quot;:false,&quot;name&quot;:&quot;&quot;,&quot;fw&quot;:&quot;20190821-095337/v1.5.2@4148d2b7&quot;,&quot;build_info&quot;:{&quot;build_id&quot;:&quot;20190821-095337/v1.5.2@4148d2b7&quot;,&quot;build_timestamp&quot;:&quot;2019-08-21T09:53:37Z&quot;,&quot;build_version&quot;:&quot;1.0&quot;},
+	 &quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},&quot;timezone&quot;:&quot;Europe/Berlin&quot;,&quot;lat&quot;:45.775398,&quot;lng&quot;:9.181760,&quot;tzautodetect&quot;:true,&quot;time&quot;:&quot;22:50&quot;,&quot;hwinfo&quot;:{&quot;hw_revision&quot;:&quot;prod-2019-06&quot;, &quot;batch_id&quot;:0},&quot;max_power&quot;:0,
+	 &quot;relays&quot;:[{&quot;name&quot;:null,&quot;ison&quot;:true,&quot;has_timer&quot;:false,&quot;overpower&quot;:false,&quot;default_state&quot;:&quot;last&quot;,&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,&quot;max_power&quot;:0,
+	 &quot;out_on_url&quot;:&quot;http://10.0.10.254:8080/shelly/event/shellyem-b9f355/relay/0?type=out_on&quot;,
+	 &quot;out_off_url&quot;:&quot;http://10.0.10.254:8080/shelly/event/shellyem-b9f355/relay/0?type=out_off&quot;,&quot;schedule&quot;:false,
+	 &quot;schedule_rules&quot;:[]}],
+	 &quot;emeters&quot;:[{&quot;ctraf_type&quot;:120},{&quot;ctraf_type&quot;:120}]
+}
+</code></pre></div><h3 id="shelly-em-status"><a href="#shelly-em-status" aria-hidden="true" class="header-anchor">#</a> Shelly EM /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ip&quot;:&quot;172.16.12.26&quot;,&quot;rssi&quot;:-54},&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},
+	&quot;mqtt&quot;:{&quot;connected&quot;:false},&quot;time&quot;:&quot;22:56&quot;,&quot;serial&quot;:13416,
+	&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+	&quot;relays&quot;:[{&quot;ison&quot;:true,&quot;has_timer&quot;:false,&quot;overpower&quot;:false,&quot;is_valid&quot;:true}],
+	&quot;emeters&quot;:[
+		{&quot;power&quot;:98.55,&quot;reactive&quot;:-159.32,&quot;voltage&quot;:239.38,&quot;is_valid&quot;:true,&quot;total&quot;:9188.8,&quot;total_returned&quot;:16477.0},
+		{&quot;power&quot;:0.00,&quot;reactive&quot;:0.00,&quot;voltage&quot;:239.38,&quot;is_valid&quot;:true,&quot;total&quot;:0.0,&quot;total_returned&quot;:0.0}
+	 ],
+	 &quot;update&quot;:{&quot;status&quot;:&quot;idle&quot;,&quot;has_update&quot;:false,&quot;new_version&quot;:&quot;20190821-095337/v1.5.2@4148d2b7&quot;,&quot;old_version&quot;:&quot;20190821-095337/v1.5.2@4148d2b7&quot;},
+	 &quot;ram_total&quot;:49960,&quot;ram_free&quot;:33784,&quot;fs_size&quot;:233681,&quot;fs_free&quot;:169425,&quot;uptime&quot;:174189
+}
+</code></pre></div><h3 id="shelly-dimmer-settings"><a href="#shelly-dimmer-settings" aria-hidden="true" class="header-anchor">#</a> Shelly Dimmer /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;:{
+		&quot;type&quot;:&quot;SHDM-1&quot;,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;hostname&quot;:&quot;shellydimmer-XXXXXX&quot;,
+		&quot;num_outputs&quot;:1,&quot;num_meters&quot;:1},
+	 &quot;wifi_ap&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:&quot;shellydimmer-XXXXXX&quot;,&quot;key&quot;:&quot;&quot;},
+	 &quot;wifi_sta&quot;:{&quot;enabled&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	 &quot;wifi_sta1&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:null,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	 &quot;mqtt&quot;: {&quot;enable&quot;:false,&quot;server&quot;:&quot;10.0.0.1:1883&quot;,&quot;user&quot;:&quot;&quot;,&quot;id&quot;:&quot;shellydimmer-4200A0&quot;,&quot;reconnect_timeout_max&quot;:60.000000,&quot;reconnect_timeout_min&quot;:2.000000,&quot;clean_session&quot;:true,&quot;keep_alive&quot;:60,&quot;will_topic&quot;:&quot;shellies/shellydimmer-4200A0/online&quot;,&quot;will_message&quot;:&quot;false&quot;,&quot;max_qos&quot;:0,&quot;retain&quot;:false,&quot;update_period&quot;:30},
+	 &quot;sntp&quot;: {&quot;server&quot;:&quot;time.google.com&quot;},&quot;login&quot;:{&quot;enabled&quot;:false,&quot;unprotected&quot;:false,&quot;username&quot;:&quot;XXXXXX&quot;,&quot;password&quot;:&quot;XXXXXX&quot;},&quot;pin_code&quot;:&quot;lFTBFP&quot;,&quot;coiot_execute_enable&quot;:false,&quot;name&quot;:&quot;&quot;,
+	 &quot;fw&quot;:&quot;20191018-133016/master@a8aed1ac&quot;,&quot;build_info&quot;:{&quot;build_id&quot;:&quot;20191018-133016/master@a8aed1ac&quot;,&quot;build_timestamp&quot;:&quot;2019-10-18T13:30:16Z&quot;,&quot;build_version&quot;:&quot;1.0&quot;},
+	 &quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},&quot;timezone&quot;:&quot;Europe/Berlin&quot;,&quot;lat&quot;:45.252491,&quot;lng&quot;:7.779092,&quot;tzautodetect&quot;:false,&quot;time&quot;:&quot;06:57&quot;,
+	 &quot;hwinfo&quot;:{&quot;hw_revision&quot;:&quot;dev-prototype&quot;,&quot;batch_id&quot;:0},&quot;mode&quot;:&quot;white&quot;,&quot;pulse_mode&quot;:2,
+	 &quot;calibrated&quot;:false,&quot;transition&quot;:2000,&quot;fade_rate&quot;:1,
+	 &quot;lights&quot;:[
+		{
+			&quot;name&quot;:&quot;&quot;,&quot;ison&quot;:false,&quot;default_state&quot;:&quot;off&quot;,&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,
+			&quot;btn1_on_url&quot;:&quot;&quot;,&quot;btn1_off_url&quot;:&quot;&quot;,&quot;btn2_on_url&quot;:&quot;&quot;,&quot;btn2_off_url&quot;:&quot;&quot;,&quot;out_on_url&quot;:&quot;&quot;,&quot;out_off_url&quot;:&quot;&quot;,
+			&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[],
+			&quot;btn_type&quot;:&quot;edge&quot;,&quot;swap_inputs&quot;:0
+		 }
+	 ],
+	 &quot;night_mode&quot;:{&quot;enabled&quot;:0, &quot;start_time&quot;:&quot;21:00&quot;, &quot;end_time&quot;:&quot;00:00&quot;, &quot;brightness&quot;:10}
+}
+</code></pre></div><h3 id="shelly-dimmer-status"><a href="#shelly-dimmer-status" aria-hidden="true" class="header-anchor">#</a> Shelly Dimmer /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ip&quot;:&quot;10.0.0.195&quot;,&quot;rssi&quot;:-75},
+	&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},
+	&quot;mqtt&quot;:{&quot;connected&quot;:false},
+	&quot;time&quot;:&quot;13:35&quot;,&quot;serial&quot;:9496,&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+	&quot;lights&quot;:[
+		{&quot;ison&quot;:true,&quot;mode&quot;:&quot;white&quot;,&quot;brightness&quot;:100}
+	],
+	&quot;meters&quot;:[{&quot;power&quot;:22.83, &quot;is_valid&quot;:true, &quot;timestamp&quot;:1568986518,&quot;counters&quot;:[8.305, 3.153, 8.892],&quot;total&quot;:782}],
+	&quot;inputs&quot;:[
+		{&quot;input&quot;:0},
+		{&quot;input&quot;:0}
+	],
+	&quot;tmp&quot;:{&quot;tC&quot;:56.73,&quot;tF&quot;:134.11, &quot;is_valid&quot;:&quot;true&quot;},
+	&quot;overtemperature&quot;:false,
+	&quot;loaderror&quot;:false,
+	&quot;overload&quot;:false
+	&quot;update&quot;:{&quot;status&quot;:&quot;unknown&quot;,&quot;has_update&quot;:false,&quot;new_version&quot;:&quot;&quot;,&quot;old_version&quot;:&quot;20190913-140549/master@d040e20e&quot;},
+	&quot;ram_total&quot;:49888,&quot;ram_free&quot;:38540,&quot;fs_size&quot;:233681,&quot;fs_free&quot;:149596,&quot;uptime&quot;:561474
+}
+</code></pre></div><h2 id="shelly-bulb"><a href="#shelly-bulb" aria-hidden="true" class="header-anchor">#</a> Shelly Bulb</h2> <p>Firmware Version 1.5.2</p> <h3 id="shelly-bulb-settings"><a href="#shelly-bulb-settings" aria-hidden="true" class="header-anchor">#</a> Shelly Bulb /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;:{&quot;type&quot;:&quot;SHBLB-1&quot;,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;hostname&quot;:&quot;shellybulb-XXXXXX&quot;,&quot;num_outputs&quot;:1},
+	&quot;wifi_ap&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:&quot;shellybulb-XXXXXX&quot;,&quot;key&quot;:&quot;&quot;},
+	&quot;wifi_sta&quot;:{&quot;enabled&quot;:true,&quot;ssid&quot;:iot-wlan&quot;,&quot;ipv4_method&quot;:&quot;static&quot;,&quot;ip&quot;:&quot;10.0.0.10,&quot;gw&quot;:&quot;10.0.0.1&quot;,&quot;mask&quot;:&quot;255.0.0.0&quot;,&quot;dns&quot;:&quot;10.0.0.1&quot;},
+	&quot;wifi_sta1&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:null,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	&quot;mqtt&quot;: {&quot;enable&quot;:false,&quot;server&quot;:&quot;10.0.0.10:1883&quot;,&quot;user&quot;:&quot;&quot;,&quot;reconnect_timeout_max&quot;:60.000000,&quot;reconnect_timeout_min&quot;:2.000000,&quot;clean_session&quot;:true,&quot;keep_alive&quot;;60,&quot;will_topic&quot;:&quot;shellies/shellybulb-XXXXXX/online&quot;,&quot;will_message&quot;:&quot;false&quot;,&quot;max_qos&quot;:0,&quot;retain&quot;:false,&quot;update_period&quot;:30},
+	&quot;sntp&quot;: {&quot;server&quot;:&quot;time.google.com&quot;},
+	&quot;login&quot;:{&quot;enabled&quot;:false,&quot;unprotected&quot;:false,&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;admin&quot;},
+	&quot;pin_code&quot;:&quot;aXJ9eE&quot;,&quot;coiot_execute_enable&quot;:true,&quot;name&quot;:&quot;&quot;,
+	&quot;fw&quot;:&quot;20190821-094813/v1.5.2@4148d2b7&quot;,&quot;build_info&quot;:{&quot;build_id&quot;:&quot;20190821-094813/v1.5.2@4148d2b7&quot;,&quot;build_timestamp&quot;:&quot;2019-08-21T09:48:13Z&quot;,&quot;build_version&quot;:&quot;1.0&quot;},
+	&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},&quot;timezone&quot;:&quot;Europe/Berlin&quot;,&quot;lat&quot;:51.394344,&quot;lng&quot;:8.571319,&quot;tzautodetect&quot;:false,&quot;time&quot;:&quot;10:40&quot;,
+	&quot;hwinfo&quot;: {&quot;hw_revision&quot;:&quot;prod-1.3&quot;,&quot;batch_id&quot;:1},	   
+	 &quot;mode&quot;:&quot;color&quot;,
+	 &quot;lights&quot;:[
+		 {&quot;ison&quot;:true,&quot;red&quot;:255,&quot;green&quot;:182,&quot;blue&quot;:27,&quot;white&quot;:0,&quot;gain&quot;:100,&quot;temp&quot;:3648,&quot;brightness&quot;:86,&quot;effect&quot;:0,&quot;default_state&quot;:&quot;on&quot;,&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,&quot;power&quot;:0.00,&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[]}
+		 ]
+}
+</code></pre></div><h3 id="shelly-bulb-status"><a href="#shelly-bulb-status" aria-hidden="true" class="header-anchor">#</a> Shelly Bulb /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlank&quot;,&quot;ip&quot;:&quot;10.0.0.10&quot;,&quot;rssi&quot;:-74},
+	&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},&quot;mqtt&quot;:{&quot;connected&quot;:false},&quot;time&quot;:&quot;10:41&quot;,&quot;serial&quot;:133,&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+	&quot;lights&quot;:[
+		{&quot;ison&quot;:true,&quot;mode&quot;:&quot;color&quot;,&quot;red&quot;:255,&quot;green&quot;:182,&quot;blue&quot;:27,&quot;white&quot;:0,&quot;gain&quot;:100,&quot;temp&quot;:3648,&quot;brightness&quot;:86,&quot;effect&quot;:0}
+		],
+	&quot;meters&quot;:[{&quot;power&quot;:0.00,&quot;is_valid&quot;:&quot;true&quot;}],
+	&quot;update&quot;:{&quot;status&quot;:&quot;idle&quot;,&quot;has_update&quot;:false,&quot;new_version&quot;:&quot;20190821-094813/v1.5.2@4148d2b7&quot;,&quot;old_version&quot;:&quot;20190821-094813/v1.5.2@4148d2b7&quot;},
+	&quot;ram_total&quot;:51032,&quot;ram_free&quot;:37420,&quot;fs_size&quot;:233681,&quot;fs_free&quot;:171182,&quot;uptime&quot;:3125051
+}
+</code></pre></div><h3 id="shelly-bulb-coap-description-color-mode"><a href="#shelly-bulb-coap-description-color-mode" aria-hidden="true" class="header-anchor">#</a> Shelly Bulb Coap Description - Color Mode</h3> <div class="language- extra-class"><pre class="language-text"><code>{   
+    &quot;blk&quot;:[{&quot;I&quot;:1,&quot;D&quot;:&quot;RGBW&quot;}],
+    &quot;sen&quot;:[
+        {&quot;I&quot;:111,&quot;T&quot;:&quot;Red&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:121,&quot;T&quot;:&quot;Green&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:131,&quot;T&quot;:&quot;Blue&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:141,&quot;T&quot;:&quot;White&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:151,&quot;T&quot;:&quot;Gain&quot;,&quot;R&quot;:&quot;0/100&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:161,&quot;T&quot;:&quot;Temp&quot;,&quot;R&quot;:&quot;3000/6500&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:171,&quot;T&quot;:&quot;Brightness&quot;,&quot;R&quot;:&quot;0/100&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:181,&quot;T&quot;:&quot;VSwitch&quot;,&quot;R&quot;:&quot;0/1&quot;,&quot;L&quot;:0}
+     ],
+     &quot;act&quot;:[
+        {&quot;I&quot;:211,&quot;D&quot;:&quot;RGBW&quot;,&quot;L&quot;:0,&quot;P&quot;:[{&quot;I&quot;:2011,&quot;T&quot;:&quot;Red&quot;,&quot;R&quot;:&quot;0/255&quot;},
+        {&quot;I&quot;:2021,&quot;T&quot;:&quot;Green&quot;,&quot;R&quot;:&quot;0/255&quot;},{&quot;I&quot;:2031,&quot;T&quot;:&quot;Blue&quot;,&quot;R&quot;:&quot;0/255&quot;},
+        {&quot;I&quot;:2041,&quot;T&quot;:&quot;White&quot;,&quot;R&quot;:&quot;0/255&quot;},{&quot;I&quot;:2051,&quot;T&quot;:&quot;Gain&quot;,&quot;R&quot;:&quot;0/100&quot;},
+        {&quot;I&quot;:2061,&quot;T&quot;:&quot;Temp&quot;,&quot;R&quot;:&quot;3000/6500&quot;},
+        {&quot;I&quot;:2071,&quot;T&quot;:&quot;Brightness&quot;,&quot;R&quot;:&quot;0/100&quot;},
+        {&quot;I&quot;:2081,&quot;T&quot;:&quot;VSwitch&quot;,&quot;R&quot;:&quot;0/1&quot;}]}
+     ]
+}
+</code></pre></div><h3 id="shelly-bulb-coap-description-white-mode"><a href="#shelly-bulb-coap-description-white-mode" aria-hidden="true" class="header-anchor">#</a> Shelly Bulb Coap Description - White Mode</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;blk&quot;:[{&quot;I&quot;:1,&quot;D&quot;:&quot;RGBW&quot;}],
+    &quot;sen&quot;:[
+        {&quot;I&quot;:111,&quot;T&quot;:&quot;Red&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:121,&quot;T&quot;:&quot;Green&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:131,&quot;T&quot;:&quot;Blue&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:141,&quot;T&quot;:&quot;White&quot;,&quot;R&quot;:&quot;0/255&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:151,&quot;T&quot;:&quot;Gain&quot;,&quot;R&quot;:&quot;0/100&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:161,&quot;T&quot;:&quot;Temp&quot;,&quot;R&quot;:&quot;3000/6500&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:171,&quot;T&quot;:&quot;Brightness&quot;,&quot;R&quot;:&quot;0/100&quot;,&quot;L&quot;:0},
+        {&quot;I&quot;:181,&quot;T&quot;:&quot;VSwitch&quot;,&quot;R&quot;:&quot;0/1&quot;,&quot;L&quot;:0}
+    ],
+    &quot;act&quot;:[...]
+ }
+</code></pre></div><h2 id="shelly-rgbw2"><a href="#shelly-rgbw2" aria-hidden="true" class="header-anchor">#</a> Shelly RGBW2</h2> <h3 id="shelly-rgw2-settiings-in-color-mode"><a href="#shelly-rgw2-settiings-in-color-mode" aria-hidden="true" class="header-anchor">#</a> Shelly RGW2 /settiings in color mode</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;:{
+		&quot;type&quot;:&quot;SHRGBW2&quot;,
+		&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+		&quot;hostname&quot;:&quot;shellyrgbw2-XXXXXX&quot;,
+		&quot;num_outputs&quot;:4
+	},
+	&quot;wifi_ap&quot;:{&quot;enabled&quot;:false, &quot;ssid&quot;:&quot;shellyrgbw2-XXXXXX&quot;, &quot;key&quot;:&quot;&quot;},
+	&quot;wifi_sta&quot;:{&quot;enabled&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	&quot;wifi_sta1&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:null,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	&quot;mqtt&quot;: {&quot;enable&quot;:false,&quot;server&quot;:&quot;10.0.0.3:1883&quot;,&quot;user&quot;:&quot;&quot;,&quot;reconnect_timeout_max&quot;:60.000000,&quot;reconnect_timeout_min&quot;:2.000000,&quot;clean_session&quot;:true,&quot;keep_alive&quot;:60,&quot;will_topic&quot;:&quot;&quot;,&quot;will_message&quot;:&quot;&quot;,&quot;max_qos&quot;:0,&quot;retain&quot;:false,&quot;update_period&quot;:30},
+	&quot;sntp&quot;: {&quot;server&quot;:&quot;time.google.com&quot;},&quot;
+	login&quot;:{&quot;enabled&quot;:false,&quot;unprotected&quot;:false,&quot;xxx&quot;:&quot;xxx&quot;,&quot;password&quot;:&quot;xxx&quot;},
+	&quot;pin_code&quot;:&quot;PIpf!A&quot;,
+	&quot;coiot_execute_enable&quot;:false,&quot;name&quot;:&quot;&quot;,
+	&quot;fw&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;,
+	&quot;build_info&quot;:{&quot;build_id&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;,&quot;build_timestamp&quot;:&quot;2019-07-11T08:44:48Z&quot;,&quot;build_version&quot;:&quot;1.0&quot;},
+	&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},
+	&quot;timezone&quot;:&quot;Europe/Berlin&quot;,&quot;lat&quot;:45.252491,&quot;lng&quot;:7.779092,&quot;tzautodetect&quot;:false,&quot;time&quot;:&quot;07:13&quot;,
+	&quot;hwinfo&quot;: {&quot;hw_revision&quot;:&quot;prod-190410b&quot;,&quot;batch_id&quot;:1},
+	&quot;mode&quot;:&quot;color&quot;,&quot;
+	dcpower&quot;:1,
+	lights&quot;:[
+		{
+		&quot;ison&quot;:false,
+		&quot;red&quot;:255,&quot;green&quot;:0,&quot;blue&quot;:0,&quot;white&quot;:255,
+		&quot;gain&quot;:29,
+		&quot;effect&quot;:0,
+		&quot;default_state&quot;:&quot;off&quot;,
+		&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,
+		&quot;schedule&quot;:false,
+		&quot;btn_type&quot;:&quot;detached&quot;,
+		&quot;btn_reverse&quot;:0,&quot;schedule_rules&quot;:[]
+		}
+	]
+}
+</code></pre></div><h3 id="rgw2-status-color-mode"><a href="#rgw2-status-color-mode" aria-hidden="true" class="header-anchor">#</a> RGW2 /status color mode</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ip&quot;:&quot;10.0.0.100&quot;,&quot;rssi&quot;:-69},
+	&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},
+	&quot;mqtt&quot;:{&quot;connected&quot;:false},&quot;time&quot;:&quot;07:12&quot;,
+	&quot;serial&quot;:112,
+	&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,
+	&quot;mode&quot;:&quot;color&quot;,
+	&quot;input&quot;:0,
+	&quot;lights&quot;:[
+		{&quot;ison&quot;:false,&quot;mode&quot;:&quot;color&quot;, &quot;red&quot;:255,&quot;green&quot;:0,&quot;blue&quot;:0,&quot;white&quot;:255, &quot;gain&quot;:29,&quot;effect&quot;:0, &quot;power&quot;:0.00,&quot;overpower&quot;:false}
+	],
+	&quot;meters&quot;:[
+		{&quot;power&quot;:0.00,&quot;is_valid&quot;:true}
+	],
+	&quot;update&quot;:{&quot;status&quot;:&quot;idle&quot;,&quot;has_update&quot;:false,&quot;new_version&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;,&quot;old_version&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;},
+	&quot;ram_total&quot;:50448,&quot;ram_free&quot;:35824,&quot;fs_size&quot;:233681,&quot;fs_free&quot;:162648,&quot;uptime&quot;:30380
+}
+</code></pre></div><h3 id="rgbw2-settings-in-white-mode"><a href="#rgbw2-settings-in-white-mode" aria-hidden="true" class="header-anchor">#</a> RGBW2 /settings in white mode</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;device&quot;:{&quot;type&quot;:&quot;SHRGBW2&quot;,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;hostname&quot;:&quot;shellyrgbw2-XXXXXX&quot;,&quot;num_outputs&quot;:4},
+	&quot;wifi_ap&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:&quot;shellyrgbw2-XXXXXX&quot;,&quot;key&quot;:&quot;&quot;},
+	&quot;wifi_sta&quot;:{&quot;enabled&quot;:true,&quot;ssid&quot;:&quot;iot_wlan&quot;,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	&quot;wifi_sta1&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:null,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},
+	&quot;mqtt&quot;: {&quot;enable&quot;:false,&quot;server&quot;:&quot;10.0.0.1:1883&quot;,&quot;user&quot;:&quot;&quot;,&quot;reconnect_timeout_max&quot;:60.000000,&quot;reconnect_timeout_min&quot;:2.000000,&quot;clean_session&quot;:true,&quot;keep_alive&quot;:60,&quot;will_topic&quot;:&quot;&quot;,&quot;will_message&quot;:&quot;&quot;,&quot;max_qos&quot;:0,&quot;retain&quot;:false,&quot;update_period&quot;:30},
+	&quot;sntp&quot;: {&quot;server&quot;:&quot;time.google.com&quot;},&quot;
+	login&quot;:{&quot;enabled&quot;:false,&quot;unprotected&quot;:false,&quot;username&quot;:&quot;xxx&quot;,&quot;password&quot;:&quot;xxx&quot;},
+	&quot;pin_code&quot;:&quot;PIpf!A&quot;,
+	&quot;coiot_execute_enable&quot;:false,
+	&quot;name&quot;:&quot;&quot;,
+	&quot;fw&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;,
+	&quot;build_info&quot;:{&quot;build_id&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;,&quot;build_timestamp&quot;:&quot;2019-07-11T08:44:48Z&quot;,&quot;build_version&quot;:&quot;1.0&quot;},
+	&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},
+	&quot;timezone&quot;:&quot;Europe/Berlin&quot;,&quot;lat&quot;:45.252491,&quot;lng&quot;:7.779092,&quot;tzautodetect&quot;:false,&quot;time&quot;:&quot;20:33&quot;,
+	&quot;hwinfo&quot;: {&quot;hw_revision&quot;:&quot;prod-190410b&quot;,&quot;batch_id&quot;:1},
+	&quot;mode&quot;:&quot;white&quot;,
+	&quot;dcpower&quot;:1,
+	&quot;lights&quot;:[
+		{&quot;ison&quot;:true,&quot;brightness&quot;:50,&quot;default_state&quot;:&quot;on&quot;,&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,&quot;schedule&quot;:false,&quot;btn_type&quot;:&quot;detached&quot;,&quot;btn_reverse&quot;:0,&quot;schedule_rules&quot;:[]},
+		{&quot;ison&quot;:false,&quot;brightness&quot;:50,&quot;default_state&quot;:&quot;on&quot;,&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[]},
+		{&quot;ison&quot;:false,&quot;brightness&quot;:50,&quot;default_state&quot;:&quot;on&quot;,&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[]},
+		{&quot;ison&quot;:false,&quot;brightness&quot;:50,&quot;default_state&quot;:&quot;on&quot;,&quot;auto_on&quot;:0.00,&quot;auto_off&quot;:0.00,&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[]}
+	]
+}
+</code></pre></div><h3 id="rgbw2-set-statustings-in-white-mode"><a href="#rgbw2-set-statustings-in-white-mode" aria-hidden="true" class="header-anchor">#</a> RGBW2 set/statustings in white mode</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot_wlan&quot;,&quot;ip&quot;:&quot;10.0.0.100&quot;,&quot;rssi&quot;:-36},
+	&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},
+	&quot;mqtt&quot;:{&quot;connected&quot;:false},&quot;time&quot;:&quot;20:33&quot;,&quot;serial&quot;:42,
+	&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;mode&quot;:&quot;white&quot;,&quot;input&quot;:0,
+	&quot;lights&quot;:[
+		{&quot;ison&quot;:true,&quot;mode&quot;:&quot;white&quot;,&quot;brightness&quot;:50,&quot;power&quot;:1.20,&quot;overpower&quot;:false},
+		{&quot;ison&quot;:false,&quot;mode&quot;:&quot;white&quot;,&quot;brightness&quot;:50,&quot;power&quot;:0.00,&quot;overpower&quot;:false},
+		{&quot;ison&quot;:false,&quot;mode&quot;:&quot;white&quot;,&quot;brightness&quot;:50,&quot;power&quot;:0.00,&quot;overpower&quot;:false},
+		{&quot;ison&quot;:false,&quot;mode&quot;:&quot;white&quot;,&quot;brightness&quot;:50,&quot;power&quot;:0.00,&quot;overpower&quot;:false}
+	],
+	&quot;meters&quot;:[
+		{&quot;power&quot;:1.20,&quot;is_valid&quot;:true},
+		{&quot;power&quot;:0.00,&quot;is_valid&quot;:true},
+		{&quot;power&quot;:0.00,&quot;is_valid&quot;:true},
+		{&quot;power&quot;:0.00,&quot;is_valid&quot;:true}
+	],
+	&quot;update&quot;:{&quot;status&quot;:&quot;idle&quot;,&quot;has_update&quot;:false,&quot;new_version&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;,&quot;old_version&quot;:&quot;20190711-084448/v1.5.0-hotfix4@3b4f7414&quot;},
+	&quot;ram_total&quot;:50448,&quot;ram_free&quot;:35360,&quot;fs_size&quot;:233681,&quot;fs_free&quot;:162648,
+	&quot;uptime&quot;:7201
+}
+</code></pre></div><h2 id="shelly-sense"><a href="#shelly-sense" aria-hidden="true" class="header-anchor">#</a> Shelly Sense</h2> <h3 id="shelly-sense-settings"><a href="#shelly-sense-settings" aria-hidden="true" class="header-anchor">#</a> Shelly Sense: /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{&quot;device&quot;:{&quot;type&quot;:&quot;SHSEN-1&quot;,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;hostname&quot;:&quot;shellysense-XXXXXX&quot;},&quot;wifi_ap&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:&quot;shellysense-XXXXXX&quot;,&quot;key&quot;:&quot;&quot;},&quot;wifi_sta&quot;:{&quot;enabled&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ipv4_method&quot;:&quot;static&quot;,&quot;ip&quot;:&quot;10.0.0.2&quot;,&quot;gw&quot;:&quot;10.0.0.1&quot;,&quot;mask&quot;:&quot;255.255.255.0&quot;,&quot;dns&quot;:&quot;10.0.0.1&quot;},&quot;wifi_sta1&quot;:{&quot;enabled&quot;:false,&quot;ssid&quot;:null,&quot;ipv4_method&quot;:&quot;dhcp&quot;,&quot;ip&quot;:null,&quot;gw&quot;:null,&quot;mask&quot;:null,&quot;dns&quot;:null},&quot;mqtt&quot;: {&quot;enable&quot;:false,&quot;server&quot;:&quot;10.0.0.10:1883&quot;,&quot;user&quot;:&quot;&quot;,&quot;reconnect_timeout_max&quot;:60.000000,&quot;reconnect_timeout_min&quot;:2.000000,&quot;clean_session&quot;:true,&quot;keep_alive&quot;:60,&quot;will_topic&quot;:&quot;shellies/shellysense-XXXXXXX/online&quot;,&quot;will_message&quot;:&quot;false&quot;,&quot;max_qos&quot;:0,&quot;retain&quot;:false,&quot;update_period&quot;:30},&quot;sntp&quot;: {&quot;server&quot;:&quot;time.google.com&quot;},&quot;login&quot;:{&quot;enabled&quot;:false,&quot;unprotected&quot;:false,&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;admin&quot;},&quot;pin_code&quot;:&quot;bS^Mtq&quot;,&quot;coiot_execute_enable&quot;:true,&quot;name&quot;:&quot;&quot;,&quot;fw&quot;:&quot;20190821-095017/v1.5.2@4148d2b7&quot;,&quot;build_info&quot;:{&quot;build_id&quot;:&quot;20190821-095017/v1.5.2@4148d2b7&quot;,&quot;build_timestamp&quot;:&quot;2019-08-21T09:50:17Z&quot;,&quot;build_version&quot;:&quot;1.0&quot;},&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},&quot;timezone&quot;:&quot;Europe/Berlin&quot;,&quot;lat&quot;:51.394344,&quot;lng&quot;:8.571319,&quot;tzautodetect&quot;:false,&quot;time&quot;:&quot;19:32&quot;,&quot;light_sensor&quot;:&quot;NOA1305&quot;,&quot;schedule&quot;:false,&quot;schedule_rules&quot;:[],&quot;sensors&quot;:{&quot;motion_duration&quot;:20,&quot;motion_led&quot;:false,&quot;temperature_unit&quot;:&quot;C&quot;}}
+</code></pre></div><h3 id="shelly-sense-status"><a href="#shelly-sense-status" aria-hidden="true" class="header-anchor">#</a> Shelly Sense /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{&quot;wifi_sta&quot;:{&quot;connected&quot;:true,&quot;ssid&quot;:&quot;iot-wlan&quot;,&quot;ip&quot;:&quot;10.0.0.2&quot;,&quot;rssi&quot;:-69},&quot;cloud&quot;:{&quot;enabled&quot;:true,&quot;connected&quot;:true},&quot;mqtt&quot;:{&quot;connected&quot;:false},&quot;time&quot;:&quot;19:32&quot;,&quot;serial&quot;:4768,&quot;has_update&quot;:false,&quot;mac&quot;:&quot;XXXXXXXXXXXX&quot;,&quot;motion&quot;:false,&quot;charger&quot;:true,&quot;tmp&quot;:{&quot;value&quot;:24.249284,&quot;is_valid&quot;:true,&quot;units&quot;:&quot;C&quot;},&quot;hum&quot;:{&quot;value&quot;:44.250477,&quot;is_valid&quot;:true},&quot;lux&quot;:{&quot;value&quot;:12.987013,&quot;is_valid&quot;:true},&quot;bat&quot;:{&quot;value&quot;:40},&quot;update&quot;:{&quot;status&quot;:&quot;idle&quot;,&quot;has_update&quot;:false,&quot;new_version&quot;:&quot;20190821-095017/v1.5.2@4148d2b7&quot;,&quot;old_version&quot;:&quot;20190821-095017/v1.5.2@4148d2b7&quot;},&quot;ram_total&quot;:51112,&quot;ram_free&quot;:26848,&quot;fs_size&quot;:83081,&quot;fs_free&quot;:26857,&quot;uptime&quot;:1823498}
+</code></pre></div><h3 id="shelly-sense-ir-list"><a href="#shelly-sense-ir-list" aria-hidden="true" class="header-anchor">#</a> Shelly Sense /ir/list</h3> <div class="language- extra-class"><pre class="language-text"><code>[
+	[&quot;1_231_pwr&quot;,&quot;tv(231) - Power&quot;],[&quot;1_231_chdwn&quot;,&quot;tv(231) - Channel Down&quot;],[&quot;1_231_chup&quot;,&quot;tv(231) - Channel Up&quot;],[&quot;1_231_voldwn&quot;,&quot;tv(231) - Volume Down&quot;],
+	[&quot;1_231_volup&quot;,&quot;tv(231) - Volume Up&quot;],[&quot;1_231_mute&quot;,&quot;tv(231) - Mute&quot;],[&quot;1_231_menu&quot;,&quot;tv(231) - Menu&quot;],[&quot;1_231_inp&quot;,&quot;tv(231) - Input&quot;],[&quot;1_231_info&quot;,&quot;tv(231) - Info&quot;],
+	[&quot;1_231_left&quot;,&quot;tv(231) - Left&quot;],[&quot;1_231_up&quot;,&quot;tv(231) - Up&quot;],[&quot;1_231_right&quot;,&quot;tv(231) - Right&quot;],[&quot;1_231_ok&quot;,&quot;tv(231) - OK&quot;],[&quot;1_231_down&quot;,&quot;tv(231) - Down&quot;],
+	[&quot;1_231_back&quot;,&quot;tv(231) - Back&quot;],[&quot;6_546_pwr&quot;,&quot;receiver(546) - Power&quot;],[&quot;6_546_voldwn&quot;,&quot;receiver(546) - Volume Down&quot;],[&quot;6_546_volup&quot;,&quot;receiver(546) - Volume Up&quot;],
+	[&quot;6_546_mute&quot;,&quot;receiver(546) - Mute&quot;],[&quot;6_546_menu&quot;,&quot;receiver(546) - Menu&quot;],[&quot;6_546_info&quot;,&quot;receiver(546) - Info&quot;],[&quot;6_546_left&quot;,&quot;receiver(546) - Left&quot;],
+	[&quot;6_546_up&quot;,&quot;receiver(546) - Up&quot;],[&quot;6_546_right&quot;,&quot;receiver(546) - Right&quot;],[&quot;6_546_ok&quot;,&quot;receiver(546) - OK&quot;],[&quot;6_546_down&quot;,&quot;receiver(546) - Down&quot;],[&quot;6_546_back&quot;,&quot;receiver(546) - Back&quot;]
+]
+</code></pre></div><h3 id="shelly-sense-coap-description"><a href="#shelly-sense-coap-description" aria-hidden="true" class="header-anchor">#</a> Shelly Sense Coap Description</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	&quot;blk&quot;:[{&quot;I&quot;:1, &quot;D&quot;:&quot;sensors&quot;}],
+	&quot;sen&quot;:[
+		{&quot;I&quot;:11, &quot;D&quot;:&quot;motion&quot;, &quot;T&quot;:&quot;S&quot;, &quot;R&quot;:&quot;0/1&quot;, &quot;L&quot;:1},
+		{&quot;I&quot;:22, &quot;D&quot;:&quot;charger&quot;, &quot;T&quot;:&quot;S&quot;, &quot;R&quot;:&quot;0/1&quot;, &quot;L&quot;:1},
+		{&quot;I&quot;:33, &quot;D&quot;:&quot;temperature&quot;, &quot;T&quot;:&quot;T&quot;, &quot;R&quot;:&quot;-40/125&quot;, &quot;L&quot;:1},
+		{&quot;I&quot;:44, &quot;D&quot;:&quot;humidity&quot;, &quot;T&quot;:&quot;H&quot;, &quot;R&quot;:&quot;0/100&quot;, &quot;L&quot;:1},
+		{&quot;I&quot;:66, &quot;D&quot;:&quot;lux&quot;, &quot;T&quot;:&quot;L&quot;, &quot;R&quot;:&quot;0/1&quot;, &quot;L&quot;:1},
+		{&quot;I&quot;:77, &quot;D&quot;:&quot;battery&quot;, &quot;T&quot;:&quot;H&quot;, &quot;R&quot;:&quot;0/100&quot;, &quot;L&quot;:1}
+	 ]
+}
+</code></pre></div><h2 id="shelly-flood"><a href="#shelly-flood" aria-hidden="true" class="header-anchor">#</a> Shelly Flood</h2> <h3 id="shelly-flood-settings"><a href="#shelly-flood-settings" aria-hidden="true" class="header-anchor">#</a> Shelly Flood /settings</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	“device”:{“type”:“SHWT-1”,“mac”:“XXXXXXXX”,“hostname”:“shellyflood-XXXXXX”,“sleep_mode”:true},
+	“wifi_ap”:{“enabled”:false,“ssid”:“shellyflood-XXXXXX”,“key”:&quot;&quot;},
+	“wifi_sta”:{“enabled”:true,“ssid”:“iot-wlan”,“ipv4_method”:“dhcp”,“ip”:null,“gw”:null,“mask”:null,“dns”:null},
+	“wifi_sta1”:{“enabled”:false,“ssid”:null,“ipv4_method”:“dhcp”,“ip”:null,“gw”:null,“mask”:null,“dns”:null},
+	“mqtt”: {“enable”:true,“server”:“XXXXXX”,“user”:“XXXXXX”,“reconnect_timeout_max”:60.000000,“reconnect_timeout_min”:2.000000,“clean_session”:true,“keep_alive”:60,“will_topic”:“shellies/shellyflood-XXXXXX/online”,“will_message”:“false”,“max_qos”:0,“retain”:false,“update_period”:30},
+	“sntp”: {“server”:“time.google.com”},login”:{“enabled”:true,“unprotected”:false,“username”:“XXXXXXX”,“password”:“XXXXXX”},“pin_code”:&quot;&quot;,“coiot_execute_enable”:false,
+	“name”:&quot;&quot;,“fw”:“20190821-095233/v1.5.2@4148d2b7”,“build_info”:{“build_id”:“20190821-095233/v1.5.2@4148d2b7”,“build_timestamp”:“2019-08-21T09:52:33Z”,“build_version”:“1.0”},
+	“cloud”:{“enabled”:false,“connected”:false},“timezone”:“Europe/Berlin”,“lat”:50.110901,“lng”:8.682130,“tzautodetect”:true,“time”:“11:09”,
+	“sensors”:{
+		“temperature_threshold”:1.0,
+		“temperature_unit”:“C”
+	},
+	“sleep_mode”:{“period”:24,“unit”:“h”},
+	“report_url”:null, 
+	“rain_sensor”:false
+}
+</code></pre></div><h3 id="shelly-flood-status"><a href="#shelly-flood-status" aria-hidden="true" class="header-anchor">#</a> Shelly Flood /status</h3> <div class="language- extra-class"><pre class="language-text"><code>{
+	“wifi_sta”:{“connected”:true,“ssid”:“XXXXX”,“ip”:&quot;XXXXXXXX“,“rssi”:-88},
+	“cloud”:{“enabled”:false,“connected”:false},“mqtt”:{“connected”:true},
+	“time”:“11:07”,“serial”:1,“has_update”:false,“mac”:“XXXXXXXXXXXX”,
+	“is_valid”:true,
+	“flood”:false,
+	“tmp”:{“value”:21.62,“units”:“C”,“tC”:21.62,“tF”:70.93, “is_valid”:true},
+	“bat”:{“value”:95,“voltage”:2.92},“act_reasons”:[“button”], 
+	“rain_sensor”:false,
+	“update”:{“status”:“idle”,“has_update”:false,“new_version”:“20190821-095233/v1.5.2@4148d2b7”,“old_version”:“20190821-095233/v1.5.2@4148d2b7”},
+	“ram_total”:50592,“ram_free”:39632,“fs_size”:233681,“fs_free”:154365,“uptime”:22
+}
+</code></pre></div><h1 id="coap-api-json"><a href="#coap-api-json" aria-hidden="true" class="header-anchor">#</a> COAP API JSON</h1> <h3 id="decoded-device-description"><a href="#decoded-device-description" aria-hidden="true" class="header-anchor">#</a> Decoded Device Description</h3> <div class="language- extra-class"><pre class="language-dsl"><code>	id<span class="token operator">=</span><span class="token number">0</span><span class="token operator">:</span> Relay0
+	id<span class="token operator">=</span><span class="token number">1</span><span class="token operator">:</span> Relay1
+	id<span class="token operator">=</span><span class="token number">2</span><span class="token operator">:</span> Device
+ Adding <span class="token number">5</span> sensor definitions
+	 id <span class="token number">112</span><span class="token operator">:</span> State<span class="token punctuation">,</span> <span class="token keyword">Type</span><span class="token operator">=</span>S<span class="token punctuation">,</span> Range<span class="token operator">=</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span><span class="token punctuation">,</span> Links<span class="token operator">=</span><span class="token number">0</span>
+	 id <span class="token number">122</span><span class="token operator">:</span> State<span class="token punctuation">,</span> <span class="token keyword">Type</span><span class="token operator">=</span>S<span class="token punctuation">,</span> Range<span class="token operator">=</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span><span class="token punctuation">,</span> Links<span class="token operator">=</span><span class="token number">1</span>
+	 id <span class="token number">111</span><span class="token operator">:</span> <span class="token keyword">Power</span><span class="token punctuation">,</span> <span class="token keyword">Type</span><span class="token operator">=</span>W<span class="token punctuation">,</span> Range<span class="token operator">=</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2300</span><span class="token punctuation">,</span> Links<span class="token operator">=</span><span class="token number">0</span>
+	 id <span class="token number">121</span><span class="token operator">:</span> <span class="token keyword">Power</span><span class="token punctuation">,</span> <span class="token keyword">Type</span><span class="token operator">=</span>W<span class="token punctuation">,</span> Range<span class="token operator">=</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">2300</span><span class="token punctuation">,</span> Links<span class="token operator">=</span><span class="token number">1</span>
+	 id <span class="token number">113</span><span class="token operator">:</span> Position<span class="token punctuation">,</span> <span class="token keyword">Type</span><span class="token operator">=</span>S<span class="token punctuation">,</span> Range<span class="token operator">=</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">,</span> Links<span class="token operator">=</span><span class="token number">2</span>
+   Device has <span class="token number">2</span> actors
+	 id<span class="token operator">=</span><span class="token number">211</span><span class="token operator">:</span> <span class="token keyword">Switch</span><span class="token punctuation">,</span> <span class="token class-name">Links</span><span class="token operator">=</span><span class="token number">0</span>
+		 P<span class="token punctuation">[</span><span class="token number">2011</span><span class="token punctuation">]</span><span class="token operator">:</span> ToState<span class="token punctuation">,</span> Range<span class="token operator">=</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+	 id<span class="token operator">=</span><span class="token number">221</span><span class="token operator">:</span> <span class="token keyword">Switch</span><span class="token punctuation">,</span> <span class="token class-name">Links</span><span class="token operator">=</span><span class="token number">1</span>
+		 P<span class="token punctuation">[</span><span class="token number">2021</span><span class="token punctuation">]</span><span class="token operator">:</span> ToState<span class="token punctuation">,</span> Range<span class="token operator">=</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">1</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> <footer><div class="social-icons"><a href="https://twitter.com/openhab" target="_blank"><svg class="social-icon twitter"><path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path></svg></a> <a href="https://github.com/openhab" target="_blank"><svg class="social-icon github"><path d="M10.369 24.837c0 0.125-0.144 0.225-0.325 0.225-0.206 0.019-0.35-0.081-0.35-0.225 0-0.125 0.144-0.225 0.325-0.225 0.188-0.019 0.35 0.081 0.35 0.225zM8.425 24.556c-0.044 0.125 0.081 0.269 0.269 0.306 0.162 0.063 0.35 0 0.387-0.125s-0.081-0.269-0.269-0.325c-0.162-0.044-0.344 0.019-0.387 0.144zM11.188 24.45c-0.181 0.044-0.306 0.163-0.287 0.306 0.019 0.125 0.181 0.206 0.369 0.163 0.181-0.044 0.306-0.163 0.287-0.288-0.019-0.119-0.188-0.2-0.369-0.181zM15.3 0.5c-8.669 0-15.3 6.581-15.3 15.25 0 6.931 4.362 12.863 10.594 14.95 0.8 0.144 1.081-0.35 1.081-0.756 0-0.387-0.019-2.525-0.019-3.837 0 0-4.375 0.938-5.294-1.863 0 0-0.713-1.819-1.737-2.288 0 0-1.431-0.981 0.1-0.962 0 0 1.556 0.125 2.412 1.613 1.369 2.413 3.662 1.719 4.556 1.306 0.144-1 0.55-1.694 1-2.106-3.494-0.387-7.019-0.894-7.019-6.906 0-1.719 0.475-2.581 1.475-3.681-0.162-0.406-0.694-2.081 0.162-4.244 1.306-0.406 4.313 1.688 4.313 1.688 1.25-0.35 2.594-0.531 3.925-0.531s2.675 0.181 3.925 0.531c0 0 3.006-2.1 4.313-1.688 0.856 2.169 0.325 3.838 0.163 4.244 1 1.106 1.613 1.969 1.613 3.681 0 6.031-3.681 6.512-7.175 6.906 0.575 0.494 1.063 1.431 1.063 2.9 0 2.106-0.019 4.712-0.019 5.225 0 0.406 0.288 0.9 1.081 0.756 6.25-2.075 10.488-8.006 10.488-14.938 0-8.669-7.031-15.25-15.7-15.25zM6.075 22.056c-0.081 0.063-0.063 0.206 0.044 0.325 0.1 0.1 0.244 0.144 0.325 0.063 0.081-0.063 0.063-0.206-0.044-0.325-0.1-0.1-0.244-0.144-0.325-0.063zM5.4 21.55c-0.044 0.081 0.019 0.181 0.144 0.244 0.1 0.063 0.225 0.044 0.269-0.044 0.044-0.081-0.019-0.181-0.144-0.244-0.125-0.038-0.225-0.019-0.269 0.044zM7.425 23.775c-0.1 0.081-0.063 0.269 0.081 0.387 0.144 0.144 0.325 0.163 0.406 0.063 0.081-0.081 0.044-0.269-0.081-0.387-0.138-0.144-0.325-0.163-0.406-0.063zM6.713 22.856c-0.1 0.063-0.1 0.225 0 0.369s0.269 0.206 0.35 0.144c0.1-0.081 0.1-0.244 0-0.387-0.088-0.144-0.25-0.206-0.35-0.125z"></path></svg></a> <a href="https://www.youtube.com/channel/UC7OK88DW0La_BJlcXZg8ydQ" target="_blank"><svg class="social-icon youtube"><path d="M31.681 9.6c0 0-0.313-2.206-1.275-3.175-1.219-1.275-2.581-1.281-3.206-1.356-4.475-0.325-11.194-0.325-11.194-0.325h-0.012c0 0-6.719 0-11.194 0.325-0.625 0.075-1.987 0.081-3.206 1.356-0.963 0.969-1.269 3.175-1.269 3.175s-0.319 2.588-0.319 5.181v2.425c0 2.587 0.319 5.181 0.319 5.181s0.313 2.206 1.269 3.175c1.219 1.275 2.819 1.231 3.531 1.369 2.563 0.244 10.881 0.319 10.881 0.319s6.725-0.012 11.2-0.331c0.625-0.075 1.988-0.081 3.206-1.356 0.962-0.969 1.275-3.175 1.275-3.175s0.319-2.587 0.319-5.181v-2.425c-0.006-2.588-0.325-5.181-0.325-5.181zM12.694 20.15v-8.994l8.644 4.513-8.644 4.481z"></path></svg></a></div> <div class="legal"><span class="copyright">Copyright © 2019 by the openHAB Community and the openHAB Foundation e.V.</span> <br> <span class="legal-links"><a href="/v2.5/privacy.html">Privacy policy</a> |
+    <a href="/v2.5/imprint.html">Imprint</a></span></div> <img src="/openhab-logo-square.png" class="footer-logo"></footer></div> <!----></div></div>
+    <script src="/v2.5/assets/js/app.6e1f6232.js" defer></script><script src="/v2.5/assets/js/374.9ab6a561.js" defer></script>
+  </body>
+</html>
