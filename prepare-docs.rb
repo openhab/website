@@ -300,7 +300,6 @@ puts ">>> Migrating the Concepts section"
 
 Dir.glob(".vuepress/openhab-docs/concepts/*.md").each { |path|
     file = File.basename(path)
-    next if file == "categories.md"
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/concepts", file, "docs/concepts", "#{$docs_repo_root}/concepts/#{file}")
 }
