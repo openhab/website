@@ -116,7 +116,7 @@ def process_file(indir, file, outdir, source)
                                 puts "    (add-on is zwave)"
                                 source = "https://github.com/openhab/org.openhab.binding.zwave/blob/master/README.md"
                             elsif !(file =~ /things/) then
-                                source = "https://github.com/openhab/openhab-addons/blob/master/bundles/org.openhab.#{addon_type}.#{addon}/README.md"
+                                source = "https://github.com/openhab/openhab2-addons/blob/master/bundles/org.openhab.#{addon_type}.#{addon}/README.md"
                             end
 
                             out.puts "source: #{source}" if source != ""
@@ -415,6 +415,7 @@ Dir.glob(".vuepress/openhab-docs/developers/*.md") { |path|
 
 puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/developers/bindings/images", "docs/developer/bindings/images")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/legacy/images", "docs/developer/legacy/images")
 FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/osgi/images")
 FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/ide/images")
 
