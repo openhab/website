@@ -60,7 +60,7 @@ module.exports = {
         if ((str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/)) ||
           str.match(/received update/) || str.match(/changed.*(?:from|to)/) || str.match(/Channel.*triggered/) ||
           str.match(/\bval\b/) || str.match(/\bvar\b/) /* <-- dangerous! */) {
-          
+
           lang = 'rules'
         }
         if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
@@ -266,11 +266,9 @@ module.exports = {
             'configuration/editors',
             'configuration/homebuilder',
             ['configuration/paperui', 'Paper UI'],
-            ['configuration/ui/habmin/', 'HABmin'],
             ['configuration/ui/habot/', 'HABot'],
             'configuration/habpanel',
             ['configuration/ui/basic/', 'Basic UI'],
-            ['configuration/ui/classic/', 'Classic UI'],
             'configuration/rules-ng',
             'configuration/eclipseiotmarket',
             ['configuration/restdocs', 'REST API'],
