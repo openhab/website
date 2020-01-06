@@ -60,7 +60,7 @@ module.exports = {
         if ((str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/)) ||
           str.match(/received update/) || str.match(/changed.*(?:from|to)/) || str.match(/Channel.*triggered/) ||
           str.match(/\bval\b/) || str.match(/\bvar\b/) /* <-- dangerous! */) {
-          
+
           lang = 'rules'
         }
         if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
@@ -218,6 +218,7 @@ module.exports = {
             'installation/openhabian',
             'installation/rasppi',
             'installation/pine',
+            'installation/armbian',
             'installation/docker',
             'installation/synology',
             'installation/qnap',
