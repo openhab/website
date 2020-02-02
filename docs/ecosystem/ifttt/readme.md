@@ -8,6 +8,11 @@ meta:
   - name: og:description
     content: "openHAB users can take advantage of IFTTT to realize even more use cases in their smart home!"
 ---
+::: tip Note
+ The function to expose new items to [If This Then That (IFTTT)](https://ifttt.com) via [myopenHAB.org](https://myopenHAB.org) is currently disabled, so if you want to integrate IFTTT with openHAB you will have to set up your own private instance of [openhab-cloud](https://github.com/openhab/openhab-cloud) as well as setting up your own service on IFTTT. Please keep in mind that this will also require additional effort if you want to use other add-ons that depend on myopenHAB.org, like the Amazon Alexa skill. _Some add-ons, like the iOS app can be configured to connect to your private instance, others, like the Amazon Alexa skill, can not._
+
+ This guide describes the standard setup for if and when the function to expose items on myopenHAB.org is re-enabled or if you had items exposed already before July 2019. If you want  to go down the route of setting up your own openhab-cloud there are several helpful posts in the [openHAB Community]( https://community.openhab.org). 
+:::
 
 # IFTTT Integration for openHAB
 
