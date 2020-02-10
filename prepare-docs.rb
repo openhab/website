@@ -9,7 +9,7 @@ require "rexml/document"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/2.5.x"
-$docs_repo_branch = "final"
+$docs_repo_branch = "final-2.5.x"
 $addons_repo_branch = "2.5.x"
 $version = nil
 
