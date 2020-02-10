@@ -75,7 +75,7 @@
 
 
 <script>
-import Footer from './Footer.vue'
+import Footer from '@theme/components/Footer.vue'
 
 export default {
   name: 'AboutPage',

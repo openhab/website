@@ -78,7 +78,5 @@ Membership perks include:
 Membership fees start as low as 2 &euro; per month. Visit the [membership page](https://www.openhabfoundation.org/join/) on openhabfoundation.org to learn more.
 
 ::: tip
-
 As an _“anerkannter gemeinnütziger Verein”_, all membership fees and donations to the openHAB Foundation e.V. are tax-deductible for German residents.
-
 :::

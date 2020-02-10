@@ -1,37 +1,21 @@
 <template>
-  <div>
+  <ParentLayout>
+    <template #page-top>
+      <div class="home-header">
 
-    <jumbotron />
+        <jumbotron />
 
-    <div class="after-jumbotron">
+        <div class="after-jumbotron">
 
-      <div class="placeholder"></div>
+          <div class="placeholder"></div>
 
-      <alert-banner-section v-if="$page.frontmatter.alert" />
-
-      <why-section />
-
-      <openhabian-section />
-
-      <cloud-section />
-
-      <vs-code-section />
-
-      <featured-addons />
-
-      <!-- <open-source-section /> -->
-
-      <community-section />
-
-      <events-section />
-
-      <tweets-section />
-
-      <alternative-to-section />
-
-    </div>
-    <Footer />
-  </div>
+        </div>
+      </div>
+    </template>
+    <template #page-bottom>
+      <Footer />
+    </template>
+  </ParentLayout>
 </template>
 
 <style lang="stylus">
@@ -123,29 +107,35 @@ header.headroom--top
     height calc(90vh - 3.6rem)
     min-height calc(600px - 3.6rem)
 
+.home-header + .theme-default-content
+  padding 0 !important
+
 </style>
 
 <script>
-import Footer from './Footer.vue'
+import ParentLayout from '@parent-theme/layouts/Layout.vue'
+import Footer from '@theme/components/Footer.vue'
+import Vue from 'vue'
 
-import Jumbotron from'./home/Jumbotron.vue'
-import AlertBannerSection from './home/AlertBannerSection.vue'
-import WhySection from './home/WhySection.vue'
-import CloudSection from './home/CloudSection.vue'
-import VsCodeSection from './home/VsCodeSection.vue'
-import FeaturedAddons from './home/FeaturedAddons.vue'
-import OpenhabianSection from './home/OpenhabianSection.vue'
-import OpenSourceSection from './home/OpenSourceSection.vue'
-import CommunitySection from './home/CommunitySection.vue'
-import EventsSection from './home/EventsSection.vue'
-import AlternativeToSection from './home/AlternativeToSection.vue'
-import TweetsSection from './home/TweetsSection.vue'
+import Jumbotron from'../../components/home/Jumbotron.vue'
+import AlertBannerSection from '../../components/home/AlertBannerSection.vue'
+import WhySection from '../../components/home/WhySection.vue'
+import CloudSection from '../../components/home/CloudSection.vue'
+import VsCodeSection from '../../components/home/VsCodeSection.vue'
+import FeaturedAddons from '../../components/home/FeaturedAddons.vue'
+import OpenhabianSection from '../../components/home/OpenhabianSection.vue'
+import OpenSourceSection from '../../components/home/OpenSourceSection.vue'
+import CommunitySection from '../../components/home/CommunitySection.vue'
+import EventsSection from '../../components/home/EventsSection.vue'
+import AlternativeToSection from '../../components/home/AlternativeToSection.vue'
+import TweetsSection from '../../components/home/TweetsSection.vue'
 
 let hr = null
 
 export default {
   name: 'HomePage',
   components: {
+    ParentLayout,
     Jumbotron,
     AlertBannerSection,
     WhySection,
@@ -162,17 +152,6 @@ export default {
     // TwitterTimeline
   },
   mounted () {
-    if (this.$sr) {
-      const sr = this.$sr
-      sr.reveal('.feature', { scale: 1.0 }, 200)
-      sr.reveal('.slide', { scale: 1.0 })
-      sr.reveal('.slide-slow', { scale: 1.0, duration: 1000, delay: 500 })
-      sr.reveal('.slide-seq', { scale: 1.0, duration: 1000 }, 300)
-      sr.reveal('.slide-seq2', { scale: 1.0, duration: 1000 }, 300)
-      sr.reveal('.slide-seq3', { origin: 'left', distance: '10px', scale: 1.0, duration: 1000 }, 600)
-      sr.reveal('.slide-seq4', { scale: 1.0, viewFactor: 0.0 }, 200)
-      sr.reveal('.alert', { origin: 'left', distance: '40px', duration: 1200, scale: 1.0 })
-    }
     const header = document.getElementsByTagName("header")[0]
     if (this.Headroom) {
       hr = new this.Headroom(header)

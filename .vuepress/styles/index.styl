@@ -1,4 +1,4 @@
-@require '~vuepress-tabs/dist/themes/default.styl'
+@require '~vuepress-plugin-tabs/dist/themes/default.styl'
 
 // temporary for v3
 .nav-item>a.router-link-active, .nav-item>a:hover
@@ -39,6 +39,12 @@
         font-weight 400
         font-size 1rem
 
+    .nav-item .dropdown-title
+        // font-family 'Open Sans', sans-serif
+        font-weight 400
+        font-size 1rem
+        color inherit !important
+
     .dropdown-subitem .nav-link a
         font-weight normal
 
@@ -59,21 +65,21 @@
 
 @media (min-width: 720px) and (max-width: 1023px)
     .search-box input:focus
-        width: 10.8rem // to cover the openHAB text (leaving the logo)
+        width: 10.8rem !important // to cover the openHAB text (leaving the logo)
 
 @media (min-width: 1024px) and (max-width: 1280px)
     .search-box input
-        width: 5.7rem
+        width: 5.7rem !important
 
 @media (max-width: 360px)
     .search-box input:focus
-        width: 9.4rem // to cover the openHAB text (leaving the logo)
+        width: 9.4rem !important // to cover the openHAB text (leaving the logo)
 
 @media (max-width: 419px)
     .search-box input:focus
-        width: 4rem
+        width: 4rem !important
 
-.content:not(.custom)>h1:first-child
+.theme-default-content:not(.custom)>h1:first-child
     font-family 'Open Sans', sans-serif
     font-weight 400
 
@@ -86,17 +92,17 @@
         display none
     .editLink
         display none
-    .content pre
+    .theme-default-content pre
         overflow hidden !important
         white-space pre-wrap !important
 
-.content:not(.custom), .page-nav
+.theme-default-content:not(.custom), .page-nav
     max-width 1280px !important
 
-.page .content:not(.custom):not(.page-nav):not(.edit-link)
+.page .theme-default-content:not(.custom):not(.page-nav):not(.edit-link)
     min-height 85vh !important
 
-.page .content.edit-link
+.page .page-edit
     display none
 
 .logo
@@ -112,7 +118,7 @@ a[href*='.openhab.org'] .outbound
 .custom-block.tip
     border-color #2196f3 !important
 
-/* Tweaks for vuepress-tabs */
+/* Tweaks for vuepress-plugin-tabs */
 
 .vuepress-tabs
     .tabs-component

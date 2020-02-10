@@ -9,4 +9,6 @@ meta:
     content: a vendor and technology agnostic open source automation software for your home
 ---
 
-tbd
+::: error
+This page is not yet written.
+:::

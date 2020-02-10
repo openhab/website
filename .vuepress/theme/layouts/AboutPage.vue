@@ -1,18 +1,17 @@
 <template>
-  <div>
-    <div class="page-header">
-      <img draggable="false" class="header-pattern" src="/pattern.png" alt="" />
-      <h1 class="page-title">
-        {{$page.frontmatter.title}}
-      </h1>
-    </div>
-    <div class="page-content">
-      <div class="content">
-        <Content></Content>
+  <ParentLayout>
+    <template #page-top>
+      <div class="page-header">
+        <img draggable="false" class="header-pattern" src="/pattern.png" alt="" />
+        <h1 class="page-title">
+          {{$page.frontmatter.title}}
+        </h1>
       </div>
-    </div>
-    <Footer></Footer>
-  </div>
+    </template>
+    <template slot="page-bottom">
+        <Footer />
+    </template>
+  </ParentLayout>
 </template>
 
 <style lang="stylus">
@@ -24,7 +23,7 @@
     transform translateX(0)
     opacity 1
 .page-header
-  background #ff6600
+  background $headerColor
   position absolute
   top 3.6rem
   left 0
@@ -36,7 +35,7 @@
   .header-pattern
     opacity 0.15
     width 100vw
-    // height 100vh
+    height 100vh
     position absolute
     top 0
     object-fit cover
@@ -53,17 +52,19 @@
     .page-title
       font-size 30px
     
-.page-content
-  margin-top calc(3.6rem + 150px)
+.page-header + .theme-default-content
+  margin-top calc(3.6rem + 150px + 10vh)
   min-height 80vh
 </style>
 
 <script>
-import Footer from './Footer.vue'
+import ParentLayout from '@parent-theme/layouts/Layout.vue'
+import Footer from '@theme/components/Footer.vue'
 
 export default {
   name: 'AboutPage',
   components: {
+    ParentLayout,
     Footer
   },
   data () {

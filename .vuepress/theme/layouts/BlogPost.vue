@@ -1,22 +1,23 @@
 <template>
-  <div>
-    <div class="post-header" :style="{background: 'url(' + $page.frontmatter.previewimage + ') no-repeat center'}">
-      <!-- <div class="post-cover" /> -->
-      <!-- <img draggable="false" class="post-cover" :src="$page.frontmatter.previewimage" alt="" /> -->
-      <div class="post-cover">
-        <h1 class="post-title">
-          {{$page.frontmatter.title}}
-        </h1>
+  <ParentLayout>
+    <template #page-top>
+      <div class="post-header" :style="{background: 'url(' + $page.frontmatter.previewimage + ') no-repeat center'}">
+        <!-- <div class="post-cover" /> -->
+        <!-- <img draggable="false" class="post-cover" :src="$page.frontmatter.previewimage" alt="" /> -->
+        <div class="post-cover">
+          <h1 class="post-title">
+            {{$page.frontmatter.title}}
+          </h1>
+        </div>
       </div>
-    </div>
-    <div class="blog-body-content">
-      <div class="page-author"><strong>{{$page.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date($page.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
-      <div class="content">
-        <Content></Content>
+      <div class="blog-body-header">
+        <div class="page-author"><strong>{{$page.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date($page.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
       </div>
-    </div>
-    <Footer></Footer>
-  </div>
+    </template>
+    <template #page-bottom>
+      <Footer />
+    </template>
+  </ParentLayout>
 </template>
 
 <style lang="stylus">
@@ -28,7 +29,7 @@
     transform translateX(0)
     opacity 1
 .post-header
-  background #ff6600
+  background $headerColor
   position absolute
   top 0
   left 0
@@ -66,9 +67,8 @@
     //   .post-title
     //     padding 104px 0
 
-.blog-body-content
-  margin-top calc(400px + 3.6rem) !important
-  min-height 80vh
+.blog-body-header
+  margin-top calc(400px + 3.6rem + 10vh) !important
   .page-author
     font-size 14px
     font-family 'Open Sans', sans-serif;
@@ -79,21 +79,23 @@
     text-align center
 
   /* For migrated posts (images and captions) */
-  .img-responsive
+  & + .img-responsive
     display block
     margin auto
-  small
+  & + small
     display block
     text-align center
 </style>
 
 <script>
-import Footer from './Footer.vue'
+import ParentLayout from '@parent-theme/layouts/Layout.vue'
+import Footer from '@theme/components/Footer.vue'
 import Vue from 'vue'
 
 export default {
   name: 'AboutPage',
   components: {
+    ParentLayout,
     Footer
   },
   data () {
