@@ -1,6 +1,6 @@
 {
   "name": "openhab-website",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "openHAB Website",
   "dependencies": {
     "headroom.js": "^0.9.4",
