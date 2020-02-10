@@ -41,13 +41,12 @@ meta:
 }
 </style>
 
-<h2 class="big-title">openHAB 2 Distribution</h2>
+<h2 class="big-title">openHAB 3 Distribution</h2>
 
-::: warning PLEASE READ THE DOCS
+::: warning NOT READY FOR PRODUCTION
 
-Only a quick reference and download links are provided below, all platforms and steps after the installation are not covered.
-
-If you're new to openHAB, it is strongly recommended to read the [Installation Guide](/docs/installation/) for a complete overview of your options and detailed instructions.
+The following openHAB 3.x downloads are provided for evaluation, testing and development only at this time.
+Please don't report end-user issues or expect support until further notice.
 
 :::
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="instructions">Choose your system</div>
+    <!-- <div class="instructions">Choose your system</div>
     <div class="os-tabs">
       <div class="os-tab"
         v-for="system in systems"
@@ -146,7 +146,7 @@ usermod -a -G openhab myownuser
       <hr>
       <h3>Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>), see <router-link to="/docs/installation/#prerequisites">prerequisites</router-link></li>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>), see <router-link to="/docs/installation/#prerequisites">prerequisites</router-link></li>
         <li>Download and extract the openHAB runtime distribution from <a target="_blank" href="https://bintray.com/openhab/mvn/openhab-distro">https://bintray.com/openhab/mvn/openhab-distro</a>:</li>
         <div class="download-button-container">
           <a class="download-button big" :href="runtimeDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
@@ -174,16 +174,16 @@ usermod -a -G openhab myownuser
         <li>Navigate with a web browser to <code>http://{{selectedSystem === 'apple' || selectedSystem === 'win10' ? 'localhost' : '&lt;ip-address&gt;'}}:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
-    </div>
+    </div> -->
 
     <div v-if="selectedSystem !== 'docker' && selectedVersion === 'snapshot'">
       <hr />
       <h3>Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 8 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>)</li>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>)</li>
         <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
         <div class="download-button-container">
-          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
+          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB3-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
         </div>
       </ol>
     </div>
@@ -352,7 +352,7 @@ export default {
       ],
       selectedSystem: 'tux',
       selectedDistro: 'deb',
-      selectedVersion: 'stable'
+      selectedVersion: 'snapshot'
     }
   },
   methods: {
