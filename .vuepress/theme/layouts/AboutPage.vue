@@ -53,8 +53,8 @@
       font-size 30px
     
 .page-header + .theme-default-content
-  margin-top calc(3.6rem + 150px + 10vh)
-  min-height 80vh
+  margin-top calc(3.6rem + 150px + 10vh) !important
+  min-height 80vh !important
 </style>
 
 <script>

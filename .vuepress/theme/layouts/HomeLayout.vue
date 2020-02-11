@@ -157,6 +157,7 @@ export default {
       hr = new this.Headroom(header)
       hr.init()
       setTimeout(() => {
+        header.classList.add('ready')
         header.classList.remove('homepage')
       }, 1500)
     }

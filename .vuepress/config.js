@@ -1,4 +1,4 @@
-const AddonsActions = require('./addons-actions.js')
+// const AddonsActions = require('./addons-actions.js')
 const AddonsBindings = require('./addons-bindings.js')
 const AddonsIntegrations = require('./addons-integrations.js')
 const AddonsPersistence = require('./addons-persistence.js')
@@ -95,10 +95,11 @@ module.exports = {
       }
     },
     nav: [
-      {
-        text: 'Blog',
-        link: '/blog/'
-      },
+      // disable for 3.x until production
+      // {
+      //   text: 'Blog',
+      //   link: '/blog/'
+      // },
       {
         text: 'Download',
         link: '/download/',
@@ -336,11 +337,11 @@ module.exports = {
           collapsible: false,
           children: AddonsIntegrations.sort((a,b) => a[1].localeCompare(b[1]))
         },
-        {
-          title: 'Actions',
-          collapsible: false,
-          children: AddonsActions.sort((a,b) => a[1].localeCompare(b[1]))
-        },
+        // {
+        //   title: 'Actions',
+        //   collapsible: false,
+        //   children: AddonsActions.sort((a,b) => a[1].localeCompare(b[1]))
+        // },
         {
           title: 'Data Persistence',
           collapsible: false,

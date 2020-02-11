@@ -9,10 +9,10 @@ initial_gallery:
     title: "System Integrations"
     description: "System integrations expose openHAB to external systems."
     featured: ["azureiothub", "gcal", "homekit", "openhabcloud"]
-  action:
-    title: "Actions"
-    description: "Actions are predefined methods for openHAB rules and scripts."
-    featured: ["mqtt", "pushbullet", "telegram", "twitter", "xbmc", "xmpp"]
+  # action:
+  #   title: "Actions"
+  #   description: "Actions are predefined methods for openHAB rules and scripts."
+  #   featured: ["mqtt", "pushbullet", "telegram", "twitter", "xbmc", "xmpp"]
   persistence:
     title: "Data Persistence"
     description: "Persistence services allow openHAB to store time series data for history-based actions or statistics."
