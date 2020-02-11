@@ -493,6 +493,13 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
+
+    # Detect and skip 1.x bindings - shouldn't ultimately occur
+    if addon =~ /1$/ then
+        puts "      (1.x, skipping)"
+        next
+    end
+
     FileUtils.mkdir_p("addons/integrations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
