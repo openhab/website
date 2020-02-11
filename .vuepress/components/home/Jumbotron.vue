@@ -3,7 +3,7 @@
     <!-- <div class="hero-image"></div> removed for non-production site -->
     <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-content">
-      <h1>v3</h1> <!-- <<< remove this before production release -->
+      <h1 class="version">v3</h1> <!-- <<< remove this before production release -->
       <div class="white-logo"><ClientOnly><img src="/logo-white.png" class="white-logo" /></ClientOnly></div>
       <h1 class="hero">empowering the smart home</h1>
       <h2 class="lead">a vendor and technology agnostic open source automation software for your home</h2>
@@ -15,7 +15,7 @@
 
 <style lang="stylus">
 .jumbotron
-  background #000 // black until the site becomes production - then restore #ff6600
+  background $headerColor
   position absolute
   top 0
   left 0
@@ -38,6 +38,13 @@
     margin 90px 30px
     z-index 1
     max-width 960px
+    h1.version
+      position absolute
+      font-size 30vh
+      z-index -10000
+      right 20vw
+      user-select none
+      opacity 0.5
     .white-logo
       width 240px
       height 80px

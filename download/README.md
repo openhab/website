@@ -44,10 +44,8 @@ meta:
 <h2 class="big-title">openHAB 3 Distribution</h2>
 
 ::: warning NOT READY FOR PRODUCTION
-
 The following openHAB 3.x downloads are provided for evaluation, testing and development only at this time.
 Please don't report end-user issues or expect support until further notice.
-
 :::
 
 <InstallInstructions />

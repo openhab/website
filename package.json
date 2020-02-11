@@ -10,12 +10,13 @@
     "vue-parallaxy": "^1.1.1",
     "vue-tabs-component": "^1.5.0",
     "vue-tweet-embed": "^2.1.2",
-    "vuepress-tabs": "^0.1.6"
+    "vuepress-plugin-tabs": "^0.3.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.6.0",
     "fs-extra": "^6.0.1",
-    "vuepress": "^0.14.11"
+    "vuepress": "^1.0.0",
+    "vuepress-plugin-container": "^2.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

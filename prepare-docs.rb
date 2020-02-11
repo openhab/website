@@ -280,7 +280,8 @@ def process_file(indir, file, outdir, source)
 
         # Add the components for the versions dropdown and the edit link
         out.puts
-        out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
+        # Obsolete: the combobox for versions will be moved globally on the v3 site
+        # out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
         out.puts '<EditPageLink/>'
     }
 end
@@ -427,17 +428,18 @@ FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/i
 
 
 
+# Actions might be deprecated in OH 3.x, skipping
 
-puts ">>> Migrating add-ons: Actions"
+# puts ">>> Migrating add-ons: Actions"
 
 
-Dir.glob(".vuepress/openhab-docs/_addons_actions/**") { |path|
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
-    puts " -> #{addon}"
-    FileUtils.mkdir_p("addons/actions/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", nil)
-}
+# Dir.glob(".vuepress/openhab-docs/_addons_actions/**") { |path|
+#     addon = File.basename(path)
+#     next if $ignore_addons.include?(addon)
+#     puts " -> #{addon}"
+#     FileUtils.mkdir_p("addons/actions/" + addon)
+#     process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", nil)
+# }
 
 
 
@@ -491,6 +493,13 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
+
+    # Detect and skip 1.x bindings - shouldn't ultimately occur
+    if addon =~ /1$/ then
+        puts "      (1.x, skipping)"
+        next
+    end
+
     FileUtils.mkdir_p("addons/integrations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
@@ -520,7 +529,15 @@ puts ">>> Migrating add-ons: Bindings"
 Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
+
     puts " -> #{addon}"
+
+    # Detect and skip 1.x bindings - shouldn't ultimately occur
+    if addon =~ /1$/ then
+        puts "      (1.x, skipping)"
+        next
+    end
+
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
@@ -563,7 +580,8 @@ end
 
 # Write arrays of addons by type to include in VuePress config.js
 puts ">>> Writing add-ons arrays to files for sidebar navigation"
-["bindings", "persistence", "actions", "integrations", "transformations", "voice"].each { |type|
+# ["bindings", "persistence", "actions", "integrations", "transformations", "voice"].each { |type|
+["bindings", "persistence", "integrations", "transformations", "voice"].each { |type|
     File.open(".vuepress/addons-#{type}.js", "w+") { |file|
         file.puts "module.exports = ["
 

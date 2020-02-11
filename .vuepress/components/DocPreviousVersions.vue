@@ -19,10 +19,7 @@
 .content:not(.custom)>h1:first-child
   margin-right 140px
 .page-versions
-  position absolute
-  top 5rem
   white-space nowrap
-  right 2rem
   font-size 9pt
   margin 5px
   padding 3px
@@ -31,7 +28,7 @@
   .dropdown-wrapper
     padding 2px
     position absolute
-    right 0
+    left 1rem
   .dropdown-title
     border 1px solid #eee
     border-radius 2px
@@ -88,15 +85,11 @@ export default {
   computed: {
     versions () {
       return this.versionNumbers.map(version => {
-        let url = this.$page.path
-        if (version === '2.1') {
-          url = url.replace('addons/integrations/', 'addons/ios/')
-          if (url.indexOf('/addons') === 0) url += 'readme.html'
-        }
+        let url = this.$page.path.split('/')[1]
         if (version === 'latest') {
           url = 'https://www.openhab.org' + url
         } else {
-          url = `https://${(version === '2.1') ? 'docs.' : 'www.'}openhab.org${version === 'snapshot' ? '' : '/v' + version}${url}`
+          url = `https://www.openhab.org${version === 'snapshot' ? '' : '/v' + version}/${url}`
         }
 
         return {

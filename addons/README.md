@@ -9,10 +9,10 @@ initial_gallery:
     title: "System Integrations"
     description: "System integrations expose openHAB to external systems."
     featured: ["azureiothub", "gcal", "homekit", "openhabcloud"]
-  action:
-    title: "Actions"
-    description: "Actions are predefined methods for openHAB rules and scripts."
-    featured: ["mqtt", "pushbullet", "telegram", "twitter", "xbmc", "xmpp"]
+  # action:
+  #   title: "Actions"
+  #   description: "Actions are predefined methods for openHAB rules and scripts."
+  #   featured: ["mqtt", "pushbullet", "telegram", "twitter", "xbmc", "xmpp"]
   persistence:
     title: "Data Persistence"
     description: "Persistence services allow openHAB to store time series data for history-based actions or statistics."
@@ -42,9 +42,5 @@ h1.welcome {
   font-size: 36pt;
 }
 </style>
-
-All add-ons for openHAB 2 are part of the distribution.
-This includes all new 2.x bindings as well as all 1.x add-ons that were reported to be compatible.
-Add-ons can be easily installed through the Paper UI (menu entry "Add-ons").
 
 <AddonSearch />
