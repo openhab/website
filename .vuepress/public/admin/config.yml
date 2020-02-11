@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: v2 # Current production branch
   accept_roles: #optional - accepts all users if left out
     - admin
     - editors
