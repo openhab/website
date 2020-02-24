@@ -72,7 +72,7 @@ If you're new to openHAB, it is strongly recommended to read the [Installation G
 <li><a href="https://www.netlify.com/">Netlify</a> provides continuous deployment and hosting for this website.</li>
 </ul>
 
-<div class="acknowledgements-logos">
+<div class="acknowledgements-logos" id="acknowledgements">
   <a target="_blank" href="https://www.bintray.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/bintray.png" /></a>
   <a target="_blank" href="https://www.digitalocean.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/digitalocean.png" /></a>
   <a target="_blank" href="https://www.ej-technologies.com/products/jprofiler/overview.html"><img style="padding: 1em" height="50" src="./images/acknowledgements/jprofiler.png" /></a>
