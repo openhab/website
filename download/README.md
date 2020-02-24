@@ -63,7 +63,7 @@ If you're new to openHAB, it is strongly recommended to read the [Installation G
 </div>
 
 
-<h2 class="big-title">Acknowledgements</h2>
+<h2 class="big-title" id="acknowledgements">Acknowledgements</h2>
 
 <ul>
 <li><a href="https://www.jfrog.com">JFrog</a> is providing an <a href="https://openhab.jfrog.io">Artifactory instance for our snapshots and milestone builds</a> as well as distributing our <a href="https://bintray.com/openhab">releases through Bintray</a>.</li>
@@ -72,7 +72,7 @@ If you're new to openHAB, it is strongly recommended to read the [Installation G
 <li><a href="https://www.netlify.com/">Netlify</a> provides continuous deployment and hosting for this website.</li>
 </ul>
 
-<div class="acknowledgements-logos" id="acknowledgements">
+<div class="acknowledgements-logos">
   <a target="_blank" href="https://www.bintray.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/bintray.png" /></a>
   <a target="_blank" href="https://www.digitalocean.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/digitalocean.png" /></a>
   <a target="_blank" href="https://www.ej-technologies.com/products/jprofiler/overview.html"><img style="padding: 1em" height="50" src="./images/acknowledgements/jprofiler.png" /></a>
