@@ -23,7 +23,6 @@ module.exports = {
   host: 'localhost',
   base,
   ga: 'UA-47717934-1',
-  shouldPrefetch: () => false,
   plugins: ['tabs', 'container'],
   head: [
     ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
