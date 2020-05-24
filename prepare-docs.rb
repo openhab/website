@@ -15,10 +15,6 @@ $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
 
-puts ">>> Downloading and extracting latest Javadoc from Jenkins"
-`wget https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
-`tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc-latest`
-
 if ENV["OH_DOCS_VERSION"] then
     puts ">>> Generating docs for version #{ENV["OH_DOCS_VERSION"]}"
     $version = ENV["OH_DOCS_VERSION"]
@@ -609,3 +605,8 @@ puts ">>> Writing add-ons arrays to files for sidebar navigation"
 # Regenerate the classic iconset docs
 puts ">>> Generating iconset"
 system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets classic .vuepress/openhab-docs/_data docs/configuration/iconsets")
+
+# Publish latest Javadoc
+puts ">>> Downloading and extracting latest Javadoc from Jenkins"
+`wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
+`tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc/latest`
