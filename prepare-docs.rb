@@ -15,6 +15,9 @@ $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
 
+puts ">>> Downloading and extracting latest Javadoc from Jenkins"
+`wget https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
+`tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc-latest`
 
 if ENV["OH_DOCS_VERSION"] then
     puts ">>> Generating docs for version #{ENV["OH_DOCS_VERSION"]}"
