@@ -22,7 +22,6 @@ module.exports = {
   host: 'localhost',
   base,
   ga: 'UA-47717934-1',
-  shouldPrefetch: () => false,
   head: [
     ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
