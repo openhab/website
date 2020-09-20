@@ -2,9 +2,9 @@
 sidebar: false
 layout: AboutPage
 title: Download openHAB
-currentVersion: 2.5.8
-currentMilestoneVersion: 2.5.8
-currentSnapshotVersion: 2.5.9-SNAPSHOT
+currentVersion: 2.5.9
+currentMilestoneVersion: 2.5.9
+currentSnapshotVersion: 2.5.10-SNAPSHOT
 meta:
   - name: og:title
     content: Download openHAB
