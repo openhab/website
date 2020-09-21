@@ -217,7 +217,7 @@ h3.addon-type
 </style>
 
 <script>
-import Things from './things/things.json'
+import Things from '../thing-types.json'
 
 export default {
   data () {
