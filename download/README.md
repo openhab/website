@@ -41,7 +41,7 @@ meta:
 }
 </style>
 
-<h2 class="big-title">openHAB 2 Distribution</h2>
+<h2 class="big-title">openHAB Distribution</h2>
 
 ::: warning PLEASE READ THE DOCS
 
