@@ -370,7 +370,7 @@ export default {
     versions () {
       return [
         ['stable', 'Stable'],
-        //['testing', 'Milestone'],
+        ['testing', 'Milestone'],
         ['snapshot', 'Snapshot']
       ]
     },
