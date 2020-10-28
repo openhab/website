@@ -8,9 +8,9 @@ require "rexml/document"
 # require "nokogiri"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
-$docs_repo_root = $docs_repo + "/blob/2.5.x"
+$docs_repo_root = $docs_repo + "/blob/main"
 $docs_repo_branch = "final-2.5.x"
-$addons_repo_branch = "2.5.x"
+$addons_repo_branch = "main"
 $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
