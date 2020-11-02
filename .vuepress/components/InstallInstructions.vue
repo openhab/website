@@ -370,8 +370,8 @@ export default {
     versions () {
       return [
         ['stable', 'Stable'],
-        ['testing', 'Milestone'],
-        ['snapshot', 'Snapshot']
+        // ['testing', 'Milestone'],
+        // ['snapshot', 'Snapshot']
       ]
     },
     runtimeDownloadLink () {

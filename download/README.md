@@ -51,6 +51,12 @@ If you're new to openHAB, it is strongly recommended to read the [Installation G
 
 :::
 
+::: tip LOOKING FOR OPENHAB 3?
+
+For downloads and instructions on how to install openHAB 3, please go to [https://next.openhab.org/download/](https://next.openhab.org/download/).
+
+:::
+
 <InstallInstructions />
 
 <h2 class="big-title">Applications</h2>
