@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <div class="instructions">Choose your system</div>
+    <div class="instructions">Choose your system</div>
     <div class="os-tabs">
       <div class="os-tab"
         v-for="system in systems"
@@ -77,12 +77,12 @@
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
         <li>Update the package lists and install the openHAB distribution package</li>
-          <div class="language-shell"><pre class="language-shell"><code>sudo apt-get update && sudo apt-get install openhab2</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>sudo apt-get update && sudo apt-get install openhab</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
         &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
-          <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install openhab2-addons</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install openhab-addons</code></pre></div>
         <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
@@ -102,10 +102,10 @@ enabled=1
 </code></pre>
         </div>
         <li>Install the openHAB distribution package</li>
-          <div class="language-shell"><pre class="language-shell"><code>sudo yum install openhab2</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>sudo yum install openhab</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
         &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
-          <div class="language-shell"><pre class="language-shell"><code>sudo yum install openhab2-addons</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>sudo yum install openhab-addons</code></pre></div>
         <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
@@ -146,7 +146,7 @@ usermod -a -G openhab myownuser
       <hr>
       <h3>Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>), see <router-link to="/docs/installation/#prerequisites">prerequisites</router-link></li>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jre">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the openHAB runtime distribution from <a target="_blank" href="https://bintray.com/openhab/mvn/openhab-distro">https://bintray.com/openhab/mvn/openhab-distro</a>:</li>
         <div class="download-button-container">
           <a class="download-button big" :href="runtimeDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
@@ -155,9 +155,6 @@ usermod -a -G openhab myownuser
         &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
         <div class="download-button-container">
           <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
-        </div>
-        <div class="download-button-container">
-          <a class="download-button" :href="legacyAddonsDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Legacy Add-ons</a>
         </div>
         <li v-if="selectedSystem === 'apple'">
           Open <em>System Preferences &gt; Keyboard &gt; Shortcuts</em> and check the <em>New Terminal at Folder</em> option under <em>Services</em>:<br />
@@ -174,21 +171,26 @@ usermod -a -G openhab myownuser
         <li>Navigate with a web browser to <code>http://{{selectedSystem === 'apple' || selectedSystem === 'win10' ? 'localhost' : '&lt;ip-address&gt;'}}:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
-    </div> -->
+    </div>
 
     <div v-if="selectedSystem !== 'docker' && selectedVersion === 'snapshot'">
       <hr />
       <h3>Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/products/zulu/">Zulu</a>)</li>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jre">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
         <div class="download-button-container">
-          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB3-Distribution/`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
+          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB3-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-3.0.0-SNAPSHOT.zip`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
+        </div>
+        <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
+        &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
+        <div class="download-button-container">
+          <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB3-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-3.0.0-SNAPSHOT.kar`">Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
         </div>
       </ol>
     </div>
 
-    <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
+    <!-- <div v-if="selectedSystem === 'win10' && selectedVersion === 'stable'">
       <hr>
       <h3>Install with Chocolatey</h3>
       <div class="danger custom-block">
@@ -208,7 +210,7 @@ usermod -a -G openhab myownuser
         <li>Install the <a target="_blank" href="https://chocolatey.org/packages/openhab">openHAB Chocolatey package</a>:</li>
         <div class="language-shell"><pre class="language-shell"><code>choco install openhab</code></pre></div>
       </ol>
-    </div>
+    </div> -->
 
   </div>
 
@@ -346,13 +348,13 @@ export default {
         ['tux', 'Linux'],
         ['win10', 'Windows'],
         ['apple', 'macOS'],
-        ['raspberry-pi', 'Raspberry Pi'],
-        ['pine64', 'PINE A64'],
+        // ['raspberry-pi', 'Raspberry Pi'],
+        // ['pine64', 'PINE A64'],
         ['docker', 'Docker'],
       ],
       selectedSystem: 'tux',
       selectedDistro: 'deb',
-      selectedVersion: 'snapshot'
+      selectedVersion: 'testing'
     }
   },
   methods: {
@@ -369,8 +371,8 @@ export default {
   computed: {
     versions () {
       return [
-        ['stable', 'Stable'],
-        //['testing', 'Milestone'],
+        // ['stable', 'Stable'],
+        ['testing', 'Milestone'],
         ['snapshot', 'Snapshot']
       ]
     },
