@@ -327,16 +327,17 @@ FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation/
 
 
 
-puts ">>> Migrating the Tutorial section"
+#puts ">>> Migrating the Tutorial section"
+puts ">>> Skip migrating the Tutorial section due to openHAB 3 website changes."
 
 
-Dir.glob(".vuepress/openhab-docs/tutorials/beginner/*.md") { |path|
-    file = File.basename(path)
-    puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
-}
-puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/beginner/images", "docs/tutorial/images")
+#Dir.glob(".vuepress/openhab-docs/tutorials/beginner/*.md") { |path|
+#    file = File.basename(path)
+#    puts " -> #{file}"
+#    process_file(".vuepress/openhab-docs/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
+#}
+#puts " -> images"
+#FileUtils.cp_r(".vuepress/openhab-docs/tutorials/beginner/images", "docs/tutorial/images")
 # FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images/*", "docs/tutorial/images")
 
 
@@ -354,9 +355,9 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
-process_file(".vuepress/openhab-docs/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
-FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images", "docs/configuration/migration")
+#process_file(".vuepress/openhab-docs/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
+#FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
+#FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images", "docs/configuration/migration")
 
 
 
