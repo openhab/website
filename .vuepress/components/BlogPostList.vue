@@ -4,20 +4,22 @@
       <!-- <Content></Content> -->
       <ul class="posts">
         <li v-for="post in posts" class="post">
-          <div class="post-frame">
-            <div class="post-cover" :style="{background: 'url(' + post.frontmatter.previewimage + ') no-repeat center'}">
-            </div>
-            <h3 class="post-title">{{post.frontmatter.title}}</h3>
-            <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
-            <div class="post-excerpt">
+          <router-link :to="post.path">
+            <div class="post-frame">
+              <div class="post-cover" :style="{background: 'url(' + post.frontmatter.previewimage + ') no-repeat center'}">
+              </div>
+              <h3 class="post-title">{{post.frontmatter.title}}</h3>
+              <div class="post-author"><strong>{{post.frontmatter.author}}</strong> posted on <span style="white-space: nowrap">{{new Date(post.frontmatter.date).toLocaleDateString('en-gb', dateOptions)}}</span></div>
+              <div class="post-excerpt">
 
-              <div v-html="post.excerpt || post.frontmatter.excerpt"></div>
+                <div v-html="post.excerpt || post.frontmatter.excerpt"></div>
 
+              </div>
+              <div class="read-more">
+                <div class="read-more-button">Read more ➜</div>
+              </div>
             </div>
-            <div class="read-more">
-              <router-link :to="post.path" class="read-more-button">Read more ➜</router-link>
-            </div>
-          </div>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -35,6 +37,8 @@
   .post
     list-style none
     width 100%
+    a:hover
+      text-decoration none !important
     .post-frame
       border 1px solid #ccc
       border-radius 8px
@@ -44,12 +48,12 @@
       color black
       margin-top 40px
       padding 10px
-      &:hover
-        text-decoration none !important
       .post-cover
         height 450px
         background-size cover !important
       .post-title
+        &:hover
+          text-decoration none !important
         font-size 32px
         font-family 'Open Sans', sans-serif;
         font-weight 400

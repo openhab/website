@@ -25,7 +25,6 @@
 .page-header
   background $headerColor
   position absolute
-  top 3.6rem
   left 0
   right 0
   margin-bottom 4rem
@@ -51,9 +50,12 @@
   @media (max-width: 419px)
     .page-title
       font-size 30px
-    
+@media (min-width: 860px)
+  .page-header
+    top calc(3.6rem * 16 / 14)
+
 .page-header + .theme-default-content
-  margin-top calc(3.6rem + 150px + 10vh) !important
+  margin-top calc(3.6rem * 16 / 14 + 150px + 10vh) !important
   min-height 80vh !important
 </style>
 

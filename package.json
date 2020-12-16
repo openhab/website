@@ -7,9 +7,10 @@
     "markdown-it": "^8.4.2",
     "scrollreveal": "^3.4.0",
     "vue-parallax": "^1.1.1",
+    "vue-parallax-js": "^0.2.3",
     "vue-parallaxy": "^1.1.1",
     "vue-tabs-component": "^1.5.0",
-    "vue-tweet-embed": "^2.1.2",
+    "vue-tweet-embed": "^2.4.0",
     "vuepress-plugin-tabs": "^0.3.0"
   },
   "devDependencies": {
@@ -19,12 +20,12 @@
     "vuepress-plugin-container": "^2.1.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx vuepress dev",
     "prepare-docs": "ruby prepare-docs.rb",
     "add-blog-meta": "ruby add-blog-meta.rb",
     "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
     "build-only": "vuepress build ."
   },
   "author": "openHAB",
-  "license": "EPL-1.0"
+  "license": "EPL-2.0"
 }

@@ -348,7 +348,7 @@ export default {
         ['tux', 'Linux'],
         ['win10', 'Windows'],
         ['apple', 'macOS'],
-        // ['raspberry-pi', 'Raspberry Pi'],
+        ['raspberry-pi', 'Raspberry Pi'],
         // ['pine64', 'PINE A64'],
         ['docker', 'Docker'],
       ],

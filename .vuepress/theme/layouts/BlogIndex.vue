@@ -38,7 +38,6 @@
 .blogindex-header
   background $headerColor
   position absolute
-  top 3.6rem
   left 0
   right 0
   margin-bottom 4rem

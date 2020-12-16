@@ -59,7 +59,7 @@
       font-weight bold !important
       &:hover
         text-decoration none
-        color black !important
+        color black
 </style>
 
 <script>

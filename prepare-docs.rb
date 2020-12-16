@@ -10,7 +10,7 @@ require "rexml/document"
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/master"
 $docs_repo_branch = "final"
-$addons_repo_branch = "2.5.x"
+$addons_repo_branch = "main"
 $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
@@ -330,13 +330,13 @@ FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation/
 puts ">>> Migrating the Tutorial section"
 
 
-Dir.glob(".vuepress/openhab-docs/tutorials/beginner/*.md") { |path|
-    file = File.basename(path)
-    puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
-}
-puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/beginner/images", "docs/tutorial/images")
+#Dir.glob(".vuepress/openhab-docs/tutorials/beginner/*.md") { |path|
+#    file = File.basename(path)
+#    puts " -> #{file}"
+#    process_file(".vuepress/openhab-docs/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
+#}
+#puts " -> images"
+#FileUtils.cp_r(".vuepress/openhab-docs/tutorials/beginner/images", "docs/tutorial/images")
 # FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images/*", "docs/tutorial/images")
 
 
@@ -354,9 +354,9 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
-process_file(".vuepress/openhab-docs/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
-FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images", "docs/configuration/migration")
+#process_file(".vuepress/openhab-docs/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
+#FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
+#FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images", "docs/configuration/migration")
 
 
 
