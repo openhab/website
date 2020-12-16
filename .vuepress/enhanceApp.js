@@ -1,5 +1,4 @@
 import Tabs from 'vue-tabs-component'
-import VueParallaxJs from 'vue-parallax-js'
 
 export default ({
     Vue, // the version of Vue being used in the VuePress app
@@ -8,7 +7,6 @@ export default ({
     siteData // site metadata
   }) => {
     Vue.use(Tabs)
-    Vue.use(VueParallaxJs)
     if (typeof window !== 'undefined') {
       const Headroom = require('headroom.js')
       Vue.prototype.Headroom = Headroom

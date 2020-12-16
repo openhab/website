@@ -28,7 +28,7 @@
 
 <style lang="stylus" scoped>
 .posts-list
-  margin-top calc(3.6rem + 320px + 20vh) !important
+  margin-top calc(3.6rem + 350px) !important
   min-height 80vh
 
 .posts

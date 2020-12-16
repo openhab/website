@@ -29,6 +29,7 @@
   right 0
   margin-bottom 4rem
   height 130px
+  top 3.6rem
   padding-top 80px
   overflow hidden
   .header-pattern
