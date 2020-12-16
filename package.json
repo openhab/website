@@ -7,7 +7,7 @@
     "markdown-it": "^8.4.2",
     "scrollreveal": "^3.4.0",
     "vue-parallax": "^1.1.1",
-    "vue-parallax-js": "^0.2.3",
+    "vue-parallax-js": "github:jsnanigans/vue-parallax-js",
     "vue-parallaxy": "^1.1.1",
     "vue-tabs-component": "^1.5.0",
     "vue-tweet-embed": "^2.4.0",
