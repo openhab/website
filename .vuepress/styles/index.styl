@@ -322,17 +322,26 @@ a[href*='.openhab.org'] .outbound
             .feature h3
                 color rgb(221, 221, 221)
             p
-                color #777 !important
+                color #aaa !important
             a
-                color #aaa
+                color #fff
         .cloud-section
             filter invert()
             h2
-                color #333 !important
+                color #0 !important
             p
-                color #777 !important
+                color #0 !important
         .featured-addons-section
-            background rgb(17, 17, 17)
+            background #777
+            h2
+                color #222
+            .all-addons-button
+                color #000
+                border-color #000
+                &:hover
+                    background-color #000
+
+
         .community
             filter invert()
             .community-stat
@@ -348,11 +357,17 @@ a[href*='.openhab.org'] .outbound
     
     .addons .addon
         background #777
+        border 1px solid #444
         a
-            color #ccc
-    .display-mode-toggle button
-        background inherit !important
+            color #ccc !important
+    .addon-logo
+        background-color #777
+    .display-mode-toggle
+        button
+            background inherit !important
+        button[disabled]
+            background #f60 !important
     .addon-search .filter
-        background-color #232123 url(/assets/img/search.83621669.svg) .7rem 1rem no-repeat !important
-        border-color 1px solid #444
+        background #232123 url(/assets/img/search.83621669.svg) .7rem 1rem no-repeat !important
+        border 1px solid #444
         color rgb(221, 221, 221)

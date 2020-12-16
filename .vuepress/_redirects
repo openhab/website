@@ -2,3 +2,9 @@
 
 # Trick to fool VuePress' NavLink to think the community forum is an internal link
 /community  https://community.openhab.org/
+
+/link/docs       /docs
+/link/tutorial   /docs/tutorial/
+/link/profiles   /docs/configuration/items.html#profiles
+/link/icons      /docs/configuration/iconsets/classic/
+/link/homekit    /addons/integrations/homekit/
