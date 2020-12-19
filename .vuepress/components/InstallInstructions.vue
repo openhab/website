@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div v-if="selectedVersion" class="tip custom-block">
+    <div v-if="selectedVersion" class="version-explanation">
       <p v-if="selectedVersion === 'stable'"><strong>Stable</strong> versions are thoroughly tested semi-annual official releases of openHAB. Use the stable version for your production environment if you don't need the latest enhancements and prefer a robust system.</p>
       <p v-if="selectedVersion === 'testing'"><strong>Milestone</strong> versions are intermediary releases of the next openHAB version, released about once a month, and they include the new recently added features and bugfixes. They are a good compromise between the current stable version and the bleeding-edge and potentially unstable snapshot version.</p>
       <p v-if="selectedVersion === 'snapshot'"><strong>Snapshot</strong> versions are at most 1 or 2 days old and include the latest code. Use a snapshot for testing out very recent changes, but be aware some snapshots might be unstable. Use in production at your own risk!</p>
@@ -52,7 +52,7 @@
 
     <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
       <hr>
-      <h3>Install openHABian (Recommended)</h3>
+      <h3>{{optionNumber('openhabian')}}Flash the openHABian image to a SD card (Recommended)</h3>
       <ol>
         <li>Download and install <a target="_blank" href="https://etcher.io/">Etcher</a></li>
         <li>Download the openHABian image (<code>.img.xz</code> file) for your system from <a target="_blank" href="https://github.com/openhab/openhabian/releases/latest">https://github.com/openhab/openhabian/releases/latest</a>:</li>
@@ -60,24 +60,30 @@
           <a class="download-button big" target="_blank" href="https://github.com/openhab/openhabian/releases/latest">Latest openHABian System Image</a>
         </div>
         <li>Write the image to your SD card using Etcher</li>
-        <li>Insert the SD card in your device, ensure the network is connected (<router-link to="/docs/installation/openhabian.html#wi-fi-based-setup-notes">or setup the Wi-Fi</router-link> first) and boot!</li>
+        <li>Insert the SD card in your device, make sure you have connectivity, either by plugging an Ethernet cable or <router-link to="/docs/installation/openhabian.html#wi-fi-based-setup-notes">configuring the Wi-Fi</router-link>, and boot!</li>
         <li>Wait between 15 and 45 minutes for openHABian to perform its initial setup</li>
+        <li>If you chose to use Wi-Fi, and there's a problem, openHABian will <router-link to="/docs/installation/openhabian.html#wifi-hotspot">launch a hotspot</router-link>. Connect to it if necessary.</li>
         <li v-if="selectedVersion !== 'stable'">Use the <code>openhabian-config</code> tool (<router-link to="/docs/installation/openhabian.html#openhabian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
-        <li>Navigate with a web browser to <code>http://openhabianpi:8080</code></li>        
+        <li>Navigate with a web browser to <code>http://openhabiandevice:8080</code></li>        
         <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
       </ol>
     </div>
 
     <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
       <hr>
-      <h3>Package Installation <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
+      <h3>{{optionNumber('package')}}Install the APT Packages <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
+      <div class="tip custom-block">
+        <p class="custom-block-title">TIP</p>
+        <p>On Debian-based systems you can also opt to add our openHABian turn-key solution on top of your existing operating system, follow <router-link to="/docs/installation/openhabian.html#other-linux-systems-add-openhabian-just-like-any-other-software">these instructions instead</router-link> to check whether your system is eligible and install it.</p>
+        <p v-if="selectedSystem === 'raspberry-pi'">For Raspberry Pi, however, we strongly recommend flashing the complete OS image, see above.</p>
+      </div>
       <ol>
         <li>Add the repository key</li>
           <div class="language-shell"><pre class="language-shell"><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -</code></pre></div>
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
         <li>Update the package lists and install the openHAB distribution package</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get update && sudo apt-get install openhab</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
@@ -89,7 +95,7 @@
     </div>
     <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
       <hr>
-      <h3>Package Installation (Recommended)</h3>
+      <h3>{{optionNumber('package')}}Install the RPM Packages (Recommended)</h3>
       <ol>
         <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
         <div class="language-ini">
@@ -144,9 +150,9 @@ usermod -a -G openhab myownuser
 
     <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'testing')">
       <hr>
-      <h3>Manual Installation</h3>
+      <h3>{{optionNumber('manual')}}Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jre">the Zulu builds of OpenJDK</a>)</li>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the openHAB runtime distribution from <a target="_blank" href="https://bintray.com/openhab/mvn/openhab-distro">https://bintray.com/openhab/mvn/openhab-distro</a>:</li>
         <div class="download-button-container">
           <a class="download-button big" :href="runtimeDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
@@ -177,7 +183,7 @@ usermod -a -G openhab myownuser
       <hr />
       <h3>Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jre">the Zulu builds of OpenJDK</a>)</li>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
         <div class="download-button-container">
           <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB3-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-3.0.0-SNAPSHOT.zip`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
@@ -294,6 +300,13 @@ usermod -a -G openhab myownuser
     &.selected
       border 2px solid #ff6600
 
+.version-explanation
+  padding 3px
+  margin-top 1rem
+  margin-bottom 1rem
+  text-align center
+  font-size 14px
+
 .download-button-container
   display flex
   flex-direction row
@@ -345,16 +358,17 @@ export default {
   data () {
     return {
       systems: [
+        ['raspberry-pi', 'Raspberry Pi'],
         ['tux', 'Linux'],
         ['win10', 'Windows'],
         ['apple', 'macOS'],
-        ['raspberry-pi', 'Raspberry Pi'],
         // ['pine64', 'PINE A64'],
         ['docker', 'Docker'],
       ],
-      selectedSystem: 'tux',
+      selectedSystem: 'raspberry-pi',
       selectedDistro: 'deb',
-      selectedVersion: 'testing'
+      selectedVersion: 'testing',
+      optionsCounter: 1
     }
   },
   methods: {
@@ -366,6 +380,14 @@ export default {
     },
     selectDistro (distro) {
       this.selectedDistro = distro
+    },
+    optionNumber (type) {
+      if (type === 'openhabian') return 'Option 1: '
+      if (type === 'package' && this.selectedSystem === 'tux') return 'Option 1: '
+      if (type === 'package' && this.selectedSystem === 'raspberry-pi') return 'Option 2: '
+      if (type === 'manual' && this.selectedSystem === 'tux') return 'Option 2: '
+      if (type === 'manual' && this.selectedSystem === 'raspberry-pi') return 'Option 3: '
+      return ''
     }
   },
   computed: {
