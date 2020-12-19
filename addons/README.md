@@ -9,9 +9,9 @@ initial_gallery:
     title: "System Integrations"
     description: "System integrations expose openHAB to external systems."
     featured: ["azureiothub", "gcal", "homekit", "openhabcloud"]
-  action:
+  automation:
      title: "Automation"
-     description: "Automation add-ons extend the functionality of the rule engine, like adding more choices of scripting languages."
+     description: "Automation add-ons extend the functionality of the rule engine, such as additional choices of scripting languages."
      featured: ["jythonscripting", "groovyscripting"]
      all: true
   persistence:

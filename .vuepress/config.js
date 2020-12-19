@@ -1,4 +1,4 @@
-const AddonsActions = require('./addons-automation.js')
+const AddonsAutomation = require('./addons-automation.js')
 const AddonsBindings = require('./addons-bindings.js')
 const AddonsIntegrations = require('./addons-integrations.js')
 const AddonsPersistence = require('./addons-persistence.js')

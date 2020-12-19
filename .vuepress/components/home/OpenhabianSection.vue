@@ -1,9 +1,7 @@
 <template>
   <div class="openhabian-section">
     <div class="openhabian-container">
-    <ClientOnly>
-      <img v-parallax="-0.2" class="openhabian-background" src="./images/pi_case.jpg" alt="raspberry pi">
-    </ClientOnly>
+      <img class="openhabian-background" src="./images/pi_case.jpg" alt="raspberry pi">
       <div class="openhabian-text">
         <h2 class="slide-seq">Set up your own openHAB system in just a few steps</h2>
         <p class="slide-seq">
