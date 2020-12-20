@@ -24,7 +24,9 @@ module.exports = {
   dest: 'vuepress',
   host: 'localhost',
   base,
+  ga: 'UA-47717934-1',
   plugins: [
+    'tabs',
     [
       '@vuepress/google-analytics',
       {
