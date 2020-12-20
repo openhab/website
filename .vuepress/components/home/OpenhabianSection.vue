@@ -1,9 +1,8 @@
 <template>
   <div class="openhabian-section">
     <div class="openhabian-container">
-    <ClientOnly>
-      <img v-parallax="-0.2" class="openhabian-background" src="./images/pi_case.jpg" alt="raspberry pi">
-    </ClientOnly>
+      <small class="case-attribution"><a target="_blank" href="https://www.thingiverse.com/thing:3859848">3d printed case by sumpfing</a></small>
+      <img class="openhabian-background" src="./images/pi_case.jpg" alt="raspberry pi">
       <div class="openhabian-text">
         <h2 class="slide-seq">Set up your own openHAB system in just a few steps</h2>
         <p class="slide-seq">
@@ -34,6 +33,16 @@
     margin-top -20%
     width 50%
     height 120%
+  .case-attribution
+    display none
+    opacity 0.4
+    z-index 100
+    position absolute
+    top 5px
+    left 5px
+    font-size 10px
+    a
+      color black
   .openhabian-container
     position relative
     height 90vh

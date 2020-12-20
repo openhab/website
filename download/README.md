@@ -43,12 +43,6 @@ meta:
 
 <h2 class="big-title">openHAB 3 Distribution</h2>
 
-::: warning PRELIMINARY VERSION
-The following openHAB 3 downloads are provided for evaluation, testing and development only at this time.
-The documentation is incomplete, has not been upgraded and may be obsolete.
-Please use the [community forum](https://community.openhab.org/) for any questions or support.
-:::
-
 <InstallInstructions />
 
 <h2 class="big-title">Applications</h2>
