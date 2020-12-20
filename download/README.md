@@ -45,6 +45,10 @@ meta:
 
 <InstallInstructions />
 
+<h2 class="big-title">openHAB 2 Distribution</h2>
+
+To download the previous version of openHAB, please go to https://v2.openhab.org/download/.
+
 <h2 class="big-title">Applications</h2>
 
 

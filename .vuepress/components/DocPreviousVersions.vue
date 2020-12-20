@@ -85,11 +85,13 @@ export default {
   computed: {
     versions () {
       return this.versionNumbers.map(version => {
-        let url = this.$page.path.split('/')[1]
+        let url = (this.$page.path.indexOf('/addons') === 0) ? this.$page.path.substring(1) : this.$page.path.split('/')[1]
         if (version === 'latest') {
-          url = 'https://www.openhab.org' + url
+          url = 'https://www.openhab.org/' + url
+        } else if (version[0] === '2') {
+          url = `https://v2.openhab.org${version === 'snapshot' ? '' : '/v' + version}/${url}`
         } else {
-          url = `https://www.openhab.org${version === 'snapshot' ? '' : '/v' + version}/${url}`
+          url = `https://v${version.replace('.', '').replace('0', '')}.openhab.org/${url}`
         }
 
         return {

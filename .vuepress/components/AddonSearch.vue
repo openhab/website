@@ -228,7 +228,6 @@ export default {
     }
   },
   mounted () {
-    this.addons = this.$site.pages.filter(page => page.path.indexOf('/addons/') === 0 && page.frontmatter.id)
     this.things = Things
   },
   methods: {
