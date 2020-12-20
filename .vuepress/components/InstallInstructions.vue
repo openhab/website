@@ -78,12 +78,13 @@
         <p v-if="selectedSystem === 'raspberry-pi'">For Raspberry Pi, however, we strongly recommend flashing the complete OS image, see above.</p>
       </div>
       <ol>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Add the repository key</li>
           <div class="language-shell"><pre class="language-shell"><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -</code></pre></div>
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
         <li>Update the package lists and install the openHAB distribution package</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get update && sudo apt-get install openhab</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
@@ -97,11 +98,12 @@
       <hr>
       <h3>{{optionNumber('package')}}Install the RPM Packages (Recommended)</h3>
       <ol>
+        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
         <div class="language-ini">
 <pre class="language-ini"><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
-name=openHAB 2.x.x {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
-baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/testing' : 'https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable'}}
+name=openHAB {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
+baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/testing' : 'https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/unstable'}}
 gpgcheck=1
 gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
 enabled=1
@@ -402,21 +404,21 @@ export default {
       if (this.selectedVersion === 'stable') {
         return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-${this.$page.frontmatter.currentVersion}.zip`
       } else if (this.selectedVersion === 'testing') {
-        return `https://openhab.jfrog.io/openhab/libs-milestone-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
+        return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
       }
     },
     addonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
         return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-addons-${this.$page.frontmatter.currentVersion}.kar`
       } else if (this.selectedVersion === 'testing') {
-        return `https://openhab.jfrog.io/openhab/libs-milestone-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
+        return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     legacyAddonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
         return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons-legacy%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-addons-legacy-${this.$page.frontmatter.currentVersion}.kar`
       } else if (this.selectedVersion === 'testing') {
-        return `https://openhab.jfrog.io/openhab/libs-milestone-local/org/openhab/distro/openhab-addons-legacy/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-legacy-${this.$page.frontmatter.currentMilestoneVersion}.kar`
+        return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab-addons-legacy/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-legacy-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     currentDownloadVersion () {
