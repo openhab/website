@@ -24,8 +24,14 @@ module.exports = {
   dest: 'vuepress',
   host: 'localhost',
   base,
-  ga: 'UA-47717934-1',
-  plugins: ['tabs', 'container'],
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-47717934-1'
+      }
+    ]
+  ],
   patterns: (noAddons) ? ['**/*.md', '**/*.vue', '!addons/**'] : ['**/*.md', '**/*.vue'],
   head: [
     // ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
