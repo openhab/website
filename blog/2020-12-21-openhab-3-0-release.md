@@ -20,7 +20,7 @@ The sweet spot for openHAB 3 is in its balance: The underlying framework has bee
 
 ## Architecture Evolution
 
-Version 1 of openHAB was in itself a clean and simple architecture that worked well up to the moment that more and more "regular" users joined the community and complemented the rather dev-centric crowd.
+Version 1 of openHAB consisted of a clean and simple architecture that worked well up to the moment that more "main stream" users joined the community and complemented the existing developer-centric crowd.
 
 Version 2 of openHAB had to compromise between the "old" purely textual openHAB 1 world and the new UI-enabling features that were introduced with Eclipse SmartHome. The way one had to work with bindings and rules very much differed from each other and these two world existed more or less side-by-side, glued together through the 1.x compatibility layer.
 
