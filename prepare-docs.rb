@@ -337,7 +337,6 @@ Dir.glob(".vuepress/openhab-docs/tutorials/getting_started/*.md") { |path|
 }
 puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial/images")
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images/*", "docs/tutorial/images")
 
 
 
