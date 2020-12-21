@@ -26,7 +26,7 @@ Version 2 of openHAB had to compromise between the "old" purely textual openHAB 
 
 With openHAB 3 a huge part of its simplification is due to the removal of the 1.x compatibility layer. All bindings now work exactly the same way and the user decides on how they wish to configure their system, either textually or through a UI. To make sure that nobody is left behind by this move, [many 1.x bindings have been reimplemented](https://github.com/openhab/openhab-addons/issues/6179#migrated) for openHAB 3. For the rest, it is possible to keep an old 2.x instance running while integrating it into a new 3.0 setup - see the [openHAB outposts](#outposts) below.
 
-Furthermore, the two separate rule engine implementations have been merged into one, so that there is now a single concept for automation rules. As a consequence, textual rules written in openHAB's own Rule DSL also turn up within the user interface. 
+Furthermore, the two separate rule engine implementations have been merged into one, so that there is now a single concept for automation rules. As a consequence, textual rules written in openHAB's own Rule DSL are also available within the user interface. 
 
 Besides the visible changes, many refactorings have been done to the codebase in order to keep it modern and maintainable. Moving from Java 8 to Java 11 brings the language features on a current level and ensures that openHAB continues to run on JVMs that receive security patches. Additionally, many included libraries have been upgraded, deprecated methods were removed, null annotations introduced, newer OSGi features used and so on. Overall, the codebase is a future-proof and solid foundation to further build on for the years to come.
 
