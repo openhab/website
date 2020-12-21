@@ -42,7 +42,7 @@ An additional use case (especially considering that some users might still rely 
 
 ## The New User Interface
 
-With openHAB 3 we bring a new state-of-the-art user interface to the table, and deprecate the redundant ones. It is designed to cater to every user, whatever their profile, and work on all their screens, from phones to desktops, adapting its look accordingly.
+openHAB 3 introduces a state-of-the-art user interface and deprecates the existing redundant interfaces.  It is designed to cater to every user, whatever their profile, and work on all their screens, from phones to desktops, adapting its look accordingly.
 
 The new "main" UI is a radical change to what used to be on offer, but while introducing some new concepts, it stays faithful to the proven openHAB way. Things and items are still entities defined in different layers - physical and functional - and they are clearly separated and independent of each other in the new user interface.
 
