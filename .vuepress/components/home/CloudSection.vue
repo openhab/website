@@ -11,7 +11,7 @@
       <div class="cloud-right">
         <h2 class="slide">...but Cloud-Friendly</h2>
         <p class="slide">
-          Integrations are available for the most popular cloud-based smart home platforms, including Google Assistant, Amazon Alexa, Apple HomeKit and IFTTT.
+          Integrations are available for the most popular cloud-based smart home platforms, including <a href="/docs/ecosystem/google-assistant">Google Assistant</a>, <a href="/docs/ecosystem/alexa">Amazon Alexa</a>, <a href="/addons/integrations/homekit/">Apple HomeKit</a> and more.
           Use the openHAB Cloud connector with the free <a target="_blank" href="https://www.myopenhab.org/">myopenhab.org</a> service or host your own.
         </p>
       </div>
@@ -64,6 +64,8 @@
     p
       font-family 'Open Sans', sans-serif
       padding 0 2rem
+    a
+      color #5599ff
 
     
   .cloud-bkg

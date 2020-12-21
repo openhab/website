@@ -2,9 +2,9 @@
 sidebar: false
 layout: AboutPage
 title: Download openHAB
-# currentVersion: 3.0.0
-currentMilestoneVersion: 3.0.0.M5
-currentSnapshotVersion: 3.0.0-SNAPSHOT
+currentVersion: 3.0.0
+#currentMilestoneVersion: 3.0.0.RC2
+currentSnapshotVersion: 3.1.0-SNAPSHOT
 meta:
   - name: og:title
     content: Download openHAB
@@ -43,13 +43,11 @@ meta:
 
 <h2 class="big-title">openHAB 3 Distribution</h2>
 
-::: warning PRELIMINARY VERSION
-The following openHAB 3 downloads are provided for evaluation, testing and development only at this time.
-The documentation is incomplete, has not been upgraded and may be obsolete.
-Please use the [community forum](https://community.openhab.org/) for any questions or support.
-:::
-
 <InstallInstructions />
+
+<h2 class="big-title">openHAB 2 Distribution</h2>
+
+To download the previous version of openHAB, please go to https://v2.openhab.org/download/.
 
 <h2 class="big-title">Applications</h2>
 

@@ -26,7 +26,7 @@ footer
     margin-left -6px
     filter grayscale(100%)
     opacity 0.4
-  background rgb(250,250,252) !important
+  background rgb(250,250,252)
   padding 3rem 2.5rem
   // padding-bottom 6rem
   text-align center

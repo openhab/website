@@ -1,4 +1,4 @@
-// const AddonsActions = require('./addons-actions.js')
+const AddonsAutomation = require('./addons-automation.js')
 const AddonsBindings = require('./addons-bindings.js')
 const AddonsIntegrations = require('./addons-integrations.js')
 const AddonsPersistence = require('./addons-persistence.js')
@@ -16,6 +16,8 @@ const DocsSidebarNavigation = require('./openhab-docs/.vuepress/docs-sidebar.js'
 
 const base = process.env.OH_DOCS_VERSION ? `/v${process.env.OH_DOCS_VERSION}/` : '/'
 
+const noAddons = process.env.OH_NOADDONS
+
 module.exports = {
   title: 'openHAB',
   description: 'openHAB - a vendor and technology agnostic open source automation software for your home',
@@ -23,9 +25,18 @@ module.exports = {
   host: 'localhost',
   base,
   ga: 'UA-47717934-1',
-  plugins: ['tabs', 'container'],
+  plugins: [
+    'tabs',
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-47717934-1'
+      }
+    ]
+  ],
+  patterns: (noAddons) ? ['**/*.md', '**/*.vue', '!addons/**'] : ['**/*.md', '**/*.vue'],
   head: [
-    ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
+    // ['link', { rel: 'stylesheet', href: `/fonts/fonts.css` }],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'shortcut icon', href: `/favicon.ico` }],
     ['link', { rel: 'apple-touch-icon', href: `/apple-icon.png` }],
@@ -36,6 +47,21 @@ module.exports = {
     // ['meta', { property: 'og:description', content: 'a vendor and technology agnostic open source automation software for your home' }],
     // ['script', { src: `https://identity.netlify.com/v1/netlify-identity-widget.js` }]
   ],
+  shouldPreload: (file, type) => {
+    // type is inferred based on the file extension.
+    // https://fetch.spec.whatwg.org/#concept-request-destination
+    if (type === 'script' || type === 'style') {
+      return true
+    }
+    if (type === 'font') {
+      // only preload woff2 fonts
+      return /\.woff2$/.test(file)
+    }
+    if (type === 'image') {
+      // only preload important images
+      return file === 'hero.jpg'
+    }
+  },
   extendMarkdown(md) {
     md.options.linkify = true
     const highlight = md.options.highlight
@@ -96,11 +122,6 @@ module.exports = {
       }
     },
     nav: [
-      // disable for 3.x until production
-      // {
-      //   text: 'Blog',
-      //   link: '/blog/'
-      // },
       {
         text: 'Download',
         link: '/download/',
@@ -116,6 +137,10 @@ module.exports = {
       {
         text: 'Community',
         link: '/community/',
+      },
+      {
+        text: 'Blog',
+        link: '/blog/'
       },
       {
         text: 'About',
@@ -188,7 +213,7 @@ module.exports = {
     ],
     sidebar: {
       '/docs/': DocsSidebarNavigation,
-      '/addons/': [
+      '/addons/': (noAddons) ? [] : [
         {
           title: 'Bindings',
           collapsible: false,
@@ -199,11 +224,11 @@ module.exports = {
           collapsible: false,
           children: AddonsIntegrations.sort((a,b) => a[1].localeCompare(b[1]))
         },
-        // {
-        //   title: 'Actions',
-        //   collapsible: false,
-        //   children: AddonsActions.sort((a,b) => a[1].localeCompare(b[1]))
-        // },
+        {
+          title: 'Automation',
+          collapsible: false,
+          children: AddonsAutomation.sort((a,b) => a[1].localeCompare(b[1]))
+        },
         {
           title: 'Data Persistence',
           collapsible: false,

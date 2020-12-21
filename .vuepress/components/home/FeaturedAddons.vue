@@ -65,6 +65,7 @@
     box-sizing border-box
     border 2px solid #ff6600
     &:hover
+      text-decoration none !important
       background-color #ff6600
       color white
 
@@ -81,7 +82,7 @@ export default {
   },
   computed: {
     featuredAddons () {
-      return this.$site.pages.filter(p => p.frontmatter && p.frontmatter.logo && p.frontmatter.since === '2x')
+      return this.$site.pages.filter(p => p.frontmatter && p.frontmatter.logo)
     }
   },
   mounted () {

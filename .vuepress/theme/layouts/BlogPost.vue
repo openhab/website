@@ -44,7 +44,6 @@
     background-color #ff6600aa
     position absolute
     left 0
-    top 3.6rem
     bottom 0
     right 0
     height 400px
@@ -109,7 +108,7 @@ export default {
     }
   },
   mounted () {
-    const Tweet = require('vue-tweet-embed/tweet').default
+    const Tweet = require('vue-tweet-embed').Tweet
     Vue.component('tweet', Tweet)
   }
 }

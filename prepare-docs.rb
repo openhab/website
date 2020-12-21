@@ -10,7 +10,7 @@ require "rexml/document"
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/master"
 $docs_repo_branch = "final"
-$addons_repo_branch = "2.5.x"
+$addons_repo_branch = "main"
 $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
@@ -426,18 +426,16 @@ FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/i
 
 
 
-# Actions might be deprecated in OH 3.x, skipping
-
-# puts ">>> Migrating add-ons: Actions"
+puts ">>> Migrating add-ons: Automation"
 
 
-# Dir.glob(".vuepress/openhab-docs/_addons_actions/**") { |path|
-#     addon = File.basename(path)
-#     next if $ignore_addons.include?(addon)
-#     puts " -> #{addon}"
-#     FileUtils.mkdir_p("addons/actions/" + addon)
-#     process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", nil)
-# }
+Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
+    addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
+    puts " -> #{addon}"
+    FileUtils.mkdir_p("addons/automation/" + addon)
+    process_file(".vuepress/openhab-docs/_addons_automation", addon + "/readme.md", "addons/automation", nil)
+}
 
 
 
@@ -578,8 +576,7 @@ end
 
 # Write arrays of addons by type to include in VuePress config.js
 puts ">>> Writing add-ons arrays to files for sidebar navigation"
-# ["bindings", "persistence", "actions", "integrations", "transformations", "voice"].each { |type|
-["bindings", "persistence", "integrations", "transformations", "voice"].each { |type|
+["bindings", "persistence", "automation", "integrations", "transformations", "voice"].each { |type|
     File.open(".vuepress/addons-#{type}.js", "w+") { |file|
         file.puts "module.exports = ["
 

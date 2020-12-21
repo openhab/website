@@ -8,6 +8,8 @@
     float right
     margin-left 4rem
 .addon-logo
-  max-width 250px !important
-  max-height 250px !important
+  width 200px
+  height 200px
+  object-fit contain
+  padding 5px
 </style>

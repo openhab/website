@@ -1,18 +1,57 @@
 @require '~vuepress-plugin-tabs/dist/themes/default.styl'
 
 // temporary for v3
-.nav-item>a.router-link-active, .nav-item>a:hover
-    color inherit !important
+// .nav-item>a.router-link-active, .nav-item>a:hover
+//     color inherit !important
+
+
+/* Open Sans font weights 300-400 */
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(/fonts/mem5YaGs126MiZpBA-UN_r8OXOhpOqc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(/fonts/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(/fonts/mem8YaGs126MiZpBA-UFW50bbck.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(/fonts/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 .navbar:not(.headroom--top):not(.transparent)
     box-shadow rgba(10%,10%,10%,25%) 0 0 10px
-    background-color rgba(98%, 98%, 99%, 0.9) // linear-gradient(180deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 95%,rgba(0,0,0,.05) 99%,rgba(0,0,0,.04))
+
+@media (prefers-color-scheme: light)
+    .navbar:not(.headroom--top):not(.transparent)
+        background-color rgba(250,250,252,0.9) !important
 
 .homepage
     .navbar:not(.ready)
       opacity 0
       background transparent
       color white
+
       border-bottom none
       box-shadow none
       .logo
@@ -25,13 +64,31 @@
       .dropdown-title .arrow
           border-top 6px solid #fff
 
+
+@media (min-width: 860px)
+    html
+        font-size: .938em
+    .navbar
+        padding: calc(.7rem * 16 / 14) calc(1.5rem * 16 / 14) !important
+        line-height: calc(2.2rem * 16 / 14) !important
+        height: calc(3.6rem * 16 / 14) !important
+        .logo
+            height: calc(2.2rem * 16 / 14) !important
+            min-width: calc(2.2rem * 16 / 14) !important
+            margin-right: calc(.8rem * 16 / 14) !important
+            width: inherit // !important
+        .nav-links a
+            line-height calc(1.4rem * 16 / 14) !important
+            font-size 16px !important
+    .sidebar
+        top calc(3.6rem * 16 / 14) !important
+
 .navbar
     .links
         background-color transparent !important
 
     .nav-dropdown
         // background-color white
-        background-color rgba(98%, 98%, 99%, 0.96) !important
         box-shadow rgba(10%,10%,10%,25%) 0 0 5px
     
     .nav-item a
@@ -58,6 +115,11 @@
     background-color #f7f7f7 !important
     z-index 15
     // background linear-gradient(90deg, #fff0e0, #fff) !important
+    .nav-item .mobile-dropdown-title
+        line-height calc(1.4rem * 16 / 14) !important
+        font-size 16px !important
+    .page-versions .dropdown-wrapper
+        z-index 9999
 
 @media (min-width: 719px)
     .nav-item > a:hover, .nav-item > a.router-link-active
@@ -96,18 +158,16 @@
         overflow hidden !important
         white-space pre-wrap !important
 
-.theme-default-content:not(.custom), .page-nav
+.theme-container:not(.homepage) .theme-default-content:not(.custom), .page-nav
     max-width 1280px !important
+.theme-container.homepage .theme-default-content:not(.custom)
+    max-width 100% !important
 
 .page .theme-default-content:not(.custom):not(.page-nav):not(.edit-link)
     min-height 85vh !important
 
 .page .page-edit
     display none
-
-.logo
-    width 160px
-    height 35px
 
 a[href*='.openhab.org'] .outbound
         display none
@@ -163,3 +223,150 @@ a[href*='.openhab.org'] .outbound
             border-top solid 1px #bbb
             padding-top 0
             margin-top 1px
+
+
+/*** DARK MODE 😎 ***/
+
+@media (prefers-color-scheme: dark)
+    html, body
+        background-color rgb(17, 17, 17)
+        color rgb(221, 221, 221)
+    .navbar
+        background-color rgba(0, 0, 0, 0.9) !important
+        border-bottom 1px solid rgb(68, 68, 68)
+        .logo
+            filter: invert(1) grayscale(1) brightness(100)
+        .search-box input
+            border-color rgb(68, 68, 68) !important
+            background: #333 url(/assets/img/search.83621669.svg) 0.6rem 0.5rem no-repeat !important
+            color rgb(221, 221, 221)
+        .ds-dropdown-menu
+            filter: invert() brightness(3) grayscale()
+
+    .nav-item a
+        color rgb(221, 221, 221)
+    .nav-item > a:hover, .nav-item > a.router-link-active
+        color rgb(221, 221, 221) !important
+            
+    .dropdown-wrapper .nav-dropdown
+        background-color rgba(0, 0, 0, 0.9) !important
+        border-color rgb(68, 68, 68) !important
+        h4
+            border-top-color rgb(68, 68, 68) !important
+
+    .sidebar
+        background-color rgb(0, 0, 0) !important
+        border-right 1px solid rgb(68, 68, 68) !important
+        .sidebar-link, .sidebar-heading
+            color #a6a6a6
+        .page-versions .dropdown-title
+            border-color rgb(68, 68, 68) !important
+            color rgb(221, 221, 221)
+        .nav-item .mobile-dropdown-title
+            color rgb(221, 221, 221) !important
+        .current
+            color rgb(221, 221, 221) !important
+            &:hover
+                color #fff !important
+
+    .page
+        table, th, td
+            border-color rgb(68, 68, 68) !important
+        tr:nth-child(2n)
+            background-color #000
+        h2
+            border-color rgb(68, 68, 68) !important
+        code
+            color #f7f7f7
+        .custom-block.warning
+            background-color rgba(127, 114, 50, 0.2) !important
+            color #e7c000
+            a
+                color rgb(221, 221, 221)
+        .custom-block.tip
+            background-color rgba(13, 25, 35, 0.6) !important
+
+    .os-tab, .distro-tab, .version-tab
+        &:hover
+            background rgb(32, 32, 32) !important
+        &.selected
+            border-color rgb(128, 96, 68) !important
+        img
+            filter invert() grayscale() brightness(100) opacity(0.8) !important
+
+    .jumbotron, .page-header, .blogindex-header, .post-header
+        background-color #000 !important
+        border-bottom 1px solid rgb(32, 32, 32) !important
+
+    .posts-list .post-frame, .topics .topic
+        border-color rgb(68, 68, 68) !important
+        background-color rgb(24, 24, 24) !important
+        color rgb(221, 221, 221) !important
+        .topic-link
+            color rgb(221, 221, 221) !important
+
+    footer
+        background black !important
+        border-top none !important
+        
+        .legal a
+            color #aaa !important
+
+    .homepage
+        .hero-image
+            background url(/hero3-dark.jpg) bottom 0 left 50%/contain no-repeat !important
+
+        .section2
+            background rgb(17, 17, 17)
+            .gears, .home-icon
+                filter invert()
+            .feature h3
+                color rgb(221, 221, 221)
+            p
+                color #aaa !important
+            a
+                color #fff
+        .cloud-section
+            filter invert()
+            h2
+                color #0 !important
+            p
+                color #0 !important
+        .featured-addons-section
+            background #fff
+            h2
+                color #222
+            .all-addons-button
+                color #000
+                border-color #000
+                &:hover
+                    background-color #000
+                    color #fff
+
+
+        .community
+            filter invert()
+            .community-stat
+                color #555
+            .join-us-button:hover
+                color #000 !important
+            h2
+                color #555
+        .tweets
+            background rgb(21, 32, 43)
+        .alternativeto-banner
+            background-image linear-gradient(#2c4961,#222222) !important
+    
+    .addons .addon
+        background #fff
+    .addon-logo
+        background-color #fff
+    .display-mode-toggle
+        button
+            background inherit !important
+        button[disabled]
+            background #f60 !important
+    .addon-search .filter
+        background #232123 url(/assets/img/search.83621669.svg) .7rem 1rem no-repeat !important
+        border 1px solid #444
+        color rgb(221, 221, 221)

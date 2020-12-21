@@ -87,15 +87,16 @@
     margin 2rem
     display inline-block
     font-size 1rem
-    color #ff6600
+    color #5599ff
     padding 0.8rem 1.6rem
     border-radius 4px
     font-weight bold
     transition background-color .1s ease
     box-sizing border-box
-    border 2px solid #ff6600
+    border 2px solid #5599ff
     &:hover
-      background-color #ff6600
+      text-decoration none !important
+      background-color #5599ff
       color white
 
 </style>
