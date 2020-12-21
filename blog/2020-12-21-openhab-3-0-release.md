@@ -62,7 +62,7 @@ The new user interface also features a brand new way of designing your automatio
 
 ### New Pages Concept
 
-Last but not least, the UI features new ways of interacting with your system: You can design several types of pages, which is a new concept. Types of pages include maps and floor plans that many users have asked for. Pages offer extensive features to help navigate your system. 
+Last but not least, the UI features new ways of interacting with your system: You can design several new types of pages, including maps and floor plans which many users have asked for in the past. Pages offer extensive features to help navigate your system. 
 
 <p align="center"><img src="/uploads/2020-12_pages.jpg"/></p>
 
