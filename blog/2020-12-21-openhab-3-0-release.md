@@ -22,7 +22,7 @@ The sweet spot for openHAB 3 is in its balance: The underlying framework has bee
 
 Version 1 of openHAB was in itself a clean and simple architecture that worked well up to the moment that more and more "regular" users joined the community and complemented the rather dev-centric crowd.
 
-Version 2 of openHAB had to do compromises between the "old" purely textual openHAB 1 world and the new UI-enabling features that were introduced with Eclipse SmartHome. The way one had to work with bindings and rules very much differed from each other and these two world existed more or less side-by-side, glued together through the 1.x compatibility layer.
+Version 2 of openHAB had to compromise between the "old" purely textual openHAB 1 world and the new UI-enabling features that were introduced with Eclipse SmartHome. The way one had to work with bindings and rules very much differed from each other and these two world existed more or less side-by-side, glued together through the 1.x compatibility layer.
 
 A huge step of simplification in openHAB 3 is therefore the removal of the 1.x compatibility layer. All bindings now work exactly the same way and the user decides on the preference of configuration done textually or through the UI. To make sure that nobody is left behind by this move, [many 1.x bindings have been reimplemented](https://github.com/openhab/openhab-addons/issues/6179#migrated) for openHAB 3. For the rest, it is possible to keep an old 2.x instance running while integrating it into a new 3.0 setup - see the [openHAB outposts](#outposts) below.
 
