@@ -4,7 +4,7 @@ category: blog
 title: openHAB 3.0 Release
 author: Kai Kreuzer and Yannick Schaus
 date: '2020-12-21T11:00:00+01:00'
-previewimage: /uploads/winter.jpg
+previewimage: /uploads/wintertrees.jpg
 tags:
   - news
 excerpt: >-
