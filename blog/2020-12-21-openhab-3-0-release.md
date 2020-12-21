@@ -34,7 +34,7 @@ Besides the visible changes, many refactorings have been done to the codebase in
 
 ### Outposts
 
-With the new [openHAB Remote Binding](https://www.openhab.org/addons/bindings/remoteopenhab/) it is now very easy to create distributed setups. While in the past many users set up an MQTT broker and integrated multiple openHAB instances using the MQTT binding, openHAB 3 is now capable of discovering other instances in the local network and automatically read its items and things through the REST API.
+With the new [openHAB Remote Binding](https://www.openhab.org/addons/bindings/remoteopenhab/) it is now very easy to create distributed setups. While in the past many users set up an MQTT broker and integrated multiple openHAB instances using the MQTT binding, openHAB 3 is now capable of discovering other instances on the local network and automatically read its items and things through the REST API.
 
 Such a setup then consists out of a central openHAB instance and several openHAB outposts. This makes sense, if certain devices need physical vicinity, e.g. because they are connected through a serial interface or because their wireless range is not sufficient to reach the central instance like it can be the case for Bluetooth sensors.
 
