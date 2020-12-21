@@ -86,4 +86,4 @@ With 3.0 being released now, the focus of all developers is now clearly on this 
 
 It has been an exciting journey to get openHAB 3 into its current state and it would not have been possible without the extraordinary work from all our maintainers and contributors. I am very happy and thankful that openHAB has truly become a team effort with many maintainers that oversee different part of the project and that maintain, support, plan and drive those parts independently in a professional, reliable and trustworthy way - you rock!
 
-I wish all of you a joyful and relaxed festive season, with enough time to tinker with openHAB 3. Always remember that the safest place in Covid times is close to your keyboard! Stay safe and healthy everyone!
+We wish all of you a joyful and relaxed festive season, with enough time to tinker with openHAB 3. Always remember that the safest place in Covid times is close to your keyboard! Stay safe and healthy everyone!
