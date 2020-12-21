@@ -28,7 +28,7 @@ With openHAB 3 a huge part of its simplification is due to the removal of the 1.
 
 Furthermore, the two separate rule engine implementations have been merged into one, so that there is now a single concept for automation rules. As a consequence, textual rules written in openHAB's own Rule DSL also turn up within the user interface. 
 
-Besides the visible changes, many refactorings have been done to the codebase in order to keep it modern and maintainable. Moving from Java 8 to Java 11 brings the language features on a current level and ensures that openHAB continues to run on JVMs that receive security patches. Additionally, many used libraries have been upgraded, deprecated methods were removed, null annotations introduced, newer OSGi features used and so on. Overall, the codebase is future-proof and a solid foundation to further build on for the years to come.
+Besides the visible changes, many refactorings have been done to the codebase in order to keep it modern and maintainable. Moving from Java 8 to Java 11 brings the language features on a current level and ensures that openHAB continues to run on JVMs that receive security patches. Additionally, many included libraries have been upgraded, deprecated methods were removed, null annotations introduced, newer OSGi features used and so on. Overall, the codebase is a future-proof and solid foundation to further build on for the years to come.
 
 <p align="center"><video autoplay loop src="/uploads/evolution.mp4"></video></p>
 
