@@ -14,7 +14,7 @@ The next major release has arrived with openHAB 3! This is exciting news for our
 
 <!-- more -->
 
-With openHAB 3 we reach a new level of both functionality as well user-friendliness. Evolving a product with such a large userbase is always a difficult challenge. On the one hand, users wish new features to be shipped and contributors have ideas and want to see their implementations being accepted and integrated. There is hence the continuous risk of a massive feature creep. On the other hand, newbies want a clear path and best practices on how to use the product and having too many different ways and options can easily confuse them as it leads to a steep learning curve.
+With openHAB 3 we have reached a new level of both functionality as well user-friendliness. Evolving a product with such a large user base is always a difficult challenge. On the one hand, users  expect new features and functionality to be regularly shipped, while contributors wish to see their own ideas and implementations being accepted and integrated into the project. There is hence the continuous risk of a massive feature creep. On the other hand, new users want a clear path and best practices on how to use the product,  having too many different ways creates  a steep learning curve that can easily confuse them .
 
 The balance found for openHAB 3 is really a sweet spot: The underlying framework has been modernized without any negative impact, a lot of complexity has been thrown overboard without dropping features that our users rely on and many things have been streamlined, which culminates in our completely new main user interface.
 
