@@ -243,8 +243,11 @@ a[href*='.openhab.org'] .outbound
         .ds-dropdown-menu
             filter: invert() brightness(3) grayscale()
 
-    .nav-item a
-        color rgb(221, 221, 221)
+    .nav-item a, .nav-link, .dropdown-wrapper .title, .dropdown-wrapper .arrow, .dropdown-item
+        color rgb(221, 221, 221) !important
+    .dropdown-subitem a:hover
+        color #ff6600 !important
+
     .nav-item > a:hover, .nav-item > a.router-link-active
         color rgb(221, 221, 221) !important
             

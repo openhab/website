@@ -369,7 +369,7 @@ export default {
       ],
       selectedSystem: 'raspberry-pi',
       selectedDistro: 'deb',
-      selectedVersion: 'testing',
+      selectedVersion: 'stable',
       optionsCounter: 1
     }
   },
