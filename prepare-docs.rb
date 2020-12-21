@@ -330,14 +330,13 @@ FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation/
 puts ">>> Migrating the Tutorial section"
 
 
-#Dir.glob(".vuepress/openhab-docs/tutorials/beginner/*.md") { |path|
-#    file = File.basename(path)
-#    puts " -> #{file}"
-#    process_file(".vuepress/openhab-docs/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
-#}
-#puts " -> images"
-#FileUtils.cp_r(".vuepress/openhab-docs/tutorials/beginner/images", "docs/tutorial/images")
-# FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images/*", "docs/tutorial/images")
+Dir.glob(".vuepress/openhab-docs/tutorials/getting_started/*.md") { |path|
+    file = File.basename(path)
+    puts " -> #{file}"
+    process_file(".vuepress/openhab-docs/tutorials/getting_started", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/getting_started/#{file}")
+}
+puts " -> images"
+FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial/images")
 
 
 
