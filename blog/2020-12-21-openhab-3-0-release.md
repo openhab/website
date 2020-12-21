@@ -68,7 +68,7 @@ Last but not least, the UI features new ways of interacting with your system: Yo
 
 Last but not least, the new user interface is already localized in many languages - and it is very easy to help translating it to further languages. If you are interested, please visit https://translate.openhab.org/!
 
-There is so much more to learn about all the fantastic features of the new UI, so if you are interested, please do not miss to check out the presentation that was done during [our virtual openHAB meetup 2020](https://www.youtube.com/watch?v=pwZ8AOwRDEk&feature=youtu.be).
+There is so much more to learn about within the fantastic features of the new UI and if you are interested, be sure to check out the presentation that was done during [our virtual openHAB meetup 2020](https://www.youtube.com/watch?v=pwZ8AOwRDEk&feature=youtu.be).
 
 ## New Add-ons
 
