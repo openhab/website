@@ -72,7 +72,7 @@ There is so much more to learn about within the fantastic features of the new UI
 
 ## New Add-ons
 
-Since the release of openHAB 2.5.0 one year ago, there has been a tremendous activity on add-on development. We have no less than [86 new add-ons](https://github.com/openhab/openhab-distro/releases/tags/3.0.0#newaddons) since then, which highlights the huge coverage of devices that can be integrated with openHAB. There are many awesome things, but I will refrain from picking any example this time.
+Since the release of openHAB 2.5.0 one year ago, there has been a tremendous activity on add-on development. We have no less than [86 new add-ons](https://github.com/openhab/openhab-distro/releases/tag/3.0.0#newaddons) since then, which highlights the huge coverage of devices that can be integrated with openHAB. There are many awesome things, but I will refrain from picking any example this time.
 
 ## Rule Scripting Languages
 
