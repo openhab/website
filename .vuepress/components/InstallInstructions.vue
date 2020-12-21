@@ -395,8 +395,8 @@ export default {
   computed: {
     versions () {
       return [
-        // ['stable', 'Stable'],
-        ['testing', 'Milestone'],
+        ['stable', 'Stable'],
+        // ['testing', 'Milestone'],
         ['snapshot', 'Snapshot']
       ]
     },
