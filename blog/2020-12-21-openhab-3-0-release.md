@@ -30,7 +30,7 @@ Furthermore, the two separate rule engine implementations have been merged into 
 
 Besides the visible changes, many refactorings have been done to the codebase in order to keep it modern and maintainable. Moving from Java 8 to Java 11 brings the language features on a current level and ensures that openHAB continues to run on JVMs that receive security patches. Additionally, many used libraries have been upgraded, deprecated methods were removed, null annotations introduced, newer OSGi features used and so on. Overall, the codebase is future-proof and a solid foundation to further build on for the years to come.
 
-<p align="center"><video controls="controls" src="/uploads/evolution.m4v"></video></p>
+<p align="center"><video autoplay loop src="/uploads/evolution.mp4"></video></p>
 
 ### Outposts
 
