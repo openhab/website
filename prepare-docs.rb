@@ -357,13 +357,13 @@ process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/config
 puts ">>> Migrating the Migration Tutorial section"
 
 
-Dir.glob("#{docs_source_dir}/configuration/migration/*.md") { |path|
+Dir.glob(".vuepress/openhab-docs/configuration/migration/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
-    process_file("#{docs_source_dir}/configuration/migration", file, "docs/configuration/migration", "#{$docs_repo_root}/configuration/migration/#{file}")
+    process_file(".vuepress/openhab-docs/configuration/migration", file, "docs/configuration/migration", "#{$docs_repo_root}/configuration/migration/#{file}")
 }
 puts " -> images"
-#FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration") // no images placed yet
+#FileUtils.cp_r(".vuepress/openhab-docs/configuration/migration/images", "docs/configuration/migration/") // no images placed yet
 
 
 puts ">>> Migrating the UI section"
