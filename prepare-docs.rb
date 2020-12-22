@@ -353,10 +353,17 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
-#process_file(".vuepress/openhab-docs/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
-#FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
-#FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images", "docs/configuration/migration")
 
+puts ">>> Migrating the Migration Tutorial section"
+
+
+Dir.glob("#{docs_source_dir}/configuration/migration/*.md") { |path|
+    file = File.basename(path)
+    puts " -> #{file}"
+    process_file("#{docs_source_dir}/configuration/migration", file, "docs/configuration/migration", "#{$docs_repo_root}/configuration/migration/#{file}")
+}
+puts " -> images"
+#FileUtils.cp_r("#{docs_source_dir}/configuration/images", "docs/configuration") // no images placed yet
 
 
 puts ">>> Migrating the UI section"
