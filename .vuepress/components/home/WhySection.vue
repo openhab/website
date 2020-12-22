@@ -40,7 +40,7 @@
           <p>
             Run your server on
             <router-link to="docs/installation/linux.html">Linux</router-link>,
-            <router-link to="docs/installation/macosx.html">macOS</router-link>,
+            <router-link to="docs/installation/macos.html">macOS</router-link>,
             <router-link to="docs/installation/windows.html">Windows</router-link>,
             <router-link to="docs/installation/rasppi.html">Raspberry Pi</router-link>,
             <router-link to="docs/installation/docker.html">Docker</router-link>,
