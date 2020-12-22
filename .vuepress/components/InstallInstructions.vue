@@ -65,7 +65,7 @@
         <li>If you chose to use Wi-Fi, and there's a problem, openHABian will <router-link to="/docs/installation/openhabian.html#wifi-hotspot">launch a hotspot</router-link>. Connect to it if necessary</li>
         <li v-if="selectedVersion !== 'stable'">Use the <code>openhabian-config</code> tool (<router-link to="/docs/installation/openhabian.html#openhabian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
         <li>Navigate with a web browser to <code>http://openhabiandevice:8080</code></li>        
-        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
+        <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
       </ol>
     </div>
 
@@ -91,7 +91,7 @@
         &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install openhab-addons</code></pre></div>
         <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
-        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
+        <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
       </ol>
     </div>
     <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
@@ -115,7 +115,7 @@ enabled=1
         &#128712; <small>	You don't need the add-ons package if your machine has Internet access, openHAB will download add-ons online as necessary.</small>
           <div class="language-shell"><pre class="language-shell"><code>sudo yum install openhab-addons</code></pre></div>
         <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
-        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
+        <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
       </ol>
     </div>    
 
@@ -177,7 +177,7 @@ usermod -a -G openhab myownuser
           <span v-if="selectedSystem === 'apple'"> in the Terminal</span>
           and wait for openHAB to perform its initial startup (this can take a few minutes depending on your machine)</li>
         <li>Navigate with a web browser to <code>http://{{selectedSystem === 'apple' || selectedSystem === 'win10' ? 'localhost' : '&lt;ip-address&gt;'}}:8080</code></li>
-        <li>Continue by following the <router-link to="/docs/tutorial/1sttimesetup.html">First-time setup</router-link> chapter of the <router-link to="/docs/tutorial/">New User Tutorial</router-link></li>
+        <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
       </ol>
     </div>
 
