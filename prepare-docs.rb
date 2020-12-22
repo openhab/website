@@ -8,7 +8,7 @@ require "rexml/document"
 # require "nokogiri"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
-$docs_repo_root = $docs_repo + "/blob/master"
+$docs_repo_root = $docs_repo + "/blob/main"
 $docs_repo_branch = "final"
 $addons_repo_branch = "main"
 $version = nil
@@ -286,7 +286,7 @@ def process_file(indir, file, outdir, source)
 end
 
 puts ">>> Migrating the introduction article"
-process_file(".vuepress/openhab-docs", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/master/introduction.md")
+process_file(".vuepress/openhab-docs", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/main/introduction.md")
 FileUtils.mv("docs/introduction.md", "docs/readme.md")
 
 
