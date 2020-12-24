@@ -16,8 +16,8 @@
 /addons/bindings/asterisk1/ https://v2.openhab.org/addons/bindings/asterisk1/ 301
 /addons/bindings/benqprojector1/  https://v2.openhab.org/addons/bindings/benqprojector1/  301
 /addons/bindings/bticino1/  https://v2.openhab.org/addons/bindings/bticino1/  301
-/addons/bindings/caldav-command https://v2.openhab.org/ll	"/addons/bindings/caldav-command1/  301
-/addons/bindings/caldav-personal  https://v2.openhab.org/ll	"/addons/bindings/caldav-personal1/ 301
+/addons/bindings/caldav-command https://v2.openhab.org/addons/bindings/caldav-command1/  301
+/addons/bindings/caldav-personal  https://v2.openhab.org/addons/bindings/caldav-personal1/ 301
 /addons/bindings/cardio2e1/ https://v2.openhab.org/addons/bindings/cardio2e1/ 301
 /addons/bindings/myq1/  https://v2.openhab.org/addons/bindings/myq1/  301
 /addons/bindings/configadmin1/  https://v2.openhab.org/addons/bindings/configadmin1/  301
@@ -37,7 +37,7 @@
 /addons/bindings/freeswitch1/ https://v2.openhab.org/addons/bindings/freeswitch1/ 301
 /addons/bindings/fritzaha1/ https://v2.openhab.org/addons/bindings/fritzaha1/ 301
 /addons/bindings/fritzbox1/ https://v2.openhab.org/addons/bindings/fritzbox1/ 301
-/addons/bindings/fritzboxtr0641/  https://v2.openhab.org/ll	"/addons/bindings/fritzboxtr0641/ 301
+/addons/bindings/fritzboxtr0641/  https://v2.openhab.org/addons/bindings/fritzboxtr0641/ 301
 /addons/bindings/frontiersiliconradio1/ https://v2.openhab.org/addons/bindings/frontiersiliconradio1/ 301
 /addons/bindings/fs201/ https://v2.openhab.org/addons/bindings/fs201/ 301
 /addons/bindings/garadget1/ https://v2.openhab.org/addons/bindings/garadget1/ 301
