@@ -104,3 +104,20 @@
 /addons/bindings/wr32231/ https://v2.openhab.org/addons/bindings/wr32231/ 301
 /addons/bindings/xpl1/  https://v2.openhab.org/addons/bindings/xpl1/  301
 /addons/bindings/zibase1/ https://v2.openhab.org/addons/bindings/zibase1/ 301
+
+/addons/integrations/gcal/ https://v2.openhab.org/addons/integrations/gcal/ 301
+/addons/integrations/mqttembeddedbroker/ https://v2.openhab.org/addons/integrations/mqttembeddedbroker/ 301
+
+# Redirect all actions to v2 with a wildcard
+# https://docs.netlify.com/routing/redirects/redirect-options/#splats
+/addons/actions/* https://v2.openhab.org/addons/actions/:splat 301
+
+/addons/persistence/caldav/ https://v2.openhab.org/addons/persistence/caldav/ 301
+/addons/persistence/db4o/ https://v2.openhab.org/addons/persistence/db4o/ 301
+/addons/persistence/exec/ https://v2.openhab.org/addons/persistence/exec/ 301
+/addons/persistence/influxdb08/ https://v2.openhab.org/addons/persistence/influxdb08/ 301
+/addons/persistence/mapdb/ https://v2.openhab.org/addons/persistence/mapdb/ 301
+/addons/persistence/mqtt/ https://v2.openhab.org/addons/persistence/mqtt/ 301
+/addons/persistence/mysql/ https://v2.openhab.org/addons/persistence/mysql/ 301
+/addons/persistence/sitewhere/ https://v2.openhab.org/addons/persistence/sitewhere/ 301
+/addons/persistence/cosm/ https://v2.openhab.org/addons/persistence/cosm/ 301
