@@ -3,11 +3,15 @@
 # Trick to fool VuePress' NavLink to think the community forum is an internal link
 /community  https://community.openhab.org/
 
-/link/docs       /docs
-/link/tutorial   /docs/tutorial/
-/link/profiles   /docs/configuration/items.html#profiles
-/link/icons      /docs/configuration/iconsets/classic/
-/link/homekit    /addons/integrations/homekit/
+# Links to docs featured in openAB's main UI
+
+/link/docs                /docs
+/link/tutorial            /docs/tutorial/
+/link/profiles            /docs/configuration/items.html#profiles
+/link/icons               /docs/configuration/iconsets/classic/
+/link/alexa               /docs/ecosystem/alexa/
+/link/google-assistant    /docs/ecosystem/google-assistant/
+/link/homekit             /addons/integrations/homekit/
 
 # Redirect v1 addon docs to the v2 subdomain
 
