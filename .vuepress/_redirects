@@ -12,6 +12,7 @@
 /link/alexa               /docs/ecosystem/alexa/
 /link/google-assistant    /docs/ecosystem/google-assistant/
 /link/homekit             /addons/integrations/homekit/
+/link/openhabcloud        /addons/integrations/openhabcloud/
 
 # Redirect v1 addon docs to the v2 subdomain
 
