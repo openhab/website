@@ -3,7 +3,7 @@
 # Trick to fool VuePress' NavLink to think the community forum is an internal link
 /community  https://community.openhab.org/
 
-# Links to docs featured in openAB's main UI
+# Links to docs featured in openHAB's main UI
 
 /link/docs                /docs
 /link/tutorial            /docs/tutorial/
