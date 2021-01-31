@@ -11,7 +11,6 @@ $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/main"
 $docs_repo_branch = "final"
 $addons_repo_branch = "main"
-$addons_repo_branch_outdated = "master" # Fix edit links for bundles with iown repositories.
 $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
@@ -106,16 +105,16 @@ def process_file(indir, file, outdir, source)
                             source = ""
                             if addon == "habot" then
                                 puts "    (add-on is habot)"
-                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch_outdated}/bundles/org.openhab.ui.habot/README.md"
+                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.habot/README.md"
                             elsif addon == "habpanel" then
                                 puts "    (add-on is habpanel)"
-                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch_outdated}/bundles/org.openhab.ui.habpanel/README.md"
+                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.habpanel/README.md"
                             elsif addon == "zigbee" then
                                 puts "    (add-on is zigbee)"
-                                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/#{$addons_repo_branch_outdated}/org.openhab.binding.zigbee/README.md"
+                                source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/#{$addons_repo_branch}/org.openhab.binding.zigbee/README.md"
                             elsif addon == "zwave" && !(file =~ /things/) then
                                 puts "    (add-on is zwave)"
-                                source = "https://github.com/openhab/org.openhab.binding.zwave/blob/#{$addons_repo_branch_outdated}/README.md"
+                                source = "https://github.com/openhab/org.openhab.binding.zwave/blob/#{$addons_repo_branch}/README.md"
                             elsif !(file =~ /things/) then
                                 source = "https://github.com/openhab/openhab-addons/blob/#{$addons_repo_branch}/bundles/org.openhab.#{addon_type}.#{addon}/README.md"
                             end
