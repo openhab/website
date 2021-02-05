@@ -366,16 +366,34 @@ puts " -> images"
 puts ">>> Migrating the UI section"
 
 
-Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
-    next if path =~ /habpanel/ || path =~ /paper/ # Those already have their own article, no need to include the readme...
-    addon = File.basename(path)
-    puts " -> #{addon}"
-    FileUtils.mkdir_p("docs/configuration/ui/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "docs/configuration/ui", "")
-    puts " -> images (#{addon})"
-    FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "docs/configuration/ui/#{addon}") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/#{addon}/doc")
+Dir.glob(".vuepress/openhab-docs/ui/*.md") { |path|
+    file = File.basename(path)
+    puts " -> #{file}"
+    process_file(".vuepress/openhab-docs/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
 }
+puts " -> images"
+FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui/images")
 
+puts " -> habpanel"
+FileUtils.mkdir_p("docs/ui/habpanel")
+process_file(".vuepress/openhab-docs/_addons_uis/habpanel/doc", "habpanel.md", "docs/ui/habpanel", "")
+puts "    -> images"
+FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images", "docs/ui/habpanel") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images")
+
+puts " -> habot"
+FileUtils.mkdir_p("docs/ui/habot")
+process_file(".vuepress/openhab-docs/_addons_uis/habot", "readme.md", "docs/ui/habot", "")
+puts "    -> images"
+
+puts " -> components"
+FileUtils.mkdir_p("docs/ui/components")
+Dir.glob(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/*.md") { |path|
+    file = File.basename(path)
+    puts "    -> #{file}"
+    process_file(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components", file, "docs/ui/components", "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components/#{file}")
+}
+puts "    -> images"
+FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components/images") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images")
 
 
 puts ">>> Migrating the Apps section"
