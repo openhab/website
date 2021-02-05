@@ -389,7 +389,7 @@ puts " -> components"
 FileUtils.mkdir_p("docs/ui/components")
 Dir.glob(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/*.md") { |path|
     file = File.basename(path)
-    puts " -> #{file}"
+    puts "    -> #{file}"
     process_file(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components", file, "docs/ui/components", "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components/#{file}")
 }
 puts "    -> images"
