@@ -376,13 +376,13 @@ FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui/images")
 
 puts " -> habpanel"
 FileUtils.mkdir_p("docs/ui/habpanel")
-process_file(".vuepress/openhab-docs/_addons_uis", "habpanel/doc/habpanel.md", "docs/ui", "")
+process_file(".vuepress/openhab-docs/_addons_uis/habpanel/doc", "habpanel.md", "docs/ui/habpanel", "")
 puts "    -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images", "docs/ui/habpanel") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images")
 
 puts " -> habot"
 FileUtils.mkdir_p("docs/ui/habot")
-process_file(".vuepress/openhab-docs/_addons_uis", "habot/readme.md", "docs/ui", "")
+process_file(".vuepress/openhab-docs/_addons_uis/habot", "readme.md", "docs/ui/habot", "")
 puts "    -> images"
 
 puts " -> components"
