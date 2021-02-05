@@ -376,13 +376,13 @@ FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui/images")
 
 puts " -> habpanel"
 FileUtils.mkdir_p("docs/ui/habpanel")
-process_file(".vuepress/openhab-docs/_addons_uis", "habpanel/doc/habpanel.md", "docs/ui/habpanel", "")
+process_file(".vuepress/openhab-docs/_addons_uis", "habpanel/doc/habpanel.md", "docs/ui", "")
 puts "    -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images", "docs/ui/habpanel") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images")
 
 puts " -> habot"
 FileUtils.mkdir_p("docs/ui/habot")
-process_file(".vuepress/openhab-docs/_addons_uis", "habot/readme.md", "docs/ui/habot", "")
+process_file(".vuepress/openhab-docs/_addons_uis", "habot/readme.md", "docs/ui", "")
 puts "    -> images"
 
 puts " -> components"
@@ -393,7 +393,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components") { |
     process_file(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components", file, "docs/ui/components", "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components/#{file}")
 }
 puts "    -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components/images")
+FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components/images") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images")
 
 
 puts ">>> Migrating the Apps section"
