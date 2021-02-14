@@ -17,6 +17,7 @@
 # Redirect v1 addon docs to the v2 subdomain
 
 /addons/bindings/akm8681/ https://v2.openhab.org/addons/bindings/akm8681/ 301
+/addons/bindings/alarmdecoder1/ https://v2.openhab.org/addons/bindings/alarmdecoder1/ 301
 /addons/bindings/anel1/ https://v2.openhab.org/addons/bindings/anel1/ 301
 /addons/bindings/asterisk1/ https://v2.openhab.org/addons/bindings/asterisk1/ 301
 /addons/bindings/benqprojector1/  https://v2.openhab.org/addons/bindings/benqprojector1/  301
