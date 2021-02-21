@@ -64,7 +64,7 @@
         <li>Wait between 15 and 45 minutes for openHABian to perform its initial setup</li>
         <li>If you chose to use Wi-Fi, and there's a problem, openHABian will <router-link to="/docs/installation/openhabian.html#wifi-hotspot">launch a hotspot</router-link>. Connect to it if necessary</li>
         <li v-if="selectedVersion !== 'stable'">Use the <code>openhabian-config</code> tool (<router-link to="/docs/installation/openhabian.html#openhabian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
-        <li>Navigate with a web browser to <code>http://openhabiandevice:8080</code></li>        
+        <li>Navigate with a web browser to <code>http://openhabian:8080</code></li>        
         <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
       </ol>
     </div>
