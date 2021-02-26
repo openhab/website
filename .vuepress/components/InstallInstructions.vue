@@ -74,7 +74,7 @@
       <h3>{{optionNumber('package')}}Install the APT Packages <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
       <div class="tip custom-block">
         <p class="custom-block-title">TIP</p>
-        <p>On Debian-based systems you can also opt to add our openHABian turn-key solution on top of your existing operating system, follow <router-link to="/docs/installation/openhabian.html#other-linux-systems-add-openhabian-just-like-any-other-software">these instructions instead</router-link> to check whether your system is eligible and install it.</p>
+        <p>On Debian systems you can also opt to add our openHABian turn-key solution on top of your existing operating system, follow <router-link to="/docs/installation/openhabian.html#other-linux-systems-add-openhabian-just-like-any-other-software">these instructions instead</router-link> to check whether your system is eligible and install it.</p>
         <p v-if="selectedSystem === 'raspberry-pi'">For Raspberry Pi, however, we strongly recommend flashing the complete OS image, see above.</p>
       </div>
       <ol>
