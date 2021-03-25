@@ -14,6 +14,10 @@
 /link/homekit             /addons/integrations/homekit/
 /link/openhabcloud        /addons/integrations/openhabcloud/
 
+# Redirect download locations
+
+/download/repo/*          https://openhab.jfrog.io/artifactory/libs-milestone-local/:splat 302
+
 # Redirect v1 addon docs to the v2 subdomain
 
 /addons/bindings/akm8681/ https://v2.openhab.org/addons/bindings/akm8681/ 301
