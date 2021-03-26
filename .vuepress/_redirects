@@ -16,7 +16,8 @@
 
 # Redirect download locations
 
-/download/repo/*          https://openhab.jfrog.io/artifactory/libs-milestone-local/:splat 302
+/download/milestones/*        https://openhab.jfrog.io/artifactory/libs-milestone-local/:splat 302
+/download/releases/*          https://openhab.jfrog.io/artifactory/libs-release-local/:splat 302
 
 # Redirect v1 addon docs to the v2 subdomain
 
