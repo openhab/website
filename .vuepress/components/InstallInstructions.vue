@@ -155,7 +155,7 @@ usermod -a -G openhab myownuser
       <h3>{{optionNumber('manual')}}Manual Installation</h3>
       <ol>
         <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
-        <li>Download and extract the openHAB runtime distribution from <a target="_blank" href="https://bintray.com/openhab/mvn/openhab-distro">https://bintray.com/openhab/mvn/openhab-distro</a>:</li>
+        <li>Download and extract the openHAB runtime distribution:</li>
         <div class="download-button-container">
           <a class="download-button big" :href="runtimeDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
         </div>
@@ -402,23 +402,16 @@ export default {
     },
     runtimeDownloadLink () {
       if (this.selectedVersion === 'stable') {
-        return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-${this.$page.frontmatter.currentVersion}.zip`
+        return `https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentVersion}/openhab-${this.$page.frontmatter.currentVersion}.zip`
       } else if (this.selectedVersion === 'testing') {
         return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
       }
     },
     addonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
-        return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-addons-${this.$page.frontmatter.currentVersion}.kar`
+        return `https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentVersion}/openhab-addons-${this.$page.frontmatter.currentVersion}.kar`
       } else if (this.selectedVersion === 'testing') {
         return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
-      }
-    },
-    legacyAddonsDownloadLink () {
-      if (this.selectedVersion === 'stable') {
-        return `https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-addons-legacy%2F${this.$page.frontmatter.currentVersion}%2Fopenhab-addons-legacy-${this.$page.frontmatter.currentVersion}.kar`
-      } else if (this.selectedVersion === 'testing') {
-        return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab-addons-legacy/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-legacy-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     currentDownloadVersion () {
