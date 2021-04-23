@@ -155,7 +155,7 @@ usermod -a -G openhab myownuser
       <h3>{{optionNumber('manual')}}Manual Installation</h3>
       <ol>
         <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
-        <li>Download and extract the openHAB runtime distribution from <a target="_blank" href="https://www.openhab.org/download/repo">https://www.openhab.org/download</a>:</li>
+        <li>Download and extract the openHAB runtime distribution:</li>
         <div class="download-button-container">
           <a class="download-button big" :href="runtimeDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
         </div>
