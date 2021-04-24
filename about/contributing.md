@@ -65,9 +65,9 @@ When no solution was found, use the table below to determine where your issue sh
 
 Issue | Where to report
 ------|----------------
-Problems and feature requests for openHAB 2 add-ons | [openhab-addons](https://github.com/openhab/openhab-addons/issues)
+Problems and feature requests for openHAB add-ons | [openhab-addons](https://github.com/openhab/openhab-addons/issues)
 Issues related to the runtime environment, IDE and packaging | [openhab-distro](https://github.com/openhab/openhab-distro/issues)
-Issues related to the core openHAB bundles that are not from Eclipse SmartHome | [openhab-core](https://github.com/openhab/openhab-core/issues)
+Issues related to the core openHAB bundles | [openhab-core](https://github.com/openhab/openhab-core/issues)
 
 But do not worry - if you are not clear, which category your issue belongs to - we will redirect you, if necessary.
 
