@@ -64,7 +64,7 @@
         <li>Wait between 15 and 45 minutes for openHABian to perform its initial setup</li>
         <li>If you chose to use Wi-Fi, and there's a problem, openHABian will <router-link to="/docs/installation/openhabian.html#wifi-hotspot">launch a hotspot</router-link>. Connect to it if necessary</li>
         <li v-if="selectedVersion !== 'stable'">Use the <code>openhabian-config</code> tool (<router-link to="/docs/installation/openhabian.html#openhabian-configuration-tool">documentation</router-link>) to switch from the stable version to the {{selectedVersion}} version</li>
-        <li>Navigate with a web browser to <code>http://openhabian:8080</code></li>        
+        <li>Navigate with a web browser to <code>http://openhabian:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
       </ol>
     </div>
@@ -80,11 +80,11 @@
       <ol>
         <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Add the repository key</li>
-          <div class="language-shell"><pre class="language-shell"><code>wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>wget -qO - 'https://openhab.jfrog.io/artifactory/api/gpg/key/public' | sudo apt-key add -</code></pre></div>
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
         <li>Update the package lists and install the openHAB distribution package</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get update && sudo apt-get install openhab</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
@@ -103,9 +103,9 @@
         <div class="language-ini">
 <pre class="language-ini"><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
 name=openHAB {{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}
-baseurl={{selectedVersion === 'stable' ? 'https://dl.bintray.com/openhab/rpm-repo2/stable' : selectedVersion === 'testing' ? 'https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/testing' : 'https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/unstable'}}
+baseurl={{selectedVersion === 'stable' ? 'https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/stable' : selectedVersion === 'testing' ? 'https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/testing' : 'https://openhab.jfrog.io/artifactory/openhab-linuxpkg-rpm/unstable'}}
 gpgcheck=1
-gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+gpgkey=https://openhab.jfrog.io/artifactory/api/gpg/key/public
 enabled=1
 </code></pre>
         </div>
@@ -117,7 +117,7 @@ enabled=1
         <li>Navigate with a web browser to <code>http://&lt;ip-address&gt;:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
       </ol>
-    </div>    
+    </div>
 
     <div v-if="selectedSystem === 'docker'">
       <hr>
