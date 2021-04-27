@@ -1,6 +1,5 @@
 automation
-bindings/*
-!bindings/yahooweather/
+bindings
 integrations
 persistence
 transformations
