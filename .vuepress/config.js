@@ -108,7 +108,7 @@ module.exports = {
   },
   serviceWorker: false,
   themeConfig: {
-    logo: `/openhab-logo.png`,
+    logo: `/openhab-logo.svg`,
     // repo: 'openhab',
     editLinks: false,
     activeHeaderLinks: false,

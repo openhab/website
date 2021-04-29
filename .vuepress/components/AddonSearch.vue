@@ -1,7 +1,7 @@
 <template>
   <div class="addon-search">
     <input type="text" class="filter" v-model="filter" :placeholder="`Search ${addons.length} add-ons & ${things.length} things`" />
-    
+
     <em v-if="results">
       {{resultsText}}
     </em>
@@ -26,7 +26,7 @@
               <div class="version" v-if="addon.frontmatter.since === '1x'"><span class="v1">v1</span></div>
               <div class="main">
                 <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
-                <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
+                <strong v-else><img src="/openhab-logo-square.svg" width="60"><br />{{addon.frontmatter.label}}</strong>
               </div>
               <div class="type">{{addon.frontmatter.type}}</div>
             </router-link>
@@ -43,7 +43,7 @@
               <div class="version" v-if="addon.frontmatter.since === '1x'"><span class="v1">v1</span></div>
               <div class="main">
                 <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
-                <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
+                <strong v-else><img src="/openhab-logo-square.svg" width="60"><br />{{addon.frontmatter.label}}</strong>
               </div>
               <div class="type">{{addon.frontmatter.type}}</div>
             </router-link>
@@ -81,7 +81,7 @@
   border-radius 2rem
   background #fff url(./images/search.svg) .7rem 1rem no-repeat
   outline none
-  
+
   &:focus, &:active
     border-color #ff6600
     outline-color #ff6600
@@ -171,7 +171,7 @@ h3.addon-type
       &:hover
         text-decoration none
         color #ff6600
-        
+
       .version
         font-size 7pt
         text-align right
@@ -180,7 +180,7 @@ h3.addon-type
           padding 3px
           border-radius 3px
           background-color #f2c037
-      
+
       .main
         flex-grow 1
         display flex
@@ -192,7 +192,7 @@ h3.addon-type
           max-width 182px
           max-height 140px
           object-fit contain
-      
+
       .type
         font-weight normal
         font-size 10pt

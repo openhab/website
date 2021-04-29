@@ -20,7 +20,7 @@ If you are organizing an event around openHAB, please let us know in the [Events
                 (p.frontmatter.end_date) ? new Date(p.frontmatter.end_date) >= new Date() : new Date(p.frontmatter.date) >= new Date())
             .sort((e1,e2) => new Date(e1.frontmatter.date) - new Date(e2.frontmatter.date))" class="event">
       <div class="calendar"><calendar-icon :date="page.frontmatter.date" :end-date="page.frontmatter.end_date"></calendar-icon></div>
-      <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.png'" /></a>
+      <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.svg'" /></a>
       <div class="event-info">
         <a :href="page.frontmatter.link" target="_blank"><h3 class="event-title">{{page.frontmatter.title}}</h3></a>
         <div class="event-location">{{page.frontmatter.location}}</div>
@@ -41,7 +41,7 @@ If you are organizing an event around openHAB, please let us know in the [Events
                   ((p.frontmatter.end_date) ? new Date(p.frontmatter.end_date) < new Date() : new Date(p.frontmatter.date) < new Date()))
               .sort((e1,e2) => new Date(e2.frontmatter.date) - new Date(e1.frontmatter.date))" class="event">
         <div class="calendar"><calendar-icon :date="page.frontmatter.date" :end-date="page.frontmatter.end_date"></calendar-icon></div>
-        <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.png'" /></a>
+        <a :href="page.frontmatter.link" target="_blank" class="event-link"><img class="event-image" :src="page.frontmatter.event_image || '/openhab-logo.svg'" /></a>
         <div class="event-info">
           <a :href="page.frontmatter.link" target="_blank"><h3 class="event-title">{{page.frontmatter.title}}</h3></a>
           <div class="event-location">{{page.frontmatter.location}}</div>
