@@ -390,7 +390,7 @@ export default {
     },
     legacyAddonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
-        return `https://repo1.maven.org/maven2/org/openhab/distro/openhab-addons-legacy/${this.$page.frontmatter.currentVersion}/openhab-addons-legacy-${this.$page.frontmatter.currentVersion}.kar
+        return `https://repo1.maven.org/maven2/org/openhab/distro/openhab-addons-legacy/${this.$page.frontmatter.currentVersion}/openhab-addons-legacy-${this.$page.frontmatter.currentVersion}.kar`
       } else if (this.selectedVersion === 'testing') {
         return `https://repo1.maven.org/maven2/org/openhab/distro/openhab-addons-legacy/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-legacy-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
