@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <a href="#app"><img src="/openhab-logo-square.png" class="footer-logo" /></a>
+    <a href="#app"><img src="/openhab-logo-square.svg" class="footer-logo" /></a>
     <div class="legal">
       <span class="copyright">Copyright © {{year}} by the openHAB Community and the openHAB Foundation e.V.</span>
       <br />

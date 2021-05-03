@@ -62,3 +62,4 @@ vuepress
 
 # openhab-docs in .vuepress
 .vuepress/openhab-docs
+.DS_Store

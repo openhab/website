@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    
+
     <title>openHAB innogy SmartHome Binding</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -25,20 +25,20 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    
+
     <div class="container">
-        <img src="img/openhab-logo.png" id="logo"/>
+        <img src="/openhab-logo-square.svg" id="logo"/>
         <h1>openHAB innogy SmartHome Binding</h1>
         <p><strong>(for SmartHome Austria brand)</strong></p>
-        <div id="success-text"> 
+        <div id="success-text">
             <h3>Authenticated successfully. SmartHome Austria OAuth service returned the following authcode:</h3>
         </div>
-        <div id="error-text"> 
+        <div id="error-text">
             <h3>Authorization failed or skipped.</h3>
             <p>Authorization failed. Please try to execute the authorization process again.</p>
             <p><strong>More information can be found at <a href="https://www.openhab.org/addons/bindings/innogysmarthome/">https://www.openhab.org/addons/bindings/innogysmarthome/</a></strong></p>
         </div>
-        
+
         <form>
             <div class="form-group">
                 <label>Authcode</label>
@@ -46,7 +46,7 @@
             </div>
             <h3>Please copy the authcode into the Thing configuration of your SmartHome Controller.</h3>
             <p>Remember to set the brand to "SmartHome Austria".</p>
-            
+
             <button disabled type="button" class="btn btn-primary btn-lg">Press Ctrl + C</button>
         </form>
         <img src="img/shc-config-smarthome-austria.png" class="image" id="screenshot" />

@@ -3,7 +3,7 @@
     <div class="hero-image"></div>
     <ClientOnly><img draggable="false" class="jumbotron-pattern" src="/pattern.png" alt=""></ClientOnly>
     <div class="hero-content">
-      <div class="white-logo"><ClientOnly><img src="/logo-white.png" class="white-logo" /></ClientOnly></div>
+      <div class="white-logo"><ClientOnly><img src="/openhab-logo-white.svg" class="white-logo" /></ClientOnly></div>
       <h1 class="hero">empowering the smart home</h1>
       <h2 class="lead">a vendor and technology agnostic open source automation software for your home</h2>
       <router-link to="docs/" class="action-button">Get Started ➜</router-link>
@@ -108,7 +108,7 @@
         font-size 1.4rem
       .demo-button
         font-size 1.4rem
-      
+
   .phone
     animation 2s ease-out 0s 1 slideIn3
     flex-shrink 0
@@ -131,18 +131,18 @@
       overflow hidden
       height 100%
       border-radius 20px
- 
+
     iframe
       width 100%
       height 100%
       display block
       width 100%
       border-radius 20px
- 
+
   .hero-image
     animation 2.5s ease-out 0s 1 fadeIn4
     background url(/hero3.jpg) bottom 0 left 50%/contain no-repeat
-    background-repeat none 
+    background-repeat none
     width 95%
     height 700px
     position absolute
