@@ -14,8 +14,6 @@ const HighlightRules = require('./highlight-rules')
 
 const DocsSidebarNavigation = require('./openhab-docs/.vuepress/docs-sidebar.js')
 
-const base = process.env.OH_DOCS_VERSION ? `/v${process.env.OH_DOCS_VERSION}/` : '/'
-
 const noAddons = process.env.OH_NOADDONS
 
 module.exports = {
@@ -23,7 +21,7 @@ module.exports = {
   description: 'openHAB - a vendor and technology agnostic open source automation software for your home',
   dest: 'vuepress',
   host: 'localhost',
-  base,
+  base: '/',
   ga: 'UA-47717934-1',
   plugins: [
     'tabs',
@@ -71,7 +69,7 @@ module.exports = {
         Prism.languages.rules = HighlightRules
       }
 
-      if (['nginx', 'bash', 'python', 'js', 'javascript', 'groovy'].indexOf(lang) >= 0) return highlight(str, lang)
+      if (['nginx', 'bash', 'python', 'js', 'javascript', 'groovy', 'yaml'].indexOf(lang) >= 0) return highlight(str, lang)
 
       /* Simple heuristics to detect rules & other openHAB DSL code snippets and override the language */
       if (str.match(/\b(?:Color|Contact|Dimmer|Group|Number|Player|Rollershutter|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap)\b/)) {
