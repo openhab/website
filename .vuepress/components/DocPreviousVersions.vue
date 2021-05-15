@@ -68,7 +68,7 @@ export default {
       if (version === 'Stable') {
         url = 'https://www.openhab.org/' + url
       } else if (version === 'Latest') {
-        url = 'https://next.openhab.org/' + url
+        url = 'https://openhab-next.netlify.app/' + url
       } else if (version === 'v2') {
         url = 'https://v2.openhab.org/' + url
       }
