@@ -16,6 +16,12 @@ const DocsSidebarNavigation = require('./openhab-docs/.vuepress/docs-sidebar.js'
 
 const noAddons = process.env.OH_NOADDONS
 
+if (!process.env.OH_DOCS_VERSION) {
+  throw new Error('Please set the OH_DOCS_VERSION environment variable to the name of the branch of the openhab-docs repo that has been prepared')
+}
+
+const docsVersion = process.env.OH_DOCS_VERSION.replace('final-stable', 'Stable').replace('final', 'Latest')
+
 module.exports = {
   title: 'openHAB',
   description: 'openHAB - a vendor and technology agnostic open source automation software for your home',
@@ -112,6 +118,7 @@ module.exports = {
     activeHeaderLinks: false,
     sidebarDepth: 0,
     docsDir: 'docs',
+    docsVersion,
     algolia: {
       apiKey: 'af17a113c6a11af8057592a3120ffd3b',
       indexName: 'openhab',
