@@ -5,6 +5,9 @@ title: Download openHAB
 currentVersion: 3.0.2
 currentMilestoneVersion: 3.1.0.M4
 currentSnapshotVersion: 3.1.0-SNAPSHOT
+previousVersions:
+  - version: 2.5
+    website: https://v2.openhab.org/
 meta:
   - name: og:title
     content: Download openHAB
