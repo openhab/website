@@ -12,7 +12,7 @@ initial_gallery:
   automation:
      title: "Automation"
      description: "Automation add-ons extend the functionality of the rule engine, such as additional choices of scripting languages."
-     featured: ["jythonscripting", "groovyscripting"]
+     featured: ["jsscripting", "jythonscripting", "groovyscripting", "pidcontroller"]
      all: true
   persistence:
     title: "Data Persistence"
@@ -25,7 +25,7 @@ initial_gallery:
   voice:
     title: "Voice"
     description: "These add-ons provide voice enabling features, such as text-to-speech, speech-to-text etc."
-    featured: ["googletts", "mactts", "marytts", "picotts", "voicerss"]
+    featured: ["googletts", "mactts", "marytts", "picotts", "pollytts", "voicerss"]
     all: true
 meta:
   - name: og:title
