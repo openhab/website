@@ -3,6 +3,7 @@ sidebar: false
 layout: AboutPage
 title: Download openHAB
 currentVersion: 2.5.12
+currentSnapshotVersion: 3.x.y-SNAPSHOT # doesn't matter!
 meta:
   - name: og:title
     content: Download openHAB
