@@ -82,7 +82,7 @@ export default {
   },
   computed: {
     featuredAddons () {
-      return this.$site.pages.filter(p => p.frontmatter && p.frontmatter.logo)
+      return this.$site.pages.filter(p => p.frontmatter && p.frontmatter.logo && p.frontmatter.type === 'binding')
     }
   },
   mounted () {
