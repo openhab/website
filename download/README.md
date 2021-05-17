@@ -72,6 +72,7 @@ To download the previous version of openHAB, please go to https://v2.openhab.org
 </ul>
 
 <div class="acknowledgements-logos">
+  <a target="_blank" href="https://www.jfrog.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/jfrog.svg" /></a>
   <a target="_blank" href="https://www.digitalocean.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/digitalocean.png" /></a>
   <a target="_blank" href="https://www.ej-technologies.com/products/jprofiler/overview.html"><img style="padding: 1em" height="50" src="./images/acknowledgements/jprofiler.png" /></a>
   <a target="_blank" href="https://www.netlify.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/netlify.svg" /></a>
