@@ -1,4 +1,4 @@
-const AddonsAutomation = require('./addons-automation.js')
+const AddonsActions = require('./addons-actions.js')
 const AddonsBindings = require('./addons-bindings.js')
 const AddonsIntegrations = require('./addons-integrations.js')
 const AddonsPersistence = require('./addons-persistence.js')
@@ -12,7 +12,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HighlightDsl = require('./highlight-dsl')
 const HighlightRules = require('./highlight-rules')
 
-const DocsSidebarNavigation = require('./openhab-docs/.vuepress/docs-sidebar.js')
+const DocsSidebarNavigation = require('./docs-sidebar-v2.js')
 
 const noAddons = process.env.OH_NOADDONS
 
@@ -20,7 +20,7 @@ if (!process.env.OH_DOCS_VERSION) {
   throw new Error('Please set the OH_DOCS_VERSION environment variable to the name of the branch of the openhab-docs repo that has been prepared')
 }
 
-const docsVersion = process.env.OH_DOCS_VERSION.replace('final-stable', 'Stable').replace('final', 'Latest')
+const docsVersion = '2.5'
 
 module.exports = {
   title: 'openHAB',
@@ -230,9 +230,9 @@ module.exports = {
           children: AddonsIntegrations.sort((a,b) => a[1].localeCompare(b[1]))
         },
         {
-          title: 'Automation',
+          title: 'Actions',
           collapsible: false,
-          children: AddonsAutomation.sort((a,b) => a[1].localeCompare(b[1]))
+          children: AddonsActions.sort((a,b) => a[1].localeCompare(b[1]))
         },
         {
           title: 'Data Persistence',

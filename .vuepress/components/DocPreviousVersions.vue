@@ -1,10 +1,10 @@
 <template>
   <div class="page-versions">
     <ul class="version-switcher">
-      <li><a :href="siteUrl('Stable')" class="version-button" :class="{ current: currentVersion === 'Stable' }">Stable <small>({{stableVersion}})</small></a></li>
-      <li><a :href="siteUrl('Latest')" class="version-button" :class="{ current: currentVersion === 'Latest' }">Latest <small>({{latestVersion}})</small></a></li>
+      <li><a :href="siteUrl('Stable')" class="version-button" :class="{ current: currentVersion === 'Stable' }">Stable <small v-if="currentVersion === 'Stable' || currentVersion === 'Latest'">({{stableVersion}})</small></a></li>
+      <li><a :href="siteUrl('Latest')" class="version-button" :class="{ current: currentVersion === 'Latest' }">Latest <small v-if="currentVersion === 'Stable' || currentVersion === 'Latest'">({{latestVersion}})</small></a></li>
     </ul>
-    <div class="archived-versions">
+    <div class="archived-versions" v-if="previousVersions && previousVersions.length">
       <div class="dropdown-wrapper" :class="{ archiveDropdownOpen }">
         <a class="dropdown-title" @click="archiveDropdownOpen = !archiveDropdownOpen">
           <span class="title">Archived</span>

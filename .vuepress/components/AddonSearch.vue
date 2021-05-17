@@ -1,6 +1,7 @@
 <template>
   <div class="addon-search">
     <input type="text" class="filter" v-model="filter" :placeholder="`Search ${addons.length} add-ons & ${things.length} things`" />
+    <div style="text-align: right; margin-right: 10%"><small><input id="showObsoleteAddons" type="checkbox" v-model="showObsoleteAddons" /><label for="showObsoleteAddons">Show legacy add-ons</label></small></div>
     
     <em v-if="results">
       {{resultsText}}
@@ -224,7 +225,8 @@ export default {
     return {
       filter: '',
       things: [],
-      showAllAddons: []
+      showAllAddons: [],
+      showObsoleteAddons: false
     }
   },
   mounted () {
@@ -252,7 +254,7 @@ export default {
   computed: {
     addons () {
       let all_addons = this.$site.pages.filter(page => page.path.indexOf('/addons/') === 0 && page.frontmatter.id)
-      return all_addons
+      return (this.showObsoleteAddons) ? all_addons : all_addons.filter(page => !page.frontmatter.obsolete)
     },
     galleryAddons () {
       let results = {}

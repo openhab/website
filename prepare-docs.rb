@@ -9,11 +9,12 @@ require "rexml/document"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/main"
-$docs_repo_branch = "final"
+$docs_repo_branch = "final-2.5.x"
 $addons_repo_branch = "main"
 $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
+
 
 if ENV["OH_DOCS_VERSION"] then
     puts ">>> Generating docs for version #{ENV["OH_DOCS_VERSION"]}"
@@ -103,7 +104,10 @@ def process_file(indir, file, outdir, source)
                             addon_type = outdir_parts[1]
                             addon = file.split('/')[0]
                             source = ""
-                            if addon == "habot" then
+                            if addon == "habmin" then
+                                puts "    (add-on is habmin)"
+                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.habmin/README.md"
+                            elsif addon == "habot" then
                                 puts "    (add-on is habot)"
                                 source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.habot/README.md"
                             elsif addon == "habpanel" then
@@ -276,14 +280,13 @@ def process_file(indir, file, outdir, source)
 
         # Add the components for the versions dropdown and the edit link
         out.puts
-        # Obsolete: the combobox for versions will be moved globally on the v3 site
-        # out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
+        out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
         out.puts '<EditPageLink/>'
     }
 end
 
 puts ">>> Migrating the introduction article"
-process_file(".vuepress/openhab-docs", "introduction.md", "docs", "https://github.com/openhab/openhab-docs/blob/main/introduction.md")
+process_file(".vuepress/openhab-docs", "introduction.md", "docs", "#{$docs_repo_root}/introduction.md")
 FileUtils.mv("docs/introduction.md", "docs/readme.md")
 
 
@@ -327,13 +330,14 @@ FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation/
 puts ">>> Migrating the Tutorial section"
 
 
-Dir.glob(".vuepress/openhab-docs/tutorials/getting_started/*.md") { |path|
+Dir.glob(".vuepress/openhab-docs/tutorials/beginner/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/tutorials/getting_started", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/getting_started/#{file}")
+    process_file(".vuepress/openhab-docs/tutorials/beginner", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/beginner/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial/images")
+FileUtils.cp_r(".vuepress/openhab-docs/tutorials/beginner/images", "docs/tutorial/images")
+# FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images/*", "docs/tutorial/images")
 
 
 
@@ -350,50 +354,25 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
+process_file(".vuepress/openhab-docs/tutorials", "migration.md", "docs/configuration/migration", "#{$docs_repo_root}/tutorials/migration.md")
+FileUtils.mv("docs/configuration/migration/migration.md", "docs/configuration/migration/index.md")
+FileUtils.cp_r(".vuepress/openhab-docs/tutorials/images", "docs/configuration/migration")
 
-puts ">>> Migrating the Migration Tutorial section"
-
-
-Dir.glob(".vuepress/openhab-docs/configuration/migration/*.md") { |path|
-    file = File.basename(path)
-    puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/configuration/migration", file, "docs/configuration/migration", "#{$docs_repo_root}/configuration/migration/#{file}")
-}
-puts " -> images"
-#FileUtils.cp_r(".vuepress/openhab-docs/configuration/migration/images", "docs/configuration/migration/") // no images placed yet
 
 
 puts ">>> Migrating the UI section"
 
 
-Dir.glob(".vuepress/openhab-docs/ui/*.md") { |path|
-    file = File.basename(path)
-    puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
+Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
+    next if path =~ /habpanel/ || path =~ /paper/ # Those already have their own article, no need to include the readme...
+    addon = File.basename(path)
+    puts " -> #{addon}"
+    FileUtils.mkdir_p("docs/configuration/ui/" + addon)
+    process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "docs/configuration/ui", "")
+    puts " -> images (#{addon})"
+    FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "docs/configuration/ui/#{addon}") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/#{addon}/doc")
 }
-puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui/images")
 
-puts " -> habpanel"
-FileUtils.mkdir_p("docs/ui/habpanel")
-process_file(".vuepress/openhab-docs/_addons_uis/habpanel/doc", "habpanel.md", "docs/ui/habpanel", "")
-puts "    -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images", "docs/ui/habpanel") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/habpanel/doc/images")
-
-puts " -> habot"
-FileUtils.mkdir_p("docs/ui/habot")
-process_file(".vuepress/openhab-docs/_addons_uis/habot", "readme.md", "docs/ui/habot", "")
-puts "    -> images"
-
-puts " -> components"
-FileUtils.mkdir_p("docs/ui/components")
-Dir.glob(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/*.md") { |path|
-    file = File.basename(path)
-    puts "    -> #{file}"
-    process_file(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components", file, "docs/ui/components", "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components/#{file}")
-}
-puts "    -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components/images") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images")
 
 
 puts ">>> Migrating the Apps section"
@@ -448,15 +427,16 @@ FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/i
 
 
 
-puts ">>> Migrating add-ons: Automation"
+
+puts ">>> Migrating add-ons: Actions"
 
 
-Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
+Dir.glob(".vuepress/openhab-docs/_addons_actions/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
-    FileUtils.mkdir_p("addons/automation/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_automation", addon + "/readme.md", "addons/automation", nil)
+    FileUtils.mkdir_p("addons/actions/" + addon)
+    process_file(".vuepress/openhab-docs/_addons_actions", addon + "/readme.md", "addons/actions", nil)
 }
 
 
@@ -511,13 +491,6 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
     puts " -> #{addon}"
-
-    # Detect and skip 1.x bindings - shouldn't ultimately occur
-    if addon =~ /1$/ then
-        puts "      (1.x, skipping)"
-        next
-    end
-
     FileUtils.mkdir_p("addons/integrations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
@@ -547,15 +520,7 @@ puts ">>> Migrating add-ons: Bindings"
 Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
-
     puts " -> #{addon}"
-
-    # Detect and skip 1.x bindings - shouldn't ultimately occur
-    if addon =~ /1$/ then
-        puts "      (1.x, skipping)"
-        next
-    end
-
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
@@ -598,7 +563,7 @@ end
 
 # Write arrays of addons by type to include in VuePress config.js
 puts ">>> Writing add-ons arrays to files for sidebar navigation"
-["bindings", "persistence", "automation", "integrations", "transformations", "voice"].each { |type|
+["bindings", "persistence", "actions", "integrations", "transformations", "voice"].each { |type|
     File.open(".vuepress/addons-#{type}.js", "w+") { |file|
         file.puts "module.exports = ["
 
@@ -623,11 +588,3 @@ puts ">>> Writing add-ons arrays to files for sidebar navigation"
 # Regenerate the classic iconset docs
 puts ">>> Generating iconset"
 system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets classic .vuepress/openhab-docs/_data docs/configuration/iconsets")
-
-# Publish latest Javadoc
-puts ">>> Downloading and extracting latest Javadoc from Jenkins"
-`wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
-`tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc/latest`
-
-# Copy the thing-types.json file to the proper location
-FileUtils.cp(".vuepress/openhab-docs/.vuepress/thing-types.json", ".vuepress")
