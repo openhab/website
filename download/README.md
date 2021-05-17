@@ -65,14 +65,14 @@ To download the previous version of openHAB, please go to https://v2.openhab.org
 <h2 class="big-title">Acknowledgements</h2>
 
 <ul>
-<li><a href="https://www.jfrog.com">JFrog</a> is providing an <a href="https://openhab.jfrog.io">Artifactory instance for our snapshots and milestone builds</a> as well as distributing our <a href="https://bintray.com/openhab">releases through Bintray</a>.</li>
+<li><a href="https://www.jfrog.com">JFrog</a> is providing an <a href="https://openhab.jfrog.io">Artifactory instance for our builds</a></li>
 <li><a href="https://www.digitalocean.com">DigitalOcean</a> sponsors our <a href="https://community.openhab.org/">community forum</a> hosting.</li>
 <li><a href="https://www.ej-technologies.com/">EJ Technologies</a> is providing us open source licenses for <a href="https://www.ej-technologies.com/products/jprofiler/overview.html">JProfiler</a> to make openHAB even more awesome.</li>
 <li><a href="https://www.netlify.com/">Netlify</a> provides continuous deployment and hosting for this website.</li>
 </ul>
 
 <div class="acknowledgements-logos">
-  <a target="_blank" href="https://www.bintray.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/bintray.png" /></a>
+  <a target="_blank" href="https://www.jfrog.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/jfrog.svg" /></a>
   <a target="_blank" href="https://www.digitalocean.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/digitalocean.png" /></a>
   <a target="_blank" href="https://www.ej-technologies.com/products/jprofiler/overview.html"><img style="padding: 1em" height="50" src="./images/acknowledgements/jprofiler.png" /></a>
   <a target="_blank" href="https://www.netlify.com"><img style="padding: 1em" height="50" src="./images/acknowledgements/netlify.svg" /></a>
