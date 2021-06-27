@@ -18,11 +18,11 @@ Releasing openHAB 3.0 end of last year was a major step for all contributors and
 
 <p align="center"><img src="/uploads/2021-06_flags.jpg"/></p>
 
-Besides translations, the Main UI was improved in many further aspects: A long list of small bugs has been fixed and a likewise impressive list of new small features were added - this time as an evolution and stabilization rather than a revolution.
+Besides translations, the Main UI was [improved in many further aspects](https://github.com/openhab/openhab-distro/releases/tag/3.1.0#uis): A long list of small bugs has been fixed and a likewise impressive list of new small features were added - this time as an evolution and stabilization rather than a revolution.
 
 ## Core Runtime
 
-Similar to the UI, the core runtime saw a phase of stabilization, bug fixing and many small improvements. It has absolutely proven to be production ready and together with the improvements in the UI, the 3.1 release should be a safe harbor for everyone that generally avoids dot-zero releases and still runs openHAB 2.x.
+Similar to the UI, the core runtime saw a phase of [stabilization, bug fixing and many small improvements](https://github.com/openhab/openhab-distro/releases/tag/3.1.0#core-runtime). It has absolutely proven to be production ready and together with the improvements in the UI, the 3.1 release should be a safe harbor for everyone that generally avoids dot-zero releases and still runs openHAB 2.x.
 
 A new feature in the core runtime that I'd like to highlight is that it now exposes metrics through [Micrometer APIs](https://micrometer.io/). Together with the new [Metrics add-on](https://www.openhab.org/addons/integrations/metrics/), this allows openHAB to be integrated with Prometheus monitoring or alternatively directly pushing the metrics to InfluxDB and Grafana. 
 
@@ -30,11 +30,11 @@ A new feature in the core runtime that I'd like to highlight is that it now expo
 
 ## Add-ons
 
-The major efforts of our community members continues to be on increasing the number of devices, systems and platforms openHAB integrates with - openHAB 3.1 includes 42 new add-ons, rocketing us to more than 350 add-ons being available now. The additions have a wide range and I recommend having a look at the list in the release notes.
+The major efforts of our community members continues to be on increasing the number of devices, systems and platforms openHAB integrates with - openHAB 3.1 includes 42 new add-ons, rocketing us to more than 350 add-ons being available now. The additions have a wide range and I recommend having a look at the [list in the release notes](https://github.com/openhab/openhab-distro/releases/tag/3.1.0#newaddons).
 
 White goods have gained popularity and are seeing major support in openHAB through the addition of the [BSH Home Connect](https://www.openhab.org/addons/bindings/homeconnect/) ecosystem and the new cloud-integrated range of [Miele devices](https://www.openhab.org/addons/bindings/mielecloud/). Special shout-out to Miele here for having actively participated in the development of the binding!
 
-Integrating white goods make a lot of sense for energy management use cases - which have their other correspondence in energy supply and monitoring add-ons, such as [Solarwatt](https://www.openhab.org/addons/bindings/solarwatt/), [Enphase](https://www.openhab.org/addons/bindings/enphase/), [MEC Meter](https://www.openhab.org/addons/bindings/mecmeter/) or [SEMSPortal](https://www.openhab.org/addons/bindings/semsportal/).
+Integrating white goods makes a lot of sense for energy management use cases - which have their other correspondence in energy supply and monitoring add-ons, such as [Solarwatt](https://www.openhab.org/addons/bindings/solarwatt/), [Enphase](https://www.openhab.org/addons/bindings/enphase/), [MEC Meter](https://www.openhab.org/addons/bindings/mecmeter/) or [SEMSPortal](https://www.openhab.org/addons/bindings/semsportal/).
 
 <p align="center"><img src="/uploads/2021-06_pv.jpg"/></p>
 
