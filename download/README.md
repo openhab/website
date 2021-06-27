@@ -2,10 +2,12 @@
 sidebar: false
 layout: AboutPage
 title: Download openHAB
-currentVersion: 3.0.2
-currentMilestoneVersion: 3.1.0.RC1
-currentSnapshotVersion: 3.1.0-SNAPSHOT
+currentVersion: 3.1.0
+currentMilestoneVersion: 3.2.0.RC1
+currentSnapshotVersion: 3.2.0-SNAPSHOT
 previousVersions:
+  - version: 3.0
+    website: https://v30.openhab.org/
   - version: 2.5
     website: https://v2.openhab.org/
 meta:
