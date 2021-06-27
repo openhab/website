@@ -32,7 +32,8 @@ A new feature in the core runtime that I'd like to highlight is that it now expo
 
 The major efforts of our community members continues to be on increasing the number of devices, systems and platforms openHAB integrates with - openHAB 3.1 includes 42 new add-ons, rocketing us to more than 350 add-ons being available now. The additions have a wide range and I recommend having a look at the list in the release notes.
 
-What is interesting, though, is that white goods have gained popularity and seeing major support in openHAB by the addition of the [Bosch Smart Home](https://www.openhab.org/addons/bindings/boschshc/) system, the [BSH Home Connect](https://www.openhab.org/addons/bindings/homeconnect/) ecosystem and the new cloud-integrated range of [Miele devices](https://www.openhab.org/addons/bindings/mielecloud/). Special shout-out to Miele here for having actively participated in the development of the binding!
+What is interesting is that white goods have gained popularity and seeing major support in openHAB through the addition of the [BSH Home Connect](https://www.openhab.org/addons/bindings/homeconnect/) ecosystem and the new cloud-integrated range of [Miele devices](https://www.openhab.org/addons/bindings/mielecloud/). Special shout-out to Miele here for having actively participated in the development of the binding!
+Integrating white goods make a lot of sense for energy management use cases - which have their correspondence in energy supply and monitoring add-ons, such as [Solarwatt](https://www.openhab.org/addons/bindings/solarwatt/), [Enphase](https://www.openhab.org/addons/bindings/enphase/), [MEC Meter](https://www.openhab.org/addons/bindings/mecmeter/) or [SEMSPortal](https://www.openhab.org/addons/bindings/semsportal/).
 
 ## Outlook
 
