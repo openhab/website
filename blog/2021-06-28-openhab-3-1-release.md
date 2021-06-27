@@ -16,6 +16,8 @@ Our summer release openHAB 3.1 is out! It improves many details over 3.0 and aga
 
 Releasing openHAB 3.0 end of last year was a major step for all contributors and users - the new Main UI brought a fresh and modern touch to the UI of openHAB and also heavily increased the UX. We received very positive feedback on it from our community and it is well appreciated. This can also be seen by the fact that many followed our appeal to help translating it to other languages. As a result, openHAB now features the (non-admin parts of the) Main UI in 19 languages (besides obvious ones like German, Dutch, French, Spanish, Russian and Polish also e.g. Simplified Chinese, Luxembourgish and Latvian). And there is more to come - if your language is missing, please help and visit https://translate.openhab.org/.
 
+<p align="center"><img src="/uploads/2021-06_flags.jpg"/></p>
+
 Besides translations, the Main UI was improved in many further respects: A long list of small bugs has been fixed and a likewise impressive list of new small features were added - this time as an evolution and stabilization rather than a revolution.
 
 ## Core Runtime
