@@ -395,9 +395,11 @@ export default {
   computed: {
     versions () {
       return [
-        ['stable', 'Stable'],
-        ['testing', 'Milestone'],
-        ['snapshot', 'Snapshot']
+        let ret = []
+        ret.push(['stable', 'Stable'])
+        if (this.$page.frontmatter.currentMilestoneVersion) ret.push(['testing', 'Milestone'])
+        ret.push(['snapshot', 'Snapshot'])
+        return ret
       ]
     },
     runtimeDownloadLink () {
