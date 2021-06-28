@@ -6,9 +6,9 @@ currentVersion: 3.1.0
 # currentMilestoneVersion: 3.2.0.M1
 currentSnapshotVersion: 3.2.0-SNAPSHOT
 previousVersions:
-  - version: 3.0
+  - version: "3.0"
     website: https://v30.openhab.org/
-  - version: 2.5
+  - version: "2.5"
     website: https://v2.openhab.org/
 meta:
   - name: og:title
