@@ -20,7 +20,7 @@ if (!process.env.OH_DOCS_VERSION) {
   throw new Error('Please set the OH_DOCS_VERSION environment variable to the name of the branch of the openhab-docs repo that has been prepared')
 }
 
-const docsVersion = process.env.OH_DOCS_VERSION.replace('final-stable', 'Stable').replace('final', 'Latest')
+const docsVersion = process.env.OH_DOCS_VERSION.replace('final-stable', 'Stable').replace('final-', '').replace('final', 'Latest').replace('.x', '')
 
 module.exports = {
   title: 'openHAB',
