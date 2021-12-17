@@ -13,6 +13,7 @@
 /link/google-assistant    /docs/ecosystem/google-assistant/
 /link/homekit             /addons/integrations/homekit/
 /link/openhabcloud        /addons/integrations/openhabcloud/
+/link/blocklib-tutorial   https://community.openhab.org/t/tutorial-how-to-write-block-libraries/130074 301
 
 # Redirect download locations
 
