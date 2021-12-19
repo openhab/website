@@ -79,7 +79,7 @@ Previous versions of openHAB have focused on localizing the openHAB Main UI as w
    </td>
   </tr>
   <tr>
-   <td>openHAB - Addons 
+   <td>openHAB Addons 
    </td>
    <td><img src="https://badges.crowdin.net/openhab-addons/localized.svg"/>
    </td>
