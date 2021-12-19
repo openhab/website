@@ -17,7 +17,7 @@ Our winter release of openHAB 3.2 is out! This latest version contains many new 
 
 Dan Cunningham, openHAB Maintainer
 
-In the very early days of openHAB, the rules “DSL” was the only standard for writing custom rules.  This Java-like scripting language is based on Xtend and is still used widely today due to its stability and powerful built-in functionality.  Over time however,  the underlying rule infrastructure has matured allowing additional engines to coexist to provide a true polyglot scripting environment.  openHAB 3.2 ships with multiple rules engines including [JRuby](https://next.openhab.org/addons/automation/jruby/), [Jython](https://www.openhab.org/addons/automation/jythonscripting/), [Groovy](https://www.openhab.org/addons/automation/groovyscripting/), and a ES6 2021 compatible Javascript environment, [JS Scripting](https://www.openhab.org/addons/automation/jsscripting/). 
+In the very early days of openHAB, the rules “DSL” was the only standard for writing custom rules.  This Java-like scripting language is based on Xtend and is still used widely today due to its stability and powerful built-in functionality.  Over time however,  the underlying rule infrastructure has matured allowing additional engines to coexist to provide a true polyglot scripting environment.  openHAB 3.2 ships with multiple rules engines including [JRuby](https://www.openhab.org/addons/automation/jrubyscripting/), [Jython](https://www.openhab.org/addons/automation/jythonscripting/), [Groovy](https://www.openhab.org/addons/automation/groovyscripting/), and a ES6 2021 compatible Javascript environment, [JS Scripting](https://www.openhab.org/addons/automation/jsscripting/). 
 
 ![Multiple rule engines in UI](/uploads/2021-12-20-rule-engines.png)
 
