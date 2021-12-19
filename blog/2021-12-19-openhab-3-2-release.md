@@ -63,7 +63,7 @@ Additionally, a much improved Main UI integration supporting the new metadata sy
 
 The [latest documentation provides](https://www.openhab.org/docs/ecosystem/alexa/) all the necessary information and examples to take advantage of the new syntax.
 
-## Localizing Add-Ons
+## Localizing Add-ons
 
 Christoph Weitkamp, Core Maintainer
 
