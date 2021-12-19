@@ -18,7 +18,7 @@ INTRO PLACEHOLDER
 
 ## Rule Engine Enhancements 
 
-In the very early days of openHAB, the rules “DSL” was the only standard for writing custom rules.  This Java-like scripting language is based on Xtend and is still used widely today due to its stability and powerful built-in functionality.  Over time however,  the underlying rule infrastructure has matured allowing additional engines to coexist to provide a true polyglot scripting environment.  OpenHAB 3.2 now ships with multiple rules engines including [Jruby](https://next.openhab.org/addons/automation/jruby/), [Jython](https://www.openhab.org/addons/automation/jythonscripting/), [Groovy](https://www.openhab.org/addons/automation/groovyscripting/), and a ES6 2021 compatible Javascript environment, [JS Scripting](https://www.openhab.org/addons/automation/jsscripting/). 
+In the very early days of openHAB, the rules “DSL” was the only standard for writing custom rules.  This Java-like scripting language is based on Xtend and is still used widely today due to its stability and powerful built-in functionality.  Over time however,  the underlying rule infrastructure has matured allowing additional engines to coexist to provide a true polyglot scripting environment.  OpenHAB 3.2 ships with multiple rules engines including [Jruby](https://next.openhab.org/addons/automation/jruby/), [Jython](https://www.openhab.org/addons/automation/jythonscripting/), [Groovy](https://www.openhab.org/addons/automation/groovyscripting/), and a ES6 2021 compatible Javascript environment, [JS Scripting](https://www.openhab.org/addons/automation/jsscripting/). 
 
 <p align="center"><img src="/uploads/2021-12-20-openhab-rule-engines.png"/></p>
 
@@ -26,7 +26,7 @@ In the very early days of openHAB, the rules “DSL” was the only standard for
 
 In openHAB 3.2 we are proud to announce a greatly enhanced version of the GraalVM based JavaScript engine, [JS Scripting](https://www.openhab.org/addons/automation/jsscripting/),  which brings the same ease of use and powerful built-in library of the Rules DSL, but in a modern ES6 environment that will be familiar to power users and novices alike.  The enhanced JS Scripting add-on brings together several existing projects into a single, easy to use automation environment.  
 
-Included in add-on by default is the new [openhab-js](https://github.com/openhab/openhab-js) JavaScript library, a fairly high-level ES6 library that provides convenient access to common openHAB functionality including items, things, actions, caches, time functionality, logging and more.  As this library is included in all scripts by default, writing rules is as simple as
+Included in this add-on by default is the new [openhab-js](https://github.com/openhab/openhab-js) JavaScript library, a fairly high-level ES6 library that provides convenient access to common openHAB functionality including items, things, actions, caches, time functionality, logging and more.  As this library is included in all scripts by default, writing rules is as simple as
 
 ```javascript
 items.getItem("KitchenLight").sendCommand("ON");
