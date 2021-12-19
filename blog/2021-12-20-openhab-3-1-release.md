@@ -44,7 +44,7 @@ The JS Scripting binding also now includes standard built in global features tha
 console.log("Kitchen Light State", items.getItem("KitchenLight").state);
 ```
 
-Finally, in previous openHAB versions, installing the JS Scripting binding meant the legacy Nashorn Javascript engine,  that is included by default,  could not be used.  In practice the two engines had issues coexisting, especially when it comes to UI based rules.  In 3.2 JS Scripting will use its own directory for files in “conf/automation/js, including user provided libraries.  The UI will now show both scripting engines when selecting an action, allowing the user to continue to use the legacy JavaScript engine, or migrate to this new ES6 based version at their convenience.  
+Finally, in previous openHAB versions, installing the JS Scripting binding meant the legacy default Javascript engine (Nashorn) could not be used.  In practice the two engines had issues coexisting, especially when it comes to UI based rules.  In 3.2 JS Scripting will use its own directory for files in “conf/automation/js, including user provided libraries.  The UI will now show both scripting engines when selecting an action, allowing the user to continue to use the legacy JavaScript engine, or migrate to this new ES6 based version at their convenience.  
 
 Thank you to Jonathan Gilbert (aka jpg0), who contributed both the JSScripting add-on as well as the openhab-js library. 
 
