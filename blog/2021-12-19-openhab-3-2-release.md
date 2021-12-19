@@ -8,10 +8,10 @@ previewimage: /uploads/2021-12-20-header.jpg
 tags:
   - news
 excerpt: >-
-  Our winter release of openHAB 3.2 is out! This latest version contain many new
-  add-ons, enhanced voice features, automation improvements and more!
+  Our winter release of openHAB 3.2 is out! This latest version contains many
+  new add-ons, enhanced voice features, automation improvements and more!
 ---
-Our winter release of openHAB 3.2 is out! This latest version contain many new add-ons, enhanced voice features, automation improvements and more!
+Our winter release of openHAB 3.2 is out! This latest version contains many new add-ons, enhanced voice features, automation improvements and more!
 
 ## Rule Engine Enhancements
 
