@@ -2,7 +2,7 @@
 layout: BlogPost
 category: blog
 title: openHAB 3.2 Release
-author: Dan Cunningham and others
+author: Kai Kreuzer and others
 date: '2021-12-20T12:00:00-08:00'
 previewimage: /uploads/2021-winter-snow.png
 tags:
