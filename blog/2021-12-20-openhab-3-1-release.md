@@ -4,7 +4,7 @@ category: blog
 title: openHAB 3.2 Release
 author: Kai Kreuzer
 date: '2021-12-20T00:00:00+01:00'
-previewimage: /uploads/2021-06_summer.jpg
+previewimage: /uploads/2021-12-20-header.jpg
 tags:
   - news
 excerpt: >-
