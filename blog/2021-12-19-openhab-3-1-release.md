@@ -1,7 +1,7 @@
 ---
 layout: BlogPost
 category: blog
-title: openHAB 3.1 Release
+title: openHAB 3.2 Release
 author: Dan Cunningham and others
 date: '2021-12-20T13:18:07-08:00'
 previewimage: /uploads/2021-12-20-header.jpg
