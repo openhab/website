@@ -15,6 +15,8 @@ Our winter release of openHAB 3.2 is out! This latest version contains many new 
 
 ## Rule Engine Enhancements
 
+Dan Cunningham, openHAB Maintainer
+
 In the very early days of openHAB, the rules “DSL” was the only standard for writing custom rules.  This Java-like scripting language is based on Xtend and is still used widely today due to its stability and powerful built-in functionality.  Over time however,  the underlying rule infrastructure has matured allowing additional engines to coexist to provide a true polyglot scripting environment.  openHAB 3.2 ships with multiple rules engines including [JRuby](https://next.openhab.org/addons/automation/jruby/), [Jython](https://www.openhab.org/addons/automation/jythonscripting/), [Groovy](https://www.openhab.org/addons/automation/groovyscripting/), and a ES6 2021 compatible Javascript environment, [JS Scripting](https://www.openhab.org/addons/automation/jsscripting/). 
 
 ![Multiple rule engines in UI](/uploads/2021-rule-engines.png)
@@ -65,7 +67,7 @@ The [latest documentation provides](https://www.openhab.org/docs/ecosystem/alexa
 
 ## Localizing Add-ons
 
-Christoph Weitkamp, Core Maintainer
+Christoph Weitkamp, openHAB Maintainer
 
 Previous versions of openHAB have focused on localizing the openHAB Main UI as well as configuration settings in the core. In this release we have focused on setting up an easy to use translation toolbox for openHAB Add-ons. Our new i18n-tool allows developers to create the default files containing English terms in their familiar Maven environment (just run `mvn i18n:generate-default-translations` in the bundle folder). Once added to GitHub those files will be uploaded automatically to [Crowdin](https://crowdin.com/project/openhab-addons) - a collaboration platform to support multilingual translations. This will allow everyone in our community to translate into their language of choice without requiring any development skills. Completed translations are synced back to our repository periodically. If your language is missing, please help and visit [Crowdin](https://crowdin.com/project/openhab-addons)!
 
