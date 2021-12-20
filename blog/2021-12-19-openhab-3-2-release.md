@@ -85,27 +85,6 @@ Christoph Weitkamp, openHAB Maintainer
 
 Previous versions of openHAB have focused on localizing the openHAB Main UI as well as configuration settings in the core. In this release we have focused on setting up an easy to use translation toolbox for openHAB Add-ons. Our new i18n-tool allows developers to create the default files containing English terms in their familiar Maven environment (just run `mvn i18n:generate-default-translations` in the bundle folder). Once added to GitHub those files will be uploaded automatically to [Crowdin](https://crowdin.com/project/openhab-addons) - a collaboration platform to support multilingual translations. This will allow everyone in our community to translate into their language of choice without requiring any development skills. Completed translations are synced back to our repository periodically. If your language is missing, please help and visit [Crowdin](https://crowdin.com/project/openhab-addons)!
 
-<table>
-  <tr>
-   <td>openHAB Core
-   </td>
-   <td><img src="https://badges.crowdin.net/openhab-core/localized.svg"/>
-   </td>
-  </tr>
-  <tr>
-   <td>openHAB Add-ons 
-   </td>
-   <td><img src="https://badges.crowdin.net/openhab-addons/localized.svg"/>
-   </td>
-  </tr>
-  <tr>
-   <td>openHAB Main UI
-   </td>
-   <td><img src="https://badges.crowdin.net/openhab-webui/localized.svg"/>
-   </td>
-  </tr>
-</table>
-
 ## Summary
 
 t.b.d.
