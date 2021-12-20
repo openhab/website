@@ -25,7 +25,7 @@ Since log4j 2.15 has been released, many security researchers jumped on that lib
 
 The whole log4j story showed up a big issue we have in our industry: Open Source maintenance is often only done by engaged individuals in their spare time and their work is hardly recognized by the people that depend on such libraries. In the case of log4j, two passionate developers take care of it in their free time, while almost the entire Java industry depends on it. These guys do a tremendous job and they hopefully get the recognition (and sponsors from the industry) they deserve.
 
-Having said this, I would like to also make sure that our openHAB committers are recognized for their work. While I often do the announcements, I don't contribute to the code base that much anymore - the major work is on the shoulders of many individuals that - most of the time silently - keep coding and contributing to our common project. I therefore like to thank every contributor, especially the ones of the 18 new add-ons that are included in the 3.2 release and would now like to give the word directly to some of our maintainers that worked on outstanding new features:
+Having said this, I would like to also make sure that our openHAB committers are recognized for their work. While I often do the announcements, I don't contribute to the code base that much anymore - the major work is on the shoulders of many individuals that - most of the time silently - keep coding and contributing to our common project. I therefore like to thank every contributor, especially the ones of the [18 new add-ons](https://github.com/openhab/openhab-distro/releases/tag/3.2.0#newaddons) that are included in the 3.2 release and would now like to give the word directly to some of our maintainers that worked on outstanding new features:
 
 ## Rule Engine Enhancements
 
@@ -114,7 +114,7 @@ Previous versions of openHAB have focused on localizing the openHAB Main UI as w
 
 ## Summary
 
-These highlights are certainly not all that is new - if you want to learn about all the details, please check out the official release notes.
+These highlights are certainly not all that is new - if you want to learn about all the details, please check out [the official release notes](https://github.com/openhab/openhab-distro/releases/tag/3.2.0).
 
 We wish you a lot of fun automating your home and we are sure that this new release will help you achieving it. If you have any questions or want to share your experiences, do not hesitate to join our [great community](https://community.openhab.org/) and get in touch with us!
 
