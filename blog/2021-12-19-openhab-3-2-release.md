@@ -15,7 +15,7 @@ Our winter release of openHAB 3.2 is out! This latest version contains many new 
 
 Another year is coming to its end and so it is time for us to bring you this openHAB release just in time for the festive season!
 
-In the recent days and weeks the IT industry has been dealing with the fallout from vulnerabilities found in the log4j library, aka LogShell - prompting around the clock remediation efforts by developers and other IT professionals, especially those who operate Java based systems.
+In the recent days and weeks the IT industry has been dealing with the fallout from vulnerabilities found in the log4j library, aka Log4Shell - prompting around the clock remediation efforts by developers and other IT professionals, especially those who operate Java based systems.
 
 As openHAB is based on Java, we were impacted as well. To ensure we are protecting our users and community, we have addressed the major risks through the [3.0.4 and 3.1.1 patch releases](https://community.openhab.org/t/openhab-and-the-log4j-security-vulnerability/129901/2) that were published shortly after the fixed log4j 2.15 was out. Looking at the statistics of Maven Central that are provided by Sonatype, we have been ahead of many in the general industry, while at least 50% are still consuming vulnerable log4j versions < 2.15:
 
