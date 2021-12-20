@@ -67,7 +67,7 @@ Yannick to put awesome content here!
 
 ## openHAB Skill for Amazon Alexa
 
-Jeremy Setton, maintainer of the [openHAB Skill for Amazon Alexa](https://www.openhab.org/docs/ecosystem/alexa/):
+Jeremy Setton, maintainer of the [openHAB Skill for Amazon Alexa](https://www.openhab.org/docs/ecosystem/alexa/)
 
 A complete rework of the openHAB skill for Amazon Alexa has been released. It introduces a new device-centric metadata syntax in line with the other voice assistant integrations, and simplifies the configuration of basic functionalities while staying backward compatible to ease the transition.
 
