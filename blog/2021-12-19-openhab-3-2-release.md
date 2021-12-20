@@ -47,7 +47,7 @@ items.getItem("KitchenLight").sendCommand("ON");
 
 No imports, using require or calling out to Java native types needed!  Even better, the openHAB 3 UI includes support for the [openhab-js](https://github.com/openhab/openhab-js) API and offers hinting and autocomplete when editing scripts.
 
-![UI rules editor](/uploads/2021-12-20-rules-editor.gif)
+![UI rules editor](/uploads/2021-rules-script-editor.gif)
 
 This behavior is configurable, and users can opt to disable automatic imports into scripts for full control of their scripting environment.  Users can continue to use custom built libraries as well as NPM modules through the use of CommonJS Require.  Best of all, [openhab-js](https://github.com/openhab/openhab-js) is published as an NPM library, [openhab](https://www.npmjs.com/package/openhab) and can be updated or modified by users independently of the built-in version by running “npm -i openhab” inside the user’s JS automation configuration folder. 
 
