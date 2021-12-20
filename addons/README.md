@@ -12,7 +12,7 @@ initial_gallery:
   automation:
      title: "Automation"
      description: "Automation add-ons extend the functionality of the rule engine, such as additional choices of scripting languages."
-     featured: ["jsscripting", "jythonscripting", "groovyscripting", "pidcontroller"]
+     featured: ["jsscripting", "jythonscripting", "groovyscripting", "jrubyscripting", "pidcontroller"]
      all: true
   persistence:
     title: "Data Persistence"
