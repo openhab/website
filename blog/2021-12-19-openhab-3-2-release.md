@@ -94,7 +94,7 @@ In these new visual automation features, there's something for everyone: novices
 
 ## openHAB Skill for Amazon Alexa
 
-_Jeremy Setton, maintainer of the [openHAB Skill for Amazon Alexa](https://www.openhab.org/docs/ecosystem/alexa/):_
+_Jeremy Setton, openHAB Maintainer_
 
 A complete rework of the openHAB skill for Amazon Alexa has been released. It introduces a new device-centric metadata syntax in line with the other voice assistant integrations, and simplifies the configuration of basic functionalities while staying backward compatible to ease the transition.
 
@@ -104,7 +104,9 @@ The new skill includes new capabilities for camera, door/window covering, fan, n
 
 Additionally, a much improved Main UI integration supporting the new metadata syntax is included in openHAB 3.2. It provides a much better visibility across group endpoints, and tailors the configuration based on item properties and metadata parameters.
 
-The [latest documentation provides](https://www.openhab.org/docs/ecosystem/alexa/) all the necessary information and examples to take advantage of the new syntax.
+<p align="center"><img style="max-width: 800px;" src="/uploads/2021-12-20-alexa-ui.gif"/></p>
+
+The [latest documentation](https://www.openhab.org/docs/ecosystem/alexa/) provides all the necessary information and examples to take advantage of the new syntax.
 
 ## Localizing Add-ons
 
