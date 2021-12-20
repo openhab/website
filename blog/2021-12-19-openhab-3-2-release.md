@@ -67,20 +67,20 @@ _Yannick Schaus, openHAB Maintainer_
 
 If you're a regular visitor of the openHAB community forum, you might have noticed it already: there's a new [Add-on Marketplace](https://community.openhab.org/c/marketplace/69) section where our users can come and share their work. We made the choice to keep it self-moderated ([albeit regulated](https://community.openhab.org/t/about-the-add-on-marketplace-category/123408)) by our regular visitors who after reaching a certain trust level, automatically earn curating privileges. Thanks to the associated add-on service, by merely opening a new topic in this category, everyone can effectively publish an add-on that will be featured and installable with a simple click of a button, right from the new add-on store in the openHAB UI. No copy-pasting or putting a .jar file in the addons folder involved!
 
-<p align="center"><img src="/uploads/addonstore_32_example.png"/></p>
+(screenshot add-on store)
 
 In the add-on store, you'll find both the trusted add-ons that come with the openHAB distribution (those are clearly identifiable with "openHAB" and a "verified" check mark) alongside community contributions from the marketplace - which allowed to expand what is commonly considered an add-on. You can not only find unofficial bindings and other Java-based extensions, or updates to existing ones (before they hopefully make their way to the distribution), but also new content like UI widgets, as well as rule templates and block libraries that help you with common automation tasks that have been previously solved, and which you can simply learn and profit from instead of reinventing the wheel.
 
 **Rule Templates** have actually existed since openHAB 2 but never became quite useable enough to gain momentum; now they're back with a vengeance to allow creating new rules in seconds, complete with triggers, conditions and actions, including pre-written scripts, just by filling a form to adjust some parameters to your specific configuration. Afterwards you can review what was created and adjust as needed like any other rule. You'll find the add-on store already [well stocked](https://community.openhab.org/c/marketplace/rule-templates/74) with high quality rule templates (mostly) by Rich Koshak, who also notably wrote the design patterns series of articles on the forum. He has also written a [how-to](https://community.openhab.org/t/how-to-write-a-rule-template/128309) on rule templates so more people can join him and contribute.
 
-<p align="center"><img src="/uploads/ruletemplate_32_example.png"/></p>
+(screenshot create rule from template)
 
 Authoring scripts with Blockly is now open to completely new possibilities: first of all, massive improvements have been made to the built-in openHAB block types offering - kudos to Stefan Höhn for this initiative! From a measly 5 openHAB-related block types in openHAB 3.1, the Blockly toolbox now features no less than 45 of them, organized in 9 categories covering everything from timers, voice and multimedia, to notifications, persistence and more. And while Blockly still uses the default legacy Nashorn ES5 engine under the hood waiting for its replacement showcased above by Dan to mature, its future is bright because it will eventually make the switch once it becomes the default, and leverage all the new features that are coming with it, notably the standard _openhab-js_ library or importing NPM packages.
 
 But that's not all, because you can now also extend Blockly almost limitlessly by writing your own **Block Libraries** that can solve domain-specific or esoteric use cases, and generate reference code that can be reused as easily as dragging a block from the toolbox and configuring it.
 And of course there's a [subcategory](https://community.openhab.org/c/marketplace/block-libraries/76) in the Add-on Marketplace to share your block libraries with others, who can install them based on their needs.
 
-<p align="center"><img src="/uploads/blockly_32_example.png"/></p>
+![Blockly example]()
 
 Follow [this tutorial](https://openhab.org/link/blocklib-tutorial) to learn how to write block libraries. There are a few of them already waiting to be installed from the add-on store, like one to use the new [Twitter binding](/addons/bindings/twitter/)!
 
@@ -114,4 +114,8 @@ Previous versions of openHAB have focused on localizing the openHAB Main UI as w
 
 ## Summary
 
-t.b.d.
+These highlights are certainly not all that is new - if you want to learn about all the details, please check out the official release notes.
+
+We wish you a lot of fun automating your home and we are sure that this new release will help you achieving it. If you have any questions or want to share your experiences, do not hesitate to join our [great community](https://community.openhab.org/) and get in touch with us!
+
+Merry Christmas to all of you!
