@@ -80,13 +80,13 @@ Authoring scripts with Blockly is now open to completely new possibilities: firs
 But that's not all, because you can now also extend Blockly almost limitlessly by writing your own **Block Libraries** that can solve domain-specific or esoteric use cases, and generate reference code that can be reused as easily as dragging a block from the toolbox and configuring it.
 And of course there's a [subcategory](https://community.openhab.org/c/marketplace/block-libraries/76) in the Add-on Marketplace to share your block libraries with others, who can install them based on their needs.
 
-(screenshot Blockly)
+![Blockly example]()
 
 Follow [this tutorial](https://openhab.org/link/blocklib-tutorial) to learn how to write block libraries. There are a few of them already waiting to be installed from the add-on store, like one to use the new [Twitter binding](/addons/bindings/twitter/)!
 
 <ClientOnly>
   <div style="display:flex;flex-direction:column;align-items:center;">
-    <tweet id="1129754848474423298" />
+    <tweet id="1470124826069192704" />
   </div>
 </ClientOnly>
 
