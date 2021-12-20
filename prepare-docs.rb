@@ -531,14 +531,24 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
 }
 
 # Handle those three separately - copy them in the "ecosystem" section
+puts ">>> Migrating special ecosystem add-ons"
+puts " -> Create folders"
 FileUtils.mkdir_p("docs/ecosystem/alexa")
 FileUtils.mkdir_p("docs/ecosystem/mycroft")
 FileUtils.mkdir_p("docs/ecosystem/google-assistant")
-process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
-process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
-process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant", "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/google-assistant/images", "docs/ecosystem/google-assistant")
 
+puts " -> Process alexa-skill docs"
+process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
+puts "  \\-> images"
+FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/alexa-skill/images", "docs/ecosystem/alexa")
+
+puts " -> Process mycroft-skill docs"
+process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
+
+puts " -> Process google-assistant docs"
+process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant", "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
+puts "  \\-> images"
+FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/google-assistant/images", "docs/ecosystem/google-assistant")
 
 
 puts ">>> Migrating add-ons: Bindings"
