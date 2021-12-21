@@ -33,7 +33,7 @@ _Dan Cunningham, openHAB Maintainer_
 
 In the very early days of openHAB, the rules “DSL” was the only standard for writing custom rules.  This Java-like scripting language is based on Xtend and is still used widely today due to its stability and powerful built-in functionality.  Over time however,  the underlying rule infrastructure has matured allowing additional script engines to coexist to provide a true polyglot scripting environment.  openHAB 3.2 ships with multiple script engines including [JRuby](https://www.openhab.org/addons/automation/jrubyscripting/), [Jython](https://www.openhab.org/addons/automation/jythonscripting/), [Groovy](https://www.openhab.org/addons/automation/groovyscripting/), and a ECMAScript 2021 compatible Javascript environment, [JS Scripting](https://www.openhab.org/addons/automation/jsscripting/). 
 
-<p align="center"><img style="max-width: 800px;" src="/uploads/2021-12-20-rule-engines.png"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/2021-12-20-rule-engines.png"/></p>
 
 ### Javascript Script Engine
 
@@ -47,7 +47,7 @@ items.getItem("KitchenLight").sendCommand("ON");
 
 No imports, using <code>require()</code> or calling out to Java native types needed!  Even better, the openHAB 3 UI includes support for the [_openhab-js_](https://github.com/openhab/openhab-js) API and offers hinting and autocomplete when editing scripts.
 
-<p align="center"><img style="max-width: 800px;" src="/uploads/2021-rules-script-editor.gif"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/2021-rules-script-editor.gif"/></p>
 
 This behavior is configurable, and users can opt to disable automatic imports into scripts for full control of their scripting environment.  Users can continue to use custom built libraries as well as NPM modules through the use of CommonJS Require.  Best of all, [_openhab-js_](https://github.com/openhab/openhab-js) is published as an NPM library, [_openhab_](https://www.npmjs.com/package/openhab) and can be updated or modified by users independently of the built-in version by running <code>npm -i openhab</code> inside the user’s JS automation configuration folder. 
 
@@ -67,20 +67,20 @@ _Yannick Schaus, openHAB Maintainer_
 
 If you're a regular visitor of the openHAB community forum, you might have noticed it already: there's a new [Add-on Marketplace](https://community.openhab.org/c/marketplace/69) section where our users can come and share their work. We made the choice to keep it self-moderated ([albeit regulated](https://community.openhab.org/t/about-the-add-on-marketplace-category/123408)) by our regular visitors who after reaching a certain trust level, automatically earn curating privileges. Thanks to the associated add-on service, by merely opening a new topic in this category, everyone can effectively publish an add-on that will be featured and installable with a simple click of a button, right from the new add-on store in the openHAB UI. No copy-pasting or putting a .jar file in the addons folder involved!
 
-<p align="center"><img style="max-width: 800px;" src="/uploads/addonstore_32_example.png"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/addonstore_32_example.png"/></p>
 
 In the add-on store, you'll find both the trusted add-ons that come with the openHAB distribution (those are clearly identifiable with "openHAB" and a "verified" check mark) alongside community contributions from the marketplace - which allowed to expand what is commonly considered an add-on. You can not only find unofficial bindings and other Java-based extensions, or updates to existing ones (before they hopefully make their way to the distribution), but also new content like UI widgets, as well as rule templates and block libraries that help you with common automation tasks that have been previously solved, and which you can simply learn and profit from instead of reinventing the wheel.
 
 **Rule Templates** have actually existed since openHAB 2 but never became quite useable enough to gain momentum; now they're back with a vengeance to allow creating new rules in seconds, complete with triggers, conditions and actions, including pre-written scripts, just by filling a form to adjust some parameters to your specific configuration. Afterwards you can review what was created and adjust as needed like any other rule. You'll find the add-on store already [well stocked](https://community.openhab.org/c/marketplace/rule-templates/74) with high quality rule templates (mostly) by Rich Koshak, who also notably wrote the design patterns series of articles on the forum. He has also written a [how-to](https://community.openhab.org/t/how-to-write-a-rule-template/128309) on rule templates so more people can join him and contribute.
 
-<p align="center"><img style="max-width: 800px;" src="/uploads/ruletemplate_32_example.png"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/ruletemplate_32_example.png"/></p>
 
 Authoring scripts with Blockly is now open to completely new possibilities: first of all, massive improvements have been made to the built-in openHAB block types offering - kudos to Stefan Höhn for this initiative! From a measly 5 openHAB-related block types in openHAB 3.1, the Blockly toolbox now features no less than 45 of them, organized in 9 categories covering everything from timers, voice and multimedia, to notifications, persistence and more. And while Blockly still uses the default legacy Nashorn ES5 engine under the hood waiting for its replacement showcased above by Dan to mature, its future is bright because it will eventually make the switch once it becomes the default, and leverage all the new features that are coming with it, notably the standard _openhab-js_ library or importing NPM packages.
 
 But that's not all, because you can now also extend Blockly almost limitlessly by writing your own **Block Libraries** that can solve domain-specific or esoteric use cases, and generate reference code that can be reused as easily as dragging a block from the toolbox and configuring it.
 And of course there's a [subcategory](https://community.openhab.org/c/marketplace/block-libraries/76) in the Add-on Marketplace to share your block libraries with others, who can install them based on their needs.
 
-<p align="center"><img style="max-width: 800px;" src="/uploads/blockly_32_example.png"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/blockly_32_example.png"/></p>
 
 Follow [this tutorial](https://openhab.org/link/blocklib-tutorial) to learn how to write block libraries. There are a few of them already waiting to be installed from the add-on store, like one to use the new [Twitter binding](/addons/bindings/twitter/)!
 
@@ -104,7 +104,7 @@ The new skill includes new capabilities for camera, door/window covering, fan, n
 
 Additionally, a much improved Main UI integration supporting the new metadata syntax is included in openHAB 3.2. It provides a much better visibility across group endpoints, and tailors the configuration based on item properties and metadata parameters.
 
-<p align="center"><img style="max-width: 800px;" src="/uploads/2021-12-20-alexa-ui.gif"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/2021-12-20-alexa-ui.gif"/></p>
 
 The [latest documentation](https://www.openhab.org/docs/ecosystem/alexa/) provides all the necessary information and examples to take advantage of the new syntax.
 
