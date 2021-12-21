@@ -18,7 +18,8 @@
     "copy-webpack-plugin": "^4.6.0",
     "fs-extra": "^6.0.1",
     "vuepress": "^1.0.0",
-    "vuepress-plugin-container": "^2.1.2"
+    "vuepress-plugin-container": "^2.1.2",
+    "vuepress-plugin-feed": "^0.1.9"
   },
   "scripts": {
     "dev": "npx vuepress dev",

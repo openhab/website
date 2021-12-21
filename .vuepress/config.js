@@ -14,6 +14,12 @@ const HighlightRules = require('./highlight-rules')
 
 const DocsSidebarNavigation = require('./openhab-docs/.vuepress/docs-sidebar.js')
 
+// global feed options, which can be overwritten in the pages frontmatter `feed`
+const feedOptions = {
+  canonical_base: 'https://openhab.org',
+  posts_directories: ['/blog/'],
+}
+
 const noAddons = process.env.OH_NOADDONS
 
 if (!process.env.OH_DOCS_VERSION) {
@@ -31,6 +37,7 @@ module.exports = {
   ga: 'UA-47717934-1',
   plugins: [
     'tabs',
+    ['feed', feedOptions],
     [
       '@vuepress/google-analytics',
       {
