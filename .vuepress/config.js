@@ -7,6 +7,7 @@ const AddonsVoice = require('./addons-voice.js')
 
 const fs = require ('fs-extra')
 const path = require('path')
+const _ = require('lodash');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const HighlightDsl = require('./highlight-dsl')
@@ -18,6 +19,7 @@ const DocsSidebarNavigation = require('./openhab-docs/.vuepress/docs-sidebar.js'
 const feedOptions = {
   canonical_base: 'https://openhab.org',
   posts_directories: ['/blog/'],
+  sort: entries => _.reverse( _.sortBy( entries, 'date' ) ),
 }
 
 const noAddons = process.env.OH_NOADDONS
