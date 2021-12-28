@@ -16,7 +16,7 @@ const DocsSidebarNavigation = require('./openhab-docs/.vuepress/docs-sidebar.js'
 
 // global feed options, which can be overwritten in the pages frontmatter `feed`
 const feedOptions = {
-  canonical_base: 'https://openhab.org',
+  canonical_base: 'https://openhab.org/feed',
   posts_directories: ['/blog/'],
 }
 
