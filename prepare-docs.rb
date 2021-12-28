@@ -457,8 +457,13 @@ Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/automation/" + addon)
     process_file(".vuepress/openhab-docs/_addons_automation", addon + "/readme.md", "addons/automation", nil)
-}
 
+    if (Dir.exists?(".vuepress/openhab-docs/_addons_automation/#{addon}/doc")) then
+        puts "  \\-> images"
+        FileUtils.cp_r(".vuepress/openhab-docs/_addons_automation/#{addon}/doc", "addons/automation/#{addon}")
+    end
+
+}
 
 
 puts ">>> Migrating add-ons: Persistence"
