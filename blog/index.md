@@ -7,6 +7,8 @@ meta:
     content: the openHAB Blog
   - name: og:description
     content: What's going on around openHAB, from the maintainers and the community.
+feed:
+  enable: false
 ---
 
 <BlogPostList />
