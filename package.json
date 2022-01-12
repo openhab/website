@@ -4,7 +4,7 @@
   "description": "openHAB Website",
   "dependencies": {
     "headroom.js": "^0.9.4",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "scrollreveal": "^3.4.0",
     "vue-parallax": "^1.1.1",
     "vue-parallax-js": "github:jsnanigans/vue-parallax-js",
