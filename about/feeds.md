@@ -9,7 +9,7 @@ meta:
     content: Feeds provided from and for the openHAB smarthome system
 ---
 
-This is a overview of the different feeds, openHAB is offering
+This is an overview of the different feeds, openHAB is offering
 
 ## General
 
