@@ -202,6 +202,10 @@ module.exports = {
                 link: '/privacy'
               },
               {
+                text: 'Feed Overview',
+                link: '/about/feeds'
+              },
+              {
                 text: 'myopenHAB',
                 link: 'https://www.myopenhab.org/'
               },
