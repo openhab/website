@@ -136,7 +136,6 @@ usermod -a -G openhab myownuser
 <pre class="language-shell"><code>docker run \
         --name openhab \
         --net=host \
-        --tty \
         -v /etc/localtime:/etc/localtime:ro \
         -v /etc/timezone:/etc/timezone:ro \
         -v openhab_addons:/openhab/addons \
