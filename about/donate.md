@@ -39,14 +39,14 @@ promotes the project and the use of open, vendor-agnostic solutions to empower y
 
 - Organizing events such as the [Smart Home Day](/blog/2017-10-22-smarthomeday-ece.html);
 - Running this website on behalf of the project and dealing with marketing and media;
-- Maintaining the [build server](https://ci.openhab.org/) and the repositories of [release binaries](https://bintray.com/openhab);
-- Hosting a [demo server](http://demo.openhab.org:8080/start/index) for new users to try openHAB;
+- Maintaining the [build server](https://ci.openhab.org/) and the repositories of [release binaries](https://openhab.jfrog.io/);
+- Hosting a [demo server](https://demo.openhab.org/) for new users to try openHAB;
 - Keeping the [community forum](https://community.openhab.org/) server up and running;
 - Running the free-of-charge [myopenHAB](https://community.openhab.org/) service, an openHAB Cloud instance
   allowing 20000+ registered users to easily and securely access their smart home remotely, and connect them to the cloud;
 - Taking care of the publication of the apps in [Google Play](https://play.google.com/store/apps/details?id=org.openhab.habdroid),
-  the [Apple App Store](https://itunes.apple.com/us/app/openhab/id492054521?mt=8) and the
-  [Windows Store](https://www.microsoft.com/en-us/store/p/openhab/9nmq39ctwxgt);
+  the [Apple App Store](https://apps.apple.com/us/app/openhab/id492054521) and the
+  [Windows Store](https://www.microsoft.com/en-us/p/openhab/9nmq39ctwxgt);
 - Making sure openHAB has a presence on various external platforms such as [IFTTT](https://ifttt.com/openhab)
   and [Amazon Alexa](https://www.amazon.com/openHAB-Foundation/dp/B01MTY7Z5L);
 - and [more](/blog/2016-12-15-openhabfdn-takeoff.html)!

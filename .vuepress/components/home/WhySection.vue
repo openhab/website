@@ -42,7 +42,7 @@
             <router-link to="docs/installation/linux.html">Linux</router-link>,
             <router-link to="docs/installation/macos.html">macOS</router-link>,
             <router-link to="docs/installation/windows.html">Windows</router-link>,
-            <router-link to="docs/installation/rasppi.html">Raspberry Pi</router-link>,
+            <router-link to="docs/installation/openhabian.html">Raspberry Pi</router-link>,
             <router-link to="docs/installation/docker.html">Docker</router-link>,
             <router-link to="docs/installation/synology.html">Synology</router-link>...
             Access it with apps for the web,
