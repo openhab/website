@@ -12,8 +12,7 @@ initial_gallery:
   automation:
      title: "Automation"
      description: "Automation add-ons extend the functionality of the rule engine, such as additional choices of scripting languages."
-     featured: ["jsscripting", "jythonscripting", "groovyscripting", "jrubyscripting", "pidcontroller"]
-     all: true
+     featured: ["jsscripting", "jythonscripting", "groovyscripting", "jrubyscripting"]
   persistence:
     title: "Data Persistence"
     description: "Persistence services allow openHAB to store time series data for history-based actions or statistics."
@@ -25,8 +24,7 @@ initial_gallery:
   voice:
     title: "Voice"
     description: "These add-ons provide voice enabling features, such as text-to-speech, speech-to-text etc."
-    featured: ["googletts", "mactts", "marytts", "picotts", "pollytts", "voicerss"]
-    all: true
+    featured: ["googletts", "googlestt", "mactts", "marytts", "pollytts", "voicerss"]
 meta:
   - name: og:title
     content: openHAB Add-ons
