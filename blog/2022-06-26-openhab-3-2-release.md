@@ -8,11 +8,13 @@ previewimage: /uploads/summer.jpg
 tags:
   - news
 excerpt: >-
-  We are pleased to announce our summer release of openHAB 3.3 has been
-  released! This latest version contains many new add-ons, enhanced features,
-  automation improvements and more!
+  We are pleased to announce our summer release of openHAB 3.3 is out! This
+  latest version contains many new add-ons, enhanced features, automation
+  improvements and more!
 ---
-Summer is here, and with it comes the next version of our smart home platform, openHAB 3.3.  The last six months have shown an impressive amount of activity across our different components including the openHAB Core, Add-ons, UI, Android, IOS and Javascript library to just name a few. 
+Summer is here, and with it comes the next version of our smart home platform, openHAB 3.3.  The last six months have shown an impressive amount of activity across our different components including openHAB Core, Add-ons, UI, Android, IOS and Javascript library to just name a few. 
+
+You can find the full list of new add-ons, enhancements and fixes in our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/3.3.0)**.**
 
 With that being said, we wanted to share some statistics that highlight the awesome progress our developers have made with this release.
 
@@ -24,9 +26,7 @@ The [openHAB core](https://github.com/openhab/openhab-core), which provides the 
 
 Finally our [user interfaces](https://github.com/openhab/openhab-webui) had a flurry of activity with 9687 new lines of code and 88 pull requests, including 41 enhancements and 15 bug fixes to the new Main UI.
 
-Our [community](https://community.openhab.org/) has been growing as well over the last 6 months with an additional 1400 new users signed up, and with over 800 of these users posting for the first time.  Additionally our forums saw over 135,000 user visits and over 26,000 overall user posts.  Impressive numbers indeed.
-
-You can find the full list of new add-ons, enhancements and fixes in our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/3.3.0)**.**
+Our [community](https://community.openhab.org/) has been growing as well over the last 6 months with an additional 1400 new users signed up with over 800 of these users posting for the first time.  Additionally our forums saw over 135,000 user visits and over 26,000 user posts.  Impressive numbers indeed.
 
 # Highlights
 
@@ -39,8 +39,6 @@ Our IOS team has been hard at work to support the openHAB 3.3 UI in our iPhone a
 ![IOS running the Main UI](/uploads/ios.gif)
 
 <p align="center"><img src="/uploads/ios.gif"/></p>
-
-## 
 
 ## openHAB Javascript Library
 
