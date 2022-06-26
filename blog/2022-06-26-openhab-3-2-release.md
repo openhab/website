@@ -45,7 +45,7 @@ Our IOS team has been hard at work to support the openHAB 3.3 UI in our iPhone a
 
 Our [Javascript automation runtime library](https://github.com/openhab/openhab-js) has reached version 2.0 and contains many enhancements and fixes over the first version which shipped in our winter 3.2 release.  One such enhancement is an overhauled Typescript based definition system which greatly improves autocompletion in an IDE like Visual Studio Code.  In addition, our Main UI has been updated with additional autocomplete helpers for new features in the Javascript library making it easier than ever to write rules.  
 
-![null](/uploads/webui_rules_autocomplete.gif)
+![Main UI rules auto-complete](/uploads/webui_rules_autocomplete.gif)
 <!--
 <p align="center"><img src="/uploads/webui_rules_autocomplete.gif"/></p>
 -->
