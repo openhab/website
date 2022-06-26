@@ -1,0 +1,52 @@
+---
+layout: BlogPost
+category: blog
+title: openHAB 3.2 Release
+author: Dan Cunningham
+date: '2022-06-26T13:50:48-07:00'
+previewimage: /uploads/summer.jpg
+tags:
+  - news
+excerpt: >-
+  We are pleased to announce our summer release of openHAB 3.3 has been
+  released! This latest version contains many new add-ons, enhanced features,
+  automation improvements and more!
+---
+Summer is here, and with it comes the next version of our smart home platform, openHAB 3.3.  The last six months have shown an impressive amount of activity across our different components including the openHAB Core, Add-ons, UI, Android, IOS and Javascript library to just name a few. 
+
+With that being said, we wanted to share some statistics that highlight the awesome progress our developers have made with this release.
+
+# Activity
+
+Since our winter release we have introduced 25 new add-ons, including multiple text to speech (TTS) engines, multiple weather integrations as well as additional integrations into cars, lighting and environmental systems, music systems and many more.  In addition to the new add-ons there were over 722 pull requests as well as 234 enhancements and 195 bug fixes to existing add-ons. Cumulatively these improvements added an additional 122,308 new lines of code to our project.  That’s a lot of activity! 
+
+The [openHAB core](https://github.com/openhab/openhab-core), which provides the foundational services for the openHAB platform, was also very active with 263 pull requests, 65 enhancements, 72 bug fixes and 10,767 new lines of code added. 
+
+Finally our [user interfaces](https://github.com/openhab/openhab-webui) had a flurry of activity with 9687 new lines of code and 88 pull requests, including 41 enhancements and 15 bug fixes to the new Main UI.
+
+Our [community](https://community.openhab.org/) has been growing as well over the last 6 months with an additional 1400 new users signed up, and with over 800 of these users posting for the first time.  Additionally our forums saw over 135,000 user visits and over 26,000 overall user posts.  Impressive numbers indeed.
+
+You can find the full list of new add-ons, enhancements and fixes in our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/3.3.0)**.**
+
+# Highlights
+
+While there are too many new features and enhancements to list here, we wanted to highlight a couple efforts which we think are particularly impactful.
+
+## IOS Client
+
+Our IOS team has been hard at work to support the openHAB 3.3 UI in our iPhone and iPad client.  The current release supports using the Main UI in a full screen view along with support when using remotely through [**myopenHAB.org**](https://myopenhab.org/).  Keep on the lookout for our next release which will include enhancements for making the Main UI selectable as the main entry point into the application as well as enhancements to make the Main UI view more resilient to network conditions.
+
+![IOS running the Main UI](/uploads/ios.gif)
+
+<p align="center"><img src="/uploads/ios.gif"/></p>
+
+## 
+
+## openHAB Javascript Library
+
+Our Javascript automation runtime library has reached version 2.0 and contains many enhancements and fixes over the first version which shipped in our winter 3.2 release.  One such enhancement is an overhauled Typescript based definition system which greatly improves autocompletion in an IDE  like Visual Studio Code.  In addition, our Main UI has been updated with additional autocomplete helpers for new features found in the library making it easier than ever to write rules.  
+
+![null](/uploads/out2.gif)
+
+<p align="center"><img src="/uploads/out2.gif"/></p>
+##
