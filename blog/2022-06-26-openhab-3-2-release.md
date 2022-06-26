@@ -1,7 +1,7 @@
 ---
 layout: BlogPost
 category: blog
-title: openHAB 3.2 Release
+title: openHAB 3.3 Release
 author: Dan Cunningham
 date: '2022-06-27T00:30:48-07:00'
 previewimage: /uploads/summer.jpg
