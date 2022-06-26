@@ -12,7 +12,7 @@ excerpt: >-
   latest version contains many new add-ons, enhanced features, automation
   improvements and more!
 ---
-Summer is here, and with it comes the next version of our smart home platform, openHAB 3.3.  The last six months have shown an impressive amount of activity across our different components including openHAB Core, Add-ons, UI, Android, IOS and Javascript library to just name a few. 
+Summer is here, and with it comes the next version of our smart home platform, openHAB 3.3.  The last six months have shown an impressive amount of activity across our different components including openHAB Core, Add-ons, UI, Android, IOS and Javascript library to name just a few. 
 
 You can find the full list of new add-ons, enhancements and fixes in our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/3.3.0)**.**
 
@@ -20,13 +20,13 @@ With that being said, we wanted to share some statistics that highlight the awes
 
 # Activity
 
-Since our winter release we have introduced 25 new add-ons, including multiple text to speech (TTS) engines, multiple weather integrations as well as additional integrations into cars, lighting and environmental systems, music systems and many more.  In addition to the new add-ons there were over 722 pull requests as well as 234 enhancements and 195 bug fixes to existing add-ons. Cumulatively these improvements added an additional 122,308 new lines of code to our project.  That’s a lot of activity! 
+Since our winter release we have introduced 25 new add-ons, including multiple text to speech (TTS) engines, multiple weather integrations as well as additional integrations into cars, lighting and environmental systems, music systems and many more.  Our [Github add-on repository](https://github.com/openhab/openhab-addons) saw 722 pull requests as well as 234 enhancements and 195 bug fixes to existing add-ons. Cumulatively these improvements added an additional 122,308 new lines of code to our project.  That’s a lot of activity! 
 
 The [openHAB core](https://github.com/openhab/openhab-core), which provides the foundational services for the openHAB platform, was also very active with 263 pull requests, 65 enhancements, 72 bug fixes and 10,767 new lines of code added. 
 
 Finally our [user interfaces](https://github.com/openhab/openhab-webui) had a flurry of activity with 9687 new lines of code and 88 pull requests, including 41 enhancements and 15 bug fixes to the new Main UI.
 
-Our [community](https://community.openhab.org/) has been growing as well over the last 6 months with an additional 1400 new users signed up with over 800 of these users posting for the first time.  Additionally our forums saw over 135,000 user visits and over 26,000 user posts.  Impressive numbers indeed.
+Our [community](https://community.openhab.org/) has been growing as well over the last 6 months with an additional 1400 new users signed up, with over 800 of these users posting for the first time.  Additionally our forums saw over 135,000 user visits and over 26,000 user posts.  Impressive numbers indeed.
 
 # Highlights
 
@@ -42,9 +42,12 @@ Our IOS team has been hard at work to support the openHAB 3.3 UI in our iPhone a
 
 ## openHAB Javascript Library
 
-Our Javascript automation runtime library has reached version 2.0 and contains many enhancements and fixes over the first version which shipped in our winter 3.2 release.  One such enhancement is an overhauled Typescript based definition system which greatly improves autocompletion in an IDE  like Visual Studio Code.  In addition, our Main UI has been updated with additional autocomplete helpers for new features found in the library making it easier than ever to write rules.  
+Our [Javascript automation runtime library](https://github.com/openhab/openhab-js) has reached version 2.0 and contains many enhancements and fixes over the first version which shipped in our winter 3.2 release.  One such enhancement is an overhauled Typescript based definition system which greatly improves autocompletion in an IDE like Visual Studio Code.  In addition, our Main UI has been updated with additional autocomplete helpers for new features in the Javascript library making it easier than ever to write rules.  
 
 ![null](/uploads/out2.gif)
 
 <p align="center"><img src="/uploads/out2.gif"/></p>
-##
+
+## Thank You!
+
+From all of us at [openHAB](https://www.openhab.org/) we would like to thank our community of users and developers for their continued support of our project.   As always our [community forums](https://community.openhab.org/) are there for questions, comments and discussions.  We hope you will enjoy our newest release and happy automating!
