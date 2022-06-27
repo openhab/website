@@ -484,6 +484,11 @@ Dir.glob(".vuepress/openhab-docs/_addons_persistences/**") { |path|
     puts " -> #{addon}"
     FileUtils.mkdir_p("addons/persistence/" + addon)
     process_file(".vuepress/openhab-docs/_addons_persistences", addon + "/readme.md", "addons/persistence", nil)
+    
+    if (Dir.exists?(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc")) then
+        puts "  \\-> images"
+        FileUtils.cp_r(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc", "addons/persistence/#{addon}")
+    end    
 }
 
 
