@@ -36,17 +36,13 @@ While there are too many new features and enhancements to list here, we wanted t
 
 Our IOS team has been hard at work to support the openHAB 3.3 UI in our iPhone and iPad client.  The current release supports using the Main UI in a full screen view along with support when using remotely through [**myopenHAB.org**](https://myopenhab.org/).  Keep on the lookout for our next release which will include enhancements for making the Main UI selectable as the main entry point into the application as well as enhancements to make the Main UI view more resilient to network conditions.
 
-![IOS running the Main UI](/uploads/2022-06_ios_mainui.gif)
-
-<p align="center"><img src="/uploads/2022-06_ios_mainui.gif"/></p>
+<p align="center"><img style="max-width: 60%;" src="/uploads/2022-06_ios_mainui.gif"/></p>
 
 ## openHAB Javascript Library
 
 Our [Javascript automation runtime library](https://github.com/openhab/openhab-js) has reached version 2.0 and contains many enhancements and fixes over the first version which shipped in our winter 3.2 release.  One such enhancement is an overhauled Typescript based definition system which greatly improves autocompletion in an IDE like Visual Studio Code.  In addition, our Main UI has been updated with additional autocomplete helpers for new features in the Javascript library making it easier than ever to write rules.  
 
-![Main UI rules auto-complete](/uploads/2022-06_webui_rules_autocomplete.gif)
-
-<p align="center"><img src="/uploads/2022-06_webui_rules_autocomplete.gif"/></p>
+<p align="center"><img style="max-width: 60%;" src="/uploads/2022-06_webui_rules_autocomplete.gif"/></p>
 
 ## Thank You!
 
