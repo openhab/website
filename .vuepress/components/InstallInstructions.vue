@@ -80,11 +80,14 @@
       <ol>
         <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Add the repository key</li>
-          <div class="language-shell"><pre class="language-shell"><code>wget -qO - 'https://openhab.jfrog.io/artifactory/api/gpg/key/public' | sudo apt-key add -</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code>curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.pgp
+sudo mkdir /usr/share/keyrings
+sudo mv openhab.pgp /usr/share/keyrings
+sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.pgp</code></pre></div>
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
         <li>Update the package lists and install the openHAB distribution package</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get update && sudo apt-get install openhab</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
