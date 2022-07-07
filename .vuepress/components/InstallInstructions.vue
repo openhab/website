@@ -80,10 +80,10 @@
       <ol>
         <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Add the repository key</li>
-          <div class="language-shell"><pre class="language-shell"><code>curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.pgp
+          <div class="language-shell"><pre class="language-shell"><code>curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.gpg
 sudo mkdir /usr/share/keyrings
-sudo mv openhab.pgp /usr/share/keyrings
-sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.pgp</code></pre></div>
+sudo mv openhab.gpg /usr/share/keyrings
+sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg</code></pre></div>
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
