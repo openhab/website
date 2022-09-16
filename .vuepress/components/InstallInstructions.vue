@@ -404,28 +404,16 @@ export default {
     },
     runtimeDownloadLink () {
       if (this.selectedVersion === 'stable') {
-        //return `https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentVersion}/openhab-${this.$page.frontmatter.currentVersion}.zip`
-        
-        // Workaround for JFROG outage
-        return `https://github.com/openhab/openhab-distro/releases/download/3.3.0/openhab-3.3.0.zip`
-        
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentVersion}/openhab-${this.$page.frontmatter.currentVersion}.zip`
       } else if (this.selectedVersion === 'testing') {
-        return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
       }
     },
     addonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
-        //return `https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentVersion}/openhab-addons-${this.$page.frontmatter.currentVersion}.kar`
-        
-        // Workaround for JFROG outage
-        return `https://github.com/openhab/openhab-distro/releases/download/3.3.0/openhab-addons-3.3.0.kar`
-        
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentVersion}/openhab-addons-${this.$page.frontmatter.currentVersion}.kar`        
       } else if (this.selectedVersion === 'testing') {
-        //return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
-        
-        // Workaround for JFROG outage
-        return `https://github.com/openhab/openhab-distro/releases/download/3.4.0.M2/openhab-addons-3.4.0.M2.kar`
-        
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     currentDownloadVersion () {
