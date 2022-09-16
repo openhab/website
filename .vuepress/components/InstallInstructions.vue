@@ -404,16 +404,16 @@ export default {
     },
     runtimeDownloadLink () {
       if (this.selectedVersion === 'stable') {
-        return `https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentVersion}/openhab-${this.$page.frontmatter.currentVersion}.zip`
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentVersion}/openhab-${this.$page.frontmatter.currentVersion}.zip`
       } else if (this.selectedVersion === 'testing') {
-        return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
       }
     },
     addonsDownloadLink () {
       if (this.selectedVersion === 'stable') {
-        return `https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentVersion}/openhab-addons-${this.$page.frontmatter.currentVersion}.kar`
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentVersion}/openhab-addons-${this.$page.frontmatter.currentVersion}.kar`        
       } else if (this.selectedVersion === 'testing') {
-        return `https://openhab.jfrog.io/artifactory/libs-milestone-local/org/openhab/distro/openhab-addons/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
+        return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     currentDownloadVersion () {
