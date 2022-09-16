@@ -17,8 +17,8 @@
 
 # Redirect download locations
 
-/download/milestones/*        https://openhab.jfrog.io/artifactory/libs-milestone-local/:splat 302
-/download/releases/*          https://openhab.jfrog.io/artifactory/libs-release-local/:splat 302
+/download/milestones/*        https://github.com/openhab/openhab-distro/releases/download/:splat 302
+/download/releases/*          https://github.com/openhab/openhab-distro/releases/download/:splat 302
 
 # Redirect special docs articles
 
