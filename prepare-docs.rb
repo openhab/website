@@ -351,17 +351,6 @@ FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuratio
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
 
-puts ">>> Migrating the Settings section"
-
-
-Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
-    file = File.basename(path)
-    puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
-}
-puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
-
 puts ">>> Migrating the Migration Tutorial section"
 
 
