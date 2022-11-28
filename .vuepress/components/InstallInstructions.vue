@@ -149,6 +149,18 @@ usermod -a -G openhab myownuser
         openhab/openhab:{{selectedVersion === 'stable' ? $page.frontmatter.currentVersion : selectedVersion === 'testing' ? $page.frontmatter.currentMilestoneVersion : $page.frontmatter.currentSnapshotVersion.toLowerCase()}}
 </code></pre>
         </div>
+        <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the volume mapped to <code>/openhab/addons</code>:</li>
+        &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
+        <div v-if="(selectedVersion === 'stable' || selectedVersion === 'testing')">
+            <div class="download-button-container">
+              <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
+            </div>
+        </div>
+        <div v-if="selectedVersion === 'snapshot'">
+            <div class="download-button-container">
+              <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB3-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-3.4.0-SNAPSHOT.kar`">Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
+            </div>
+        </div>
       </ol>
     </div>
 
