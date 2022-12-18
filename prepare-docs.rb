@@ -103,12 +103,9 @@ def process_file(indir, file, outdir, source)
                             addon_type = outdir_parts[1]
                             addon = file.split('/')[0]
                             source = ""
-                            if addon == "habot" then
-                                puts "    (add-on is habot)"
-                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.habot/README.md"
-                            elsif addon == "habpanel" then
-                                puts "    (add-on is habpanel)"
-                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.habpanel/README.md"
+                            if addon_type == "ui" then
+                                puts "    (add-on type is ui)"
+                                source = "https://github.com/openhab/openhab-webui/blob/#{$addons_repo_branch}/bundles/org.openhab.ui.#{addon}/README.md"
                             elsif addon == "zigbee" then
                                 puts "    (add-on is zigbee)"
                                 source = "https://github.com/openhab/org.openhab.binding.zigbee/blob/#{$addons_repo_branch}/org.openhab.binding.zigbee/README.md"
