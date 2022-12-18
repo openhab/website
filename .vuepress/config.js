@@ -4,6 +4,7 @@ const AddonsIntegrations = require('./addons-integrations.js')
 const AddonsPersistence = require('./addons-persistence.js')
 const AddonsTransformations = require('./addons-transformations.js')
 const AddonsVoice = require('./addons-voice.js')
+const AddonsUserInterface = require('./addons-ui.js')
 
 const fs = require ('fs-extra')
 const path = require('path')
@@ -262,6 +263,11 @@ module.exports = {
           title: 'Voice',
           collapsible: false,
           children: AddonsVoice.sort((a,b) => a[1].localeCompare(b[1]))
+        },
+        {
+          title: 'User Interface',
+          collapsible: false,
+          children: AddonsUserInterface.sort((a,b) => a[1].localeCompare(b[1]))
         }
       ]
     }

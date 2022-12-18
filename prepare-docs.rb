@@ -568,6 +568,24 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     end
 }
 
+puts ">>> Migrating add-ons: UI"
+
+
+Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
+    next if path =~ /org.openhab.ui/
+    addon = File.basename(path)
+    next if $ignore_addons.include?(addon)
+    puts " -> #{addon}"
+    FileUtils.mkdir_p("addons/ui/" + addon)
+    process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "addons/ui", nil)
+
+    if (Dir.exists?(".vuepress/openhab-docs/_addons_uis/#{addon}/doc")) then
+        puts "  \\-> images"
+        FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "addons/ui/#{addon}")
+    end
+}
+
+
 # Handle those three separately - copy them in the "ecosystem" section
 puts ">>> Migrating special ecosystem add-ons"
 puts " -> Create folders"
@@ -646,7 +664,7 @@ end
 
 # Write arrays of addons by type to include in VuePress config.js
 puts ">>> Writing add-ons arrays to files for sidebar navigation"
-["bindings", "persistence", "automation", "integrations", "transformations", "voice"].each { |type|
+["bindings", "persistence", "automation", "integrations", "transformations", "voice", "ui"].each { |type|
     File.open(".vuepress/addons-#{type}.js", "w+") { |file|
         file.puts "module.exports = ["
 
