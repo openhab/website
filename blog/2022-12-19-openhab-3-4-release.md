@@ -19,6 +19,8 @@ With that being said, we again want to share some statistics that show the progr
 
 # Activity
 
+With the 3.4 release we have now reached more than 400 add-ons (417 to be precise) and over 3000 supported thing types (3102 is the exact number). There can't be much out there that is not supported by openHAB.
+
 The new release brings 17 new add-ons from a wide range of applications - starting from another important vehicle integration with [MercedesMe](https://www.openhab.org/addons/bindings/mercedesme/) to smart gadgets like the connected meat thermometer [Meater](https://www.openhab.org/addons/bindings/meater/). In these 6 months of development, the add-ons repo counted 619 pull requests, resulting in more than 100,000 new lines of code.
 
 The openHAB Core repo showed a similar high activity with 127 pull requests and more than 10,000 lines of code added as well as the UI repo with 64 pull requests and 25,000 new lines of code.
