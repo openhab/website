@@ -25,10 +25,10 @@ The openHAB Core repo showed a similar high activity with 127 pull requests and 
 
 It is worth to mention that the times are over where I was one of the main contributors to the code base - the community definitely took the lead here by now and I would like to do a shout-out to our top 4 code contributors (having done the most commits in 2022):
 
-- Jan (aka [J-N-K](https://github.com/J-N-K))
-- Wouter (aka [wborn](https://github.com/wborn))
-- Jacob (aka [jlaur](https://github.com/jlaur))
-- Laurent (aka [lomodomo](https://github.com/lolodomo))
+* Jan (aka [J-N-K](https://github.com/J-N-K))
+* Wouter (aka [wborn](https://github.com/wborn))
+* Jacob (aka [jlaur](https://github.com/jlaur))
+* Laurent (aka [lomodomo](https://github.com/lolodomo))
 
 Besides contributing code, all of them are also maintainers and do an amazing job on code reviews and design discussions on Github issues and pull requests. This is what drives openHAB forward - a huge thanks to them as well as to all of our other contributors!
 
@@ -53,18 +53,22 @@ The latter uses the open source library Rustpotter, which is a free and open-sou
 
 Once a KS service has detected a wake word, it is time for speech-to-text (SST) services of which openHAB by now offers three different options:
 
-- The [Vosk STT Service](https://www.openhab.org/addons/voice/voskstt/) uses vosk-api to perform offline speech-to-text in openHAB. It is currently the only available offline STT service in openHAB.
-- The [Google Cloud STT Service](https://www.openhab.org/addons/voice/googlestt/) uses the non-free Google Cloud Speech-to-Text API to transcript audio data to text. A user account has 60 minutes for transcribing audio free per month.
-- The [IBM Watson STT Service](https://www.openhab.org/addons/voice/watsonstt/) uses the non-free IBM Watson Speech-to-Text API to transcript audio data to text. Its free tier offers 500 minutes for transcribing audio per month.
+* The [Vosk STT Service](https://www.openhab.org/addons/voice/voskstt/) uses vosk-api to perform offline speech-to-text in openHAB. It is currently the only available offline STT service in openHAB.
+* The [Google Cloud STT Service](https://www.openhab.org/addons/voice/googlestt/) uses the non-free Google Cloud Speech-to-Text API to transcript audio data to text. A user account has 60 minutes for transcribing audio free per month.
+* The [IBM Watson STT Service](https://www.openhab.org/addons/voice/watsonstt/) uses the non-free IBM Watson Speech-to-Text API to transcript audio data to text. Its free tier offers 500 minutes for transcribing audio per month.
 
 ### Configurable listening melody for dialogs
 
 openHAB 3.4 bring the possibility to add a listening melody for the dialogs. This way you are acoustically notified when the keyword has been spotted and the audio recognition is going to start. You write this melody in the Voice configuration of the Main UI using the note names and the character O or 0 for silence, you can raise the note one octave by adding the character “‘“, and customize the duration of the note adding the suffix “:ms” where ms is the note duration on milliseconds. A "synthesize audio" action and command have also been  added, so that you can send tone melodies to audio sinks from a rule or through the openHAB console.
 
-###  HAB Speaker
+<p align="center"><img style="max-width: 60%;" src="/uploads/melody.jpg"/></p>
+
+### HAB Speaker
 
 To support these voice features, a dedicated utility has been added to the marketplace, [HABSpeaker](https://community.openhab.org/t/hab-speaker-dialog-processing-in-the-browser/140655). Its main target is to use the openHAB dialog processing capabilities from a browser. It simplifies the dialog configuration and merely requires a “speech-to-text” and “text-to-speech” services configured.
 This simply UI may fit your needs if you don’t want to buy any specific hardware, but rather want to try out these features and learn about their capabilities.
+
+<p align="center"><img style="max-width: 50%;" src="/uploads/habspeaker.gif"/></p>
 
 ## Enjoy and get in touch!
 
