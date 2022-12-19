@@ -348,24 +348,15 @@ FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuratio
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
 
-# Prevent stable build from failing
-# remove this during the next release
-puts ">>> Migrating the Settings section"
-if $version == "final" then
 
-    Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
-        file = File.basename(path)
-        puts " -> #{file}"
-        process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
-    }
-    puts " -> images"
-    FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
 
-else
-
-    puts "-> Skipping section because it is not in the stable docs yet."
-
-end
+Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
+    file = File.basename(path)
+    puts " -> #{file}"
+    process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
+}
+puts " -> images"
+FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
 
 puts ">>> Migrating the Migration Tutorial section"
 
