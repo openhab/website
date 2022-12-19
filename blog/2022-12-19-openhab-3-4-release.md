@@ -63,14 +63,14 @@ Once a KS service has detected a wake word, it is time for speech-to-text (SST) 
 
 openHAB 3.4 bring the possibility to add a listening melody for the dialogs. This way you are acoustically notified when the keyword has been spotted and the audio recognition is going to start. You write this melody in the Voice configuration of the Main UI using the note names and the character O or 0 for silence, you can raise the note one octave by adding the character “‘“, and customize the duration of the note adding the suffix “:ms” where ms is the note duration on milliseconds. A "synthesize audio" action and command have also been  added, so that you can send tone melodies to audio sinks from a rule or through the openHAB console.
 
-<p align="center"><img style="max-width: 60%;" src="/uploads/melody.jpg"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2022-12_melody.jpg"/></p>
 
 ### HAB Speaker
 
 To support these voice features, a dedicated utility has been added to the marketplace, [HABSpeaker](https://community.openhab.org/t/hab-speaker-dialog-processing-in-the-browser/140655). Its main target is to use the openHAB dialog processing capabilities from a browser. It simplifies the dialog configuration and merely requires a “speech-to-text” and “text-to-speech” services configured.
 This simply UI may fit your needs if you don’t want to buy any specific hardware, but rather want to try out these features and learn about their capabilities.
 
-<p align="center"><img style="max-width: 50%;" src="/uploads/habspeaker.gif"/></p>
+<p align="center"><img style="max-width: 35%;" src="/uploads/2022-12_habspeaker.gif"/></p>
 
 ## Enjoy and get in touch!
 
