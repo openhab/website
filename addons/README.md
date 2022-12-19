@@ -25,6 +25,11 @@ initial_gallery:
     title: "Voice"
     description: "These add-ons provide voice enabling features, such as text-to-speech, speech-to-text etc."
     featured: ["googletts", "googlestt", "mactts", "marytts", "pollytts", "voicerss"]
+  ui:
+    title: "User Interface"
+    description: "These add-ons allow users to interact with openHAB using additional user interfaces."
+    featured: ["basic", "habpanel", "habot", "cometvisu"]
+    all: true
 meta:
   - name: og:title
     content: openHAB Add-ons
