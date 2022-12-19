@@ -8,7 +8,7 @@ previewimage: /uploads/winter22.jpg
 tags:
   - news
 excerpt: >-
-  As every year before the festive season, we are happy to announce another  
+  As every year before the festive season, we are happy to announce another
   stable release of openHAB that brings many additions, improvements and fixes!
 ---
 openHAB continues to steadily evolve - since our summer release 3.3 the community continued contributing with undiminished speed, which has led to openHAB 3.4 being the best openHAB release ever.
@@ -19,7 +19,7 @@ With that being said, we again want to share some statistics that show the progr
 
 # Activity
 
-The new release brings 17 new add-ons from a wide range of applications - starting from another important vehicle integration with [MercedesMe](https://next.openhab.org/addons/bindings/mercedesme/) to smart gadgets like the connected meat thermometer [Meater](https://www.openhab.org/addons/bindings/meater/). In these 6 months of development, the add-ons repo counted 619 pull requests, resulting in more than 100,000 new lines of code.
+The new release brings 17 new add-ons from a wide range of applications - starting from another important vehicle integration with [MercedesMe](https://www.openhab.org/addons/bindings/mercedesme/) to smart gadgets like the connected meat thermometer [Meater](https://www.openhab.org/addons/bindings/meater/). In these 6 months of development, the add-ons repo counted 619 pull requests, resulting in more than 100,000 new lines of code.
 
 The openHAB Core repo showed a similar high activity with 127 pull requests and more than 10,000 lines of code added as well as the UI repo with 64 pull requests and 25,000 new lines of code.
 
@@ -30,11 +30,11 @@ It is worth to mention that the times are over where I was one of the main contr
 * Jacob (aka [jlaur](https://github.com/jlaur))
 * Laurent (aka [lomodomo](https://github.com/lolodomo))
 
-Besides contributing code, all of them are also maintainers and do an amazing job on code reviews and design discussions on Github issues and pull requests. This is what drives openHAB forward - a huge thanks to them as well as to all of our other contributors!
+Besides contributing code, all of them are also maintainers and do an amazing job on code reviews and design discussions on Github issues and pull requests. This is what drives openHAB forward - a huge thanks to them as well as to all our other contributors!
 
 # Highlights
 
-As we pay special care to backward compatibility, most of the changes are rather evolutionary than revolutionary and therefore there isn't a single big change to learn about, but you are rather encouraged to go through the release notes yourself and see what matters most to you and your individual setup.
+As we pay special attention to backward compatibility, most of the changes are rather evolutionary than revolutionary and therefore there isn't a single big change to learn about. You are rather encouraged to go through the release notes yourself and see what matters most to you and your individual setup.
 
 Nonetheless, a cluster of changes was done by Miguel (aka [GiviMAD](https://github.com/GiviMAD)) with regards to voice support, which he briefly summarizes here:
 
@@ -42,7 +42,7 @@ Nonetheless, a cluster of changes was done by Miguel (aka [GiviMAD](https://gith
 
 ### Keyword spotting (KS) and Speech-to-Text (STT)
 
-Recent contributions brought keyword spotting (KS) to openHAB. The mission of the KS services is to continually process an audio source in order to detect a configured keyword, to then start a dialog cycle (voice recognition -> command interpretation -> spoken response).
+Recent contributions brought keyword spotting (KS) to openHAB. The mission of the KS services is to continually process an audio source in order to detect a configured keyword and to then start a dialog cycle (voice recognition -> command interpretation -> spoken response).
 
 Two different KS services are available for openHAB right now: The [Porcupine Keyword Spotter](https://www.openhab.org/addons/voice/porcupineks/) and the [Rustpotter Keyword Spotter](https://www.openhab.org/addons/voice/rustpotterks/).
 
@@ -72,6 +72,6 @@ This simply UI may fit your needs if you don’t want to buy any specific hardwa
 
 ## Enjoy and get in touch!
 
-We hope that you like the new release as much as we do - as always our [community forums](https://community.openhab.org/) are there for questions, comments and discussions. Do not hesitate to get in touch there and join our community, receive help and share your experiences and use cases.
+We hope that you like the new release as much as we do - as always our [community forums](https://community.openhab.org/) are there for questions, comments and discussions. Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
 
-Last but not least I would like to mention that after two years of covid break, we are very much looking forward to meet many people in person again - we are going to have a stand at [FOSDEM 2023](https://fosdem.org/2023/) in early February and we can only recommend to everyone attending this biggest Open Source conference in Europe and meeting other Open Source and smart home enthusiasts there!
+Last but not least I would like to mention that after two years of covid break, we are very much looking forward to meet many people in person again - we are going to have a stand at [FOSDEM 2023](https://fosdem.org/2023/) in early February and we can only recommend to everyone attending this biggest Open Source conference in Europe and meeting other Open Source and smart home enthusiasts. See you there and have a nice holiday break and a great start in the year 2023!
