@@ -78,7 +78,8 @@
         <p v-if="selectedSystem === 'raspberry-pi'">For Raspberry Pi, however, we strongly recommend flashing the complete OS image, see above.</p>
       </div>
       <ol>
-        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion !== 'snapshot'">Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion === 'snapshot'">Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Add the repository key</li>
           <div class="language-shell"><pre class="language-shell"><code>curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.gpg
 sudo mkdir /usr/share/keyrings
@@ -101,7 +102,8 @@ sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg</code></pre></div>
       <hr>
       <h3>{{optionNumber('package')}}Install the RPM Packages (Recommended)</h3>
       <ol>
-        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion !== 'snapshot'">Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion === 'snapshot'">Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
         <div class="language-ini">
 <pre class="language-ini"><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
@@ -199,7 +201,7 @@ usermod -a -G openhab myownuser
       <hr />
       <h3>Manual Installation</h3>
       <ol>
-        <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li>Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
         <div class="download-button-container">
           <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-4.0.0-SNAPSHOT.zip`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
