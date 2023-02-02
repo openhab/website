@@ -19,7 +19,7 @@
 
     <events-section />
 
-    <tweets-section />
+    <!-- <tweets-section /> -->
 
     <alternative-to-section />
 
