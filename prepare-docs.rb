@@ -476,6 +476,8 @@ else
 
     puts "-> Skipping additional doc parts that are not yet available in stable."
 
+end
+
 ### ADDONS
 
 
