@@ -8,7 +8,8 @@
 /link/docs                /docs
 /link/tutorial            /docs/tutorial/
 /link/profiles            /docs/configuration/items.html#profiles
-/link/thing               /docs/developer/bindings/thing-xml.html
+/link/thing               /docs/configuration/things.html
+/link/thingxml            /docs/developer/bindings/thing-xml.html
 /link/icons               /docs/configuration/iconsets/classic/
 /link/alexa               /docs/ecosystem/alexa/
 /link/google-assistant    /docs/ecosystem/google-assistant/
