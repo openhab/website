@@ -25,7 +25,7 @@ The purpose of the trademark policy is to protect the openHAB trademark and logo
 
 ## Who is required to comply with the trademark policy?
 
-Anyone who uses the openHAB name or logo. This includes user of the openHAB software and/or contributes to the openHAB project, but it is not limited to them.
+Anyone who uses the openHAB name or logo. This includes users of the openHAB software and/or contributors to the openHAB project, but it is not limited to them.
 
 ## What is the openHAB trademark?
 
