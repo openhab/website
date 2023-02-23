@@ -11,6 +11,10 @@ meta:
 
 # openHAB Trademark Policy - Frequently Asked Questions
 
+This document answers some of frequently asked questions (FAQs) about the openHAB's trademarks and their allowable uses. Be sure to review our [Trademark Policy](/about/trademark), which outlines important requirements for any uses of openHAB marks.
+
+The following information helps ensure our marks and logos are used in approved ways, while making it easy for the community to understand the guidelines. If you have any questions about the use of logos or trademarks, see our trademark resources or contact us.
+
 ## What is the openHAB trademark policy?
 
 The openHAB trademark policy outlines the rules and guidelines for using the openHAB trademark and logo.
@@ -63,13 +67,9 @@ Yes, under certain circumstances, you may use the "Powered by openHAB" phrase or
 Third parties providing products or services that are supersets of the functionality of openHAB, or services that run atop openHAB, may use the phrase "Powered by openHAB". For example, "BigCo SuperThing, Powered by openHAB" would be acceptable, provided that you meet all of the other requirements:
 
  - Any primary product home pages or landing pages must include a link from the homepage pointing to the openHAB project home page at https://www.openHAB.org/.
- 
 - Do not visually combine the "Powered by openHAB" logo with any other images, or change the logo in any way other than ways required by printing restrictions.
-
 - On your website link any "Powered by openHAB" logo to the homepage of the openHAB project.
-
 - Ensure that your website and marketing materials do not imply the openHAB Foundation's endorsement or the affiliation of your products, services, or organization with the openHAB Foundation or project.
-
 - Ensure that your website and marketing materials do not confuse the average user about the source of openHAB or imply that openHAB is associated with your products or services in any way, other than the fact that your product is built atop/to work with openHAB product.
 
 ## What should I do if I have questions about the trademark policy?

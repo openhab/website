@@ -204,7 +204,7 @@ module.exports = {
               },
               {
                 text: 'Trademark Policy',
-                link: '/trademark'
+                link: '/about/trademark'
               },
               {
                 text: 'Artwork',

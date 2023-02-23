@@ -32,7 +32,7 @@ img.illustration {
 
 ## Our Logo
 
-Our logo is our most recognizable asset. We therefore ask you to respect our [trademark policy](/trademark) when you reuse it - please read through it in detail and do not hesitate to [reach out to us](/trademark#Contact) in case of any doubts.
+Our logo is our most recognizable asset. We therefore ask you to respect our [trademark policy](/about/trademark) when you reuse it - please read through it in detail and do not hesitate to [reach out to us](/about/trademark#Contact) in case of any doubts.
 
 We provide different versions of our logo, e.g. with or without the "openHAB" text, a vertical and a horizontal version as well as versions for light and dark backgrounds.
 
@@ -41,8 +41,8 @@ The logos are provided in different formats like svg, eps, ai and png. Whereever
 ## Download
 
 <center>
-  <a href="./images/openhab-logo.zip">
-    <img src="./images/openhab-logo-square.png" /><br/>
+  <a href="openhab-logo.zip">
+    <img src="openhab-logo-square.png" /><br/>
     Download the openHAB Logos
   </a>
 </center>
