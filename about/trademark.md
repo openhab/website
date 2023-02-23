@@ -35,7 +35,7 @@ The following guidelines apply to the use of the Marks:
 
 ### Use of the openHAB Logo
 
-The openHAB logos are available at https://www.openhab.org/artwork.html.
+The openHAB logos are available at [https://www.openhab.org/artwork.html](../artwork.html).
 
 The openHAB logos may only be used in its original form and in compliance with the guidelines outlined in this trademark policy. The logo may not be altered or modified in any way, except as expressly authorized by the Foundation.
 

@@ -32,7 +32,7 @@ img.illustration {
 
 ## Our Logo
 
-Our logo is our most recognizable asset. We therefore ask you to respect our [trademark policy](/about/trademark) when you reuse it - please read through it in detail and do not hesitate to [reach out to us](/about/trademark#contact) in case of any doubts.
+Our logo is our most recognizable asset. We therefore ask you to respect our [trademark policy](/about/trademark) when you reuse it - please read through it in detail and do not hesitate to [reach out to us](/about/trademark.html#contact) in case of any doubts.
 
 We provide different versions of our logo, e.g. with or without the "openHAB" text, a vertical and a horizontal version as well as versions for light and dark backgrounds.
 
