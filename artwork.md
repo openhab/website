@@ -34,7 +34,7 @@ Our logo is our most recognizable asset. We therefore ask you to respect our [tr
 
 We provide different versions of our logo, e.g. with or without the "openHAB" text, a vertical and a horizontal version as well as versions for light and dark backgrounds.
 
-The logos are provided in different formats like svg, eps, ai and png. Whereever possible, please prefer the vector formats over png to avoid pixelation.
+The logos are provided in different formats like svg, eps, ai and png. Wherever possible, please prefer the vector formats over png to avoid pixelation.
 
 ## Download
 
