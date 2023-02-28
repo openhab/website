@@ -28,8 +28,6 @@ img.illustration {
 }
 </style>
 
-# openHAB Artwork
-
 ## Our Logo
 
 Our logo is our most recognizable asset. We therefore ask you to respect our [trademark policy](/about/trademark) when you reuse it - please read through it in detail and do not hesitate to [reach out to us](/about/trademark.html#contact) in case of any doubts.

@@ -9,8 +9,6 @@ meta:
     content: a vendor and technology agnostic open source automation software for your home
 ---
 
-# openHAB Trademark Policy
-
 <small>_Effective as of March 1, 2023_</small>
 
 The openHAB trademark and logo (the “Marks”) are valuable assets of the openHAB Foundation (the “Foundation”) and are protected by trademark law. 
