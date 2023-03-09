@@ -41,9 +41,9 @@ Yes, you may use the openHAB trademark and logo in your marketing materials to r
 
 No, you may not modify the openHAB logo in any way, except as expressly authorized by the Foundation.
 
-## Can I use the openHAB name in my domain name or URL?
+## Can I use the openHAB name in my domain name?
 
-No, you may not use the openHAB name in any domain name or URL without the express written permission of the Foundation.
+No, you may not use the openHAB name in any domain name without the express written permission of the Foundation.
 
 You may be eligible to request permission to use the openHAB name in your domain name if your domain's website content meets our requirements and you request permission. The requirements are:
 
@@ -53,6 +53,10 @@ You may be eligible to request permission to use the openHAB name in your domain
 - Proper trademark usage all over the website
 
 To request permission, please write to trademarks@openhabfoundation.org. Be sure to include a link to your domain, as well as an explanation of how your domain will comply with all the above points. Please be patient; we are an all-volunteer run organization.
+
+## Can I use the openHAB name in my repository names?
+
+Yes, using the openHAB name as part of repositories is considered fair use and a reference to openHAB. You should only make sure that you do not use the name as part of your organization.
 
 ## May I use openHAB trademark and logo in software product names?
 
