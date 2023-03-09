@@ -54,9 +54,9 @@ You may be eligible to request permission to use the openHAB name in your domain
 
 To request permission, please write to trademarks@openhabfoundation.org. Be sure to include a link to your domain, as well as an explanation of how your domain will comply with all the above points. Please be patient; we are an all-volunteer run organization.
 
-## Can I use the openHAB name in my repository names?
+## Can I use the openHAB name in my repository name?
 
-Yes, using the openHAB name as part of repositories is considered fair use and a reference to openHAB. You should only make sure that you do not use the name as part of your organization.
+Yes, using the openHAB name as part of any repository is considered fair use and a reference to openHAB. You should only make sure that you do not use the name as part of your organization.
 
 ## May I use openHAB trademark and logo in software product names?
 
