@@ -69,6 +69,22 @@ export default {
 }
 </script>
 
+<script>
+  window.chatbaseConfig = {
+    chatbotId: "ucb7b7LDQzcAJ2dJrBYXA",
+  }
+</script>
+<script>
+  export default {
+    mounted() {
+      const script = document.createElement('script')
+      script.src = 'https://www.chatbase.co/embed.min.js'
+      script.id = 'ucb7b7LDQzcAJ2dJrBYXA'
+      document.body.appendChild(script)
+    }
+  }
+</script>
+
 <style>
 
 </style>
