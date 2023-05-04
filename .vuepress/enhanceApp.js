@@ -47,8 +47,8 @@ export default ({
       }
     
       let tag2 = document.createElement('script')
-      script.src = 'https://www.chatbase.co/embed.min.js'
-      script.id = 'ucb7b7LDQzcAJ2dJrBYXA'
+      tag2.setAttribute('src', 'https://www.chatbase.co/embed.min.js')
+      tag2.setAttribute('id', 'ucb7b7LDQzcAJ2dJrBYXA')
       document.body.appendChild(tag2)
     }
   }
