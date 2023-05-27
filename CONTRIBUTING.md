@@ -1,14 +1,18 @@
 # Contributing to the openHAB website
 
-This website is made with [VuePress](https://vuepress.vuejs.org/), therefore you must install it globally first (with `npm i -g vuepress`).
+This website is made with [VuePress](https://vuepress.vuejs.org/). It will be installed
+as part of the dev dependencies.
+For the used version of vuepress to work correctly, Node.js 16.20.0 or **older** is needed. Alternatively on newer versions [the legacy OpenSSL provider can be enabled as described in this StackOverflow thread](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported).
+If you are using a Node.js version mananger like [fnm](https://github.com/Schniz/fnm), the provided `.node-version` file should automatically set the correct Node.js version needed.
 
 
 ## Running in development mode
 
 To run the website on your local machine on a development server with live reload:
 
-1. Migrate the documentation from https://github.com/openhab/openhab-docs for the website, by running `ruby prepare-docs.rb`
-2. Run `vuepress dev`
+1. Set the `OH_DOCS_VERSION` environment variable to the documentation version you want to use, e.g. `latest` or `stable`.
+2. Migrate the documentation from https://github.com/openhab/openhab-docs for the website, by running `ruby prepare-docs.rb`
+3. Run `npm run dev`
 
 The compilation can take a few minutes due to the size of the docs, wait for the "VuePress dev server listening at http://localhost:8080 (or another available port)" message.
 
