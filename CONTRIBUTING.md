@@ -1,7 +1,7 @@
 # Contributing to the openHAB website
 
-This website is made with [VuePress](https://vuepress.vuejs.org/). It will be installed
-as part of the dev dependencies.
+This website is made with [VuePress](https://vuepress.vuejs.org/).
+It will be installed as part of the dev dependencies.
 For the used version of vuepress to work correctly, Node.js 16.20.0 or **older** is needed. Alternatively on newer versions [the legacy OpenSSL provider can be enabled as described in this StackOverflow thread](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported).
 If you are using a Node.js version mananger like [fnm](https://github.com/Schniz/fnm), the provided `.node-version` file should automatically set the correct Node.js version needed.
 
