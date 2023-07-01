@@ -6,6 +6,7 @@
     "headroom.js": "^0.9.4",
     "markdown-it": "^8.4.2",
     "scrollreveal": "^3.4.0",
+    "sockjs-client": "^1.6.1",
     "vue-parallax": "^1.1.1",
     "vue-parallax-js": "github:jsnanigans/vue-parallax-js",
     "vue-parallaxy": "^1.1.1",
