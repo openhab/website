@@ -14,7 +14,7 @@ A new major release has arrived! openHAB 4 brings some exciting new features and
 
 We finally reached feature parity between UI-based and file-based configurations with UI support for both transformation and persistence configuration, and moved to Java 17 to give our devs access to great new language features. 
 
-<!—- Write more, see 3.0 release post. Ask @kaikreuzer -->
+<!-- Write more, see 3.0 release post. Ask @kaikreuzer -->
 
 You can find the full list of new add-ons, enhancements and fixes in our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0).
 
@@ -36,15 +36,30 @@ Therefore, please have a look at the [**release notes**](https://github.com/open
 
 _Florian Hotze, openHAB Maintainer_
 
+Especially as a new member of the UI maintainers team (i.e. duo — it’s just Yannick Schaus and me), I’m really excited to introduce you to the following enhancements, which are only a part of all the changes that have been contributed.
+
 ### Blockly
 
-<!-- GraalJS, UoM support -->
+<!-- GraalJS, UoM support. Ask @stefan-hoehn -->
 
 ### Scene Editor
 
 ### Transformation Editor
 
 ### Persistence Configuration
+
+openHAB 4 finally adds support for configuring persistence from the UI.
+
+As most UI configuration pages, the persistence configuration page is divided into two tabs: A design and a code tab.
+
+The design tab allows to graphically configure strategies and filters for selected Items, create new cron strategies (common ones are automatically created for you) and manage filters.
+The code tab represents the persistence configuration in YAML code and is perfect for sharing, e.g. when asking for help on the forum, but everything can be configured without touching a single line of code.
+
+Big thanks to Jan (aka [J-N-K](https://github.com/J-N-K)) for implementing the core part (e.g. REST endpoints) and even adding new filters.
+
+<!-- Add image here -->
+
+To try it yourself, open a persistence add-on’s settings from the add-on store and click on the blue “Persistence configuration” header.
 
 ### Developer Sidebar Search
 
