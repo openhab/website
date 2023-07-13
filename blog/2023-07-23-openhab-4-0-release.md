@@ -8,9 +8,13 @@ previewimage: /uploads/summer23.jpg
 tags:
   - news
 excerpt: >-
-  A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as dependency upgrades for our devs!
+  A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our devs!
 ---
-<!-- Intro Text -->
+A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our devs!
+
+We finally reached feature parity between UI-based and file-based configurations with UI support for both transformation and persistence configuration, and moved to Java 17 to give our devs access to great new language features. 
+
+<!—- Write more, see 3.0 release post. Ask @kaikreuzer -->
 
 You can find the full list of new add-ons, enhancements and fixes in our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0).
 
@@ -23,10 +27,10 @@ With that being said, we again want to share some statistics that show the progr
 
 # Highlights
 
-As this is a major release, there are some major (breaking) changes like the switch to Java 17, but there is no single big thing or visible change like the introduction of MainUI in openHAB 3 to learn about.
+As this is a major release, there are some major (breaking) changes (like the switch to Java 17), but there is no single big new thing (like the introduction of MainUI in openHAB 3) to learn about.
 Instead, we have quite a large number of new features and enhancements and we hope everyone finds something that matters to him.
 
-Therefore, please have a look at the release notes and check out the following highlights of our amazing new release.
+Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) and check out the following highlights.
 
 ## UI Enhancements
 
