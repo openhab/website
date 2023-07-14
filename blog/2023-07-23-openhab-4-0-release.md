@@ -44,24 +44,50 @@ Especially as a new member of the UI maintainers team (i.e. duo — it’s just 
 
 ### Scene Editor
 
+Given several discussions on the community, support for scenes was a long awaited feature — openHAB 4 has it.
+
+Basically, scenes are only a set of Items and states that the Items are commanded to when the scene is enabled.
+In openHAB, a simple rule would be enough to achieve that functionality, but it would either require some coding or several UI interactions.
+
+The scene editor allows you to define Items and their respective target states very easily.
+A sync state button allows to store the current Item state as the target state, and another button allows you to test the currently defined target state.
+
+Scenes can be triggered from MainUI widgets and, as they are basically just rules without triggers, from other rules. 
+One may wonder how to trigger scenes from BasicUI: In this case, you can create an Item and use the code tab of the scene to define it as a trigger.
+
+<p align=“center”><img style=“max-width: 80%;” src=“/uploads/2023-07-23-openhab-4-0-release/scene-editor.png”/></p>
+
+If you are interested, please check out [the documentation]({base}/docs/tutorial/rules_scenes.html).
+
 ### Transformation Editor
 
 ### Persistence Configuration
 
-openHAB 4 finally adds support for configuring persistence from the UI.
+Seems like openHAB 4 is full of new UI pages — It finally supports configuring persistence from the UI.
 
 As most UI configuration pages, the persistence configuration page is divided into two tabs: A design and a code tab.
 
 The design tab allows to graphically configure strategies and filters for selected Items, create new cron strategies (common ones are automatically created for you) and manage filters.
-The code tab represents the persistence configuration in YAML code and is perfect for sharing, e.g. when asking for help on the forum, but everything can be configured without touching a single line of code.
+openHAB 4 also has a few new filters you should check out!
 
-Big thanks to Jan (aka [J-N-K](https://github.com/J-N-K)) for implementing the core part (e.g. REST endpoints) and even adding new filters.
+The code tab represents the persistence configuration in YAML code and is perfect for sharing, e.g. when asking for help on the forum, but everything can be configured without touching a single line of code.
 
 <!-- Add image here -->
 
 To try it yourself, open a persistence add-on’s settings from the add-on store and click on the blue “Persistence configuration” header.
 
 ### Developer Sidebar Search
+
+In openHAB 3, the developer sidebar search was only able to find Items by name or label, Things by UID or label, rules by UID or name and pages by UID.
+
+With openHAB 4, we gave it a big upgrade:
+It is now possible to search inside nearly every UI entity. 
+No matter where, you find what you search for.
+
+Imagine you want to know which of your rules and pages use a specific Item. Just type the Item name in the developer sidebar search, and you’ll find all occurrences of the search query in pages, scenes, scripts and rules. 
+Even Blockly and the code of script actions are now searchable.
+
+For an exact list of entities the search checks your query against, please have a look at [the documentation]({base}/docs/tutorial/tips-and-tricks.html#search).
 
 # Enjoy and get in touch!
 
