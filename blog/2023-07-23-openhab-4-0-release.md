@@ -61,6 +61,12 @@ If you are interested, please check out [the documentation]({base}/docs/tutorial
 
 ### Transformation Editor
 
+Previously, it was only possible to define transformations through files in the respective folder, but this release brings UI-based configuration of transformations.
+
+The transformation editor basically is just a code editor with syntax highlighting for the selected transformation type, and pre-filled code snippets for some script-based transformations, but it is an important part of reaching feature parity between file-based and UI-based configuration.
+
+The upcoming openHAB 4.1 release will probably improve the UI so you can simply select which transformation you want to apply on an Item state, but until then the transformation editor provides guidance what to fill into the state description field.
+
 ### Persistence Configuration
 
 Seems like openHAB 4 is full of new UI pages — It finally supports configuring persistence from the UI.
@@ -86,6 +92,8 @@ No matter where, you find what you search for.
 
 Imagine you want to know which of your rules and pages use a specific Item. Just type the Item name in the developer sidebar search, and you’ll find all occurrences of the search query in pages, scenes, scripts and rules. 
 Even Blockly and the code of script actions are now searchable.
+
+<!-- Add image here -->
 
 For an exact list of entities the search checks your query against, please have a look at [the documentation]({base}/docs/tutorial/tips-and-tricks.html#search).
 
