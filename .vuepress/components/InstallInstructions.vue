@@ -78,8 +78,8 @@
         <p v-if="selectedSystem === 'raspberry-pi'">For Raspberry Pi, however, we strongly recommend flashing the complete OS image, see above.</p>
       </div>
       <ol>
-        <li v-if="selectedVersion !== 'snapshot'">Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
-        <li v-if="selectedVersion === 'snapshot'">Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion === 'stable'">Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion !== 'stable'">Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Add the repository key</li>
           <div class="language-shell"><pre class="language-shell"><code>curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.gpg
 sudo mkdir /usr/share/keyrings
@@ -88,7 +88,7 @@ sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg</code></pre></div>
         <li>Add the HTTPS transport for APT</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get install apt-transport-https</code></pre></div>
         <li>Add the repository</li>
-          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
+          <div class="language-shell"><pre class="language-shell"><code v-if="selectedVersion === 'stable'">echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else-if="selectedVersion === 'testing'">echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab.list</code><code v-else="selectedVersion === 'snapshot'">echo 'deb [signed-by=/usr/share/keyrings/openhab.gpg] https://openhab.jfrog.io/artifactory/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab.list</code></pre></div>
         <li>Update the package lists and install the openHAB distribution package</li>
           <div class="language-shell"><pre class="language-shell"><code>sudo apt-get update && sudo apt-get install openhab</code></pre></div>
         <li><strong>(Optional)</strong> Install the add-ons for offline use</li>
@@ -102,8 +102,8 @@ sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg</code></pre></div>
       <hr>
       <h3>{{optionNumber('package')}}Install the RPM Packages (Recommended)</h3>
       <ol>
-        <li v-if="selectedVersion !== 'snapshot'">Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
-        <li v-if="selectedVersion === 'snapshot'">Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion === 'stable'">Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-if="selectedVersion !== 'stable'">Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
         <div class="language-ini">
 <pre class="language-ini"><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
@@ -155,30 +155,30 @@ usermod -a -G openhab myownuser
         &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
         <div v-if="(selectedVersion === 'stable' || selectedVersion === 'testing')">
             <div class="download-button-container">
-              <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
+              <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink" download>Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
             </div>
         </div>
         <div v-if="selectedVersion === 'snapshot'">
             <div class="download-button-container">
-              <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.0.0-SNAPSHOT.kar`">Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
+              <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.0.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
             </div>
         </div>
       </ol>
     </div>
 
-    <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'stable' || selectedVersion === 'testing')">
+    <div v-if="selectedSystem !== 'docker' && selectedVersion === 'stable'">
       <hr>
       <h3>{{optionNumber('manual')}}Manual Installation</h3>
       <ol>
         <li>Install a recent Java 11 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-11-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the openHAB runtime distribution:</li>
         <div class="download-button-container">
-          <a class="download-button big" :href="runtimeDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
+          <a class="download-button big" :href="runtimeDownloadLink" download>Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
         </div>
         <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
         &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
         <div class="download-button-container">
-          <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink">Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
+          <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink" download>Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Add-ons</a>
         </div>
         <li v-if="selectedSystem === 'apple'">
           Open <em>System Preferences &gt; Keyboard &gt; Shortcuts</em> and check the <em>New Terminal at Folder</em> option under <em>Services</em>:<br />
@@ -197,19 +197,19 @@ usermod -a -G openhab myownuser
       </ol>
     </div>
 
-    <div v-if="selectedSystem !== 'docker' && selectedVersion === 'snapshot'">
+    <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'testing' || selectedVersion === 'snapshot')">
       <hr />
       <h3>Manual Installation</h3>
       <ol>
         <li>Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
         <div class="download-button-container">
-          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-4.0.0-SNAPSHOT.zip`">Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
+          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-4.0.0-SNAPSHOT.zip`" download>Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
         </div>
         <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
         &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
         <div class="download-button-container">
-          <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.0.0-SNAPSHOT.kar`">Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
+          <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.0.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
         </div>
       </ol>
     </div>

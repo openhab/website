@@ -203,6 +203,14 @@ module.exports = {
                 link: '/privacy'
               },
               {
+                text: 'Trademark Policy',
+                link: '/about/trademark'
+              },
+              {
+                text: 'Artwork',
+                link: '/artwork'
+              },
+              {
                 text: 'Feed Overview',
                 link: '/about/feeds'
               },
