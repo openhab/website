@@ -7,6 +7,7 @@
 
 /link/docs                /docs
 /link/tutorial            /docs/tutorial/
+/link/persistence         /docs/configuration/persistence.html#persistence-configuration
 /link/profiles            /docs/configuration/items.html#profiles
 /link/thing               /docs/configuration/things.html
 /link/thingxml            /docs/developer/bindings/thing-xml.html
