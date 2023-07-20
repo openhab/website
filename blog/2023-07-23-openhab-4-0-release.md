@@ -8,15 +8,17 @@ previewimage: /uploads/summer23.jpg
 tags:
   - news
 excerpt: >-
-  A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our devs!
+  A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our developers!
 ---
-A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our devs!
+A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our developers!
 
-We finally reached feature parity between UI-based and file-based configurations with UI support for both transformation and persistence configuration, and moved to Java 17 to give our devs access to great new language features. 
+With openHAB4, we have finally reached feature parity between UI-based and file-based configurations with UI support for both transformation and persistence configuration, added support for using scripts as transformations and profiles, and levelled up Units of Measurement (UoM) support!
+But that's not all!
+As quite usual for new openHAB major releases, we also upgraded to Java 17 to stay in sync with the evolving Java ecosystem.
+Java 17 brings a wealth of benefits to our user and especially our developers, including security enhancements, performance improvements and reduced memory usage as well as new language features and APIs.
 
-<!-- Write more, see 3.0 release post. Ask @kaikreuzer -->
-
-You can find the full list of new add-ons, enhancements and fixes in our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0).
+As this is a new major release, we have a number of breaking changes that are required for the new features and improvements.
+So, please have a look at our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) to learn about all breaking changes, new addons, enhancements and fixes.
 
 With that being said, we again want to share some statistics that show the progress in numbers.
 
@@ -28,7 +30,7 @@ With that being said, we again want to share some statistics that show the progr
 # Highlights
 
 As this is a major release, there are some major (breaking) changes (like the switch to Java 17), but there is no single big new thing (like the introduction of MainUI in openHAB 3) to learn about.
-Instead, we have quite a large number of new features and enhancements and we hope everyone finds something that matters to him.
+Instead, we have quite a large number of new features and enhancements, and we hope everyone finds something that matters to him.
 
 Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) and check out the following highlights.
 
@@ -59,22 +61,21 @@ In general, the code that Blockly generates is JavaScript (aka ECMAScript) which
 The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1,** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
 The generated rule code is run within the Java runtime (also known as JVM) on the openHAB server and as openHAB 4 has moved to Java 17, the old ECMAScript 5.1 is not directly available anymore within the JVM via Nashorn.
 A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is currently running **ECMAScript 2022** and therefore supports all modern JavaScript features, like arrow functions and private class fields and methods.
-[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JavaScript Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed.
-The [JavaScript Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) also includes the [openHAB JavaScript library](https://github.com/openhab/openhab-js), which in fact empowers most of the new Blockly features and allows the much cleaner code by providing a simple, pure JS API to openHAB.
+[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JavaScript Scripting addon](https://www.openhab.org/addons/automation/jsscripting/) is installed.
+The [JavaScript Scripting addon](https://www.openhab.org/addons/automation/jsscripting/) also includes the [openHAB JavaScript library](https://github.com/openhab/openhab-js), which in fact empowers most of the new Blockly features and allows the much cleaner code by providing a simple, pure JS API to openHAB.
 
 **New Features in Blockly**
 
-* Full Support of **U**nits **o**f **M**easurement with [5 brand new blocks](https://openhab.org/docs/configuration/blockly/rules-blockly-uom.html)
+* Full Support of **U**nits **o**f **M**easurement with [5 brand-new blocks](https://openhab.org/docs/configuration/blockly/rules-blockly-uom.html)
 * The [Math section](https://openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#math) was extended by a new bitshift block and extended rounding block
 * Metadata blocks allow direct access to [Item metadata](https://openhab.org/docs/configuration/blockly/rules-blockly-items-things.html#item-metadata)
 * A historicState option was added to the [persistence blocks](https://openhab.org/docs/configuration/blockly/rules-blockly-persistence.html#get-statistical-value-of-an-item)
-* Persistence blocks can now be used with any [persistence service](openhab.org/docs/configuration/blockly/rules-blockly-persistence.html)
+* Persistence blocks can now be used with any [persistence service](https://openhab.org/docs/configuration/blockly/rules-blockly-persistence.html)
 * Added pattern to [text of date block](https://openhab.org/docs/configuration/blockly/rules-blockly-date-handling.html#get-string-representation-of-date-text-of)
 * Support for [private and global cache](https://openhab.org/docs/configuration/blockly/rules-blockly-value-storage.html#caching) when using the value storage blocks
 * A new [Blockly dictionary loop](https://openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#loop-over-a-dictionary) block with value and key from dictionary
 * Added stricter type checking for blocks to avoid mistakes
 * Added numeric state, quantity state to getItemAttribute
-* Added smart 
 
 Editor:
 * [Search](https://openhab.org/docs/configuration/blockly/rules-blockly-before-using.html#searching-the-workspace) within the blockly workspace via Cmd/Ctrl-F
@@ -106,7 +107,7 @@ Previously, it was only possible to define transformations through files in the 
 
 The transformation editor basically is just a code editor with syntax highlighting for the selected transformation type, and pre-filled code snippets for some script-based transformations, but it is an important part of reaching feature parity between file-based and UI-based configuration.
 
-The upcoming openHAB 4.1 release will probably improve the UI so you can simply select which transformation you want to apply on an Item state, but until then the transformation editor provides guidance what to fill into the state description field.
+The upcoming openHAB 4.1 release will probably improve the UI, so you can simply select which transformation you want to apply on an Item state, but until then the transformation editor provides guidance what to fill into the state description field.
 
 ### Persistence Configuration
 
