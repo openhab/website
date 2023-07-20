@@ -32,6 +32,8 @@ Instead, we have quite a large number of new features and enhancements and we ho
 
 Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) and check out the following highlights.
 
+## Core Runtime Enhancements
+
 ## UI Enhancements
 
 _Florian Hotze, openHAB Maintainer_
@@ -41,44 +43,45 @@ Especially as a new member of the UI maintainers team (i.e. duo — it’s just 
 ### Blockly
 (by _Stefan Höhn, openHAB Blockly Maintainer_)
 
-<p align=“center”><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/blockly4.0.png"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/blockly4.0.png"/></p>
 
-Lot's has happenend since openHAB 3, in particular promoting all blocks to the new and latest JavaScript Engine that comes with openHAB 4.
+Lot's has happened since openHAB 3, in particular promoting all blocks to the new and latest JavaScript Engine that comes with openHAB 4.
 Not only does that generate even more cleaner code, it also allows to implement many more feature that would have been hard to provide. 
-Therefore all blocks have been rewritten for openHAB 4 to support the new JavaScript engine.
+Therefore, all blocks have been rewritten for openHAB 4 to support the new JavaScript engine.
 
-**How the 🦏 found the holy Graal : the new code generation**
+**How the 🦏 found the holy Graal - The new code generation**
 
 Even though one may not notice it directly, the blocks are eventually used to automatically create code that can run on the openHAB server.
-Please watch the youtube video [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739) for a live demo.
-The code that is generated can be viewed when clicking the button on the lower right corner of the blockly editor.
+Please watch the YouTube video [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739) for a live demo.
+The code that is generated can be viewed when clicking the button in the lower right corner of the blockly editor.
 
 In general, the code that Blockly generates is JavaScript (aka ECMAScript) which exists in several flavours or versions.
-The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
+The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1,** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
 The generated rule code is run within the Java runtime (also known as JVM) on the openHAB server and as openHAB 4 has moved to Java 17, the old ECMAScript 5.1 is not directly available anymore within the JVM via Nashorn.
-A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is currently running **ECMAScript 2022** and therefore supports all modern JavaScript features, like arrow functions.
-[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JS Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed.
+A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is currently running **ECMAScript 2022** and therefore supports all modern JavaScript features, like arrow functions and private class fields and methods.
+[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JavaScript Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) is installed.
+The [JavaScript Scripting Addon](https://www.openhab.org/addons/automation/jsscripting/) also includes the [openHAB JavaScript library](https://github.com/openhab/openhab-js), which in fact empowers most of the new Blockly features and allows the much cleaner code by providing a simple, pure JS API to openHAB.
 
 **New Features in Blockly**
 
-* Full Support of **Un**its **o**f **M**easurement with [5 brand new blocks]({base}/docs/configuration/blockly/rules-blockly-uom.html)
-* The [Math section]({base}/docs/configuration/blockly/rules-blockly-standard-ext.html#math) was extended by a new bitshift block and extended rounding block
-* Metadata blocks allow direct access to [item metadata]({base}/docs/configuration/blockly/rules-blockly-items-things.html#item-metadata)
-* A historicState option was added to the [Persistence blocks]({base}/docs/configuration/blockly/rules-blockly-persistence.html#get-statistical-value-of-an-item)
-* Persistence blocks can now used with any [persistence service](openhab.org/docs/configuration/blockly/rules-blockly-persistence.html)
-* Added pattern to [text of date block]({base}/docs/configuration/blockly/rules-blockly-date-handling.html#get-string-representation-of-date-text-of)
-* Support for [private and global cache]({base}/docs/configuration/blockly/rules-blockly-value-storage.html#caching) when using the value storage blocks
-* A new [Blockly Dictionary loop]({base}/docs/configuration/blockly/rules-blockly-standard-ext.html#loop-over-a-dictionary) block with value and key from dictionary
+* Full Support of **U**nits **o**f **M**easurement with [5 brand new blocks](https://openhab.org/docs/configuration/blockly/rules-blockly-uom.html)
+* The [Math section](https://openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#math) was extended by a new bitshift block and extended rounding block
+* Metadata blocks allow direct access to [Item metadata](https://openhab.org/docs/configuration/blockly/rules-blockly-items-things.html#item-metadata)
+* A historicState option was added to the [persistence blocks](https://openhab.org/docs/configuration/blockly/rules-blockly-persistence.html#get-statistical-value-of-an-item)
+* Persistence blocks can now be used with any [persistence service](openhab.org/docs/configuration/blockly/rules-blockly-persistence.html)
+* Added pattern to [text of date block](https://openhab.org/docs/configuration/blockly/rules-blockly-date-handling.html#get-string-representation-of-date-text-of)
+* Support for [private and global cache](https://openhab.org/docs/configuration/blockly/rules-blockly-value-storage.html#caching) when using the value storage blocks
+* A new [Blockly dictionary loop](https://openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#loop-over-a-dictionary) block with value and key from dictionary
 * Added stricter type checking for blocks to avoid mistakes
 * Added numeric state, quantity state to getItemAttribute
 * Added smart 
 
 Editor:
-* [Search]({base}/docs/configuration/blockly/rules-blockly-before-using.html#searching-the-workspace) within the blockly workspace via Cmd/Ctrl-F
+* [Search](https://openhab.org/docs/configuration/blockly/rules-blockly-before-using.html#searching-the-workspace) within the blockly workspace via Cmd/Ctrl-F
 * Shadow Blocks are now automatically converted to real blocks, which is good when you want to reuse them by duplicating the block 
 * [Cross-Rule Copy & Paste](https://next.openhab.org/docs/configuration/blockly/rules-blockly-before-using.html#cross-rule-copy-paste)
 
-All new blocks have received comprehensive documentation at the [Blockly Reference]({base}/docs/configuration/blockly/)
+All new blocks have received comprehensive documentation at the [Blockly Reference](https://openhab.org/docs/configuration/blockly/).
 
 ### Scene Editor
 
@@ -93,9 +96,9 @@ A sync state button allows to store the current Item state as the target state, 
 Scenes can be triggered from MainUI widgets and, as they are basically just rules without triggers, from other rules. 
 One may wonder how to trigger scenes from BasicUI: In this case, you can create an Item and use the code tab of the scene to define it as a trigger.
 
-<p align=“center”><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/scene-editor.png"/></p>
+<p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/scene-editor.png"/></p>
 
-If you are interested, please check out [the documentation]({base}/docs/tutorial/rules_scenes.html).
+If you are interested, please check out [the documentation](https://openhab.org/docs/tutorial/rules_scenes.html).
 
 ### Transformation Editor
 
@@ -133,7 +136,11 @@ Even Blockly and the code of script actions are now searchable.
 
 <!-- Add image here -->
 
-For an exact list of entities the search checks your query against, please have a look at [the documentation]({base}/docs/tutorial/tips-and-tricks.html#search).
+For an exact list of entities the search checks your query against, please have a look at [the documentation](https://openhab.org/docs/tutorial/tips-and-tricks.html#search).
+
+## Addon Enhancements
+
+### JavaScript Scripting
 
 # Enjoy and get in touch!
 
