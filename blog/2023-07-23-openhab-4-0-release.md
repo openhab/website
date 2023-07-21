@@ -34,6 +34,33 @@ Instead, we have quite a large number of new features and enhancements, and we h
 
 Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) and check out the following highlights.
 
+## Open openHAB to thousands of free new icons
+
+### New icon sources available
+
+In addition to the icons already provided via the openHAB server (classic icon set + custom user icons), you have now an easy access for your items and sitemap elements to the [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons), [Framework7 icons](https://framework7.io/icons/) and [over 150,000 icons provided by Iconify](https://icon-sets.iconify.design/).
+
+Main UI supports all these icon sources while Basic UI currently supports all of them except the Framework7.
+Note that the iconify option requires Internet connectivity on the client to access the external API. The WEB browser will cache the retrieved icons to limit the requests and speed up the rendering. Basic UI provides a setting to enable this option which is disabled by default.
+
+Dynamic icons based on the item state remains a feature only available with the openHAB icon sets.
+
+For more details including the new category/icon syntax, please read [this page in the openHAB documentation](https://next.openhab.org/docs/configuration/items.html#icons).
+
+### Managing your icon color
+
+You can now control the icon color associated with any user interface element of a sitemap using the "iconcolor" parameter. The syntax and capabilities behind this parameter are the same as for the "labelcolor" and "valuecolor" parameters, which means you can define multiple conditions leading to different colors.
+
+This is not possible with icons from the classic icon set because these icons have a hard-coded color palette, but it is possible with icons from other icon sources and with added user SVG icons containing "currentColor" as the fill color.
+Basic UI supports this color feature for openHAB icons only if an option is enabled. Color support for other icon sources is supported by default.
+
+For more details, please read [this page in the openHAB documentation](https://next.openhab.org/docs/ui/sitemaps.html#label-value-and-icon-colors).
+
+### Icons provided by bindings
+
+A binding can now make specific icons related to channels available to the user, especially when no appropriate category/icon is available in the classic icon set.
+Few bindings have already integrated this feature, for example the [OpenUV binding](https://www.openhab.org/addons/bindings/openuv/).
+
 ## Core Runtime Enhancements
 
 ## UI Enhancements
