@@ -2,7 +2,7 @@
 layout: BlogPost
 category: blog
 title: openHAB 4.0 Release
-author: Kai Kreuzer and others
+author: Florian Hotze and others
 date: '2023-07-23T18:00:00+02:00'
 previewimage: /uploads/summer23.jpg
 tags:
@@ -12,7 +12,7 @@ excerpt: >-
 ---
 A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our developers!
 
-With openHAB4, we have finally reached feature parity between UI-based and file-based configurations with UI support for both transformation and persistence configuration, added support for using scripts as transformations and profiles, and levelled up Units of Measurement (UoM) support!
+With openHAB4, we have finally reached feature parity between UI-based and file-based configurations with UI support for both transformation and persistence configuration, added support for using any of the supported script languages for transformations and profiles, and levelled up Units of Measurement (UoM) support!
 But that's not all!
 As quite usual for new openHAB major releases, we also upgraded to Java 17 to stay in sync with the evolving Java ecosystem.
 Java 17 brings a wealth of benefits to our user and especially our developers, including security enhancements, performance improvements and reduced memory usage as well as new language features and APIs.
@@ -70,7 +70,8 @@ _Florian Hotze, openHAB Maintainer_
 Especially as a new member of the UI maintainers team (i.e. duo — it’s just Yannick Schaus and me), I’m really excited to introduce you to the following enhancements, which are only a part of all the changes that have been contributed.
 
 ### Blockly
-(by _Stefan Höhn, openHAB Blockly Maintainer_)
+
+_Stefan Höhn, openHAB Blockly Maintainer_
 
 <p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/blockly4.0.png"/></p>
 
@@ -165,6 +166,38 @@ Even Blockly and the code of script actions are now searchable.
 <!-- Add image here -->
 
 For an exact list of entities the search checks your query against, please have a look at [the documentation](https://openhab.org/docs/tutorial/tips-and-tricks.html#search).
+
+### Open openHAB to thousands of free new icons
+
+_Laurent Garnier, openHAB Maintainer_
+
+#### New icon sources available
+
+In addition to the icons already provided via the openHAB server (classic icon set + custom user icons), you have now easy access for your items and sitemap elements to the [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons), [Framework7 icons](https://framework7.io/icons/) and [over 150,000 icons provided by Iconify](https://icon-sets.iconify.design/).
+
+Main UI supports all these icon sources while Basic UI currently supports all of them except the Framework7.
+Note that the Iconify option requires internet connectivity on the client to access the external API.
+The web browser will cache the retrieved icons to limit the requests and speed up the rendering.
+Basic UI provides a setting to enable this option which is disabled by default.
+
+Dynamic icons based on the item state remains a feature only available with the openHAB icon sets.
+
+For more details including the new category/icon syntax, please read [the documentation](https://www.openhab.org/docs/configuration/items.html#icons).
+
+#### Managing your icon color
+
+You can now control the icon color associated with any user interface element of a sitemap using the "iconcolor" parameter. The syntax and capabilities behind this parameter are the same as for the "labelcolor" and "valuecolor" parameters, which means you can define multiple conditions leading to different colors.
+
+This is not possible with icons from the classic icon set because these icons have a hard-coded color palette, but it is possible with icons from other icon sources and with added user SVG icons containing "currentColor" as the fill color.
+Basic UI supports this color feature for openHAB icons only if an option is enabled.
+Color support for other icon sources is supported by default.
+
+For more details, please read [the documentation](https://www.openhab.org/docs/ui/sitemaps.html#label-value-and-icon-colors).
+
+#### Icons provided by bindings
+
+A binding can now make specific icons related to channels available to the user, especially when no appropriate category/icon is available in the classic icon set.
+Few bindings have already integrated this feature, for example the [OpenUV binding](https://www.openhab.org/addons/bindings/openuv/).
 
 ## Addon Enhancements
 
