@@ -140,6 +140,28 @@ Even Blockly and the code of script actions are now searchable.
 
 For an exact list of entities the search checks your query against, please have a look at [the documentation](/docs/tutorial/tips-and-tricks.html#search).
 
+### New input field for sitemap UIs
+
+_Laurent Garnier, openHAB Maintainer_
+
+No new user interface elements have been added for sitemap UIs since openHAB version 1.
+This finally changes with openHAB 4 with the introduction of a new UI element long-awaited by users: The `input` field.
+
+```java
+Input item=<itemname> [label="<labelname>"] [icon="<iconname>"] [inputHint="<inputHint>"]
+```
+
+This element allows entering of text, numbers and dates/times and updating the underlying items.
+Text, number or number with unit values and dates/times can be updated in the respective item types.
+
+The parameter `inputHint` will give a hint to the user interface to use a specific widget adapted to a specific use.
+For example, it can be a time picker or a date picker.  Valid values for the parameter are `text`, `number`, `date`, `time` and `datetime`.
+Support of these widget types vary by user interface and/or browser.
+
+This new input field is already supported in Basic UI and in the Android app.
+
+Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) who fully implemented this new feature (sitemap syntax update in core framework, implementation in Basic UI and in the Android app).
+
 ### Open openHAB to thousands of free new icons
 
 _Laurent Garnier, openHAB Maintainer_
@@ -166,23 +188,6 @@ Basic UI supports this color feature for openHAB icons only if an option is enab
 Color support for other icon sources is supported by default.
 
 For more details, please read [the documentation](/docs/ui/sitemaps.html#label-value-and-icon-colors).
-
-## New input field for sitemap UIs
-
-No new user interface elements have been added for sitemap UIs since openHAB version 1. It finally arrives in version 4 with the introduction of a new UI element expected by users, namely the input field.
-
-```java
-Input item=<itemname> [label="<labelname>"] [icon="<iconname>"] [inputHint="<inputHint>"]
-```
-
-This element allows entering of text, numbers and dates/times and updating the underlying items.
-Text, number or number with unit values and dates/times can be updated in the respective item types.
-
-The parameter `inputHint` will give a hint to the user interface to use a specific widget adapted to a specific use. For example, it can be a time picker or a date picker.  Valid values for the parameter are `text`, `number`, `date`, `time` and `datetime`. Support of these widget types vary by user interface and/or browser.
-
-This new input field is already supported in Basic UI and in the Android app.
-
-Many thanks to Mark Herwege who fully implemented this new For examplefeature (sitemap syntax update in core framework, implement in Basic UI and in the Android app).
 
 #### Icons provided by bindings
 
@@ -224,6 +229,8 @@ The `Quantity` API allows handling of UoM, e.g. unit conversion, inside your JS 
 To get informed about all breaking changes, enhancements, and fixes, visit [the changelog](https://github.com/openhab/openhab-js/blob/v4.5.0/CHANGELOG.md).
 
 ### JRuby Scripting
+
+_Jimmy Tanagra, openHAB Maintainer_
 
 The [JRuby Scripting addon](/addons/automation/jrubyscripting/) is now based on JRuby 9.4 which supports Ruby 3.1 syntax.
 Its helper library is installed by default and can be used in UI-based rules, file-based rules, and in [transformations](https://openhab.github.io/openhab-jruby/main/index.html#transformations).
