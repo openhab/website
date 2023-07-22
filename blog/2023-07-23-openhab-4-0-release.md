@@ -62,28 +62,28 @@ In general, the code that Blockly generates is JavaScript (aka ECMAScript) which
 The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1,** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
 The generated rule code is run within the Java runtime (also known as JVM) on the openHAB server and as openHAB 4 has moved to Java 17, the old ECMAScript 5.1 is not directly available anymore within the JVM via Nashorn.
 A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is currently running **ECMAScript 2022** and therefore supports all modern JavaScript features, like arrow functions and private class fields and methods.
-[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JavaScript Scripting addon](https://www.openhab.org/addons/automation/jsscripting/) is installed.
-The [JavaScript Scripting addon](https://www.openhab.org/addons/automation/jsscripting/) also includes the [openHAB JavaScript library](https://github.com/openhab/openhab-js), which in fact empowers most of the new Blockly features and allows the much cleaner code by providing a simple, pure JS API to openHAB.
+[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JavaScript Scripting addon](/addons/automation/jsscripting/) is installed.
+The [JavaScript Scripting addon](/addons/automation/jsscripting/) also includes the [openHAB JavaScript library (openhab-js)](https://github.com/openhab/openhab-js), which in fact empowers most of the new Blockly features and allows the much cleaner code by providing a simple, pure JS API to openHAB.
 
 **New Features in Blockly**
 
-* Full Support of **U**nits **o**f **M**easurement with [5 brand-new blocks](https://openhab.org/docs/configuration/blockly/rules-blockly-uom.html)
-* The [Math section](https://openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#math) was extended by a new bitshift block and extended rounding block
-* Metadata blocks allow direct access to [Item metadata](https://openhab.org/docs/configuration/blockly/rules-blockly-items-things.html#item-metadata)
-* A historicState option was added to the [persistence blocks](https://openhab.org/docs/configuration/blockly/rules-blockly-persistence.html#get-statistical-value-of-an-item)
-* Persistence blocks can now be used with any [persistence service](https://openhab.org/docs/configuration/blockly/rules-blockly-persistence.html)
-* Added pattern to [text of date block](https://openhab.org/docs/configuration/blockly/rules-blockly-date-handling.html#get-string-representation-of-date-text-of)
-* Support for [private and global cache](https://openhab.org/docs/configuration/blockly/rules-blockly-value-storage.html#caching) when using the value storage blocks
-* A new [Blockly dictionary loop](https://openhab.org/docs/configuration/blockly/rules-blockly-standard-ext.html#loop-over-a-dictionary) block with value and key from dictionary
+* Full Support of **U**nits **o**f **M**easurement with [5 brand-new blocks](/docs/configuration/blockly/rules-blockly-uom.html)
+* The [Math section](/docs/configuration/blockly/rules-blockly-standard-ext.html#math) was extended by a new bitshift block and extended rounding block
+* Metadata blocks allow direct access to [Item metadata](/docs/configuration/blockly/rules-blockly-items-things.html#item-metadata)
+* A historicState option was added to the [persistence blocks](/docs/configuration/blockly/rules-blockly-persistence.html#get-statistical-value-of-an-item)
+* Persistence blocks can now be used with any [persistence service](/docs/configuration/blockly/rules-blockly-persistence.html)
+* Added pattern to [text of date block](/docs/configuration/blockly/rules-blockly-date-handling.html#get-string-representation-of-date-text-of)
+* Support for [private and global cache](/docs/configuration/blockly/rules-blockly-value-storage.html#caching) when using the value storage blocks
+* A new [Blockly dictionary loop](/docs/configuration/blockly/rules-blockly-standard-ext.html#loop-over-a-dictionary) block with value and key from dictionary
 * Added stricter type checking for blocks to avoid mistakes
 * Added numeric state, quantity state to getItemAttribute
 
 Editor:
-* [Search](https://openhab.org/docs/configuration/blockly/rules-blockly-before-using.html#searching-the-workspace) within the blockly workspace via Cmd/Ctrl-F
+* [Search](/docs/configuration/blockly/rules-blockly-before-using.html#searching-the-workspace) within the blockly workspace via Cmd/Ctrl-F
 * Shadow Blocks are now automatically converted to real blocks, which is good when you want to reuse them by duplicating the block 
 * [Cross-Rule Copy & Paste](https://next.openhab.org/docs/configuration/blockly/rules-blockly-before-using.html#cross-rule-copy-paste)
 
-All new blocks have received comprehensive documentation at the [Blockly Reference](https://openhab.org/docs/configuration/blockly/).
+All new blocks have received comprehensive documentation at the [Blockly Reference](/docs/configuration/blockly/).
 
 ### Scene Editor
 
@@ -100,7 +100,7 @@ One may wonder how to trigger scenes from BasicUI: In this case, you can create 
 
 <p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/scene-editor.png"/></p>
 
-If you are interested, please check out [the documentation](https://openhab.org/docs/tutorial/rules_scenes.html).
+If you are interested, please check out [the documentation](/docs/tutorial/rules_scenes.html).
 
 ### Transformation Editor
 
@@ -138,7 +138,7 @@ Even Blockly and the code of script actions are now searchable.
 
 <!-- Add image here -->
 
-For an exact list of entities the search checks your query against, please have a look at [the documentation](https://openhab.org/docs/tutorial/tips-and-tricks.html#search).
+For an exact list of entities the search checks your query against, please have a look at [the documentation](/docs/tutorial/tips-and-tricks.html#search).
 
 ### Open openHAB to thousands of free new icons
 
@@ -155,7 +155,7 @@ Basic UI provides a setting to enable this option which is disabled by default.
 
 Dynamic icons based on the item state remains a feature only available with the openHAB icon sets.
 
-For more details including the new category/icon syntax, please read [the documentation](https://www.openhab.org/docs/configuration/items.html#icons).
+For more details including the new category/icon syntax, please read [the documentation](/docs/configuration/items.html#icons).
 
 #### Managing your icon color
 
@@ -165,12 +165,12 @@ This is not possible with icons from the classic icon set because these icons ha
 Basic UI supports this color feature for openHAB icons only if an option is enabled.
 Color support for other icon sources is supported by default.
 
-For more details, please read [the documentation](https://www.openhab.org/docs/ui/sitemaps.html#label-value-and-icon-colors).
+For more details, please read [the documentation](/docs/ui/sitemaps.html#label-value-and-icon-colors).
 
 #### Icons provided by bindings
 
 A binding can now make specific icons related to channels available to the user, especially when no appropriate category/icon is available in the classic icon set.
-Few bindings have already integrated this feature, for example the [OpenUV binding](https://www.openhab.org/addons/bindings/openuv/).
+Few bindings have already integrated this feature, for example the [OpenUV binding](/addons/bindings/openuv/).
 
 ## Addon Enhancements
 
@@ -178,19 +178,19 @@ _Jacob Laursen, openHAB Maintainer_
 
 17 new addons are included, adding support for new devices and services.
 
-The [PLEX binding](https://www.openhab.org/addons/bindings/plex/), which has been missing since version 2.x, is back!
-The [Android TV binding](https://www.openhab.org/addons/bindings/androidtv/) enables interaction with Google TV and Nvidia ShieldTV.
-The [Ecovacs binding](https://www.openhab.org/addons/bindings/ecovacs/) integrates a variety of vacuum cleaning/mopping robots.
-The [Energi Data Service binding](https://www.openhab.org/addons/bindings/energidataservice/) provides electricity prices primarily for Scandinavia, and with the [VAT transformation](https://www.openhab.org/addons/transformations/vat/), VAT is included according to your configured country.
-The [ChatGPT binding](https://www.openhab.org/addons/bindings/chatgpt/) allows AI interactions where only your imagination sets limits to the usage. How about announcing the weather forecast in a personalized way on your preferred speaker?
+The [PLEX binding](/addons/bindings/plex/), which has been missing since version 2.x, is back!
+The [Android TV binding](/addons/bindings/androidtv/) enables interaction with Google TV and Nvidia ShieldTV.
+The [Ecovacs binding](/addons/bindings/ecovacs/) integrates a variety of vacuum cleaning/mopping robots.
+The [Energi Data Service binding](/addons/bindings/energidataservice/) provides electricity prices primarily for Scandinavia, and with the [VAT transformation](/addons/transformations/vat/), VAT is included according to your configured country.
+The [ChatGPT binding](/addons/bindings/chatgpt/) allows AI interactions where only your imagination sets limits to the usage. How about announcing the weather forecast in a personalized way on your preferred speaker?
 
 Some existing bindings also received massive overhauls:
 
-The [Philips Hue binding](https://www.openhab.org/addons/bindings/hue/) has been rewritten to support API v2, offering real-time updates from lights, switches and sensors.
-Similarly, the [Hunter Douglas PowerView binding](https://www.openhab.org/addons/bindings/hdpowerview/) now supports the new PowerView Gen 3 system with blazingly fast updates.
-The [deCONZ binding](https://www.openhab.org/addons/bindings/deconz/) has been improved with new features and many bugfixes and stability improvements.
-The [Freebox binding](https://www.openhab.org/addons/bindings/freebox/) is replaced by a [new binding](https://www.openhab.org/addons/bindings/freeboxos/) rewritten from scratch.
-The [KNX binding](https://www.openhab.org/addons/bindings/knx/) introduces UoM support, respecting the DPT of a GA (group address), and has received a larger code refactoring with improved performance and stability.
+The [Philips Hue binding](/addons/bindings/hue/) has been rewritten to support API v2, offering real-time updates from lights, switches and sensors.
+Similarly, the [Hunter Douglas PowerView binding](/addons/bindings/hdpowerview/) now supports the new PowerView Gen 3 system with blazingly fast updates.
+The [deCONZ binding](/addons/bindings/deconz/) has been improved with new features and many bugfixes and stability improvements.
+The [Freebox binding](/addons/bindings/freebox/) is replaced by a [new binding](/addons/bindings/freeboxos/) rewritten from scratch.
+The [KNX binding](/addons/bindings/knx/) introduces UoM support, respecting the DPT of a GA (group address), and has received a larger code refactoring with improved performance and stability.
 
 ### JavaScript Scripting
 
