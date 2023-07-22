@@ -223,6 +223,22 @@ The `Quantity` API allows handling of UoM, e.g. unit conversion, inside your JS 
 
 To get informed about all breaking changes, enhancements, and fixes, visit [the changelog](https://github.com/openhab/openhab-js/blob/v4.5.0/CHANGELOG.md).
 
+### JRuby Scripting
+
+The [JRuby Scripting addon](/addons/automation/jrubyscripting/) is now based on JRuby 9.4 which supports Ruby 3.1 syntax.
+Its helper library is installed by default and can be used in UI-based rules, file-based rules, and in [transformations](https://openhab.github.io/openhab-jruby/main/index.html#transformations).
+
+Highlights of `JRuby Helper Library's` features:
+
+* Make rules more succinct and [easier to read, write, and maintain](https://openhab.github.io/openhab-jruby/main/file.examples.html) by providing an extensive support for common use cases as well as supporting advanced requirements.
+* Include a [comprehensive documentation](https://openhab.github.io/openhab-jruby/) based on YARD which includes detailed examples.
+* Compare [date, time, and duration](https://openhab.github.io/openhab-jruby/main/index.html#time) seamlessly, e.g. `Alarm_Time.state > Time.now + 1.hour`.
+* Compare items' state with [Quantity and Unit of Measurement](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Types/QuantityType.html) seamlessly, e.g. `Outdoor_Temperature.state > 74 | "°F"`
+* [Manage multiple reentrant timers](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#after-class_method), without having to write long and complex code to keep track of the timers, e.g. `after(10.minutes, id: Porch_Light) { Porch_Light.off }`.
+* Provide a simplified way of calling [thing actions](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Things/Thing.html#actions-instance_method), e.g. `things["mqtt:broker:mosquitto"].publish_mqtt(...)`.
+* Allow dynamic creation of things and items through [Things builder](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL/Things/Builder.html) and [Items builder](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL/Items/Builder.html).
+* And much more...
+
 # Enjoy and get in touch!
 
 We hope that you like the new release as much as we do - as always our [community forums](https://community.openhab.org/) are there for questions, comments and discussions. Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
