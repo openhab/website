@@ -194,6 +194,18 @@ The [KNX binding](https://www.openhab.org/addons/bindings/knx/) introduces UoM s
 
 ### JavaScript Scripting
 
+_Florian Hotze, openHAB Maintainer_
+
+openHAB 4 also included enhancements to the JavaScript Scripting automation add-on, and the [openHAB JavaScript library (openhab-js)](https://github.com/openhab/openhab-js).
+
+We have worked both on (significantly) reducing the memory usage by 33% and also improving the performance.
+By caching the injection of the helper library, we were able to reduce the initial evaluation time of a script to approx. a sixth compared to not-caching the helper library injection.
+
+But as already said, we not only worked on the add-on - the library also received numerous enhancements, including a rewrite of the Item metadata and channel-link APIs and the new `Quantity` API.
+The `Quantity` API allows handling of UoM, e.g. unit conversion, inside your JS scripts by utilizing the UoM capabilities provided by openHAB Core.
+
+To get informed about all breaking changes, enhancements, and fixes, visit [the changelog](https://github.com/openhab/openhab-js/blob/v4.5.0/CHANGELOG.md).
+
 # Enjoy and get in touch!
 
 We hope that you like the new release as much as we do - as always our [community forums](https://community.openhab.org/) are there for questions, comments and discussions. Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
