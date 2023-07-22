@@ -167,6 +167,23 @@ Color support for other icon sources is supported by default.
 
 For more details, please read [the documentation](/docs/ui/sitemaps.html#label-value-and-icon-colors).
 
+## New input field for sitemap UIs
+
+No new user interface elements have been added for sitemap UIs since openHAB version 1. It finally arrives in version 4 with the introduction of a new UI element expected by users, namely the input field.
+
+```java
+Input item=<itemname> [label="<labelname>"] [icon="<iconname>"] [inputHint="<inputHint>"]
+```
+
+This element allows entering of text, numbers and dates/times and updating the underlying items.
+Text, number or number with unit values and dates/times can be updated in the respective item types.
+
+The parameter `inputHint` will give a hint to the user interface to use a specific widget adapted to a specific use. For example, it can be a time picker or a date picker.  Valid values for the parameter are `text`, `number`, `date`, `time` and `datetime`. Support of these widget types vary by user interface and/or browser.
+
+This new input field is already supported in Basic UI and in the Android app.
+
+Many thanks to Mark Herwege who fully implemented this new For examplefeature (sitemap syntax update in core framework, implement in Basic UI and in the Android app).
+
 #### Icons provided by bindings
 
 A binding can now make specific icons related to channels available to the user, especially when no appropriate category/icon is available in the classic icon set.
