@@ -12,7 +12,7 @@ excerpt: >-
 ---
 A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our developers!
 
-With openHAB4, we have finally reached feature parity between UI-based and file-based configurations with UI support for both transformation and persistence configuration, added support for using any of the supported script languages for transformations and profiles, and levelled up Units of Measurement (UoM) support!
+With openHAB 4, we have finally reached feature parity between UI-based and file-based configurations, with UI support for both transformation and persistence configuration. Additionally, we have added support for using any of the supported script languages for transformations and profiles, and we've leveled up Units of Measurement (UoM) support.
 But that's not all!
 As quite usual for new openHAB major releases, we also upgraded to Java 17 to stay in sync with the evolving Java ecosystem.
 Java 17 brings a wealth of benefits to our user and especially our developers, including security enhancements, performance improvements and reduced memory usage as well as new language features and APIs.
@@ -29,7 +29,7 @@ With that being said, we again want to share some statistics that show the progr
 
 # Highlights
 
-As this is a major release, there are some major (breaking) changes (like the switch to Java 17), but there is no single big new thing (like the introduction of MainUI in openHAB 3) to learn about.
+As this is a major release, there are some major (breaking) changes, but there is no single big new thing (like the introduction of MainUI in openHAB 3) to learn about.
 Instead, we have quite a large number of new features and enhancements, and we hope everyone finds something that matters to him.
 
 Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) and check out the following highlights.
@@ -48,8 +48,8 @@ _Stefan Höhn, openHAB Blockly Maintainer_
 
 <p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/blockly4.0.png"/></p>
 
-Lot's has happened since openHAB 3, in particular promoting all blocks to the new and latest JavaScript Engine that comes with openHAB 4.
-Not only does that generate even more cleaner code, it also allows to implement many more feature that would have been hard to provide. 
+A lot has happened since openHAB 3, particularly with the promotion of all blocks to the new and latest JavaScript engine that comes with openHAB 4.
+Not only does that generate even more cleaner code, but it also allows the implementation of many more features that would have been hard to provide. 
 Therefore, all blocks have been rewritten for openHAB 4 to support the new JavaScript engine.
 
 **How the 🦏 found the holy Graal - The new code generation**
@@ -176,7 +176,7 @@ Few bindings have already integrated this feature, for example the [OpenUV bindi
 
 _Jacob Laursen, openHAB Maintainer_
 
-18 new bindings are included, supporting new devices and services:
+17 new addons are included, adding support for new devices and services.
 
 The [PLEX binding](https://www.openhab.org/addons/bindings/plex/), which has been missing since version 2.x, is back!
 The [Android TV binding](https://www.openhab.org/addons/bindings/androidtv/) enables interaction with Google TV and Nvidia ShieldTV.
@@ -186,11 +186,11 @@ The [ChatGPT binding](https://www.openhab.org/addons/bindings/chatgpt/) allows A
 
 Some existing bindings also received massive overhauls:
 
-The [Philips Hue binding](https://www.openhab.org/addons/bindings/hue/) has been rewritten to support APIv2, offering real-time updates from lights, switches and sensors.
+The [Philips Hue binding](https://www.openhab.org/addons/bindings/hue/) has been rewritten to support API v2, offering real-time updates from lights, switches and sensors.
 Similarly, the [Hunter Douglas PowerView binding](https://www.openhab.org/addons/bindings/hdpowerview/) now supports the new PowerView Gen 3 system with blazingly fast updates.
 The [deCONZ binding](https://www.openhab.org/addons/bindings/deconz/) has been improved with new features and many bugfixes and stability improvements.
 The [Freebox binding](https://www.openhab.org/addons/bindings/freebox/) is replaced by a [new binding](https://www.openhab.org/addons/bindings/freeboxos/) rewritten from scratch.
-The [KNX binding](https://www.openhab.org/addons/bindings/knx/) introduced UoM support respecting the DPT of a GA (group address), and has received a larger code refactoring with improved performance and stability.
+The [KNX binding](https://www.openhab.org/addons/bindings/knx/) introduces UoM support, respecting the DPT of a GA (group address), and has received a larger code refactoring with improved performance and stability.
 
 ### JavaScript Scripting
 
