@@ -18,7 +18,7 @@ As quite usual for new openHAB major releases, we also upgraded to Java 17 to st
 Java 17 brings a wealth of benefits to our user and especially our developers, including security enhancements, performance improvements and reduced memory usage as well as new language features and APIs.
 
 As this is a new major release, we have a number of breaking changes that are required for the new features and improvements.
-So, please have a look at our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) to learn about all breaking changes, new addons, enhancements and fixes.
+So, please have a look at our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) to learn about all breaking changes, new add-ons, enhancements and fixes.
 
 With that being said, we again want to share some statistics that show the progress in numbers.
 
@@ -62,8 +62,8 @@ In general, the code that Blockly generates is JavaScript (aka ECMAScript) which
 The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1,** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
 The generated rule code is run within the Java runtime (also known as JVM) on the openHAB server and as openHAB 4 has moved to Java 17, the old ECMAScript 5.1 is not directly available anymore within the JVM via Nashorn.
 A replacement for the Nashorn JS is **GraalJS** ("the holy grail"), which is currently running **ECMAScript 2022** and therefore supports all modern JavaScript features, like arrow functions and private class fields and methods.
-[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JavaScript Scripting addon](/addons/automation/jsscripting/) is installed.
-The [JavaScript Scripting addon](/addons/automation/jsscripting/) also includes the [openHAB JavaScript library (openhab-js)](https://github.com/openhab/openhab-js), which in fact empowers most of the new Blockly features and allows the much cleaner code by providing a simple, pure JS API to openHAB.
+[**GraalJS**](https://github.com/oracle/graaljs) is already available in openHAB 3 when the [JavaScript Scripting add-on](/addons/automation/jsscripting/) is installed.
+The [JavaScript Scripting add-on](/addons/automation/jsscripting/) also includes the [openHAB JavaScript library (openhab-js)](https://github.com/openhab/openhab-js), which in fact empowers most of the new Blockly features and allows the much cleaner code by providing a simple, pure JS API to openHAB.
 
 **New Features in Blockly**
 
@@ -194,11 +194,11 @@ For more details, please read [the documentation](/docs/ui/sitemaps.html#label-v
 A binding can now make specific icons related to channels available to the user, especially when no appropriate category/icon is available in the classic icon set.
 Few bindings have already integrated this feature, for example the [OpenUV binding](/addons/bindings/openuv/).
 
-## Addon Enhancements
+## Add-on Enhancements
 
 _Jacob Laursen, openHAB Maintainer_
 
-17 new addons are included, adding support for new devices and services.
+17 new add-ons are included, adding support for new devices and services.
 
 The [PLEX binding](/addons/bindings/plex/), which has been missing since version 2.x, is back!
 The [Android TV binding](/addons/bindings/androidtv/) enables interaction with Google TV and Nvidia ShieldTV.
@@ -232,7 +232,7 @@ To get informed about all breaking changes, enhancements, and fixes, visit [the 
 
 _Jimmy Tanagra, openHAB Maintainer_
 
-The [JRuby Scripting addon](/addons/automation/jrubyscripting/) is now based on JRuby 9.4 which supports Ruby 3.1 syntax.
+The [JRuby Scripting add-on](/addons/automation/jrubyscripting/) is now based on JRuby 9.4 which supports Ruby 3.1 syntax.
 Its helper library is installed by default and can be used in UI-based rules, file-based rules, and in [transformations](https://openhab.github.io/openhab-jruby/main/index.html#transformations).
 
 Highlights of `JRuby Helper Library's` features:
