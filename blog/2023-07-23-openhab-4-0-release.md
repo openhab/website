@@ -140,7 +140,7 @@ Even Blockly and the code of script actions are now searchable.
 
 For an exact list of entities the search checks your query against, please have a look at [the documentation](/docs/tutorial/tips-and-tricks.html#search).
 
-### New input field for sitemap UIs
+### New Input Field for Sitemap UIs
 
 _Laurent Garnier, openHAB Maintainer_
 
@@ -162,7 +162,7 @@ This new input field is already supported in Basic UI and in the Android app.
 
 Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) who fully implemented this new feature (sitemap syntax update in core framework, implementation in Basic UI and in the Android app).
 
-### Open openHAB to thousands of free new icons
+### Open openHAB to Thousands of Free New Icons
 
 _Laurent Garnier, openHAB Maintainer_
 
