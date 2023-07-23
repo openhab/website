@@ -275,7 +275,7 @@ We have worked both on (significantly) reducing the memory usage by 33% and also
 By caching the injection of the helper library, we were able to reduce the initial evaluation time of a script to approx. a sixth compared to not-caching the helper library injection.
 
 But as already said, we not only worked on the add-on - the library also received numerous enhancements, including a rewrite of the Item metadata and channel-link APIs and the new `Quantity` API.
-The `Quantity` API allows handling of UoM, e.g. unit conversion, inside your JS scripts by utilizing the UoM capabilities provided by openHAB Core.
+The [`Quantity` API](/addons/automation/jsscripting/#quantity) allows handling of UoM, e.g. unit conversion, inside your JS scripts by utilizing the UoM capabilities provided by openHAB Core.
 
 To get informed about all breaking changes, enhancements, and fixes, visit [the changelog](https://github.com/openhab/openhab-js/blob/v4.5.0/CHANGELOG.md).
 
@@ -292,7 +292,7 @@ Highlights of `JRuby Helper Library's` features:
 * Include a [comprehensive documentation](https://openhab.github.io/openhab-jruby/) based on YARD which includes detailed examples.
 * Compare [date, time, and duration](https://openhab.github.io/openhab-jruby/main/index.html#time) seamlessly, e.g. `Alarm_Time.state > Time.now + 1.hour`.
 * Compare items' state with [Quantity and Unit of Measurement](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Types/QuantityType.html) seamlessly, e.g. `Outdoor_Temperature.state > 74 | "°F"`
-* [Manage multiple reentrant timers](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#after-class_method), without having to write long and complex code to keep track of the timers, e.g. `after(10.minutes, id: Porch_Light) { Porch_Light.off }`.
+* [Manage multiple reentrant timers](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL.html#after-class_method), without having to write long and complex code to keep track of timers, e.g. `after(10.minutes, id: Porch_Light) { Porch_Light.off }`.
 * Provide a simplified way of calling [thing actions](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Things/Thing.html#actions-instance_method), e.g. `things["mqtt:broker:mosquitto"].publish_mqtt(...)`.
 * Allow dynamic creation of things and items through [Things builder](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL/Things/Builder.html) and [Items builder](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL/Items/Builder.html).
 * And much more...
