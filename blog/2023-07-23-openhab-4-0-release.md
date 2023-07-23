@@ -256,11 +256,11 @@ Input item=LGTV_Toast icon="screen" inputHint="text" visibility=[LGTV_Power==ON]
 
 Android app:
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-androidapp.jpg"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-androidapp.png"/></p>
 
 LG TV:
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-lgtv.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-lgtv.jpg"/></p>
 
 Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) who fully implemented this new feature (sitemap syntax update in core framework, implementation in Basic UI and in the Android app).
 
