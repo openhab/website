@@ -73,7 +73,7 @@ There are three things I would like to point out: Units of Measurement, scriptin
 We finally made handling of units more consistent in openHAB.
 In some cases the "old" code had surprising effects (e.g. changing the display unit in a state description corrupted persisted data).
 
-I strongly recommend to re-read [the documentation](/docs/concepts/units-of-measurement.html) and the [upgrade instructions](https://github.com/openhab/openhab-distro/releases/tag/4.0.0#upgrading).
+I strongly recommend to re-read [the documentation](/docs/concepts/units-of-measurement.html) and the [upgrade instructions](https://github.com/openhab/openhab-distro/releases/tag/4.0.0#breaking-changes-that-require-manual-interaction-after-the-upgrade).
 
 To make a long story short: We now introduced `unit` metadata that fixes the unit for a given Item.
 This unit is assumed if a value with no unit is sent to the Item and the same unit is used when data is persisted.
