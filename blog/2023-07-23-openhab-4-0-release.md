@@ -213,6 +213,35 @@ This new input field is already supported in Basic UI and in the Android app.
 
 Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) who fully implemented this new feature (sitemap syntax update in core framework, implementation in Basic UI and in the Android app).
 
+There are many use cases for this feature.
+For example, it can be used for entering manual meter readings - or perhaps drawing attention from your family:
+
+`items/tv.items`:
+
+```java
+Switch LGTV_Power "Power" { channel="lgwebos:WebOSTV:tv:power" }
+Player LGTV_Control "Control" { channel="lgwebos:WebOSTV:tv:mediaPlayer" }
+String LGTV_Toast "Toast { channel="lgwebos:WebOSTV:tv:toast" }
+```
+
+`sitemaps/tv.sitemap`:
+
+```perl
+sitemap multimedia label="TV" {
+Switch item=LGTV_Power
+Default item=LGTV_Control visibility=[LGTV_Power==ON]
+Input item=LGTV_Toast icon="screen" inputHint="text" visibility=[LGTV_Power==ON]
+}
+```
+
+Android app:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-androidapp.png"/></p>
+
+LG TV:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-lgtv.png"/></p>
+
 ### Open openHAB to Thousands of Free New Icons
 
 _Laurent Garnier, openHAB Maintainer_
