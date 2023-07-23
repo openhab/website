@@ -37,6 +37,55 @@ Therefore, please have a look at the [**release notes**](https://github.com/open
 
 ## Core Runtime Enhancements
 
+_Jan N. Klug, openHAB Maintainer_
+
+A lot of changes are under-the-hood.
+Some of them can't be seen directly, but they all improve your openHAB experience.
+The core support for some UI features (like managing transformations and persistence from UI) resulted in large refactoring of the underlying core components, which not only future-proofed our code, but also resulted in performance improvements and bug fixes.
+This is also true for the watch-service (the component that tracks changes to files) and the event handling in general.
+
+There are three things I would like to point out: Units of Measurement, scripting and thing upgrades.
+
+### Units of Measurement (UoM)
+
+The finally tried to make handling of units more consistent in openHAB.
+In some cases the "old" code had surprising effects (e.g. changing the display unit in a state description corrupted persisted data).
+
+I strongly recommend to re-read [the documentation](/docs/concepts/units-of-measurement.html) and the [upgrade instructions](https://github.com/openhab/openhab-distro/releases/tag/4.0.0#upgrading).
+
+To make a long story short: We know introduced a `unit` metadata that fixes the unit for a given Item.
+This unit is assumed if a value with no unit is sent to the Item and the same unit is used when data is persisted.
+The unit set in a state description is only used for displaying, it does no longer affect the handling of the Item's state internally.
+
+### Scripting
+
+#### Transformation and Profile
+
+openHAB 3.4 introduced the `SCRIPT` transformation, but a profile was still missing.
+We used the introduction of the profile to also improve handling of the transformation.
+With openHAB 4 you can use any scripting language you like to create transformation scripts (even in the UI, see below) and use all of these as a profile when linking channels and Items.
+
+Please have a look at [the documentation](/docs/configuration/transformations.html#script-transformation) for more information.
+
+#### Startup Behavior
+
+With the increasing popularity of scripting languages besides openHAB's classic DSL (like JavaScript and Ruby) some issues regarding the startup behavior became more obvious.
+For openHAB 4 we re-worked the startup process, and it finally is a much more deterministic startup behavior.
+The runtime now ensures that the necessary add-ons are initialized before it tries to run rules.
+
+#### Rule Triggers
+
+In most scripting languages information about the reason the rule triggered is available, but in the past this was limited to Item events (i.e. no information was given for time-based triggers or start-level-triggers).
+With openHAB 4 you have much more control: You can extract the information about the rule trigger for all trigger types.
+
+### Thing Upgrades
+
+If you used managed (i.e. UI configured) Things in the past, you'll have noticed: When a breaking change in a binding occurs, you have to delete the thing and re-add it, requiring a full new configuration (including channel-links).
+
+With openHAB 4 we introduced "thing upgrades".
+Add-on developers can now provide instructions to automatically upgrade things when openHAB upgrades.
+You'll notice this is already the case for a lot (but unfortunately not all) breaking changes in this release.
+
 ## UI Enhancements
 
 _Florian Hotze, openHAB Maintainer_
