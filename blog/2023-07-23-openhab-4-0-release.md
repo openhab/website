@@ -4,7 +4,7 @@ category: blog
 title: openHAB 4.0 Release
 author: Florian Hotze and others
 date: '2023-07-23T18:00:00+02:00'
-previewimage: /uploads/summer23.jpg
+previewimage: /uploads/2023-07-23-openhab-4-0-release/header.png
 tags:
   - news
 excerpt: >-
@@ -12,7 +12,8 @@ excerpt: >-
 ---
 A new major release has arrived! openHAB 4 brings some exciting new features and several improvements for our users as well as our developers!
 
-With openHAB 4, we have finally reached feature parity between UI-based and file-based configurations, with UI support for both transformation and persistence configuration. Additionally, we have added support for using any of the supported script languages for transformations and profiles, and we've leveled up Units of Measurement (UoM) support.
+With openHAB 4, we have finally reached feature parity between UI-based and file-based configurations, with UI support for both transformation and persistence configuration.
+Additionally, we have added support for using any of the supported script languages for transformations and profiles, and we've leveled up Units of Measurement (UoM) support.
 But that's not all!
 As quite usual for new openHAB major releases, we also upgraded to Java 17 to stay in sync with the evolving Java ecosystem.
 Java 17 brings a wealth of benefits to our user and especially our developers, including security enhancements, performance improvements and reduced memory usage as well as new language features and APIs.
@@ -29,7 +30,7 @@ With that being said, we again want to share some statistics that show the progr
 
 # Highlights
 
-As this is a major release, there are some major (breaking) changes, but there is no single big new thing (like the introduction of MainUI in openHAB 3) to learn about.
+As this is a major release, there are some major (breaking) changes, but there is no single big new thing (like the introduction of Main UI in openHAB 3) to learn about.
 Instead, we have quite a large number of new features and enhancements, and we hope everyone finds something that matters to him.
 
 Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) and check out the following highlights.
@@ -95,7 +96,7 @@ In openHAB, a simple rule would be enough to achieve that functionality, but it 
 The scene editor allows you to define Items and their respective target states very easily.
 A sync state button allows to store the current Item state as the target state, and another button allows you to test the currently defined target state.
 
-Scenes can be triggered from MainUI widgets and, as they are basically just rules without triggers, from other rules. 
+Scenes can be triggered from Main UI widgets and, as they are basically just rules without triggers, from other rules. 
 One may wonder how to trigger scenes from BasicUI: In this case, you can create an Item and use the code tab of the scene to define it as a trigger.
 
 <p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/scene-editor.png"/></p>
@@ -133,7 +134,8 @@ With openHAB 4, we gave it a big upgrade:
 It is now possible to search inside nearly every UI entity. 
 No matter where, you find what you search for.
 
-Imagine you want to know which of your rules and pages use a specific Item. Just type the Item name in the developer sidebar search, and you’ll find all occurrences of the search query in pages, scenes, scripts and rules. 
+Imagine you want to know which of your rules and pages use a specific Item.
+Just type the Item name in the developer sidebar search, and you’ll find all occurrences of the search query in pages, scenes, scripts and rules. 
 Even Blockly and the code of script actions are now searchable.
 
 <!-- Add image here -->
