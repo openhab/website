@@ -25,15 +25,15 @@ With that being said, we again want to share some statistics that show the progr
 
 # Activity
 
-As quite usual, we have had a really high activity across all our GitHub repositories since our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
-We want to share a few statistics about our three main repositories: Core, add-ons and UI.
+As you'd expect from a new major release, we have had a really high activity across all our GitHub repositories since our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
+We therefore want to share a few statistics about our three main repositories: Core, add-ons and UI.
 
 [openHAB core](https://github.com/openhab/openhab-core), which is like the heart of openHAB, has received 260 pull requests, 68 bug fixes and 94 enhancements with 34,370 lines of code added.
 The number of pull requests has doubled up compared to our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
 
-17 new add-ons were introduced, and with 748 pull requests, 153 bug fixes and 214 enhancements resulted in ... lines of add-on core added to [openHAB add-ons](https://github.com/openhab/openhab-addons).
+17 new add-ons were introduced, and with 748 pull requests, 153 bug fixes and 214 enhancements resulted in ... lines of add-on code added to [openHAB add-ons](https://github.com/openhab/openhab-addons).
 
-Our [Web UIs](https://github.com/openhab/openhab-webui) were also very actively developed, with 174 pull requests, 54 bug fixes and 83 enhancements and  ... lines of code added.
+Our [openHAB web UIs](https://github.com/openhab/openhab-webui) were also very actively developed, with 174 pull requests, 54 bug fixes and 83 enhancements and  ... lines of code added.
 That's nearly three times the number of pull requests compared to our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
 
 It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
@@ -44,16 +44,16 @@ Finally, it is time to shout out our top code contributors per repository (havin
 - Jan ([@J-N-K](https://github.com/J-N-K)) for openHAB core
 - Jacob ([@jlaur](https://github.com/jlaur)) for openHAB add-ons
 - Laurent ([@lolodomo](https://github.com/lolodomo)) for openHAB add-ons
-- Florian ([@florian-h05](https://github.com/florian-05)) for the openHAB Web UIs
+- Florian ([@florian-h05](https://github.com/florian-05)) for the openHAB web UIs
 
-All of them are also maintainers, which means besides of contributing code, they also review pull requests and participate in discussions on GitHub issues.
+All of them are also maintainers, which means besides of contributing code, they review pull requests and participate in discussions on GitHub issues.
 At present, there are 37 maintainers across all our repositories.
 I extend a huge thank you to all my colleagues for their exceptional contributions in advancing openHAB!
 
 # Highlights
 
 As this is a major release, there are some major (breaking) changes, but there is no single big new thing (like the introduction of Main UI in openHAB 3) to learn about.
-Instead, we have quite a large number of new features and enhancements, and we hope everyone finds something that matters to him.
+Instead, we have quite a large number of new features and enhancements, and we hope everyone finds something that matters to them.
 
 Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.0.0) and check out the following highlights.
 
@@ -66,16 +66,16 @@ Some of them can't be seen directly, but they all improve your openHAB experienc
 The core support for some UI features (like managing transformations and persistence from UI) resulted in large refactoring of the underlying core components, which not only future-proofed our code, but also resulted in performance improvements and bug fixes.
 This is also true for the watch-service (the component that tracks changes to files) and the event handling in general.
 
-There are three things I would like to point out: Units of Measurement, scripting and thing upgrades.
+There are three things I would like to point out: Units of Measurement, scripting and Thing upgrades.
 
 ### Units of Measurement (UoM)
 
-The finally tried to make handling of units more consistent in openHAB.
+We finally made handling of units more consistent in openHAB.
 In some cases the "old" code had surprising effects (e.g. changing the display unit in a state description corrupted persisted data).
 
 I strongly recommend to re-read [the documentation](/docs/concepts/units-of-measurement.html) and the [upgrade instructions](https://github.com/openhab/openhab-distro/releases/tag/4.0.0#upgrading).
 
-To make a long story short: We know introduced a `unit` metadata that fixes the unit for a given Item.
+To make a long story short: We now introduced `unit` metadata that fixes the unit for a given Item.
 This unit is assumed if a value with no unit is sent to the Item and the same unit is used when data is persisted.
 The unit set in a state description is only used for displaying, it does no longer affect the handling of the Item's state internally.
 
@@ -102,9 +102,9 @@ With openHAB 4 you have much more control: You can extract the information about
 
 ### Thing Upgrades
 
-If you used managed (i.e. UI configured) Things in the past, you'll have noticed: When a breaking change in a binding occurs, you have to delete the thing and re-add it, requiring a full new configuration (including channel-links).
+If you used managed (i.e. UI configured) Things in the past, you'll have noticed: When a breaking change in a binding occurs, you have to delete the thing and re-add it, requiring a full re-configuration (including channel-links).
 
-With openHAB 4 we introduced "thing upgrades".
+With openHAB 4 we introduced "Thing upgrades".
 Add-on developers can now provide instructions to automatically upgrade things when openHAB upgrades.
 You'll notice this is already the case for a lot (but unfortunately not all) breaking changes in this release.
 
@@ -112,7 +112,7 @@ You'll notice this is already the case for a lot (but unfortunately not all) bre
 
 _Florian Hotze, openHAB Maintainer_
 
-Especially as a new member of the UI maintainers team (i.e. duo — it’s just Yannick Schaus and me), I’m really excited to introduce you to the following enhancements, which are only a part of all the changes that have been contributed.
+Especially as a new member of the UI maintainers team (i.e. duo — it’s just Yannick Schaus and me), I’m really excited to introduce you to the following enhancements, which are only a part of all the changes that have been contributed to our web UIs.
 
 ### Blockly
 
@@ -225,15 +225,13 @@ Input item=<itemname> [label="<labelname>"] [icon="<iconname>"] [inputHint="<inp
 ```
 
 This element allows entering of text, numbers and dates/times and updating the underlying items.
-Text, number or number with unit values and dates/times can be updated in the respective item types.
+Text, number or number with unit values and dates/times can be updated in the respective Item types.
 
 The parameter `inputHint` will give a hint to the user interface to use a specific widget adapted to a specific use.
-For example, it can be a time picker or a date picker.  Valid values for the parameter are `text`, `number`, `date`, `time` and `datetime`.
+For example, it can be a time picker or a date picker. Valid values for the parameter are `text`, `number`, `date`, `time` and `datetime`.
 Support of these widget types vary by user interface and/or browser.
 
 This new input field is already supported in Basic UI and in the Android app.
-
-Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) who fully implemented this new feature (sitemap syntax update in core framework, implementation in Basic UI and in the Android app).
 
 There are many use cases for this feature.
 For example, it can be used for entering manual meter readings - or perhaps drawing attention from your family:
@@ -264,28 +262,31 @@ LG TV:
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-lgtv.png"/></p>
 
+Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) who fully implemented this new feature (sitemap syntax update in core framework, implementation in Basic UI and in the Android app).
+
 ### Open openHAB to Thousands of Free New Icons
 
 _Laurent Garnier, openHAB Maintainer_
 
 #### New icon sources available
 
-In addition to the icons already provided via the openHAB server (classic icon set + custom user icons), you have now easy access for your items and sitemap elements to the [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons), [Framework7 icons](https://framework7.io/icons/) and [over 150,000 icons provided by Iconify](https://icon-sets.iconify.design/).
+In addition to the icons already provided via the openHAB server (classic icon set + custom user icons), you have now easy access for your Items and sitemap elements to the [Material icons](https://fonts.google.com/icons?icon.set=Material+Icons), [Framework7 icons](https://framework7.io/icons/) and [over 150,000 icons provided by Iconify](https://icon-sets.iconify.design/).
 
-Main UI supports all these icon sources while Basic UI currently supports all of them except the Framework7.
-Note that the Iconify option requires internet connectivity on the client to access the external API.
+Main UI supports all these icon sources while Basic UI currently supports all of them except Framework7.
+Note that Iconify icons require internet connectivity on the client to access the external API.
 The web browser will cache the retrieved icons to limit the requests and speed up the rendering.
-Basic UI provides a setting to enable this option which is disabled by default.
+Basic UI provides a setting to enable this option, which is disabled by default.
 
-Dynamic icons based on the item state remains a feature only available with the openHAB icon sets.
+Dynamic icons based on the Item state remain a feature only available when using the openHAB icon sets.
 
 For more details including the new category/icon syntax, please read [the documentation](/docs/configuration/items.html#icons).
 
 #### Managing your icon color
 
-You can now control the icon color associated with any user interface element of a sitemap using the "iconcolor" parameter. The syntax and capabilities behind this parameter are the same as for the "labelcolor" and "valuecolor" parameters, which means you can define multiple conditions leading to different colors.
+You can now control the icon color associated with any user interface element of a sitemap using the `iconcolor` parameter.
+The syntax and capabilities behind this parameter are the same as for the `labelcolor` and `valuecolor` parameters, which means you can define multiple conditions leading to different colors.
 
-This is not possible with icons from the classic icon set because these icons have a hard-coded color palette, but it is possible with icons from other icon sources and with added user SVG icons containing "currentColor" as the fill color.
+This is not possible with icons from the classic icon set because these icons have a hard-coded color palette, but it is possible with icons from other icon sources and with user-added SVG icons using `currentColor` as the fill color.
 Basic UI supports this color feature for openHAB icons only if an option is enabled.
 Color support for other icon sources is supported by default.
 
@@ -320,15 +321,15 @@ The [KNX binding](/addons/bindings/knx/) introduces UoM support, respecting the 
 
 _Florian Hotze, openHAB Maintainer_
 
-openHAB 4 also included enhancements to the JavaScript Scripting automation add-on, and the [openHAB JavaScript library (openhab-js)](https://github.com/openhab/openhab-js).
+openHAB 4 also includes enhancements to the JavaScript Scripting automation add-on, and the [openHAB JavaScript library (openhab-js)](https://github.com/openhab/openhab-js).
 
-We have worked both on (significantly) reducing the memory usage by 33% and also improving the performance.
+We have worked both on reducing the memory usage (by approx. 30%) and also improving the performance.
 By caching the injection of the helper library, we were able to reduce the initial evaluation time of a script to approx. a sixth compared to not-caching the helper library injection.
 
 But as already said, we not only worked on the add-on - the library also received numerous enhancements, including a rewrite of the Item metadata and channel-link APIs and the new `Quantity` API.
 The [`Quantity` API](/addons/automation/jsscripting/#quantity) allows handling of UoM, e.g. unit conversion, inside your JS scripts by utilizing the UoM capabilities provided by openHAB Core.
 
-To get informed about all breaking changes, enhancements, and fixes, visit [the changelog](https://github.com/openhab/openhab-js/blob/v4.5.0/CHANGELOG.md).
+To get informed about all breaking changes, enhancements, and fixes, have a look at [the openhab-js changelog](https://github.com/openhab/openhab-js/blob/v4.5.0/CHANGELOG.md).
 
 ### JRuby Scripting
 
