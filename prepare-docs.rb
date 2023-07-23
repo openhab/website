@@ -460,9 +460,9 @@ FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/
 FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/ide/images")
 
 # Additional files and images for the latest docs
-if $version == "final" then
+#if $version == "final" then
 
-    puts "-> Add additional sections only to the 'latest' docs."
+    #puts "-> Add additional sections only to the 'latest' docs."
 
     ["addons"].each { |subsection|
         Dir.glob(".vuepress/openhab-docs/developers/#{subsection}/*.md") { |path|
@@ -472,11 +472,11 @@ if $version == "final" then
         }
     }
 
-else
+#else
 
-    puts "-> Skipping additional doc parts that are not yet available in stable."
+#   puts "-> Skipping additional doc parts that are not yet available in stable."
 
-end
+#end
 
 ### ADDONS
 
