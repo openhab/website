@@ -96,7 +96,7 @@ Especially as a new member of the UI maintainers team (i.e. duo — it’s just 
 
 _Stefan Höhn, openHAB Blockly Maintainer_
 
-<p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/blockly4.0.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/blockly4.0.png"/></p>
 
 A lot has happened since openHAB 3, particularly with the promotion of all blocks to the new and latest JavaScript engine that comes with openHAB 4.
 Not only does that generate even more cleaner code, but it also allows the implementation of many more features that would have been hard to provide. 
@@ -148,7 +148,7 @@ A sync state button allows to store the current Item state as the target state, 
 Scenes can be triggered from Main UI widgets and, as they are basically just rules without triggers, from other rules. 
 One may wonder how to trigger scenes from BasicUI: In this case, you can create an Item and use the code tab of the scene to define it as a trigger.
 
-<p align="center"><img style="max-width: 80%;" src="/uploads/2023-07-23-openhab-4-0-release/scene-editor.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/scene-editor.png"/></p>
 
 If you are interested, please check out [the documentation](/docs/tutorial/rules_scenes.html).
 
@@ -171,7 +171,7 @@ openHAB 4 also has a few new filters you should check out!
 
 The code tab represents the persistence configuration in YAML code and is perfect for sharing, e.g. when asking for help on the forum, but everything can be configured without touching a single line of code.
 
-<!-- Add image here -->
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/persistence-editor.png"/></p>
 
 To try it yourself, open a persistence add-on’s settings from the add-on store and click on the blue “Persistence configuration” header.
 
@@ -187,7 +187,7 @@ Imagine you want to know which of your rules and pages use a specific Item.
 Just type the Item name in the developer sidebar search, and you’ll find all occurrences of the search query in pages, scenes, scripts and rules. 
 Even Blockly and the code of script actions are now searchable.
 
-<!-- Add image here -->
+<p align="center"><img style="max-width: 55%;" src="/uploads/2023-07-23-openhab-4-0-release/developer-sidebar.png"/></p>
 
 For an exact list of entities the search checks your query against, please have a look at [the documentation](/docs/tutorial/tips-and-tricks.html#search).
 
