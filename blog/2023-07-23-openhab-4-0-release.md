@@ -39,7 +39,7 @@ That's nearly three times the number of pull requests compared to our [winter re
 It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
 Thank you to all our contributors for driving openHAB forward!
 
-Finally, it is time to shout out our top code contributors per repository (having done the most commits) for this new release:
+Finally, it is time to shout out to our top code contributors per repository (having done the most commits) for this new release:
 
 - Jan ([@J-N-K](https://github.com/J-N-K)) for openHAB core
 - Jacob ([@jlaur](https://github.com/jlaur)) for openHAB add-ons
@@ -91,22 +91,22 @@ Please have a look at [the documentation](/docs/configuration/transformations.ht
 
 #### Startup Behavior
 
-With the increasing popularity of scripting languages besides openHAB's classic DSL (like JavaScript and Ruby) some issues regarding the startup behavior became more obvious.
+With the increasing popularity of scripting languages (like JavaScript and Ruby) besides openHAB's classic DSL some issues regarding the startup behavior became more obvious.
 For openHAB 4 we re-worked the startup process, and it finally is a much more deterministic startup behavior.
 The runtime now ensures that the necessary add-ons are initialized before it tries to run rules.
 
 #### Rule Triggers
 
-In most scripting languages information about the reason the rule triggered is available, but in the past this was limited to Item events (i.e. no information was given for time-based triggers or start-level-triggers).
+In most scripting languages information about the reason why the rule has been triggered is available, but in the past this was limited to Item events (i.e. no information was given for time-based triggers or start-level-triggers).
 With openHAB 4 you have much more control: You can extract the information about the rule trigger for all trigger types.
 
 ### Thing Upgrades
 
-If you used managed (i.e. UI configured) Things in the past, you'll have noticed: When a breaking change in a binding occurs, you have to delete the thing and re-add it, requiring a full re-configuration (including channel-links).
+If you used managed (i.e. UI-configured) Things in the past, you will have noticed that when a breaking change in a binding occured, you had to delete the thing and re-add it, requiring a full re-configuration (including channel-links).
 
 With openHAB 4 we introduced "Thing upgrades".
 Add-on developers can now provide instructions to automatically upgrade things when openHAB upgrades.
-You'll notice this is already the case for a lot (but unfortunately not all) breaking changes in this release.
+This is already the case for a lot (but unfortunately not all) breaking changes in this release.
 
 ## UI Enhancements
 
