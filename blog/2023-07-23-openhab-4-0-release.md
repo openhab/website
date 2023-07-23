@@ -102,7 +102,7 @@ With openHAB 4 you have much more control: You can extract the information about
 
 ### Thing Upgrades
 
-If you used managed (i.e. UI-configured) Things in the past, you will have noticed that when a breaking change in a binding occured, you had to delete the thing and re-add it, requiring a full re-configuration (including channel-links).
+If you used managed (i.e. UI-configured) Things in the past, you will have noticed that when a breaking change in a binding occurred, you had to delete the thing and re-add it, requiring a full re-configuration (including channel-links).
 
 With openHAB 4 we introduced "Thing upgrades".
 Add-on developers can now provide instructions to automatically upgrade things when openHAB upgrades.
