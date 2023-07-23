@@ -44,7 +44,7 @@ Finally, it is time to shout out to our top code contributors per repository (ha
 - Jan ([@J-N-K](https://github.com/J-N-K)) for openHAB core
 - Jacob ([@jlaur](https://github.com/jlaur)) for openHAB add-ons
 - Laurent ([@lolodomo](https://github.com/lolodomo)) for openHAB add-ons
-- Florian ([@florian-h05](https://github.com/florian-05)) for the openHAB web UIs
+- Florian ([@florian-h05](https://github.com/florian-h05)) for the openHAB web UIs
 
 All of them are also maintainers, which means besides of contributing code, they review pull requests and participate in discussions on GitHub issues.
 At present, there are 37 maintainers across all our repositories.
