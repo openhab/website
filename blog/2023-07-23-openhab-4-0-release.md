@@ -121,14 +121,14 @@ _Stefan Höhn, openHAB Blockly Maintainer_
 <p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/blockly4.0.png"/></p>
 
 A lot has happened since openHAB 3, particularly with the promotion of all blocks to the new and latest JavaScript engine that comes with openHAB 4.
-Not only does that generate even more cleaner code, but it also allows the implementation of many more features that would have been hard to provide. 
+Not only does that generate even cleaner code, but it also allows the implementation of many more features that would have been hard to provide. 
 Therefore, all blocks have been rewritten for openHAB 4 to support the new JavaScript engine.
 
 **How the 🦏 found the holy Graal - The new code generation**
 
 Even though one may not notice it directly, the blocks are eventually used to automatically create code that can run on the openHAB server.
 Please watch the YouTube video [Blockly as an ECMA-Script code generator](https://youtu.be/EdllUlJ7p6k?t=1739) for a live demo.
-The code that is generated can be viewed when clicking the button in the lower right corner of the blockly editor.
+The code that is generated can be viewed when clicking the button in the lower right corner of the Blockly editor.
 
 In general, the code that Blockly generates is JavaScript (aka ECMAScript) which exists in several flavours or versions.
 The ECMAScript version that is used by Blockly in **openHAB 3** is **ECMAScript 5.1,** and it is run by a component named **NashornJS** 🦏. [Nashorn JS](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) itself was part of Java until version 14 when it was dropped.
@@ -140,9 +140,9 @@ The [JavaScript Scripting add-on](/addons/automation/jsscripting/) also includes
 **New Features in Blockly**
 
 * Full Support of **U**nits **o**f **M**easurement with [5 brand-new blocks](/docs/configuration/blockly/rules-blockly-uom.html)
-* The [Math section](/docs/configuration/blockly/rules-blockly-standard-ext.html#math) was extended by a new bitshift block and extended rounding block
+* The [Math section](/docs/configuration/blockly/rules-blockly-standard-ext.html#math) has been extended by a new bitshift block and extended rounding block
 * Metadata blocks allow direct access to [Item metadata](/docs/configuration/blockly/rules-blockly-items-things.html#item-metadata)
-* A historicState option was added to the [persistence blocks](/docs/configuration/blockly/rules-blockly-persistence.html#get-statistical-value-of-an-item)
+* A historicState option has been added to the [persistence blocks](/docs/configuration/blockly/rules-blockly-persistence.html#get-statistical-value-of-an-item)
 * Persistence blocks can now be used with any [persistence service](/docs/configuration/blockly/rules-blockly-persistence.html)
 * Added pattern to [text of date block](/docs/configuration/blockly/rules-blockly-date-handling.html#get-string-representation-of-date-text-of)
 * Support for [private and global cache](/docs/configuration/blockly/rules-blockly-value-storage.html#caching) when using the value storage blocks
@@ -151,7 +151,7 @@ The [JavaScript Scripting add-on](/addons/automation/jsscripting/) also includes
 * Added numeric state, quantity state to getItemAttribute
 
 Editor:
-* [Search](/docs/configuration/blockly/rules-blockly-before-using.html#searching-the-workspace) within the blockly workspace via Cmd/Ctrl-F
+* [Search](/docs/configuration/blockly/rules-blockly-before-using.html#searching-the-workspace) within the Blockly workspace via Cmd/Ctrl-F
 * Shadow Blocks are now automatically converted to real blocks, which is good when you want to reuse them by duplicating the block 
 * [Cross-Rule Copy & Paste](https://next.openhab.org/docs/configuration/blockly/rules-blockly-before-using.html#cross-rule-copy-paste)
 
@@ -159,16 +159,16 @@ All new blocks have received comprehensive documentation at the [Blockly Referen
 
 ### Scene Editor
 
-Given several discussions on the community, support for scenes was a long awaited feature — openHAB 4 has it.
+Given several discussions in the community, support for scenes was a long awaited feature — openHAB 4 has it.
 
 Basically, scenes are only a set of Items and states that the Items are commanded to when the scene is enabled.
-In openHAB, a simple rule would be enough to achieve that functionality, but it would either require some coding or several UI interactions.
+In openHAB, a simple rule would be enough to achieve this functionality, but it would either require some coding or several UI interactions.
 
 The scene editor allows you to define Items and their respective target states very easily.
-A sync state button allows to store the current Item state as the target state, and another button allows you to test the currently defined target state.
+A sync state button allows storing the current Item state as the target state, and another button allows testing the currently defined target state.
 
 Scenes can be triggered from Main UI widgets and, as they are basically just rules without triggers, from other rules. 
-One may wonder how to trigger scenes from BasicUI: In this case, you can create an Item and use the code tab of the scene to define it as a trigger.
+One may wonder how to trigger scenes from Basic UI: In this case, you can create an Item and use the code tab of the scene to define it as a trigger.
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/scene-editor.png"/></p>
 
@@ -203,7 +203,7 @@ In openHAB 3, the developer sidebar search was only able to find Items by name o
 
 With openHAB 4, we gave it a big upgrade:
 It is now possible to search inside nearly every UI entity. 
-No matter where, you find what you search for.
+No matter what, you find what you search for.
 
 Imagine you want to know which of your rules and pages use a specific Item.
 Just type the Item name in the developer sidebar search, and you’ll find all occurrences of the search query in pages, scenes, scripts and rules. 
@@ -295,7 +295,7 @@ For more details, please read [the documentation](/docs/ui/sitemaps.html#label-v
 #### Icons provided by bindings
 
 A binding can now make specific icons related to channels available to the user, especially when no appropriate category/icon is available in the classic icon set.
-Few bindings have already integrated this feature, for example the [OpenUV binding](/addons/bindings/openuv/).
+A few bindings have already integrated this feature, for example the [OpenUV binding](/addons/bindings/openuv/).
 
 ## Add-on Enhancements
 
@@ -311,11 +311,11 @@ The [ChatGPT binding](/addons/bindings/chatgpt/) allows AI interactions where on
 
 Some existing bindings also received massive overhauls:
 
-The [Philips Hue binding](/addons/bindings/hue/) has been rewritten to support API v2, offering real-time updates from lights, switches and sensors.
-Similarly, the [Hunter Douglas PowerView binding](/addons/bindings/hdpowerview/) now supports the new PowerView Gen 3 system with blazingly fast updates.
-The [deCONZ binding](/addons/bindings/deconz/) has been improved with new features and many bugfixes and stability improvements.
-The [Freebox binding](/addons/bindings/freebox/) is replaced by a [new binding](/addons/bindings/freeboxos/) rewritten from scratch.
-The [KNX binding](/addons/bindings/knx/) introduces UoM support, respecting the DPT of a GA (group address), and has received a larger code refactoring with improved performance and stability.
+- The [Philips Hue binding](/addons/bindings/hue/) has been rewritten to support API v2, offering real-time updates from lights, switches and sensors.
+- Similarly, the [Hunter Douglas PowerView binding](/addons/bindings/hdpowerview/) now supports the new PowerView Gen 3 system with blazingly fast updates.
+- The [deCONZ binding](/addons/bindings/deconz/) has been improved with new features and many bugfixes and stability improvements.
+- The [Freebox binding](/addons/bindings/freebox/) is replaced by a [new binding](/addons/bindings/freeboxos/) rewritten from scratch.
+- The [KNX binding](/addons/bindings/knx/) introduces UoM support, respecting the DPT of a GA (group address), and has received a larger code refactoring with improved performance and stability.
 
 ### JavaScript Scripting
 
