@@ -4,7 +4,7 @@ category: blog
 title: openHAB 4.0 Release
 author: Florian Hotze and others
 date: '2023-07-23T18:00:00+02:00'
-previewimage: /uploads/2023-07-23-openhab-4-0-release/header.png
+previewimage: /uploads/2023-07-23-openhab-4-0-release/header.jpg
 tags:
   - news
 excerpt: >-
