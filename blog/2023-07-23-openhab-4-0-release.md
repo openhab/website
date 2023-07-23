@@ -326,6 +326,6 @@ Highlights of `JRuby Helper Library's` features:
 * Allow dynamic creation of things and items through [Things builder](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL/Things/Builder.html) and [Items builder](https://openhab.github.io/openhab-jruby/main/OpenHAB/DSL/Items/Builder.html).
 * And much more...
 
-# Enjoy and get in touch!
+# Enjoy and Get in Touch!
 
 We hope that you like the new release as much as we do - as always our [community forums](https://community.openhab.org/) are there for questions, comments and discussions. Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
