@@ -241,7 +241,7 @@ For example, it can be used for entering manual meter readings - or perhaps draw
 ```java
 Switch LGTV_Power "Power" { channel="lgwebos:WebOSTV:tv:power" }
 Player LGTV_Control "Control" { channel="lgwebos:WebOSTV:tv:mediaPlayer" }
-String LGTV_Toast "Toast { channel="lgwebos:WebOSTV:tv:toast" }
+String LGTV_Toast "Toast" { channel="lgwebos:WebOSTV:tv:toast" }
 ```
 
 `sitemaps/tv.sitemap`:
