@@ -247,10 +247,10 @@ String LGTV_Toast "Toast { channel="lgwebos:WebOSTV:tv:toast" }
 `sitemaps/tv.sitemap`:
 
 ```perl
-sitemap multimedia label="TV" {
-Switch item=LGTV_Power
-Default item=LGTV_Control visibility=[LGTV_Power==ON]
-Input item=LGTV_Toast icon="screen" inputHint="text" visibility=[LGTV_Power==ON]
+sitemap tv label="TV" {
+  Switch item=LGTV_Power
+  Default item=LGTV_Control visibility=[LGTV_Power==ON]
+  Input item=LGTV_Toast icon="screen" inputHint="text" visibility=[LGTV_Power==ON]
 }
 ```
 
