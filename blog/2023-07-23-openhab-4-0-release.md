@@ -256,7 +256,7 @@ Input item=LGTV_Toast icon="screen" inputHint="text" visibility=[LGTV_Power==ON]
 
 Android app:
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-androidapp.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-07-23-openhab-4-0-release/basicui-input-androidapp.jpg"/></p>
 
 LG TV:
 
