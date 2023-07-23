@@ -25,8 +25,30 @@ With that being said, we again want to share some statistics that show the progr
 
 # Activity
 
-<!-- Share some stats about PRs, LOC etc. like in https://www.openhab.org/blog/2022-06-26-openhab-3-3-release.html#activity -->
-<!-- Thank major contributors like in https://www.openhab.org/blog/2022-12-19-openhab-3-4-release.html -->
+As quite usual, we have had a really high activity across all our GitHub repositories since our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
+We want to share a few statistics about our three main repositories: Core, add-ons and UI.
+
+[openHAB core](https://github.com/openhab/openhab-core), which is like the heart of openHAB, has received 260 pull requests, 68 bug fixes and 94 enhancements with 34,370 lines of code added.
+The number of pull requests has doubled up compared to our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
+
+17 new add-ons were introduced, and with 748 pull requests, 153 bug fixes and 214 enhancements resulted in ... lines of add-on core added to [openHAB add-ons](https://github.com/openhab/openhab-addons).
+
+Our [Web UIs](https://github.com/openhab/openhab-webui) were also very actively developed, with 174 pull requests, 54 bug fixes and 83 enhancements and  ... lines of code added.
+That's nearly three times the number of pull requests compared to our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
+
+It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
+Thank you to all our contributors for driving openHAB forward!
+
+Finally, it is time to shout out our top code contributors per repository (having done the most commits) for this new release:
+
+- Jan ([@J-N-K](https://github.com/J-N-K)) for openHAB core
+- Jacob ([@jlaur](https://github.com/jlaur)) for openHAB add-ons
+- Laurent ([@lolodomo](https://github.com/lolodomo)) for openHAB add-ons
+- Florian ([@florian-h05](https://github.com/florian-05)) for the openHAB Web UIs
+
+All of them are also maintainers, which means besides of contributing code, they also review pull requests and participate in discussions on GitHub issues.
+At present, there are 37 maintainers across all our repositories.
+I extend a huge thank you to all my colleagues for their exceptional contributions in advancing openHAB!
 
 # Highlights
 
