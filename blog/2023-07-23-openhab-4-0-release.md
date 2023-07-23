@@ -28,12 +28,12 @@ With that being said, we again want to share some statistics that show the progr
 As you'd expect from a new major release, we have had a really high activity across all our GitHub repositories since our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
 We therefore want to share a few statistics about our three main repositories: Core, add-ons and UI.
 
-[openHAB core](https://github.com/openhab/openhab-core), which is like the heart of openHAB, has received 260 pull requests, 68 bug fixes and 94 enhancements with 34,370 lines of code added.
+[openHAB core](https://github.com/openhab/openhab-core), which is like the heart of openHAB, has received 260 pull requests, 68 bug fixes and 94 enhancements with 13,171 lines of code added.
 The number of pull requests has doubled up compared to our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
 
-17 new add-ons were introduced, and with 748 pull requests, 153 bug fixes and 214 enhancements resulted in ... lines of add-on code added to [openHAB add-ons](https://github.com/openhab/openhab-addons).
+17 new add-ons were introduced, and with 748 pull requests, 153 bug fixes and 214 enhancements resulted in 117,453 lines of add-on code added to [openHAB add-ons](https://github.com/openhab/openhab-addons).
 
-Our [openHAB web UIs](https://github.com/openhab/openhab-webui) were also very actively developed, with 174 pull requests, 54 bug fixes and 83 enhancements and  ... lines of code added.
+Our [openHAB web UIs](https://github.com/openhab/openhab-webui) were also very actively developed, with 174 pull requests, 54 bug fixes and 83 enhancements and 10,440 lines of code added.
 That's nearly three times the number of pull requests compared to our [winter release](/blog/2022-12-19-openhab-3-4-release.html).
 
 It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
