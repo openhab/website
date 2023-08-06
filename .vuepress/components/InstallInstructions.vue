@@ -158,7 +158,7 @@ usermod -a -G openhab myownuser
         </div>
         <div v-if="selectedVersion === 'snapshot'">
             <div class="download-button-container">
-              <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.0.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
+              <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.1.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
             </div>
         </div>
       </ol>
@@ -202,12 +202,12 @@ usermod -a -G openhab myownuser
         <li>Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
         <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
         <div class="download-button-container">
-          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-4.0.0-SNAPSHOT.zip`" download>Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
+          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-4.1.0-SNAPSHOT.zip`" download>Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
         </div>
         <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
         &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
         <div class="download-button-container">
-          <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.0.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
+          <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.1.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
         </div>
       </ol>
     </div>
