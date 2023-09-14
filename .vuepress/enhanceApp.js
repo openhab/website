@@ -40,5 +40,15 @@ export default ({
       tag.setAttribute('data-text-align', 'left')
       tag.setAttribute('data-close-text', 'Got it!')
       document.body.appendChild(tag)
+
+      // Add chatbase.io chatbot
+      window.chatbaseConfig = {
+        chatbotId: "ucb7b7LDQzcAJ2dJrBYXA"
+      }
+    
+      let tag2 = document.createElement('script')
+      tag2.setAttribute('src', 'https://www.chatbase.co/embed.min.js')
+      tag2.setAttribute('id', 'ucb7b7LDQzcAJ2dJrBYXA')
+      document.body.appendChild(tag2)
     }
   }
