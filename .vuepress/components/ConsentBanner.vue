@@ -15,8 +15,8 @@
       return {
         consentAlreadySet: false,
         consentValue: -1,
-        fetchScriptElement: document.createElement("script"),
-        setupScriptElement: document.createElement("script")
+        fetchScriptElement: null,
+        setupScriptElement: null
       }
     },
     methods: {
@@ -61,6 +61,8 @@
       }
     },
     mounted() {
+      this.fetchScriptElement = document.createElement("script");
+      this.setupScriptElement = document.createElement("script");
       const cookies = document.cookie;
 
       this.consentAlreadySet = cookies.split("; ").some((cookie) => cookie.startsWith("Consent="))
