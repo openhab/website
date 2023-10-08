@@ -12,7 +12,7 @@ initial_gallery:
   automation:
      title: "Automation"
      description: "Automation add-ons extend the functionality of the rule engine, such as additional choices of scripting languages."
-     featured: ["jsscripting", "jythonscripting", "groovyscripting", "jrubyscripting"]
+     featured: ["jsscripting", "jrubyscripting", "groovyscripting"]
   persistence:
     title: "Data Persistence"
     description: "Persistence services allow openHAB to store time series data for history-based actions or statistics."
