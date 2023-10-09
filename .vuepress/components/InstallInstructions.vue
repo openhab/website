@@ -158,13 +158,13 @@ usermod -a -G openhab myownuser
         </div>
         <div v-if="selectedVersion === 'snapshot'">
             <div class="download-button-container">
-              <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.1.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
+              <a class="download-button" style="margin-bottom: 0" :href="addonsDownloadLink" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
             </div>
         </div>
       </ol>
     </div>
 
-    <div v-if="selectedSystem !== 'docker' && selectedVersion === 'stable'">
+    <div v-if="selectedSystem !== 'docker'">
       <hr>
       <h3>{{optionNumber('manual')}}Manual Installation</h3>
       <ol>
@@ -192,23 +192,6 @@ usermod -a -G openhab myownuser
           and wait for openHAB to perform its initial startup (this can take a few minutes depending on your machine)</li>
         <li>Navigate with a web browser to <code>http://{{selectedSystem === 'apple' || selectedSystem === 'win10' ? 'localhost' : '&lt;ip-address&gt;'}}:8080</code></li>
         <li>Continue by following the <router-link to="/docs/tutorial/">tutorial</router-link> to get started</li>
-      </ol>
-    </div>
-
-    <div v-if="selectedSystem !== 'docker' && (selectedVersion === 'testing' || selectedVersion === 'snapshot')">
-      <hr />
-      <h3>Manual Installation</h3>
-      <ol>
-        <li>Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
-        <li>Download and extract the distribution from <a href="https://ci.openhab.org/">https://ci.openhab.org/</a>:</li>
-        <div class="download-button-container">
-          <a target="_blank" class="download-button big" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-4.1.0-SNAPSHOT.zip`" download>Latest openHAB {{$page.frontmatter.currentSnapshotVersion}} Build</a>
-        </div>
-        <li><strong>(Optional)</strong> Download the add-on archives for offline use and put them in the <code>addons</code> folder of the extracted distribution:</li>
-        &#128712; <small>	You don't need the add-ons archives if your machine has Internet access, openHAB will download add-ons you need online as necessary.</small>
-        <div class="download-button-container">
-          <a class="download-button" style="margin-bottom: 0" :href="`https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-4.1.0-SNAPSHOT.kar`" download>Download openHAB {{$page.frontmatter.currentSnapshotVersion}} Add-ons</a>
-        </div>
       </ol>
     </div>
 
@@ -419,6 +402,8 @@ export default {
         return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentVersion}/openhab-${this.$page.frontmatter.currentVersion}.zip`
       } else if (this.selectedVersion === 'testing') {
         return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
+      } else {
+        return `https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     addonsDownloadLink () {
@@ -426,6 +411,8 @@ export default {
         return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentVersion}/openhab-addons-${this.$page.frontmatter.currentVersion}.kar`        
       } else if (this.selectedVersion === 'testing') {
         return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentMilestoneVersion}/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
+      } else {
+        return `https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-addons/target/openhab-addons-${this.$page.frontmatter.currentMilestoneVersion}.kar`
       }
     },
     currentDownloadVersion () {
