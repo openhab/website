@@ -14,6 +14,7 @@
     </template>
     <template #page-bottom>
       <Footer />
+      <ConsentBanner />
     </template>
   </ParentLayout>
 </template>
