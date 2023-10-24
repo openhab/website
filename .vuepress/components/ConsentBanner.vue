@@ -91,7 +91,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .consent-banner {
     position: fixed;
     bottom: 0px;
