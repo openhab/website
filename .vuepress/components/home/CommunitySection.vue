@@ -116,9 +116,9 @@ export default {
     fetch(url).then((resp) => {
       resp.json().then((json) => {
         if (json.about.stats) {
-          this.communityMembers = json.about.stats.user_count
-          this.communityTopics = json.about.stats.topic_count
-          this.communityPosts = json.about.stats.post_count
+          this.communityMembers = json.about.stats.users_count
+          this.communityTopics = json.about.stats.topics_count
+          this.communityPosts = json.about.stats.posts_count
         }
       });
     }).catch ((err) => {
