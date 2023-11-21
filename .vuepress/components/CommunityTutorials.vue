@@ -124,7 +124,7 @@ export default {
   mounted () {
     // note: this won't work in dev mode (CORS only allowed on the production URL)
     let url = (window.location.host.indexOf('localhost') === 0) ? '/all.json' :
-     'https://community.openhab.org/c/tutorials-examples/l/top/all.json'
+     'https://community.openhab.org/c/tutorials-examples/10/l/top.json?period=all'
 
     fetch(url).then((resp) => {
       resp.json().then((json) => {
