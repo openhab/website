@@ -403,7 +403,7 @@ export default {
       } else if (this.selectedVersion === 'testing') {
         return `https://github.com/openhab/openhab-distro/releases/download/${this.$page.frontmatter.currentMilestoneVersion}/openhab-${this.$page.frontmatter.currentMilestoneVersion}.zip`
       } else {
-        return `https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-${this.$page.frontmatter.currentSnapshotVersion}.kar`
+        return `https://ci.openhab.org/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-${this.$page.frontmatter.currentSnapshotVersion}.zip`
       }
     },
     addonsDownloadLink () {
