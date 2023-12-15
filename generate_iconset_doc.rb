@@ -19,7 +19,7 @@ $categories_channels = {}
 $categories_places = []
 $categories_thing = []
 
-Dir.glob("#{$original_iconsets_location}/#{$iconset_name}/src/main/resources/icons/*.png").each { |path|
+Dir.glob("#{$original_iconsets_location}/#{$iconset_name}/src/main/resources/icons/*.svg").each { |path|
     $icons_list.push(File.basename(path))
 }
 
