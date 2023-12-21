@@ -53,6 +53,13 @@ Therefore, please have a look at the [**release notes**](https://github.com/open
 
 ## Core Runtime Enhancements
 
+### Extending the ontology with your semantic tags
+
+You can now easily extend the default ontology with your own semantic tags and then use them to build your semantic model.
+This can be used for example to add a location or equipment that does not yet exist by default.
+You can achieve that by providing a new very simple configuration file (YAML format) containing the description of all your specific semantic tags.
+You can find a [tutorial on the community forum](https://community.openhab.org/t/oh-4-1-tutorial-to-manage-custom-semantic-tags/148135).
+
 ## UI Enhancements
 
 ### New sitemap element: Buttongrid
