@@ -30,7 +30,7 @@ Our [openHAB web UIs](https://github.com/openhab/openhab-webui) have also receiv
 TODO the number of pull requests compared to our [winter release](/blog/2023-07-23-openhab-4-0-release.html).
 
 It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
-Thank you to all our contributors for driving openHAB forward!
+Big thanks to all our contributors for driving openHAB forward!
 
 Finally, it is time to shout out to our top code contributors per repository (having done the most commits) for this new release:
 
@@ -38,12 +38,12 @@ Finally, it is time to shout out to our top code contributors per repository (ha
 - Jan ([@J-N-K](https://github.com/J-N-K)) for openHAB core
 - Jacob ([@jlaur](https://github.com/jlaur)) for openHAB add-ons
 - Leo ([@lsiepel](https://github.com/lsiepel)) for openHAB add-ons
-- Florian ([@florian-h05](https://github.com/florian-h05)) for the openHAB MainUI
-- Laurent ([@lolodomo](https://github.com/lolodomo)) for the openHAB BasicUI
+- Florian ([@florian-h05](https://github.com/florian-h05)) for the openHAB Main UI
+- Laurent ([@lolodomo](https://github.com/lolodomo)) for the openHAB Basic UI
 
 Most of them are also maintainers, which means besides of contributing code, they review pull requests and participate in discussions on GitHub issues.
 At present, we are TODO maintainers across all our repositories.
-Thank you to my colleagues for making openHAB 4.1 a christmas present to our community!
+Many thanks to my colleagues for making openHAB 4.1 a christmas present to our community!
 
 # Highlights
 
@@ -59,5 +59,5 @@ Therefore, please have a look at the [**release notes**](https://github.com/open
 
 # Enjoy and Get in Touch!
 
-We hope that you like the new release as much as we do - as always our [community forums](https://community.openhab.org/) are there for questions, comments and discussions.
+We hope that you like the new release as much as we do - as always our [community forum](https://community.openhab.org/) is there for questions, comments and discussions.
 Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
