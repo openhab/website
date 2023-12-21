@@ -21,13 +21,13 @@ With that being said, we again want to share some statistics that show the activ
 As you'd expect from any new openHAB release, we have had a high activity across all our GitHub repositories since our [summer release](/blog/2023-07-23-openhab-4-0-release.html).
 We therefore want to share a few statistics about our three main repositories: Core, add-ons and UI.
 
-[openHAB core](https://github.com/openhab/openhab-core) has received TODO pull requests, TODO bug fixes and TODO enhancements with TODO lines of code added.
-The number of pull requests has TODO compared to our [summer release](/blog/2023-07-23-openhab-4-0-release.html).
+[openHAB core](https://github.com/openhab/openhab-core) has received 122 pull requests in total, with 31 bug fixes and 46 enhancements resulting in 10,238 lines of code added.
+Even though the number of pull requests decreased compared to our [summer release](/blog/2023-07-23-openhab-4-0-release.html), that is still a lot of activity.
 
-TODO new add-ons were introduced, and with TODO pull requests, TODO bug fixes and TODO enhancements resulted in TODO lines of add-on code added to [openHAB add-ons](https://github.com/openhab/openhab-addons).
+5 new add-ons were introduced, and with 437 pull requests, 121 bug fixes and 132 enhancements resulted in 13,071 lines of add-on code added to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons).
 
-Our [openHAB web UIs](https://github.com/openhab/openhab-webui) have also received many contributions: TODO pull requests, TODO bug fixes and TODO enhancements resulted in TODO lines of code added.
-TODO the number of pull requests compared to our [winter release](/blog/2023-07-23-openhab-4-0-release.html).
+Our [openHAB web UIs](https://github.com/openhab/openhab-webui) have also received many contributions: 129 pull requests including 46 bug fixes and 67 enhancements resulted in 6,235 lines of code changed.
+This means the number of pull requests only slightly decreased compared to our [summer release](/blog/2023-07-23-openhab-4-0-release.html), which means our UIs continue to develop at a high pace.
 
 It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
 Big thanks to all our contributors for driving openHAB forward!
@@ -42,8 +42,8 @@ Finally, it is time to shout out to our top code contributors per repository (ha
 - Laurent ([@lolodomo](https://github.com/lolodomo)) for the openHAB Basic UI
 
 Most of them are also maintainers, which means besides of contributing code, they review pull requests and participate in discussions on GitHub issues.
-At present, we are TODO maintainers across all our repositories.
-Many thanks to my colleagues for making openHAB 4.1 a christmas present to our community!
+At present, we are 35 maintainers across all our repositories.
+Many thanks to my colleagues for making openHAB 4.1 a Christmas present to our community!
 
 # Highlights
 
