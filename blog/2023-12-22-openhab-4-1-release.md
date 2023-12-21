@@ -61,13 +61,44 @@ This can be used for example to add a location or equipment that does not (yet) 
 To define your own semantic tags, create a YAML configuration file containing the description of all your specific semantic tags in the `$OPENHAB_CONF/tags` folder.
 You can find a [tutorial on the community forum](https://community.openhab.org/t/oh-4-1-tutorial-to-manage-custom-semantic-tags/148135).
 
-## UI Enhancements
+## Main UI Enhancements
 
-### Sitemap and Basic UI Enhancements
+_Florian Hotze, openHAB Maintainer_
+
+As already noted above, there were many PRs to our UIs, also including Main UI.
+Listing all changes would be too much for a blog post (please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0)), but I want to highlight the following changes:
+
+## Redesigned Settings Menu
+
+Let's take a look at the settings menu from openHAB 4.0.x:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-12-22-openhab-4-1-release/mainui-settings-4-0.png"/></p>
+
+Even though your were able to change most settings from it, it had a few drawbacks:
+
+- Displaying all settings in the "System Settings" section, including those more advanced, cluttered the view, especially on smaller screens.
+- Whilst access to the add-on store from the settings menu worked, it wasn't really intuitive to have it in the settings menu.
+- The page did not use the additional space provided by large/wide screens, but at the same time was relatively high, so you had to scroll to see all entries.
+- Add-on settings had to be accessed through the add-on store.
+
+So we decided that openHAB 4.1 is a good chance to redesign the settings menu and move the add-on store to its own entry in the sidebar:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-12-22-openhab-4-1-release/mainui-settings-4-1.png"/></p>
+
+As you can see, the new settings menu fixes those drawbacks:
+
+- The "System Settings" section now hides advanced settings (depending on screen size).
+- The add-on store section has been removed and the store moved to the sidebar:
+  <p align="center"><img style="max-width: 30%;" src="/uploads/2023-12-22-openhab-4-1-release/mainui-add-on-store.png"/></p>
+- The settings page now uses three columns on large screens and isn't that high anymore.
+- Add-on settings were (re-)introduced, and now it is also possible to set their log level right from the settings menu.
+  Just expand the section to see all installed add-ons.
+
+## Sitemap and Basic UI Enhancements
 
 _Laurent Garnier, openHAB Maintainer_
 
-#### New Sitemap element: `Buttongrid`
+### New Sitemap element: `Buttongrid`
 
 A `Buttongrid` represents a grid of buttons as typical for remote controls:
 It allows to arrange a number of buttons, either labelled with a string or an icon, in a custom format.
@@ -83,7 +114,7 @@ Buttongrid label="Remote Control" staticIcon=screen item=RemoteControl buttons=[
 
 This new element is currently only supported in Basic UI, but it is already worked on supporting it in the Android app as well.
 
-#### Other Sitemap Enhancements
+### Other Sitemap Enhancements
 
 - When using [mappings](/docs/ui/sitemaps.html#mappings) with the `Switch` element, you can now also provide an optional icon for each button.
   UIs that support this new feature (Basic UI and Android app) will then display the icon inside the button rather than the text.
@@ -96,7 +127,7 @@ This new element is currently only supported in Basic UI, but it is already work
 - The `staticIcon` parameter can now be used in place of the `icon` parameter when you want to indicate to UIs that there is no need to refresh the icon when the state of the Item is updated.
   This can reduce network traffic when you have very frequent updates to an Item.
 
-#### Basic UI Enhancements
+### Basic UI Enhancements
 
 - A header row with a label and icon is now displayed for `Chart`, `Image`, `Video`, `Mapview` and `Webview` elements.
   To be displayed, the `label` parameter must be explicitly defined.
