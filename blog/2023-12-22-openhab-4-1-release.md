@@ -81,6 +81,32 @@ This can be used for example to add a location or equipment that does not (yet) 
 To define your own semantic tags, create a YAML configuration file containing the description of all your specific semantic tags in the `$OPENHAB_CONF/tags` folder.
 You can find a [tutorial on the community forum](https://community.openhab.org/t/oh-4-1-tutorial-to-manage-custom-semantic-tags/148135).
 
+### Voice System Enhancements
+
+_Miguel Álvarez Díez, openHAB Contributor_
+
+Some minor improvements were introduced in the built-in voice system components. 
+
+The standard text interpreter uses now the Item's synonyms metadata as alternative names, 
+and you can solve name collisions on rules using them.
+It also automatically scans your Item's command description metadata, 
+so that the rule `Set <ItemLabel> to <ItemCommandLabel>` is supported out-of-the-box for all supported languages.
+
+In the same direction the `voiceSystem` metadata namespace was created to allow adding custom rules of your need, for example:
+
+* You can add the rule `go to mode $cmd$ on $name$` to an Item labeled `Vacuum` with command description `MODE_CLEAN=cleaning`,
+that will instruct the interpreter to send the command `MODE_CLEAN` to the Item on the phrase `go to mode cleaning on vacuum`.
+
+* You can also capture free text with a rule like `watch $*$ on $name$`,
+the phrase `watch my favorite show on tv` will send the command `my favorite show` to the Item labeled as `TV`.
+
+Two new configuration parameters where added to the dialog processor start/register command:
+
+* The `dialogGroup` option prevents simultaneous processing of dialogs on the same group, so that several speakers located near-by won't be triggered at the same time.
+
+* The `locationItem` option which is forwarded to the standard interpreter and gives priority to child items of the location provided,
+setting it you can use the "light" item label on two rooms with a speaker on each them and the phrase `Turn on the light` will target the item it should on each room.
+
 ## Main UI Enhancements
 
 _Florian Hotze, openHAB Maintainer_
