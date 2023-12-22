@@ -110,6 +110,37 @@ Until now, openHAB allowed to keep track of the current state of objects and his
 
 As a result, it is not only possible to generate charts for these future values, but they can also be easily used within rules through the persistence extensions. This makes it much easier for users to implement complex optimization logic that requires forecast data, e.g. for heating control or energy management.
 
+### Units of Measurement: currencies have arrived
+
+_Jan N. Klug, openHAB Maintainer_
+
+openHAB had good support for handling units in the past and that made a big step forward in ease-of-use with openHAB 4.
+
+What was still missing (especially for energy management) was support for currencies.
+We have now added two new dimensions `Currency` and `EnergyPrice`.
+
+Currencies are different from "usual" units.
+There are a lot more (each country has a different one) and even worse: their "conversion factor" is not fixed.
+
+Think of length measurement: basically there is the metric and the imperial system.
+The conversion from `mm` to `inch` is `25.4 mm = 1 inch`.
+This has been the same ten years ago and will also be the same in 2050.
+The factor (exchange rate) changes for Euro to US-Dollar on a very short time-scale.
+
+It's even more complicated than that: A lot of countries use similar symbols (e.g. `$`) for their currency, but they mean different things: a Canadian dollar is not the same as an US dollar.
+Luckily the ISO comes to our help.
+ISO 4217 defines three letter "currency codes", unique for major currency.
+
+openHAB supports a new type of service: the `CurrencyProvider`.
+A `CurrencyProvider` can support one or more currencies (with at least the "currency code" as identifier) and brings the information how to convert between them.
+
+Out of the box openHAB brings two very basic `CurrencyProviders`.
+Both support only one currency, but you can still use them for calculations.
+The "locale base currency provider" selects the currency based on the configured locale, so in Germany the currency will be "EUR", in Denmark it will be "DKK".
+The "fixes currency provider" allows you to define your own currency, you just have to select a three-letter code that identifies it.
+
+There are plans to enhance that with support for multiple currency and automatic update of exchange rates.
+
 ## Main UI Enhancements
 
 _Florian Hotze, openHAB Maintainer_
