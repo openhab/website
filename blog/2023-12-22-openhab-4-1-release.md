@@ -96,9 +96,9 @@ Additionally, the `voiceSystem` metadata namespace was created to allow adding c
   That will instruct the interpreter to send the command `MODE_CLEAN` to the Item on the phrase `go to mode cleaning on vacuum`.
 - You can also capture free text with a rule like `watch $*$ on $name$`, so that the phrase `watch my favorite show on tv` will send the command `my favorite show` to the Item labeled as `TV`.
 
-Two new configuration parameters where added to the dialog processor start/register command:
+Two new configuration parameters were added to the dialog processor start/register command:
 
-- The `dialogGroup` option prevents simultaneous processing of dialogs on the same group, so that several speakers located near-by won't be triggered at the same time.
+- The `dialogGroup` option prevents simultaneous processing of dialogs on the same group, so that several speakers located nearby won't be triggered at the same time.
 - The `locationItem` option allows you to forward the location of a speaker/dialog processor to the standard interpreter.
   This makes the interpreter prioritize child Items of the location provided, so that you can use "Light" as Item label for two Items in different two different rooms with a speaker each, and the phrase `Turn on the light` will target the light Item of the correct room.
 
@@ -127,7 +127,7 @@ This way our Item will always reflect e.g. the current price, even if this forec
 As a result, it is not only possible to generate charts for these future values, but they can also be easily used within rules through the persistence extensions.
 This makes it much easier for users to implement complex optimization logic that requires forecast data, e.g. for heating control or energy management.
 
-With the introduction of time-series, we have made the first step for more advanced energy-management solutions within openHAB, and there is also ongoing work on the persistence extensions to improve forecast handling in rules.
+With the introduction of time series, we have made the first step for more advanced energy management solutions within openHAB, and there is also ongoing work on the persistence extensions to improve forecast handling in rules.
 Stay tuned!
 
 ### Units of Measurement: Currencies have arrived
@@ -150,7 +150,7 @@ Luckily the ISO comes to our help: [ISO 4217](https://en.wikipedia.org/wiki/ISO_
 To support currencies, openHAB adds a new type of service: the `CurrencyProvider`.
 A `CurrencyProvider` can support one or more currencies (with at least the "currency code" as identifier) and brings the information how to convert between them.
 
-Out of the box openHAB brings two very basic `CurrencyProviders`, both support only one currency, but you can still use them for calculations.
+Out of the box openHAB comes with two very basic `CurrencyProviders`, both support only one currency, but you can still use them for calculations.
 The "locale base currency provider" selects the currency based on the configured locale, so in Germany the currency will be "EUR", in Denmark it will be "DKK".
 The "fixed currency provider" allows you to define your own currency, you just have to set a three-letter code (see [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217)) that identifies it.
 
@@ -243,7 +243,7 @@ Buttongrid label="Remote Control" staticIcon=screen item=RemoteControl buttons=[
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2023-12-22-openhab-4-1-release/basicui-buttongrid.png"/></p>
 
-Please note that this new element is currently only supported in Basic UI, but it is already worked on supporting it in the Android app as well.
+Please note that the support for this new element is currently limited to Basic UI. However, efforts are underway to extend its support to the Android app.
 
 ### Other Sitemap Enhancements
 
