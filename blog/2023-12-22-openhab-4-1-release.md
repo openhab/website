@@ -102,13 +102,33 @@ Two new configuration parameters where added to the dialog processor start/regis
 - The `locationItem` option allows you to forward the location of a speaker/dialog processor to the standard interpreter.
   This makes the interpreter prioritize child Items of the location provided, so that you can use "Light" as Item label for two Items in different two different rooms with a speaker each, and the phrase `Turn on the light` will target the light Item of the correct room.
 
-### Time Series Support for Forecasts
+### Time Series Support for Forecasts and Historical Values
 
-_Kai Kreuzer, openHAB Maintainer_
+_Jan N. Klug & Kai Kreuzer, openHAB Maintainer_
 
-Until now, openHAB allowed to keep track of the current state of objects and historical data through its persistence services. Now we have extended this to the future! Bindings are able to provide future values for items, be it weather forecasts, energy prices or whatever. The first bindings to support this new feature are [OpenWeatherMap](https://next.openhab.org/addons/bindings/openweathermap/#persisting-time-series) and [Energi Data Service](https://next.openhab.org/addons/bindings/energidataservice/).
+Imagine your electricity provider has dynamic pricing, e.g. a different price for every hour (like Tibber does):
+You could plan to charge your electric car or start the dishwasher when prices are low or inhibit the start of your washing machine when the price is high.
 
-As a result, it is not only possible to generate charts for these future values, but they can also be easily used within rules through the persistence extensions. This makes it much easier for users to implement complex optimization logic that requires forecast data, e.g. for heating control or energy management.
+In the past it was very difficult to handle that, but with our new release the situation greatly improves:
+Until now, openHAB was only able to keep track of the current state of Items and, as persistence could handle only values in the past, historical states of Items.
+So how to handle future values?
+
+We have solved that difficulty with the introduction of `TimeSeries`:
+Bindings can now send a time series (a set of timestamp/value pairs) to a channel, just like they send usual states and openHAB core will take care of handling the time series.
+This way they are able to provide future values for Items, be it weather forecasts, energy prices or whatever.
+
+The first bindings to support this new feature are the [OpenWeatherMap](/addons/bindings/openweathermap/#persisting-time-series) and [Energi Data Service](/addons/bindings/energidataservice/) bindings.
+
+If you have persistence configured for an Item and the persistence service supports time series (most do: InfluxDB and JDBC will work fine, but RRD4J not), then sending a time series can be used to fill gaps in the past ("historic values", e.g. due to network issues) or - probably more important - store future values ("forecasts") for this Item.
+A new persistence strategy `forecast` has been introduced, which does the real magic:
+The Item's state will be updated to a value with a timestamp send in a time series just at the time the timestamp becomes current.
+This way our Item will always reflect e.g. the current price, even if this forecast information was made available yesterday.
+
+As a result, it is not only possible to generate charts for these future values, but they can also be easily used within rules through the persistence extensions.
+This makes it much easier for users to implement complex optimization logic that requires forecast data, e.g. for heating control or energy management.
+
+With the introduction of time-series, we have made the first step for more advanced energy-management solutions within openHAB, and there is also ongoing work on the persistence extensions to improve forecast handling in rules.
+Stay tuned!
 
 ### Units of Measurement: Currencies have arrived
 
