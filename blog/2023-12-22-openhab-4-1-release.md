@@ -99,14 +99,17 @@ _Justin Georgi, openHAB Contributor_
 In addition to the well-known useful tools for developers, the developer sidebar now provides a help section directly integrated to the UI.
 This new help panel will be useful for users just getting started with openHAB and advanced users looking for quick access to some of the most common detailed documentation.
 
-TODO: Add image
-
 The help section provides four different help features:
 
 - A context aware help pane shows basic help and guidance for many of the individual setting and administration pages of Main UI.
 - A binding help pane lists direct links to the documentation pages for each official binding installed.
 - A FAQ pane gives quick answers and How Tos for many common questions about Main UI and openHAB in general.
 - A Quick Start tutorial takes a new user step by step from a freshly installed openHAB server all the way to display an interactive widget on the Main UI overview page.
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-12-22-openhab-4-1-release/mainui-help-features.png"/></p>
+
+To use the new help feature, make sure you are logged in as administrator, then click on the question mark in the upper right corner.
+Please note that it is only shown if your screen is wide enough (>= 1280 px).
 
 ## Sitemap and Basic UI Enhancements
 
