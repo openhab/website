@@ -92,7 +92,7 @@ As you can see, the new settings menu fixes those drawbacks:
 - Add-on settings were (re-)introduced, and now it is also possible to set their log level right from the settings menu.
   Just expand the section to see all installed add-ons.
 
-### New Integrated Help Features
+### Integrated Help Features
 
 _Justin Georgi, openHAB Contributor_
 
@@ -110,6 +110,27 @@ The help section provides four different help features:
 
 To use the new help feature, make sure you are logged in as administrator, then click on the question mark in the upper right corner.
 Please note that it is only shown if your screen is wide enough (>= 1280 px).
+
+### UI Command Item
+
+I guess since the introduction of Main UI with openHAB 3.0, which was released exactly three years ago (let us ignore that one day difference), many users have moved over their home automation dashboards from HABPanel to Main UI.
+But the whole time, Main UI was lacking a feature, that HABPanel has: The ability to control the UI using an Item.
+
+In HABPanel, it is possible to switch the dashboard by commanding an Item - what if you could do the same (and much more) in Main UI?
+openHAB 4.1 finally adds that feature!
+
+The UI Command Item basically is a `String` Item where these supported commands are sent to:
+
+- `navigate`: Navigate to a given page path, e.g. `navigate:/locations` to navigate to the locations tab.
+- `popup`, `popover` & `sheet`: Open a widget, an `oh-` component or a page in the given modal, e.g. `popup:oh-clock-card`.
+- `notification`: Display a notification inside the UI, e.g. `notification:Merry Christmas and happy holidays!:openHAB 4.1`
+- `close`: Close all popups, popovers and sheets.
+- `back` & `reload`
+
+The UI Command Item has to be configured for each client inside Main UI's settings: "Help & About" > "Listen for UI commands to".
+Unfortunately, we don`t have documentation for that at the moment, but for those wanting to play around with that new feature, you can have a look at the [pull request](https://github.com/openhab/openhab-webui/pull/2055) for some additional examples.
+
+Many thanks to Dan Cunningham ([@digitaldan](https://github.com/digitaldan)) for implementing that!
 
 ## Sitemap and Basic UI Enhancements
 
