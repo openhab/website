@@ -12,9 +12,13 @@ excerpt: >-
 ---
 The first minor release of openHAB 4 has arrived! openHAB 4.1 brings several improvements and bugfixes as well as some nice additions!
 
-TODO: Write intro
+Half a year has passed since our big summer release, openHAB 4.0.
+But don't think for a moment that our community has been resting the rest of the year - far from it!
 
-With that being said, we again want to share some statistics that show the activity in numbers.
+Today, we are thrilled to announce our traditional winter release – openHAB 4.1.
+This new version not only includes a multitude of smaller improvements and bug fixes, but also introduces several exciting new features.
+
+With that being said, we again want to share some statistics that show the activity in numbers and highlight some of the numerous changes.
 
 # Activity
 
@@ -23,7 +27,7 @@ We therefore want to share a few statistics about our three main repositories: C
 
 [openHAB Core](https://github.com/openhab/openhab-core) has received 124 pull requests in total, with 32 bug fixes and 46 enhancements resulting in 10,238 lines of code added.
 
-5 new add-ons were introduced, and with 437 pull requests, 121 bug fixes and 132 enhancements resulted in 16,098 lines of add-on code added to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons).
+5 new add-ons were introduced, and 437 pull requests, 121 bug fixes and 132 enhancements resulted in 16,098 lines of add-on code added to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons).
 
 Our [openHAB web UIs](https://github.com/openhab/openhab-webui) have also received many contributions: 129 pull requests including 46 bug fixes and 67 enhancements resulted in 5,041 lines of code added, which means our UIs continue to develop at a high pace.
 
@@ -45,18 +49,19 @@ Many thanks to my colleagues for making openHAB 4.1 a Christmas present to our c
 
 # Highlights
 
-TODO: Write short summary
+As you might have already noticed in the activity statistics, openHAB has evolved much, but listing all enhancements would be too much.
+Please refer to the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0)) to check out what's new and noteworthy (e.g. breaking changes).
 
-Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0) and check out the following highlights.
+In the following sections, our maintainers and contributors are introducing some new features you don't want to miss!
 
 ## Add-on Suggestions
 
 While Thing discovery has been supported since openHAB 2.0 (if the binding implements it), users had to manually install the corresponding add-ons.
-This process, particularly for new users, slowed down the setup as they had to refer to the documentation to identify and install the necessary bindings.
+Particularly for new users, looking up the documentation to identify and install the necessary bindings slowed down the setup of their new openHAB installation.
 
 Six years after the introduction of Thing discovery, we are proud to announce add-on suggestions!
 
-When using the Setup Wizard or the add-On store, openHAB now suggests add-ons based on the devices found in your network and the programs installed on the openHAB server.
+When using the Setup Wizard or the add-on store, openHAB now suggests add-ons based on the devices found in your network and the programs installed on the openHAB server.
 This enhances the setup experience, making it more user-friendly, especially for those just getting started with openHAB.
 
 The add-on suggestions feature currently checks mDNS and UPnP traffic and performs a simple IP scan on your network to find out which devices you have at home.
