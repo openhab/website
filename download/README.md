@@ -6,6 +6,8 @@ currentVersion: 4.1.0
 #currentMilestoneVersion: 4.1.0.RC1
 currentSnapshotVersion: 4.2.0-SNAPSHOT
 previousVersions:
+  - version: "4.0"
+    website: https://v40.openhab.org/
   - version: "3.4"
     website: https://v34.openhab.org/
   - version: "3.3"
