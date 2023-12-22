@@ -50,7 +50,7 @@ Many thanks to my colleagues for making openHAB 4.1 a Christmas present to our c
 # Highlights
 
 As you might have already noticed in the activity statistics, openHAB has evolved much, but listing all enhancements would be too much.
-Please refer to the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0)) to check out what's new and noteworthy (e.g. breaking changes).
+Please refer to the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0) to check out what's new and noteworthy (e.g. breaking changes).
 
 In the following sections, our maintainers and contributors are introducing some new features you don't want to miss!
 
@@ -101,6 +101,14 @@ Two new configuration parameters where added to the dialog processor start/regis
 - The `dialogGroup` option prevents simultaneous processing of dialogs on the same group, so that several speakers located near-by won't be triggered at the same time.
 - The `locationItem` option allows you to forward the location of a speaker/dialog processor to the standard interpreter.
   This makes the interpreter prioritize child Items of the location provided, so that you can use "Light" as Item label for two Items in different two different rooms with a speaker each, and the phrase `Turn on the light` will target the light Item of the correct room.
+
+### Time Series Support for Forecasts
+
+_Kai Kreuzer, openHAB Maintainer_
+
+Until now, openHAB allowed to keep track of the current state of objects and historical data through its persistence services. Now we have extended this to the future! Bindings are able to provide future values for items, be it weather forecasts, energy prices or whatever. The first bindings to support this new feature are [OpenWeatherMap](https://next.openhab.org/addons/bindings/openweathermap/#persisting-time-series) and [Energi Data Service](https://next.openhab.org/addons/bindings/energidataservice/).
+
+As a result, it is not only possible to generate charts for these future values, but they can also be easily used within rules through the persistence extensions. This makes it much easier for users to implement complex optimization logic that requires forecast data, e.g. for heating control or energy management.
 
 ## Main UI Enhancements
 
