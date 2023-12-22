@@ -66,7 +66,7 @@ _Florian Hotze, openHAB Maintainer_
 As already noted above, there were many PRs to our UIs, also including Main UI.
 Listing all changes would be too much for a blog post (please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0)), but I want to highlight the following changes:
 
-## Redesigned Settings Menu
+### Redesigned Settings Menu
 
 Let's take a look at the settings menu from openHAB 4.0.x:
 
@@ -92,16 +92,20 @@ As you can see, the new settings menu fixes those drawbacks:
 - Add-on settings were (re-)introduced, and now it is also possible to set their log level right from the settings menu.
   Just expand the section to see all installed add-ons.
 
-## New Main UI Help Features
+### New Integrated Help Features
 
-In addition to the usual useful tools for developers, the Developer Sidebar now has a help section right in the UI.
+_Justin Georgi, openHAB Contributor_
+
+In addition to the well-known useful tools for developers, the developer sidebar now provides a help section directly integrated to the UI.
 This new help panel will be useful for users just getting started with openHAB and advanced users looking for quick access to some of the most common detailed documentation.
 
-This new help section contains four different help features:
+TODO: Add image
 
-- A context aware help pane shows basic help and guidance for many of the individual setting and administration pages.
+The help section provides four different help features:
+
+- A context aware help pane shows basic help and guidance for many of the individual setting and administration pages of Main UI.
 - A binding help pane lists direct links to the documentation pages for each official binding installed.
-- A FAQ pane gives quick answers and how to's for many common questions about Main UI and openHAB in general.
+- A FAQ pane gives quick answers and How Tos for many common questions about Main UI and openHAB in general.
 - A Quick Start tutorial takes a new user step by step from a freshly installed openHAB server all the way to display an interactive widget on the Main UI overview page.
 
 ## Sitemap and Basic UI Enhancements
