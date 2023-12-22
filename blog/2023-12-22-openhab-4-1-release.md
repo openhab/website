@@ -27,7 +27,7 @@ We therefore want to share a few statistics about our three main repositories: C
 
 [openHAB Core](https://github.com/openhab/openhab-core) has received 124 pull requests in total, with 32 bug fixes and 46 enhancements resulting in 10,238 lines of code added.
 
-5 new add-ons were introduced, and 437 pull requests, 121 bug fixes and 132 enhancements resulted in 16,098 lines of add-on code added to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons).
+5 new add-ons were introduced, and 437 pull requests, 121 bug fixes and 132 enhancements resulted in 17,746 lines of add-on code added to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons).
 
 Our [openHAB web UIs](https://github.com/openhab/openhab-webui) have also received many contributions: 129 pull requests including 46 bug fixes and 67 enhancements resulted in 5,041 lines of code added, which means our UIs continue to develop at a high pace.
 
@@ -202,6 +202,21 @@ This new element is currently only supported in Basic UI, but it is already work
 - Several enhancements and fixes for the dark theme.
 
 ## Add-on Enhancements
+
+openHAB 4.1 brings 5 new add-ons, adding support for new devices:
+
+- The [SolaX binding](/addons/bindings/solax) enables interaction with the Wi-Fi module of SolaX solar inverters.
+- The [Govee binding](/addons/bindings/govee) integrates [Govee lights](https://eu.govee.com/) using the local API - no cloud needed!
+- The [TasmotaPlug binding](/addons/bindings/tasmotaplug) connects Tasmota flashed smart plugs to openHAB.
+- The [Grundfos Alpha binding](/addons/bindings/bluetooth.grundfosalpha) adds support for reading data from Grundfos Alpha heat pumps equipped with a Grundfos Alpha Reader.
+- The [PPC SMGW binding](/addons/bindings/smgw) reads data from your smart meter gateway.
+
+But not only were new bindings added, some existing bindings also received massive improvements:
+
+- The [ChatGPT binding](/addons/bindings/chatgpt) adds support for [LocalAI](https://localai.io/) and other compatible services, removing the need to share data with the cloud.
+- The [Philips Hue binding](/addons/bindings/hue) improves support for API v2, now also offering smart scenes, timed effects and support for new home security products.
+- The [KNX binding](/addons/bindings/knx) introduces a new modifier to set the mainGA write-only, which is allows ignoring bus messages to the mainGA when having a dedicated status GA.
+- The [OpenWeatherMap binding](/addons/bindings/openweathermap) implements time series support for the OneCall API forecast, which allows disabling the massive amount of individual channels used for each forecast value at each point in time.
 
 # Enjoy and Get in Touch!
 
