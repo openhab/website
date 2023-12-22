@@ -49,9 +49,26 @@ TODO: Write short summary
 
 Therefore, please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0) and check out the following highlights.
 
+## Add-on Suggestions
+
+While Thing discovery has been supported since openHAB 2.0 (if the binding implements it), users had to manually install the corresponding add-ons.
+This process, particularly for new users, slowed down the setup as they had to refer to the documentation to identify and install the necessary bindings.
+
+Six years after the introduction of Thing discovery, we are proud to announce add-on suggestions!
+
+When using the Setup Wizard or the add-On store, openHAB now suggests add-ons based on the devices found in your network and the programs installed on the openHAB server.
+This enhances the setup experience, making it more user-friendly, especially for those just getting started with openHAB.
+
+The add-on suggestions feature currently checks mDNS and UPnP traffic and performs a simple IP scan on your network to find out which devices you have at home.
+Additionally, the list of running processes of your openHAB server is checked to suggest for example persistence services like InfluxDB.
+
+Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)), Andrew Fiddian-Green ([@andrewfg](https://github.com/andrewfg)) and Holger Friedrich ([@holgerfriedrich](https://github.com/holgerfriedrich)) for implementing that awesome new feature!
+
 ## Core Runtime Enhancements
 
 ### Extending the Ontology with your own Semantic Tags
+
+_Laurent Garnier, openHAB Maintainer_
 
 You can now easily extend the default ontology with your own semantic tags and then use them to build your semantic model.
 This can be used for example to add a location or equipment that does not (yet) exist by default.
