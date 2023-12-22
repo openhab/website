@@ -12,18 +12,18 @@ excerpt: >-
 ---
 The first minor release of openHAB 4 has arrived! openHAB 4.1 brings several improvements and bugfixes as well as some nice additions!
 
-Half a year has passed since our big summer release, openHAB 4.0.
+Half a year has passed since our big [summer release](/blog/2023-07-23-openhab-4-0-release.html).
 But don't think for a moment that our community has been resting the rest of the year - far from it!
 
-Today, we are thrilled to announce our traditional winter release – openHAB 4.1.
+Today, we are thrilled to announce our traditional winter release.
 This new version not only includes a multitude of smaller improvements and bug fixes, but also introduces several exciting new features.
 
-With that being said, we again want to share some statistics that show the activity in numbers and highlight some of the numerous changes.
+With that being said, we again want to share our highlights and some statistics that show the activity in numbers.
 
 # Activity
 
-As you'd expect from any new openHAB release, we have had a high activity across all our GitHub repositories since our [summer release](/blog/2023-07-23-openhab-4-0-release.html).
-We therefore want to share a few statistics about our three main repositories: Core, add-ons and UI.
+As you'd expect from any new openHAB release, we have had a high activity across all our GitHub repositories.
+We therefore want to share a few statistics about our three main repositories: Core, add-ons and UIs.
 
 [openHAB Core](https://github.com/openhab/openhab-core) has received 124 pull requests in total, with 32 bug fixes and 46 enhancements resulting in 10,238 lines of code added.
 
@@ -43,7 +43,7 @@ Finally, it is time to shout out to our top code contributors per repository (ha
 - Florian ([@florian-h05](https://github.com/florian-h05)) for the openHAB Main UI
 - Laurent ([@lolodomo](https://github.com/lolodomo)) for the openHAB Basic UI
 
-Many of our top committers are also maintainers, which means besides contributing code, they also review pull requests and participate in discussions on GitHub issues which helps maintain our high level of quality across bindings, UI and Core.
+Many of our top committers are also maintainers, which means besides contributing code, they also review pull requests and participate in discussions on GitHub issues, which helps maintain our high level of quality across bindings, UIs and Core.
 At present, we have 35 maintainers across all our repositories.
 Many thanks to my colleagues for making openHAB 4.1 a Christmas present to our community!
 
@@ -104,7 +104,7 @@ Two new configuration parameters where added to the dialog processor start/regis
 
 ### Time Series Support for Forecasts and Historical Values
 
-_Jan N. Klug & Kai Kreuzer, openHAB Maintainer_
+_Jan N. Klug & Kai Kreuzer, openHAB Maintainers_
 
 Imagine your electricity provider has dynamic pricing, e.g. a different price for every hour (like Tibber does):
 You could plan to charge your electric car or start the dishwasher when prices are low or inhibit the start of your washing machine when the price is high.
@@ -160,9 +160,6 @@ There are plans to enhance that with support for multiple currencies and automat
 
 _Florian Hotze, openHAB Maintainer_
 
-As already noted above, there were many PRs to our UIs, also including Main UI.
-Listing all changes would be too much for a blog post (please have a look at the [**release notes**](https://github.com/openhab/openhab-distro/releases/tag/4.1.0)), but I want to highlight the following changes:
-
 ### Redesigned Settings Menu
 
 Let's take a look at the settings menu from openHAB 4.0.x:
@@ -171,8 +168,8 @@ Let's take a look at the settings menu from openHAB 4.0.x:
 
 Even though your were able to change most settings from it, it had a few drawbacks:
 
-- Displaying all settings in the "System Settings" section, including those more advanced, cluttered the view, especially on smaller screens.
-- Whilst access to the add-on store from the settings menu worked, it wasn't really intuitive to have it in the settings menu.
+- Displaying all settings in the "System Settings" section, including those more advanced, cluttered the view (especially on smaller screens).
+- Whilst access to the add-on store from the settings menu worked, it wasn't very intuitive to have it in the settings menu.
 - The page did not use the additional space provided by large/wide screens, but at the same time was relatively high, so you had to scroll to see all entries.
 - Add-on settings had to be accessed through the add-on store.
 
@@ -183,18 +180,17 @@ So we decided that openHAB 4.1 is a good chance to redesign the settings menu an
 As you can see, the new settings menu fixes those drawbacks:
 
 - The "System Settings" section now hides advanced settings (depending on screen size).
-- The add-on store section has been removed and the store moved to the sidebar:
+- The add-on store section has been moved to the sidebar:
   <p align="center"><img style="max-width: 30%;" src="/uploads/2023-12-22-openhab-4-1-release/mainui-add-on-store.png"/></p>
 - The settings page now uses three columns on large screens and isn't that high anymore.
-- Add-on settings were (re-)introduced, and now it is also possible to set their log level right from the settings menu.
-  Just expand the section to see all installed add-ons.
+- Add-on settings were (re-)introduced, and now it is also possible to set their log level right from the settings menu - just expand the section to see all installed add-ons.
 
 ### Integrated Help Features
 
 _Justin Georgi, openHAB Contributor_
 
 In addition to the well-known useful tools for developers, the developer sidebar now provides a help section directly integrated to the UI.
-This new help panel will be useful for users just getting started with openHAB and advanced users looking for quick access to some of the most common detailed documentation.
+This new help panel will be useful for users just getting started with openHAB as well as advanced users looking for quick access to some of the most common detailed documentation.
 
 The help section provides four different help features:
 
@@ -216,13 +212,13 @@ But the whole time, Main UI was lacking a feature, that HABPanel has: The abilit
 In HABPanel, it is possible to switch the dashboard by commanding an Item - what if you could do the same (and much more) in Main UI?
 openHAB 4.1 finally adds that feature!
 
-The UI Command Item basically is a `String` Item where these supported commands are sent to:
+The UI Command Item basically is a `String` Item to which these supported commands are sent:
 
 - `navigate`: Navigate to a given page path, e.g. `navigate:/locations` to navigate to the locations tab.
 - `popup`, `popover` & `sheet`: Open a widget, an `oh-` component or a page in the given modal, e.g. `popup:oh-clock-card`.
 - `notification`: Display a notification inside the UI, e.g. `notification:Merry Christmas and happy holidays!:openHAB 4.1`
 - `close`: Close all popups, popovers and sheets.
-- `back` & `reload`
+- `back` & `reload`: Navigate back or reload the current page.
 
 The UI Command Item has to be configured for each client inside Main UI's settings: "Help & About" > "Listen for UI commands to".
 Unfortunately, we don`t have documentation for that at the moment, but for those wanting to play around with that new feature, you can have a look at the [pull request](https://github.com/openhab/openhab-webui/pull/2055) for some additional examples.
@@ -239,7 +235,7 @@ A `Buttongrid` represents a grid of buttons as typical for remote controls:
 It allows to arrange a number of buttons, either labelled with a string or an icon, in a custom format.
 When a button is pressed, the associated command is sent to the linked Item.
 
-Here is the result in Basic UI with the following definition:
+Here is the result in Basic UI, using the following definition:
 
 ```java
 Buttongrid label="Remote Control" staticIcon=screen item=RemoteControl buttons=[1:1:POWER="Power"=switch-off , 1:2:MENU="Menu" , 1:3:EXIT="Exit" , 2:2:UP="Up"=f7:arrowtriangle_up , 4:2:DOWN="Down"=f7:arrowtriangle_down , 3:1:LEFT="Left"=f7:arrowtriangle_left , 3:3:RIGHT="Right"=f7:arrowtriangle_right , 3:2:OK="Ok" , 2:4:VOL_PLUS="Volume +" , 4:4:VOL_MINUS="Volume -" , 3:4:MUTE="Mute"=soundvolume_mute]
@@ -247,7 +243,7 @@ Buttongrid label="Remote Control" staticIcon=screen item=RemoteControl buttons=[
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2023-12-22-openhab-4-1-release/basicui-buttongrid.png"/></p>
 
-This new element is currently only supported in Basic UI, but it is already worked on supporting it in the Android app as well.
+Please note that this new element is currently only supported in Basic UI, but it is already worked on supporting it in the Android app as well.
 
 ### Other Sitemap Enhancements
 
