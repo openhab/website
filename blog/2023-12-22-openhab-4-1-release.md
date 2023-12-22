@@ -92,6 +92,18 @@ As you can see, the new settings menu fixes those drawbacks:
 - Add-on settings were (re-)introduced, and now it is also possible to set their log level right from the settings menu.
   Just expand the section to see all installed add-ons.
 
+## New Main UI Help Features
+
+In addition to the usual useful tools for developers, the Developer Sidebar now has a help section right in the UI.
+This new help panel will be useful for users just getting started with openHAB and advanced users looking for quick access to some of the most common detailed documentation.
+
+This new help section contains four different help features:
+
+- A context aware help pane shows basic help and guidance for many of the individual setting and administration pages.
+- A binding help pane lists direct links to the documentation pages for each official binding installed.
+- A FAQ pane gives quick answers and how to's for many common questions about Main UI and openHAB in general.
+- A Quick Start tutorial takes a new user step by step from a freshly installed openHAB server all the way to display an interactive widget on the Main UI overview page.
+
 ## Sitemap and Basic UI Enhancements
 
 _Laurent Garnier, openHAB Maintainer_
