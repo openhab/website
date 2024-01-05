@@ -225,6 +225,22 @@ Unfortunately, we don`t have documentation for that at the moment, but for those
 
 Many thanks to Dan Cunningham ([@digitaldan](https://github.com/digitaldan)) for implementing that!
 
+### Blockly Enhancements
+
+_Stefan Höhn, Blockly Maintainer_
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2023-12-22-openhab-4-1-release/blockly-4-1.png"/></p>
+
+Blockly has been further extended by some new blocks and enhancements that were requested by our community:
+
+- Support String/Number/Quantity on eventcontext state/command
+- Add Quantity support to math blocks
+- New parse number block
+- Allow "item xxx" to be used directly instead of "get xxx of item"
+- New block to get hue, saturation and brightness from Color Item
+- Add "event available" to context info block
+- Add support for getting persistence previous state as numeric starte
+
 ## Sitemap and Basic UI Enhancements
 
 _Laurent Garnier, openHAB Maintainer_
