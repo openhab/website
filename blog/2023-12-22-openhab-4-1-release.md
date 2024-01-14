@@ -156,6 +156,8 @@ The "fixed currency provider" allows you to define your own currency, you just h
 
 There are plans to enhance that with support for multiple currencies and automatic update of exchange rates.
 
+You can find a [tutorial on the community forum](https://community.openhab.org/t/using-the-new-currency-units-of-measurement-in-4-1/152338).
+
 ## Main UI Enhancements
 
 _Florian Hotze, openHAB Maintainer_
