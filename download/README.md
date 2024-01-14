@@ -2,10 +2,14 @@
 sidebar: false
 layout: AboutPage
 title: Download openHAB
-currentVersion: 3.4.4
-currentMilestoneVersion: 4.0.0.M4
-currentSnapshotVersion: 4.0.0-SNAPSHOT
+currentVersion: 4.1.1
+#currentMilestoneVersion: 4.1.0.RC1
+currentSnapshotVersion: 4.2.0-SNAPSHOT
 previousVersions:
+  - version: "4.0"
+    website: https://v40.openhab.org/
+  - version: "3.4"
+    website: https://v34.openhab.org/
   - version: "3.3"
     website: https://v33.openhab.org/
   - version: "3.2"
@@ -52,13 +56,17 @@ meta:
 }
 </style>
 
-<h2 class="big-title">openHAB 3 Distribution</h2>
+<h2 class="big-title">openHAB 4 Distribution</h2>
 
 <InstallInstructions />
 
+<h2 class="big-title">openHAB 3 Distribution</h2>
+
+To download the previous version of openHAB, please go to https://v34.openhab.org/download/
+
 <h2 class="big-title">openHAB 2 Distribution</h2>
 
-To download the previous version of openHAB, please go to https://v2.openhab.org/download/.
+To download even older versions of openHAB, please go to https://v2.openhab.org/download/.
 
 <h2 class="big-title">Applications</h2>
 

@@ -26,6 +26,23 @@ img.illustration {
     align: center;
   }
 }
+.downloads {
+  display: flex;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: space-between;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+@media (max-width: 719px) {
+  .downloads {
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;  }
+}
+
 </style>
 
 ## Our Logo
@@ -36,11 +53,21 @@ We provide different versions of our logo, e.g. with or without the "openHAB" te
 
 The logos are provided in different formats like svg, eps, ai and png. Wherever possible, please prefer the vector formats over png to avoid pixelation.
 
-## Download
+A special version is the "works with openHAB" logo, which is intended to be used by 3rd-parties to show that their software, system or product is compatible with openHAB.
 
-<center>
-  <a href="openhab-logo.zip">
-    <img src="openhab-logo-square.png" /><br/>
-    Download the openHAB Logos
-  </a>
-</center>
+## Downloads
+
+<div class="downloads">
+  <div>
+    <a href="openHAB-logo.zip">
+      <img src="openhab-logo-square.png" width="150" style="padding: 1em" /><br/>
+      <center>Download the openHAB Logos</center>
+    </a>
+  </div>
+  <div>
+    <a href="workswith-openHAB-logo.zip">
+      <img src="workswith-openhab.png" width="400" style="padding: 1em" /><br/>
+      <center>Download the "works with openHAB" Logos</center>
+    </a>
+  </div>
+</div>

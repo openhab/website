@@ -29,8 +29,8 @@
     <h2>Other Icons</h2>
     <div class="iconset-icons">
       <div class="iconset-icon" v-for="icon in icons_without_category.sort()">
-        <img :src="`/iconsets/classic/${icon}`" :title="iconTooltip(icon.replace('.png', ''))" />
-        <caption>{{icon.replace('.png', '')}}</caption>
+        <img :src="`/iconsets/classic/${icon}`" :title="iconTooltip(icon.replace('.svg', ''))" />
+        <caption>{{icon.replace('.svg', '')}}</caption>
       </div>
     </div>
   </div>
@@ -76,22 +76,22 @@ export default {
   },
   methods: {
     existingIcons (category) {
-      return (category.filter(i => allicons.indexOf(i + '.png') >= 0))
+      return (category.filter(i => allicons.indexOf(i + '.svg') >= 0))
     },
     iconFile (icon) {
-      return `/iconsets/classic/${icon}.png`
+      return `/iconsets/classic/${icon}.svg`
     },
     iconTooltip (icon) {
-      return (allicons.filter(i => i.indexOf(icon + '.png') === 0 || i.indexOf(icon + '-') === 0)).map(i => i.replace('.png', '')).join(' ')
+      return (allicons.filter(i => i.indexOf(icon + '.svg') === 0 || i.indexOf(icon + '-') === 0)).map(i => i.replace('.svg', '')).join(' ')
     }
   },
   computed: {
     icons_without_category () {
       return allicons.filter(i => 
         i.indexOf('-') < 0 &&
-        this.categories.places.indexOf(i.replace('.png', '')) < 0 &&
-        this.categories.things.indexOf(i.replace('.png', '')) < 0 &&
-        Object.values(this.categories.channels).every(c => c.indexOf(i.replace('.png', '')) < 0)
+        this.categories.places.indexOf(i.replace('.svg', '')) < 0 &&
+        this.categories.things.indexOf(i.replace('.svg', '')) < 0 &&
+        Object.values(this.categories.channels).every(c => c.indexOf(i.replace('.svg', '')) < 0)
       )
     }
   }

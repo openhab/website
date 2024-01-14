@@ -7,9 +7,16 @@
 
 /link/docs                /docs
 /link/tutorial            /docs/tutorial/
+/link/pages               /docs/ui/
+/link/persistence         /docs/configuration/persistence.html#persistence-configuration
 /link/profiles            /docs/configuration/items.html#profiles
+/link/rules               /docs/tutorial/rules_introduction.html
+/link/scenes              /docs/tutorial/rules_scenes.html
+/link/scripts             /docs/tutorial/rules_introduction.html#what-s-the-difference-between-a-rule-script-a-scene-and-schedule
 /link/thing               /docs/configuration/things.html
 /link/thingxml            /docs/developer/bindings/thing-xml.html
+/link/transformations     /docs/configuration/things.html
+/link/items               /docs/configuration/items.html
 /link/icons               /docs/configuration/iconsets/classic/
 /link/alexa               /docs/ecosystem/alexa/
 /link/google-assistant    /docs/ecosystem/google-assistant/
