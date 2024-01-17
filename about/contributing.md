@@ -88,12 +88,6 @@ Our docs are always getting better, but we use all the help we can. Whether it's
 
 
 
-### Sponsor Development
-
-If you have money to spare and want a certain issue fixed or or feature added, openHAB has a team on [BountySource](https://www.bountysource.com/teams/openhab) where you can fund development by posting bounties.
-
-
-
 ### Become a Member of the openHAB Foundation
 
 If you're involved in openHAB and recognize all the ways it helps you on a daily basis, the best way to show your continued support is to become a member of the **openHAB Foundation** which promotes the values of the community and funds the services you're enjoying for free. Visit [openhabfoundation.org](http://openhabfoundation.org) and become a member today!
