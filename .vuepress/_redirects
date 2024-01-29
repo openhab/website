@@ -155,3 +155,6 @@
 /addons/persistence/mysql/ https://v2.openhab.org/addons/persistence/mysql/ 301
 /addons/persistence/sitewhere/ https://v2.openhab.org/addons/persistence/sitewhere/ 301
 /addons/persistence/cosm/ https://v2.openhab.org/addons/persistence/cosm/ 301
+
+## Redirect all jdbc persistence documentation to main jdbc page with wildcard
+/addons/persistence/jdbc-*/ /addons/persistence/jdbc/
