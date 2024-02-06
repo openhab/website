@@ -686,7 +686,7 @@ system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets cla
 # Publish latest Javadoc
 puts ">>> Downloading and extracting latest Javadoc from Jenkins"
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
-`tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc/latest`
+`tar xzvf javadoc-latest.tgz --strip 2 && rm -r .vuepress/public/javadoc/latest/* && mv apidocs/ .vuepress/public/javadoc/latest`
 
 # Copy the thing-types.json file to the proper location
 FileUtils.cp(".vuepress/openhab-docs/.vuepress/thing-types.json", ".vuepress")
