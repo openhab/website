@@ -11,7 +11,7 @@ If you are using a Ruby version manager like [rvm](https://rvm.io/), running `rv
 
 To run the website on your local machine on a development server with live reload:
 
-1. Set the `OH_DOCS_VERSION` environment variable to the documentation version you want to use, e.g. `latest` or `stable`.
+1. Set the `OH_DOCS_VERSION` environment variable to the [openhab-docs repository branch](https://github.com/openhab/openhab-docs/branches) you want to use, e.g. `final` (for the latest docs) or `final-stable` (for the stable docs).
 2. Migrate the documentation from https://github.com/openhab/openhab-docs for the website, by running `ruby prepare-docs.rb`
 3. Run `npm run dev`
 
