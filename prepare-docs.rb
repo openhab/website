@@ -293,9 +293,8 @@ FileUtils.cp_r(".vuepress/openhab-docs/images/dashboard.png", "docs/images")
 puts ">>> Migrating logos"
 FileUtils.cp_r(".vuepress/openhab-docs/images/addons", ".vuepress/public/logos")
 
+
 puts ">>> Migrating the Concepts section"
-
-
 Dir.glob(".vuepress/openhab-docs/concepts/*.md").each { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -306,10 +305,7 @@ FileUtils.cp_r(".vuepress/openhab-docs/concepts/images", "docs/concepts/images")
 FileUtils.cp_r(".vuepress/openhab-docs/concepts/diagrams", "docs/concepts/diagrams")
 
 
-
 puts ">>> Migrating the Installation section"
-
-
 Dir.glob(".vuepress/openhab-docs/installation/*.md") { |path|
     file = File.basename(path)
     next if file == "designer.md"
@@ -322,8 +318,6 @@ FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation/
 
 
 puts ">>> Migrating the Tutorial section"
-
-
 Dir.glob(".vuepress/openhab-docs/tutorials/getting_started/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -333,10 +327,7 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial/images")
 
 
-
 puts ">>> Migrating the Configuration section"
-
-
 Dir.glob(".vuepress/openhab-docs/configuration/*.md") { |path|
     file = File.basename(path)
     next if file == "transform.md" # Useless, copy the one from addons
@@ -348,19 +339,24 @@ FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuratio
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
 
-
-
-Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
+puts ">>> Migrating the Main UI section"
+Dir.glob(".vuepress/openhab-docs/mainui/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
+    process_file(".vuepress/openhab-docs/mainui", file, "docs/mainui", "#{$docs_repo_root}/mainui/#{file}")
+}
+["developer", "settings"].each { |subsection|
+    Dir.glob(".vuepress/openhab-docs/mainui/#{subsection}/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{subsection}/#{file}"
+        process_file(".vuepress/openhab-docs/mainui/#{subsection}", file, "docs/mainui/#{subsection}", "#{$docs_repo_root}/mainui/#{subsection}/#{file}")
+    }
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
+FileUtils.cp_r(".vuepress/openhab-docs/mainui/images", "docs/mainui/images")
+
 
 puts ">>> Migrating the Migration Tutorial section"
-
-
 Dir.glob(".vuepress/openhab-docs/configuration/migration/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -369,8 +365,8 @@ Dir.glob(".vuepress/openhab-docs/configuration/migration/*.md") { |path|
 puts " -> images"
 #FileUtils.cp_r(".vuepress/openhab-docs/configuration/migration/images", "docs/configuration/migration/") // no images placed yet
 
-puts ">>> Migrating the Blockly Tutorial section"
 
+puts ">>> Migrating the Blockly Tutorial section"
 Dir.glob(".vuepress/openhab-docs/configuration/blockly/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -379,9 +375,8 @@ Dir.glob(".vuepress/openhab-docs/configuration/blockly/*.md") { |path|
 puts " -> images"
 #FileUtils.cp_r(".vuepress/openhab-docs/configuration/blockly/images", "docs/configuration/blockly/") // no images placed yet
 
+
 puts ">>> Migrating the UI section"
-
-
 Dir.glob(".vuepress/openhab-docs/ui/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -413,8 +408,6 @@ FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components
 
 
 puts ">>> Migrating the Apps section"
-
-
 Dir.glob(".vuepress/openhab-docs/addons/uis/apps/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -424,10 +417,7 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/images", "docs/apps")
 
 
-
 puts ">>> Migrating the Administration section"
-
-
 Dir.glob(".vuepress/openhab-docs/administration/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -437,10 +427,7 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/administration/images", "docs/administration/images")
 
 
-
 puts ">>> Migrating the Developer section"
-
-
 Dir.glob(".vuepress/openhab-docs/developers/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
