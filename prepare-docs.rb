@@ -301,8 +301,8 @@ Dir.glob(".vuepress/openhab-docs/concepts/*.md").each { |path|
     process_file(".vuepress/openhab-docs/concepts", file, "docs/concepts", "#{$docs_repo_root}/concepts/#{file}")
 }
 puts " -> images and diagrams"
-FileUtils.cp_r(".vuepress/openhab-docs/concepts/images", "docs/concepts/images")
-FileUtils.cp_r(".vuepress/openhab-docs/concepts/diagrams", "docs/concepts/diagrams")
+FileUtils.cp_r(".vuepress/openhab-docs/concepts/images", "docs/concepts")
+FileUtils.cp_r(".vuepress/openhab-docs/concepts/diagrams", "docs/concepts")
 
 
 puts ">>> Migrating the Installation section"
@@ -313,7 +313,7 @@ Dir.glob(".vuepress/openhab-docs/installation/*.md") { |path|
     process_file(".vuepress/openhab-docs/installation", file, "docs/installation", "#{$docs_repo_root}/installation/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation/images")
+FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation")
 
 
 puts ">>> Migrating the Tutorial section"
@@ -323,7 +323,7 @@ Dir.glob(".vuepress/openhab-docs/tutorials/getting_started/*.md") { |path|
     process_file(".vuepress/openhab-docs/tutorials/getting_started", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/getting_started/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial/images")
+FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial")
 
 puts ">>> Migrating the Configuration section"
 Dir.glob(".vuepress/openhab-docs/configuration/*.md") { |path|
@@ -351,7 +351,7 @@ Dir.glob(".vuepress/openhab-docs/mainui/*.md") { |path|
     }
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/mainui/images", "docs/mainui/images")
+FileUtils.cp_r(".vuepress/openhab-docs/mainui/images", "docs/mainui")
 
 
 puts ">>> Migrating the Migration Tutorial section"
@@ -381,7 +381,7 @@ Dir.glob(".vuepress/openhab-docs/ui/*.md") { |path|
     process_file(".vuepress/openhab-docs/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui/images")
+FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui")
 
 puts " -> habpanel"
 FileUtils.mkdir_p("docs/ui/habpanel")
@@ -402,7 +402,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/*.md"
     process_file(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components", file, "docs/ui/components", "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components/#{file}")
 }
 puts "    -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components/images") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images")
+FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images")
 
 
 puts ">>> Migrating the Apps section"
@@ -422,7 +422,7 @@ Dir.glob(".vuepress/openhab-docs/administration/*.md") { |path|
     process_file(".vuepress/openhab-docs/administration", file, "docs/administration", "#{$docs_repo_root}/administration/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/administration/images", "docs/administration/images")
+FileUtils.cp_r(".vuepress/openhab-docs/administration/images", "docs/administration")
 
 
 puts ">>> Migrating the Developer section"
@@ -440,9 +440,9 @@ Dir.glob(".vuepress/openhab-docs/developers/*.md") { |path|
 }
 
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/developers/bindings/images", "docs/developer/bindings/images")
-FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/osgi/images")
-FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/ide/images")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/bindings/images", "docs/developer/bindings")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/osgi")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/ide")
 
 # Additional files and images for the latest docs
 #if $version == "final" then
@@ -664,6 +664,7 @@ system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets cla
 
 # Publish latest Javadoc
 puts ">>> Downloading and extracting latest Javadoc from Jenkins"
+`rm javadoc-latest.tar.gz`
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
 `tar xzvf javadoc-latest.tgz --strip 2 && rm -r .vuepress/public/javadoc/latest/* && mv apidocs/ .vuepress/public/javadoc/latest`
 
