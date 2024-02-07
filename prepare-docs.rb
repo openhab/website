@@ -293,23 +293,19 @@ FileUtils.cp_r(".vuepress/openhab-docs/images/dashboard.png", "docs/images")
 puts ">>> Migrating logos"
 FileUtils.cp_r(".vuepress/openhab-docs/images/addons", ".vuepress/public/logos")
 
+
 puts ">>> Migrating the Concepts section"
-
-
 Dir.glob(".vuepress/openhab-docs/concepts/*.md").each { |path|
     file = File.basename(path)
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/concepts", file, "docs/concepts", "#{$docs_repo_root}/concepts/#{file}")
 }
 puts " -> images and diagrams"
-FileUtils.cp_r(".vuepress/openhab-docs/concepts/images", "docs/concepts/images")
-FileUtils.cp_r(".vuepress/openhab-docs/concepts/diagrams", "docs/concepts/diagrams")
-
+FileUtils.cp_r(".vuepress/openhab-docs/concepts/images", "docs/concepts")
+FileUtils.cp_r(".vuepress/openhab-docs/concepts/diagrams", "docs/concepts")
 
 
 puts ">>> Migrating the Installation section"
-
-
 Dir.glob(".vuepress/openhab-docs/installation/*.md") { |path|
     file = File.basename(path)
     next if file == "designer.md"
@@ -317,26 +313,19 @@ Dir.glob(".vuepress/openhab-docs/installation/*.md") { |path|
     process_file(".vuepress/openhab-docs/installation", file, "docs/installation", "#{$docs_repo_root}/installation/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation/images")
-
+FileUtils.cp_r(".vuepress/openhab-docs/installation/images", "docs/installation")
 
 
 puts ">>> Migrating the Tutorial section"
-
-
 Dir.glob(".vuepress/openhab-docs/tutorials/getting_started/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/tutorials/getting_started", file, "docs/tutorial", "#{$docs_repo_root}/tutorials/getting_started/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial/images")
-
-
+FileUtils.cp_r(".vuepress/openhab-docs/tutorials/getting_started/images", "docs/tutorial")
 
 puts ">>> Migrating the Configuration section"
-
-
 Dir.glob(".vuepress/openhab-docs/configuration/*.md") { |path|
     file = File.basename(path)
     next if file == "transform.md" # Useless, copy the one from addons
@@ -348,19 +337,24 @@ FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuratio
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
 
-
-
-Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
+puts ">>> Migrating the Main UI section"
+Dir.glob(".vuepress/openhab-docs/mainui/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
+    process_file(".vuepress/openhab-docs/mainui", file, "docs/mainui", "#{$docs_repo_root}/mainui/#{file}")
+}
+["developer", "settings"].each { |subsection|
+    Dir.glob(".vuepress/openhab-docs/mainui/#{subsection}/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{subsection}/#{file}"
+        process_file(".vuepress/openhab-docs/mainui/#{subsection}", file, "docs/mainui/#{subsection}", "#{$docs_repo_root}/mainui/#{subsection}/#{file}")
+    }
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
+FileUtils.cp_r(".vuepress/openhab-docs/mainui/images", "docs/mainui")
+
 
 puts ">>> Migrating the Migration Tutorial section"
-
-
 Dir.glob(".vuepress/openhab-docs/configuration/migration/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -369,8 +363,8 @@ Dir.glob(".vuepress/openhab-docs/configuration/migration/*.md") { |path|
 puts " -> images"
 #FileUtils.cp_r(".vuepress/openhab-docs/configuration/migration/images", "docs/configuration/migration/") // no images placed yet
 
-puts ">>> Migrating the Blockly Tutorial section"
 
+puts ">>> Migrating the Blockly Tutorial section"
 Dir.glob(".vuepress/openhab-docs/configuration/blockly/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -379,16 +373,15 @@ Dir.glob(".vuepress/openhab-docs/configuration/blockly/*.md") { |path|
 puts " -> images"
 #FileUtils.cp_r(".vuepress/openhab-docs/configuration/blockly/images", "docs/configuration/blockly/") // no images placed yet
 
+
 puts ">>> Migrating the UI section"
-
-
 Dir.glob(".vuepress/openhab-docs/ui/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/ui", file, "docs/ui", "#{$docs_repo_root}/ui/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui/images")
+FileUtils.cp_r(".vuepress/openhab-docs/ui/images", "docs/ui")
 
 puts " -> habpanel"
 FileUtils.mkdir_p("docs/ui/habpanel")
@@ -409,12 +402,10 @@ Dir.glob(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/*.md"
     process_file(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components", file, "docs/ui/components", "https://github.com/openhab/openhab-webui/blob/main/bundles/org.openhab.ui/doc/components/#{file}")
 }
 puts "    -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components/images") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images")
+FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images", "docs/ui/components") if Dir.exists?(".vuepress/openhab-docs/_addons_uis/org.openhab.ui/doc/components/images")
 
 
 puts ">>> Migrating the Apps section"
-
-
 Dir.glob(".vuepress/openhab-docs/addons/uis/apps/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -424,23 +415,17 @@ puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/images", "docs/apps")
 
 
-
 puts ">>> Migrating the Administration section"
-
-
 Dir.glob(".vuepress/openhab-docs/administration/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
     process_file(".vuepress/openhab-docs/administration", file, "docs/administration", "#{$docs_repo_root}/administration/#{file}")
 }
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/administration/images", "docs/administration/images")
-
+FileUtils.cp_r(".vuepress/openhab-docs/administration/images", "docs/administration")
 
 
 puts ">>> Migrating the Developer section"
-
-
 Dir.glob(".vuepress/openhab-docs/developers/*.md") { |path|
     file = File.basename(path)
     puts " -> #{file}"
@@ -455,9 +440,9 @@ Dir.glob(".vuepress/openhab-docs/developers/*.md") { |path|
 }
 
 puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/developers/bindings/images", "docs/developer/bindings/images")
-FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/osgi/images")
-FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/ide/images")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/bindings/images", "docs/developer/bindings")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/osgi/images", "docs/developer/osgi")
+FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/ide")
 
 # Additional files and images for the latest docs
 #if $version == "final" then
@@ -480,11 +465,7 @@ FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/i
 
 ### ADDONS
 
-
-
 puts ">>> Migrating add-ons: Automation"
-
-
 Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
@@ -493,7 +474,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
     process_file(".vuepress/openhab-docs/_addons_automation", addon + "/readme.md", "addons/automation", nil)
 
     if (Dir.exists?(".vuepress/openhab-docs/_addons_automation/#{addon}/doc")) then
-        puts "  \\-> images"
+        puts "    -> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_automation/#{addon}/doc", "addons/automation/#{addon}")
     end
 
@@ -501,8 +482,6 @@ Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
 
 
 puts ">>> Migrating add-ons: Persistence"
-
-
 Dir.glob(".vuepress/openhab-docs/_addons_persistences/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
@@ -511,16 +490,13 @@ Dir.glob(".vuepress/openhab-docs/_addons_persistences/**") { |path|
     process_file(".vuepress/openhab-docs/_addons_persistences", addon + "/readme.md", "addons/persistence", nil)
     
     if (Dir.exists?(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc")) then
-        puts "  \\-> images"
+        puts "    -> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc", "addons/persistence/#{addon}")
     end    
 }
 
 
-
 puts ">>> Migrating add-ons: Transformations"
-
-
 Dir.glob(".vuepress/openhab-docs/_addons_transformations/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
@@ -530,10 +506,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_transformations/**") { |path|
 }
 
 
-
 puts ">>> Migrating add-ons: Voice"
-
-
 Dir.glob(".vuepress/openhab-docs/_addons_voices/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
@@ -543,10 +516,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_voices/**") { |path|
 }
 
 
-
 puts ">>> Migrating add-ons: IO"
-
-
 Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     # See below for the Alexa & Mycroft special cases
     next if path =~ /alexa-skill/
@@ -565,18 +535,16 @@ Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
     FileUtils.mkdir_p("addons/integrations/" + addon)
     process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
-        puts "  \\-> images"
+        puts "    -> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/doc", "addons/integrations/#{addon}")
     end
     if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib")) then
-        puts "  \\-> images"
+        puts "    -> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib", "addons/integrations/#{addon}")
     end
 }
 
 puts ">>> Migrating add-ons: UI"
-
-
 Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
     next if path =~ /org.openhab.ui/
     addon = File.basename(path)
@@ -586,7 +554,7 @@ Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
     process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "addons/ui", nil)
 
     if (Dir.exists?(".vuepress/openhab-docs/_addons_uis/#{addon}/doc")) then
-        puts "  \\-> images"
+        puts "    -> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "addons/ui/#{addon}")
     end
 }
@@ -601,7 +569,7 @@ FileUtils.mkdir_p("docs/ecosystem/google-assistant")
 
 puts " -> Process alexa-skill docs"
 process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
-puts "  \\-> images"
+puts "    -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/alexa-skill/images", "docs/ecosystem/alexa")
 
 puts " -> Process mycroft-skill docs"
@@ -609,13 +577,11 @@ process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "d
 
 puts " -> Process google-assistant docs"
 process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant", "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
-puts "  \\-> images"
+puts "    -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/google-assistant/images", "docs/ecosystem/google-assistant")
 
 
 puts ">>> Migrating add-ons: Bindings"
-
-
 Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
@@ -631,13 +597,13 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
     FileUtils.mkdir_p("addons/bindings/" + addon)
     process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
     if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
-        puts "  \\-> images"
+        puts "    -> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc", "addons/bindings/#{addon}")
     elsif (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib") && addon != "zwave") then
-        puts "  \\-> images"
+        puts "    -> images"
         FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib", "addons/bindings/#{addon}")
     elsif addon == "zwave" then
-        puts "  \\-> things.md"
+        puts "    -> things.md"
         FileUtils.mkdir_p("addons/bindings/zwave/doc")
         process_file(".vuepress/openhab-docs/_addons_bindings", "zwave/doc/things.md", "addons/bindings", nil)
     end
@@ -698,8 +664,9 @@ system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets cla
 
 # Publish latest Javadoc
 puts ">>> Downloading and extracting latest Javadoc from Jenkins"
+`rm javadoc-latest.tar.gz`
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
-`tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc/latest`
+`tar xzvf javadoc-latest.tgz --strip 2 && rm -r .vuepress/public/javadoc/latest/* && mv apidocs/ .vuepress/public/javadoc/latest`
 
 # Copy the thing-types.json file to the proper location
 FileUtils.cp(".vuepress/openhab-docs/.vuepress/thing-types.json", ".vuepress")
