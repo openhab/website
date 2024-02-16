@@ -149,9 +149,12 @@ def process_file(indir, file, outdir, source)
                 next
             end
 
-            # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
-            break if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
-            break if line =~ /^## Installable Actions/
+            # TODO: Remove for the 4.2.0 release
+            if $version == "final-stable" then
+                # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
+                break if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
+                break if line =~ /^## Installable Actions/
+            end
 
             # Remove collapsibles in Linux install document and replace them by regular headings
             next if line =~ /include collapsible/ && file =~ /linux/
@@ -334,10 +337,14 @@ Dir.glob(".vuepress/openhab-docs/configuration/*.md") { |path|
 }
 puts " -> images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
-process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
-process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
 
-# TODO: Remove the else after the 4.2.0 release
+# TODO: Remove for the 4.2.0 release
+if $version == "final-stable" then
+    process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
+    process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
+end
+
+# TODO: Remove the if statement and the content of else for the 4.2.0 release
 # Additional files and images for the latest docs
 if $version == "final" then
 
