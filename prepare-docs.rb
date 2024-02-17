@@ -337,22 +337,38 @@ FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuratio
 process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration", "#{$docs_repo_root}/addons/actions.md")
 process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
 
-puts ">>> Migrating the Main UI section"
-Dir.glob(".vuepress/openhab-docs/mainui/*.md") { |path|
-    file = File.basename(path)
-    puts " -> #{file}"
-    process_file(".vuepress/openhab-docs/mainui", file, "docs/mainui", "#{$docs_repo_root}/mainui/#{file}")
-}
-["developer", "settings"].each { |subsection|
-    Dir.glob(".vuepress/openhab-docs/mainui/#{subsection}/*.md") { |path|
-        file = File.basename(path)
-        puts " -> #{subsection}/#{file}"
-        process_file(".vuepress/openhab-docs/mainui/#{subsection}", file, "docs/mainui/#{subsection}", "#{$docs_repo_root}/mainui/#{subsection}/#{file}")
-    }
-}
-puts " -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/mainui/images", "docs/mainui")
+# TODO: Remove the else after the 4.2.0 release
+# Additional files and images for the latest docs
+if $version == "final" then
 
+    puts ">>> Migrating the Main UI section"
+    Dir.glob(".vuepress/openhab-docs/mainui/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file(".vuepress/openhab-docs/mainui", file, "docs/mainui", "#{$docs_repo_root}/mainui/#{file}")
+    }
+    ["developer", "settings"].each { |subsection|
+        Dir.glob(".vuepress/openhab-docs/mainui/#{subsection}/*.md") { |path|
+            file = File.basename(path)
+            puts " -> #{subsection}/#{file}"
+            process_file(".vuepress/openhab-docs/mainui/#{subsection}", file, "docs/mainui/#{subsection}", "#{$docs_repo_root}/mainui/#{subsection}/#{file}")
+        }
+    }
+    puts " -> images"
+    FileUtils.cp_r(".vuepress/openhab-docs/mainui/images", "docs/mainui")
+
+else
+# Additional files and images for the stable docs
+    puts ">>> Migrating the Settings section"
+    Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
+    }
+    puts " -> images"
+    FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
+
+end
 
 puts ">>> Migrating the Migration Tutorial section"
 Dir.glob(".vuepress/openhab-docs/configuration/migration/*.md") { |path|
