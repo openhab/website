@@ -680,7 +680,7 @@ system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets cla
 
 # Publish latest Javadoc
 puts ">>> Downloading and extracting latest Javadoc from Jenkins"
-`rm javadoc-latest.tar.gz`
+`[ -e javadoc-latest.tar.gz ] && rm javadoc-latest.tar.gz`
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
 `tar xzvf javadoc-latest.tgz --strip 2 && rm -r .vuepress/public/javadoc/latest/* && mv apidocs/ .vuepress/public/javadoc/latest`
 
