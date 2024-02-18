@@ -678,11 +678,13 @@ puts ">>> Writing add-ons arrays to files for sidebar navigation"
 puts ">>> Generating iconset"
 system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets classic .vuepress/openhab-docs/_data docs/configuration/iconsets")
 
+# Clean-Ups required for repeated local build
+`[ -e javadoc-latest.tar.gz ] && rm javadoc-latest.tar.gz`
+`[ -e .vuepress/public/javadoc/latest ] && rm -r .vuepress/public/javadoc/latest`
 # Publish latest Javadoc
 puts ">>> Downloading and extracting latest Javadoc from Jenkins"
-`[ -e javadoc-latest.tar.gz ] && rm javadoc-latest.tar.gz`
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
-`tar xzvf javadoc-latest.tgz --strip 2 && rm -r .vuepress/public/javadoc/latest/* && mv apidocs/ .vuepress/public/javadoc/latest`
+`tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc/latest`
 
 # Copy the thing-types.json file to the proper location
 FileUtils.cp(".vuepress/openhab-docs/.vuepress/thing-types.json", ".vuepress")
