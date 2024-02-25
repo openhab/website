@@ -28,7 +28,7 @@
                 <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
                 <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
               </div>
-              <div class="type">{{addon.frontmatter.type}}</div>
+              <div class="type">{{addon.frontmatter.label}}</div>
             </router-link>
           </li>
         </transition-group>
@@ -45,7 +45,7 @@
                 <img v-if="addon.frontmatter.logo" :src="addon.frontmatter.logo.replace('images/addons/', '/logos/')" :title="addon.frontmatter.label" :alt="addon.frontmatter.label" />
                 <strong v-else><img src="/openhab-logo-square.png" width="60"><br />{{addon.frontmatter.label}}</strong>
               </div>
-              <div class="type">{{addon.frontmatter.type}}</div>
+              <div class="type">{{addon.frontmatter.title}}</div>
             </router-link>
           </li>
         </transition-group>
