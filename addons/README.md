@@ -4,11 +4,11 @@ initial_gallery:
   binding:
     title: "Bindings"
     description: "Bindings integrate physical hardware, external systems and web services in openHAB."
-    featured: ["astro", "bluetooth", "hue", "knx", "kodi", "mqtt", "nest", "mihome", "rfxcom", "sonos", "tradfri", "zigbee", "zwave"]
+    featured: ["astro", "bluetooth", "hue", "knx", "chromecast", "mqtt", "tesla", "fronius", "lgwebos", "sonos", "tradfri", "zigbee", "zwave"]
   io:
     title: "System Integrations"
     description: "System integrations expose openHAB to external systems."
-    featured: ["azureiothub", "gcal", "homekit", "openhabcloud"]
+    featured: ["homekit", "hueemulation", "openhabcloud"]
   automation:
      title: "Automation"
      description: "Automation add-ons extend the functionality of the rule engine, such as additional choices of scripting languages."
@@ -20,7 +20,7 @@ initial_gallery:
   transform:
     title: "Data Transformation"
     description: "Transformations are used to translate between technical and human-readable values for items."
-    featured: ["exec", "javascript", "map", "xpath"]
+    featured: ["jsonpath", "map", "regex"]
   voice:
     title: "Voice"
     description: "These add-ons provide voice enabling features, such as text-to-speech, speech-to-text etc."
