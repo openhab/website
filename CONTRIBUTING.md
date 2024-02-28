@@ -7,17 +7,97 @@ For the Ruby scripts used by the website build, Ruby 2.4.3 is needed.
 If you are using a Node.js version manager like [fnm](https://github.com/Schniz/fnm), the provided `.node-version` file should automatically set the correct Node.js version needed.
 If you are using a Ruby version manager like [rvm](https://rvm.io/), running `rvm use` should automatically set the correct version according to the `.ruby-version` file.
 
+## Environment Setup
+
+### Linux
+
+#### Ruby 2.4.3
+
+It is highly recommended to use the [Ruby Version Manager (RVM)](https://rvm.io). Once installed it will help to automatically download and configure `Ruby`:
+
+```bash
+$ rvm install "ruby-2.4.3"
+$ rvm use
+Using /home/foo/.rvm/gems/ruby-2.4.3
+```
+
+If there are no binary packages available for your distribution, `rvm` will compile `Ruby` from the source code:
+
+```bash
+$ rvm install "ruby-2.4.3"
+Searching for binary rubies, this might take some time.
+No binary rubies available for: ubuntu/22.04/x86_64/ruby-2.4.3.
+Continuing with compilation.
+# ...
+```
+
+As version 2.4.3 requires the an older (deprecated) version of [OpenSSL](https://www.openssl.org) it is possible that the compilation from source fails on recent distribution (as they no longer provide the required version):
+
+```bash
+$ rvm install "ruby-2.4.3"
+
+Searching for binary rubies, this might take some time.
+No binary rubies available for: ubuntu/22.04/x86_64/ruby-2.4.3.
+Continuing with compilation. Please read 'rvm help mount' to get more information on binary rubies.
+Checking requirements for ubuntu.
+Requirements installation successful.
+Installing Ruby from source to: /home/foo/.rvm/rubies/ruby-2.4.3, this may take a while depending on your cpu(s)...
+ruby-2.4.3 - #downloading ruby-2.4.3, this may take a while depending on your connection...
+ruby-2.4.3 - #extracting ruby-2.4.3 to /home/foo/.rvm/src/ruby-2.4.3.....
+ruby-2.4.3 - #configuring..................................................................
+ruby-2.4.3 - #post-configuration..
+ruby-2.4.3 - #compiling................................................................................................................................................................................................|
+Error running '__rvm_make -j8',
+please read /home/foo/.rvm/log/1709118815_ruby-2.4.3/make.log
+```
+
+Modern distributions do not provide the required OpenSSL Version 1.1.1 dependency anymore. 
+Check the logs:
+
+```log
+...
+make[2]: *** [Makefile:305: ossl_pkey.o] Error 1
+make[2]: Leaving directory '/home/foo/.rvm/src/ruby-2.4.3/ext/openssl'
+make[1]: *** [exts.mk:237: ext/openssl/all] Error 2
+make[1]: Leaving directory '/home/foo/.rvm/src/ruby-2.4.3'
+make: *** [uncommon.mk:220: build-ext] Error 2
+++ return 2
+```
+
+In case the missing of the missing SSL dependency follow the steps below (Ubuntu based distributions):
+
+```bash
+sudo apt install build-essential checkinstall zlib1g-dev
+cd ~/Downloads
+wget https://www.openssl.org/source/openssl-1.1.1q.tar.gz
+cd ~/Downloads/openssl-1.1.1q
+./config --prefix=/opt/openssl-1.1.1q --openssldir=/opt/openssl-1.1.1q shared zlib
+make
+make test
+sudo make install
+sudo rm -rf /opt/openssl-1.1.1q/certs
+sudo ln -s /etc/ssl/certs /opt/openssl-1.1.1q
+```
+
+[ [Build ruby-2.4.3 on ubuntu 22.04 LTS](https://github.com/rbenv/ruby-build/discussions/1940#discussioncomment-2663209) ]
+
+You should now be able to use `rvm` to build using the following parameters:
+
+```bash
+rvm install "ruby-2.4.3" -C --with-openssl-dir=/opt/openssl-1.1.1q
+```
+
 ## Running in development mode
 
 To run the website on your local machine on a development server with live reload:
 
-1. Set the `OH_DOCS_VERSION` environment variable to the [openhab-docs repository branch](https://github.com/openhab/openhab-docs/branches) you want to use, e.g. `final` (for the latest docs) or `final-stable` (for the stable docs).
-2. Migrate the documentation from https://github.com/openhab/openhab-docs for the website, by running `ruby prepare-docs.rb`
-3. Run `npm run dev`
+- To run the released (stable) version of the documentation execute `npm run build-local-stable -y`
+- To run the latest (work in progress) version use `npm run build-local-latest -y`
 
 The compilation can take a few minutes due to the size of the docs, wait for the "VuePress dev server listening at http://localhost:8080 (or another available port)" message.
 
-You can alter layouts and components in `.vuepress/components`, or the navigation in `.vuepress/config.js` - check the VuePress docs for more details. Note: if you add a new component and reference it in a (Markdown) page with its custom tag, it might not work until you restart the dev server.
+You can alter layouts and components in `.vuepress/components`, or the navigation in `.vuepress/config.js` - check the VuePress docs for more details. 
+Note: if you add a new component and reference it in a (Markdown) page with its custom tag, it might not work until you restart the dev server.
 
 ## Building the final website
 
