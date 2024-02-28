@@ -4,7 +4,7 @@ initial_gallery:
   binding:
     title: "Bindings"
     description: "Bindings integrate physical hardware, external systems and web services in openHAB."
-    featured: ["astro", "bluetooth", "hue", "knx", "chromecast", "mqtt", "tesla", "fronius", "lgwebos", "sonos", "tradfri", "zigbee", "zwave"]
+    featured: ["astro", "bluetooth", "chromecast", "hue", "knx", "kodi", "lgwebos", "mqtt", "sonos", "tesla", "tradfri", "zigbee", "zwave"]
   io:
     title: "System Integrations"
     description: "System integrations expose openHAB to external systems."
