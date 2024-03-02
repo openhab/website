@@ -20,7 +20,9 @@ Note: if you add a new component and reference it in a (Markdown) page with its 
 
 This chapter describes how to setup a local environment to be able to build the whole website and review changes locally before creating a pull request.
 
-### Linux
+### Linux / MacOS
+
+The following has been tested on Linux and MacOS (Windows seems to have a few minors that prevent the script to run completely). 
 
 #### Ruby 2.4.3
 
@@ -107,6 +109,7 @@ To run the website on your local machine on a development server with live reloa
 - run the latest (work in progress) version use `npm run build-local-latest -y`
 
 As the compilation can take a few minutes due to the size of the docs, wait for the "VuePress dev server listening at http://localhost:8080 (or another available port)" message.
+When loading the website in the browser it may take a few seconds until it finally appears.
 
 ## Building the final website
 

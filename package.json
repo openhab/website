@@ -32,7 +32,7 @@
     "add-blog-meta": "ruby add-blog-meta.rb",
     "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
     "build-only": "vuepress build .",
-    "build-local": "rm javadoc-*.tgz* -f && npm run prepare-docs && npm run dev",
+    "build-local": "rm -f javadoc-*.tgz* && npm run prepare-docs && npm run dev",
     "build-local-latest": "OH_DOCS_VERSION=final npm run build-local",
     "build-local-stable": "OH_DOCS_VERSION=final-stable npm run build-local"
   },
