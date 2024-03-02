@@ -2,6 +2,9 @@
   "name": "openhab-website",
   "version": "3.0.0",
   "description": "openHAB Website",
+  "engines": {
+    "node": "<17"
+  },
   "dependencies": {
     "headroom.js": "^0.9.4",
     "markdown-it": "^8.4.2",
@@ -23,11 +26,15 @@
     "vuepress-plugin-feed": "^0.1.9"
   },
   "scripts": {
+    "predev": "npm install && npx update-browserslist-db@latest",
     "dev": "npx vuepress dev",
     "prepare-docs": "ruby prepare-docs.rb",
     "add-blog-meta": "ruby add-blog-meta.rb",
     "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
-    "build-only": "vuepress build ."
+    "build-only": "vuepress build .",
+    "build-local": "rm -f javadoc-*.tgz* && npm run prepare-docs && npm run dev",
+    "build-local-latest": "OH_DOCS_VERSION=final npm run build-local",
+    "build-local-stable": "OH_DOCS_VERSION=final-stable npm run build-local"
   },
   "author": "openHAB",
   "license": "EPL-2.0"
