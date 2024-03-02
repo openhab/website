@@ -2,18 +2,30 @@
 
 This website is made with [VuePress](https://vuepress.vuejs.org/).
 It will be installed as part of the dev dependencies.
-For the used version of vuepress to work correctly, Node.js 16.20.0 or **older** is needed. Alternatively on newer versions [the legacy OpenSSL provider can be enabled as described in this StackOverflow thread](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported).
+For the used version of vuepress to work correctly, Node.js 16.20.0 or **older** is needed. 
+Alternatively on newer versions [the legacy OpenSSL provider can be enabled as described in this StackOverflow thread](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported).
 For the Ruby scripts used by the website build, Ruby 2.4.3 is needed.
 If you are using a Node.js version manager like [fnm](https://github.com/Schniz/fnm), the provided `.node-version` file should automatically set the correct Node.js version needed.
 If you are using a Ruby version manager like [rvm](https://rvm.io/), running `rvm use` should automatically set the correct version according to the `.ruby-version` file.
 
+## Editing
+
+Be careful not to edit anything in the folder vuepress as it is the folder that contains generated content. 
+The folder that contains pages to be edited is called ".vuepress" (note the dot at the beginning of the folder name).
+You can alter layouts and components in `.vuepress/components`, or the navigation in `.vuepress/config.js` - check the VuePress docs for more details. 
+
+Note: if you add a new component and reference it in a (Markdown) page with its custom tag, it might not work until you restart the dev server.
+
 ## Environment Setup
+
+This chapter describes how to setup a local environment to be able to build the whole website and review changes locally before creating a pull request.
 
 ### Linux
 
 #### Ruby 2.4.3
 
-It is highly recommended to use the [Ruby Version Manager (RVM)](https://rvm.io). Once installed it will help to automatically download and configure `Ruby`:
+It is highly recommended to use the [Ruby Version Manager (RVM)](https://rvm.io). 
+Once installed it will help to automatically download and configure `Ruby`:
 
 ```bash
 $ rvm install "ruby-2.4.3"
@@ -31,7 +43,7 @@ Continuing with compilation.
 # ...
 ```
 
-As version 2.4.3 requires the an older (deprecated) version of [OpenSSL](https://www.openssl.org) it is possible that the compilation from source fails on recent distribution (as they no longer provide the required version):
+As version 2.4.3 requires the an older (deprecated) version of [OpenSSL](https://www.openssl.org) it is possible that the compilation from source fails on the recent distribution (as they no longer provide the required version):
 
 ```bash
 $ rvm install "ruby-2.4.3"
@@ -64,7 +76,7 @@ make: *** [uncommon.mk:220: build-ext] Error 2
 ++ return 2
 ```
 
-In case the missing of the missing SSL dependency follow the steps below (Ubuntu based distributions):
+In case of the missing SSL dependency follow the steps below (Ubuntu based distributions):
 
 ```bash
 sudo apt install build-essential checkinstall zlib1g-dev
@@ -91,13 +103,10 @@ rvm install "ruby-2.4.3" -C --with-openssl-dir=/opt/openssl-1.1.1q
 
 To run the website on your local machine on a development server with live reload:
 
-- To run the released (stable) version of the documentation execute `npm run build-local-stable -y`
-- To run the latest (work in progress) version use `npm run build-local-latest -y`
+- run the released (stable) version of the documentation execute `npm run build-local-stable -y`
+- run the latest (work in progress) version use `npm run build-local-latest -y`
 
-The compilation can take a few minutes due to the size of the docs, wait for the "VuePress dev server listening at http://localhost:8080 (or another available port)" message.
-
-You can alter layouts and components in `.vuepress/components`, or the navigation in `.vuepress/config.js` - check the VuePress docs for more details. 
-Note: if you add a new component and reference it in a (Markdown) page with its custom tag, it might not work until you restart the dev server.
+As the compilation can take a few minutes due to the size of the docs, wait for the "VuePress dev server listening at http://localhost:8080 (or another available port)" message.
 
 ## Building the final website
 
