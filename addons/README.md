@@ -8,7 +8,7 @@ initial_gallery:
   io:
     title: "System Integrations"
     description: "System integrations expose openHAB to external systems."
-    featured: ["azureiothub", "gcal", "homekit", "openhabcloud"]
+    featured: ["homekit", "hueemulation", "openhabcloud"]
   automation:
      title: "Automation"
      description: "Automation add-ons extend the functionality of the rule engine, such as additional choices of scripting languages."
@@ -20,7 +20,7 @@ initial_gallery:
   transform:
     title: "Data Transformation"
     description: "Transformations are used to translate between technical and human-readable values for items."
-    featured: ["exec", "javascript", "map", "xpath"]
+    featured: ["jsonpath", "map", "regex"]
   voice:
     title: "Voice"
     description: "These add-ons provide voice enabling features, such as text-to-speech, speech-to-text etc."
