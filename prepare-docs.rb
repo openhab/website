@@ -5,7 +5,8 @@ require "fileutils"
 require "net/http"
 require "uri"
 require "rexml/document"
-# require "nokogiri"
+require 'json'
+require 'open-uri'
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/main"
@@ -14,6 +15,22 @@ $addons_repo_branch = "main"
 $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
+
+def checkout_pull_request(pull_request_number, target_directory)
+    pull_request_url = "https://api.github.com/repos/openhab/openhab-docs/pulls/#{pull_request_number}"
+    
+    response = JSON.parse(open(pull_request_url).read)
+    repository_url =  response['head']['repo']['clone_url']
+    label = response['head']['label']
+    sha = response['head']['sha']
+
+    puts "➡️ PR Title: #{response['title']} (#{label} @ SHA [#{sha}]"
+  
+    FileUtils.cd('.vuepress/openhab-docs', verbose: true) do
+      system("git clone --depth 1 #{repository_url}")
+      system("git checkout #{sha}")
+    end
+  end
 
 puts "🧹 cleaning existing documentation downloads ..."
 Dir.glob("javadoc-*.tgz*").select { |file| /pattern/.match file }.each { |file| File.delete(file) }
@@ -52,12 +69,10 @@ else
     FileUtils.rm_rf(".vuepress/openhab-docs")
 end
 
-puts "➡️ Cloning openhab-docs"
+puts "➡️ Cloning repository openhab-docs 📦 ..."
 if ($pull_request != "") then
-    FileUtils.mkdir_p(".vuepress/openhab-docs")
-    FileUtils.cd('.vuepress/openhab-docs', verbose: true) do 
-        `gh pr checkout #{$pull_request} --repo=#{$docs_repo}`
-    end  
+    FileUtils.mkdir_p(".vuepress")
+    checkout_pull_request($pull_request, '.vuepress')
 else
     `git clone --depth 1 --branch #{$version ? $version : $docs_repo_branch} #{$docs_repo} .vuepress/openhab-docs`
 end
