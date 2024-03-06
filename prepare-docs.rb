@@ -26,7 +26,7 @@ def checkout_pull_request(pull_request_number, target_directory)
 
     puts "➡️ PR Title: #{response['title']} (#{label} @ SHA [#{sha}]"
   
-    FileUtils.cd('.vuepress/openhab-docs', verbose: true) do
+    FileUtils.cd('target_directory', verbose: false) do
       system("git clone --depth 1 #{repository_url}")
       system("git checkout #{sha}")
     end
