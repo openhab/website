@@ -54,11 +54,10 @@ end
 
 puts "➡️ Cloning openhab-docs"
 if ($pull_request != "") then
-    Dir.mkdir(".vuepress/openhab-docs")
-    system(`gh pr checkout #{$pull_request} --repo=#{$docs_repo}`, chdir: '.vuepress/openhab-docs')
-    # Dir.chdir(".vuepress/openhab-docs") do
-    #   system `gh pr checkout #{$pull_request} --repo=#{$docs_repo}`
-    # end
+    FileUtils.mkdir_p(".vuepress/openhab-docs")
+    FileUtils.cd('.vuepress/openhab-docs', verbose: true) do 
+        `gh pr checkout #{$pull_request} --repo=#{$docs_repo}`
+    end  
 else
     `git clone --depth 1 --branch #{$version ? $version : $docs_repo_branch} #{$docs_repo} .vuepress/openhab-docs`
 end
