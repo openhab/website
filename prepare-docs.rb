@@ -28,7 +28,7 @@ def checkout_pull_request(pull_request_number, target_directory)
     puts "➡️ PR Title: #{response['title']} (#{label} @ SHA [#{sha}]"
   
     FileUtils.cd(target_directory, verbose: false) do
-      system("git clone --depth 1 #{repository_url} --branch #{ref}")
+      system("git clone --depth 1 #{repository_url} --branch #{branch}")
       # system("git checkout #{sha}")
     end
   end
