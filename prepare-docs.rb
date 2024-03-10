@@ -53,7 +53,7 @@ ARGV.each do |arg|
         case previous_argument
             when "--pull-request"
                 $pull_request = arg
-                $version = 'final'
+                $version = "final"
                 puts "ℹ️: PR #{$pull_request} will be used to build documentation"
         end 
     end
