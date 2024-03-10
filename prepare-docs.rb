@@ -31,8 +31,8 @@ def checkout_pull_request(pull_request_number, target_directory)
     puts "  ↪️ PR Title: #{$title}"
   
     FileUtils.cd(target_directory, verbose: false) do
-      system("git clone --depth 1 #{repository_url} --branch #{branch} --quiet")
-      system("git reset ##{sha} --quiet")
+      system("git clone --depth 1 #{repository_url} --branch #{branch} --quiet", target_directory)
+      system("git reset ##{sha} --quiet", target_directory)
     end
   end
 
