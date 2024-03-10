@@ -36,7 +36,7 @@ def checkout_pull_request(pr, target_directory)
     title = response['title']
 
     puts "➡️ Cloning repository 📦 #{label} ..."
-    puts "  ↪️ PR Title: #{title}"
+    puts "  ↪️ PR ##{pr}: #{title}"
   
     FileUtils.cd(target_directory, verbose: false) do
       system("git clone --depth 1 #{repository_url} --branch #{branch} #{$verbose ? '' : '--quiet'}")
