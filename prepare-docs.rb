@@ -17,6 +17,8 @@ $version = nil
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
 
 def checkout_pull_request(pull_request_number, target_directory)
+    FileUtils.mkdir_p(".vuepress")
+
     pull_request_url = "https://api.github.com/repos/openhab/openhab-docs/pulls/#{pull_request_number}"
     
     response = JSON.parse(open(pull_request_url).read)
@@ -29,7 +31,7 @@ def checkout_pull_request(pull_request_number, target_directory)
   
     FileUtils.cd(target_directory, verbose: false) do
       system("git clone --depth 1 #{repository_url} --branch #{branch}")
-      # system("git checkout #{sha}")
+      system("git checkout #{sha}")
     end
   end
 
@@ -72,7 +74,6 @@ end
 
 puts "➡️ Cloning repository openhab-docs 📦 ..."
 if ($pull_request != "") then
-    FileUtils.mkdir_p(".vuepress")
     checkout_pull_request($pull_request, '.vuepress')
 else
     `git clone --depth 1 --branch #{$version ? $version : $docs_repo_branch} #{$docs_repo} .vuepress/openhab-docs`
