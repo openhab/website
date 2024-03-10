@@ -27,11 +27,12 @@ def checkout_pull_request(pull_request_number, target_directory)
     sha = response['head']['sha']
     branch = response['head']['ref']
 
-    puts "➡️ PR Title: #{response['title']} (#{label} @ SHA [#{sha}]"
+    puts "➡️ Cloning repository #{$label} 📦 ..."
+    puts "  ↪️ PR Title: #{$title}"
   
     FileUtils.cd(target_directory, verbose: false) do
-      system("git clone --depth 1 #{repository_url} --branch #{branch}")
-      system("git checkout #{sha}")
+      system("git clone --depth 1 #{repository_url} --branch #{branch} --quiet")
+      system("git reset ##{sha} --quiet")
     end
   end
 
@@ -51,7 +52,7 @@ ARGV.each do |arg|
         case previous_argument
             when "--pull-request"
                 $pull_request = arg
-                puts "➡️ PR #{arg} will be used to build documentation"
+                puts "ℹ️: PR #{arg} will be used to build documentation"
         end 
     end
     previous_argument = arg
@@ -72,10 +73,10 @@ else
     FileUtils.rm_rf(".vuepress/openhab-docs")
 end
 
-puts "➡️ Cloning repository openhab-docs 📦 ..."
 if ($pull_request != "") then
     checkout_pull_request($pull_request, '.vuepress')
 else
+    puts "➡️ Cloning repository #{$docs_repo} 📦 ..."
     `git clone --depth 1 --branch #{$version ? $version : $docs_repo_branch} #{$docs_repo} .vuepress/openhab-docs`
 end
 

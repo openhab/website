@@ -33,7 +33,7 @@
     "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
     "build-only": "vuepress build .",
     "prebuild-local": "npm run prepare-docs",
-    "build-local": "npm run dev --silenrgit",
+    "build-local": "npm run dev --silent",
     "build-local-latest": "OH_DOCS_VERSION=final npm run build-local",
     "build-local-stable": "OH_DOCS_VERSION=final-stable npm run build-local"
   },
