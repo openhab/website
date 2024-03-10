@@ -119,6 +119,12 @@ In special situations; e.g. if you make changes in the documentation repository 
 ARGUMENTS="--pull-request 2272" npm run build-local
 ```
 
+Available ARGUMENTS:
+
+- `--verbose`
+- `--no-clone`
+- `--pull-request #`
+
 ## Building the final website
 
 This step is normally done by a CI service (e.g. Netlify).
