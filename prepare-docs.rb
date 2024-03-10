@@ -16,19 +16,20 @@ $version = nil
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
 
-def checkout_pull_request(pull_request_number, target_directory)
+def checkout_pull_request(pr, target_directory)
     FileUtils.mkdir_p(".vuepress")
 
-    pull_request_url = "https://api.github.com/repos/openhab/openhab-docs/pulls/#{pull_request_number}"
+    pull_request_url = "https://api.github.com/repos/openhab/openhab-docs/pulls/#{pr}"
     
     response = JSON.parse(open(pull_request_url).read)
     repository_url =  response['head']['repo']['clone_url']
     label = response['head']['label']
     sha = response['head']['sha']
     branch = response['head']['ref']
+    title = response['title']
 
-    puts "➡️ Cloning repository #{$label} 📦 ..."
-    puts "  ↪️ PR Title: #{$title}"
+    puts "➡️ Cloning repository 📦 #{label} ..."
+    puts "  ↪️ PR Title: #{title}"
   
     FileUtils.cd(target_directory, verbose: false) do
       system("git clone --depth 1 #{repository_url} --branch #{branch} --quiet", target_directory)
@@ -36,7 +37,7 @@ def checkout_pull_request(pull_request_number, target_directory)
     end
   end
 
-puts "🧹 cleaning existing documentation downloads ..."
+puts "🧹 Cleaning existing documentation downloads ..."
 Dir.glob("javadoc-*.tgz*").select { |file| /pattern/.match file }.each { |file| File.delete(file) }
 
 $parameter_no_clone = false
@@ -52,7 +53,7 @@ ARGV.each do |arg|
         case previous_argument
             when "--pull-request"
                 $pull_request = arg
-                puts "ℹ️: PR #{arg} will be used to build documentation"
+                puts "ℹ️: PR #{$pull_request} will be used to build documentation"
         end 
     end
     previous_argument = arg
