@@ -32,8 +32,8 @@ def checkout_pull_request(pr, target_directory)
     puts "  ↪️ PR Title: #{title}"
   
     FileUtils.cd(target_directory, verbose: false) do
-      system("git clone --depth 1 #{repository_url} --branch #{branch} --quiet", target_directory)
-      system("git reset ##{sha} --quiet", target_directory)
+      system("git clone --depth 1 #{repository_url} --branch #{branch} --quiet")
+      system("git reset ##{sha} --quiet")
     end
   end
 
@@ -53,6 +53,7 @@ ARGV.each do |arg|
         case previous_argument
             when "--pull-request"
                 $pull_request = arg
+                $version = 'final'
                 puts "ℹ️: PR #{$pull_request} will be used to build documentation"
         end 
     end
