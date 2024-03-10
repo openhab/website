@@ -37,6 +37,8 @@ def checkout_pull_request(pr, target_directory)
 
     puts "➡️ Cloning repository 📦 #{label} ..."
     puts "  ↪️ PR ##{pr}: #{title}"
+
+    system("OH_DOCS_VERSION=#{branch}")
   
     FileUtils.cd(target_directory, verbose: false) do
       system("git clone --depth 1 #{repository_url} --branch #{branch} #{$verbose ? '' : '--quiet'}")
@@ -48,7 +50,7 @@ verbose "🧹 Cleaning existing documentation downloads ..."
 Dir.glob("javadoc-*.tgz*").select { |file| /pattern/.match file }.each { |file| File.delete(file) }
 
 $parameter_no_clone = false
-$pull_request = ""
+$pull_request = nil
 
 previous_argument = "";
 ARGV.each do |arg|
@@ -84,7 +86,7 @@ else
     FileUtils.rm_rf(".vuepress/openhab-docs")
 end
 
-if ($pull_request != "") then
+if ($pull_request) then
     checkout_pull_request($pull_request, '.vuepress')
 else
     puts "➡️ Cloning repository #{$docs_repo} 📦 ..."
@@ -367,7 +369,6 @@ verbose " ->images and diagrams"
 FileUtils.cp_r(".vuepress/openhab-docs/concepts/images", "docs/concepts")
 FileUtils.cp_r(".vuepress/openhab-docs/concepts/diagrams", "docs/concepts")
 
-
 puts "➡️ Migrating the Installation section"
 Dir.glob(".vuepress/openhab-docs/installation/*.md") { |path|
     file = File.basename(path)
@@ -642,27 +643,30 @@ Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
     end
 }
 
+# Git workflow for PRs are note executed - therefore the _addons_ios folder is not present for PR checks - this section will be scipped.
+if $pull_request then
+    puts "⚠️  Ecosystem documentation for [Alexy, Mycroft, Google] skipped - depends on Git-Workflow ..."
+else
+    # Handle those three separately - copy them in the "ecosystem" section
+    puts "➡️ Migrating special ecosystem add-ons"
+    verbose " ->Create folders"
+    FileUtils.mkdir_p("docs/ecosystem/alexa")
+    FileUtils.mkdir_p("docs/ecosystem/mycroft")
+    FileUtils.mkdir_p("docs/ecosystem/google-assistant")
 
-# Handle those three separately - copy them in the "ecosystem" section
-puts "➡️ Migrating special ecosystem add-ons"
-verbose " ->Create folders"
-FileUtils.mkdir_p("docs/ecosystem/alexa")
-FileUtils.mkdir_p("docs/ecosystem/mycroft")
-FileUtils.mkdir_p("docs/ecosystem/google-assistant")
+    verbose " ->Process alexa-skill docs"
+    process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
+    verbose "    -> images"
+    FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/alexa-skill/images", "docs/ecosystem/alexa")
 
-verbose " ->Process alexa-skill docs"
-process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
-verbose "    -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/alexa-skill/images", "docs/ecosystem/alexa")
+    verbose " ->Process mycroft-skill docs"
+    process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
 
-verbose " ->Process mycroft-skill docs"
-process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
-
-verbose " ->Process google-assistant docs"
-process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant", "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
-verbose "    -> images"
-FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/google-assistant/images", "docs/ecosystem/google-assistant")
-
+    verbose " ->Process google-assistant docs"
+    process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant", "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
+    verbose "    -> images"
+    FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/google-assistant/images", "docs/ecosystem/google-assistant")
+end
 
 puts "➡️ Migrating add-ons: Bindings"
 Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
@@ -691,8 +695,6 @@ Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
         process_file(".vuepress/openhab-docs/_addons_bindings", "zwave/doc/things.md", "addons/bindings", nil)
     end
 }
-
-
 
 puts "➡️ Creating ZWave thing viewer"
 if (File.exists?('.vuepress/openhab-docs/_addons_bindings/zwave/doc/things.md')) then
@@ -741,9 +743,14 @@ puts "➡️ Writing add-ons arrays to files for sidebar navigation"
 }
 
 
-# Regenerate the classic iconset docs
-puts "➡️ Generating iconset"
+# Git workflow for PRs are note executed - therefore the _addons_ios folder is not present for PR checks - this section will be scipped.
+if $pull_request then
+    puts "⚠️  Iconsets depend on Git-Workflow - will be skipped ..."
+else
+    # Regenerate the classic iconset docs
+    puts "➡️ Generating iconset"
 system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets classic .vuepress/openhab-docs/_data docs/configuration/iconsets")
+end
 
 # Clean-Ups required for repeated local build
 `[ -e javadoc-latest.tar.gz ] && rm javadoc-latest.tar.gz`
@@ -753,5 +760,10 @@ puts "➡️ Downloading and extracting latest Javadoc from Jenkins"
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
 `tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc/latest`
 
-# Copy the thing-types.json file to the proper location
-FileUtils.cp(".vuepress/openhab-docs/.vuepress/thing-types.json", ".vuepress")
+# Git workflow for PRs are note executed - therefore the _addons_ios folder is not present for PR checks - this section will be scipped.
+if $pull_request then
+    puts "⚠️  Thingtypes depend on Git-Workflow - will be skipped ..."
+else
+    # Copy the thing-types.json file to the proper location
+    FileUtils.cp(".vuepress/openhab-docs/.vuepress/thing-types.json", ".vuepress")
+end
