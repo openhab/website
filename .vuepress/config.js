@@ -27,7 +27,7 @@ const noAddons = process.env.OH_NOADDONS
 
 let docsVersion;
 if (!process.env.OH_DOCS_VERSION) {
-  docsVersion = "Pull Request"
+  docsVersion = 'Pull Request'
 } else {
   docsVersion = process.env.OH_DOCS_VERSION.replace('final-stable', 'Stable').replace('final-', '').replace('final', 'Latest').replace('.x', '')
 }

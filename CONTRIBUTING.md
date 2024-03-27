@@ -45,7 +45,10 @@ Continuing with compilation.
 # ...
 ```
 
-As version 2.4.3 requires the an older (deprecated) version of [OpenSSL](https://www.openssl.org) it is possible that the compilation from source fails on the recent distribution (as they no longer provide the required version):
+<details>
+  <summary>Solve ruby build problem(s) on Linux</summary>
+
+As version 2.4.3 requires the an older (deprecated) version of [OpenSSL](https://www.openssl.org) it is possible that the compilation from source fails on the recent distribution (as they no longer provide the required version).
 
 ```bash
 $ rvm install "ruby-2.4.3"
@@ -101,6 +104,8 @@ You should now be able to use `rvm` to build using the following parameters:
 rvm install "ruby-2.4.3" -C --with-openssl-dir=/opt/openssl-1.1.1q
 ```
 
+</details>
+
 ## Running in development mode
 
 To run the website on your local machine on a development server with live reload:
@@ -113,7 +118,8 @@ When loading the website in the browser it may take a few seconds until it final
 
 ### Build documentation from PR
 
-In special situations; e.g. if you make changes in the documentation repository that might impact the website build, it is possible to build the website from a PR. This makes it possible to verify that your proposed changes do not have negative side effects:
+In special situations; e.g. if you make changes in the documentation repository that might impact the website build, it is possible to build the website from a PR.
+This makes it possible to verify that your proposed changes do not have negative side effects:
 
 ```bash
 ARGUMENTS="--pull-request 2272" npm run build-local
