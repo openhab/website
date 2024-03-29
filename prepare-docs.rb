@@ -25,7 +25,7 @@ end
 
 def checkout_pull_request(pr, target_directory)
     pull_request_url = "https://api.github.com/repos/openhab/openhab-docs/pulls/#{pr}"
-    
+
     response = JSON.parse(open(pull_request_url).read)
     repository_url =  response['head']['repo']['clone_url']
     label = response['head']['label']
@@ -745,9 +745,10 @@ else
 end
 
 # Clean-Ups required for repeated local build
+verbose "🧹 Cleaning existing JavaDoc ..."
 FileUtils.rm Dir.glob('javadoc-latest.*'), :force => true
+FileUtils.rm Dir.glob('.vuepress/public/javadoc/latest'), :force => true
 
-`[ -e .vuepress/public/javadoc/latest ] && rm -r .vuepress/public/javadoc/latest`
 # Publish latest Javadoc
 puts "➡️ Downloading and extracting latest Javadoc from Jenkins"
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
@@ -760,5 +761,6 @@ if $pull_request then
     puts ""
 else
     # Copy the thing-types.json file to the proper location
+    puts "➡️ Copying Thing types"
     FileUtils.cp(".vuepress/openhab-docs/.vuepress/thing-types.json", ".vuepress")
 end
