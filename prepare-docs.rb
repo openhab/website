@@ -404,10 +404,19 @@ if $version == "final-stable" then
     process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration", "#{$docs_repo_root}/addons/transformations.md")
 end
 
-# TODO: Remove the if statement and the content of else for the 4.2.0 release
+# TODO: Remove the if statement and the content of if for the 4.2.0 release
 # Additional files and images for the latest docs
-if $version == "final" then
-
+if $version == "final-stable" then
+    # Additional files and images for the stable docs
+    puts "➡️ Migrating the Settings section"
+    Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
+        file = File.basename(path)
+        verbose " ➡️ #{file}"
+        process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
+    }
+    verbose " ➡️ images"
+    FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
+else
     puts "➡️ Migrating the Main UI section"
     Dir.glob(".vuepress/openhab-docs/mainui/*.md") { |path|
         file = File.basename(path)
@@ -423,18 +432,6 @@ if $version == "final" then
     }
     verbose " ➡️ images"
     FileUtils.cp_r(".vuepress/openhab-docs/mainui/images", "docs/mainui")
-
-else
-# Additional files and images for the stable docs
-    puts "➡️ Migrating the Settings section"
-    Dir.glob(".vuepress/openhab-docs/settings/*.md") { |path|
-        file = File.basename(path)
-        verbose " ➡️ #{file}"
-        process_file(".vuepress/openhab-docs/settings", file, "docs/settings", "#{$docs_repo_root}/settings/#{file}")
-    }
-    verbose " ➡️ images"
-    FileUtils.cp_r(".vuepress/openhab-docs/settings/images", "docs/settings/images")
-
 end
 
 puts "➡️ Migrating the Migration Tutorial section"
