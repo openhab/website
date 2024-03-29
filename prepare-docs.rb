@@ -731,15 +731,15 @@ puts "➡️ Writing add-ons arrays to files for sidebar navigation"
 }
 
 
-# Git workflow for PRs are note executed - therefore the _addons_ios folder is not present for PR checks - this section will be skipped.
+# External content is not included for PRs - therefore the _addons_iconsets folder is not present for PR checks - this section will be skipped.
 if $pull_request then
     puts ""
-    puts "⚠️  Iconsets depend on Git-Workflow - will be skipped ..."
+    puts "⚠️  Iconsets depend on Jenkins job - will be skipped ..."
     puts ""
 else
     # Regenerate the classic iconset docs
     puts "➡️ Generating iconset"
-system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets classic .vuepress/openhab-docs/_data docs/configuration/iconsets")
+    system("ruby generate_iconset_doc.rb .vuepress/openhab-docs/_addons_iconsets classic .vuepress/openhab-docs/_data docs/configuration/iconsets")
 end
 
 # Clean-Ups required for repeated local build
@@ -751,10 +751,10 @@ puts "➡️ Downloading and extracting latest Javadoc from Jenkins"
 `wget -nv https://ci.openhab.org/job/openHAB-JavaDoc/lastSuccessfulBuild/artifact/target/javadoc-latest.tgz`
 `tar xzvf javadoc-latest.tgz --strip 2 && mv apidocs/ .vuepress/public/javadoc/latest`
 
-# Git workflow for PRs are note executed - therefore the _addons_ios folder is not present for PR checks - this section will be skipped.
+# External content is not included for PRs - therefore thing-types.json is not present for PR checks - this section will be skipped.
 if $pull_request then
     puts ""
-    puts "⚠️  Thingtypes depend on Git-Workflow - will be skipped ..."
+    puts "⚠️  Thing types depend on Jenkins job - will be skipped ..."
     puts ""
 else
     # Copy the thing-types.json file to the proper location
