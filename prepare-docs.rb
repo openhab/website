@@ -535,106 +535,106 @@ FileUtils.cp_r(".vuepress/openhab-docs/developers/ide/images", "docs/developer/i
 
 ### ADDONS
 
-puts "➡️ Migrating add-ons: Automation"
-Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
-    verbose " ➡️ #{addon}"
-    FileUtils.mkdir_p("addons/automation/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_automation", addon + "/readme.md", "addons/automation", nil)
-
-    if (Dir.exists?(".vuepress/openhab-docs/_addons_automation/#{addon}/doc")) then
-        verbose "    ➡️ images"
-        FileUtils.cp_r(".vuepress/openhab-docs/_addons_automation/#{addon}/doc", "addons/automation/#{addon}")
-    end
-
-}
-
-
-puts "➡️ Migrating add-ons: Persistence"
-Dir.glob(".vuepress/openhab-docs/_addons_persistences/**") { |path|
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
-    verbose " ➡️ #{addon}"
-    FileUtils.mkdir_p("addons/persistence/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_persistences", addon + "/readme.md", "addons/persistence", nil)
-    
-    if (Dir.exists?(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc")) then
-        verbose "    ➡️ images"
-        FileUtils.cp_r(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc", "addons/persistence/#{addon}")
-    end    
-}
-
-
-puts "➡️ Migrating add-ons: Transformations"
-Dir.glob(".vuepress/openhab-docs/_addons_transformations/**") { |path|
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
-    verbose " ➡️ #{addon}"
-    FileUtils.mkdir_p("addons/transformations/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_transformations", addon + "/readme.md", "addons/transformations", nil)
-}
-
-
-puts "➡️ Migrating add-ons: Voice"
-Dir.glob(".vuepress/openhab-docs/_addons_voices/**") { |path|
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
-    verbose " ➡️ #{addon}"
-    FileUtils.mkdir_p("addons/voice/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_voices", addon + "/readme.md", "addons/voice", nil)
-}
-
-
-puts "➡️ Migrating add-ons: IO"
-Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
-    # See below for the Alexa & Mycroft special cases
-    next if path =~ /alexa-skill/
-    next if path =~ /mycroft-skill/
-    next if path =~ /google-assistant/
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
-    verbose " ➡️ #{addon}"
-
-    # Detect and skip 1.x bindings - shouldn't ultimately occur
-    if addon =~ /1$/ then
-        puts "      (1.x, skipping)"
-        next
-    end
-
-    FileUtils.mkdir_p("addons/integrations/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
-    if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
-        verbose "    ➡️ images"
-        FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/doc", "addons/integrations/#{addon}")
-    end
-    if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib")) then
-        verbose "    ➡️ images"
-        FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib", "addons/integrations/#{addon}")
-    end
-}
-
-puts "➡️ Migrating add-ons: UI"
-Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
-    next if path =~ /org.openhab.ui/
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
-    verbose " ➡️ #{addon}"
-    FileUtils.mkdir_p("addons/ui/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "addons/ui", nil)
-
-    if (Dir.exists?(".vuepress/openhab-docs/_addons_uis/#{addon}/doc")) then
-        verbose "    ➡️ images"
-        FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "addons/ui/#{addon}")
-    end
-}
-
-# Git workflow for PRs are note executed - therefore the _addons_ios folder is not present for PR checks - this section will be skipped.
+# External content is not included for PRs - therefore the _addons_*** folders are not present for PR checks - this section will be skipped.
 if $pull_request then
     puts ""
-    puts "⚠️  Ecosystem documentation for [Alexy, Mycroft, Google] skipped - depends on Git-Workflow ..."
+    puts "⚠️  Add-on documentation depends on Jenkins job - will be skipped ..."
     puts ""
 else
+    puts "➡️ Migrating add-ons: Automation"
+    Dir.glob(".vuepress/openhab-docs/_addons_automation/**") { |path|
+        addon = File.basename(path)
+        next if $ignore_addons.include?(addon)
+        verbose " ➡️ #{addon}"
+        FileUtils.mkdir_p("addons/automation/" + addon)
+        process_file(".vuepress/openhab-docs/_addons_automation", addon + "/readme.md", "addons/automation", nil)
+
+        if (Dir.exists?(".vuepress/openhab-docs/_addons_automation/#{addon}/doc")) then
+            verbose "    ➡️ images"
+            FileUtils.cp_r(".vuepress/openhab-docs/_addons_automation/#{addon}/doc", "addons/automation/#{addon}")
+        end
+    }
+
+
+    puts "➡️ Migrating add-ons: Persistence"
+    Dir.glob(".vuepress/openhab-docs/_addons_persistences/**") { |path|
+        addon = File.basename(path)
+        next if $ignore_addons.include?(addon)
+        verbose " ➡️ #{addon}"
+        FileUtils.mkdir_p("addons/persistence/" + addon)
+        process_file(".vuepress/openhab-docs/_addons_persistences", addon + "/readme.md", "addons/persistence", nil)
+
+        if (Dir.exists?(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc")) then
+            verbose "    ➡️ images"
+            FileUtils.cp_r(".vuepress/openhab-docs/_addons_persistences/#{addon}/doc", "addons/persistence/#{addon}")
+        end
+    }
+
+
+    puts "➡️ Migrating add-ons: Transformations"
+    Dir.glob(".vuepress/openhab-docs/_addons_transformations/**") { |path|
+        addon = File.basename(path)
+        next if $ignore_addons.include?(addon)
+        verbose " ➡️ #{addon}"
+        FileUtils.mkdir_p("addons/transformations/" + addon)
+        process_file(".vuepress/openhab-docs/_addons_transformations", addon + "/readme.md", "addons/transformations", nil)
+    }
+
+
+    puts "➡️ Migrating add-ons: Voice"
+    Dir.glob(".vuepress/openhab-docs/_addons_voices/**") { |path|
+        addon = File.basename(path)
+        next if $ignore_addons.include?(addon)
+        verbose " ➡️ #{addon}"
+        FileUtils.mkdir_p("addons/voice/" + addon)
+        process_file(".vuepress/openhab-docs/_addons_voices", addon + "/readme.md", "addons/voice", nil)
+    }
+
+
+    puts "➡️ Migrating add-ons: IO"
+    Dir.glob(".vuepress/openhab-docs/_addons_ios/**") { |path|
+        # See below for the Alexa & Mycroft & Google Assistant special cases
+        next if path =~ /alexa-skill/
+        next if path =~ /mycroft-skill/
+        next if path =~ /google-assistant/
+        addon = File.basename(path)
+        next if $ignore_addons.include?(addon)
+        verbose " ➡️ #{addon}"
+
+        # Detect and skip 1.x bindings - shouldn't ultimately occur
+        if addon =~ /1$/ then
+            puts "      (1.x, skipping)"
+            next
+        end
+
+        FileUtils.mkdir_p("addons/integrations/" + addon)
+        process_file(".vuepress/openhab-docs/_addons_ios", addon + "/readme.md", "addons/integrations", nil)
+        if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")) then
+            verbose "    ➡️ images"
+            FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/doc", "addons/integrations/#{addon}")
+        end
+        if (Dir.exists?(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib")) then
+            verbose "    ➡️ images"
+            FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/#{addon}/contrib", "addons/integrations/#{addon}")
+        end
+    }
+
+    puts "➡️ Migrating add-ons: UI"
+    Dir.glob(".vuepress/openhab-docs/_addons_uis/**") { |path|
+        next if path =~ /org.openhab.ui/
+        addon = File.basename(path)
+        next if $ignore_addons.include?(addon)
+        verbose " ➡️ #{addon}"
+        FileUtils.mkdir_p("addons/ui/" + addon)
+        process_file(".vuepress/openhab-docs/_addons_uis", addon + "/readme.md", "addons/ui", nil)
+
+        if (Dir.exists?(".vuepress/openhab-docs/_addons_uis/#{addon}/doc")) then
+            verbose "    ➡️ images"
+            FileUtils.cp_r(".vuepress/openhab-docs/_addons_uis/#{addon}/doc", "addons/ui/#{addon}")
+        end
+    }
+
+
     # Handle those three separately - copy them in the "ecosystem" section
     puts "➡️ Migrating special ecosystem add-ons"
     verbose " ➡️Create folders"
@@ -654,57 +654,58 @@ else
     process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant", "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
     verbose "    ➡️ images"
     FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/google-assistant/images", "docs/ecosystem/google-assistant")
-end
 
-puts "➡️ Migrating add-ons: Bindings"
-Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
-    addon = File.basename(path)
-    next if $ignore_addons.include?(addon)
 
-    verbose " ➡️ #{addon}"
+    puts "➡️ Migrating add-ons: Bindings"
+    Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") { |path|
+        addon = File.basename(path)
+        next if $ignore_addons.include?(addon)
 
-    # Detect and skip 1.x bindings - shouldn't ultimately occur
-    if addon =~ /1$/ then
-        puts "      (1.x, skipping)"
-        next
-    end
+        verbose " ➡️ #{addon}"
 
-    FileUtils.mkdir_p("addons/bindings/" + addon)
-    process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
-    if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
-        verbose "    ➡️ images"
-        FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc", "addons/bindings/#{addon}")
-    elsif (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib") && addon != "zwave") then
-        verbose "    ➡️ images"
-        FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib", "addons/bindings/#{addon}")
-    elsif addon == "zwave" then
-        verbose "    ➡️ things.md"
-        FileUtils.mkdir_p("addons/bindings/zwave/doc")
-        process_file(".vuepress/openhab-docs/_addons_bindings", "zwave/doc/things.md", "addons/bindings", nil)
-    end
-}
+        # Detect and skip 1.x bindings - shouldn't ultimately occur
+        if addon =~ /1$/ then
+            puts "      (1.x, skipping)"
+            next
+        end
 
-puts "➡️ Creating ZWave thing viewer"
-if (File.exists?('.vuepress/openhab-docs/_addons_bindings/zwave/doc/things.md')) then
-    File.open('addons/bindings/zwave/thing.md', 'w+') { |out|
-        out.puts '---'
-        out.puts 'title: ZWave Thing'
-        out.puts 'prev: ./'
-        out.puts '---'
-        out.puts
-        out.puts '<ThingDocRenderer />'
+        FileUtils.mkdir_p("addons/bindings/" + addon)
+        process_file(".vuepress/openhab-docs/_addons_bindings", addon + "/readme.md", "addons/bindings", nil)
+        if (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc") && addon != "zwave") then
+            verbose "    ➡️ images"
+            FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/doc", "addons/bindings/#{addon}")
+        elsif (Dir.exists?(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib") && addon != "zwave") then
+            verbose "    ➡️ images"
+            FileUtils.cp_r(".vuepress/openhab-docs/_addons_bindings/#{addon}/contrib", "addons/bindings/#{addon}")
+        elsif addon == "zwave" then
+            verbose "    ➡️ things.md"
+            FileUtils.mkdir_p("addons/bindings/zwave/doc")
+            process_file(".vuepress/openhab-docs/_addons_bindings", "zwave/doc/things.md", "addons/bindings", nil)
+        end
     }
+
+
+    puts "➡️ Creating Z-Wave thing viewer"
+    if (File.exists?('.vuepress/openhab-docs/_addons_bindings/zwave/doc/things.md')) then
+        File.open('addons/bindings/zwave/thing.md', 'w+') { |out|
+            out.puts '---'
+            out.puts 'title: ZWave Thing'
+            out.puts 'prev: ./'
+            out.puts '---'
+            out.puts
+            out.puts '<ThingDocRenderer />'
+        }
+    end
+
+    # puts "➡️ Migrating Z-Wave docs"
+    # Dir.glob(".vuepress/openhab-docs/_addons_bindings/zwave/doc/*.md") { |path|
+    #     next if path =~ /device\.md/
+    #     file = File.basename(path)
+    #     puts "   -> #{file}"
+    #     FileUtils.mkdir_p("addons/bindings/zwave/doc")
+    #     process_file(".vuepress/openhab-docs/_addons_bindings/zwave/doc", file, "addons/bindings/zwave/doc", nil)
+    # }
 end
-
-
-# puts "➡️ Migrating Z-Wave docs"
-# Dir.glob(".vuepress/openhab-docs/_addons_bindings/zwave/doc/*.md") { |path|
-#     next if path =~ /device\.md/
-#     file = File.basename(path)
-#     puts "   -> #{file}"
-#     FileUtils.mkdir_p("addons/bindings/zwave/doc")
-#     process_file(".vuepress/openhab-docs/_addons_bindings/zwave/doc", file, "addons/bindings/zwave/doc", nil)
-# }
 
 
 # Write arrays of addons by type to include in VuePress config.js
@@ -713,18 +714,19 @@ puts "➡️ Writing add-ons arrays to files for sidebar navigation"
     File.open(".vuepress/addons-#{type}.js", "w+") { |file|
         file.puts "module.exports = ["
 
-        Dir.foreach('addons/' + type) { |dir|
-            if !dir.include?('.') then
-                # puts dir
-
-                File.readlines('addons/' + type + '/' + dir + '/readme.md').each { |line|
-                    if line =~ /^label:/ then
-                        title = line.gsub("label: ", "").gsub("\n", "")
-                        file.puts "\t['#{type}/#{dir}/', '#{title}']," if !(title =~ /1\.x/)
-                    end
-                }
-            end
-        }
+        if (Dir.exists?('addons/' + type))
+            Dir.foreach('addons/' + type) { |dir|
+                if !dir.include?('.') then
+                    # puts dir
+                    File.readlines('addons/' + type + '/' + dir + '/readme.md').each { |line|
+                        if line =~ /^label:/ then
+                            title = line.gsub("label: ", "").gsub("\n", "")
+                            file.puts "\t['#{type}/#{dir}/', '#{title}']," if !(title =~ /1\.x/)
+                        end
+                    }
+                end
+            }
+        end
 
         file.puts "]"
     }
