@@ -87,7 +87,7 @@ end
 if ($pull_request) then
     # .vuepress/openhab-docs is git-ignored in the website repository, which is why we can clone it into website without any issue.
     checkout_pull_request($pull_request, '.vuepress')
-else
+elsif (!$parameter_no_clone)
     puts "➡️ Cloning repository #{$docs_repo} 📦 ..."
     `git clone --depth 1 --branch #{$version ? $version : $docs_repo_branch} #{$docs_repo} .vuepress/openhab-docs`
 end
