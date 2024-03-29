@@ -12,7 +12,7 @@ $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = $docs_repo + "/blob/main"
 $docs_repo_branch = "final"
 $addons_repo_branch = "main"
-$version = nil
+$version = 'final'
 $verbose = false
 
 $ignore_addons = ['transport.modbus', 'transport.feed', 'javasound', 'webaudio', 'oh2']
@@ -71,10 +71,11 @@ end
 
 
 if ENV["OH_DOCS_VERSION"] then
-    puts "➡️ Generating docs for version #{ENV["OH_DOCS_VERSION"]}"
     $version = ENV["OH_DOCS_VERSION"]
     $version += ".0" if $version.split(".").length == 2
 end
+
+puts "➡️ Generating docs for version #{$version}"
 
 
 if ($parameter_no_clone && Dir.exists?(".vuepress/openhab-docs")) then
