@@ -63,7 +63,7 @@ ARGV.each do |arg|
             when "--pull-request"
                 $pull_request = arg
                 $version = "final"
-                verbose "ℹ➡️ PR #{$pull_request} will be used to build documentation"
+                verbose "➡️ PR #{$pull_request} will be used to build documentation"
         end 
     end
     previous_argument = arg
