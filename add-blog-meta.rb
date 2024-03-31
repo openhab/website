@@ -1,7 +1,7 @@
 # Adds the OpenGraph & Twitter meta tags to the blog articles
 require "fileutils"
 
-puts ">>> Adding meta-data to blog posts"
+puts "➡️ Adding meta-data to blog posts"
 
 Dir.glob("blog/*.md").each { |file|
     next if file =~ /index\.md/
@@ -18,7 +18,7 @@ Dir.glob("blog/*.md").each { |file|
     FileUtils.mkdir_p('.vuepress/tmp')
     FileUtils.mv(file, ".vuepress/tmp/#{File.basename(file)}")
 
-    puts " -> #{file}"
+    puts " ➡️ #{file}"
     File.open(file, 'w+') { |out|
         File.open(".vuepress/tmp/#{File.basename(file)}").each { |line|
 
