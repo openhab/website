@@ -28,11 +28,12 @@
   "scripts": {
     "predev": "npm install && npx update-browserslist-db@latest",
     "dev": "npx vuepress dev",
-    "prepare-docs": "ruby prepare-docs.rb",
+    "prepare-docs": "ruby prepare-docs.rb $ARGUMENTS",
     "add-blog-meta": "ruby add-blog-meta.rb",
     "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
     "build-only": "vuepress build .",
-    "build-local": "rm -f javadoc-*.tgz* && npm run prepare-docs && npm run dev",
+    "prebuild-local": "npm run prepare-docs",
+    "build-local": "npm run dev --silent",
     "build-local-latest": "OH_DOCS_VERSION=final npm run build-local",
     "build-local-stable": "OH_DOCS_VERSION=final-stable npm run build-local"
   },

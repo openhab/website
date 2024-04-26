@@ -69,9 +69,9 @@ File.open("#{$out_dir}/#{$iconset_name}/readme.md", "w+") { |f|
     f.puts "<IconsetDisplay icons=\"#{$icons_list.join(',')}\"/>"
 }
 
-puts " -> File written in #{$out_dir}/#{$iconset_name}/readme.md"
+puts "   ➡️ File written in #{$out_dir}/#{$iconset_name}/readme.md"
 
 # FileUtils.mkdir_p(".vuepress/public/iconsets")
 FileUtils.cp_r("#{$original_iconsets_location}/#{$iconset_name}/src/main/resources/icons", ".vuepress/public/iconsets/#{$iconset_name}")
 
-puts " -> Icons copied to .vuepress/public/iconsets/#{$iconset_name}"
+puts "   ➡️ Icons copied to .vuepress/public/iconsets/#{$iconset_name}"

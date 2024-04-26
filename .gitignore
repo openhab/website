@@ -66,6 +66,3 @@ typings/
 
 # VuePress dist
 vuepress
-
-# openhab-docs in .vuepress
-.vuepress/openhab-docs

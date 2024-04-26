@@ -25,11 +25,12 @@ const feedOptions = {
 
 const noAddons = process.env.OH_NOADDONS
 
+let docsVersion;
 if (!process.env.OH_DOCS_VERSION) {
-  throw new Error('Please set the OH_DOCS_VERSION environment variable to the name of the branch of the openhab-docs repo that has been prepared')
+  docsVersion = 'Pull Request'
+} else {
+  docsVersion = process.env.OH_DOCS_VERSION.replace('final-stable', 'Stable').replace('final-', '').replace('final', 'Latest').replace('.x', '')
 }
-
-const docsVersion = process.env.OH_DOCS_VERSION.replace('final-stable', 'Stable').replace('final-', '').replace('final', 'Latest').replace('.x', '')
 
 module.exports = {
   title: 'openHAB',
