@@ -30,7 +30,7 @@
     "dev": "npx vuepress dev",
     "prepare-docs": "ruby prepare-docs.rb $ARGUMENTS",
     "add-blog-meta": "ruby add-blog-meta.rb",
-    "build": "ruby prepare-docs.rb && ruby add-blog-meta.rb && vuepress build .",
+    "build": "npm run prepare-docs && ruby add-blog-meta.rb && vuepress build .",
     "build-only": "vuepress build .",
     "prebuild-local": "npm run prepare-docs",
     "build-local": "npm run dev --silent",
