@@ -57,7 +57,7 @@ regarding the use of our website and the mobile reference applications.
 
 openHAB is a registered trademark of Kai Kreuzer in the EU, the US and other countries.
 
-Rules for the re-use of the openHAB logo can be found [here](/about/logos.html).
+Rules for the re-use of the openHAB trademark and logo can be found in our [Trademark Policy](/about/trademark.html).
 
 ## Liability for Contents
 
