@@ -129,7 +129,6 @@ import OpenSourceSection from '../../components/home/OpenSourceSection.vue'
 import CommunitySection from '../../components/home/CommunitySection.vue'
 import EventsSection from '../../components/home/EventsSection.vue'
 import AlternativeToSection from '../../components/home/AlternativeToSection.vue'
-import TweetsSection from '../../components/home/TweetsSection.vue'
 
 let hr = null
 
@@ -147,7 +146,6 @@ export default {
     OpenSourceSection,
     CommunitySection,
     EventsSection,
-    TweetsSection,
     AlternativeToSection,
     Footer,
     // TwitterTimeline
