@@ -120,7 +120,7 @@ module.exports = {
   },
   serviceWorker: false,
   themeConfig: {
-    logo: `/openhab-logo.svg`,
+    logo: `/openhab-logo-empowering.svg`,
     // repo: 'openhab',
     editLinks: false,
     activeHeaderLinks: false,
