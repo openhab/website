@@ -349,10 +349,8 @@ process_file(".vuepress/openhab-docs", "introduction.md", "docs", "https://githu
 FileUtils.mv("docs/introduction.md", "docs/readme.md")
 
 
-puts "➡️ Migrating common images"
-FileUtils.mkdir_p("docs/images")
-FileUtils.cp_r(".vuepress/openhab-docs/images/distro.png", "docs/images")
-FileUtils.cp_r(".vuepress/openhab-docs/images/dashboard.png", "docs/images")
+# puts "➡️ Migrating common images"
+# FileUtils.mkdir_p("docs/images")
 
 
 puts "➡️ Migrating logos"
