@@ -73,10 +73,6 @@ module.exports = {
       // only preload woff2 fonts
       return /\.woff2$/.test(file)
     }
-    if (type === 'image') {
-      // only preload important images
-      return file === 'hero.jpg'
-    }
   },
   extendMarkdown(md) {
     md.options.linkify = true
