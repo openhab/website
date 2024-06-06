@@ -13,7 +13,7 @@
 
     <featured-addons />
 
-    <!-- <open-source-section /> -->
+    <open-source-section />
 
     <community-section />
 
