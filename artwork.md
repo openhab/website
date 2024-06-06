@@ -28,6 +28,7 @@ img.illustration {
 }
 .downloads {
   display: flex;
+  text-align: center;
   align-items: flex-end;
   align-content: center;
   justify-content: space-between;
@@ -37,7 +38,6 @@ img.illustration {
 
 @media (max-width: 719px) {
   .downloads {
-    text-align: center;
     align-items: center;
     flex-direction: column;
     justify-content: center;  }
@@ -60,13 +60,13 @@ A special version is the "works with openHAB" logo, which is intended to be used
 <div class="downloads">
   <div>
     <a href="openHAB-logo.zip">
-      <img src="openhab-logo-square.png" width="150" style="padding: 1em" /><br/>
+      <img src="openhab-logo-square.svg" width="150" style="padding-top: 1em" /><br/>
       <center>Download the openHAB Logos</center>
     </a>
   </div>
   <div>
     <a href="workswith-openHAB-logo.zip">
-      <img src="workswith-openhab.png" width="400" style="padding: 1em" /><br/>
+      <img src="workswith-openhab.svg" width="400" style="padding-top: 2em" /><br/>
       <center>Download the "works with openHAB" Logos</center>
     </a>
   </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="home-icon-container">
-    <img class="home-icon runs-everywhere" :class="{ current: current === 0 }" src="./images/icons/linux.png" />
-    <img class="home-icon runs-everywhere" :class="{ current: current === 1 }" src="./images/icons/windows.png" />
-    <img class="home-icon runs-everywhere" :class="{ current: current === 2 }" src="./images/icons/apple.png" />
-    <img class="home-icon runs-everywhere" :class="{ current: current === 3 }" src="./images/icons/docker.png" />
-    <img class="home-icon runs-everywhere" :class="{ current: current === 4 }" src="./images/icons/pi.png" />
+    <img class="home-icon runs-everywhere" :class="{ current: current === 0 }" src="/os/tux.svg" />
+    <img class="home-icon runs-everywhere" :class="{ current: current === 1 }" src="/os/apple.svg" />
+    <img class="home-icon runs-everywhere" :class="{ current: current === 2 }" src="/os/win10.svg" />
+    <img class="home-icon runs-everywhere" :class="{ current: current === 3 }" src="/os/raspberry-pi.svg" />
+    <img class="home-icon runs-everywhere" :class="{ current: current === 4 }" src="/os/docker.svg" />
     <img class="home-icon frame" src="./images/icons/empty.png" />
   </div>
 </template>
@@ -17,10 +17,11 @@
   transform translateX(-50%)
 .home-icon.runs-everywhere
   position absolute
-  width 150px
-  height 150px
+  width 70px
+  height 70px
+  left 115px
+  top 60px
   opacity 0
-  transform translateY(-20px)
   &.frame
     opacity 1
   &.current

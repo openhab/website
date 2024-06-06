@@ -73,10 +73,6 @@ module.exports = {
       // only preload woff2 fonts
       return /\.woff2$/.test(file)
     }
-    if (type === 'image') {
-      // only preload important images
-      return file === 'hero.jpg'
-    }
   },
   extendMarkdown(md) {
     md.options.linkify = true
@@ -124,7 +120,7 @@ module.exports = {
   },
   serviceWorker: false,
   themeConfig: {
-    logo: `/openhab-logo.png`,
+    logo: `/openhab-logo-empowering.svg`,
     // repo: 'openhab',
     editLinks: false,
     activeHeaderLinks: false,

@@ -10,6 +10,7 @@ yarn-error.log*
 
 # Downloaded documentation bundle
 javadoc-*
+apidocs
 docs
 
 # Runtime data

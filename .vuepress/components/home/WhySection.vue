@@ -8,8 +8,8 @@
           </ClientOnly>
           <h3>Integrate Everything</h3>
           <p>
-            With its <router-link to="docs/#architecture-overview">pluggable architecture</router-link>
-            openHAB supports more than <router-link to="addons/">200 different technologies and systems</router-link> and thousands of devices!
+            With its <router-link to="docs/#a-deeper-dive-openhab-structure-for-advanced-users">pluggable architecture</router-link>
+            openHAB supports more than <router-link to="addons/">400 different technologies and systems</router-link> and thousands of devices!
           </p>
         </div>
         <div ref="feature2" class="feature">
@@ -22,10 +22,10 @@
           <h3>Automate with Ease</h3>
           <p>
             Use a powerful and flexible engine to design
-            <router-link to="docs/configuration/rules-dsl.html">rules</router-link>,
+            <router-link to="docs/concepts/rules.html#what-are-rules">rules</router-link>,
             with time and event-based
-            <router-link to="docs/configuration/rules-dsl.html#rule-triggers">triggers</router-link>,
-            <router-link to="docs/configuration/rules-dsl.html#scripts">scripts</router-link>,
+            <router-link to="docs/concepts/rules.html#triggers">triggers</router-link>,
+            <router-link to="docs/concepts/rules.html#scripts">scripts</router-link>,
             <router-link to="docs/configuration/actions.html">actions</router-link>,
             <router-link to="docs/configuration/actions.html#cloud-notification-actions">notifications</router-link>
             and
