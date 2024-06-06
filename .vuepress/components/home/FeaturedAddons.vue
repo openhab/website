@@ -20,7 +20,6 @@
   display flex
   flex-direction column
   h2
-    padding-top 4rem
     text-align center
     font-family 'Open Sans', sans-serif
     font-weight normal

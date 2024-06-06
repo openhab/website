@@ -63,11 +63,12 @@
   text-align center
   font-family 'Open Sans', sans-serif
   h2
+    margin 2rem 0
     font-size 2.5em
     font-weight 400
     border none
-    margin-bottom 0
   p
+    margin 0 2rem
     color #555
   .community-stats
     display flex

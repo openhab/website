@@ -46,18 +46,17 @@
   .right
     width 60%
     h2
-      padding 1rem
+      margin 2rem
       font-size 2.5em
       font-weight 300
       border none
-      margin-bottom 0
       div
         white-space nowrap
         &.reliable
           font-weight 400
     p
-      padding 1rem
-      padding-bottom 2rem
+      margin 0 2rem
+      margin-bottom 2rem
 
   @media (max-width: 768px)
     &
@@ -65,8 +64,7 @@
     .left
       width 100%
       .logos
-        .foundation-logo
-          margin-top 3rem
+        margin-top 2rem
     .right
       width 100%
       h2

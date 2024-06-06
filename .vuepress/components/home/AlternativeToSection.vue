@@ -15,14 +15,13 @@
 .alternativeto-banner
   background linear-gradient(#2C4961, #7091A7) 
   font-size 1rem
-  padding 0.5rem
+  padding 2rem
   color white
   text-align center
   display flex
   justify-content center
   align-items center
   .text
-    padding 1rem
     line-height 1.7rem
     a
       white-space nowrap
@@ -34,6 +33,4 @@
   @media (max-width 768px)
     &
       flex-direction column
-    .text
-      padding-right 0
 </style>
