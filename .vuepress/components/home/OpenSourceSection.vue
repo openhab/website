@@ -43,7 +43,6 @@
       .foundation-logo
         width 300px
         object-fit contain
-        margin 1rem
   .right
     width 60%
     h2
@@ -65,6 +64,9 @@
       flex-direction column
     .left
       width 100%
+      .logos
+        .foundation-logo
+          margin-top 3rem
     .right
       width 100%
       h2
