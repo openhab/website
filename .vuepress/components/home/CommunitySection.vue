@@ -49,7 +49,7 @@
   </div>
   <div class="join">
     <router-link to="about/showcase.html" class="join-us-button slide-slow">Showcase ➜</router-link>
-    <a target="_blank" href="https://community.openhab.org" class="join-us-button slide-slow">Join Us ➜</a>
+    <a target="_blank" href="https://community.openhab.org" class="join-us-button slide-slow" style="margin-top: 0">Join Us ➜</a>
   </div>
 </div>
 </template>
