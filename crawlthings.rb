@@ -4,7 +4,6 @@
 # TODO: doesn't handle translated labels and descriptions...
 
 require "nokogiri"
-require "open-uri"
 require "json"
 
 unless ARGV[0]
