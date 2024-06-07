@@ -757,7 +757,7 @@ end
 # Clean-Ups required for repeated local build
 verbose "🧹 Cleaning existing JavaDoc ..."
 FileUtils.rm Dir.glob("javadoc-latest.*"), force: true
-FileUtils.rm Dir.glob(".vuepress/public/javadoc/latest"), force: true
+FileUtils.rm_rf Dir.glob(".vuepress/public/javadoc/latest")
 
 # Publish latest Javadoc
 puts "➡️ Downloading and extracting latest Javadoc from Jenkins"
