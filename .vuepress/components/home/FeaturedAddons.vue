@@ -1,6 +1,6 @@
 <template>
   <div class="featured-addons-section">
-    <h2>More than 2000 supported things!</h2>
+    <h2>More than 3000 supported things!</h2>
     <ClientOnly>
       <div class="logos">
         <router-link :to="addon.path" v-for="addon in featuredAddons" :key="addon.path" class="logo-container">
@@ -20,7 +20,6 @@
   display flex
   flex-direction column
   h2
-    padding-top 4rem
     text-align center
     font-family 'Open Sans', sans-serif
     font-weight normal

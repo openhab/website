@@ -59,16 +59,16 @@
 .section2
   font-family 'Open Sans', sans-serif
   background white
-  padding-top 1rem
   text-align center
   h2
+    margin 2rem 0
     text-align center
     font-family 'Open Sans', sans-serif
     font-weight normal
     font-size 2.5em
   .features
-    padding 1.2rem 5rem
-    margin-top 2.5rem
+    margin 2rem
+    margin-top 1.5rem
     display flex
     flex-wrap wrap
     align-items flex-start
@@ -85,14 +85,14 @@
       padding-bottom 0
       color lighten(black, 10%)
     p
+      margin 0
       color lighten(black, 25%)
   @media (max-width: 768px)
     .features
       flex-direction column
-      padding 1.2rem 0.5rem
     .feature
+      margin-top 1rem
       max-width 100%
-      padding 0 2.5rem
 
 </style>
 

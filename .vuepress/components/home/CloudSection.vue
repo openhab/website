@@ -57,13 +57,14 @@
       // height 160px
     h2
       width 100%
+      margin 2rem 0
       font-size 2rem
       font-family 'Open Sans', sans-serif
       font-weight 300
       color #5599ff
     p
       font-family 'Open Sans', sans-serif
-      padding 0 2rem
+      margin 0 2rem
     a
       color #5599ff
 

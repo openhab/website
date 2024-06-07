@@ -37,7 +37,7 @@
     object-fit cover
     user-select none
   .hero-content
-    margin 90px 30px
+    margin 90px 2rem
     z-index 1
     max-width 960px
     h1.version

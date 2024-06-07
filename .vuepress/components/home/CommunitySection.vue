@@ -49,7 +49,7 @@
   </div>
   <div class="join">
     <router-link to="about/showcase.html" class="join-us-button slide-slow">Showcase ➜</router-link>
-    <a target="_blank" href="https://community.openhab.org" class="join-us-button slide-slow">Join Us ➜</a>
+    <a target="_blank" href="https://community.openhab.org" class="join-us-button slide-slow" style="margin-top: 0">Join Us ➜</a>
   </div>
 </div>
 </template>
@@ -63,11 +63,12 @@
   text-align center
   font-family 'Open Sans', sans-serif
   h2
+    margin 2rem 0
     font-size 2.5em
     font-weight 400
     border none
-    margin-bottom 0
   p
+    margin 0 2rem
     color #555
   .community-stats
     display flex

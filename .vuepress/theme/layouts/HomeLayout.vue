@@ -105,8 +105,7 @@ header.headroom--top
 
 .after-jumbotron
   .placeholder
-    height calc(760px - 3.6rem)
-    min-height calc(600px - 3.6rem)
+    height calc(760px - 1.8rem)
 
 .home-header + .theme-default-content
   padding 0 !important

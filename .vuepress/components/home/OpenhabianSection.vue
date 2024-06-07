@@ -18,7 +18,7 @@
 
 <style lang="stylus">
 .openhabian-section
-  height 400px
+  height 435px
   background black
   color white
   z-index 1
@@ -62,12 +62,13 @@
       border none
       text-shadow 2px 2px 8px #777
     p
-      margin 1rem
+      margin 0 2rem
       text-shadow 2px 2px 10px #333
     .learn-how-button
       display inline-block
       font-size 1rem
       color #fff
+      margin 2rem
       padding 0.8rem 1.6rem
       border-radius 4px
       background-color rgba(0, 0, 0, 0.3)
