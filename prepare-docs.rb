@@ -4,11 +4,9 @@
 # and migrate content into the website with some changes
 
 require "fileutils"
-require "net/http"
 require "uri"
-require "rexml/document"
-require "json"
 require "open-uri"
+require "json"
 
 $docs_repo = "https://github.com/openhab/openhab-docs"
 $docs_repo_root = "#{$docs_repo}/blob/main"
