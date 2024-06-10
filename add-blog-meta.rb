@@ -1,90 +1,85 @@
+# frozen_string_literal: true
+
 # Adds the OpenGraph & Twitter meta tags to the blog articles
 require "fileutils"
 
 puts "➡️ Adding meta-data to blog posts"
 
-Dir.glob("blog/*.md").each { |file|
-    next if file =~ /index\.md/
-    in_frontmatter = false
-    frontmatter_processed = false
-    parsing_multiline_excerpt = false
-    og_title = 'openHAB'
-    og_description = 'a vendor and technology agnostic open source automation software for your home'
-    og_image = nil
+Dir.glob("blog/*.md") do |file|
+  next if file =~ /index\.md/
 
-    #Feed Meta
-    fm_author = nil
+  in_frontmatter = false
+  parsing_multiline_excerpt = false
+  og_title = "openHAB"
+  og_description = "a vendor and technology agnostic open source automation software for your home"
+  og_image = nil
 
-    FileUtils.mkdir_p('.vuepress/tmp')
-    FileUtils.mv(file, ".vuepress/tmp/#{File.basename(file)}")
+  # Feed Meta
+  fm_author = nil
 
-    puts "   ➡️ #{file}"
-    File.open(file, 'w+') { |out|
-        File.open(".vuepress/tmp/#{File.basename(file)}").each { |line|
+  FileUtils.mkdir_p(".vuepress/tmp")
+  FileUtils.mv(file, ".vuepress/tmp/#{File.basename(file)}")
 
-            # FIXME: require "yaml" and parse properly one day...
-            if parsing_multiline_excerpt then
-                if line =~ /^  / then
-                    og_description += ' ' + line.gsub(/^  /, '').gsub("\n", "")
-                    next
-                else
-                    og_description.strip!
-                    parsing_multiline_excerpt = false
-                end
-            end
+  puts "   ➡️ #{file}"
+  File.open(file, "w+") do |out|
+    File.open(".vuepress/tmp/#{File.basename(file)}").each do |line|
+      # FIXME: require "yaml" and parse properly one day...
+      if parsing_multiline_excerpt
+        if line =~ /^  /
+          og_description += " "
+          og_description += line.gsub(/^  /, "").gsub("\n", "")
+          next
+        else
+          og_description.strip!
+          parsing_multiline_excerpt = false
+        end
+      end
 
-            if in_frontmatter && line =~ /^title:/ then
-                og_title = line.gsub('title: ', '').gsub("\n", "")
-            end
+      og_title = line.gsub("title: ", "").gsub("\n", "") if in_frontmatter && line =~ /^title:/
 
-            if in_frontmatter && line =~ /^excerpt:/ then
-                og_description = line.gsub('excerpt: ', '').gsub("\n", "").gsub('[', '').gsub(']', '').gsub(/\(http[:\/\-0-9A-Za-z\.]+\)/, '')
-                if og_description == ">-" then
-                    og_description = ''
-                    parsing_multiline_excerpt = true
-                    next
-                end
-            end
+      if in_frontmatter && line =~ /^excerpt:/
+        og_description = line.gsub("excerpt: ", "").gsub("\n", "").gsub("[", "").gsub("]", "").gsub(%r{\(http[:/\-0-9A-Za-z\.]+\)}, "")
+        if og_description == ">-"
+          og_description = ""
+          parsing_multiline_excerpt = true
+          next
+        end
+      end
 
-            if in_frontmatter && line =~ /^previewimage:/ then
-                og_image = line.gsub('previewimage: ', '').gsub("\n", "")
-            end
+      og_image = line.gsub("previewimage: ", "").gsub("\n", "") if in_frontmatter && line =~ /^previewimage:/
 
-            if in_frontmatter && line =~ /^author:/ then
-                fm_author = line.gsub('author: ', '').gsub("\n", "")
-            end
+      fm_author = line.gsub("author: ", "").gsub("\n", "") if in_frontmatter && line =~ /^author:/
 
-            if line =~ /^---$/ then
-                if !in_frontmatter then
-                    in_frontmatter = true
-                else
-                    # Add OpenGraph tags
-                    out.puts "meta:"
-                    out.puts "  - name: twitter:card"
-                    out.puts "    content: summary_large_image"
-                    out.puts "  - property: og:title"
-                    out.puts "    content: \"#{og_title.gsub('"', '\"')}\""
-                    out.puts "  - property: og:description"
-                    out.puts "    content: #{og_description}"
-                    out.puts "  - property: og:image" if og_image
-                    out.puts "    content: https://www.openhab.org#{og_image}" if og_image
+      if line =~ /^---$/
+        if in_frontmatter
+          # Add OpenGraph tags
+          out.puts "meta:"
+          out.puts "  - name: twitter:card"
+          out.puts "    content: summary_large_image"
+          out.puts "  - property: og:title"
+          out.puts "    content: \"#{og_title.gsub('"', '\"')}\""
+          out.puts "  - property: og:description"
+          out.puts "    content: #{og_description}"
+          out.puts "  - property: og:image" if og_image
+          out.puts "    content: https://www.openhab.org#{og_image}" if og_image
 
-                    # Add feed meta tags, when something relevant is available
-                    if fm_author != nil || og_image != nil
+          # Add feed meta tags, when something relevant is available
+          if !fm_author.nil? || !og_image.nil?
 
-                        out.puts "feed:"
-                        out.puts "  image: https://www.openhab.org#{og_image}" if og_image
-                        out.puts "  author:"
-                        out.puts "    - "
-                        out.puts "      name: #{fm_author}"
-                    end
-                    
-                    in_frontmatter = false
-                    frontmatter_processed = true
-                end
-            end
+            out.puts "feed:"
+            out.puts "  image: https://www.openhab.org#{og_image}" if og_image
+            out.puts "  author:"
+            out.puts "    - "
+            out.puts "      name: #{fm_author}"
+          end
 
-            out.puts line
-        }
-    }
-}
+          in_frontmatter = false
+        else
+          in_frontmatter = true
+        end
+      end
+
+      out.puts line
+    end
+  end
+end
