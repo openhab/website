@@ -37,7 +37,7 @@ Information provided according to Sec. 5 German Telemedia Act (TMG)
 
 ### Executive Board
 
-<p>Kai Kreuzer, President<br />Dan Cunningham, Vice President<br />Hans-Jörg Merk, Chief Financial Officer</p>
+<p>Kai Kreuzer, President<br />Dan Cunningham, Vice President<br />Jerome Luckenbach, Chief Financial Officer</p>
 <p>Register of Associations: Darmstadt 83855</p>
 
 ### Responsible for Journalistic-Editorial Contents
