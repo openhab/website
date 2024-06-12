@@ -197,17 +197,6 @@ def process_file(indir, file, outdir, source)
         end
       end
 
-      # Replace the Jekyll "contribution wanted" include file by custom VuePress markup
-      line = "[[toc]]" if line =~ /\{:toc/
-      if line =~ /\{% include contribution-wanted.html %\}/
-        out.puts "::: tip Contribution Wanted"
-        out.puts "Please help us improve the documentation! "
-        out.puts "If you'd like to leave corrections, additions or comments for this article or any other part of this website, please drop a word at:"
-        out.puts "[Documentation Issue Tracker](#{$docs_repo}/issues)"
-        out.puts ":::"
-        next
-      end
-
       # TODO: Remove for the 4.2.0 release
       if $version == "final-stable"
         # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
@@ -221,54 +210,6 @@ def process_file(indir, file, outdir, source)
       line = "##### #{line}" if line =~ /^Apt Based Systems/ && file =~ /linux/
       line = "##### #{line}" if line =~ /^Yum or Dnf Based Systems/ && file =~ /linux/
       line = "##### #{line}" if line =~ /^Systems based on/ && file =~ /linux/
-
-      # Fix headers for some pages
-      line = line.gsub(/^##/, "#") if (outdir == "docs/configuration/ui" && (file =~ /basic/ || file =~ /classic/)) || file == "astro1/readme.md"
-
-      # Fix broken links in the package selection article
-      if outdir == "docs/configuration" && file =~ /packages/
-        line = line.gsub("(../addons/uis/paper/readme.html)", "(paperui.html)")
-        line = line.gsub("(../addons/uis/basic/readme.html)", "(ui/basic/)")
-        line = line.gsub("(../addons/uis/classic/readme.html)", "(ui/classic/)")
-        line = line.gsub("(../addons/uis/habmin/readme.html)", "(ui/habmin/)")
-        line = line.gsub("(../addons/uis/habpanel/readme.html)", "(habpanel.html)")
-      end
-
-      # Handle obsolete bindings
-      if in_frontmatter && (line =~ /label: / || line =~ /title: /) && outdir == "addons/bindings" && file =~ %r{1/}
-        addon = file.split("/")[0]
-        if !$ignore_addons.include?(addon.gsub("1", "")) && Dir.exist?("#{indir}/#{addon.gsub("1", "")}")
-          line = "#{line.gsub("\n", "")} (1.x)" unless line =~ /1\.x/
-          unless obsolete_binding
-            obsolete_binding = true
-            out.puts "obsolete: true"
-            puts "     obsolete!"
-          end
-        end
-      end
-
-      if !in_frontmatter && line =~ /^# /
-        line = line.gsub("\n", "").gsub("\r", "").concat(' <Badge type="warn" text="v1"/>') if since_1x
-
-        # Put a warning banner for obsolete bindings
-        out.puts line
-        if obsolete_binding
-          out.puts
-          out.puts "::: danger OBSOLETE BINDING"
-          new_addon = file.split("/")[0].gsub("1", "")
-          out.puts "This 1.x binding is obsolete; it has been replaced by the 2.x [#{new_addon}](../#{new_addon}/) binding which you should use instead."
-          out.puts ":::"
-          out.puts
-          obsolete_binding = false
-        end
-        # Add the logo if specified
-        if has_logo
-          out.puts
-          out.puts "<AddonLogo/>"
-          has_logo = false
-        end
-        next
-      end
 
       # Expand <!--list-subs--> comments with a list of links
       # (https://github.com/eclipse/smarthome/issues/5571)
@@ -285,10 +226,8 @@ def process_file(indir, file, outdir, source)
       line = line.gsub(%r{]\((.*)/(.*)\)}, '](../thing.html?manufacturer=\1&file=\2)') if file == "zwave/doc/things.md"
 
       # Misc replaces (relative links, remove placeholder interpreted as custom tags)
-      line = line.gsub("http://docs.openhab.org/addons/uis/paper/readme.html", "/docs/configuration/paperui.html")
       line = line.gsub("http://docs.openhab.org/addons/uis/habpanel/readme.html", "/docs/configuration/habpanel.html")
-      line = line.gsub("http://docs.openhab.org/addons/uis/habmin/readme.html", "/docs/configuration/habmin.html")
-      line = line.gsub("http://docs.openhab.org/addons/uis/basic/readme.html", "/docs/configuration/ui/basic/")
+      line = line.gsub("http://docs.openhab.org/addons/uis/basic/readme.html", "/addons/ui/basic/")
       line = line.gsub(%r{http://docs\.openhab\.org/addons/(.*)/(.*)/readme\.html}, '/addons/\1/\2/')
       line = line.gsub("http://docs.openhab.org/", "/docs/")
       line = line.gsub("/addons/io/", "/addons/integrations/")
@@ -333,10 +272,8 @@ def process_file(indir, file, outdir, source)
       out.puts line
     end
 
-    # Add the components for the versions dropdown and the edit link
+    # Add the component for the edit link
     out.puts
-    # Obsolete: the combobox for versions will be moved globally on the v3 site
-    # out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
     out.puts "<EditPageLink/>"
   end
 end
@@ -611,12 +548,6 @@ else
 
     verbose "   ➡️ #{addon}"
 
-    # Detect and skip 1.x bindings - shouldn't ultimately occur
-    if addon =~ /1$/
-      puts "      (1.x, skipping)"
-      next
-    end
-
     FileUtils.mkdir_p("addons/integrations/#{addon}")
     process_file(".vuepress/openhab-docs/_addons_ios", "#{addon}/readme.md", "addons/integrations", nil)
     if Dir.exist?(".vuepress/openhab-docs/_addons_ios/#{addon}/doc")
@@ -648,20 +579,20 @@ else
 
   # Handle those three separately - copy them in the "ecosystem" section
   puts "➡️ Migrating special ecosystem add-ons"
-  verbose "   ➡️Create folders"
+  verbose "   ➡️ Create folders"
   FileUtils.mkdir_p("docs/ecosystem/alexa")
   FileUtils.mkdir_p("docs/ecosystem/mycroft")
   FileUtils.mkdir_p("docs/ecosystem/google-assistant")
 
-  verbose "   ➡️Process alexa-skill docs"
+  verbose "   ➡️ Process alexa-skill docs"
   process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
   verbose "    ➡️ images"
   FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/alexa-skill/images", "docs/ecosystem/alexa")
 
-  verbose "   ➡️Process mycroft-skill docs"
+  verbose "   ➡️ Process mycroft-skill docs"
   process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
 
-  verbose "   ➡️Process google-assistant docs"
+  verbose "   ➡️ Process google-assistant docs"
   process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant",
                "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
   verbose "    ➡️ images"
@@ -673,12 +604,6 @@ else
     next if $ignore_addons.include?(addon)
 
     verbose "   ➡️ #{addon}"
-
-    # Detect and skip 1.x bindings - shouldn't ultimately occur
-    if addon =~ /1$/
-      puts "      (1.x, skipping)"
-      next
-    end
 
     FileUtils.mkdir_p("addons/bindings/#{addon}")
     process_file(".vuepress/openhab-docs/_addons_bindings", "#{addon}/readme.md", "addons/bindings", nil)
