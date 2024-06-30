@@ -297,18 +297,18 @@ Further information about handling user data, can be found in the data protectio
 Google at
 [https://www.google.de/intl/de/policies/privacy/](https://www.google.de/intl/de/policies/privacy/).
 
-### Twitter
+### X (fka Twitter)
 
-Functions of the Twitter service have been integrated into our website and app. These features
-are offered by Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA. When
-you use Twitter and the “Retweet” function, the websites you visit are connected to your Twitter
-account and made known to other users. In doing so, data will also be transferred to Twitter. We
+Functions of the X service have been integrated into our website and app. These features
+are offered by X Corp., Suite 900, 1355 Market Street, San Francisco, California, 94103, USA. When
+you use X and the repost function, the websites you visit are connected to your X
+account and made known to other users. In doing so, data will also be transferred to X. We
 would like to point out that, as the provider of these pages, we have no knowledge of the content
-of the data transmitted or how it will be used by Twitter. For more information on Twitter's
-privacy policy, please go to [https://twitter.com/privacy](https://twitter.com/privacy).
+of the data transmitted or how it will be used by X. For more information on X's
+privacy policy, please go to [https://x.com/privacy](https://x.com/privacy).
 
-Your privacy preferences with Twitter can be modified in your account settings at
-[https://twitter.com/account/settings](https://twitter.com/account/settings).
+Your privacy preferences with X can be modified in your account settings at
+[https://x.com/account/settings](https://x.com/account/settings).
 
 ## Payment service providers
 
