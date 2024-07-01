@@ -93,7 +93,7 @@ As much has changed, it is worthwhile to read the [documentation](/docs/configur
 
 ## Main UI Enhancements
 
-_Florian Hotze, openHAB Maintainer_
+_Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
 
 ### Dependency & Build System Upgrades
 
@@ -189,11 +189,11 @@ Many thanks to Arne Seime ([@seime](https://github.com/seime)) for this addition
 
 ### Blockly Enhancements
 
-_Stefan Höhn, Blockly Maintainer_
+_Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), Blockly Maintainer_
 
 ## Sitemap and Basic UI Enhancements
 
-_Laurent Garnier, openHAB Maintainer_
+_Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
 ### Basic UI Enhancements
 
