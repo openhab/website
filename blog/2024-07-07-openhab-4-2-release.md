@@ -58,7 +58,8 @@ In the following sections, our maintainers and contributors are introducing some
 
 Huge thanks to Dan Cunningham ([@digitaldan](https://github.com/digitaldan)) for doing all the work on openHAB Cloud, the Cloud Connector add-on and the iOS app!
 
-Many thanks to our app maintainers [@weakfl](https://github.com/weakfl), Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), Tim Bert ([@timbms](https://github.com/timbms)) [@mueller-ma](https://github.com/mueller-ma) and Danny Baumann ([@maniac103](https://github.com/maniac103)) for all their work on the apps!
+Many thanks to our app maintainers [@weakfl](https://github.com/weakfl), Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), Tim Bert ([@timbms](https://github.com/timbms)),
+[@mueller-ma](https://github.com/mueller-ma) and Danny Baumann ([@maniac103](https://github.com/maniac103)) for all their work on the apps!
 
 ## Core Runtime Enhancements
 
@@ -76,7 +77,8 @@ Note that this change may require adapting previous rules.
 
 With the introduction of [Time Series support](/blog/2023-12-22-openhab-4-1-release.html#time-series-support-for-forecasts-and-historical-values) in openHAB 4.1, persistence services were extended to allow storing future values and forecasts.
 openHAB 4.2 extends the Persistence Extensions to allow persisting future states and retrieving future values.
-All persistence data retrieval methods now have `last`, `next` and `between` variants, whereby `last` will use the period from a point in time in the past until now, `next` will use the period from now to a future point in time and `between` will use the period between two provided points in time in the past and/or future.
+All persistence data retrieval methods now have `last`, `next` and `between` variants, 
+whereby `last` will use the period from a point in time in the past until now, `next` will use the period from now to a future point in time and `between` will use the period between two provided points in time in the past and/or future.
 
 To allow storing multiple values to persistence in one go, Persistence Extensions methods now support working with Time Series instead of individual values when persisting or retrieving data.
 Time Series are series of time/value pairs, and can be constructed in rules, e.g. by modifying a Time Series retrieved from another persistence service or another Item.
@@ -134,6 +136,22 @@ Bindings may propose a default unit for channels, which will be used when the It
 ### Add-on Store Redesign
 
 _Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
+
+The Add-on Store has been split up into sub-sections on navigation sidebar according to the add-on types.
+When the navigation sidebar is not available, e.g. on mobile, the Add-on Store will split up into tabs according to the add-on categories.
+
+The main Add-on Store page now shows the list of all suggested and installed add-ons, grouped by type, for a quick overview.
+The add-on type sub-pages show the suggested add-ons on top, followed by the available add-ons.
+
+The search box on the main Add-on Store page allows searching through all add-ons in every category, whereas the search box on the add-on types' sub-pages searches only the add-ons of the selected type.
+In addition to that, filters were introduced to filter the add-ons by their connection type (e.g. cloud allowed, no cloud allowed) and country (all applicable for you, only for your country, all) (thanks to Mark Herwege ([@mherwege](https://github.com/mherwege))).
+
+Browsing through the Add-ons Store and switching through the different sections is now much faster, thanks to cached results.
+This makes browsing and installing add-ons through the UI easier and quicker.
+
+The new Add-on Store sidebar menu and main page looks like this:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/add-on-store.png"/></p>
 
 ### Setup Wizard Extensions
 
