@@ -8,7 +8,7 @@ previewimage: /uploads/2024-07-07-openhab-4-2-release/header.jpg
 tags:
   - news
 excerpt: >-
-  One year has passed since our big openHAB 4.0 release, and we are thrilled to announce our first summer minor release of the openHAB 4.x series: openHAB 4.2.
+  One year has passed since our big openHAB 4.0 release, and we are thrilled to announce our first summer minor release of the openHAB 4.x series&colon; openHAB 4.2.
   openHAB 4.2 adds a number of exciting new features, including the long awaited notification enhancements, as well as a multitude of smaller improvements and bug fixes.
 ---
 One year has passed since our big [openHAB 4.0 release](/blog/2023-07-23-openhab-4-0-release.html), and we are thrilled to announce our first summer minor release of the openHAB 4.x series: openHAB 4.2.
