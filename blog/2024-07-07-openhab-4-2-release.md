@@ -121,11 +121,19 @@ Thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for the contri
 
 ### Item Form Enhancements
 
-@jimtng
+_Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
+
+Items are one of the core elements in an openHAB system.
+
+To make viewing and editing them easier and more streamlined, the Item Form has received some minor cosmetic and functional improvements, e.g. easier managing of parent groups.
+
+For `Number` Items with a dimension (UoM Items), it is now easier to set the Item's unit directly on the form with a default unit pre-filled, thanks to the work by Mark Herwege ([@mherwege](https://github.com/mherwege)).
+The unit defaults to the default system unit for the configured measurement system, and a dropdown allows to select from common alternatives or to enter a custom unit.
+Bindings may propose a default unit for channels, which will be used when the Item is created from a channel.
 
 ### Add-on Store Redesign
 
-@jimtng
+_Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
 
 ### Setup Wizard Extensions
 
