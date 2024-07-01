@@ -64,7 +64,30 @@ Many thanks to our app maintainers [@weakfl](https://github.com/weakfl), Dan Cun
 
 ### Persistence Extensions
 
-@mherwege: https://github.com/openhab/openhab-core/pull/3736
+_Mark Herwege ([@mherwege](https://github.com/mherwege)), openHAB Contributor_
+
+Persistence Extensions have allowed the different scripting languages to easily persist states and retrieve persisted states or values calculated from these persisted states for a long time.
+
+As openHAB supports units of measure, persistence services can also return persisted values in a unit of measure.
+However, the Persistence Extensions did not consider these units of measure and would return just a decimal value as the result of a calculation.
+With openHAB 4.2, Persistence Extension have been enhance to also return the unit of measure.
+This allows rules and scripts to simply calculate with QuantityTypes without any implicit or explicit conversion to a DecimalType, while keeping the results consistent if different units of measure are used.
+Note that this change may require adapting previous rules.
+
+With the introduction of [Time Series support](/blog/2023-12-22-openhab-4-1-release.html#time-series-support-for-forecasts-and-historical-values) in openHAB 4.1, persistence services were extended to allow storing future values and forecasts.
+openHAB 4.2 extends the Persistence Extensions to allow persisting future states and retrieving future values.
+All persistence retrieval methods now have _last_, _next_ and _between_ variants of the methods, whereby _last_ will use the period from a time in the past until now, _next_ will use the period from now to a future time and _between_ will use the period between two provided points in time in the past and/or future.
+
+To allow storing multiple values to persistence in one go, Persistence Extensions methods now support working with TimeSeries instead of individual values when persisting or retrieving data.
+Time Series are series of time/value pairs, and can be constructed in rules, e.g. by modifying a Time Series retrieved from another persistence service or another Item.
+
+Also, there was no way before to retrieve the time of the last state change for an item from persistence.
+The existing methods (`previousState()` or `previousState(true)`) would not give the right result if the same value had been persisted multiple times.
+A new method `lastChange()` has been added to resolve this.
+
+Scripting languages (Rules DSL, JavaScript, jRuby and Blockly) have implement full support of these new and enhanced Persistence Extensions, please refer to the individual languages' documentation for more information.
+
+As much has changed, it is worthwhile to read the [documentation](/docs/configuration/persistence.html#persistence-extensions-in-scripts-and-rules) to update your knowledge about openHAB persistence extensions and learn everything about the new features.
 
 ## Main UI Enhancements
 
