@@ -9,10 +9,10 @@ tags:
   - news
 excerpt: >-
   One year has passed since our big openHAB 4.0 release, and we are thrilled to announce our first summer minor release of the openHAB 4.x series&colon; openHAB 4.2.
-  openHAB 4.2 adds a number of exciting new features, including the long awaited notification enhancements, as well as a multitude of smaller improvements and bug fixes.
+  openHAB 4.2 adds a number of exciting new features, including some long awaited notification enhancements, as well as a multitude of smaller improvements and bug fixes.
 ---
 One year has passed since our big [openHAB 4.0 release](/blog/2023-07-23-openhab-4-0-release.html), and we are thrilled to announce our first summer minor release of the openHAB 4.x series: openHAB 4.2.
-openHAB 4.2 adds a number of exciting new features, including the long awaited notification enhancements, as well as a multitude of smaller improvements and bug fixes.
+openHAB 4.2 adds a number of exciting new features, including some long awaited notification enhancements, as well as a multitude of smaller improvements and bug fixes.
 
 With that being said, we as usual want to share our highlights and some statistics that show the activity in numbers.
 
@@ -70,9 +70,9 @@ Many thanks to our app maintainers [@weakfl](https://github.com/weakfl), Dan Cun
 
 _Florian Hotze, openHAB Maintainer_
 
-### Dependency 6 Build System Upgrades
+### Dependency & Build System Upgrades
 
-openHAB 4.2 upgrades most of Main UI's dependencies to their latest version, including our charting engine [Apache ECharts](https://echarts.apache.org) and our date and time manipulation library [dayjs](https://day.js.org).
+openHAB 4.2 upgrades most of Main UI's dependencies to their latest version, including the charting engine [Apache ECharts](https://echarts.apache.org) and the date and time manipulation library [dayjs](https://day.js.org).
 As Main UI is still using Vue 2, we would like to upgrade to Vue 3 in the future - by upgrading to the latest Vue 2.x version, we have taken a minor step towards Vue 3.
 
 In addition to our runtime dependencies, we have also upgraded our build system to the latest tooling: Webpack 5 and Node.js 20.
@@ -109,12 +109,13 @@ Thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for the contri
 With the introduction of [add-on suggestions](/blog/2023-12-22-openhab-4-1-release.html#add-on-suggestions) in openHAB 4.1, we made a first, big step towards a better first-user experience.
 
 openHAB 4.2 continues this path by extending the setup wizard with a separate step for persistence.
-In this step, suggested persistence add-ons are shown and it is explained, why these add-ons are suggested to be installed:
+In this step, suggested persistence add-ons are displayed together with a short explanation for the suggestion.
+The user can then decide if he wants to install the suggested persistence add-ons or not, and install more add-ons in the next step:
 
-<p align="center"><img style="max-width: 35%;" src="/uploads/2024-07-07-openhab-4-2-release/setup-wizard-persistence.png"/></p>
-<p align="center"><img style="max-width: 35%;" src="/uploads/2024-07-07-openhab-4-2-release/setup-wizard-addons.png"/></p>
-
-As you can see in the screenshots, it recognizes which add-ons are already installed and adds explanations to the JavaScript Scripting and the Astro binding suggestions.
+<div align="center" class="row">
+  <img style="max-width: 35%;" src="/uploads/2024-07-07-openhab-4-2-release/setup-wizard-persistence.png"/>
+  <img style="max-width: 35%;" src="/uploads/2024-07-07-openhab-4-2-release/setup-wizard-addons.png"/>
+</div>
 
 Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)), who already worked on the add-on suggestions in openHAB 4.1, for this enhancement!
 
@@ -130,10 +131,12 @@ As you can imagine, orphaned links can and should be removed.
 The new health UI allows to easily check if there are orphaned links and take care of them:
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/health-menu.png"/></p>
-<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/health-orphaned-links.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/health-orphan-links.png"/></p>
 
-Checking and handling orphaned links is just the beginning for the new health UI - we plan to extend it in the future.
-Stay tuned!
+The health UI is not only meant to display orphaned links, but also to provide a central place for health checks and maintenance tasks.
+So stay tuned what gets added in the future!
+
+Many thanks to Arne Seime ([@seime](https://github.com/seime)) for this addition!
 
 ### Blockly Enhancements
 
