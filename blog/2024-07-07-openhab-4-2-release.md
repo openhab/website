@@ -181,7 +181,17 @@ Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)), who alre
 
 ### `oh-context` Component
 
-@justingeorgi: https://github.com/openhab/openhab-webui/pull/2533
+_Justin Georgi ([@justingeorgi](https://github.com/JustinGeorgi)), openHAB Contributor_
+
+With openHAB 4.2, advanced custom widgets have gotten more powerful with the new `oh-context` component!
+
+This component allows widget authors to insert a code context block at any point in the widget tree and define three different types of objects available for use in expressions in all children of the `oh-context`:
+
+- Variables: These context variables differ slightly from the normal widget variables in that they can have initial default values and also have complete communication with sub-widgets.
+- Constants: Context constants make for much more concise and readable expressions but unlike variable are only evaluated once when the widget loads.
+- Functions: Named context functions allow widget authors to efficiently reuse complex functions in multiple expressions.
+
+Please have a look at the [documentation](/docs/ui/widget-expressions-variables.html) to learn about the new `oh-context` component.
 
 ### Health UI
 
