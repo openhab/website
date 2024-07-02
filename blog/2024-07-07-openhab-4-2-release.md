@@ -216,8 +216,6 @@ _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), Blockly Mainta
 
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
-### Basic UI Enhancements
-
 ## Add-on Enhancements
 
 openHAB 4.2 brings 23 new add-ons, adding support for new devices:
@@ -250,6 +248,27 @@ openHAB 4.2 brings 23 new add-ons, adding support for new devices:
 But not only were new bindings added, some existing bindings also received massive improvements:
 
 @jlaur ???
+
+## openHABian Enhancements
+
+## Documentation Enhancements
+
+As you might have already noticed when taking a look at the 4.2.0 documentation, we have made some changes to the documentation structure.
+
+The first, most obvious change is the new structure of the sidebar:
+
+<div align="center" class="row">
+  <img style="max-width: 35%;" src="/uploads/2024-07-07-openhab-4-2-release/docs-sidebar-old.png"/>
+  <img style="max-width: 35%;" src="/uploads/2024-07-07-openhab-4-2-release/docs-sidebar-new.png"/>
+</div>
+
+As you can see, we now have collapsible sections, which makes the sidebar much more compact and easier to navigate.
+Big thanks to Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)) for his work on the sidebar!
+
+The second change is the reorganization of the Main UI-related documentation.
+
+The content of the old Settings section has been replaced by a new Main UI section, which now contains detailed documentation about most Main UI pages and follows the structure of Main UI itself.
+This documentation is also rendered inside the [Integrated Help Features of Main UI](/blog/2023-12-22-openhab-4-1-release.html#integrated-help-features), which have been introduced in openHAB 4.1.
 
 # Enjoy and Get in Touch!
 
