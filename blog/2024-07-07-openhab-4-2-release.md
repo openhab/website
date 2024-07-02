@@ -107,7 +107,18 @@ Many thanks to Miguel Álvarez ([@GiviMAD](https://github.com/givimad)) for the 
 
 ### Semantic Model Templates
 
-@justingeorgi: https://github.com/openhab/openhab-webui/pull/2105
+_Justin Georgi ([@justingeorgi](https://github.com/JustinGeorgi)), openHAB Contributor_
+
+It has gotten even easier for first time users of openHAB to get started quickly.
+
+Instead of building up the organization of a home one location at a time, users creating a new semantic model can take advantage of the new template wizard to create a structured semantic model with just a few clicks.
+The model template page provides three basic base templates with the ability to quickly select the necessary combination of rooms followed by one click creation of all the semantic items:
+
+- One Bedroom Apartment
+- One Story House
+- Two Story House
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/semantic-model-template.png"/></p>
 
 ### Persistence Settings Menu
 
@@ -185,7 +196,7 @@ The new health UI allows to easily check if there are orphaned links and take ca
 The health UI is not only meant to display orphaned links, but also to provide a central place for health checks and maintenance tasks.
 So stay tuned what gets added in the future!
 
-Many thanks to Arne Seime ([@seime](https://github.com/seime)) for this addition!
+Thanks to Arne Seime ([@seime](https://github.com/seime)) for this nice addition!
 
 ### Blockly Enhancements
 
