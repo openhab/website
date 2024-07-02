@@ -220,18 +220,30 @@ _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
 ## Add-on Enhancements
 
-openHAB 4.2 brings X new add-ons, adding support for new devices:
+openHAB 4.2 brings 23 new add-ons, adding support for new devices:
 
+- The [AirGradient binding](/addons/bindings/airgradient) supports AirGradient air quality sensors.
 - The [Amber Electric binding](/addons/bindings/amberelectric) provides access to the Australian energy retailer's Amber API with energy pricing and renewable energy data.
+- The [ArgoClima binding](/addons/bindings/argoclima) for ArgoClima HVAC devices.
 - The [Basic Profiles transformation](/addons/transformations/basicprofiles), which provides a list of useful profiles and transformations.
+- The [CP750 binding](/addons/bindings/cp750) to communicate with a CP750, a common sound processor used in cinemas.
 - The [Emotiva binding](/addons/bindings/emotiva) integrated Emotiva AV processors using the Emotiva Network Remote Control protocol.
 - The [Ephemeris binding](/addons/bindings/ephemeris) which provides access to openHAB Core's Ephemeris feature through Items.
+- The [Freeathome binding](/addons/bindings/freeathome) is a new binding for controlling free@home devices from ABB / Busch-Jaeger.
+- The [Freecurrency binding](/addons/bindings/freecurrency) allows converting between different currencies and makes full use of the UoM currency capability.
 - The [French Government Energy Data binding](/addons/bindings/frenchgovtenergydata) provides regulated electricity prices in France.
+- The [GridBox binding](/addons/bindings/gridbox) for connecting to the Viessmann GridBox.
+- The [Growatt binding](/addons/bindings/growatt) for Growatt solar inverters.
 - The [IoTaWatt binding](/addons/bindings/iotawatt) integrated IoTaWatt Open WiFi Electric Power Monitor into openHAB.
 - The [MfFan binding](/addons/bindings/mffan) enables communication between openHAB and "Modern Forms" or "WAC Lighting" WIFI connected, smart, ceiling fans.
+- The [PanasonicBDP](/addons/bindings/panasonicbdp) for Panasonic Blu-ray players.
 - The [PegelOnline binding](/addons/bindings/pegelonline) allows to observe water levels from German rivers.
+- The [RadioBrowser binding](/addons/bindings/radiobrowser) to navigate and find internet radio broadcasts.
+- The [Saicismart binding](/addons/bindings/saicismart) supports reading out vehicle data of cars running the iSMART system from SAIC.
 - The [Salus binding](/addons/bindings/salus) facilitates seamless integration between openHAB and Salus Cloud.
 - The [SiemensHVAC binding](/addons/bindings/hvac) provides support for the Siemens HVAC controller ecosystem, and the Web Gateway interface OZW672.
+- The [Solar Forecast binding](/addons/bindings/solarforecast) to interface two different free photovoltaic forecast services.
+- The [Sungrow binding](/addons/bindings/sungrow) is a Modbus binding that integrates Sungrow inverters.
 - The [TeslaPowerwall binding](/addons/bindings/teslapowerwall) enables the capture of key data from a Tesla Powerwall 2 into openHAB.
 - The [Whisper Speech-to-Text voice add-on](/addons/voice/whisperstt) provides a new offline voice recognition service for openHAB using OpenAI's Whisper model.
 
