@@ -25,7 +25,7 @@ We therefore want to share a few statistics about our three main repositories: C
 
 X new add-ons, XX bug fixes and XXX enhancements were contributed to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons), which resulted in the addition of XX,xxx lines of code.
 
-The [openHAB web UIs](https://github.com/openhab/openhab-webui) have broken their "personal" best with a whopping XXX pull requests, including XX bug fixes and XX enhancements and resulting in X,xxx lines of code added.
+The [openHAB web UIs](https://github.com/openhab/openhab-webui) have broken their "personal" best with a whopping XXX merged pull requests, including XX bug fixes and XX enhancements and resulting in X,xxx lines of code added.
 
 It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
 Many thanks to all our contributors for driving openHAB forward!
@@ -250,6 +250,14 @@ But not only were new bindings added, some existing bindings also received massi
 @jlaur ???
 
 ## openHABian Enhancements
+
+_Ethan Dye ([@ecdye](https://github.com/ecdye)), openHABian Maintainer_
+
+In openHABian, we've made a couple of under the hood enhancements to provide better support for the users running openHABian:
+
+- Our latest image is now based on Bookworm, the most recent release of Debian/Raspberry Pi OS
+- Support for the new Raspberry Pi 5 has been added.
+- 64-bit support is now official, [check the docs](/docs/installation/openhabian.html#64-bit) for some caveats on running 64-bit vs 32-bit.
 
 ## Documentation Enhancements
 
