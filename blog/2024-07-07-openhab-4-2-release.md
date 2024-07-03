@@ -74,7 +74,7 @@ This resulted in a comprehensive upgrade of almost all dependencies used in core
 To allow for running openHAB with Java 21, a few more changes had to be introduced:
 One notable difference between Java 17 and Java 21 is the change of the serialization format of DateTime in [CLDR 42](https://cldr.unicode.org/index/downloads/cldr-42), which required some extra efforts in persistence to allow switching the Java version in an existing installation.
 
-Now you can use both Java 17 and Java 21 to openHAB, but the openHAB distribution continues to use the Java 17 binary format which can run on both Java versions.
+Now you can use both Java 17 and Java 21 to run openHAB, but the openHAB distribution continues to use the Java 17 binary format which can run on both Java versions.
 Please consider Java 21 support as experimental, as it has not been tested thoroughly yet.
 Also note that Java 21 is only available for 64-bit systems.
 If you use openHABian and have installed the 64-bit image, you can install Java 21 using `openhabian-config`.
@@ -83,7 +83,7 @@ Developers can even choose between three options:
 Java 17, Java 21 creating Java 17 binaries (default for openHAB if you use Java 21), and native Java 21 (binaries will not work on a Java 17 server).
 Whereas we recommend Java 17 for running openHAB, development can be safely done on Java 21.
 
-Read the [developer documentation](/docs/developer/#setup-the-development-environment) for more information.
+Please refer to the [developer documentation](/docs/developer/#setup-the-development-environment) for more information.
 
 ## Core Runtime Enhancements
 
