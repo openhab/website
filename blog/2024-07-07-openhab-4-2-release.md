@@ -58,13 +58,13 @@ _Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintain
 
 With openHAB 4.2 we have updated our mobile push notifications architecture, bringing modern, cutting edge notification features to both our Android and iOS clients.
 
-First, we have consolidated both mobile platforms to use Google Firebase Messaging, which greatly improves the reliability of push notifications from our cloud service as well as reduces the amount of work needed to add new features in a cross platform way.
+First, we have consolidated both mobile platforms to use Google Firebase Messaging, which greatly improves the reliability of push notifications from our cloud service and reduces the amount of work needed to add new features in a cross-platform way.
 
 This change has allowed us to add an incredible amount of new features to our app in a relatively short amount of time.
 
 ### Notification Display Enhancements
 
-Notifications can now contain many more additional features, such as:
+Notifications now contain many more additional features, such as:
 
 - Title
   - Replaces the default "openHAB" text with a user supplied version
@@ -75,7 +75,7 @@ Notifications can now contain many more additional features, such as:
 - Action Buttons
   - Add up to 3 buttons that allow for executing commands, navigating through our UI's or open links in an embedded browser
 
-<p align="center"><img style="max-width: 70%;" src="../tmp/notifications.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/notifications.png"/></p>
 
 ### Update / Collapse Notifications
 
@@ -85,7 +85,7 @@ We have also added some really useful ways to manage notifications already pushe
   - Instead of seeing 100 messages that you left the garage door open, have a messages replace the existing shown one, so only the latest message is show on a user's device.
   - Update existing messages with new information, add additional actions, media, etc.. without showing multiple notifications.
 
-<p align="center"><img style="max-width: 70%;" src="../tmp/collapse-notifications.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/collapse-notifications.png"/></p>
 
 ### Remove / Hide Notifications
 
@@ -97,31 +97,34 @@ Finally, this has been a long requested feature by users, so we are very excited
 
 ### Scripting Language Support
 
-These new notification enhancements are of course available across all our rule languages, but we have introduced additional helper APIs in our JS Scripting and Ruby script engine implementations to make this even easier to use.
+These new notification enhancements are of course available across all our rule languages, but we have introduced additional helper APIs in our [JavaScript Scripting](/addons/automation/jsscripting/#cloud-notification-actions) and JRuby Scripting implementations to make this even easier to use.
 
 ### Upcoming iOS Changes
 
-Its been a long time since we have pushed an official update to the iOS app. Unfortunately we have been unable to push updates do to a technical issue with our app store identifiers that Apple has not been able to resolve. After months and months of back and forth with their developer support team, we have decided to move forward with an alternative plan to release a brand new app.
+It's been a long time since we have pushed an official update to the iOS app.
+Unfortunately we have been unable to push updates do to a technical issue with our app store identifiers that Apple has not been able to resolve.
+After months and months of back and forth with their developer support team, we have decided to move forward with an alternative plan to release a brand-new app.
 
-This new app will still be called "openHAB" and will include all of the above features, more then a year's worth of bug fixes and improvements, the Apple Watch companion app and will continue to receive constant feature upgrades.
+This new app will still be called "openHAB" and will include all of the above features, more than a year's worth of bug fixes and improvements, the Apple Watch companion app and will continue to receive constant feature upgrades.
 The new app will require at least iOS 16 and will drop openHAB 1.x support.
 
-The existing app will continue to function, but be renamed to "openHAB V1". This "legacy" app will only receive security updates and critical fixes, but will support openHAB 1.x to at least 4.2 and will also work for devices running iOS 15 and earlier.
-The Legacy app will not include Apple watch support nor support our new enhanced notifications features, although basic notifications will continue to be supported.  
+The existing app will continue to function, but be renamed to "openHAB V1".
+This "legacy" app will only receive security updates and critical fixes, but will support openHAB 1.x to at least 4.2 and will also work for devices running iOS 15 and earlier.
+The legacy app will not include Apple Watch support nor support our new enhanced notifications features, although basic notifications will continue to be supported.
 
-Once both apps are available in the app store, the legacy app will prompt users to upgrade and make the switch
+Once both apps are available in the app store, the legacy app will prompt users to upgrade and make the switch.
 
-In the mean time, you can download our new app right now on [TestFlight](https://testflight.apple.com/join/0uFYONeF) and try out these amazing new features!
+In the meantime, you can download our new app right now on [TestFlight](https://testflight.apple.com/join/0uFYONeF) and try out these amazing new features!
 
 <a href="https://testflight.apple.com/join/0uFYONeF"><img src="https://developer.apple.com/assets/elements/icons/testflight/testflight-128x128_2x.png" width="50" alt="Download on TestFlight"></a>
 Download the new openHAB app on [TestFlight](https://testflight.apple.com/join/0uFYONeF).
 
 Many thanks to:
 
-Florian Hotze ([@florian-h05](https://github.com/florian-h05)) for the enhanced JS-Scripting language support, docs, and code reviews of the binding.
-Jimmy Tanagra ([@jimtng](https://github.com/jimtng)) for the enhanced Ruby language support
+- Florian Hotze ([@florian-h05](https://github.com/florian-h05)) for the enhanced JavaScript Scripting language support, docs, and code reviews of the cloud connector add-on.
+- Jimmy Tanagra ([@jimtng](https://github.com/jimtng)) for the enhanced JRuby Scripting language support.
+- Our app maintainers [@mueller-ma](https://github.com/mueller-ma), Danny Baumann ([@maniac103](https://github.com/maniac103)), [@weakfl](https://github.com/weakfl) and Tim Bert ([@timbms](https://github.com/timbms)) for all their work on the mobile apps!
 
-And also Many to our app maintainers [@mueller-ma](https://github.com/mueller-ma) and Danny Baumann ([@maniac103](https://github.com/maniac103)), [@weakfl](https://github.com/weakfl), Tim Bert ([@timbms](https://github.com/timbms)) for all their work on the mobile apps!
 ## Java 21 Support
 
 _Holger Friedrich ([@holgerfriedrich](https://github.com/holgerfriedrich)), openHAB Maintainer_
