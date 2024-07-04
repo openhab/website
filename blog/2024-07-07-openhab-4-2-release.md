@@ -21,11 +21,11 @@ With that being said, we as usual want to share our highlights and some statisti
 As you'd expect from any new openHAB release, we have had a high activity across all our GitHub repositories.
 We therefore want to share a few statistics about our three main repositories: Core, add-ons and UIs.
 
-[openHAB Core](https://github.com/openhab/openhab-core) has received XXX pull requests in total, with XX bug fixes and XX enhancements resulting in XX,xxx lines of code added.
+[openHAB Core](https://github.com/openhab/openhab-core) has received 216 pull requests in total, with 56 bug fixes and 104 enhancements resulting in 11,160 lines of added code.
 
-X new add-ons, XX bug fixes and XXX enhancements were contributed to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons), which resulted in the addition of XX,xxx lines of code.
+23 new add-ons, 158 bug fixes and 195 enhancements were contributed in 572 pull requests to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons), which resulted in the addition of 298,936 lines of code.
 
-The [openHAB web UIs](https://github.com/openhab/openhab-webui) have broken their "personal" best with a whopping XXX merged pull requests, including XX bug fixes and XX enhancements and resulting in X,xxx lines of code added.
+The [openHAB web UIs](https://github.com/openhab/openhab-webui) have broken their "personal" best with a whopping 247 merged pull requests, including 95 bug fixes and 105 enhancements resulting in 32,761 lines of code changes.
 
 It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
 Many thanks to all our contributors for driving openHAB forward!
