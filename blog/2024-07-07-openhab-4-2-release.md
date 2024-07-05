@@ -97,7 +97,7 @@ Finally, this has been a long requested feature by users, so we are very excited
 
 ### Scripting Language Support
 
-These new notification enhancements are of course available across all our rule languages, but we have introduced additional helper APIs in our [JavaScript Scripting](/addons/automation/jsscripting/#cloud-notification-actions) and JRuby Scripting implementations to make this even easier to use.
+These new notification enhancements are of course available across all our rule languages, but we have introduced additional helper APIs in our [JavaScript Scripting](/addons/automation/jsscripting/#cloud-notification-actions) and [JRuby Scripting](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Actions/Notification.html) implementations to make this even easier to use.
 
 ### Upcoming iOS Changes
 
