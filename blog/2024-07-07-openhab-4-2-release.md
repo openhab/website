@@ -82,8 +82,8 @@ Notifications now contain many more additional features, such as:
 We have also added some really useful ways to manage notifications already pushed to a device through rules and actions!
 
 - Collapsible Notifications
-  - Instead of seeing 100 messages that you left the garage door open, have a messages replace the existing shown one, so only the latest message is show on a user's device.
-  - Update existing messages with new information, add additional actions, media, etc.. without showing multiple notifications.
+  - Instead of seeing 100 messages that you left the garage door open, have a new message replace the existing one shown, so only the latest message is visible on a user's device.
+  - Update existing messages with new information, add additional actions, updated media, etc.. without showing multiple notifications.
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/collapse-notifications.png"/></p>
 
@@ -102,11 +102,11 @@ These new notification enhancements are of course available across all our rule 
 ### Upcoming iOS Changes
 
 It's been a long time since we have pushed an official update to the iOS app.
-Unfortunately we have been unable to push updates do to a technical issue with our app store identifiers that Apple has not been able to resolve.
-After months and months of back and forth with their developer support team, we have decided to move forward with an alternative plan to release a brand-new app.
+Unfortunately we have been unable to push updates do to a technical issue with one of our app store identifiers that Apple has not been able to resolve.
+After months of back and forth with Apple's developer support team, we have decided to move forward with an alternative plan to release a brand-new app.
 
-This new app will still be called "openHAB" and will include all of the above features, more than a year's worth of bug fixes and improvements, the Apple Watch companion app and will continue to receive constant feature upgrades.
-The new app will require at least iOS 16 and will drop openHAB 1.x support.
+Our new iOS app will still be called "openHAB" and will include all of great notification features mentioned above as well as more than a year's worth of bug fixes and improvements along with the Apple Watch companion app.
+The new openHAB iOS app will require at least iOS 16 and will drop openHAB 1.x support.
 
 The existing app will continue to function, but be renamed to "openHAB V1".
 This "legacy" app will only receive security updates and critical fixes, but will support openHAB 1.x to at least 4.2 and will also work for devices running iOS 15 and earlier.
