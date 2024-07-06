@@ -300,9 +300,52 @@ Thanks to Arne Seime ([@seime](https://github.com/seime)) for this nice addition
 
 _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), Blockly Maintainer_
 
-## Sitemap and Basic UI Enhancements
+## Sitemap Enhancements
 
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
+
+### Two possible behaviors for the Slider element
+
+A new parameter named `releaseOnly` was added to the `Slider` element.
+If `releaseOnly` parameter is specified, the new value is only sent on releasing the slider.
+Otherwise values are sent while sliding which is now the default behavior.
+
+Note: an implicit slider element (when `Default` element is used) will have the `releaseOnly` parameter set.
+Its behavior is therefore to send the new value only when the slider is released.
+
+### Press and release buttons
+
+For a `Switch` element with mappings, each button can now behave either as a click button or as a press and release button.
+The default behavior is a click button.
+To get a press and release behavior, provide two commands separated by a semicolon.
+The first command is sent to the item when the button is pressed and the second command is sent when the button is finally released.
+Here is an example of such a button sending command ON when the button is pressed and command OFF when the button is released.
+
+```java
+Swith item=myItem mappings=[ON:OFF="On"]
+```
+
+### Extended chart periods to cover past and future
+
+The time axis can now be either entirely in the past ending at the present time, entirely in the future starting at the present time, or partly in the past and partly in the future around the present time.
+To do this, the value of the `period` parameter can now be composed of two parts separated by the "-" character, the value before the "-" is then the scale in the past and the value after the "-" is the scale in the future.
+Valid values before and after the central character "-" are `h, 2h, 3h, ..., D, 2D, 3D, ..., W, 2W, 3W, ..., M, 2M, 3M, ..., Y, 2Y, ...` and any valid duration following the ISO8601 duration notation such as `P1Y6M` for the last year and a half or `PT1H30M` for the last hour and a half.
+If only a period is provided, i.e. without the final "-" character or without anything after the "-" character, only a period in the past is taken into account.
+
+### New Button element
+
+A new `Button` element was introduced.
+
+```java
+Button item=<itemname> [label="<labelname>"] [icon=<iconref>] [staticIcon=<iconref>] row=<row> column=<column> [stateless] click=<cmd> [release=<cmd>]
+```
+
+Such an element is only accepted as a child of a `Buttongrid` element.
+It adds more functionalities to buttons in `Buttongrid` than before in openHAB 4.1.
+You can now choose between stateful or stateless behavior and between click or press & release behavior.
+Icon can be dynamic by defining icon conditions.
+Label and icon color can be dynamic using the `labelcolor` and `iconcolor` parameters.
+Visibility of the button can be dynamic using the `visibility` parameter.
 
 ## Add-on Enhancements
 
