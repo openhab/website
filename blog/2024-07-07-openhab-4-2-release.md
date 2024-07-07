@@ -434,28 +434,32 @@ Visibility of the button can be dynamic using the `visibility` parameter.
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
 In addition to the implementation of all the new sitemap features described in the previous chapter, the major fix in this version concerns the `Slider` element.
-The slider did not work reliably and differently depending on the WEB browser used.
-It is now fixed.
+In previous releases, the slider did not work reliably and differently depending on used web browser - this is now finally fixed.
 
-The major change is moving app settings.
-They were previously adjustable in Main UI and unique regardless of the client used.
-They are now accessible directly in Basic UI and become client (browser) and device settings.
+The major change of this release is the introduction of a new settings page inside Basic UI:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/basicui-settings.png"/></p>
+
+Previously, Basic UI settings were adjustable in Main UI only and the same regardless of the used client.
+In contrast to that, these settings are now accessible directly in Basic UI and stored on the client (browser).
 So the user can now have different settings on a phone and on a PC for example.
-A new page is available to show and update all these settings.
-This page can be accessed by clicking the settings icon at the top left on the sitemap list page and on the home page of any sitemap.
+The new page can be accessed by clicking the settings icon at the top left on the sitemap list page and on the home page of any sitemap.
+
 Basic UI theme now matches the dark mode of Main UI.
-It can be updated either in Main UI or in Baisc UI.
+It can be updated either in Main UI or in Basic UI.
+
 Web Audio support can also be enabled either in Main UI or Basic UI.
+
 New settings were also introduced, such as a setting to use a bigger font size or settings to control the chart size and the size of content (text, line) in the chart.
 Only two settings remain in Main UI because they are server dependent and not client dependent.
 
 Here are the other main changes:
 
-- `Swith` element rendered with buttons: the value to the right of the buttons is now only displayed if a state pattern is defined on the element. This value is therefore not displayed by default.
-- `Swith` element rendered with buttons: the buttons are now arranged on multiple lines if there is not enough place on one line. This avoids having buttons overriding on the next column.
+- `Switch` element rendered with buttons: the value to the right of the buttons is now only displayed if a state pattern is defined on the element. This value is therefore not displayed by default.
+- `Switch` element rendered with buttons: the buttons are now arranged on multiple lines if there is not enough place on one line. This avoids having buttons overriding on the next column.
 - `Chart` element: the list of predefined periods you can select now contains past and future periods.
 - The "none" icon no longer triggers a request to the server.
-- Uuser-defined colors (`labelcolor`, `valuecolor` and `iconcolor` parameters) are now automatically adjusted to the current theme for better contrast, the same way the Android app does. This is the default behavior but an application setting has been added to disable this adjustment.
+- User-defined colors (`labelcolor`, `valuecolor` and `iconcolor` parameters) are now automatically adjusted to the current theme for better contrast, the same way the Android app does. This is the default behavior but an application setting has been added to disable this adjustment.
 
 ## Add-on Enhancements
 
@@ -487,6 +491,7 @@ openHAB 4.2 brings 23 new add-ons, adding support for new devices:
 - The [Whisper Speech-to-Text voice add-on](/addons/voice/whisperstt) provides a new offline voice recognition service for openHAB using OpenAI's Whisper model.
 
 But not only were new bindings added, some existing bindings also received massive improvements:
+
 - The [Bosch Smart Home binding](/addons/bindings/boschshc) has added support for new devices: Door/Window Contact II, Universal Switch I+II, Smoke Detector II, Light/Shutter Control II, Dimmer and Smart Water Alarm.
 - The [SamsungTV binding](/addons/bindings/samsungtv) has extended support for Frame TV with new channels as well as other improvements.
 - The [Shelly binding](/addons/bindings/shelly) has added support for new devices and Range Extender.
