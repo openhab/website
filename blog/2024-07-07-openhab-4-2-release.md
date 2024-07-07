@@ -179,6 +179,21 @@ Scripting languages (Rules DSL, JavaScript, jRuby and Blockly) have implemented 
 
 As much has changed, it is worthwhile to read the [documentation](/docs/configuration/persistence.html#persistence-extensions-in-scripts-and-rules) to update your knowledge about openHAB persistence extensions and learn everything about the new features.
 
+### Default State Presentation Pattern
+
+_Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
+
+A default state pattern is now provided for String, Number and DateTime Items, whether the Item is linked to a channel or not.
+It is used when no other pattern is provided by any other means (channel, metadata, ...).
+There is no need to set the state pattern explicitly, unless the default does not match your wish.
+
+Here are the respective defaults:
+
+- for String Items: `%s`
+- for DateTime Items or groups with DateTime state: `%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS`
+- for Number Items or groups with number state: `%.0f`
+- for Number Items with dimension or groups with number with dimension state: `%.0f %unit%`
+
 ## Main UI Enhancements
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
