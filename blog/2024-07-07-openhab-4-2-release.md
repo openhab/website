@@ -300,6 +300,56 @@ Thanks to Arne Seime ([@seime](https://github.com/seime)) for this nice addition
 
 _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), Blockly Maintainer_
 
+The amount of new features for Blockly are huge which is why only a quick overview is provided here.
+For a detailed explanation of every feature, see the [community post of May 30](https://community.openhab.org/t/blockly-whats-new-since-openhab-4-0/156275).
+
+**Blockly Upgrade**
+Thanks to Jimmy ([@jimtng](https://github.com/jimtng)) Blockly has been upgraded from v9.2.0 to v10.4.2 which didn’t directly bring some real fancy stuff for you as a user but is something I didn’t dare to do (openHAB 4.0 did a major Blockly version increase though). 
+
+**Blockly Style Selection**
+Blockly comes in different “design flavors” and again this is something that Jimmy added to our Blockly implementation which is not so obvious in the first place.
+
+**Typed Variables**
+
+_The most important Blockly change_ was just released very lately and is about **variables that can have a type**.
+Until now Blockly only provided untyped variables. 
+Even though this seems to be more straight forward and provides the flexibility to put any type into that variable, it creates some challenges to openHAB Blockly to generate the right code.
+
+Most blocks in Blockly have input and output types defined which allows the editor to check whether one particular block can be used as an input for a different block. 
+This becomes challenging with the standard untyped variables because the type of these is basically -unknown- which means that the Blockly editor is not able to check whether this block is allowed or not to be added at that particular position.
+This even more is a challenge when blockly tries to generate the right code. 
+The way it works in Blockly is that the code generation looks at the type of the blocks. 
+
+Therefore, a new “typed variable” section was introduced.
+**From now on always prefer Typed Variables over normal Variables!**
+
+When you create a variable, you can give the variable a type and then use that typed variable and magically Blockly it will create the right code.
+
+**Adjust persistence blocks to breaking changes**
+
+We normally hate to break things and in this case Blockly didn’t actually break something but openHAB changed something in the core that allows persistence also access future values in time series like in a weather report. 
+This led to a rename of internal methods which requires Blockly to generate different code.
+
+_In case you have used historic data with persistence and you migrate from 4.0/4.1 to 4.2 you need to migrate your blockly code_ which is as ease as opening the rule that contains a persistence block with historic data and then just save it. That’s all.
+
+**HTTP block**
+
+For a long time a block was missing to allow making HTTP requests but it needed to be done right making it as convenient as possible. 
+More improvements on URL encoding and parameter support will come soon.
+
+**Thing Extensions**
+
+The Thing block happened to be a rather limited one and was missing the possibility to retrieve information about a thing and it wasn’t possible to iterate over the openHAB Things. 
+This all has now become available and particular with the typed variables it is now very convenient to use.
+
+**Timer Context Extension**
+
+This addition is about providing a context to the statement block of a timer. Timers provide a statement block where the blocks reside that are run when the timer triggers. The context allows data to be provided which is later used when the statements are triggered by the timer.
+
+**Math and Logic Extensions**
+
+New Blocks were added for Min/Max, Parse Number and Undefined
+
 ## Sitemap Enhancements
 
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
