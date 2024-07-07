@@ -291,28 +291,33 @@ The new health UI allows to easily check if there are orphaned links and take ca
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/health-menu.png"/></p>
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/health-orphan-links.png"/></p>
 
+If there are health issues, the UI will be available through a floating action button (FAB) shown on the settings menu page.
+This FAB looks similar to the Thing Inbox button on the Things list.
+If there are no health issues, the FAB will not be shown and you won't have access to the health UI.
+
 The health UI is not only meant to display orphaned links, but also to provide a central place for health checks and maintenance tasks.
 So stay tuned what gets added in the future!
 
 Thanks to Arne Seime ([@seime](https://github.com/seime)) for this nice addition!
 
-### Blockly Enhancements
+## Blockly Enhancements
 
 _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), Blockly Maintainer_
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/blockly-openhab4.2.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/blockly.png"/></p>
 
+There is a huge amount of new features for Blockly, which is why only a quick overview is provided here.
+For a detailed explanation of every new feature, see the [community post of May 30](https://community.openhab.org/t/blockly-whats-new-since-openhab-4-0/156275).
 
-The amount of new features for Blockly are huge which is why only a quick overview is provided here.
-For a detailed explanation of every feature, see the [community post of May 30](https://community.openhab.org/t/blockly-whats-new-since-openhab-4-0/156275).
+### Blockly Upgrade
 
-**Blockly Upgrade**
-Thanks to Jimmy ([@jimtng](https://github.com/jimtng)) Blockly has been upgraded from v9.2.0 to v10.4.2 which didn’t directly bring some real fancy stuff for you as a user but is something I didn’t dare to do (openHAB 4.0 did a major Blockly version increase though). 
+Thanks to Jimmy ([@jimtng](https://github.com/jimtng)), Blockly has been upgraded from v9.2.0 to v10.4.2 which didn’t directly bring some real fancy stuff for you as a user but is something I didn’t dare to do (openHAB 4.0 did a major Blockly version increase though). 
 
-**Blockly Style Selection**
+### Blockly Style Selection
+
 Blockly comes in different “design flavors” and again this is something that Jimmy added to our Blockly implementation which is not so obvious in the first place.
 
-**Typed Variables**
+### Typed Variables
 
 _The most important Blockly change_ was just released very lately and is about **variables that can have a type**.
 Until now Blockly only provided untyped variables. 
@@ -320,38 +325,41 @@ Even though this seems to be more straight forward and provides the flexibility 
 
 Most blocks in Blockly have input and output types defined which allows the editor to check whether one particular block can be used as an input for a different block. 
 This becomes challenging with the standard untyped variables because the type of these is basically -unknown- which means that the Blockly editor is not able to check whether this block is allowed or not to be added at that particular position.
-This even more is a challenge when blockly tries to generate the right code. 
-The way it works in Blockly is that the code generation looks at the type of the blocks. 
+This even more is a challenge when Blockly tries to generate the right code, because code generation relies on knowing the type of the input blocks.
+Until know, Blockly was assuming some default type when it was not able to detect the input type, which however could have resulted in the generation of incorrect code.
 
 Therefore, a new “typed variable” section was introduced.
 **From now on always prefer Typed Variables over normal Variables!**
 
-When you create a variable, you can give the variable a type and then use that typed variable and magically Blockly it will create the right code.
+When you create a variable, you can give the variable a type and then use that typed variable and magically Blockly will create the right code.
 
-**Adjust persistence blocks to breaking changes**
+### Adjust persistence blocks to breaking changes & extend them
 
-We normally hate to break things and in this case Blockly didn’t actually break something but openHAB changed something in the core that allows persistence also access future values in time series like in a weather report. 
-This led to a rename of internal methods which requires Blockly to generate different code.
+We normally hate to break things and in this case Blockly didn't actually break something, but openHAB Core [changed the persistence extensions](#persistence-extensions), these now also allow to access future values and persist Time Series, like a weather forecast. 
+This led to a major API changes which requires Blockly to generate different code.
+Thanks to Mark ([@mherwege](https://github.com/mherwege)) for extending the persistence blocks to support these new features.
 
-_In case you have used historic data with persistence and you migrate from 4.0/4.1 to 4.2 you need to migrate your blockly code_ which is as ease as opening the rule that contains a persistence block with historic data and then just save it. That’s all.
+_In case you have used historic data with persistence you need to migrate your Blockly code_ which is as ease as opening the rule that contains a persistence block with historic data and then just save it. That’s everything.
 
-**HTTP block**
+### HTTP block
 
-For a long time a block was missing to allow making HTTP requests but it needed to be done right making it as convenient as possible. 
-More improvements on URL encoding and parameter support will come soon.
+For a long time a block was missing to allow making HTTP requests, but with openHAB 4.2 we finally introduce a new block that supports sending HTTP requests. 
+Even though this block already has much functionality, more improvements on URL encoding and parameter support are coming soon.
 
-**Thing Extensions**
+### Thing Extensions
 
-The Thing block happened to be a rather limited one and was missing the possibility to retrieve information about a thing and it wasn’t possible to iterate over the openHAB Things. 
-This all has now become available and particular with the typed variables it is now very convenient to use.
+The Thing block happened to be a rather limited one that was missing the ability to retrieve information about a Thing, and it also wasn't possible to iterate over the Things. 
+These features have now become available and in particular with the typed variables they are now very convenient to use.
 
-**Timer Context Extension**
+### Timer Context Extension
 
-This addition is about providing a context to the statement block of a timer. Timers provide a statement block where the blocks reside that are run when the timer triggers. The context allows data to be provided which is later used when the statements are triggered by the timer.
+This addition is about providing a context to the statement block of a timer.
+Timers provide a statement block where the blocks reside that are run when the timer triggers.
+The context allows data to be provided to the statement blocks, which allows to pass immutable data to the statement blocks instead of referencing mutable data from the context where the timer is created
 
-**Math and Logic Extensions**
+### Math and Logic Extensions
 
-New Blocks were added for Min/Max, Parse Number and Undefined
+New Blocks were added for getting Min/Max, parsing a Number and representing `undefined`.
 
 ## Sitemap Enhancements
 
