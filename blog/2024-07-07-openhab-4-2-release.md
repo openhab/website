@@ -399,7 +399,7 @@ Its behavior is therefore to send the new value only when the slider is released
 
 For a `Switch` element with mappings, each button can now behave either as a click button or as a press and release button.
 The default behavior is a click button.
-To get a press and release behavior, provide two commands separated by a semicolon.
+To get a press and release behavior, provide two commands separated by a colon.
 The first command is sent to the item when the button is pressed and the second command is sent when the button is finally released.
 Here is an example of such a button sending command ON when the button is pressed and command OFF when the button is released.
 
@@ -428,6 +428,34 @@ You can now choose between stateful or stateless behavior and between click or p
 Icon can be dynamic by defining icon conditions.
 Label and icon color can be dynamic using the `labelcolor` and `iconcolor` parameters.
 Visibility of the button can be dynamic using the `visibility` parameter.
+
+## Basic UI Enhancements
+
+_Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
+
+In addition to the implementation of all the new sitemap features described in the previous chapter, the major fix in this version concerns the `Slider` element.
+The slider did not work reliably and differently depending on the WEB browser used.
+It is now fixed.
+
+The major change is moving app settings.
+They were previously adjustable in Main UI and unique regardless of the client used.
+They are now accessible directly in Basic UI and become client (browser) and device settings.
+So the user can now have different settings on a phone and on a PC for example.
+A new page is available to show and update all these settings.
+This page can be accessed by clicking the settings icon at the top left on the sitemap list page and on the home page of any sitemap.
+Basic UI theme now matches the dark mode of Main UI.
+It can be updated either in Main UI or in Baisc UI.
+Web Audio support can also be enabled either in Main UI or Basic UI.
+New settings were also introduced, such as a setting to use a bigger font size or settings to control the chart size and the size of content (text, line) in the chart.
+Only two settings remain in Main UI because they are server dependent and not client dependent.
+
+Here are the other main changes:
+
+- `Swith` element rendered with buttons: the value to the right of the buttons is now only displayed if a state pattern is defined on the element. This value is therefore not displayed by default.
+- `Swith` element rendered with buttons: the buttons are now arranged on multiple lines if there is not enough place on one line. This avoids having buttons overriding on the next column.
+- `Chart` element: the list of predefined periods you can select now contains past and future periods.
+- The "none" icon no longer triggers a request to the server.
+- Uuser-defined colors (`labelcolor`, `valuecolor` and `iconcolor` parameters) are now automatically adjusted to the current theme for better contrast, the same way the Android app does. This is the default behavior but an application setting has been added to disable this adjustment.
 
 ## Add-on Enhancements
 
