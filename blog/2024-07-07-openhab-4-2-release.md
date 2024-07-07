@@ -99,7 +99,13 @@ Finally, this has been a long requested feature by users, so we are very excited
 
 These new notification enhancements are of course available across all our rule languages, but we have introduced additional helper APIs in our [JavaScript Scripting](/addons/automation/jsscripting/#cloud-notification-actions) and [JRuby Scripting](https://openhab.github.io/openhab-jruby/main/OpenHAB/Core/Actions/Notification.html) implementations to make this even easier to use.
 
-### Upcoming iOS Changes
+### Android Client Availability
+
+Keep on the lookout for an update to our Android client to support these awesome new features in the coming days and weeks.
+
+<a href="https://play.google.com/store/apps/details?id=org.openhab.habdroid"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Play Store" height="80"></a>
+
+### iOS Client Availability
 
 It's been a long time since we have pushed an official update to the iOS app.
 Unfortunately we have been unable to push updates do to a technical issue with one of our app store identifiers that Apple has not been able to resolve.
@@ -116,7 +122,7 @@ Once both apps are available in the app store, the legacy app will prompt users 
 
 In the meantime, you can download our new app right now on [TestFlight](https://testflight.apple.com/join/0uFYONeF) and try out these amazing new features!
 
-<a href="https://testflight.apple.com/join/0uFYONeF"><img src="https://developer.apple.com/assets/elements/icons/testflight/testflight-128x128_2x.png" width="50" alt="Download on TestFlight"></a>
+<a href="https://testflight.apple.com/join/0uFYONeF"><img src="https://developer.apple.com/assets/elements/icons/testflight/testflight-128x128_2x.png" width="75" alt="Download on TestFlight"></a>
 Download the new openHAB app on [TestFlight](https://testflight.apple.com/join/0uFYONeF).
 
 Many thanks to:
