@@ -165,7 +165,7 @@ Persistence Extensions have allowed the different scripting languages to easily 
 
 As openHAB supports units of measurument (UoM), persistence services can also return persisted values with a unit of measurement.
 However, the Persistence Extensions did not consider these units of measurement and returned just a decimal value as the result of their calculations.
-With openHAB 4.2, Persistence Extension have been enhanced to also return the unit of measurement.
+With openHAB 4.2, Persistence Extensions have been enhanced to also return the unit of measurement.
 This allows rules and scripts to simply calculate with `QuantityType`s without any implicit or explicit conversion to a `DecimalType`, while keeping the results consistent if different units of measure are used.
 Note that this change may require adapting previous rules.
 
