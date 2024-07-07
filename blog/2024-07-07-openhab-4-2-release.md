@@ -459,8 +459,11 @@ openHAB 4.2 brings 23 new add-ons, adding support for new devices:
 - The [Whisper Speech-to-Text voice add-on](/addons/voice/whisperstt) provides a new offline voice recognition service for openHAB using OpenAI's Whisper model.
 
 But not only were new bindings added, some existing bindings also received massive improvements:
-
-@jlaur ???
+- The [Bosch Smart Home binding](/addons/bindings/boschshc) has added support for new devices: Door/Window Contact II, Universal Switch I+II, Smoke Detector II, Light/Shutter Control II, Dimmer and Smart Water Alarm.
+- The [SamsungTV binding](/addons/bindings/samsungtv) has extended support for Frame TV with new channels as well as other improvements.
+- The [Shelly binding](/addons/bindings/shelly) has added support for new devices and Range Extender.
+- The [HTTP binding](/addons/bindings/http) has received an overhaul with new configuration options, channels and bug fixes.
+- The [Netatmo binding](/addons/bindings/netatmo) brings many stability improvements and bug fixes.
 
 ## openHABian Enhancements
 
