@@ -300,6 +300,9 @@ Thanks to Arne Seime ([@seime](https://github.com/seime)) for this nice addition
 
 _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), Blockly Maintainer_
 
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/blockly-openhab4.2.png"/></p>
+
+
 The amount of new features for Blockly are huge which is why only a quick overview is provided here.
 For a detailed explanation of every feature, see the [community post of May 30](https://community.openhab.org/t/blockly-whats-new-since-openhab-4-0/156275).
 
