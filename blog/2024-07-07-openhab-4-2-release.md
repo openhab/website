@@ -4,7 +4,7 @@ category: blog
 title: openHAB 4.2 Release
 author: Florian Hotze and others
 date: '2024-07-07T18:00:00+02:00'
-previewimage: /uploads/2024-07-07-openhab-4-2-release/header.jpg
+previewimage: /uploads/2024-07-07-openhab-4-2-release/header.png
 tags:
   - news
 excerpt: >-
