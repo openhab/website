@@ -198,7 +198,7 @@ def process_file(indir, file, outdir, source)
       end
 
       # TODO: Remove for the 4.2.0 release
-      if $version == "final-stable"
+      if $version == "final-4.1.x"
         # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
         break if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
         break if line =~ /^## Installable Actions/
@@ -333,7 +333,7 @@ verbose "   ➡️ images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
 
 # TODO: Remove for the 4.2.0 release
-if $version == "final-stable"
+if $version == "final-4.1.x"
   process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration",
                "#{$docs_repo_root}/addons/actions.md")
   process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration",
@@ -342,7 +342,7 @@ end
 
 # TODO: Remove the if statement and the content of if for the 4.2.0 release
 # Additional files and images for the latest docs
-if $version == "final-stable"
+if $version == "final-4.1.x"
   # Additional files and images for the stable docs
   puts "➡️ Migrating the Settings section"
   Dir.glob(".vuepress/openhab-docs/settings/*.md") do |path|
