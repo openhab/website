@@ -438,7 +438,7 @@ In previous releases, the slider did not work reliably and differently depending
 
 The major change of this release is the introduction of a new settings page inside Basic UI:
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2024-07-07-openhab-4-2-release/basicui-settings.png"/></p>
+<p align="center"><img style="max-width: 40%;" src="/uploads/2024-07-07-openhab-4-2-release/basicui-settings.png"/></p>
 
 Previously, Basic UI settings were adjustable in Main UI only and the same regardless of the used client.
 In contrast to that, these settings are now accessible directly in Basic UI and stored on the client (browser).
