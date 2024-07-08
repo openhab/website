@@ -197,13 +197,6 @@ def process_file(indir, file, outdir, source)
         end
       end
 
-      # TODO: Remove for the 4.2.0 release
-      if $version == "final-stable"
-        # Actions and transformations are currently partly in add-ons, copy the content above the list of add-ons
-        break if line =~ /^More details regarding this and other Transformation services can be found in the individual transformation articles linked below./
-        break if line =~ /^## Installable Actions/
-      end
-
       # Remove collapsibles in Linux install document and replace them by regular headings
       next if line =~ /include collapsible/ && file =~ /linux/
 
@@ -331,14 +324,6 @@ Dir.glob(".vuepress/openhab-docs/configuration/*.md") do |path|
 end
 verbose "   ➡️ images"
 FileUtils.cp_r(".vuepress/openhab-docs/configuration/images", "docs/configuration")
-
-# TODO: Remove for the 4.2.0 release
-if $version == "final-stable"
-  process_file(".vuepress/openhab-docs/addons", "actions.md", "docs/configuration",
-               "#{$docs_repo_root}/addons/actions.md")
-  process_file(".vuepress/openhab-docs/addons", "transformations.md", "docs/configuration",
-               "#{$docs_repo_root}/addons/transformations.md")
-end
 
 puts "➡️ Migrating the Main UI section"
 Dir.glob(".vuepress/openhab-docs/mainui/*.md") do |path|
