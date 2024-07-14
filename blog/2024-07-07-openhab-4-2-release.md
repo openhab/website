@@ -404,7 +404,7 @@ The first command is sent to the item when the button is pressed and the second 
 Here is an example of such a button sending command ON when the button is pressed and command OFF when the button is released.
 
 ```java
-Swith item=myItem mappings=[ON:OFF="On"]
+Switch item=myItem mappings=[ON:OFF="On"]
 ```
 
 ### Extended chart periods to cover past and future
