@@ -184,22 +184,6 @@ a[href*='.openhab.org'] .outbound
 .custom-block.tip
     border-color #2196f3 !important
 
-/* Tweaks for vuepress-plugin-tabs */
-
-@media (prefers-color-scheme: dark)
-    .tabs-component-tab.is-active .tabs-component-tab-a
-        color #f60 !important
-    .tabs-component-tab .tabs-component-tab-a
-        color #a6a6a6
-        background-color #111
-    .tabs-component-tab
-        border-color #a6a6a6
-        &.is-active
-            border-bottom solid 1px #111
-    .tabs-component-panels
-        background-color #111 !important
-        border-color #a6a6a6
-
 /*** DARK MODE 😎 ***/
 
 @media (prefers-color-scheme: dark)
@@ -360,3 +344,17 @@ a[href*='.openhab.org'] .outbound
 
     .post-cover
         background-color rgba(127,51,0,.667) !important
+
+    /* for vuepress-plugin-tabs */
+    .tabs-component-tab.is-active .tabs-component-tab-a
+        color #f60 !important
+    .tabs-component-tab .tabs-component-tab-a
+        color #a6a6a6
+        background-color #111
+    .tabs-component-tab
+        border-color #a6a6a6
+        &.is-active
+            border-bottom solid 1px #111
+    .tabs-component-panels
+        background-color #111 !important
+        border-color #a6a6a6
