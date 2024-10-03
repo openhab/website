@@ -7,8 +7,8 @@
   .addon-logo
     float right
     margin-left 4rem
+    margin-top -3.5rem
 .addon-logo
-  margin-top -3rem
   width 200px
   height 200px
   object-fit contain
