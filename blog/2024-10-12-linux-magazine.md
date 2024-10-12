@@ -30,6 +30,6 @@ Last but not least you will setup remote access through [myopenHAB](https://www.
 
 ### Where to Find It
 
-The English version of the article can be purchased from the [website of the American Linux-Magazine](https://www.linux-magazine.com/Issues/2024/288/openHAB) or read in the November issue #288/2024 of the Linux-Magazin.
+The English version of the article can be purchased from the [website of the American Linux Magazine](https://www.linux-magazine.com/Issues/2024/288/openHAB) or read in the November issue #288/2024 of the Linux Magazine.
 
-The German version has been published a few weeks earlier in the September issue 09/2024 of the German Linux-Magazin (also available on [Readly](https://de.readly.com)) and can be read for free on the [website of the German Linux-Magazin](https://www.linux-magazin.de/ausgaben/2024/09/openhab/).
+The German version has been published a few weeks earlier in the September issue 09/2024 of the German Linux Magazin (also available on [Readly](https://de.readly.com)) and can be read for free on the [website of the German Linux Magazin](https://www.linux-magazin.de/ausgaben/2024/09/openhab/).
