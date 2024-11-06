@@ -623,10 +623,12 @@ puts "➡️ Writing add-ons arrays to files for sidebar navigation"
       Dir.foreach("addons/#{type}") do |dir|
         unless dir.include?(".")
           # puts dir
+          found = false
           File.readlines("addons/#{type}/#{dir}/readme.md").each do |line|
-            if line =~ /^label:/
+            if line =~ /^label:/ && !found
               title = line.gsub("label: ", "").gsub("\n", "")
               file.puts "\t['#{type}/#{dir}/', '#{title}']," unless title =~ /1\.x/
+              found = true
             end
           end
         end
