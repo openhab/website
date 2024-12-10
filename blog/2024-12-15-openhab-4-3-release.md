@@ -60,7 +60,7 @@ The Add-On Store has been redesigned to be more mobile-friendly:
 Similar to major app stores, the openHAB add-on store now uses a vertical slider to display the featured and suggested add-ons.
 Together with changes in the sizing of featured and suggested add-ons on desktop, this improves the user experience by allowing a more compact layout.
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/addon-store-ios.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/addon-store-ios.jpg"/></p>
 
 ### Routable Tabbed Pages
 
@@ -68,6 +68,66 @@ openHAB 4.3 makes tabbed pages routable by appending the tab index to the end of
 For example, the route `/page/tabs/0` will open the first tab of the page `tabs`.
 
 Please refer to the [documentation](/docs/ui/tabbed-pages.html#navigating-tabs) for more information.
+
+### Confirmation Dialogs for Widget Actions
+
+It is now possible to optionally display a confirmation dialog when an action is triggered on a widget.
+This is especially useful for actions that have a significant impact, like opening your garage door.
+
+Action confirmation can be enabled by setting the `actionConfirmation` parameter.
+The dialog can be customized by setting the `type`, `title`, and `text` parameters:
+
+<div align="center" class="row">
+  <img style="max-width: 35%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-default.png"/>
+  <img style="max-width: 35%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-dialog.png"/>
+  <img style="max-width: 35%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-sheet.png"/>
+</div>
+
+<details>
+
+<summary>Show me the widget code for the example.</summary>
+
+Have a look at the following example to learn about the different options:
+
+```yaml
+uid: actionConfirmation
+tags: []
+props:
+  parameters: []
+  parameterGroups: []
+timestamp: Dec 10, 2024, 10:15:02 PM
+component: oh-card
+config:
+  title: Action Confirmation
+slots:
+  content:
+    - component: oh-button
+      config:
+        text: Confirm
+        action: url
+        actionUrl: https://www.openhab.org/blog/2024-12-15-openhab-4-3-release.html
+        actionConfirmation: Are you sure you want to open the openHAB blog?
+    - component: oh-button
+      config:
+        text: Confirm with Dialog
+        action: url
+        actionUrl: https://www.openhab.org/blog/2024-12-15-openhab-4-3-release.html
+        actionConfirmation:
+          type: dialog
+          title: openHAB Blog
+          text: Are you sure you want to open the openHAB blog?
+    - component: oh-button
+      config:
+        text: Confirm with Sheet
+        action: url
+        actionUrl: https://www.openhab.org/blog/2024-12-15-openhab-4-3-release.html
+        actionConfirmation:
+          type: sheet
+          text: Open the openHAB blog
+          color: green
+```
+
+</details>
 
 ## Blockly Enhancements
 
