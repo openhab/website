@@ -158,7 +158,8 @@ openHAB 4.3 brings XX new add-ons, adding support for new devices:
 
 But not only were new bindings added, some existing bindings also received massive improvements:
 
-- The [JavaScript Scripting automation] has finally fixed the remaining reported multi-threading issues for UI-bases rules.
+- The [JavaScript Scripting automation](/addons/automation/jsscripting) has finally fixed the remaining reported multi-threading issues for UI-bases rules.
+- The [KNX binding](/addons/bindings/knx) provides better support for KNX Secure, allowing to include keyring files and reading KNX Data Secure packets.
 
 ## openHABian Enhancements
 
