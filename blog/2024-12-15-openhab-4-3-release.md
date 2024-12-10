@@ -8,8 +8,19 @@ previewimage: /uploads/2024-12-15-openhab-4-3-release/header.png
 tags:
   - news
 excerpt: >-
-
+  We are pleased to announce the release of openHAB 4.3!
+  This traditional winter release introduces numerous new features and enhancements to the openHAB ecosystem, paving the way for our next major release.
 ---
+
+We are pleased to announce the release of openHAB 4.3!
+This traditional winter release introduces numerous new features and enhancements to the openHAB ecosystem, paving the way for our next major release.
+
+One and a half year have passed since the [release of the openHAB 4.x series](/blog/2023-07-23-openhab-4-0-release.html), and we are proud to announce the final version of the openHAB 4.x series today.
+However, openHAB 4.3 is far from being just a minor step toward openHAB 5 — it is packed with incredible new features, including a log viewer, UI support for Thing actions, and the new interactive SVG canvas, which unlocks previously untapped possibilities for your smart home dashboard.
+Having openHAB 4.3 as a solid foundation, we will now focus development on openHAB 5, for which we have already started to collect ideas.
+Make sure to read the outlook towards openHAB 5, it contains some important news!
+
+With that being said, let's checkout some statistics highlighting the activity of our community and  dive into the highlights of the openHAB 4.3 release!
 
 # Activity
 
