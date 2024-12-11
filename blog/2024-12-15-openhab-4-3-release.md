@@ -3,7 +3,7 @@ layout: BlogPost
 category: blog
 title: openHAB 4.3 Release
 author: Florian Hotze and others
-date: '2024-12-15T18:00:00+01:00'
+date: "2024-12-15T18:00:00+01:00"
 previewimage: /uploads/2024-12-15-openhab-4-3-release/header.png
 tags:
   - news
@@ -20,7 +20,7 @@ However, openHAB 4.3 is far from being just a minor step toward openHAB 5 — it
 Having openHAB 4.3 as a solid foundation, we will now focus development on openHAB 5, for which we have already started to collect ideas.
 Make sure to read the outlook towards openHAB 5, it contains some important news!
 
-With that being said, let's checkout some statistics highlighting the activity of our community and  dive into the highlights of the openHAB 4.3 release!
+With that being said, let's checkout some statistics highlighting the activity of our community and dive into the highlights of the openHAB 4.3 release!
 
 # Activity
 
@@ -162,6 +162,63 @@ But not only were new bindings added, some existing bindings also received massi
 
 - The [JavaScript Scripting automation](/addons/automation/jsscripting) has finally fixed the remaining reported multi-threading issues for UI-bases rules.
 - The [KNX binding](/addons/bindings/knx) provides better support for KNX Secure, allowing to include keyring files and reading KNX Data Secure packets.
+
+### MQTT / Home Assistant
+
+_Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
+
+The MQTT / Home Assistant binding allows integrating devices that communicate over MQTT, but were designed with Home Assistant in mind, rather than openHAB.
+Some prominent examples include [zwave-js-ui](https://zwave-js.github.io/zwave-js-ui/), [zigbee2mqtt](https://www.zigbee2mqtt.io), and [ESPHome](https://esphome.io).
+Historically, openHAB's support for these devices has been buggy and missing many features, prompting many users to prefer to manually configure generic MQTT things rather than use auto-discovery, which can be time consuming and error prone.
+This release aims to make that practice no longer necessary, by fixing many bugs, and adding support for many missing features.
+
+The biggest change is the overall structure of Thing Type and Channel IDs.
+Whereas previously you may have had a Channel UID like `mqtt:homeassistant_zigbee2mqtt_5F0x8cf681fffe32e58e:mosquitto:zigbee2mqtt_5F0x8cf681fffe32e58e:0x8cf681fffe32e58e_5Fbattery_5Fzigbee2mqtt#sensor`, that same channel might now be `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158d0007d3d7fa:battery`.
+Note that this release is transitional, and only newly discovered Things will use the new style IDs.
+You can opt in by deleting and re-creating your Things.
+Proper support for persisting dynamic Thing Types has been added, so the 2 minute delay before things would initialize after booting openHAB has been eliminated.
+There have been several issues fixed around keeping already created Things and Channels up to date if a device adds or removes components.
+The README has been re-written to give more useful details on what channels are supported for each component type.
+
+#### Jinja Templates
+
+Home Assistant discovery uses Jinja templates to transform values and commands to and from the native format of a device.
+Unfortunately, the Java Jinja implementation has lagged behind the features of Python's reference implementation.
+Manually installing the Jinja Transformation Add-On is no longer necessary, either.
+This release of openHAB brings support for the following features in Jinja, allowing use of devices that utilize them.
+There are even some devices that have an "openHAB compatibility mode" to work around these idiosyncrasies.
+Such options should no longer be necessary.
+
+- `break`
+- `continue`
+- `iif`
+- `is_defined`
+- Numeric hash keys
+
+#### Components With Significant Updates
+
+- Alarm Control Panel (additional states)
+- Climate (`humidity` and `preset-mode`)
+- Device Trigger (sharing a channel for events from the same button)
+- Light (several bug fixes around color modes)
+- Fan (`speed`, `preset-mode`, `oscillation`, `direction`)
+- Vacuum (no longer supports Legacy Schema)
+
+#### Newly Supported Component Types
+
+Many new component types are now supported:
+
+- Device Tracker
+- Event
+- Humidifier
+- Light (Template Schema)
+- Tag Scanner
+- Text
+- Valve
+- Water Heater
+
+If you manually configure generic MQTT Things to integrate devices that support Home Assistant discovery, I encourage you to try using auto-discovery.
+Please report any issues you have with specific devices in [GitHub issues](https://github.com/openhab/openhab-addons/issues/new?title=%5Bmqtt.homeassistant%5D+Unsupported+Device), and I'll try to address it as soon as I can.
 
 ## openHABian Enhancements
 
