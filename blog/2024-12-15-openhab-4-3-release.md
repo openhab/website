@@ -71,7 +71,7 @@ The Add-On Store has been redesigned to be more mobile-friendly:
 Similar to major app stores, the openHAB add-on store now uses a vertical slider to display the featured and suggested add-ons.
 Together with changes in the sizing of featured and suggested add-ons on desktop, this improves the user experience by allowing a more compact layout.
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/addon-store-ios.jpg"/></p>
+<p align="center"><img style="max-width: 70%; max-height: 1000px;" src="/uploads/2024-12-15-openhab-4-3-release/addon-store-ios.jpg"/></p>
 
 ### Routable Tabbed Pages
 
@@ -88,10 +88,12 @@ This is especially useful for actions that have a significant impact, like openi
 Action confirmation can be enabled by setting the `actionConfirmation` parameter.
 The dialog can be customized by setting the `type`, `title`, and `text` parameters:
 
+<br>
+
 <div align="center" class="row">
-  <img style="max-width: 35%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-default.png"/>
-  <img style="max-width: 35%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-dialog.png"/>
-  <img style="max-width: 35%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-sheet.png"/>
+  <img style="max-width: 30%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-basic.png"/>
+  <img style="max-width: 30%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-dialog.png"/>
+  <img style="max-width: 30%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-sheet.png"/>
 </div>
 
 <details>
