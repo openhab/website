@@ -20,7 +20,7 @@ However, openHAB 4.3 is far from being just a minor step toward openHAB 5 — it
 Having openHAB 4.3 as a solid foundation, we will now focus development on openHAB 5, for which we have already started to collect ideas.
 Make sure to read the outlook towards openHAB 5, it contains some important news!
 
-With that being said, let's checkout some statistics highlighting the activity of our community and dive into the highlights of the openHAB 4.3 release!
+That being said, let's check out some statistics praising the activity of our community and dive into the highlights of the openHAB 4.3 release.
 
 # Activity
 
@@ -38,10 +38,8 @@ In the following sections, our maintainers and contributors are introducing some
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
 
 openHAB 4.3 introduces automatic pre-compilation of script conditions and actions from UI-based rules.
-This means that these scripts are now compiled on openHAB startup instead of on the first execution, which was the case before.
-The main benefit of this change is that the possibly time-consuming compilation of the script is done at startup time and there is no delay anymore when the rule is executed for the first time.
-Another benefit is that syntax errors are discovered at startup and not at runtime of the rule, which makes it easier to find and fix them.
-
+This means that these scripts are now compiled on openHAB startup instead of on the first execution and there is no delay any more when the rule is executed for the first time.
+Another benefit is that syntax errors are discovered at startup and not at runtime of the rule. Makes it easier to find and fix them.
 Especially Blockly users of Raspberry Pis with a 32-bit OS will love this change, as the JavaScript Scripting automation add-on, which is used by Blockly under the hood, is known to compile scripts very slowly on these devices.
 Please note that not all automation add-ons support pre-compilation (yet).
 
@@ -87,7 +85,7 @@ Many thanks to my maintainer colleagure Laurent Garnier ([@lolodomo](https://git
 
 ### Introducing `oh-card` - A Shared Base for Card Widgets
 
-Since the introduction of Main UI with openHAB 3.0 four years ago, several times users requested the ability to modify the styling of Main UI's [card widgets](/docs/ui/components/#standard-widget-library-standalone-cards).
+Since introducing Main UI with openHAB 3.0 four years ago, several times users have requested the ability to modify the styling of Main UI's [card widgets](/docs/ui/components/#standard-widget-library-standalone-cards).
 Unfortunately, this was not possible in a common way for the various card widgets because some of them supported a style property, whilst others did not.
 
 With openHAB 4.3, we have finally implemented this long-awaited feature: It is now possible to provide CSS style and classes for the card itself, the header, content and footer of all `oh-****-card` widgets!
@@ -125,10 +123,10 @@ Together with changes in the sizing of featured and suggested add-ons on desktop
 
 <p align="center"><img style="max-width: 70%; max-height: 1000px;" src="/uploads/2024-12-15-openhab-4-3-release/addon-store-ios.jpg"/></p>
 
-### Routable Tabbed Pages
+### Routeable Tabbed Pages
 
-openHAB 4.3 makes tabbed pages routable by appending the tab index to the end of the route.
-For example, the route `/page/tabs/0` will open the first tab of the page `tabs`.
+In openHAB 4.3 tabbed pages are now directly accessible by appending the tab index to the end of the URL.
+For example, `/page/tabs/0` will open the first tab of the `tabs` page.
 
 Please refer to the [documentation](/docs/ui/tabbed-pages.html#navigating-tabs) for more information.
 
