@@ -69,8 +69,6 @@ Please refer to [the documentation](/docs/ui/components/oh-card.html) for more i
 
 ### Model Cards & Tabs on any Page
 
-### Copy Thing, Items, Scenes & Scripts
-
 ### Charting Improvements
 
 Main UI now uses the current Item state as well as persisted data outside the selected period to "close" gaps at the beginning and end of charts.
