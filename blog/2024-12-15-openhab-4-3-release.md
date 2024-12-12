@@ -38,9 +38,11 @@ In the following sections, our maintainers and contributors are introducing some
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
 
 openHAB 4.3 introduces automatic pre-compilation of script conditions and actions from UI-based rules.
+
 This means that these scripts are now compiled on openHAB startup instead of on the first execution and there is no delay any more when the rule is executed for the first time.
 Another benefit is that syntax errors are discovered at startup and not at runtime of the rule. Makes it easier to find and fix them.
-Especially Blockly users of Raspberry Pis with a 32-bit OS will love this change, as the JavaScript Scripting automation add-on, which is used by Blockly under the hood, is known to compile scripts very slowly on these devices.
+
+Especially Blockly users on Raspberry Pis with a 32-bit OS will love this change, as the JavaScript Scripting automation add-on, which is used by Blockly under the hood, is known to compile scripts very slowly on these devices.
 Please note that not all automation add-ons support pre-compilation (yet).
 
 ## Main UI Enhancements
@@ -70,18 +72,18 @@ The availability of Thing actions is a major improvement as it allows several th
   :::
 
   ::: tab Action&nbsp;Inputs
-  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/thing-actions-input.jpg"/></p>
+  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/thing-action-input.jpg"/></p>
   :::
 
   ::: tab Actions&nbsp;Output
-  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/thing-actions-output.jpg"/></p>
+  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/thing-action-output.jpg"/></p>
   :::
 
   ::::
 
 - Control special functionality of Things, e.g. put devices into pairing mode and display the pairing QR code.
 
-Many thanks to my maintainer colleagure Laurent Garnier ([@lolodomo](https://github.com/lolodomo)) for his work on the openHAB core parts of this feature!
+Many thanks to my maintainer colleague Laurent Garnier ([@lolodomo](https://github.com/lolodomo)) for his work on the openHAB core parts of this feature!
 
 ### Introducing `oh-card` - A Shared Base for Card Widgets
 
