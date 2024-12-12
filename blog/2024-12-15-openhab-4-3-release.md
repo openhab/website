@@ -53,6 +53,38 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 
 ### Thing Actions
 
+openHAB 4.3 finally introduces the ability to invoke (most) Thing actions from the UI as well as to use them in UI-based rules.
+Whether a Thing action is supported by the UI depends on its input types and its output type, but we have put great efforts into supporting as much input and output types as possible.
+
+The availability of Thing actions is a major improvement as it allows several things that were impossible or unneccassarily complex before, for example:
+
+- Invoke Thing actions from UI-bases rules without the need to create a script for that.
+  For example, you can now add the new [Fronius Thing actions](/addons/bindings/fronius/#actions) directly to a UI-rule to control your hybrid inverter's battery management.
+  Just click on "Show All" button when adding a new action to a rule, and you will see the following actions:
+  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/fronius-thing-actions-rules.jpg"/></p>
+
+- Get calculated values from Thing actions without the need to use a script to log them, for example for the [Astro binding](/addons/bindings/astro):
+
+  :::: tabs
+
+  ::: tab Actions&nbsp;Overview
+  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/thing-actions.jpg"/></p>
+  :::
+
+  ::: tab Action&nbsp;Inputs
+  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/thing-actions-input.jpg"/></p>
+  :::
+
+  ::: tab Actions&nbsp;Output
+  <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/thing-actions-output.jpg"/></p>
+  :::
+
+  ::::
+
+- Control special functionality of Things, e.g. put devices into pairing mode and display the pairing QR code.
+
+Many thanks to my maintainer colleagure Laurent Garnier ([@lolodomo](https://github.com/lolodomo)) for his work on the openHAB core parts of this feature!
+
 ### Introducing `oh-card` - A Shared Base for Card Widgets
 
 Since the introduction of Main UI with openHAB 3.0 four years ago, several times users requested the ability to modify the styling of Main UI's [card widgets](/docs/ui/components/#standard-widget-library-standalone-cards).
