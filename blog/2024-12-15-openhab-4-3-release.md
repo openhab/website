@@ -49,7 +49,19 @@ Please note that not all automation add-ons support pre-compilation (yet).
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
 
-### Charting with the current Item State
+### Log Viewer
+
+### Thing Actions
+
+### Introducing `oh-card` - A Common Base for Card Widgets
+
+### Interactive SVGs for Canvas Pages
+
+### Model Cards & Tabs on any Page
+
+### Copy Thing, Items, Scenes & Scripts
+
+### Charting Improvements
 
 Main UI now uses the current Item state as well as persisted data outside the selected period to "close" gaps at the beginning and end of charts.
 In addition to that, calendar and aggregation charts display the current Item state for the current day or aggregation period, enhancing the user experience without requiring unnecessary persistence entries.
