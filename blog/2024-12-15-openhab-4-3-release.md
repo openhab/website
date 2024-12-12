@@ -151,6 +151,7 @@ Action confirmation can be enabled by setting the `actionConfirmation` parameter
 The dialog can be customized by setting the `type`, `title`, and `text` parameters:
 
 <br>
+<br>
 
 <div align="center" class="row">
   <img style="max-width: 30%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-basic.png"/>
@@ -160,7 +161,7 @@ The dialog can be customized by setting the `type`, `title`, and `text` paramete
 
 <details>
 
-<summary>Show me the widget code for the example.</summary>
+<summary>Show me the widget code for these examples</summary>
 
 Have a look at the following example to learn about the different options:
 
