@@ -53,7 +53,17 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 
 ### Thing Actions
 
-### Introducing `oh-card` - A Common Base for Card Widgets
+### Introducing `oh-card` - A Shared Base for Card Widgets
+
+Since the introduction of Main UI with openHAB 3.0 four years ago, several times users requested the ability to modify the styling of Main UI's [card widgets](/docs/ui/components/#standard-widget-library-standalone-cards).
+Unfortunately, this was not possible in a common way for the various card widgets because some of them supported a style property, whilst others did not.
+
+With openHAB 4.3, we have finally implemented this long-awaited feature: It is now possible to provide CSS style and classes for the card itself, the header, content and footer of all `oh-****-card` widgets!
+To support this, we have created the new `oh-card` component, which provides a shared base for all card widgets and can be used by user-created widgets as well.
+
+The example for the new [widget action confirmation feature](#confirmation-dialogs-for-widget-actions) already makes use of the new `oh-card` component.
+
+Please refer to [the documentation](/docs/ui/components/oh-card.html) for more information.
 
 ### Interactive SVGs for Canvas Pages
 
@@ -161,6 +171,8 @@ slots:
           text: Open the openHAB blog
           color: green
 ```
+
+Note that this example already uses the [new `oh-card` component](#introducing-oh-card-a-shared-base-for-card-widgets).
 
 </details>
 
