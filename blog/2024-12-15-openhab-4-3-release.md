@@ -47,10 +47,13 @@ Please note that not all automation add-ons support pre-compilation (yet).
 
 ### Allow excluding Items and Groups from Persistence
 
+_Mark Herwege ([@mherwege](https://github.com/mherwege)), openHAB Contributor_
+
 You may want to persist all items but a few.
 While this has always been possible by defining a group containing all items to persist and only persisting the items in this group, it creates a maintenance burden to always have to add new items you want to persist to this group.
 
-The new exclusion functionality now allows you to easily exclude individual items or groups of items from a persistence strategy and service. This can be configured in persist files by putting a ! in front of the items or groups to exclude, or through the UI persistence configuration.
+The new exclusion functionality now allows you to easily exclude individual items or groups of items from a persistence strategy and service. This can be configured in persist files by putting a `!` in front of the items or groups to exclude, or through the UI persistence configuration.
+
 ## Main UI Enhancements
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
@@ -62,9 +65,9 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 openHAB 4.3 finally introduces the ability to invoke (most) Thing actions from the UI as well as to use them in UI-based rules.
 Whether a Thing action is supported by the UI depends on its input types and its output type, but we have put great efforts into supporting as much input and output types as possible.
 
-The availability of Thing actions is a major improvement as it allows several things that were impossible or unneccassarily complex before, for example:
+The availability of Thing actions is a major improvement as it allows several things that were impossible or unnecessarily complex before, for example:
 
-- Invoke Thing actions from UI-bases rules without the need to create a script for that.
+- Invoke Thing actions from UI-based rules without the need to create a script for that.
   For example, you can now add the new [Fronius Thing actions](/addons/bindings/fronius/#actions) directly to a UI-rule to control your hybrid inverter's battery management.
   Just click on "Show All" button when adding a new action to a rule, and you will see the following actions:
   <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/fronius-thing-actions-rules.jpg"/></p>
@@ -215,7 +218,7 @@ Note that this example already uses the [new `oh-card` component](#introducing-o
 
 ## Blockly Enhancements
 
-_Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), Blockly Maintainer_
+_Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), openHAB Blockly Maintainer_
 
 ## Sitemap Enhancements
 
@@ -232,7 +235,7 @@ openHAB 4.3 brings XX new add-ons, adding support for new devices:
 But not only were new bindings added, some existing bindings also received massive improvements:
 
 - The [JavaScript Scripting automation](/addons/automation/jsscripting) has finally fixed the remaining reported multi-threading issues for UI-bases rules.
-- The [KNX binding](/addons/bindings/knx) provides better support for KNX Secure, allowing to include keyring files and reading KNX Data Secure packets.
+- The [KNX binding](/addons/bindings/knx) provides better support for KNX Secure, allowing to include keyring files and decoding KNX Data Secure packets.
 - The [Fronius binding](/addons/bindings/fronius) adds Thing actions to control the charging and discharging battery of your hybrid inverter from openHAB.
 
 ### MQTT / Home Assistant
