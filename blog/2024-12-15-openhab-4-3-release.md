@@ -283,6 +283,7 @@ But not only were new bindings added, some existing bindings also received massi
 - The [JavaScript Scripting automation](/addons/automation/jsscripting) has finally fixed the remaining reported multi-threading issues for UI-bases rules.
 - The [KNX binding](/addons/bindings/knx) provides better support for KNX Secure, allowing to include keyring files and decoding KNX Data Secure packets.
 - The [Fronius binding](/addons/bindings/fronius) adds Thing actions to control the charging and discharging battery of your hybrid inverter from openHAB.
+- The [Freebox OS binding](/addons/bindings/freeboxos) comes with several fixes and replaces the old [Freebox binding](/addons/bindings/freebox), which is considered as deprecated now and will be removed from the distribution in the next openHAB release.
 
 ### MQTT / Home Assistant
 
