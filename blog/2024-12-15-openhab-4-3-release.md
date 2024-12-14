@@ -16,9 +16,9 @@ We are pleased to announce the release of openHAB 4.3!
 This traditional winter release introduces numerous new features and enhancements to the openHAB ecosystem, paving the way for our next major release.
 
 One and a half year have passed since the [release of the openHAB 4.x series](/blog/2023-07-23-openhab-4-0-release.html), and we are proud to announce the final version of the openHAB 4.x series today.
-However, openHAB 4.3 is far from being just a minor step toward openHAB 5 — it is packed with incredible new features, including a log viewer, UI support for Thing actions, and the new interactive SVG canvas, which unlocks previously untapped possibilities for your smart home dashboard.
+However, openHAB 4.3 is far from being just a minor step towards openHAB 5 — it is packed with incredible new features, including a log viewer, UI support for Thing actions, and the new interactive SVG canvas, which unlocks previously untapped possibilities for your smart home dashboard.
 Having openHAB 4.3 as a solid foundation, we will now focus development on openHAB 5, for which we have already started to collect ideas.
-Make sure to read the outlook towards openHAB 5, it contains some important news!
+Make sure to read the outlook towards openHAB 5 at the end of this blog post, it contains some important news!
 
 That being said, let's check out some statistics praising the activity of our community and dive into the highlights of the openHAB 4.3 release.
 
@@ -42,7 +42,7 @@ openHAB 4.3 introduces automatic pre-compilation of script conditions and action
 This means that these scripts are now compiled on openHAB startup instead of on the first execution and there is no delay any more when the rule is executed for the first time.
 Another benefit is that syntax errors are discovered at startup and not at runtime of the rule. Makes it easier to find and fix them.
 
-Especially Blockly users on Raspberry Pis with a 32-bit OS will love this change, as the JavaScript Scripting automation add-on, which is used by Blockly under the hood, is known to compile scripts very slowly on these devices.
+Especially Blockly users of Raspberry Pis with a 32-bit OS will love this change, as the JavaScript Scripting automation add-on, which is used by Blockly under the hood, is known to compile scripts very slowly on these devices.
 Please note that not all automation add-ons support pre-compilation (yet).
 
 ### Allow excluding Items and Groups from Persistence
@@ -296,6 +296,31 @@ If you manually configure generic MQTT Things to integrate devices that support 
 Please report any issues you have with specific devices in [GitHub issues](https://github.com/openhab/openhab-addons/issues/new?title=%5Bmqtt.homeassistant%5D+Unsupported+Device), and I'll try to address it as soon as I can.
 
 ## openHABian Enhancements
+
+_Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
+
+There have been a number of enhancements to openHABian, too.
+Big ones among these were the move to a bullseye based Linux distribution, which required us to rewrite major parts of the openHABian code.
+While we still release new 32 bit images, we finally turned to "all 64" bit as the recommended platform setup.
+
+Take a look at the [openHABian changelog](https://github.com/openhab/openhabian/releases/latest) for the full list of changes.
+
+# An Outlook towards openHAB 5
+
+openHAB 4.3 will be the last major release of the openHAB 4 series, and the last major release which supports 32-bit systems.
+By the time openHAB 5 will become available next summer, you will **need to have a 64-bit operating system on your openHAB server**.
+We're making that announcement now, way ahead of time, to make sure you are prepared in time.
+
+And actually the best time to move to 64 bit is NOW.
+The upgrade step to 4.3 comes in handy as an opportunity to get that done today when you have to touch your system anyway.
+
+If you seize that opportunity, don't change hardware at the same time.
+On Raspberry Pi, just make sure to move to a new "Endurance" type SD card, and take you revisit your disaster recovery precautions:
+Set up SD mirroring. Verify you're taking proper backups.
+
+Note you will not be able to migrate 32 bit openHABian installations to 64 bit.
+What you can do is, though, to export your openHAB configuration, install from scratch, and re-import.
+That'll be a matter of just an hour of work.
 
 # Enjoy and Get in Touch!
 
