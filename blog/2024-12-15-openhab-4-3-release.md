@@ -352,22 +352,20 @@ While we still release new 32 bit images, we finally turned to "all 64" bit as t
 
 Take a look at the [openHABian changelog](https://github.com/openhab/openhabian/releases/latest) for the full list of changes.
 
-# An Outlook towards openHAB 5
+# An outlook towards openHAB 5
 
 openHAB 4.3 will be the last major release of the openHAB 4 series, and the last major release which supports 32-bit systems.
 By the time openHAB 5 will become available next summer, you will **need to have a 64-bit operating system on your openHAB server**.
 We're making that announcement now, way ahead of time, to make sure you are prepared in time.
 
 And actually the best time to move to 64 bit is NOW.
-The upgrade step to 4.3 comes in handy as an opportunity to get that done today when you have to touch your system anyway.
-
-If you seize that opportunity, don't change hardware at the same time.
-On Raspberry Pi, just make sure to move to a new "Endurance" type SD card, and take you revisit your disaster recovery precautions:
-Set up SD mirroring. Verify you're taking proper backups.
-
 Note you will not be able to migrate 32 bit openHABian installations to 64 bit.
-What you can do is, though, to export your openHAB configuration, install from scratch, and re-import.
-That'll be a matter of just an hour of work.
+The upgrade step to 4.3 comes in handy as an opportunity to get that done today when you still have plenty of time but touch your system anyway.
+
+If on Raspberry Pi, make sure to use an "Endurance" type SD card as the new medium, and take care to revisit your disaster recovery precautions, i.e. set up SD mirroring and validate that you're taking proper backups.
+If you want to change hardware, too, then don't do both at the same time.
+Update your old system to 4.3 first, export your openHAB configuration, (re)install your system from scratch, and re-import.
+
 
 # Enjoy and Get in Touch!
 
