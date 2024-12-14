@@ -270,7 +270,11 @@ _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), openHAB Blockl
 
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
-A new sitemap element is available, the `Colortemperaturepicker`. This element is a control for something like a rgb or rgbw light where you can adjust the color temperature. The button opens an overlay to fine-tune your color temperature when you click on it. In the overlay, a white color gradient lets you pick and set the color temperature. The content of this button can also show what is the current color temperature.
+openHAB 4.3 adds a new sitemap element: the `Colortemperaturepicker`.
+This element is a control for something like a rgb or rgbw light where you can adjust the color temperature.
+The button opens an overlay to fine-tune your color temperature when you click on it.
+In the overlay, a white color gradient lets you pick and set the color temperature.
+The content of this button can also show what is the current color temperature.
 This new element is already supported by Basic UI and the Android app.
 
 ## Basic UI Enhancements
@@ -279,9 +283,11 @@ _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
 There is no revolution in Basic UI in this version but some very cool small changes which I think will make many users happy.
 
-In addition to the support of the new `Colortemperaturepicker` sitemap element, the `Colorpicker` element is enhanced to show what is the current selected color without the need to open the picker by clicking on any button.
+In addition to the support of the new `Colortemperaturepicker` sitemap element, the `Colorpicker` element has been enhanced to show what is the current selected color, without the need to open the picker by clicking on any button.
 
-In the previous version, the `Switch` element rendered with buttons was already improved to arrange buttons on multiple lines when there was not enough space. It is further improved in the new version with an optimized button layout that also takes into account the element label. Button text is also no longer forced in all caps and buttons can be smaller and are less spaced when in condensed layout.
+In the previous version, the `Switch` element with buttons was already improved to arrange buttons on multiple lines when there was not enough space.
+It has been further improved in openHAB 4.3 with an optimized button layout that also takes into account the element's label.
+The button text is also no longer forced in all caps and buttons can be smaller and are less spaced when in condensed layout.
 
 ## Add-on Enhancements
 
