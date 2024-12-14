@@ -110,6 +110,52 @@ Please refer to [the documentation](/docs/ui/components/oh-card.html) for more i
 
 ### Model Cards & Tabs on any Page
 
+_Thomas Wunschel ([@wuschi](https://github.com/wuschi))_
+
+The semantic model loading has been refactored to be reusable by other components than just the model pages, which allows the use of model components outside the model pages:
+
+- `oh-location-tab`, `oh-equipment-tab` and `oh-property-tab` can now be easily used within tabbed pages.
+- `oh-location-card`, `oh-equipment-card` and `oh-property-card` can now be used as standard widgets outside of these model tabs.
+
+<details>
+
+<summary>For example, you can rebuild the home page (click here)</summary>
+
+```yaml
+config:
+  label: Custom Home Page
+tabs:
+  - component: oh-tab
+    config:
+      icon: f7:house
+      page: page:overview
+      title: Overview
+    slots:
+      default: []
+  - component: oh-locations-tab
+    config:
+      title: Locations
+      icon: f7:placemark_fill
+    slots:
+      default: []
+  - component: oh-equipment-tab
+    config:
+      title: Equipment
+      icon: f7:cube_box_fill
+    slots:
+      default: []
+  - component: oh-properties-tab
+    config:
+      title: Properties
+      icon: f7:bolt_fill
+    slots:
+      default: []
+```
+
+</details>
+
+`oh-location-card` etc. can be addes like normal card widgets to layout pages.
+
 ### Charting Improvements
 
 Main UI now uses the current Item state as well as persisted data outside the selected period to "close" gaps at the beginning and end of charts.
