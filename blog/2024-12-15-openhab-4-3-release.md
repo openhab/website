@@ -18,7 +18,7 @@ This traditional winter release introduces numerous new features and enhancement
 One and a half year have passed since the [release of the openHAB 4.x series](/blog/2023-07-23-openhab-4-0-release.html), and we are proud to announce the final version of the openHAB 4.x series today.
 However, openHAB 4.3 is far from being just a minor step towards openHAB 5 — it is packed with incredible new features, including a log viewer, UI support for Thing actions, and the new interactive SVG canvas, which unlocks previously untapped possibilities for your smart home dashboard.
 Having openHAB 4.3 as a solid foundation, we will now focus development on openHAB 5, for which we have already started to collect ideas.
-Make sure to read the outlook towards openHAB 5 at the end of this blog post, it contains some important news!
+Make sure to read the outlook towards openHAB 5 at the end of this blog post; it contains some important news!
 
 That being said, let's check out some statistics praising the activity of our community and dive into the highlights of the openHAB 4.3 release.
 
@@ -70,7 +70,7 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 
 openHAB 4.3 introduces automatic pre-compilation of script conditions and actions from UI-based rules.
 
-This means that these scripts are now compiled on openHAB startup instead of on the first execution and there is no delay any more when the rule is executed for the first time.
+This means that these scripts are now compiled on openHAB startup instead of on the first execution, and there is no delay anymore when the rule is executed for the first time.
 Another benefit is that syntax errors are discovered at startup and not at runtime of the rule. Makes it easier to find and fix them.
 
 Especially Blockly users of Raspberry Pis with a 32-bit OS will love this change, as the JavaScript Scripting automation add-on, which is used by Blockly under the hood, is known to compile scripts very slowly on these devices.
@@ -93,14 +93,14 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 
 ### Thing Actions
 
-openHAB 4.3 finally introduces the ability to invoke (most) Thing actions from the UI as well as to use them in UI-based rules.
-Whether a Thing action is supported by the UI depends on its input types and its output type, but we have put great efforts into supporting as much input and output types as possible.
+openHAB 4.3 finally introduces the ability to invoke (most) Thing actions from the UI, as well as to use them in UI-based rules.
+Whether a Thing action is supported by the UI depends on its input types and its output type, but we have put great efforts into supporting as many input and output types as possible.
 
 The availability of Thing actions is a major improvement as it allows several things that were impossible or unnecessarily complex before, for example:
 
 - Invoke Thing actions from UI-based rules without the need to create a script for that.
-  For example, you can now add the new [Fronius Thing actions](/addons/bindings/fronius/#actions) directly to a UI-rule to control your hybrid inverter's battery management.
-  Just click on "Show All" button when adding a new action to a rule, and you will see the following actions:
+  For example, you can now add the new [Fronius Thing actions](/addons/bindings/fronius/#actions) directly to a UI rule to control your hybrid inverter's battery management.
+  Just click on the "Show All" button when adding a new action to a rule, and you will see the following actions:
   <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/fronius-thing-actions-rules.jpg"/></p>
 
 - Get calculated values from Thing actions without the need to use a script to log them, for example for the [Astro binding](/addons/bindings/astro):
@@ -127,8 +127,8 @@ Many thanks to my maintainer colleague Laurent Garnier ([@lolodomo](https://gith
 
 ### Introducing `oh-card` - A Shared Base for Card Widgets
 
-Since introducing Main UI with openHAB 3.0 four years ago, several times users have requested the ability to modify the styling of Main UI's [card widgets](/docs/ui/components/#standard-widget-library-standalone-cards).
-Unfortunately, this was not possible in a common way for the various card widgets because some of them supported a style property, whilst others did not.
+Since introducing Main UI with openHAB 3.0 four years ago, several times, users have requested the ability to modify the styling of Main UI's [card widgets](/docs/ui/components/#standard-widget-library-standalone-cards).
+Unfortunately, this was not possible in a common way for the various card widgets because some of them supported a style property, while others did not.
 
 With openHAB 4.3, we have finally implemented this long-awaited feature: It is now possible to provide CSS style and classes for the card itself, the header, content and footer of all `oh-****-card` widgets!
 To support this, we have created the new `oh-card` component, which provides a shared base for all card widgets and can be used by user-created widgets as well.
@@ -146,7 +146,7 @@ _Thomas Wunschel ([@wuschi](https://github.com/wuschi))_
 The semantic model loading has been refactored to be reusable by other components than just the model pages, which allows the use of model components outside the model pages:
 
 - `oh-location-tab`, `oh-equipment-tab` and `oh-property-tab` can now be easily used within tabbed pages.
-- `oh-location-card`, `oh-equipment-card` and `oh-property-card` can now be used as standard widgets outside of these model tabs.
+- `oh-location-card`, `oh-equipment-card` and `oh-property-card` can now be used as standard widgets outside these model tabs.
 
 <details>
 
@@ -185,7 +185,7 @@ tabs:
 
 </details>
 
-`oh-location-card` etc. can be addes like normal card widgets to layout pages.
+`oh-location-card` etc. can be added like normal card widgets to layout pages.
 
 ### Charting Improvements
 
@@ -195,8 +195,8 @@ In addition to that, calendar and aggregation charts display the current Item st
 To illustrate this change, consider the following examples:
 
 - You open the analyzer for a temperature sensor.
-  Previously, the graph started at some point and end at some point, but did probably not span the whole range.
-  Now, the graph starts at the begin of the selected range (if a persisted state before the beginning of the range is available) and ends at the end of the selected range (if a persisted state after the ending is available or the ending is close enough the current time).
+  Previously, the graph started at some point and ended at some point, but did probably not span the whole range.
+  Now, the graph starts at the begin of the selected range (if a persisted state before the beginning of the range is available) and ends at the end of the selected range (if a persisted state after the ending is available or the ending is close enough to the current time).
 
 - You have a bar chart displaying monthly solar production and power consumption.
   Previously, the chart ended at the last persisted value, which was the last day of the previous month.
@@ -302,10 +302,10 @@ _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), openHAB Blockl
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
 openHAB 4.3 adds a new sitemap element: the `Colortemperaturepicker`.
-This element is a control for something like a rgb or rgbw light where you can adjust the color temperature.
+This element is a control for something like a rgb or rgbw light, where you can adjust the color temperature.
 The button opens an overlay to fine-tune your color temperature when you click on it.
 In the overlay, a white color gradient lets you pick and set the color temperature.
-The content of this button can also show what is the current color temperature.
+The content of this button can also show what the current color temperature is.
 This new element is already supported by Basic UI and the Android app.
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/sitemap_demo_colortemperaturepicker.png"/></p>
@@ -315,15 +315,15 @@ This new element is already supported by Basic UI and the Android app.
 
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
-There is no revolution in Basic UI in this version but some very cool small changes which I think will make many users happy.
+There is no revolution in Basic UI in this version, but some very cool small changes, which I think will make many users happy.
 
-In addition to the support of the new `Colortemperaturepicker` sitemap element, the `Colorpicker` element has been enhanced to show what is the current selected color, without the need to open the picker by clicking on any button.
+In addition to the support of the new `Colortemperaturepicker` sitemap element, the `Colorpicker` element has been enhanced to show what the current selected color is, without the need to open the picker by clicking on any button.
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/sitemap_demo_colorpicker.png"/></p>
 
 In the previous version, the `Switch` element with buttons was already improved to arrange buttons on multiple lines when there was not enough space.
 It has been further improved in openHAB 4.3 with an optimized button layout that also takes into account the element's label.
-The button text is also no longer forced in all caps and buttons can be smaller and are less spaced when in condensed layout.
+The button text is also no longer forced in all caps, and buttons can be smaller and are less spaced when in condensed layout.
 
 ## Add-on Enhancements
 
@@ -344,16 +344,16 @@ _Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
 
 The MQTT / Home Assistant binding allows integrating devices that communicate over MQTT, but were designed with Home Assistant in mind, rather than openHAB.
 Some prominent examples include [zwave-js-ui](https://zwave-js.github.io/zwave-js-ui/), [zigbee2mqtt](https://www.zigbee2mqtt.io), and [ESPHome](https://esphome.io).
-Historically, openHAB's support for these devices has been buggy and missing many features, prompting many users to prefer to manually configure generic MQTT things rather than use auto-discovery, which can be time consuming and error prone.
-This release aims to make that practice no longer necessary, by fixing many bugs, and adding support for many missing features.
+Historically, openHAB's support for these devices has been buggy and missing many features, prompting many users to prefer to manually configure generic MQTT things rather than use auto-discovery, which can be time-consuming and error-prone.
+This release aims to make that practice no longer necessary, by fixing many bugs and adding support for many missing features.
 
 The biggest change is the overall structure of Thing Type and Channel IDs.
 Whereas previously you may have had a Channel UID like `mqtt:homeassistant_zigbee2mqtt_5F0x8cf681fffe32e58e:mosquitto:zigbee2mqtt_5F0x8cf681fffe32e58e:0x8cf681fffe32e58e_5Fbattery_5Fzigbee2mqtt#sensor`, that same channel might now be `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158d0007d3d7fa:battery`.
 Note that this release is transitional, and only newly discovered Things will use the new style IDs.
 You can opt in by deleting and re-creating your Things.
-Proper support for persisting dynamic Thing Types has been added, so the 2 minute delay before things would initialize after booting openHAB has been eliminated.
+Proper support for persisting dynamic Thing Types has been added, so the 2-minute delay before things would initialize after booting openHAB has been eliminated.
 There have been several issues fixed around keeping already created Things and Channels up to date if a device adds or removes components.
-The README has been re-written to give more useful details on what channels are supported for each component type.
+The README has been rewritten to give more useful details on what channels are supported for each component type.
 
 #### Jinja Templates
 
@@ -400,19 +400,19 @@ Please report any issues you have with specific devices in [GitHub issues](https
 _Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
 
 There have been a number of enhancements to openHABian, too.
-Big ones among these were the move to a bullseye based Linux distribution, which required us to rewrite major parts of the openHABian code.
-While we still release new 32 bit images, we finally turned to "all 64" bit as the recommended platform setup.
+Big ones among these were the move to a Bullseye-based Linux distribution, which required us to rewrite major parts of the openHABian code.
+While we still release new 32-bit images, we finally turned to "all 64-bit" as the recommended platform setup.
 
 Take a look at the [openHABian changelog](https://github.com/openhab/openhabian/releases/latest) for the full list of changes.
 
 # An outlook towards openHAB 5
 
-openHAB 4.3 will be the last major release of the openHAB 4 series, and the last major release which supports 32-bit systems.
-By the time openHAB 5 will become available next summer, you will **need to have a 64-bit operating system on your openHAB server**.
+openHAB 4.3 will be the last major release of the openHAB 4 series, and the last major release that supports 32-bit systems.
+By the time openHAB 5 becomes available next summer, you will **need to have a 64-bit operating system on your openHAB server**.
 We're making that announcement now, way ahead of time, to make sure you are prepared in time.
 
 And actually the best time to move to 64 bit is NOW.
-Note you will not be able to migrate 32 bit openHABian installations to 64 bit.
+Note, you will not be able to migrate 32-bit openHABian installations to 64 bit.
 The upgrade step to 4.3 comes in handy as an opportunity to get that done today when you still have plenty of time but touch your system anyway.
 
 If on Raspberry Pi, make sure to use an "Endurance" type SD card as the new medium, and take care to revisit your disaster recovery precautions, i.e. set up SD mirroring and validate that you're taking proper backups.
@@ -422,5 +422,5 @@ Update your old system to 4.3 first, export your openHAB configuration, (re)inst
 
 # Enjoy and Get in Touch!
 
-We hope that you like the new release as much as we do - as always our [community forum](https://community.openhab.org/) is there for questions, comments and discussions.
+We hope that you like the new release as much as we do. As always, our [community forum](https://community.openhab.org/) is there for questions, comments and discussions.
 Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
