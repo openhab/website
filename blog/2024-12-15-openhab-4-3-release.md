@@ -252,9 +252,9 @@ The dialog can be customized by setting the `type`, `title`, and `text` paramete
 <br>
 
 <div align="center" class="row">
-  <img style="max-width: 30%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-basic.png"/>
-  <img style="max-width: 30%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-dialog.png"/>
-  <img style="max-width: 30%;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-sheet.png"/>
+  <img style="max-width: 30%; min-width: 250px;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-basic.png"/>
+  <img style="max-width: 30%; min-width: 250px;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-dialog.png"/>
+  <img style="max-width: 30%; min-width: 250px;" src="/uploads/2024-12-15-openhab-4-3-release/action-confirmation-sheet.png"/>
 </div>
 
 <details>
