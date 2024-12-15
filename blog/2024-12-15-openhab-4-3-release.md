@@ -149,7 +149,7 @@ The example for the new [widget action confirmation feature](#confirmation-dialo
 
 Please refer to [the documentation](/docs/ui/components/oh-card.html) for more information.
 
-### Interactive SVGs for Canvas Pages
+<!-- ### Interactive SVGs for Canvas Pages -->
 
 ### Model Cards & Tabs on any Page
 
@@ -305,9 +305,11 @@ Note that this example already uses the [new `oh-card` component](#introducing-o
 
 </details>
 
+<!--
 ## Blockly Enhancements
 
 _Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), openHAB Blockly Maintainer_
+-->
 
 ## Sitemap Enhancements
 
