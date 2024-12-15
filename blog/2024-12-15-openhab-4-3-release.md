@@ -300,6 +300,8 @@ But not only were new bindings added, some existing bindings also received massi
 - The [Fronius binding](/addons/bindings/fronius) adds Thing actions to control the charging and discharging battery of your hybrid inverter from openHAB.
 - The [Freebox OS binding](/addons/bindings/freeboxos) comes with several fixes and replaces the old [Freebox binding](/addons/bindings/freebox), which is considered as deprecated now and will be removed from the distribution in the next openHAB release.
 
+Many thanks to all contributors accepting a code review and many thanks to my maintainer colleague Leo Siepel ([@lsiepel](https://github.com/lsiepel)) for his massive work of code review.
+
 ### MQTT / Home Assistant
 
 _Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
