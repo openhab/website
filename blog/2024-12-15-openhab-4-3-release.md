@@ -4,7 +4,7 @@ category: blog
 title: openHAB 4.3 Release
 author: Florian Hotze and others
 date: "2024-12-15T18:00:00+01:00"
-previewimage: /uploads/2024-12-15-openhab-4-3-release/header.png
+previewimage: /uploads/2024-12-15-openhab-4-3-release/header.webp
 tags:
   - news
 excerpt: >-
