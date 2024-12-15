@@ -91,6 +91,18 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 
 ### Log Viewer
 
+As Frontail is not maintained anymore and has several security vulnerabilities, we needed a new solution for log viewing in openHAB.
+openHAB 4.3 introduces a new log viewer that is integrated into the Main UI:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/log-viewer.png"/></p>
+
+This new developer tool allows you to view the openHAB log files directly in the browser, without the need to SSH into your openHAB server or install any additional software. 
+To allow handling the large amount of log data, the log viewer supports filtering by a search query and provides support for highlighting provided text patterns.
+In case you want to share a specific log entry with others, you can easily copy the log entry to the clipboard or download it as CSV.
+
+Huge thanks to my maintainer colleague Chris Jackson ([@cdjackson](https://github.com/cdjackson)) for this awesome contribution,
+as well as Yannick Schaus ([@ghys](https://github.com/ghys)) for his review and last minute fixes and improvements!
+
 ### Thing Actions
 
 openHAB 4.3 finally introduces the ability to invoke (most) Thing actions from the UI, as well as to use them in UI-based rules.
