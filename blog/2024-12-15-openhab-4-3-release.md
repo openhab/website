@@ -350,10 +350,15 @@ openHAB 4.3 brings 18 new add-ons, adding support for new devices:
 
 But not only were new bindings added, some existing bindings also received massive improvements:
 
+- The [aWattar binding](/addons/bindings/awattar) adds support for TimeSeries and adds additional channels.
+- The [Freebox OS binding](/addons/bindings/freeboxos) comes with several fixes and replaces the old [Freebox binding](/addons/bindings/freebox), which is considered as deprecated now and will be removed from the distribution in the next openHAB release.
+- The [Fronius binding](/addons/bindings/fronius) adds Thing actions to control the charging and discharging battery of your hybrid inverter from openHAB.
+- The [Homekit integration](/addons/integrations/homekit) has received several improvements, including configuration of thermostat modes through metadata.
+- The [Hue binding](/addons/bindings/hue) utilizes the new v2 API and adds support for enabling automations and dynamic add/delete of scenes.
+- The [IP Camera binding](/addons/bindings/ipcamera) improves support for various devices including Dahua API-based doorphones.
 - The [JavaScript Scripting automation](/addons/automation/jsscripting) has finally fixed the remaining reported multi-threading issues for UI-based rules.
 - The [KNX binding](/addons/bindings/knx) provides better support for KNX Secure, allowing to include keyring files and decoding KNX Data Secure packets.
-- The [Fronius binding](/addons/bindings/fronius) adds Thing actions to control the charging and discharging battery of your hybrid inverter from openHAB.
-- The [Freebox OS binding](/addons/bindings/freeboxos) comes with several fixes and replaces the old [Freebox binding](/addons/bindings/freebox), which is considered as deprecated now and will be removed from the distribution in the next openHAB release.
+- The [Shelly binding](/addons/bindings/shelly) adds support for various Gen3 devices as well as Shelly Plus RGBW PM.
 
 Many thanks to all contributors accepting a code review and many thanks to my maintainer colleague Leo Siepel ([@lsiepel](https://github.com/lsiepel)) for his massive work of code review.
 
