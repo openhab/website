@@ -327,7 +327,26 @@ The button text is also no longer forced in all caps, and buttons can be smaller
 
 ## Add-on Enhancements
 
-openHAB 4.3 brings XX new add-ons, adding support for new devices:
+openHAB 4.3 brings 18 new add-ons, adding support for new devices:
+
+- The [Broadlink binding](/addons/bindings/broadlink) allows you to control Broadlink devices like IR/RF remotes and smart plugs.
+- The [Electrolux Appliance binding](/addons/bindings/electroluxappliance) provides support for Electrolux connected appliances like air purifier and washing machine.
+- The [ENTSO-E binding](/addons/bindings/entsoe) fetches day-ahead electricity spot prices from ENTSO-E, the European Network of Transmission System Operators for Electricity.
+- The [FENECON binding](/addons/bindings/fenecon) allows you to control FENECON energy storage systems.
+- The [Flume binding](/addons/bindings/flume) provides support for Flume water meters.
+- The [FPP binding](/addons/bindings/mqtt.fpp) allows you to control FPP (Falcon Player) instances via MQTT.
+- The [HueSync binding](/addons/bindings/huesync) integrates the Play HDMI Sync Box from Philips Hue.
+- The [Hunter Douglas PowerView for Bluetooth binding](/addons/bindings/bluetooth.hdpowerview) allows you to control Hunter Douglas PowerView motorized shades via Bluetooth Low Energy.
+- The [Kermi binding](/addons/bindings/modbus.kermi) integrates the X-Center Device of Kermi Heat pumps via Modbus.
+- The [LinkTap binding](/addons/bindings/linktap) provides support for LinkTap smart watering solutions.
+- The [Met Office DataHub binding](/addons/bindings/metofficedatahub) fetches weather data from the UK based Met Office DataHub weather service.
+- The [myUplink binding](/addons/bindings/myuplink) retrieves "live data" from Nibe heat pumps through the myUplink cloud service.
+- The [Pi-Hole binding](/addons/bindings/pihole) integrates Pi-Hole.
+- The [Solarman Logger binding](/addons/bindings/solarman) supports reading data from Solarman loggers when connected to a supported inverter.
+- The [SunSynk binding](/addons/bindings/sunsynk) integrates SunSynk inverters through the Sun Synk Connect cloud service.
+- The [Teslascope binding](/addons/bindings/teslascope) provides support for Teslascope, a service that provides data from Tesla vehicles.
+- The [VisualCrossing binding](/addons/bindings/visualcrossing) fetches weather data from the Visual Crossing weather service.
+- The [WiZ binding](/addons/bindings/wiz) integrates WiZ smart devices, mostly smart light bulbs.
 
 But not only were new bindings added, some existing bindings also received massive improvements:
 
