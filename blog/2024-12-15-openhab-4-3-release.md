@@ -276,6 +276,8 @@ The button opens an overlay to fine-tune your color temperature when you click o
 In the overlay, a white color gradient lets you pick and set the color temperature.
 The content of this button can also show what is the current color temperature.
 This new element is already supported by Basic UI and the Android app.
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/sitemap_demo_colortemperaturepicker.png"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/sitemap_demo_colortemperaturepicker2.png"/></p>
 
 ## Basic UI Enhancements
 
@@ -284,6 +286,7 @@ _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 There is no revolution in Basic UI in this version but some very cool small changes which I think will make many users happy.
 
 In addition to the support of the new `Colortemperaturepicker` sitemap element, the `Colorpicker` element has been enhanced to show what is the current selected color, without the need to open the picker by clicking on any button.
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/sitemap_demo_colorpicker.png"/></p>
 
 In the previous version, the `Switch` element with buttons was already improved to arrange buttons on multiple lines when there was not enough space.
 It has been further improved in openHAB 4.3 with an optimized button layout that also takes into account the element's label.
