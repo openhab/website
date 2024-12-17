@@ -154,7 +154,25 @@ The example for the new [widget action confirmation feature](#confirmation-dialo
 
 Please refer to [the documentation](/docs/ui/components/oh-card.html) for more information.
 
-<!-- ### Interactive SVGs for Canvas Pages -->
+### Interactive SVGs for Canvas Pages
+
+openHAB already provides great possibilities to create interactive floorplan-like pages through the following ways:
+
+- Floorplan pages use the Leaflet map library to display markers or other elements over a custom image of your choice.
+  Markers are limited to showing a marker icon and a tooltip, they cannot display text or provide complex controls like widgets do.
+  Floorplans can be zoomed and dragged.
+- Fixed canvas layout pages display the well-known layout widgets over a custom image of your choice.
+  This allows access to all functionality provided by the responsive layout pages, but canvas is neither zoomable nor draggable.
+
+Both approaches have a common limitation:
+Markers respective widgets are always placed on top of the background image, limiting the interactivity of the floorplan.
+
+openHAB 4.3 fixes this limitation with the introduction of interactive SVG backgrounds for fixed canvas layout.
+The interactivity of the actual background SVG image allows creating truly interactive floorplans, where elements of the SVG image can control Items and visualize Item state.
+
+Please refer to the [comprehensive documentation](/docs/ui/layout-pages-fixed.html#interactive-svg-backgrounds) for more information.
+
+Thousand thanks to Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)) for implementing this new feature!
 
 ### Model Cards & Tabs on any Page
 
@@ -423,7 +441,7 @@ Historically, openHAB's support for these devices has been buggy and missing man
 This release aims to make that practice no longer necessary, by fixing many bugs and adding support for many missing features.
 
 The biggest change is the overall structure of Thing Type and Channel IDs.
-Whereas previously you may have had a Channel UID like `mqtt:homeassistant_zigbee2mqtt_5F0x8cf681fffe32e58e:mosquitto:zigbee2mqtt_5F0x8cf681fffe32e58e:0x8cf681fffe32e58e_5Fbattery_5Fzigbee2mqtt#sensor`, that same channel might now be `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158d0007d3d7fa:battery`.
+Whereas previously you may have had a Channel UID like `mqtt:homeassistant_zigbee2mqtt_5F0x8cf68:mosquitto:zigbee2mqtt_5F0x8cf68:0x8cf68_5Fbattery_5Fzigbee2mqtt#sensor`, that same channel might now be `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158:battery`.
 Note that this release is transitional, and only newly discovered Things will use the new style IDs.
 You can opt in by deleting and re-creating your Things.
 Proper support for persisting dynamic Thing Types has been added, so the 2-minute delay before things would initialize after booting openHAB has been eliminated.
