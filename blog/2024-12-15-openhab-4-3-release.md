@@ -310,11 +310,43 @@ Note that this example already uses the [new `oh-card` component](#introducing-o
 
 </details>
 
-<!--
 ## Blockly Enhancements
 
-_Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), openHAB Blockly Maintainer_
--->
+openHAB 4.3 brings a major change to Blockly:
+To keep our code maintainable, reduce code complexity and avoid confusion with the different Blockly code generations among users, we have removed support for NashornJS code generation.
+Blockly on GraalJS (using the JavaScript Scripting add-on) has been added with openHAB 4.0 and all Blockly development since then focused on GraalJS code generation, which means all new features are only supported by GraalJS and not NashornJS Blockly.
+
+What does this change mean for remaining users of Blockly on NashornJS?
+
+- Your existing Blocklies will keep working, as the generated code can still be run.
+- When editing an existing Blockly that generated code for NashornJS, the Blockly editor will ask you to save the script again to generate new code for GraalJS. Make sure you have the [JavaScript Scripting add-on](/addons/automation/jsscripting) installed.
+
+### HTTP Block Enhancement
+
+HTTP blocks have been further enhanced to:
+
+- support adding query parameters in a dictionary.
+- validate the payload type based on the set MIME type for POST and PUT requests.
+- support constructing form data (including URL encoding the parameters) from a dictionary for POST and PUT requests.
+
+Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for these enhancements.
+
+### New Notification Blocks
+
+You might have already wondered how to use the [new notification features from openHAB 4.2](/blog/2024-07-07-openhab-4-2-release.html#mobile-notification-enhancements).
+With openHAB 4.3, Blockly has got you covered:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/blockly-notification-blocks.jpg"/></p>
+
+These new blocks provide access to the full set of new functionality and are meant to replace the existing Blocks, though these are still available and no automatic conversion is done.
+
+The new "send cloud notification" block can be extended by clicking on the buttons left on its label to enable all inputs and send highly sophisticated notifications:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/blockly-notification-block-send.png"/></p>
+
+After sending a notification, it can be hidden by using the new "hide notification by reference or tag" block.
+
+Many thanks to Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)) for making Blockly even more powerful!
 
 ## Sitemap Enhancements
 
