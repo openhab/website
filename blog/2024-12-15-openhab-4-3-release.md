@@ -438,10 +438,11 @@ Please report any issues you have with specific devices in [GitHub issues](https
 _Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
 
 There have been a number of enhancements to openHABian, too.
-Big ones among these were the move to a Bullseye-based Linux distribution, which required us to rewrite major parts of the openHABian code.
+Big ones among these were the move from a Bullseye-based to a Bookworm-based Linux distribution, which required us to rewrite major parts of the openHABian code.
 While we still release new 32-bit images, we finally turned to "all 64-bit" as the recommended platform setup.
 
 Take a look at the [openHABian changelog](https://github.com/openhab/openhabian/releases/latest) for the full list of changes.
+Please note that openHAB and openHABian have different and independent release cycles.
 
 # An outlook towards openHAB 5
 
