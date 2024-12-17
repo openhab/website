@@ -339,9 +339,9 @@ What does this change mean for remaining users of Blockly on NashornJS?
 - Your existing Blocklies will keep working, as the generated code can still be run.
 - When editing an existing Blockly that generated code for NashornJS, the Blockly editor will ask you to save the script again to generate new code for GraalJS. Make sure you have the [JavaScript Scripting add-on](/addons/automation/jsscripting) installed.
 
-### HTTP Block Enhancement
+### HTTP Block Enhancements
 
-HTTP blocks have been further enhanced to:
+HTTP block has been further enhanced to:
 
 - support adding query parameters in a dictionary.
 - validate the payload type based on the set MIME type for POST and PUT requests.
