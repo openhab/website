@@ -441,7 +441,13 @@ Historically, openHAB's support for these devices has been buggy and missing man
 This release aims to make that practice no longer necessary, by fixing many bugs and adding support for many missing features.
 
 The biggest change is the overall structure of Thing Type and Channel IDs.
-Whereas previously you may have had a Channel UID like `mqtt:homeassistant_zigbee2mqtt_5F0x8cf68:mosquitto:zigbee2mqtt_5F0x8cf68:0x8cf68_5Fbattery_5Fzigbee2mqtt#sensor`, that same channel might now be `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158:battery`.
+Whereas previously you might have had a channel ID like the first, that same channel might now be like the second:
+<pre style="padding: 0.25rem 0.5rem;">
+  `mqtt:homeassistant_zigbee2mqtt_5F0x8cf68:mosquitto:zigbee2mqtt_5F0x8cf68:0x8cf68_5Fbattery_5Fzigbee2mqtt#sensor`
+</pre>
+<pre style="padding: 0.25rem 0.5rem;">
+  `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158:battery`
+</pre>
 Note that this release is transitional, and only newly discovered Things will use the new style IDs.
 You can opt in by deleting and re-creating your Things.
 Proper support for persisting dynamic Thing Types has been added, so the 2-minute delay before things would initialize after booting openHAB has been eliminated.
