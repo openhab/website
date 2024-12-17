@@ -103,6 +103,11 @@ In case you want to share a specific log entry with others, you can easily copy 
 Huge thanks to my maintainer colleague Chris Jackson ([@cdjackson](https://github.com/cdjackson)) for this awesome contribution,
 as well as Yannick Schaus ([@ghys](https://github.com/ghys)) for his review and last minute fixes and improvements!
 
+::: tip Note
+If you use a reverse proxy like nginx, make sure your proxy is using HTTP 1.1 to connect to openHAB.
+For nginx, set the `proxy_http_version 1.1;` directive inside the `location` block that proxies openHAB.
+:::
+
 ### Thing Actions
 
 openHAB 4.3 finally introduces the ability to invoke (most) Thing actions from the UI, as well as to use them in UI-based rules.
