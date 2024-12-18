@@ -103,6 +103,11 @@ In case you want to share a specific log entry with others, you can easily copy 
 Huge thanks to my maintainer colleague Chris Jackson ([@cdjackson](https://github.com/cdjackson)) for this awesome contribution,
 as well as Yannick Schaus ([@ghys](https://github.com/ghys)) for his review and last minute fixes and improvements!
 
+::: tip Note
+If you use a reverse proxy like nginx, make sure your proxy is using HTTP 1.1 to connect to openHAB.
+For nginx, set the `proxy_http_version 1.1;` directive inside the `location` block that proxies openHAB.
+:::
+
 ### Thing Actions
 
 openHAB 4.3 finally introduces the ability to invoke (most) Thing actions from the UI, as well as to use them in UI-based rules.
@@ -149,7 +154,27 @@ The example for the new [widget action confirmation feature](#confirmation-dialo
 
 Please refer to [the documentation](/docs/ui/components/oh-card.html) for more information.
 
-<!-- ### Interactive SVGs for Canvas Pages -->
+### Interactive SVGs for Canvas Pages
+
+openHAB already provides great possibilities to create interactive floorplan-like pages through the following ways:
+
+- Floorplan pages use the Leaflet map library to display markers or other elements over a custom image of your choice.
+  Markers are limited to showing a marker icon and a tooltip, they cannot display text or provide complex controls like widgets do.
+  Floorplans can be zoomed and dragged.
+- Fixed canvas layout pages display the well-known layout widgets over a custom image of your choice.
+  This allows access to all functionality provided by the responsive layout pages, but canvas is neither zoomable nor draggable.
+
+Both approaches have a common limitation:
+Markers respective widgets are always placed on top of the background image, limiting the interactivity of the floorplan.
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/interactive-floorplan.png"/></p>
+
+openHAB 4.3 fixes this limitation with the introduction of interactive SVG backgrounds for fixed canvas layout.
+The interactivity of the actual background SVG image allows creating truly interactive floorplans, where elements of the SVG image can control Items and visualize Item state.
+
+Please refer to the [comprehensive documentation](/docs/ui/layout-pages-fixed.html#interactive-svg-backgrounds) for more information.
+
+Thousand thanks to Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)) for implementing this new feature!
 
 ### Model Cards & Tabs on any Page
 
@@ -305,11 +330,46 @@ Note that this example already uses the [new `oh-card` component](#introducing-o
 
 </details>
 
-<!--
 ## Blockly Enhancements
 
-_Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)), openHAB Blockly Maintainer_
--->
+openHAB 4.3 brings a major change to Blockly:
+To keep our code maintainable, reduce code complexity and avoid confusion with the different Blockly code generations among users, we have removed support for NashornJS code generation.
+Blockly on GraalJS (using the JavaScript Scripting add-on) has been added with openHAB 4.0 and all Blockly development since then focused on GraalJS code generation, which means all new features are only supported by GraalJS and not NashornJS Blockly.
+
+What does this change mean for remaining users of Blockly on NashornJS?
+
+- Your existing Blocklies will keep working, as the generated code can still be run.
+- When editing an existing Blockly that generated code for NashornJS, the Blockly editor will ask you to save the script again to generate new code for GraalJS. Make sure you have the [JavaScript Scripting add-on](/addons/automation/jsscripting) installed.
+
+### HTTP Block Enhancements
+
+HTTP block has been further enhanced to:
+
+- support adding query parameters in a dictionary.
+- validate the payload type based on the set MIME type for POST and PUT requests.
+- support constructing form data (including URL encoding the parameters) from a dictionary for POST and PUT requests.
+
+Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for these enhancements.
+
+### New Notification Blocks
+
+You might have already wondered how to use the [new notification features from openHAB 4.2](/blog/2024-07-07-openhab-4-2-release.html#mobile-notification-enhancements).
+With openHAB 4.3, Blockly has got you covered:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/blockly-notification-blocks.jpg"/></p>
+
+These new blocks provide easy access to the full set of new functionality and are meant to replace the existing Blocks, though these are still available and no automatic conversion is done.
+
+The new "send cloud notification" block can be extended by clicking on the buttons left on its label to enable all inputs and send highly sophisticated notifications:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/blockly-notification-block-send.png"/></p>
+
+After sending a notification, it can be hidden by using the new "hide notification by reference or tag" block.
+In particular a great option is the possibility to add action buttons that allow triggering notification-related actions on openHAB (like closing a roller shutter when the notification says that the window is open).
+
+
+
+Many thanks to Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)) for making Blockly even more powerful!
 
 ## Sitemap Enhancements
 
@@ -386,7 +446,13 @@ Historically, openHAB's support for these devices has been buggy and missing man
 This release aims to make that practice no longer necessary, by fixing many bugs and adding support for many missing features.
 
 The biggest change is the overall structure of Thing Type and Channel IDs.
-Whereas previously you may have had a Channel UID like `mqtt:homeassistant_zigbee2mqtt_5F0x8cf681fffe32e58e:mosquitto:zigbee2mqtt_5F0x8cf681fffe32e58e:0x8cf681fffe32e58e_5Fbattery_5Fzigbee2mqtt#sensor`, that same channel might now be `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158d0007d3d7fa:battery`.
+Whereas previously you might have had a channel ID like the first, that same channel might now be like the second:
+<pre style="padding: 0.25rem 0.5rem;">
+  `mqtt:homeassistant_zigbee2mqtt_5F0x8cf68:mosquitto:zigbee2mqtt_5F0x8cf68:0x8cf68_5Fbattery_5Fzigbee2mqtt#sensor`
+</pre>
+<pre style="padding: 0.25rem 0.5rem;">
+  `mqtt:homeassistant:mosquitto:zigbee2mqtt_5F0x00158:battery`
+</pre>
 Note that this release is transitional, and only newly discovered Things will use the new style IDs.
 You can opt in by deleting and re-creating your Things.
 Proper support for persisting dynamic Thing Types has been added, so the 2-minute delay before things would initialize after booting openHAB has been eliminated.
