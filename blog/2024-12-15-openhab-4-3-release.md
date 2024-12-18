@@ -167,6 +167,8 @@ openHAB already provides great possibilities to create interactive floorplan-lik
 Both approaches have a common limitation:
 Markers respective widgets are always placed on top of the background image, limiting the interactivity of the floorplan.
 
+<p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/interactive-floorplan.png"/></p>
+
 openHAB 4.3 fixes this limitation with the introduction of interactive SVG backgrounds for fixed canvas layout.
 The interactivity of the actual background SVG image allows creating truly interactive floorplans, where elements of the SVG image can control Items and visualize Item state.
 
@@ -356,13 +358,16 @@ With openHAB 4.3, Blockly has got you covered:
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/blockly-notification-blocks.jpg"/></p>
 
-These new blocks provide access to the full set of new functionality and are meant to replace the existing Blocks, though these are still available and no automatic conversion is done.
+These new blocks provide easy access to the full set of new functionality and are meant to replace the existing Blocks, though these are still available and no automatic conversion is done.
 
 The new "send cloud notification" block can be extended by clicking on the buttons left on its label to enable all inputs and send highly sophisticated notifications:
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2024-12-15-openhab-4-3-release/blockly-notification-block-send.png"/></p>
 
 After sending a notification, it can be hidden by using the new "hide notification by reference or tag" block.
+In particular a great option is the possibility to add action buttons that allow triggering notification-related actions on openHAB (like closing a roller shutter when the notification says that the window is open).
+
+
 
 Many thanks to Stefan Höhn ([@stefan-hoehn](https://github.com/stefan-hoehn)) for making Blockly even more powerful!
 
