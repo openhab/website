@@ -5,7 +5,7 @@
       <div class="os-tab"
         v-for="system in systems"
         :class="{ 'selected': selectedSystem === system[0] }" @click="selectSystem(system[0])">
-        <img :src="`/os/${system[0]}.${system[0] === 'pine64' ? 'png' : 'svg'}`">
+        <img :src="`/os/${system[0]}.svg`">
         <div class="os-label">{{system[1]}}</div>
       </div>
     </div>
@@ -50,7 +50,7 @@
       <p v-if="selectedVersion === 'snapshot'"><strong>Snapshot</strong> versions are at most 1 or 2 days old and include the latest code. Use a snapshot for testing out very recent changes, but be aware some snapshots might be unstable. Use in production at your own risk!</p>
     </div>
 
-    <div v-if="selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
+    <div v-if="selectedSystem === 'raspberry-pi'">
       <hr>
       <h3>{{optionNumber('openhabian')}}Use Raspberry Pi imager</h3>
       <ol>
@@ -67,16 +67,20 @@
       </ol>
     </div>
 
-    <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi' || selectedSystem === 'pine64'">
+    <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi'">
       <hr>
       <h3>{{optionNumber('package')}}Install the APT Packages <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
+      <div v-if="selectedVersion !== 'stable'" class="warning custom-block">
+        <p class="custom-block-title">REMINDER</p>
+        <p>openHAB 5 requires Java 21!</p>
+      </div>
       <div class="tip custom-block">
         <p class="custom-block-title">TIP</p>
         <p>On Debian systems you can also opt to add our openHABian turn-key solution on top of your existing operating system, follow <router-link to="/docs/installation/openhabian.html#other-linux-systems-add-openhabian-just-like-any-other-software">these instructions instead</router-link> to check whether your system is eligible and install it.</p>
         <p v-if="selectedSystem === 'raspberry-pi'">For Raspberry Pi, however, we strongly recommend flashing the complete OS image, see above.</p>
       </div>
       <ol>
-        <li>Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-html="javaDownloadInstruction" />
         <li>Add the repository key</li>
           <div class="language-shell"><pre class="language-shell"><code>curl -fsSL "https://openhab.jfrog.io/artifactory/api/gpg/key/public" | gpg --dearmor > openhab.gpg
 sudo mkdir /usr/share/keyrings
@@ -98,8 +102,12 @@ sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg</code></pre></div>
     <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
       <hr>
       <h3>{{optionNumber('package')}}Install the RPM Packages (Recommended)</h3>
+      <div v-if="selectedVersion !== 'stable'" class="warning custom-block">
+        <p class="custom-block-title">REMINDER</p>
+        <p>openHAB 5 requires Java 21!</p>
+      </div>
       <ol>
-        <li>Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-html="javaDownloadInstruction" />
         <li>Create a new <code>/etc/yum.repos.d/openhab.repo</code> file with the following content:</li>
         <div class="language-ini">
 <pre class="language-ini"><code>[openHAB-{{selectedVersion === 'stable' ? 'Stable' : selectedVersion === 'testing' ? 'Testing' : 'Snapshots'}}]
@@ -165,8 +173,12 @@ usermod -a -G openhab myownuser
     <div v-if="selectedSystem !== 'docker'">
       <hr>
       <h3>{{optionNumber('manual')}}Manual Installation</h3>
+      <div v-if="selectedVersion !== 'stable'" class="warning custom-block">
+        <p class="custom-block-title">REMINDER</p>
+        <p>openHAB 5 requires Java 21!</p>
+      </div>
       <ol>
-        <li>Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)</li>
+        <li v-html="javaDownloadInstruction" />
         <li>Download and extract the openHAB runtime distribution:</li>
         <div class="download-button-container">
           <a class="download-button big" :href="runtimeDownloadLink" download>Download openHAB {{currentDownloadVersion}} {{currentVersionLabel}} Runtime</a>
@@ -359,7 +371,6 @@ export default {
         ['tux', 'Linux'],
         ['win10', 'Windows'],
         ['apple', 'macOS'],
-        // ['pine64', 'PINE A64'],
         ['docker', 'Docker'],
       ],
       selectedSystem: 'raspberry-pi',
@@ -426,6 +437,12 @@ export default {
       if (this.selectedVersion) {
         return this.versions.find(v => v[0] === this.selectedVersion)[1]
       }
+    },
+    javaDownloadInstruction () {
+      if (this.selectedVersion !== 'stable') {
+        return `Install a recent Java 21 platform (we recommend your OS package repository provided OpenJDK build, or the <a target="_blank" href="https://adoptium.net/de/temurin/releases/?version=21&package=jre">Eclipse Adoptium Temurin</a> builds of OpenJDK)`
+      }
+      return `Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)`
     }
   }
 }
