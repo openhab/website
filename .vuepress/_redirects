@@ -29,6 +29,11 @@
 /link/jrubyscripting-script     /addons/automation/jrubyscripting/#library-details
 /link/jrubyscripting-transform  /addons/automation/jrubyscripting/#transformations
 
+# Dynamic redirects to raw docs source files with versioning support, used in openHAB's main UI
+/link/docs-src/4.2.x/*    https://raw.githubusercontent.com/openhab/openhab-docs/refs/heads/final-4.2.x/:splat 301
+/link/docs-src/4.3.x/*    https://raw.githubusercontent.com/openhab/openhab-docs/refs/heads/final-stable/:splat 301
+/link/docs-src/5.0.x/*    https://raw.githubusercontent.com/openhab/openhab-docs/refs/heads/final/:splat 301
+
 # Redirect download locations
 
 ## Explicit redirect reflecting the JFrog folder structure
