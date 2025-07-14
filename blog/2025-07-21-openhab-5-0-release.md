@@ -114,9 +114,26 @@ This not only makes it faster to build your semantic model, it also makes it eas
 
 A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
 
+### Regenerate Rules from Templates
+
 ### Copy DSL & YAML Definitions
 
 ### Semantic Tags Maintenance & Treeview Picker
+
+openHAB 4.1 introduced the ability to extend the semantic model with custom tags through a YAML configuration file.
+In openHAB 5.0, we have added support for maintaining these custom tags through the UI.
+
+The developer tools now include a new _Semantic Tags_ section, where you can view, edit, and delete your custom tags.
+This section also allows you to check the structure of the semantic tags and their relationships, making it easier to understand the concept of the semantic model and how to use it effectively.
+It features both a treeview and a code tab, allowing you to switch between a visual representation and the underlying YAML code.
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-maintenance.webp"/></p>
+
+In addition to the maintenance page, the semantics picker in the Item editor has been updated to use the treeview, making it easier to select the correct semantic tag for your Items by visualising the hierarchy of tags:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-picker.gif"/></p>
+
+Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege))!
 
 ### Additional Enhancements
 
@@ -124,6 +141,7 @@ A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for w
 - **Specific Browser Titles:** The browser title now reflects the current page, making it easier to identify the contents of the openHAB tabs in your browser.
 - **Log Viewer Enhancements:** The log viewer has been enhanced with a history buffer, allowing you to scroll back through previous log entries, and a log details popup that provides more information about each log entry. 
   Additionally, a text mode has been introduced as alternative to the default table view, having the look and feel of the well-known [frontail](https://github.com/mthenw/frontail) log viewer.
+- **Thing Inbox:** Add search, approve multiple Things at once and allow to change Thing ID & label when approving Things.
 
 ## Blockly Enhancements
 
