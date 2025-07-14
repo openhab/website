@@ -75,6 +75,16 @@ If you don't want to wait, you can install [the beta version via the Marketplace
 It's also important to note that this binding was not developed as a replacement for HabAPP, which is completely independent, still actively developed, and enjoys a large community.
 Your choice among these two options depends entirely on your personal preference.
 
+## Home Assistant Binding
+
+_Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
+
+On the subject of Python, the GraalVM work has enabled the Home Assistant MQTT binding to switch from using the Java Jinjava library for emulating Python's Jinja to actually running Python and Jinja.
+With this support, openHAB has imported some of the actual Home Assistant Python code, so template rendering from devices should be near-perfect, without constantly playing a game of catch-up as we find devices that use some feature of Python, Jinja, or Home Assistant that we hadn't previously conceived of.
+We've also taken this one step further, and re-implemented parsing of the Home Assistant JSON discovery metadata via Home Assistant's own classes, which fixes myriad strange bugs and incompatibilities from attempting to implement in Java using only Home Assistant documentation as a guide.
+We now get the benefit of exactly matching many of those minor idiosyncrasies that aren't documented.
+There's still work to do in the portion of the binding that connects incoming data to openHAB channels, but it's now sitting on a much stronger base so that any issues there can be more quickly iterated on and fixed.
+
 ## Z-Wave JS Binding
 
 _Leo Siepel ([@lsiepel](https://github.com/lsiepel)), openHAB Maintainer_
@@ -88,6 +98,17 @@ Importantly, the existing native Z-Wave binding remains fully supported, giving 
 More information and discussion can be found on the community forum: [Z-Wave JS UI in place of openHAB Z-Wave binding](https://community.openhab.org/t/zwave-js-ui-in-place-of-oh-zwave-binding/150007)
 
 ## Core Runtime Enhancements
+
+### Scripted Item, Metadata, Item-Channel-Link & Thing Providers
+
+_Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
+
+openHAB 5.0 introduces a new _provider_ script extension that allows scripts to provide Items, Metadata, Item-Channel-Links and Things from scripts through special registry delegates and wrappers.
+This powerful new feature allows you to create them in a configuration as code style, which is especially useful for advanced users who want to manage their openHAB configuration in a more programmatic way.
+The core runtime handles the lifecycle of them for you, they are automatically created, updated and deleted when the script is reloaded or removed.
+
+We are currently working on implementing this in the JavaScript helper library, which will provide an easy-to-use JavaScript API to those new core features.
+Stay tuned for the next [openhab-js release](https://github.com/openhab/openhab-js) to get started with this new feature from your JavaScript scripts!
 
 ## Main UI Enhancements
 
@@ -114,9 +135,9 @@ This not only makes it faster to build your semantic model, it also makes it eas
 
 A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
 
-### Copy DSL & YAML Definitions
+### Regenerate Rules from Templates
 
-### Semantic Tags Maintenance & Treeview Picker
+### Copy DSL & YAML Definitions
 
 ### State Series chart
 
@@ -126,12 +147,30 @@ This series can be used on any time-based chart with either an oh-value-axis or 
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/oh-state-series.png"/></p>
 
+### Semantic Tags Maintenance & Treeview Picker
+
+openHAB 4.1 introduced the ability to extend the semantic model with custom tags through a YAML configuration file.
+In openHAB 5.0, we have added support for maintaining these custom tags through the UI.
+
+The developer tools now include a new _Semantic Tags_ section, where you can view, edit, and delete your custom tags.
+This section also allows you to check the structure of the semantic tags and their relationships, making it easier to understand the concept of the semantic model and how to use it effectively.
+It features both a treeview and a code tab, allowing you to switch between a visual representation and the underlying YAML code.
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-maintenance.webp"/></p>
+
+In addition to the maintenance page, the semantics picker in the Item editor has been updated to use the treeview, making it easier to select the correct semantic tag for your Items by visualising the hierarchy of tags:
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-picker.gif"/></p>
+
+Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege))!
+
 ### Additional Enhancements
 
 - **Widget Config:** The widget config popup has been redesigned to support live updates, dirty checking and be movable, so you can watch the changes in your page while editing the widget config.
 - **Specific Browser Titles:** The browser title now reflects the current page, making it easier to identify the contents of the openHAB tabs in your browser.
 - **Log Viewer Enhancements:** The log viewer has been enhanced with a history buffer, allowing you to scroll back through previous log entries, and a log details popup that provides more information about each log entry.
   Additionally, a text mode has been introduced as alternative to the default table view, having the look and feel of the well-known [frontail](https://github.com/mthenw/frontail) log viewer.
+- **Thing Inbox:** Add search, approve multiple Things at once and allow to change Thing ID & label when approving Things.
 
 ## Blockly Enhancements
 
