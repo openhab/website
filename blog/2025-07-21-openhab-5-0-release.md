@@ -16,7 +16,7 @@ TODO
 # Activity
 
 As you'd expect from any new openHAB release, we have had a high activity across all our GitHub repositories.
-We therefore want to share a few statistics about our three main repositories: Core, add-ons and UIs.
+We therefore want to share a few statistics about our three main repositories: Core, add-ons, and UIs.
 
 [openHAB Core](https://github.com/openhab/openhab-core) has received xxx pull requests in total, with xxx bug fixes and xxx enhancements resulting in xx,yyy lines of added code.
 
@@ -24,7 +24,7 @@ xx new add-ons, xxx bug fixes and xxx enhancements were contributed in xxx pull 
 
 Our [openHAB web UIs](https://github.com/openhab/openhab-webui) have received xxx pull requests, including xxx bug fixes and xxx enhancements resulting in xx,yyy lines of code added.
 
-It is worth to mention, that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
+It is worth mentioning that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
 Many thanks to all our contributors for driving openHAB forward!
 
 Again, it is time to shout out to our top code contributors per repository (having done the most commits) for this new release:
@@ -107,7 +107,7 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 ### Sitemap Editor Drag & Drop
 
 When designing sitemaps through the UI, it was very cumbersome to move elements around, as you had to delete and re-add them in the desired order, or cut and paste the DSL code in the code tab.
-With openHAB 5.0, we have introduced a drag & drop feature to the sitemap editor, allowing you to easily rearrange elements in the sitemap:
+With openHAB 5.0, we have introduced a drag and drop feature to the sitemap editor, allowing you to easily rearrange elements in the sitemap:
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/sitemap-edit-dragdrop.gif"/></p>
 
@@ -115,7 +115,7 @@ Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for imple
 
 ### Model Editor Drag & Drop
 
-Similarly to the sitemap editor, the model editor now supports drag & drop for moving semantic tags around.
+Similarly to the sitemap editor, the model editor now supports drag and drop for moving semantic tags around.
 This not only makes it faster to build your semantic model, it also makes it easier to ensure that your model is valid and follows the best practices by introducing numerous validation checks.
 
 <div align="center" class="row">
