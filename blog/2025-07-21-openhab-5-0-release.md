@@ -75,16 +75,6 @@ If you don't want to wait, you can install [the beta version via the Marketplace
 It's also important to note that this binding was not developed as a replacement for HabAPP, which is completely independent, still actively developed, and enjoys a large community.
 Your choice among these two options depends entirely on your personal preference.
 
-## Home Assistant Binding
-
-_Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
-
-On the subject of Python, the GraalVM work has enabled the Home Assistant MQTT binding to switch from using the Java Jinjava library for emulating Python's Jinja to actually running Python and Jinja.
-With this support, openHAB has imported some of the actual Home Assistant Python code, so template rendering from devices should be near-perfect, without constantly playing a game of catch-up as we find devices that use some feature of Python, Jinja, or Home Assistant that we hadn't previously conceived of.
-We've also taken this one step further, and re-implemented parsing of the Home Assistant JSON discovery metadata via Home Assistant's own classes, which fixes myriad strange bugs and incompatibilities from attempting to implement in Java using only Home Assistant documentation as a guide.
-We now get the benefit of exactly matching many of those minor idiosyncrasies that aren't documented.
-There's still work to do in the portion of the binding that connects incoming data to openHAB channels, but it's now sitting on a much stronger base so that any issues there can be more quickly iterated on and fixed.
-
 ## Z-Wave JS Binding
 
 _Leo Siepel ([@lsiepel](https://github.com/lsiepel)), openHAB Maintainer_
@@ -141,9 +131,12 @@ A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for w
 
 ### State Series chart
 
-An additional state series for time based charts to easily see changes of an item's state over time.
-The oh-state-series supports several settings to adjust color palette and the ability to provide a function to map item states (see Air Temp State vs. Air Temp).
-This series can be used on any time-based chart with either an oh-value-axis or oh-category-axis as the y-axis.
+_Jeff James ([@jsjames](https://github.com/jsjames)), openHAB Contributor_
+
+In openHAB 5.0, we have added a new chart series type for time-based charts to easily see changes of an Item's state over time.
+It is especially useful for Items that have a limited set of states, such as _ON_ and _OFF_, or _OPEN_ and _CLOSED_, but can also be used for Items with more complex states, such as _Air Temp State_ vs. _Air Temp_ in the example below.
+The new [`oh-state-series`](/docs/ui/components/oh-state-series.html) supports several settings to adjust colour palette and the ability to provide a function to map item states (see _Air Temp State_ vs. _Air Temp_ in the example below).
+This series can be used on any time-based chart with either an `oh-value-axis` or `oh-category-axis` as the y-axis.
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/oh-state-series.png"/></p>
 
@@ -200,11 +193,17 @@ But not only were new bindings added, some existing bindings also received massi
 
 > Probably shout out our top reviewers.
 
-### MQTT / Home Assistant
+### MQTT Home Assistant Binding
 
 _Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
 
-> Actual Home Assistant Jinja runningin GraalPython, ...
+On the subject of Python, the GraalVM work has enabled the Home Assistant MQTT binding to switch from using the Java Jinjava library for emulating Python's Jinja to actually running Python and Jinja.
+This allows openHAB to import some of the actual Home Assistant Python code, so template rendering from devices should be near-perfect, without constantly playing a game of catch-up as we find devices that use some feature of Python, Jinja, or Home Assistant that we hadn't previously conceived of.
+
+We've also taken this one step further, and re-implemented parsing of the Home Assistant JSON discovery metadata via Home Assistant's own classes, which fixes myriad strange bugs and incompatibilities from attempting to implement in Java using only Home Assistant documentation as a guide.
+We now get the benefit of exactly matching many of those minor idiosyncrasies that aren't documented.
+There's still work to do in the portion of the binding that connects incoming data to openHAB channels.
+However, it's now sitting on a much stronger base so that any issues there can be more quickly iterated on and fixed.
 
 ## openHABian Enhancements
 
