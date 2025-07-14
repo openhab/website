@@ -75,6 +75,16 @@ If you don't want to wait, you can install [the beta version via the Marketplace
 It's also important to note that this binding was not developed as a replacement for HabAPP, which is completely independent, still actively developed, and enjoys a large community.
 Your choice among these two options depends entirely on your personal preference.
 
+## Home Assistant Binding
+
+_Cody Cutrer ([@ccutrer](https://github.com/ccutrer)), openHAB Maintainer_
+
+On the subject of Python, the GraalVM work has enabled the Home Assistant MQTT binding to switch from using the Java Jinjava library for emulating Python's Jinja to actually running Python and Jinja.
+With this support, openHAB has imported some of the actual Home Assistant Python code, so template rendering from devices should be near-perfect, without constantly playing a game of catch-up as we find devices that use some feature of Python, Jinja, or Home Assistant that we hadn't previously conceived of.
+We've also taken this one step further, and re-implemented parsing of the Home Assistant JSON discovery metadata via Home Assistant's own classes, which fixes myriad strange bugs and incompatibilities from attempting to implement in Java using only Home Assistant documentation as a guide.
+We now get the benefit of exactly matching many of those minor idiosyncrasies that aren't documented.
+There's still work to do in the portion of the binding that connects incoming data to openHAB channels, but it's now sitting on a much stronger base so that any issues there can be more quickly iterated on and fixed.
+
 ## Z-Wave JS Binding
 
 _Leo Siepel ([@lsiepel](https://github.com/lsiepel)), openHAB Maintainer_
