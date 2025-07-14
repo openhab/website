@@ -54,6 +54,14 @@ _Holger Hees ([@HolgerHees](https://github.com/HolgerHees)), openHAB Maintainer_
 
 _Leo Siepel ([@lsiepel](https://github.com/lsiepel)), openHAB Maintainer_
 
+The openHAB 5.0 release introduces a new [Z-Wave JS binding](/addons/bindings/zwavejs), offering an alternative way to integrate Z-Wave networks into openHAB by connecting to an external [Z-Wave JS](https://zwave-js.github.io/zwave-js/) server.
+This binding is particularly useful for advanced users, large networks, or those seeking cross-platform compatibility—such as when migrating from or running alongside other home automation platforms.
+It supports newer 700/800 series chipsets, S2 security, Smart Start, and provides more robust device management features.
+While the binding does not yet expose every capability of [Z-Wave JS](https://zwave-js.github.io/zwave-js/) (such as NVM backups), these can be accessed via the [Z-Wave JS UI](https://zwave-js.github.io/zwave-js-ui/) directly.
+Importantly, the existing native Z-Wave binding remains fully supported, giving users the flexibility to choose the integration that best fits their needs.
+
+More information and discussion can be found on the community forum: [Z-Wave JS UI in place of openHAB Z-Wave binding](https://community.openhab.org/t/zwave-js-ui-in-place-of-oh-zwave-binding/150007)
+
 ## Core Runtime Enhancements
 
 ## Main UI Enhancements
