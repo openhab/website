@@ -8,10 +8,19 @@ previewimage: /uploads/2025-07-21-openhab-5-0-release/header.webp
 tags:
   - news
 excerpt: >-
-  TODO
+  A new major release of openHAB is here! openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
 ---
+A new major release of openHAB is here! openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
 
-TODO
+Two years have passed since the [last major release](/blog/2023-07-24-openhab-4-0-release.html) of openHAB, and we are proud to announce that the openHAB community has been working hard to bring you a new major release with many new features.
+We have integrated Matter support, added a new Python Scripting add-on, made the semantic model easier to configure and added a new configuration file format.
+But that's not all!
+As usual for major releases, we have also made improvements under the hood, such as updating the underlying Java version to 21, and making Oracle's GraalVM ready for OSGi to stay up to date with the latest technologies.
+
+As this is a new major release, we have a number of breaking changes that are required for the new features and improvements.
+So, please have a look at our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/5.0.0) to learn about all breaking changes, new add-ons, enhancements and fixes.
+
+With that being said, we again want to share some statistics that show the progress in numbers and highlight some of the new features that you should not miss.
 
 # Activity
 
@@ -75,17 +84,7 @@ If you don't want to wait, you can install [the beta version via the Marketplace
 It's also important to note that this binding was not developed as a replacement for HabAPP, which is completely independent, still actively developed, and enjoys a large community.
 Your choice among these two options depends entirely on your personal preference.
 
-## Z-Wave JS Binding
-
-_Leo Siepel ([@lsiepel](https://github.com/lsiepel)), openHAB Maintainer_
-
-The openHAB 5.0 release introduces a new [Z-Wave JS binding](/addons/bindings/zwavejs), offering an alternative way to integrate Z-Wave networks into openHAB by connecting to an external [Z-Wave JS](https://zwave-js.github.io/zwave-js/) server.
-This binding is particularly useful for advanced users, large networks, or those seeking cross-platform compatibility—such as when migrating from or running alongside other home automation platforms.
-It supports newer 700/800 series chipsets, S2 security, Smart Start, and provides more robust device management features.
-While the binding does not yet expose every capability of [Z-Wave JS](https://zwave-js.github.io/zwave-js/) (such as NVM backups), these can be accessed via the [Z-Wave JS UI](https://zwave-js.github.io/zwave-js-ui/) directly.
-Importantly, the existing native Z-Wave binding remains fully supported, giving users the flexibility to choose the integration that best fits their needs.
-
-More information and discussion can be found on the community forum: [Z-Wave JS UI in place of openHAB Z-Wave binding](https://community.openhab.org/t/zwave-js-ui-in-place-of-oh-zwave-binding/150007)
+## YAML Configuration Format
 
 ## Core Runtime Enhancements
 
@@ -119,8 +118,8 @@ Similarly to the sitemap editor, the model editor now supports drag and drop for
 This not only makes it faster to build your semantic model, it also makes it easier to ensure that your model is valid and follows the best practices by introducing numerous validation checks.
 
 <div align="center" class="row">
-  <img style="max-width: 45%; min-width: 250px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-1.gif"/>
-  <img style="max-width: 45%; min-width: 250px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-2.gif"/>
+  <img style="max-width: 35%; min-width: 250px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-1.gif"/>
+  <img style="max-width: 35%; min-width: 250px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-2.gif"/>
 </div>
 
 A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
@@ -192,6 +191,18 @@ But not only were new bindings added, some existing bindings also received massi
 - TODO
 
 > Probably shout out our top reviewers.
+
+### Z-Wave JS Binding
+
+_Leo Siepel ([@lsiepel](https://github.com/lsiepel)), openHAB Maintainer_
+
+The openHAB 5.0 release introduces a new [Z-Wave JS binding](/addons/bindings/zwavejs), offering an alternative way to integrate Z-Wave networks into openHAB by connecting to an external [Z-Wave JS](https://zwave-js.github.io/zwave-js/) server.
+This binding is particularly useful for advanced users, large networks, or those seeking cross-platform compatibility—such as when migrating from or running alongside other home automation platforms.
+It supports newer 700/800 series chipsets, S2 security, Smart Start, and provides more robust device management features.
+While the binding does not yet expose every capability of [Z-Wave JS](https://zwave-js.github.io/zwave-js/) (such as NVM backups), these can be accessed via the [Z-Wave JS UI](https://zwave-js.github.io/zwave-js-ui/) directly.
+Importantly, the existing native Z-Wave binding remains fully supported, giving users the flexibility to choose the integration that best fits their needs.
+
+More information and discussion can be found on the community forum: [Z-Wave JS UI in place of openHAB Z-Wave binding](https://community.openhab.org/t/zwave-js-ui-in-place-of-oh-zwave-binding/150007)
 
 ### MQTT Home Assistant Binding
 
