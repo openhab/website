@@ -73,7 +73,7 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 When designing sitemaps through the UI, it was very cumbersome to move elements around, as you had to delete and re-add them in the desired order, or cut and paste the DSL code in the code tab.
 With openHAB 5.0, we have introduced a drag & drop feature to the sitemap editor, allowing you to easily rearrange elements in the sitemap:
 
-> TODO: Add GIF image
+<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/sitemap-edit-dragdrop.gif"/></p>
 
 Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for implementing this feature!
 
