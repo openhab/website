@@ -127,6 +127,12 @@ A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for w
 
 ## Blockly Enhancements
 
+- New Rule-Enable Block to enable or disable rules.
+- New dictionary block to update dictionary entry values
+- Persistence Block: Riemann sum support added
+- Boolean-typed variable added
+- Get Item Previous State added
+
 ## Sitemap Enhancements
 
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
