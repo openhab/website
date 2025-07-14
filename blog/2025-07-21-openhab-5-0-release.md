@@ -68,6 +68,27 @@ More information and discussion can be found on the community forum: [Z-Wave JS 
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
 
+### Sitemap Editor Drag & Drop
+
+When designing sitemaps through the UI, it was very cumbersome to move elements around, as you had to delete and re-add them in the desired order, or cut and paste the DSL code in the code tab.
+With openHAB 5.0, we have introduced a drag & drop feature to the sitemap editor, allowing you to easily rearrange elements in the sitemap:
+
+> TODO: Add GIF image
+
+Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for implementing this feature!
+
+### Model Editor Drag & Drop
+
+Similarly to the sitemap editor, the model editor now supports drag & drop for moving semantic tags around.
+This not only makes it faster to build your semantic model, it also makes it easier to ensure that your model is valid and follows the best practices by introducing numerous validation checks.
+
+<div align="center" class="row">
+  <img style="max-width: 45%; min-width: 250px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-1.gif"/>
+  <img style="max-width: 45%; min-width: 250px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-2.gif"/>
+</div>
+
+A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
+
 ## Blockly Enhancements
 
 ## Sitemap Enhancements
