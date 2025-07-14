@@ -50,6 +50,31 @@ _Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintain
 
 _Holger Hees ([@HolgerHees](https://github.com/HolgerHees)), openHAB Maintainer_
 
+Our new major release introduces a new [Python Scripting add-on](/addons/automation/pythonscripting) based on [GraalPy](https://www.graalvm.org/python/).
+Unlike the [Jython Scripting add-on](/addons/automation/jythonscripting), it offers full Python 3.11 support and is future-proof, as the underlying [GraalPy](https://www.graalvm.org/python/) is actively developed and promoted by Oracle.
+In the long term, it will also completely replace the _outdated_ Jython add-on, but before, Jython will be market as deprecated for a while.
+
+The binding offers the possibility of using Python as a scripting language in UI or file-based rules, as well as in transformation services.
+It also included a helper library that simplifies the use of openHAB's API and provides a more Pythonic interface to interact with openHAB's APIs.
+
+It also offers the following improvements over the Jython binding:
+
+- improved error logging
+- import native `java.*` or `org.openhab.*` Java packages
+- scope module to encapsulate all jsr223 objects
+- rule class to simplify rule setup, logging, and more
+- registry class which wraps/simplifies access to Items, Things, Channels
+- works with native python datatypes like [`datetype`](https://docs.python.org/3/library/datetime.html) instead of [`ZonedDateTime`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/ZonedDateTime.html)
+- all kinds of triggers, actions and services are supported
+- object functions are almost 100% similar to the openHAB Core API
+- dependency watcher to reload scripts when modified
+
+The only current limitation is the lack of PIP support for installing external modules, which will be introduced in the next release.
+If you don't want to wait, you can install [the beta version via the Marketplace](https://community.openhab.org/t/python-scripting-5-0-0-5-9-9/164947).
+
+It's also important to note that this binding was not developed as a replacement for HabAPP, which is completely independent, still actively developed, and enjoys a large community.
+Your choice among these two options depends entirely on your personal preference.
+
 ## Z-Wave JS Binding
 
 _Leo Siepel ([@lsiepel](https://github.com/lsiepel)), openHAB Maintainer_
@@ -88,6 +113,14 @@ This not only makes it faster to build your semantic model, it also makes it eas
 </div>
 
 A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
+
+### Various Enhancements
+
+- Copy DSL & YAML definitions: @jimtng @lolodomo
+- Widget config: Live updates, dirty checking, movable popup https://github.com/openhab/openhab-webui/pull/3039 @jimtng
+- More specific browser titles: https://github.com/openhab/openhab-webui/pull/3058 @jimtng
+- Log Viewer: Various enhancements including a history buffer, log details popup (@cdjackson), text mode (@jimtng)
+- Semantic Tags Maintenance https://github.com/openhab/openhab-webui/pull/3165 & use treeview for semantics picker https://github.com/openhab/openhab-webui/pull/3178 @mherwege
 
 ## Blockly Enhancements
 
