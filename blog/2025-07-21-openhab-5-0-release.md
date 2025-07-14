@@ -118,11 +118,19 @@ A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for w
 
 ### Semantic Tags Maintenance & Treeview Picker
 
+### State Series chart
+
+An additional state series for time based charts to easily see changes of an item's state over time.
+The oh-state-series supports several settings to adjust color palette and the ability to provide a function to map item states (see Air Temp State vs. Air Temp).
+This series can be used on any time-based chart with either an oh-value-axis or oh-category-axis as the y-axis.
+
+<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/oh-state-series.png"/></p>
+
 ### Additional Enhancements
 
 - **Widget Config:** The widget config popup has been redesigned to support live updates, dirty checking and be movable, so you can watch the changes in your page while editing the widget config.
 - **Specific Browser Titles:** The browser title now reflects the current page, making it easier to identify the contents of the openHAB tabs in your browser.
-- **Log Viewer Enhancements:** The log viewer has been enhanced with a history buffer, allowing you to scroll back through previous log entries, and a log details popup that provides more information about each log entry. 
+- **Log Viewer Enhancements:** The log viewer has been enhanced with a history buffer, allowing you to scroll back through previous log entries, and a log details popup that provides more information about each log entry.
   Additionally, a text mode has been introduced as alternative to the default table view, having the look and feel of the well-known [frontail](https://github.com/mthenw/frontail) log viewer.
 
 ## Blockly Enhancements
