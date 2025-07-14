@@ -114,13 +114,16 @@ This not only makes it faster to build your semantic model, it also makes it eas
 
 A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
 
-### Various Enhancements
+### Copy DSL & YAML Definitions
 
-- Copy DSL & YAML definitions: @jimtng @lolodomo
-- Widget config: Live updates, dirty checking, movable popup https://github.com/openhab/openhab-webui/pull/3039 @jimtng
-- More specific browser titles: https://github.com/openhab/openhab-webui/pull/3058 @jimtng
-- Log Viewer: Various enhancements including a history buffer, log details popup (@cdjackson), text mode (@jimtng)
-- Semantic Tags Maintenance https://github.com/openhab/openhab-webui/pull/3165 & use treeview for semantics picker https://github.com/openhab/openhab-webui/pull/3178 @mherwege
+### Semantic Tags Maintenance & Treeview Picker
+
+### Additional Enhancements
+
+- **Widget Config:** The widget config popup has been redesigned to support live updates, dirty checking and be movable, so you can watch the changes in your page while editing the widget config.
+- **Specific Browser Titles:** The browser title now reflects the current page, making it easier to identify the contents of the openHAB tabs in your browser.
+- **Log Viewer Enhancements:** The log viewer has been enhanced with a history buffer, allowing you to scroll back through previous log entries, and a log details popup that provides more information about each log entry. 
+  Additionally, a text mode has been introduced as alternative to the default table view, having the look and feel of the well-known [frontail](https://github.com/mthenw/frontail) log viewer.
 
 ## Blockly Enhancements
 
