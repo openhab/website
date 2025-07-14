@@ -89,6 +89,17 @@ More information and discussion can be found on the community forum: [Z-Wave JS 
 
 ## Core Runtime Enhancements
 
+### Scripted Item, Metadata, Item-Channel-Link & Thing Providers
+
+_Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
+
+openHAB 5.0 introduces a new _provider_ script extension that allows scripts to provide Items, Metadata, Item-Channel-Links and Things from scripts through special registry delegates and wrappers.
+This powerful new feature allows you to create them in a configuration as code style, which is especially useful for advanced users who want to manage their openHAB configuration in a more programmatic way.
+The core runtime handles the lifecycle of them for you, they are automatically created, updated and deleted when the script is reloaded or removed.
+
+We are currently working on implementing this in the JavaScript helper library, which will provide an easy-to-use JavaScript API to those new core features.
+Stay tuned for the next [openhab-js release](https://github.com/openhab/openhab-js) to get started with this new feature from your JavaScript scripts!
+
 ## Main UI Enhancements
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
