@@ -406,16 +406,18 @@ end
 verbose "   ➡️ images"
 FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/images", "docs/apps")
 
-puts "➡️ Migrating the Garmin app section"
-Dir.glob(".vuepress/openhab-docs/addons/uis/apps/garmin/*.md") do |path|
-  file = File.basename(path)
-  verbose "   ➡️ #{file}"
-  process_file(".vuepress/openhab-docs/addons/uis/apps/garmin", file, "docs/apps/garmin",
-               "#{$docs_repo_root}/addons/uis/apps/garmin/#{file}")
+# TODO: Remove if for the 5.0.0 release
+if $version == "final"
+  puts "➡️ Migrating the Garmin app section"
+  Dir.glob(".vuepress/openhab-docs/addons/uis/apps/garmin/*.md") do |path|
+    file = File.basename(path)
+    verbose "   ➡️ #{file}"
+    process_file(".vuepress/openhab-docs/addons/uis/apps/garmin", file, "docs/apps/garmin",
+                "#{$docs_repo_root}/addons/uis/apps/garmin/#{file}")
+  end
+  verbose "   ➡️ images"
+  FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/garmin/images", "docs/apps/garmin")
 end
-verbose "   ➡️ images"
-FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/garmin/images", "docs/apps/garmin")
-
 
 puts "➡️ Migrating the Administration section"
 Dir.glob(".vuepress/openhab-docs/administration/*.md") do |path|
@@ -518,6 +520,12 @@ else
 
   puts "➡️ Migrating add-ons: IO"
   Dir.glob(".vuepress/openhab-docs/_addons_ios/**") do |path|
+    # TODO: Remove these next if for the 5.0.0 release
+    # See below for the Alexa & Mycroft & Google Assistant special cases
+    next if $version == "final-stable" && path =~ /alexa-skill/
+    next if $version == "final-stable" && path =~ /mycroft-skill/
+    next if $version == "final-stable" && path =~ /google-assistant/
+
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
 
@@ -559,19 +567,23 @@ else
   FileUtils.mkdir_p("docs/ecosystem/mycroft")
   FileUtils.mkdir_p("docs/ecosystem/google-assistant")
 
+  ecosystem_path = "_ecosystem"
+  # TODO: Remove this if for the 5.0.0 release
+  ecosystem_path = "_addons_ios" if $version == "final-stable"
+
   verbose "   ➡️ Process alexa-skill docs"
-  process_file(".vuepress/openhab-docs/_ecosystem/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
+  process_file(".vuepress/openhab-docs/#{ecosystem_path}/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
   verbose "    ➡️ images"
-  FileUtils.cp_r(".vuepress/openhab-docs/_ecosystem/alexa-skill/images", "docs/ecosystem/alexa")
+  FileUtils.cp_r(".vuepress/openhab-docs/#{ecosystem_path}/alexa-skill/images", "docs/ecosystem/alexa")
 
   verbose "   ➡️ Process mycroft-skill docs"
-  process_file(".vuepress/openhab-docs/_ecosystem/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
+  process_file(".vuepress/openhab-docs/#{ecosystem_path}/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
 
   verbose "   ➡️ Process google-assistant docs"
-  process_file(".vuepress/openhab-docs/_ecosystem/google-assistant", "readme.md", "docs/ecosystem/google-assistant",
+  process_file(".vuepress/openhab-docs/#{ecosystem_path}/google-assistant", "readme.md", "docs/ecosystem/google-assistant",
                "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
   verbose "    ➡️ images"
-  FileUtils.cp_r(".vuepress/openhab-docs/_ecosystem/google-assistant/images", "docs/ecosystem/google-assistant")
+  FileUtils.cp_r(".vuepress/openhab-docs/#{ecosystem_path}/google-assistant/images", "docs/ecosystem/google-assistant")
 
   puts "➡️ Migrating add-ons: Bindings"
   Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") do |path|
