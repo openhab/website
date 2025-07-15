@@ -111,7 +111,6 @@ def process_file(indir, file, outdir, source)
   frontmatter_processed = false
   has_source = false
   has_logo = false
-  since_1x = false
   obsolete_binding = false
   og_title = "openHAB"
   og_description = "a vendor and technology agnostic open source automation software for your home"
@@ -136,7 +135,6 @@ def process_file(indir, file, outdir, source)
 
       has_source = true if in_frontmatter && line =~ /^source:/
       has_logo = true if in_frontmatter && line =~ /^logo:/
-      since_1x = true if in_frontmatter && line =~ /^since: 1x/
 
       og_title = line.gsub("title: ", "").gsub("\n", "") if in_frontmatter && line =~ /^title:/
       if in_frontmatter && line =~ /^description:/
@@ -408,6 +406,17 @@ end
 verbose "   ➡️ images"
 FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/images", "docs/apps")
 
+puts "➡️ Migrating the Garmin app section"
+Dir.glob(".vuepress/openhab-docs/addons/uis/apps/garmin/*.md") do |path|
+  file = File.basename(path)
+  verbose "   ➡️ #{file}"
+  process_file(".vuepress/openhab-docs/addons/uis/apps/garmin", file, "docs/apps/garmin",
+               "#{$docs_repo_root}/addons/uis/apps/garmin/#{file}")
+end
+verbose "   ➡️ images"
+FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/garmin/images", "docs/apps/garmin")
+
+
 puts "➡️ Migrating the Administration section"
 Dir.glob(".vuepress/openhab-docs/administration/*.md") do |path|
   file = File.basename(path)
@@ -509,11 +518,6 @@ else
 
   puts "➡️ Migrating add-ons: IO"
   Dir.glob(".vuepress/openhab-docs/_addons_ios/**") do |path|
-    # See below for the Alexa & Mycroft & Google Assistant special cases
-    next if path =~ /alexa-skill/
-    next if path =~ /mycroft-skill/
-    next if path =~ /google-assistant/
-
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
 
@@ -549,25 +553,25 @@ else
   end
 
   # Handle those three separately - copy them in the "ecosystem" section
-  puts "➡️ Migrating special ecosystem add-ons"
+  puts "➡️ Migrating special ecosystem integrations"
   verbose "   ➡️ Create folders"
   FileUtils.mkdir_p("docs/ecosystem/alexa")
   FileUtils.mkdir_p("docs/ecosystem/mycroft")
   FileUtils.mkdir_p("docs/ecosystem/google-assistant")
 
   verbose "   ➡️ Process alexa-skill docs"
-  process_file(".vuepress/openhab-docs/_addons_ios/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
+  process_file(".vuepress/openhab-docs/_ecosystem/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
   verbose "    ➡️ images"
-  FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/alexa-skill/images", "docs/ecosystem/alexa")
+  FileUtils.cp_r(".vuepress/openhab-docs/_ecosystem/alexa-skill/images", "docs/ecosystem/alexa")
 
   verbose "   ➡️ Process mycroft-skill docs"
-  process_file(".vuepress/openhab-docs/_addons_ios/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
+  process_file(".vuepress/openhab-docs/_ecosystem/mycroft-skill", "readme.md", "docs/ecosystem/mycroft", "https://github.com/openhab/openhab-mycroft/blob/master/USAGE.md")
 
   verbose "   ➡️ Process google-assistant docs"
-  process_file(".vuepress/openhab-docs/_addons_ios/google-assistant", "readme.md", "docs/ecosystem/google-assistant",
+  process_file(".vuepress/openhab-docs/_ecosystem/google-assistant", "readme.md", "docs/ecosystem/google-assistant",
                "https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md")
   verbose "    ➡️ images"
-  FileUtils.cp_r(".vuepress/openhab-docs/_addons_ios/google-assistant/images", "docs/ecosystem/google-assistant")
+  FileUtils.cp_r(".vuepress/openhab-docs/_ecosystem/google-assistant/images", "docs/ecosystem/google-assistant")
 
   puts "➡️ Migrating add-ons: Bindings"
   Dir.glob(".vuepress/openhab-docs/_addons_bindings/**") do |path|
