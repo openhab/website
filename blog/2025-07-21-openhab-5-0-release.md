@@ -126,7 +126,20 @@ A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for w
 
 ### Regenerate Rules from Templates
 
-### Copy DSL & YAML Definitions
+### Copy DSL & YAML Definition: Connecting UI with Text Configuration
+
+_Jimmy Tanagra ([@jimtng](https://github.com/jimtng)), openHAB Maintainer_
+
+openHAB 5.0 introduces a convenient option for users who wish to convert their setup into text-based configuration.
+Definitions of **Items** and **Things** can now be copied in **DSL** or the new **YAML** file format, making it easier to reuse, back up, or migrate content into textual configuration files.
+
+This feature is intended purely as a convenience. Users can continue to rely entirely on the UI configuration if they prefer.
+
+**Where you'll find it:**
+
+- **Things list** and **Items list** – Select multiple entries to reveal a `Copy` button
+- **Thing Details** and **Item Details** page – A `Copy File Definition` button is available at the bottom of the page
+- **Developer Tools** – New menu options: `Things File Definition` and `Items File Definition` for one-click access
 
 ### State Series chart
 
