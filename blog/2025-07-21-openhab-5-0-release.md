@@ -161,7 +161,7 @@ The developer tools now include a new _Semantic Tags_ section, where you can vie
 This section also allows you to check the structure of the semantic tags and their relationships, making it easier to understand the concept of the semantic model and how to use it effectively.
 It features both a treeview and a code tab, allowing you to switch between a visual representation and the underlying YAML code.
 
-<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-maintenance.webp"/></p>
+<p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-maintenance.gif"/></p>
 
 In addition to the maintenance page, the semantics picker in the Item editor has been updated to use the treeview, making it easier to select the correct semantic tag for your Items by visualising the hierarchy of tags:
 
