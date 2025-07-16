@@ -185,13 +185,12 @@ Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)
 - Boolean-typed variable added
 - Get Item Previous State added
 
-## Sitemap Enhancements
+## Sitemap and Basic UI Enhancements
 
-_Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
-
-## Basic UI Enhancements
-
-_Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
+- New `interpolation` parameter for charts, accepting either `linear` or `step` value, to change how the line is drawn between 2 datapoints.
+- Reload the chart when clicking the zoom button instead of just up-scaling the initial image.
+- New Basic UI setting to choose how to display buttons, more or less rounded.
+- Avoid shrinking the value of a `Text` element (shrink the label instead).
 
 ## Add-on Enhancements
 
