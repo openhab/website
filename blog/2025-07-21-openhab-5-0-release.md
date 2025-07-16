@@ -55,6 +55,58 @@ In the following sections, our maintainers and contributors are introducing some
 
 _Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
 
+  <p align="center"><img style="max-width: 75%;" src="/uploads/2025-07-21-openhab-5-0-release/matter-logo.png"/></p>
+
+### Matter: The Promise of Reliable, Secure and Locally Controlled Connectivity.
+
+Matter is a open smart home standard from the [Connectivity Standards Alliance](https://csa-iot.org/all-solutions/matter/) that defines a robust IoT protocol that operates natively over IPv6, connecting Wi-Fi, Ethernet and low-power Thread devices over your local network without proprietary bridges or vendor clouds.
+Major smart home companies like Apple, Google, Amazon, Samsung SmartThings, Signify (Philips Hue) and IKEA have invested significant resources jointly developing the Matter standard and have included Matter in nearly every device they ship. With updates and additions to the Matter specification happening twice a year, Matter's adoption in the market is growing rapidly as it constantly adapts to support new devices, new use-cases and improves with feedback from users and vendors alike.
+
+### openHAB Matter Client
+
+<p>
+  <img
+    src="/uploads/2025-07-21-openhab-5-0-release/matter-thing.png"
+    style="float:right; max-width:20%; margin-left:1em;"
+    alt="Matter thing"
+/>
+openHAB 5.0 now features one of the most complete Matter 1.4.1 client implementations on the market, allowing the control of more then 30 types of devices, from lights, locks and thermostats, to power meters, air quality sensors and robotic vacuum cleaners. Matter Devices can be Wi-Fi or ethernet based, or they can based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the Zigbee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
+
+One of the many strengths of Matter is that devices can be shared among different ecosystems, meaning a Matter device previously added to Apple Home or Google Home, can also be independently added to openHAB, who then talks directly to the device and not through a vendor's proprietary ecosystem.
+openHAB can conversely share Matter devices as well, providing QR codes so other Matter clients can pair and talk directly to these devices.
+
+Matter is quickly becoming the primary protocol used by IoT vendors, and with many companies like Ikea completely moving to Matter for all future devices, having a complete Matter implementation is crucial for any smart home system.
+
+<div style="clear:both;"></div>
+
+But thats not all ...
+
+### openHAB Matter Bridge
+
+<p>
+  <img
+    src="/uploads/2025-07-21-openhab-5-0-release/matter-bridge.png"
+    style="float:right; max-width:20%; margin-left:1em;"
+    alt="Matter thing"
+/>
+A Matter "Bridge" is a part of the Matter standard that enables non-matter devices to speak the Matter protocol.
+Bridges allow Z-Wave, Zigbee and other popular standards to interoperate with the Matter ecosystem by integrating a Matter server directly into existing hubs and controllers.
+The Philips Hue hub for example provides a matter bridge, as does the Ikea Dirigera, translating Matter to Zigbee or other protocols (and yes openHAB can use Matter to talk with those ecosystems).
+
+openHAB itself can now act as a Matter Bridge, exposing regular openHAB Items and Groups as Matter devices to 3rd party clients like Alexa, Apple and Google, all while remaining local on the user's network.
+This allows fast, secure and cloud free control of openHAB from all major voice assistants as well as other 3rd party Matter clients.
+Exposing openHAB Items as Matter devices works similarly to how users currently tag Items for voice assistants like the Homekit addon, or our Alexa and Google voice integrations.
+Users can use the MainUI to map Items to Matter device types, or use our standard text based configuration.
+Most standard Matter device types are supported, with more coming with every openHAB release.
+
+In the near future, Matter support will be coming to our mobile clients as well, allowing users to pair new Matter devices through a QR code without having to use a vendor specific app.
+
+<div style="clear:both;"></div>
+
+### Special Thanks
+
+Matter support would not be possible without the great work and collaboration from the [matter.js project](https://github.com/project-chip/matter.js), on which our implementation is based.
+
 ## Python Scripting
 
 _Holger Hees ([@HolgerHees](https://github.com/HolgerHees)), openHAB Maintainer_
@@ -231,6 +283,39 @@ However, it's now sitting on a much stronger base so that any issues there can b
 ## openHABian Enhancements
 
 _Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
+
+## iOS Enhancements
+
+_Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
+
+Releasing soon will be the next major update to the iOS application, which includes major enhancements, both in its core code as well a new features.
+
+<div align="center" class="row">
+  <img style="max-width: 25%; min-width: 150px;" src="/uploads/2025-07-21-openhab-5-0-release/screen-saver.gif"/>
+  <img style="max-width: 25%; min-width: 150px;"  src="/uploads/2025-07-21-openhab-5-0-release/ios-settings.png"/>
+  <img style="max-width: 25%; min-width: 150px;" src="/uploads/2025-07-21-openhab-5-0-release/multiple-homes.gif"/>
+</div>
+
+### Swift UI and Swift 6
+
+Tim Bert ([@timbms](https://github.com/timbms)) has been hard at work upgrading the core of the app to modern versions of Swift, making the app easier to work on as well as taking advantage of modern language features to enhance performance and stability. This is a major undertaking and helps ensure the longevity of our app. This also includes a much needed refreshed settings view, with additional configuration options for connections and a new logging UI.
+
+### OpenAPI based Networking
+
+Tim has also completely rewritten the networking to use Apple's OpenAPI Swift technology.
+This modern approach generates all the required models and networking controllers directly from the openHAB OpenAPI published specifications, ensuring better conformity to our APIs, allowing faster development of new features, and ultimately providing a more consistent experience for users.
+
+### Multiple "Home" Support
+
+Tassilo Karge ([@TAKeanice](https://github.com/TAKeanice)) has contributed one of the most requested features to the iOS app, support for multiple homes!
+Users can now have different preferences for their primary home, a vacation home, the office, etc... and quickly switch between them. Even more impressive is that push notifications and iOS shortcuts are also multi-home aware, selecting the correct home before performing an action.
+
+### Kiosk Features
+
+Many users like to use iPads or iPhones as kiosk devices, running the openHAB app in Apple's "Guided Mode", which locks the device to a single app.
+Unfortunately, iOS lacks a built in screen saver for always-on devices, which is not ideal for many situations.
+The openHAB iOS app now features a robust embedded screen-saver with granular configuration options for everything from clock styles, fonts and sizes, to animation speeds and dimming settings.
+Whether running as a wall mounted tablet, or as a nightstand clock, the openHAB app can more comfortably blend into your home environment.
 
 # Enjoy and Get in Touch!
 
