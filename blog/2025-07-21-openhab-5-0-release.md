@@ -81,7 +81,7 @@ It also offers the following improvements over the Jython binding:
 The only current limitation is the lack of PIP support for installing external modules, which will be introduced in the next release.
 If you don't want to wait, you can install [the beta version via the Marketplace](https://community.openhab.org/t/python-scripting-5-0-0-5-9-9/164947).
 
-It's also important to note that this binding was not developed as a replacement for HabAPP, which is completely independent, still actively developed, and enjoys a large community.
+It's also important to note that this binding was not developed as a replacement for HABApp, which is completely independent, still actively developed, and enjoys a large community.
 Your choice among these two options depends entirely on your personal preference.
 
 ## YAML Configuration Format
