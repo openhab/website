@@ -14,7 +14,10 @@ A new major release of openHAB is here!
 openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
 
 But that's not all!
-As usual for major releases, we have also made improvements under the hood, such as updating the underlying Java version to 21, and making Oracle's GraalVM ready for OSGi to stay up to date with the latest technologies.
+As usual for major releases, we have also made some major changes under the hood:
+We have officially **dropped 32-bit support**, **moved to Java 21** and **upgraded our dependencies** to ensure long-term maintainability and take advantage of the latest features (e.g. virtual threads) and improvements in the Java ecosystem.
+We understand that dropping 32-bit support is a significant change, but it was necessary for upgrading several dependencies that no longer support 32-bit architectures — outdated dependencies often have security vulnerabilities.
+That being said, it also reduces maintenance overhead by allowing us to focus on 64-bit systems, which are nowadays standard for most applications.
 
 As this is a major release, we have a number of breaking changes that are required for the new features and improvements.
 So, please have a look at our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/5.0.0) to learn about all breaking changes, new add-ons, enhancements and fixes.
