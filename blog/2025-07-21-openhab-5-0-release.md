@@ -101,7 +101,8 @@ With updates and additions to the Matter specification happening twice a year, M
   alt="Matter thing"
 />
 
-openHAB 5.0 now features one of the most complete Matter 1.4.1 client implementations on the market — the [Matter binding](/addons/bindings/matter), which can communicate with more than 30 types of devices, from lights, locks and thermostats, to power meters, air quality sensors and robotic vacuum cleaners.Matter Devices can be Wi-Fi or ethernet based, or they can be based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the ZigBee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
+openHAB 5.0 now features one of the most complete Matter 1.4.1 client implementations on the market — the [Matter binding](/addons/bindings/matter), which can communicate with more than 30 types of devices, from lights, locks and thermostats, to power meters, air quality sensors and robotic vacuum cleaners.
+Matter Devices can be Wi-Fi or ethernet based, or they can be based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the ZigBee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
 
 One of the many strengths of Matter is that devices can be shared among different ecosystems, meaning a Matter device previously added to Apple Home or Google Home, can also be independently added to openHAB, who then talks directly to the device and not through a vendor's proprietary ecosystem.
 openHAB can conversely share Matter devices as well, providing QR codes so other Matter clients can pair and talk directly to these devices.
