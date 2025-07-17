@@ -66,17 +66,12 @@ In the long term, it will also completely replace the _outdated_ Jython add-on, 
 The binding offers the possibility of using Python as a scripting language in UI or file-based rules, as well as in transformation services.
 It also included a helper library that simplifies the use of openHAB's API and provides a more Pythonic interface to interact with openHAB's APIs.
 
-It also offers the following improvements over the Jython binding:
+It offers many improvements over the Jython binding, including:
 
-- improved error logging
-- import native `java.*` or `org.openhab.*` Java packages
-- scope module to encapsulate all jsr223 objects
-- rule class to simplify rule setup, logging, and more
-- registry class which wraps/simplifies access to Items, Things, Channels
-- works with native python datatypes like [`datetype`](https://docs.python.org/3/library/datetime.html) instead of [`ZonedDateTime`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/ZonedDateTime.html)
-- all kinds of triggers, actions and services are supported
-- object functions are almost 100% similar to the openHAB Core API
-- dependency watcher to reload scripts when modified
+- more convenient access to Items, Things & channels through the helper library
+- a simplified way of creating and managing rules through the helper library
+- support for native Python datatypes like [`datetype`](https://docs.python.org/3/library/datetime.html) instead of [`ZonedDateTime`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/ZonedDateTime.html)
+- a dependency watcher that reloads scripts when dependencies change
 
 The only current limitation is the lack of PIP support for installing external modules, which will be introduced in the next release.
 If you don't want to wait, you can install [the beta version via the Marketplace](https://community.openhab.org/t/python-scripting-5-0-0-5-9-9/164947).
