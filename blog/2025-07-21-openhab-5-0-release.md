@@ -231,16 +231,23 @@ It is now also possible to generate this syntax directly from Main UI if you hav
 Support for other entities will be added in the next releases, starting with rules and rule templates.
 Other exciting features based on this are already in the pipe.
 
-### Scripted Item, Metadata, Item-Channel-Link & Thing Providers
+### Semantic Tagging Enhancements
 
-_Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
+_Andrew Fiddian-Green ([@andrewfg](https://github.com/andrewfg)), openHAB Contributor_
 
-openHAB 5.0 introduces a new _provider_ script extension that allows scripts to provide Items, Metadata, Item-Channel-Links and Things from scripts through special registry delegates and wrappers.
-This powerful new feature allows you to create them in a configuration as code style, which is especially useful for advanced users who want to manage their openHAB configuration in a more programmatic way.
-The core runtime handles the lifecycle of them for you, they are automatically created, updated and deleted when the script is reloaded or removed.
+openHAB 5.0 introduces a major overhaul of the semantic tagging system, which is now more powerful and easier to use than ever before.
+This release includes the following enhancements:
 
-We are currently working on implementing this in the JavaScript helper library, which will provide an easy-to-use JavaScript API to those new core features.
-Stay tuned for the next [openhab-js release](https://github.com/openhab/openhab-js) to get started with this new feature from your JavaScript scripts!
+- Clarified and extended rules and documentation for the use of semantic tags.
+- Several new **_Equipment_**, **_Point_**, and **_Property_** tag constants to meet developer requests.
+- Developer tools that ensure only correct semantic tags can be declared when bindings are added or modified.
+- UI improvements to make it easier to visualise the semantic model and apply semantic tags to Items, see [Semantic Tags Maintenance & Treeview Picker](#semantic-tags-maintenance-treeview-picker) below.
+
+We have also made significant improvements to the default semantic tags applied by bindings, which now cover a much larger percentage of binding channel types and thing types:
+
+- The number of **_Point+Property_** tag default values increased from under 3% to 40% of all bindings' channel types (or 81% of non-advanced channel types).
+- The number of **_Equipment_** tag default values increased from zero to 74% of all bindings' thing types.
+- Some bindings now apply **_Equipment_** and **_Point+Property_** tag default values dynamically depending on the actual attributes of Things and Channels in the Inbox. This further increases the tag coverage percentages above.
 
 ## Main UI Enhancements
 
