@@ -10,31 +10,30 @@ tags:
 excerpt: >-
   A new major release of openHAB is here! openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
 ---
-A new major release of openHAB is here! openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
+A new major release of openHAB is here!
+openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
 
-Two years have passed since the [last major release](/blog/2023-07-24-openhab-4-0-release.html) of openHAB, and we are proud to announce that the openHAB community has been working hard to bring you a new major release with many new features.
-We have integrated Matter support, added a new Python Scripting add-on, made the semantic model easier to configure and added a new configuration file format.
 But that's not all!
 As usual for major releases, we have also made improvements under the hood, such as updating the underlying Java version to 21, and making Oracle's GraalVM ready for OSGi to stay up to date with the latest technologies.
 
-As this is a new major release, we have a number of breaking changes that are required for the new features and improvements.
+As this is a major release, we have a number of breaking changes that are required for the new features and improvements.
 So, please have a look at our [**official release notes**](https://github.com/openhab/openhab-distro/releases/tag/5.0.0) to learn about all breaking changes, new add-ons, enhancements and fixes.
 
 With that being said, we again want to share some statistics that show the progress in numbers and highlight some of the new features that you should not miss.
 
 # Activity
 
-As you'd expect from any new openHAB release, we have had a high activity across all our GitHub repositories.
-We therefore want to share a few statistics about our three main repositories: Core, add-ons, and UIs.
+Behind every new feature in openHAB 5.0 is the work of a vibrant, global community. Over the past period, activity across our GitHub repositories has been nonstop — a reflection of openHAB’s momentum and shared purpose.
 
-[openHAB Core](https://github.com/openhab/openhab-core) has received xxx pull requests in total, with xxx bug fixes and xxx enhancements resulting in xx,yyy lines of added code.
+This release includes contributions across all parts of the system:
 
-xx new add-ons, xxx bug fixes and xxx enhancements were contributed in xxx pull requests to the [openHAB add-ons repository](https://github.com/openhab/openhab-addons), which resulted in the addition of xxx,yyy lines of code.
+- **[Core](https://github.com/openhab/openhab-core)**: xxx pull requests, with xxx bug fixes and xxx enhancements, resulting in xx,yyy lines of added code.
+- **[Add-ons](https://github.com/openhab/openhab-addons)**: xx new add-ons, xxx fixes and enhancements, across xxx pull requests — adding xxx,yyy lines of code.
+- **[UIs](https://github.com/openhab/openhab-webui)**: xxx pull requests, xxx bug fixes, and xxx enhancements, totalling xx,yyy new lines of code.
 
-Our [openHAB web UIs](https://github.com/openhab/openhab-webui) have received xxx pull requests, including xxx bug fixes and xxx enhancements resulting in xx,yyy lines of code added.
+Many [other repositories](https://github.com/openhab) — including documentation, openHABian, and build tooling — also receive steady contributions, too numerous to list here.
 
-It is worth mentioning that [our other repositories](https://github.com/openhab) have also received numerous contributions (e.g. documentation), but listing them all would probably be too much here.
-Many thanks to all our contributors for driving openHAB forward!
+Huge thanks to everyone who continues to push openHAB forward!
 
 Again, it is time to shout out to our top code contributors per repository (having done the most commits) for this new release:
 
@@ -49,9 +48,10 @@ Again, it is time to shout out to our top code contributors per repository (havi
 - Florian ([@florian-h05](https://github.com/florian-h05)) for the openHAB Main UI
 - Jim ([@jimtng](https://github.com/jimtng)) for the openHAB Main UI
 
-Many of our top committers are also maintainers, which means besides contributing code, they also review pull requests and participate in discussions on GitHub issues, which helps maintain our high level of quality across bindings, UIs and Core.
-At present, we have 39 maintainers across all our repositories.
-Huge thanks to all our contributors and all my maintainer colleagues for their work on our next major release!
+Many of these contributors also serve as maintainers — reviewing pull requests, discussing architectural changes, and supporting newer contributors.
+At the time of this release, we have **39 active maintainers** across all repositories.
+
+Whether fixing bugs, refining UI elements, updating documentation, or building entirely new integrations — every contribution matters.
 
 # Highlights
 
@@ -237,7 +237,7 @@ items:
 
 You can consult the [YAML Configuration Documentation](https://www.openhab.org/docs/configuration/yaml.html) for more details on the syntax and how to use it.
 
-It is now also possible to generate this syntax directly from Main UI if you have Things and Items that were defined either with DSL syntax or created from Main UI, see [Copy DSL & YAML Definition: Connecting UI with Text Configuration](#copy-dsl--yaml-definition-connecting-ui-with-text-configuration)
+It is now also possible to generate this syntax directly from Main UI if you have Things and Items that were defined either with DSL syntax or created from Main UI, see [Copy DSL & YAML Definition: Connecting UI with Text Configuration](#copy-dsl-yaml-definition-connecting-ui-with-text-configuration).
 Support for other entities will be added in the next releases, starting with rules and rule templates.
 Other exciting features based on this are already in the pipeline.
 
