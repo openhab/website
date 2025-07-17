@@ -190,7 +190,8 @@ Whether running as a wall mounted tablet, or as a nightstand clock, the openHAB 
 
 _Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
 
-openHAB 5.0 introduces a modular configuration system that allows supported entities (objects such as Things, Items, etc.) to be defined in one or more YAML files.
+openHAB 5.0 introduces a modular configuration system that allows supported entities to be defined in one or more YAML files.
+While tags have been supported in YAML format since openHAB 4.1, this release adds support for defining Things and Items in YAML.
 This new format does not replace our dedicated DSL format, but rather provides an alternative for YAML enthusiasts or users who have never been comfortable with our DSL syntax.
 It is also a way to not depend too much on XTend/XText as we don't know how many more years these Eclipse projects will be maintained.
 Unlike the DSL configuration files, YAML configuration files are not limited to a specific object type — they can contain any supported entities (Things, Items, Tags, etc.).
@@ -225,11 +226,11 @@ items:
     channel: lgwebos:WebOSTV:living-room:power
 ```
 
-You can consult the [documentation](https://www.openhab.org/docs/configuration/yaml.html).
+You can consult the [YAML Configuration Documentation](https://www.openhab.org/docs/configuration/yaml.html) for more details on the syntax and how to use it.
 
 It is now also possible to generate this syntax directly from Main UI if you have Things and Items that were defined either with DSL syntax or created from Main UI, see [Copy DSL & YAML Definition: Connecting UI with Text Configuration](#copy-dsl--yaml-definition-connecting-ui-with-text-configuration)
 Support for other entities will be added in the next releases, starting with rules and rule templates.
-Other exciting features based on this are already in the pipe.
+Other exciting features based on this are already in the pipeline.
 
 ### Semantic Tagging Enhancements
 
