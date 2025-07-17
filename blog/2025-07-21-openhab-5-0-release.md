@@ -239,7 +239,7 @@ This feature is intended purely as a convenience. Users can continue to rely ent
 
 - **Things list** and **Items list** – Select multiple entries to reveal a `Copy` button
 - **Thing Details** and **Item Details** page – A `Copy File Definition` button is available at the bottom of the page
-- **Thing Inbox** – A `Copy File Definition` button is available when clicking on an entry in the inbox
+- **Thing Inbox** – Clicking on an inbox entry reveals a `Copy File Definition` button, allowing you to save the discovered Thing in a file-based configuration rather than importing it into the UI-managed database
 - **Developer Tools** – New menu options: `Things File Definition` and `Items File Definition` for one-click access
 
 ### State Series chart
