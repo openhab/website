@@ -55,7 +55,7 @@ In the following sections, our maintainers and contributors are introducing some
 
 _Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
 
-<p align="center"><img style="max-width: 75%; filter: drop-shadow(0 0 0.6em white)" src="/uploads/2025-07-21-openhab-5-0-release/matter-logo.svg"/></p>
+<p align="center"><img style="max-width: 75%; filter: drop-shadow(0 0 0.4em white)" src="/uploads/2025-07-21-openhab-5-0-release/matter-logo.svg"/></p>
 
 ### Matter: The Promise of Reliable, Secure and Locally Controlled Connectivity.
 
@@ -304,7 +304,7 @@ _Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
 
 _Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
 
-Releasing soon will be the next major update to the iOS application, which includes major enhancements, both in its core code as well a new features.
+The openHAB iOS app will soon receive a major update including major enhancements, both in its core code as well a new features.
 
 <div align="center" class="row">
   <img style="max-width: 25%; min-width: 110px;" src="/uploads/2025-07-21-openhab-5-0-release/screen-saver.gif"/>
@@ -314,7 +314,9 @@ Releasing soon will be the next major update to the iOS application, which inclu
 
 ### Swift UI and Swift 6
 
-Tim Bert ([@timbms](https://github.com/timbms)) has been hard at work upgrading the core of the app to modern versions of Swift, making the app easier to work on as well as taking advantage of modern language features to enhance performance and stability. This is a major undertaking and helps ensure the longevity of our app. This also includes a much needed refreshed settings view, with additional configuration options for connections and a new logging UI.
+Tim Bert ([@timbms](https://github.com/timbms)) has been hard at work upgrading the core of the app to modern versions of Swift, making the app easier to work on as well as taking advantage of modern language features to enhance performance and stability.
+This is a major undertaking and helps ensure the longevity of our app.
+This also includes a much-needed refreshed settings view, with additional configuration options for connections and a new logging UI.
 
 ### OpenAPI based Networking
 
@@ -324,12 +326,13 @@ This modern approach generates all the required models and networking controller
 ### Multiple "Home" Support
 
 Tassilo Karge ([@TAKeanice](https://github.com/TAKeanice)) has contributed one of the most requested features to the iOS app, support for multiple homes!
-Users can now have different preferences for their primary home, a vacation home, the office, etc... and quickly switch between them. Even more impressive is that push notifications and iOS shortcuts are also multi-home aware, selecting the correct home before performing an action.
+Users can now have different preferences for their primary home, a vacation home, the office, etc... and quickly switch between them.
+Even more impressive is that push notifications and iOS shortcuts are also multi-home-aware, selecting the correct home before performing an action.
 
 ### Kiosk Features
 
 Many users like to use iPads or iPhones as kiosk devices, running the openHAB app in Apple's "Guided Mode", which locks the device to a single app.
-Unfortunately, iOS lacks a built in screen saver for always-on devices, which is not ideal for many situations.
+Unfortunately, iOS lacks a built-in screen saver for always-on devices, which is not ideal for many situations.
 The openHAB iOS app now features a robust embedded screen-saver with granular configuration options for everything from clock styles, fonts and sizes, to animation speeds and dimming settings.
 Whether running as a wall mounted tablet, or as a nightstand clock, the openHAB app can more comfortably blend into your home environment.
 
