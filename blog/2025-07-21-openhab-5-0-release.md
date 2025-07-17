@@ -188,6 +188,49 @@ Whether running as a wall mounted tablet, or as a nightstand clock, the openHAB 
 
 ### YAML Configuration Format
 
+_Laurent Garnier ([@lolodomo](https://github.com/lolodomo)), openHAB Maintainer_
+
+openHAB 5.0 introduces a modular configuration system that allows supported entities (objects such as Things, Items, etc.) to be defined in one or more YAML files.
+This new format does not replace our dedicated DSL format, but rather provides an alternative for YAML enthusiasts or users who have never been comfortable with our DSL syntax.
+It is also a way to not depend too much on XTend/XText as we don't know how many more years these Eclipse projects will be maintained.
+Unlike the DSL configuration files, YAML configuration files are not limited to a specific object type — they can contain any supported entities (Things, Items, Tags, etc.).
+
+Here is an example:
+
+```yaml
+version: 1
+
+tags:
+  Location_Indoor_Room_HomeCinemaRoom:
+    label: Home Cinema Room
+    description: The room containing my home cinema system
+    synonyms:
+      - Home theater room
+      - TV room
+      - Movie room
+
+things:
+  lgwebos:WebOSTV:living-room:
+    config:
+      host: 192.168.2.119
+      key: XXXX-XXXX-XXXX-XXXX
+      macAddress: 3c:cd:93:c2:20:e0
+
+items:
+  TV_Power:
+    type: Switch
+    label: TV Power
+    icon: television
+    autoupdate: false
+    channel: lgwebos:WebOSTV:living-room:power
+```
+
+You can consult the [documentation](https://www.openhab.org/docs/configuration/yaml.html).
+
+It is now also possible to generate this syntax directly from Main UI if you have Things and Items that were defined either with DSL syntax or created from Main UI, see [Copy DSL & YAML Definition: Connecting UI with Text Configuration](#copy-dsl--yaml-definition-connecting-ui-with-text-configuration)
+Support for other entities will be added in the next releases, starting with rules and rule templates.
+Other exciting features based on this are already in the pipe.
+
 ### Scripted Item, Metadata, Item-Channel-Link & Thing Providers
 
 _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintainer_
