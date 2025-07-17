@@ -61,7 +61,7 @@ _Holger Hees ([@HolgerHees](https://github.com/HolgerHees)), openHAB Maintainer_
 
 Our new major release introduces a new [Python Scripting add-on](/addons/automation/pythonscripting) based on [GraalPy](https://www.graalvm.org/python/).
 Unlike the [Jython Scripting add-on](/addons/automation/jythonscripting), it offers full Python 3.11 support and is future-proof, as the underlying [GraalPy](https://www.graalvm.org/python/) is actively developed and promoted by Oracle.
-In the long term, it will also completely replace the _outdated_ Jython add-on, but before, Jython will be market as deprecated for a while.
+In the long term, it will also completely replace the _outdated_ Jython add-on, but before, Jython will be marked as deprecated for a while.
 
 The binding offers the possibility of using Python as a scripting language in UI or file-based rules, as well as in transformation services.
 It also included a helper library that simplifies the use of openHAB's API and provides a more Pythonic interface to interact with openHAB's APIs.
@@ -139,6 +139,7 @@ This feature is intended purely as a convenience. Users can continue to rely ent
 
 - **Things list** and **Items list** – Select multiple entries to reveal a `Copy` button
 - **Thing Details** and **Item Details** page – A `Copy File Definition` button is available at the bottom of the page
+- **Thing Inbox** – A `Copy File Definition` button is available when clicking on an entry in the inbox
 - **Developer Tools** – New menu options: `Things File Definition` and `Items File Definition` for one-click access
 
 ### State Series chart
@@ -158,7 +159,7 @@ openHAB 4.1 introduced the ability to extend the semantic model with custom tags
 In openHAB 5.0, we have added support for maintaining these custom tags through the UI.
 
 The developer tools now include a new _Semantic Tags_ section, where you can view, edit, and delete your custom tags.
-This section also allows you to check the structure of the semantic tags and their relationships, making it easier to understand the concept of the semantic model and how to use it effectively.
+You can view tag relationships and structure at a glance, making it easier to understand the concept of the semantic model and how to use it effectively.
 It features both a treeview and a code tab, allowing you to switch between a visual representation and the underlying YAML code.
 
 <p align="center"><img style="max-width: 70%;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-maintenance.gif"/></p>
@@ -187,7 +188,7 @@ Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)
 
 ## Sitemap & Basic UI Enhancements
 
-- New `interpolation` parameter for charts to change how the line between two data points is drawn: Either `linear` (default) or `step`.
+- New `interpolation` parameter for charts to change how the line between two data points is drawn: Either `linear` or `step`.
 - Basic UI now reloads the chart with higher resolution when clicking the zoom button instead of just upscaling the initial image.
 - New Basic UI setting to choose how to display buttons: rectangular (default), rounded or pill-shaped.
 - Basic UI now avoids shrinking the value of a `Text` element and instead shrinks the label.
@@ -214,7 +215,10 @@ It supports newer 700/800 series chipsets, S2 security, Smart Start, and provide
 While the binding does not yet expose every capability of [Z-Wave JS](https://zwave-js.github.io/zwave-js/) (such as NVM backups), these can be accessed via the [Z-Wave JS UI](https://zwave-js.github.io/zwave-js-ui/) directly.
 Importantly, the existing native Z-Wave binding remains fully supported, giving users the flexibility to choose the integration that best fits their needs.
 
-More information and discussion can be found on the community forum: [Z-Wave JS UI in place of openHAB Z-Wave binding](https://community.openhab.org/t/zwave-js-ui-in-place-of-oh-zwave-binding/150007)
+More information and discussion can be found on the community forum:
+
+- [New Z-Wave JS binding released](https://community.openhab.org/t/new-z-wave-js-binding-released/164943)
+- [Z-Wave JS UI in place of openHAB Z-Wave binding](https://community.openhab.org/t/zwave-js-ui-in-place-of-oh-zwave-binding/150007)
 
 ### MQTT Home Assistant Binding
 
@@ -234,5 +238,6 @@ _Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
 
 # Enjoy and Get in Touch!
 
-We hope that you like the new release as much as we do. As always, our [community forum](https://community.openhab.org/) is there for questions, comments and discussions.
+We are excited to see what you will do with the new features and improvements in openHAB 5.0 — your feedback is always welcome!
+As always, our [community forum](https://community.openhab.org/) is there for questions, comments and discussions.
 Do not hesitate to get in touch, join our community, receive help and share your experiences and use cases.
