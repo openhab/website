@@ -38,10 +38,19 @@ Many thanks to all our contributors for driving openHAB forward!
 
 Again, it is time to shout out to our top code contributors per repository (having done the most commits) for this new release:
 
-- TODO
+<!-- https://github.com/openhab/openhab-core/graphs/contributors?from=16.12.2024&to=13.7.2025 -->
+<!-- https://github.com/openhab/openhab-addons/graphs/contributors?from=16.12.2024&to=13.7.2025 -->
+<!-- https://github.com/openhab/openhab-webui/graphs/contributors?from=16.12.2024&to=13.7.2025 -->
+
+- Holger ([@holgerfriedrich](https://github.com/holgerfriedrich)) for openHAB Core
+- Jim ([@jimtng](https://github.com/jimtng)) for openHAB Core
+- Jacob ([@jlaur](https://github.com/jlaur)) for openHAB add-ons
+- Andrew ([@andrewfg](https://github.com/andrewfg)) for openHAB add-ons
+- Florian ([@florian-h05](https://github.com/florian-h05)) for the openHAB Main UI
+- Jim ([@jimtng](https://github.com/jimtng)) for the openHAB Main UI
 
 Many of our top committers are also maintainers, which means besides contributing code, they also review pull requests and participate in discussions on GitHub issues, which helps maintain our high level of quality across bindings, UIs and Core.
-At present, we have xx maintainers across all our repositories.
+At present, we have 39 maintainers across all our repositories.
 Huge thanks to all our contributors and all my maintainer colleagues for their work on our next major release!
 
 # Highlights
@@ -214,7 +223,7 @@ things:
   lgwebos:WebOSTV:living-room:
     config:
       host: 192.168.2.119
-      key: XXXX-XXXX-XXXX-XXXX
+      key: qwertz1234567890
       macAddress: 3c:cd:93:c2:20:e0
 
 items:
@@ -290,7 +299,7 @@ This feature is intended purely as a convenience. Users can continue to rely ent
 
 - **Things list** and **Items list** – Select multiple entries to reveal a `Copy` button
 - **Thing Details** and **Item Details** page – A `Copy File Definition` button is available at the bottom of the page
-- **Thing Inbox** – Clicking on an inbox entry reveals a `Copy File Definition` button, allowing you to save the discovered Thing in a file-based configuration rather than importing it into the UI-managed database
+- **Things Inbox** – Clicking on an inbox entry — or selecting multiple entries — reveals a `Copy Thing File Definition` (or `Copy`) button. This lets you save discovered Things to a file-based configuration instead of importing them into the UI-managed database.
 - **Developer Tools** – New menu options: `Things File Definition` and `Items File Definition` for one-click access
 
 ### State Series chart
