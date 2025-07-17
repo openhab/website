@@ -384,7 +384,9 @@ However, it's now sitting on a much stronger base so that any issues there can b
 
 ## openHABian Enhancements
 
-_Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
+The new openHABian v1.10.x series has been released in preparation for the openHAB 5.0 release, adding support for Java 21, updating the underlying base OS and bringing many bug fixes and improvements.
+
+Check out the [release notes](https://github.com/openhab/openhabian/releases/tag/v1.10.3) for more details.
 
 # Enjoy and Get in Touch!
 
