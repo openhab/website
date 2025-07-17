@@ -90,7 +90,7 @@ With updates and additions to the Matter specification happening twice a year, M
 />
 
 openHAB 5.0 now features one of the most complete Matter 1.4.1 client implementations on the market — the [Matter binding](/addons/bindings/matter), allowing to control more than 30 types of devices, from lights, locks and thermostats, to power meters, air quality sensors and robotic vacuum cleaners.
-Matter Devices can be Wi-Fi or ethernet based, or they can based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the ZigBee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
+Matter Devices can be Wi-Fi or ethernet based, or they can be based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the ZigBee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
 
 One of the many strengths of Matter is that devices can be shared among different ecosystems, meaning a Matter device previously added to Apple Home or Google Home, can also be independently added to openHAB, who then talks directly to the device and not through a vendor's proprietary ecosystem.
 openHAB can conversely share Matter devices as well, providing QR codes so other Matter clients can pair and talk directly to these devices.
@@ -148,9 +148,45 @@ If you don't want to wait, you can install [the beta version via the Marketplace
 It's also important to note that this binding was not developed as a replacement for HABApp, which is completely independent, still actively developed, and enjoys a large community.
 Your choice among these two options depends entirely on your personal preference.
 
-## YAML Configuration Format
+## openHAB iOS App
+
+_Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
+
+The openHAB iOS app will soon receive a major update including major enhancements, both in its core code as well a new features.
+
+<div align="center" class="row">
+  <img style="max-width: 25%; min-width: 110px;" src="/uploads/2025-07-21-openhab-5-0-release/screen-saver.gif"/>
+  <img style="max-width: 25%; min-width: 110px;"  src="/uploads/2025-07-21-openhab-5-0-release/ios-settings.png"/>
+  <img style="max-width: 25%; min-width: 110px;" src="/uploads/2025-07-21-openhab-5-0-release/multiple-homes.gif"/>
+</div>
+
+### Swift UI and Swift 6
+
+Tim Bert ([@timbms](https://github.com/timbms)) has been hard at work upgrading the core of the app to modern versions of Swift, making the app easier to work on as well as taking advantage of modern language features to enhance performance and stability.
+This is a major undertaking and helps ensure the longevity of our app.
+This also includes a much-needed refreshed settings view, with additional configuration options for connections and a new logging UI.
+
+### OpenAPI based Networking
+
+Tim has also completely rewritten the networking to use Apple's OpenAPI Swift technology.
+This modern approach generates all the required models and networking controllers directly from the openHAB OpenAPI published specifications, ensuring better conformity to our APIs, allowing faster development of new features, and ultimately providing a more consistent experience for users.
+
+### Multiple "Home" Support
+
+Tassilo Karge ([@TAKeanice](https://github.com/TAKeanice)) has contributed one of the most requested features to the iOS app, support for multiple homes!
+Users can now have different preferences for their primary home, a vacation home, the office, etc... and quickly switch between them.
+Even more impressive is that push notifications and iOS shortcuts are also multi-home-aware, selecting the correct home before performing an action.
+
+### Kiosk Features
+
+Many users like to use iPads or iPhones as kiosk devices, running the openHAB app in Apple's "Guided Mode", which locks the device to a single app.
+Unfortunately, iOS lacks a built-in screen saver for always-on devices, which is not ideal for many situations.
+The openHAB iOS app now features a robust embedded screen-saver with granular configuration options for everything from clock styles, fonts and sizes, to animation speeds and dimming settings.
+Whether running as a wall mounted tablet, or as a nightstand clock, the openHAB app can more comfortably blend into your home environment.
 
 ## Core Runtime Enhancements
+
+### YAML Configuration Format
 
 ### Scripted Item, Metadata, Item-Channel-Link & Thing Providers
 
@@ -299,42 +335,6 @@ However, it's now sitting on a much stronger base so that any issues there can b
 ## openHABian Enhancements
 
 _Markus Storm ([@mstormi](https://github.com/mstormi)), openHABian Maintainer_
-
-## iOS Enhancements
-
-_Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
-
-The openHAB iOS app will soon receive a major update including major enhancements, both in its core code as well a new features.
-
-<div align="center" class="row">
-  <img style="max-width: 25%; min-width: 110px;" src="/uploads/2025-07-21-openhab-5-0-release/screen-saver.gif"/>
-  <img style="max-width: 25%; min-width: 110px;"  src="/uploads/2025-07-21-openhab-5-0-release/ios-settings.png"/>
-  <img style="max-width: 25%; min-width: 110px;" src="/uploads/2025-07-21-openhab-5-0-release/multiple-homes.gif"/>
-</div>
-
-### Swift UI and Swift 6
-
-Tim Bert ([@timbms](https://github.com/timbms)) has been hard at work upgrading the core of the app to modern versions of Swift, making the app easier to work on as well as taking advantage of modern language features to enhance performance and stability.
-This is a major undertaking and helps ensure the longevity of our app.
-This also includes a much-needed refreshed settings view, with additional configuration options for connections and a new logging UI.
-
-### OpenAPI based Networking
-
-Tim has also completely rewritten the networking to use Apple's OpenAPI Swift technology.
-This modern approach generates all the required models and networking controllers directly from the openHAB OpenAPI published specifications, ensuring better conformity to our APIs, allowing faster development of new features, and ultimately providing a more consistent experience for users.
-
-### Multiple "Home" Support
-
-Tassilo Karge ([@TAKeanice](https://github.com/TAKeanice)) has contributed one of the most requested features to the iOS app, support for multiple homes!
-Users can now have different preferences for their primary home, a vacation home, the office, etc... and quickly switch between them.
-Even more impressive is that push notifications and iOS shortcuts are also multi-home-aware, selecting the correct home before performing an action.
-
-### Kiosk Features
-
-Many users like to use iPads or iPhones as kiosk devices, running the openHAB app in Apple's "Guided Mode", which locks the device to a single app.
-Unfortunately, iOS lacks a built-in screen saver for always-on devices, which is not ideal for many situations.
-The openHAB iOS app now features a robust embedded screen-saver with granular configuration options for everything from clock styles, fonts and sizes, to animation speeds and dimming settings.
-Whether running as a wall mounted tablet, or as a nightstand clock, the openHAB app can more comfortably blend into your home environment.
 
 # Enjoy and Get in Touch!
 
