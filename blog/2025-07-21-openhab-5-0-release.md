@@ -55,22 +55,42 @@ In the following sections, our maintainers and contributors are introducing some
 
 _Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
 
-  <p align="center"><img style="max-width: 75%;" src="/uploads/2025-07-21-openhab-5-0-release/matter-logo.png"/></p>
+<p align="center"><img style="max-width: 75%; filter: drop-shadow(0 0 0.6em white)" src="/uploads/2025-07-21-openhab-5-0-release/matter-logo.svg"/></p>
 
 ### Matter: The Promise of Reliable, Secure and Locally Controlled Connectivity.
 
-Matter is a open smart home standard from the [Connectivity Standards Alliance](https://csa-iot.org/all-solutions/matter/) that defines a robust IoT protocol that operates natively over IPv6, connecting Wi-Fi, Ethernet and low-power Thread devices over your local network without proprietary bridges or vendor clouds.
-Major smart home companies like Apple, Google, Amazon, Samsung SmartThings, Signify (Philips Hue) and IKEA have invested significant resources jointly developing the Matter standard and have included Matter in nearly every device they ship. With updates and additions to the Matter specification happening twice a year, Matter's adoption in the market is growing rapidly as it constantly adapts to support new devices, new use-cases and improves with feedback from users and vendors alike.
+Matter is an open smart home standard from the [Connectivity Standards Alliance](https://csa-iot.org/all-solutions/matter/) that defines a robust IoT protocol that operates natively over IPv6, connecting Wi-Fi, Ethernet and low-power Thread devices over your local network without proprietary bridges or vendor clouds.
+Major smart home companies like Apple, Google, Amazon, Samsung SmartThings, Signify (Philips Hue) and IKEA have invested significant resources jointly developing the Matter standard and have included Matter in nearly every device they ship.
+With updates and additions to the Matter specification happening twice a year, Matter's adoption in the market is growing rapidly as it constantly adapts to support new devices, new use-cases and improves with feedback from users and vendors alike.
 
 ### openHAB Matter Client
 
-<p>
-  <img
-    src="/uploads/2025-07-21-openhab-5-0-release/matter-thing.png"
-    style="float:right; max-width:20%; margin-left:1em;"
-    alt="Matter thing"
+<style>
+.matter-screenshot {
+  float: right;
+  max-width: 25% !important;
+  margin-left: 1em;
+
+  @media (max-width: 768px) {
+    max-width: 100% !important;
+    float: none;
+    margin-left: 0;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 40% !important;
+  }
+}
+</style>
+
+<img
+  src="/uploads/2025-07-21-openhab-5-0-release/matter-thing.png"
+  class="matter-screenshot"
+  alt="Matter thing"
 />
-openHAB 5.0 now features one of the most complete Matter 1.4.1 client implementations on the market, allowing the control of more then 30 types of devices, from lights, locks and thermostats, to power meters, air quality sensors and robotic vacuum cleaners. Matter Devices can be Wi-Fi or ethernet based, or they can based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the Zigbee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
+
+openHAB 5.0 now features one of the most complete Matter 1.4.1 client implementations on the market — the [Matter binding](/addons/bindings/matter), allowing to control more than 30 types of devices, from lights, locks and thermostats, to power meters, air quality sensors and robotic vacuum cleaners.
+Matter Devices can be Wi-Fi or ethernet based, or they can based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the ZigBee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
 
 One of the many strengths of Matter is that devices can be shared among different ecosystems, meaning a Matter device previously added to Apple Home or Google Home, can also be independently added to openHAB, who then talks directly to the device and not through a vendor's proprietary ecosystem.
 openHAB can conversely share Matter devices as well, providing QR codes so other Matter clients can pair and talk directly to these devices.
@@ -79,27 +99,27 @@ Matter is quickly becoming the primary protocol used by IoT vendors, and with ma
 
 <div style="clear:both;"></div>
 
-But thats not all ...
+But that's not all ...
 
 ### openHAB Matter Bridge
 
-<p>
-  <img
-    src="/uploads/2025-07-21-openhab-5-0-release/matter-bridge.png"
-    style="float:right; max-width:20%; margin-left:1em;"
-    alt="Matter thing"
+<img
+  src="/uploads/2025-07-21-openhab-5-0-release/matter-bridge.png"
+  class="matter-screenshot"
+  alt="Matter thing"
 />
-A Matter "Bridge" is a part of the Matter standard that enables non-matter devices to speak the Matter protocol.
-Bridges allow Z-Wave, Zigbee and other popular standards to interoperate with the Matter ecosystem by integrating a Matter server directly into existing hubs and controllers.
-The Philips Hue hub for example provides a matter bridge, as does the Ikea Dirigera, translating Matter to Zigbee or other protocols (and yes openHAB can use Matter to talk with those ecosystems).
 
-openHAB itself can now act as a Matter Bridge, exposing regular openHAB Items and Groups as Matter devices to 3rd party clients like Alexa, Apple and Google, all while remaining local on the user's network.
-This allows fast, secure and cloud free control of openHAB from all major voice assistants as well as other 3rd party Matter clients.
-Exposing openHAB Items as Matter devices works similarly to how users currently tag Items for voice assistants like the Homekit addon, or our Alexa and Google voice integrations.
-Users can use the MainUI to map Items to Matter device types, or use our standard text based configuration.
+A Matter "Bridge" is a part of the Matter standard that enables non-matter devices to speak the Matter protocol.
+Bridges allow Z-Wave, ZigBee and other popular standards to interoperate with the Matter ecosystem by integrating a Matter server directly into existing hubs and controllers.
+The Philips Hue hub, for example, provides a Matter bridge, as does the Ikea Dirigera, translating Matter to ZigBee or other protocols (and yes, openHAB can use Matter to talk with those ecosystems).
+
+openHAB itself can now act as a Matter Bridge, exposing regular openHAB Items and Groups as Matter devices to third party clients like Alexa, Apple and Google, all while remaining local on the user's network.
+This allows fast, secure and cloud-free control of openHAB from all major voice assistants as well as other third party Matter clients.
+Exposing openHAB Items as Matter devices works similarly to how users currently tag Items for voice assistants like the [HomeKit add-on](/addons/integrations/homekit), or our [Alexa](/docs/ecosystem/alexa/) and [Google voice integrations](/docs/ecosystem/google-assistant/).
+Users can use the Main UI to map Items to Matter device types, or use our standard text-based configuration.
 Most standard Matter device types are supported, with more coming with every openHAB release.
 
-In the near future, Matter support will be coming to our mobile clients as well, allowing users to pair new Matter devices through a QR code without having to use a vendor specific app.
+In the near future, Matter support will be coming to our mobile clients as well, allowing users to pair new Matter devices through a QR code without having to use a vendor-specific app.
 
 <div style="clear:both;"></div>
 
