@@ -392,6 +392,33 @@ We now get the benefit of exactly matching many of those minor idiosyncrasies th
 There's still work to do in the portion of the binding that connects incoming data to openHAB channels.
 However, it's now sitting on a much stronger base so that any issues there can be more quickly iterated on and fixed.
 
+### JRuby Scripting Add-on
+
+The JRuby Scripting add-on now supports Karaf console commands, making it easier to manage gems, diagnose scripts, and interact with the runtime.
+A full list of available console commands is available in the [JRuby Scripting documentation](https://openhab.github.io/openhab-jruby/main/index.html#console-commands).
+
+#### Embedded Ruby IRB Console
+
+Developers can launch an interactive Ruby IRB session **directly inside the openHAB runtime**, with full access to:
+
+- JRuby scripting objects and methods
+- Real-time inspection of Items, Things, Rules, and state
+- Rapid prototyping and live automation testing
+
+To start a session:
+
+```bash
+openhab> jrubyscripting console
+```
+
+#### Gemfile-Based Dependency Management
+
+You can now declare Ruby gem dependencies using a `Gemfile`, using standard Ruby project conventions:
+
+- Fine-tune gem versions and sources
+- Control which gems are auto-required
+- Easily replicate environments across setups
+
 ## openHABian Enhancements
 
 The new openHABian v1.10.x series has been released in preparation for the openHAB 5.0 release, adding support for Java 21, updating the underlying base OS and bringing many bug fixes and improvements.
