@@ -77,29 +77,7 @@ With updates and additions to the Matter specification happening twice a year, M
 
 ### openHAB Matter Client
 
-<style>
-.matter-screenshot {
-  float: right;
-  max-width: 25% !important;
-  margin-left: 1em;
-
-  @media (max-width: 768px) {
-    min-width: 330px;
-    float: none;
-    margin-left: 0;
-  }
-
-  @media (max-width: 1024px) {
-    max-width: 40% !important;
-  }
-}
-</style>
-
-<img
-  src="/uploads/2025-07-21-openhab-5-0-release/matter-thing.png"
-  class="matter-screenshot"
-  alt="Matter thing"
-/>
+<img src="/uploads/2025-07-21-openhab-5-0-release/matter-thing.png" class="img-beside-text-right" alt="Matter thing" />
 
 openHAB 5.0 now features one of the most complete Matter 1.4.1 client implementations on the market — the [Matter binding](/addons/bindings/matter), which can communicate with more than 30 types of devices, from lights, locks and thermostats, to power meters, air quality sensors and robotic vacuum cleaners.
 Matter Devices can be Wi-Fi or ethernet based, or they can be based on [Thread](https://www.threadgroup.org/), a low-power radio technology and successor to the ZigBee protocol which is baked into many recent consumer products like Apple TVs, Google Home Hubs, Amazon Echos as well as many Wi-Fi access points and routers.
@@ -113,11 +91,7 @@ But that's not all ...
 
 ### openHAB Matter Bridge
 
-<img
-  src="/uploads/2025-07-21-openhab-5-0-release/matter-bridge.png"
-  class="matter-screenshot"
-  alt="Matter thing"
-/>
+<img src="/uploads/2025-07-21-openhab-5-0-release/matter-bridge.png" class="img-beside-text-right" alt="Matter thing" />
 
 A Matter "Bridge" is a part of the Matter standard that enables non-matter devices to speak the Matter protocol.
 Bridges allow Z-Wave, ZigBee and other popular standards to interoperate with the Matter ecosystem by integrating a Matter server directly into existing hubs and controllers.
@@ -162,15 +136,15 @@ Your choice among these two options depends entirely on your personal preference
 
 ## openHAB iOS App
 
+<div class="img-beside-text-right">
+  <img style="width: calc(33% - 7px);" src="/uploads/2025-07-21-openhab-5-0-release/screen-saver.gif"/>
+  <img style="width: calc(33% - 7px);" src="/uploads/2025-07-21-openhab-5-0-release/ios-settings.png"/>
+  <img style="width: calc(33% - 7px);" src="/uploads/2025-07-21-openhab-5-0-release/multiple-homes.gif"/>
+</div>
+
 _Dan Cunningham ([@digitaldan](https://github.com/digitaldan)), openHAB Maintainer_
 
 The openHAB iOS app will soon receive a major update, including significant enhancements to its core code as well as introducing new features.
-
-<div align="center" class="row">
-  <img style="max-width: 25%; min-width: 110px;" src="/uploads/2025-07-21-openhab-5-0-release/screen-saver.gif"/>
-  <img style="max-width: 25%; min-width: 110px;"  src="/uploads/2025-07-21-openhab-5-0-release/ios-settings.png"/>
-  <img style="max-width: 25%; min-width: 110px;" src="/uploads/2025-07-21-openhab-5-0-release/multiple-homes.gif"/>
-</div>
 
 ### Swift UI and Swift 6
 
@@ -208,7 +182,8 @@ This new format does not replace our dedicated DSL format, but rather provides a
 It is also a way to not depend too much on XTend/XText as we don't know how many more years these Eclipse projects will be maintained.
 Unlike the DSL configuration files, YAML configuration files are not limited to a specific object type — they can contain any supported entities (Things, Items, Tags, etc.).
 
-Here is an example:
+<details>
+<summary>View example</summary>
 
 ```yaml
 version: 1
@@ -237,6 +212,8 @@ items:
     autoupdate: false
     channel: lgwebos:WebOSTV:living-room:power
 ```
+
+</details>
 
 You can consult the [YAML Configuration Documentation](https://www.openhab.org/docs/configuration/yaml.html) for more details on the syntax and how to use it.
 
@@ -268,24 +245,26 @@ _Florian Hotze ([@florian-h05](https://github.com/florian-h05)), openHAB Maintai
 
 ### Sitemap Editor Drag & Drop
 
+<img src="/uploads/2025-07-21-openhab-5-0-release/sitemap-edit-dragdrop.gif" class="img-beside-text-right" alt="Sitemap Edit: Drag & Drop" />
+
 When designing sitemaps through the UI, it was very cumbersome to move elements around, as you had to delete and re-add them in the desired order, or cut and paste the DSL code in the code tab.
 With openHAB 5.0, we have introduced a drag and drop feature to the sitemap editor, allowing you to easily rearrange elements in the sitemap:
 
-<p align="center"><img style="max-width: 70%; min-width: 330px;" src="/uploads/2025-07-21-openhab-5-0-release/sitemap-edit-dragdrop.gif"/></p>
-
 Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for implementing this feature!
+<div style="clear:both;"></div>
 
 ### Model Editor Drag & Drop
+
+<div class="img-beside-text-right" style="display: flex; justify-content: space-between;">
+  <img style="width: calc(50% - 3px);" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-1.gif"/>
+  <img style="width: calc(50% - 3px);" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-2.gif"/>
+</div>
 
 Similarly to the sitemap editor, the model editor now supports drag and drop for moving semantic tags around.
 This not only makes it faster to build your semantic model, it also makes it easier to ensure that your model is valid and follows the best practices by introducing numerous validation checks.
 
-<div align="center" class="row">
-  <img style="max-width: 35%; min-width: 165px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-1.gif"/>
-  <img style="max-width: 35%; min-width: 165px;" src="/uploads/2025-07-21-openhab-5-0-release/model-dragdrop-2.gif"/>
-</div>
-
 A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
+<div style="clear: both;"></div>
 
 ### Regenerate Rules from Templates
 
@@ -309,14 +288,17 @@ This feature is intended purely as a convenience. Users can continue to rely ent
 
 _Jeff James ([@jsjames](https://github.com/jsjames)), openHAB Contributor_
 
+<img class="img-beside-text-right" src="/uploads/2025-07-21-openhab-5-0-release/oh-state-series.png" alt="oh-state-series" />
+
 In openHAB 5.0, we have added a new chart series type for time-based charts to easily see changes of an Item's state over time.
 It is especially useful for Items that have a limited set of states, such as _ON_ and _OFF_, or _OPEN_ and _CLOSED_, but can also be used for Items with more complex states, such as _Air Temp State_ vs. _Air Temp_ in the example below.
 The new [`oh-state-series`](/docs/ui/components/oh-state-series.html) supports several settings to adjust colour palette and the ability to provide a function to map item states (see _Air Temp State_ vs. _Air Temp_ in the example below).
 This series can be used on any time-based chart with either an `oh-value-axis` or `oh-category-axis` as the y-axis.
-
-<p align="center"><img style="max-width: 70%; min-width: 330px;" src="/uploads/2025-07-21-openhab-5-0-release/oh-state-series.png"/></p>
+<div style="clear:both;"></div>
 
 ### Semantic Tags Maintenance & Treeview Picker
+
+<img src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-maintenance-picker.gif" class="img-beside-text-right" alt="Semantic Tags Maintenance & Picker" />
 
 openHAB 4.1 introduced the ability to extend the semantic model with custom tags through a YAML configuration file.
 In openHAB 5.0, we have added support for maintaining these custom tags through the UI.
@@ -325,13 +307,10 @@ The developer tools now include a new _Semantic Tags_ section, where you can vie
 You can view tag relationships and structure at a glance, making it easier to understand the concept of the semantic model and how to use it effectively.
 It features both a treeview and a code tab, allowing you to switch between a visual representation and the underlying YAML code.
 
-<p align="center"><img style="max-width: 70%; min-width: 330px;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-maintenance.gif"/></p>
-
 In addition to the maintenance page, the semantics picker in the Item editor has been updated to use the treeview, making it easier to select the correct semantic tag for your Items by visualising the hierarchy of tags:
 
-<p align="center"><img style="max-width: 70%; min-width: 330px;" src="/uploads/2025-07-21-openhab-5-0-release/semantic-tags-picker.gif"/></p>
-
 Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege))!
+<div style="clear:both;"></div>
 
 ### Additional Enhancements
 
@@ -351,7 +330,6 @@ Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)
 
 ## Sitemap & Basic UI Enhancements
 
-- New `interpolation` parameter for charts to change how the line between two data points is drawn: Either `linear` or `step`.
 - Basic UI now reloads the chart with higher resolution when clicking the zoom button instead of just upscaling the initial image.
 - New Basic UI setting to choose how to display buttons: rectangular (default), rounded or pill-shaped.
 - Basic UI now avoids shrinking the value of a `Text` element and instead shrinks the label.
