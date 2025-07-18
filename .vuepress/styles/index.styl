@@ -358,3 +358,11 @@ a[href*='.openhab.org'] .outbound
     .tabs-component-panels
         background-color #111 !important
         border-color #a6a6a6
+
+/*** Render <summary> element disclosure like a link ***/
+details
+    summary
+        color #f60
+        cursor pointer
+    summary:hover
+        text-decoration underline
