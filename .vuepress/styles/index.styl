@@ -366,3 +366,24 @@ details
         cursor pointer
     summary:hover
         text-decoration underline
+
+/*** Define a class to put images right aligned besides text ***/
+/* Don't forget a <div style="clear:both;"></div> after the paragraph to prevent the image from flowing into the next paragraph */
+.img-beside-text-right
+  float right
+  max-width 30% !important
+  min-width 330px
+  margin-left 1em
+  margin-top 1em
+
+  @media (max-width 768px)
+    float none
+    max-width 100% !important
+    min-width 330px
+    margin-left 0
+
+  @media (min-width 1024px)
+    min-width 380px
+
+  @media (min-width 2048px)
+    min-width 430px
