@@ -26,13 +26,15 @@ With that being said, we again want to share some statistics that show the progr
 
 # Activity
 
-Behind every new feature in openHAB 5.0 is the work of a vibrant, global community. Over the past period, activity across our GitHub repositories has been nonstop — a reflection of openHAB’s momentum and shared purpose.
+Behind every new feature in openHAB 5.0 is the work of a vibrant, global community.
+Over the past period, activity across our GitHub repositories has been nonstop — a reflection of openHAB’s momentum and shared purpose.
+In total, 140 contributors contributed a whopping 2470 commits to our [GitHub repositories](https://github.com/openhab)!
 
 This release includes contributions across all parts of the system:
 
-- **[Core](https://github.com/openhab/openhab-core)**: xxx pull requests, with xxx bug fixes and xxx enhancements, resulting in xx,yyy lines of added code.
-- **[Add-ons](https://github.com/openhab/openhab-addons)**: xx new add-ons, xxx fixes and enhancements, across xxx pull requests — adding xxx,yyy lines of code.
-- **[UIs](https://github.com/openhab/openhab-webui)**: xxx pull requests, xxx bug fixes, and xxx enhancements, totalling xx,yyy new lines of code.
+- **[Core](https://github.com/openhab/openhab-core)**: 251 pull requests, with 50 bug fixes and 94 enhancements, resulting in 20,380 lines of added code.
+- **[Add-ons](https://github.com/openhab/openhab-addons)**: 20 new add-ons, 201 fixes and 232 enhancements, across 694 pull requests — adding 886,656 lines of code.
+- **[UIs](https://github.com/openhab/openhab-webui)**: 226 pull requests, 79 bug fixes, and 105 enhancements, totalling 7,711 new lines of code.
 
 Many [other repositories](https://github.com/openhab) — including documentation, openHABian, and build tooling — also receive steady contributions, too numerous to list here.
 
@@ -40,9 +42,7 @@ Huge thanks to everyone who continues to push openHAB forward!
 
 Again, it is time to shout out to our top code contributors per repository (having done the most commits) for this new release:
 
-<!-- https://github.com/openhab/openhab-core/graphs/contributors?from=16.12.2024&to=13.7.2025 -->
-<!-- https://github.com/openhab/openhab-addons/graphs/contributors?from=16.12.2024&to=13.7.2025 -->
-<!-- https://github.com/openhab/openhab-webui/graphs/contributors?from=16.12.2024&to=13.7.2025 -->
+<!-- https://github.com/florian-h05/github-stats?tab=readme-ov-file#contribution_stats -->
 
 - Holger ([@holgerfriedrich](https://github.com/holgerfriedrich)) for openHAB Core
 - Jim ([@jimtng](https://github.com/jimtng)) for openHAB Core
