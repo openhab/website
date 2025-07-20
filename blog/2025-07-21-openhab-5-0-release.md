@@ -33,7 +33,7 @@ In total, 140 contributors contributed a whopping 2470 commits to our [GitHub re
 This release includes contributions across all parts of the system:
 
 - **[Core](https://github.com/openhab/openhab-core)**: 251 pull requests, with 50 bug fixes and 94 enhancements, resulting in 20,380 lines of added code.
-- **[Add-ons](https://github.com/openhab/openhab-addons)**: 20 new add-ons, 201 fixes and 232 enhancements, across 694 pull requests — adding 886,656 lines of code.
+- **[Add-ons](https://github.com/openhab/openhab-addons)**: 19 new add-ons, 201 fixes and 232 enhancements, across 694 pull requests — adding 886,656 lines of code.
 - **[UIs](https://github.com/openhab/openhab-webui)**: 226 pull requests, 79 bug fixes, and 105 enhancements, totalling 7,711 new lines of code.
 
 Many [other repositories](https://github.com/openhab) — including documentation, openHABian, and build tooling — also receive steady contributions, too numerous to list here.
@@ -336,9 +336,27 @@ Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)
 
 ## Add-on Enhancements
 
-openHAB 5.0 brings xx new add-ons, adding support for new devices:
+openHAB 5.0 brings 19 new add-ons, adding support for new devices:
 
-- TODO
+- [Awtrix 3 Binding](/addons/bindings/mqtt.awtrixlight/): Controls the [Awtrix 3](https://blueforcer.github.io/awtrix3/) LED matrix display via MQTT, allowing to display notifications, weather, calendar events and more on the [Ulanzi Smart Pixel clock](https://www.ulanzi.com/products/ulanzi-pixel-smart-clock-2882).
+- [Bambulab Binding](/addons/bindings/bambulab/): Integrates [Bambu Lab](https://www.bambulab.com/) 3D printers into openHAB, allowing to monitor and control print jobs.
+- [Bluetooth Listener Binding](/addons/bindings/bluetooth.listener/): Allows to receive broadcasted data from Bluetooth devices without connecting to them, for example Bluetooth beacons.
+- [CASO Binding](/addons/bindings/caso/): Integrates [Caso smart kitchen](https://www.caso-design.com/) devices into openHAB, allowing to control and monitor their wine coolers.
+- [Ecoflow Binding](/addons/bindings/ecoflow/): Integrates [EcoFlow](https://www.ecoflow.com/) power stations and micro inverters into openHAB, allowing to monitor and control power usage.
+- [Emby Binding](/addons/bindings/emby/): Integrates [Emby](https://emby.media/) media server into openHAB, allowing to control playback and monitor media status.
+- [Fronius Wattpilot Binding](/addons/bindings/froniuswattpilot/): Integrates [Fronius Wattpilot](https://www.fronius.com/en/solar-energy/home-owners/products-and-solutions/e-mobility) EV chargers into openHAB, allowing to monitor and control charging sessions.
+- [IKEA DIRIGERA Binding](/addons/bindings/dirigera/): Integrates the [IKEA DIRIGERA](https://www.ikea.com/de/en/p/dirigera-hub-for-smart-products-white-smart-10503406/) gateway into openHAB, allowing control and monitoring of IKEA smart home devices.
+- [LG ThingQ Binding](/addons/bindings/lgthingq/): Integrates LG ThingQ-compatible devices into openHAB, allowing control and monitoring of LG smart home devices such as air conditioners, washing machines, and refrigerators.
+- [Matter Binding](#matter-integration): Seamlessly integrates Matter devices into openHAB, allowing to control and monitor them without vendor-specific apps or cloud services, and allows to expose openHAB Items as Matter devices, enabling control from third-party Matter clients like Apple Home, Google Home and Amazon Alexa.
+- [Meross Binding](/addons/bindings/meross/): Integrates [Meross](https://www.meross.com/) smart ambient lights and smart plugs into openHAB.
+- [Ondilo Binding](/addons/bindings/ondilo/): Integrates [Ondilo ICO Pool and Spa monitoring devices](https://ondilo.com/en/), allowing to monitor and automate a pool environment.
+- [OpenAI TTS Voice](/addons/voice/openaitts/): Integrates the [OpenAI TTS](https://platform.openai.com/docs/guides/text-to-speech) service into openHAB, allowing to use OpenAI's text-to-speech capabilities for voice announcements and notifications.
+- [Python Scripting](#python-scripting): A new scripting add-on based on GraalPy, offering full Python 3.11 support and a more Pythonic interface to interact with openHAB's APIs.
+- [Ring Binding](/addons/bindings/ring/): Integrates [Ring](https://ring.com/) devices, such as cameras, doorbells and others, into openHAB.
+- [SBus Binding](/addons/bindings/sbus/): Integrates SBus devices into openHAB, allowing control and monitoring of SBus-compatible devices over UDP.
+- [Sense Energy Binding](/addons/bindings/senseenergy/): Integrates the [Sense Energy monitor](https://sense.com/) into openHAB, providing accurate energy usage statistics and insights.
+- [Tuya Binding](/addons/bindings/tuya/): Integrates Tuya Wi-Fi devices into openHAB, allowing control and status monitoring on the local network.
+- [Z-Wave JS Binding](#z-wave-js-binding): Connects to an external [Z-Wave JS](https://zwave-js.github.io/zwave-js/) server, providing an alternative way to integrate Z-Wave networks into openHAB.
 
 But not only were new bindings added, some existing bindings also received massive improvements:
 
