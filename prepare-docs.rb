@@ -406,18 +406,15 @@ end
 verbose "   ➡️ images"
 FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/images", "docs/apps")
 
-# TODO: Remove if for the 5.0.0 release
-if $version == "final"
-  puts "➡️ Migrating the Garmin app section"
-  Dir.glob(".vuepress/openhab-docs/addons/uis/apps/garmin/*.md") do |path|
-    file = File.basename(path)
-    verbose "   ➡️ #{file}"
-    process_file(".vuepress/openhab-docs/addons/uis/apps/garmin", file, "docs/apps/garmin",
-                "#{$docs_repo_root}/addons/uis/apps/garmin/#{file}")
-  end
-  verbose "   ➡️ images"
-  FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/garmin/images", "docs/apps/garmin")
+puts "➡️ Migrating the Garmin app section"
+Dir.glob(".vuepress/openhab-docs/addons/uis/apps/garmin/*.md") do |path|
+  file = File.basename(path)
+  verbose "   ➡️ #{file}"
+  process_file(".vuepress/openhab-docs/addons/uis/apps/garmin", file, "docs/apps/garmin",
+             "#{$docs_repo_root}/addons/uis/apps/garmin/#{file}")
 end
+verbose "   ➡️ images"
+FileUtils.cp_r(".vuepress/openhab-docs/addons/uis/apps/garmin/images", "docs/apps/garmin")
 
 puts "➡️ Migrating the Administration section"
 Dir.glob(".vuepress/openhab-docs/administration/*.md") do |path|
@@ -520,12 +517,6 @@ else
 
   puts "➡️ Migrating add-ons: IO"
   Dir.glob(".vuepress/openhab-docs/_addons_ios/**") do |path|
-    # TODO: Remove these next if for the 5.0.0 release
-    # See below for the Alexa & Mycroft & Google Assistant special cases
-    next if $version == "final-4.3.x" && path =~ /alexa-skill/
-    next if $version == "final-4.3.x" && path =~ /mycroft-skill/
-    next if $version == "final-4.3.x" && path =~ /google-assistant/
-
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
 
@@ -568,8 +559,6 @@ else
   FileUtils.mkdir_p("docs/ecosystem/google-assistant")
 
   ecosystem_path = "_ecosystem"
-  # TODO: Remove this if for the 5.0.0 release
-  ecosystem_path = "_addons_ios" if $version == "final-4.3.x"
 
   verbose "   ➡️ Process alexa-skill docs"
   process_file(".vuepress/openhab-docs/#{ecosystem_path}/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
