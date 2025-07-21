@@ -569,7 +569,7 @@ else
 
   ecosystem_path = "_ecosystem"
   # TODO: Remove this if for the 5.0.0 release
-  ecosystem_path = "_addons_ios" if $version == "final-stable"
+  ecosystem_path = "_addons_ios" if $version == "final-4.3.x"
 
   verbose "   ➡️ Process alexa-skill docs"
   process_file(".vuepress/openhab-docs/#{ecosystem_path}/alexa-skill", "readme.md", "docs/ecosystem/alexa", "https://github.com/openhab/openhab-alexa/blob/master/USAGE.md")
