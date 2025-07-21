@@ -2,10 +2,12 @@
 sidebar: false
 layout: AboutPage
 title: Download openHAB
-currentVersion: 4.3.6
-currentMilestoneVersion: 5.0.0.RC1
-currentSnapshotVersion: 5.0.0-SNAPSHOT
+currentVersion: 5.0.0
+#currentMilestoneVersion: 5.0.0.RC1
+currentSnapshotVersion: 5.1.0-SNAPSHOT
 previousVersions:
+  - version: "4.3"
+    website: https://v43.openhab.org/
   - version: "4.2"
     website: https://v42.openhab.org/
   - version: "4.1"
