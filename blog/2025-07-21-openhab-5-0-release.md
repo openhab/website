@@ -276,7 +276,7 @@ It was necessary to delete and recreate the rules from the template to apply any
 openHAB 5.0 introduces a new feature that allows you to regenerate rules from templates, making it easier to keep your rules up to date with the latest changes in the templates.
 This also allows you to change the parameters used in the template without having to delete and recreate the rules.
 
-You can find more details in [the documentation](/docs/tutorial/rules_basic.html#updates-to-templates).
+You can find more details in [the documentation](/docs/tutorial/rules_basic.html#update-a-rule).
 
 ### Copy DSL & YAML Definition: Connecting UI with Text Configuration
 
