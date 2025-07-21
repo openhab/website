@@ -33,7 +33,7 @@ In total, 140 contributors contributed a whopping 2470 commits to our [GitHub re
 This release includes contributions across all parts of the system:
 
 - **[Core](https://github.com/openhab/openhab-core)**: 251 pull requests, with 50 bug fixes and 94 enhancements, resulting in 20,380 lines of added code.
-- **[Add-ons](https://github.com/openhab/openhab-addons)**: 19 new add-ons, 201 fixes and 232 enhancements, across 694 pull requests — adding 886,656 lines of code.
+- **[Add-ons](https://github.com/openhab/openhab-addons)**: 20 new add-ons, 201 fixes and 232 enhancements, across 694 pull requests — adding 886,656 lines of code.
 - **[UIs](https://github.com/openhab/openhab-webui)**: 226 pull requests, 79 bug fixes, and 105 enhancements, totalling 7,711 new lines of code.
 
 Many [other repositories](https://github.com/openhab) — including documentation, openHABian, and build tooling — also receive steady contributions, too numerous to list here.
@@ -337,8 +337,9 @@ Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)
 
 ## Add-on Enhancements
 
-openHAB 5.0 brings 19 new add-ons, adding support for new devices:
+openHAB 5.0 brings 20 new add-ons, adding support for new devices:
 
+- [AirParif Binding](/addons/bindings/airparif/): Integrates [AirParif](https://airparif.fr/) air quality and pollen data for the Paris area into openHAB.
 - [Awtrix 3 Binding](/addons/bindings/mqtt.awtrixlight/): Controls the [Awtrix 3](https://blueforcer.github.io/awtrix3/) LED matrix display via MQTT, allowing to display notifications, weather, calendar events and more on the [Ulanzi Smart Pixel clock](https://www.ulanzi.com/products/ulanzi-pixel-smart-clock-2882).
 - [Bambulab Binding](/addons/bindings/bambulab/): Integrates [Bambu Lab](https://www.bambulab.com/) 3D printers into openHAB, allowing to monitor and control print jobs.
 - [Bluetooth Listener Binding](/addons/bindings/bluetooth.listener/): Allows to receive broadcasted data from Bluetooth devices without connecting to them, for example Bluetooth beacons.
