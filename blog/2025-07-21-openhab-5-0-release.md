@@ -3,7 +3,7 @@ layout: BlogPost
 category: blog
 title: openHAB 5.0 Release
 author: Florian Hotze and others
-date: "2025-07-21T10:00:00+01:00"
+date: "2025-07-21T20:00:00+01:00"
 previewimage: /uploads/2025-07-21-openhab-5-0-release/header.webp
 tags:
   - news
