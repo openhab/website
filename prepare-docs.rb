@@ -522,9 +522,9 @@ else
   Dir.glob(".vuepress/openhab-docs/_addons_ios/**") do |path|
     # TODO: Remove these next if for the 5.0.0 release
     # See below for the Alexa & Mycroft & Google Assistant special cases
-    next if $version == "final-stable" && path =~ /alexa-skill/
-    next if $version == "final-stable" && path =~ /mycroft-skill/
-    next if $version == "final-stable" && path =~ /google-assistant/
+    next if $version == "final-4.3.x" && path =~ /alexa-skill/
+    next if $version == "final-4.3.x" && path =~ /mycroft-skill/
+    next if $version == "final-4.3.x" && path =~ /google-assistant/
 
     addon = File.basename(path)
     next if $ignore_addons.include?(addon)
