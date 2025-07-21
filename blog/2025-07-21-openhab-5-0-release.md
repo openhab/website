@@ -362,7 +362,10 @@ openHAB 5.0 brings 20 new add-ons, adding support for new devices:
 
 But not only were new bindings added, some existing bindings also received massive improvements:
 
-- TODO
+- The [Amber Electric Binding](/addons/bindings/amberelectric/) adds support for energy price forecasts.
+- The [Fronius Binding](/addons/bindings/fronius/) extends support for controlling the battery connected to Symo Gen24 Plus inverters.
+- The [Insteon Binding](/addons/bindings/insteon/) adds support for new devices, enhances debugging capabilities, and fixes several bugs.
+- The [Shelly Binding](/addons/bindings/shelly/) adds support for various new Shelly devices, including Shelly Plus 2PM Gen3, BLU Gateway Gen3, Gen4 devices, and includes many bug fixes.
 
 ### Z-Wave JS Binding
 
