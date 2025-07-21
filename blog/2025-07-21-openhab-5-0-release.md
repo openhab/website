@@ -232,6 +232,7 @@ This release includes the following enhancements:
 - Several new **_Equipment_**, **_Point_**, and **_Property_** tag constants to meet developer requests.
 - Developer tools that ensure only correct semantic tags can be declared when bindings are added or modified.
 - UI improvements to make it easier to visualise the semantic model and apply semantic tags to Items, see [Semantic Tags Maintenance & Treeview Picker](#semantic-tags-maintenance-treeview-picker) below.
+- Semantic model validation checks warning about invalid semantic tag combinations, available from Main UI's health page and logged in the openHAB log on startup.
 
 We have also made significant improvements to the default semantic tags applied by bindings, which now cover a much larger percentage of binding channel types and thing types:
 
