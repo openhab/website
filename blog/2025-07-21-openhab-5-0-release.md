@@ -329,9 +329,8 @@ Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)
 - Boolean-typed variable added
 - Get Item Previous State added
 
-## Sitemap & Basic UI Enhancements
+## Basic UI Enhancements
 
-- New `interpolation` parameter for charts to change how the line between two data points is drawn: Either `linear` or `step`.
 - Basic UI now reloads the chart with higher resolution when clicking the zoom button instead of just upscaling the initial image.
 - New Basic UI setting to choose how to display buttons: rectangular (default), rounded or pill-shaped.
 - Basic UI now avoids shrinking the value of a `Text` element and instead shrinks the label.
