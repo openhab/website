@@ -62,17 +62,17 @@ meta:
 }
 </style>
 
-<h2 class="big-title">openHAB 4 Distribution</h2>
+<h2 class="big-title">openHAB Distribution</h2>
 
 <InstallInstructions />
 
-<h2 class="big-title">openHAB 3 Distribution</h2>
+<h2 class="big-title">Previous Versions</h2>
 
-To download the previous version of openHAB, please go to https://v34.openhab.org/download/
+Looking for an earlier version of openHAB? Download directly from the links below:
 
-<h2 class="big-title">openHAB 2 Distribution</h2>
-
-To download even older versions of openHAB, please go to https://v2.openhab.org/download/.
+- [openHAB 4.3](https://v43.openhab.org/download/)
+- [openHAB 3.4](https://v34.openhab.org/download/)
+- [openHAB 2](https://v2.openhab.org/download/)
 
 <h2 class="big-title">Applications</h2>
 
