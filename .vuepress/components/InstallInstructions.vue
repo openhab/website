@@ -70,7 +70,7 @@
     <div v-if="(selectedSystem === 'tux' && selectedDistro === 'deb') || selectedSystem === 'raspberry-pi'">
       <hr>
       <h3>{{optionNumber('package')}}Install the APT Packages <span v-if="selectedSystem === 'tux'">(Recommended)</span></h3>
-      <div v-if="selectedVersion !== 'stable'" class="warning custom-block">
+      <div class="warning custom-block">
         <p class="custom-block-title">REMINDER</p>
         <p>openHAB 5 requires Java 21!</p>
       </div>
@@ -102,7 +102,7 @@ sudo chmod u=rw,g=r,o=r /usr/share/keyrings/openhab.gpg</code></pre></div>
     <div v-if="selectedSystem === 'tux' && selectedDistro === 'rpm'">
       <hr>
       <h3>{{optionNumber('package')}}Install the RPM Packages (Recommended)</h3>
-      <div v-if="selectedVersion !== 'stable'" class="warning custom-block">
+      <div class="warning custom-block">
         <p class="custom-block-title">REMINDER</p>
         <p>openHAB 5 requires Java 21!</p>
       </div>
@@ -173,7 +173,7 @@ usermod -a -G openhab myownuser
     <div v-if="selectedSystem !== 'docker'">
       <hr>
       <h3>{{optionNumber('manual')}}Manual Installation</h3>
-      <div v-if="selectedVersion !== 'stable'" class="warning custom-block">
+      <div class="warning custom-block">
         <p class="custom-block-title">REMINDER</p>
         <p>openHAB 5 requires Java 21!</p>
       </div>
@@ -439,10 +439,7 @@ export default {
       }
     },
     javaDownloadInstruction () {
-      if (this.selectedVersion !== 'stable') {
-        return `Install a recent Java 21 platform (we recommend your OS package repository provided OpenJDK build, or the <a target="_blank" href="https://adoptium.net/de/temurin/releases/?version=21&package=jre">Eclipse Adoptium Temurin</a> builds of OpenJDK)`
-      }
-      return `Install a recent Java 17 platform (we recommend <a target="_blank" href="https://www.azul.com/downloads/zulu-community/?version=java-17-lts&package=jdk">the Zulu builds of OpenJDK</a>)`
+      return `Install a recent Java 21 platform (we recommend your OS package repository provided OpenJDK build, or the <a target="_blank" href="https://adoptium.net/de/temurin/releases/?version=21&package=jre">Eclipse Adoptium Temurin</a> builds of OpenJDK)`
     }
   }
 }
