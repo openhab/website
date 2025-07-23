@@ -10,6 +10,7 @@ tags:
 excerpt: >-
   A new major release of openHAB is here! openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
 ---
+
 A new major release of openHAB is here!
 openHAB 5.0 comes with a lot of exciting new features and improvements, including Matter support, a new Python Scripting add-on and a ton of other enhancements.
 
@@ -86,6 +87,9 @@ One of the many strengths of Matter is that devices can be shared among differen
 openHAB can conversely share Matter devices as well, providing QR codes so other Matter clients can pair and talk directly to these devices.
 
 Matter is quickly becoming the primary protocol used by IoT vendors, and with many companies like Ikea completely moving to Matter for all future devices, having a complete Matter implementation is crucial for any smart home system.
+
+In the near future, Matter support will be coming to our mobile clients as well, allowing users to pair new Matter devices through a QR code without having to use a vendor-specific app.
+
 <div style="clear:both;"></div>
 But that's not all ...
 
@@ -97,13 +101,12 @@ A Matter "Bridge" is a part of the Matter standard that enables non-matter devic
 Bridges allow Z-Wave, ZigBee and other popular standards to interoperate with the Matter ecosystem by integrating a Matter server directly into existing hubs and controllers.
 The Philips Hue hub, for example, provides a Matter bridge, as does the Ikea Dirigera, translating Matter to ZigBee or other protocols (and yes, openHAB can use Matter to talk with those ecosystems).
 
-openHAB itself can now act as a Matter Bridge, exposing regular openHAB Items and Groups as Matter devices to third party clients like Alexa, Apple and Google, all while remaining local on the user's network.
+openHAB itself can now act as a Matter Bridge using a Matter development certificate (uncertified), exposing regular openHAB Items and Groups as Matter devices to third party clients like Alexa, Apple and Google, all while remaining local on the user's network.
 This allows fast, secure and cloud-free control of openHAB from all major voice assistants as well as other third party Matter clients.
 Exposing openHAB Items as Matter devices works similarly to how users currently tag Items for voice assistants like the [HomeKit add-on](/addons/integrations/homekit), or our [Alexa](/docs/ecosystem/alexa/) and [Google voice integrations](/docs/ecosystem/google-assistant/).
 Users can use the Main UI to map Items to Matter device types, or use our standard text-based configuration.
 Most standard Matter device types are supported, with more coming with every openHAB release.
 
-In the near future, Matter support will be coming to our mobile clients as well, allowing users to pair new Matter devices through a QR code without having to use a vendor-specific app.
 <div style="clear:both;"></div>
 
 ### Special Thanks
@@ -252,6 +255,7 @@ When designing sitemaps through the UI, it was very cumbersome to move elements 
 With openHAB 5.0, we have introduced a drag and drop feature to the sitemap editor, allowing you to easily rearrange elements in the sitemap:
 
 Many thanks to Mark Herwege ([@mherwege](https://github.com/mherwege)) for implementing this feature!
+
 <div style="clear:both;"></div>
 
 ### Model Editor Drag & Drop
@@ -265,6 +269,7 @@ Similarly to the sitemap editor, the model editor now supports drag and drop for
 This not only makes it faster to build your semantic model, it also makes it easier to ensure that your model is valid and follows the best practices by introducing numerous validation checks.
 
 A big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege)) for working on this game-changing feature!
+
 <div style="clear: both;"></div>
 
 ### Regenerate Rules from Templates
@@ -304,6 +309,7 @@ In openHAB 5.0, we have added a new chart series type for time-based charts to e
 It is especially useful for Items that have a limited set of states, such as _ON_ and _OFF_, or _OPEN_ and _CLOSED_, but can also be used for Items with more complex states, such as _Air Temp State_ vs. _Air Temp_ in the example below.
 The new [`oh-state-series`](/docs/ui/components/oh-state-series.html) supports several settings to adjust colour palette and the ability to provide a function to map item states (see _Air Temp State_ vs. _Air Temp_ in the example below).
 This series can be used on any time-based chart with either an `oh-value-axis` or `oh-category-axis` as the y-axis.
+
 <div style="clear:both;"></div>
 
 ### Semantic Tags Maintenance & Treeview Picker
@@ -320,6 +326,7 @@ It features both a treeview and a code tab, allowing you to switch between a vis
 In addition to the maintenance page, the semantics picker in the Item editor has been updated to use the treeview, making it easier to select the correct semantic tag for your Items by visualising the hierarchy of tags:
 
 Again, a big thank you to Mark Herwege ([@mherwege](https://github.com/mherwege))!
+
 <div style="clear:both;"></div>
 
 ### Additional Enhancements
