@@ -373,6 +373,7 @@ But not only were new bindings added, some existing bindings also received massi
 
 - The [Amber Electric Binding](/addons/bindings/amberelectric/) adds support for energy price forecasts.
 - The [Fronius Binding](/addons/bindings/fronius/) extends support for controlling the battery connected to Symo Gen24 Plus inverters.
+- The [Grundfos Alpha Binding](/addons/bindings/bluetooth.grundfosalpha/) adds support for the Grundfos Alpha 3 circulator pump with built-in Bluetooth.
 - The [Insteon Binding](/addons/bindings/insteon/) adds support for new devices, enhances debugging capabilities, and fixes several bugs.
 - The [Shelly Binding](/addons/bindings/shelly/) adds support for various new Shelly devices, including Shelly Plus 2PM Gen3, BLU Gateway Gen3, Gen4 devices, and includes many bug fixes.
 
