@@ -4,7 +4,7 @@ category: blog
 title: openHAB Garmin App
 author: Robert Pollai
 date: "2025-07-27T10:00:00+01:00"
-previewimage: /uploads/2025-07-27-openhab-garmin-release/header.webp
+previewimage: /uploads/2025-07-27-openhab-garmin-release/header.jpeg
 tags:
   - news
 excerpt: >-
